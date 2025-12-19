@@ -123,13 +123,11 @@ function populateSurahDropdown() {
 }
 
 function resetPlayerState() {
-    // This is called when switching Surahs.
-    // We should tell the audio player to stop everything.
+    // Stop all audio cleanly using the player's internal helper
     if (typeof stopAllAudio === 'function') {
         stopAllAudio();
     }
     
-    // Reset UI
     const playBtn = document.getElementById('globalPlayPauseBtn');
     const status = document.getElementById('playerStatus');
     const progressBar = document.getElementById('progressBar');
@@ -338,31 +336,24 @@ function setupGlobalEventListeners() {
     backdrop.addEventListener('click', closeSettings);
 
     const audio = document.getElementById('audioElement');
-    // Audio Time Update handled in audio-player.js mostly, but here if we need extra UI logic
     
-    // --- GLOBAL PLAY BUTTON (Simplified) ---
+    // --- GLOBAL PLAY BUTTON (Improved with isPlayerActive) ---
     document.getElementById('globalPlayPauseBtn').addEventListener('click', () => {
         
-        // 1. Delegate to the Brain
-        if (typeof playerTogglePlayPause === 'function') {
-             // Check if anything is loaded at all
-             const audio = document.getElementById('audioElement');
-             const hasSrc = audio.getAttribute('src');
-             
-             // If nothing playing, nothing loaded, try to play the active card or first card
-             if (!hasSrc && typeof currentBismillah === 'undefined') {
-                 const activeCard = document.querySelector('.thematic-card.ring-2');
-                 if (activeCard) {
-                     activeCard.querySelector('.play-btn').click();
-                 } else {
-                     const firstCard = document.querySelector('.thematic-card');
-                     if (firstCard) {
-                         document.getElementById('autoAdvanceToggle').checked = true;
-                         firstCard.querySelector('.play-btn').click();
-                     }
-                 }
+        // 1. Ask the Player if it has something ready/playing
+        if (typeof window.isPlayerActive === 'function' && window.isPlayerActive()) {
+             playerTogglePlayPause();
+        } else {
+             // 2. Fallback: Nothing is playing, so start a new session
+             const activeCard = document.querySelector('.thematic-card.ring-2');
+             if (activeCard) {
+                 activeCard.querySelector('.play-btn').click();
              } else {
-                 playerTogglePlayPause();
+                 const firstCard = document.querySelector('.thematic-card');
+                 if (firstCard) {
+                     document.getElementById('autoAdvanceToggle').checked = true;
+                     firstCard.querySelector('.play-btn').click();
+                 }
              }
         }
     });
@@ -381,7 +372,6 @@ function setupGlobalEventListeners() {
         }
     });
 
-    // Selection Logic remains unchanged
     document.getElementById('toggleSelectModeBtn').addEventListener('click', () => {
         isSelectMode = !isSelectMode;
         toggleSelectionModeUI(isSelectMode);

@@ -15,14 +15,10 @@ let currentSectionScope = { surah: 0, start: 0, end: 0, totalVerses: 0 };
 
 /**
  * 1. THE MASTER PLAY FUNCTION
- * Called by the Section Play Buttons.
- * Decides if we need Bismillah, then starts the queue.
  */
 function playSession(surah, start, end) {
-    // Stop anything currently running (Bismillah or Verses)
     stopAllAudio();
 
-    // Logic: Play Bismillah if it's Verse 1, but NOT for Surah 9 (Tawbah)
     if (start === 1 && surah !== 9) {
         playBismillahThenRange(surah, start, end);
     } else {
@@ -32,8 +28,6 @@ function playSession(surah, start, end) {
 
 /**
  * 2. TOGGLE PLAY/PAUSE
- * Called by the Global Play Button.
- * Handles both Bismillah state and Main Verse state.
  */
 function playerTogglePlayPause() {
     // SCENARIO A: Bismillah is active
@@ -51,6 +45,7 @@ function playerTogglePlayPause() {
     }
 
     // SCENARIO B: Main Verse Audio is active
+    // Check property .src, not attribute
     if (audioObj.src && playQueue.length > 0) {
         if (audioObj.paused) {
             audioObj.play().then(() => {
@@ -64,28 +59,22 @@ function playerTogglePlayPause() {
         }
         return;
     }
-    
-    // SCENARIO C: Nothing loaded? (Resume last known or start top)
-    // This is handled in app.js fallbacks, but ideally we shouldn't get here without state.
 }
 
 /**
  * Helper: Stops everything and resets state.
  */
 function stopAllAudio() {
-    // Kill Bismillah
     if (currentBismillah) {
         currentBismillah.pause();
         currentBismillah = null;
         isBismillahPlaying = false;
     }
 
-    // Kill Main Audio
     audioObj.pause();
     audioObj.currentTime = 0;
     isAudioPlaying = false;
     
-    // Reset Queue
     playQueue = [];
     queueIndex = 0;
 }
@@ -93,26 +82,20 @@ function stopAllAudio() {
 // --- INTERNAL HELPERS ---
 
 function playBismillahThenRange(surah, start, end) {
-    // Load Bismillah
     currentBismillah = new Audio('data/audio/bismillah.mp3');
-    
-    // Update UI immediately
     isBismillahPlaying = true;
     updateControlsUI(true);
     
-    // Update Text to show "Bismillah..."
     document.getElementById('playerVerse').textContent = `Surah ${surah}: Starting...`;
 
     currentBismillah.onended = () => {
         currentBismillah = null;
         isBismillahPlaying = false;
-        // Automatically start the verses
         playRange(surah, start, end);
     };
 
     currentBismillah.play().catch(e => {
         console.error("Bismillah failed", e);
-        // If fail, just skip to verses
         playRange(surah, start, end);
     });
 }
@@ -163,12 +146,10 @@ function playRange(surah, start, end, startVerse = null, startType = null) {
         });
     }
 
-    // Update UI Title
     document.getElementById('playerVerse').textContent = `Surah ${surah} : Verses ${start}-${end}`;
     
     startPreloading();
 
-    // Start Index Logic
     if (startVerse) {
         const offset = startVerse - start;
         if (startType === 'arabic') {
@@ -195,7 +176,7 @@ function startPreloading() {
 
 function playNextTrack() {
     if (queueIndex >= playQueue.length) {
-        stopAllAudio(); // Clean up
+        stopAllAudio();
         updateControlsUI(false);
         document.dispatchEvent(new CustomEvent('section-ended'));
         return;
@@ -221,7 +202,6 @@ function playNextTrack() {
     });
 }
 
-// --- GLOBAL HELPERS FOR PRELOADING NEXT SECTION ---
 function preloadNextSection(surah, start, end) {
     const arabicReciter = document.getElementById('reciterSelect').value;
     const arabicBaseURL = `https://everyayah.com/data/${arabicReciter}/`;
@@ -261,3 +241,10 @@ function updateControlsUI(isPlaying) {
         status.textContent = 'Paused';
     }
 }
+
+// --- NEW EXPORTED HELPER ---
+// This lets app.js strictly check if we are in a valid playback session
+window.isPlayerActive = function() {
+    const mainAudioActive = (audioObj.src && audioObj.src !== "" && !audioObj.ended && audioObj.currentTime > 0) || isAudioPlaying;
+    return isBismillahPlaying || mainAudioActive || (playQueue.length > 0);
+};
