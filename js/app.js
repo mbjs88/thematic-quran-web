@@ -1,7 +1,7 @@
 // js/app.js
 
 // --- VERSION DEBUGGER ---
-console.log("THEMATIC QURAN - VERSION 1.0.11 (FAVICON FIX)"); 
+console.log("THEMATIC QURAN - VERSION 1.0.12 (Mobile Font Fix)"); 
 
 const CONSTANTS = {
     KEY_SURAH_NO: 'surah_no',
@@ -47,22 +47,17 @@ document.addEventListener('DOMContentLoaded', async () => {
     mainContainer.addEventListener('scroll', () => {
         const currentScrollY = mainContainer.scrollTop;
 
-        // Threshold to avoid jitter at very top
         if (currentScrollY > 100) {
             if (currentScrollY > lastScrollY) {
-                // Scrolling DOWN -> Hide Header
                 header.classList.add('header-hidden');
             } else {
-                // Scrolling UP -> Show Header
                 header.classList.remove('header-hidden');
             }
         } else {
-            // At top -> Always Show
             header.classList.remove('header-hidden');
         }
         lastScrollY = currentScrollY;
     });
-    // ---------------------------------
 
     loadPreferences();
 
@@ -102,17 +97,27 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 function loadPreferences() {
+    // 1. Load Font Family
     const savedFont = localStorage.getItem('arabicFont');
     if (savedFont) {
         const fontSelect = document.getElementById('fontSelect');
         if(fontSelect) fontSelect.value = savedFont;
     }
 
+    // 2. Load Font Scale (With Mobile Auto-Default)
     const savedScale = localStorage.getItem('fontScale');
     if (savedScale) {
         currentFontScale = parseFloat(savedScale);
-        updateFontDisplay();
+    } else {
+        // No preference saved? Check if mobile.
+        // < 768px is the standard breakpoint for tablets/mobile.
+        if (window.innerWidth < 768) {
+            currentFontScale = 0.8; // Default to 80% on mobile
+        } else {
+            currentFontScale = 1.0; // Default to 100% on desktop
+        }
     }
+    updateFontDisplay();
 }
 
 function updateFontDisplay() {
@@ -580,7 +585,6 @@ function navigateSection(direction) {
     if (targetCard && targetCard.classList.contains('thematic-card')) {
         targetCard.querySelector('.play-btn').click();
         
-        // --- CHANGED: Use 'start' to align to top, utilizing the css scroll-mt spacing
         targetCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
         
         triggerLookAheadPreload(targetCard);
