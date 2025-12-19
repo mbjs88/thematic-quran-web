@@ -244,6 +244,7 @@
     </div>
 
     <div id="settingsBackdrop" class="fixed inset-0 bg-black/50 z-[60] hidden transition-opacity duration-300 opacity-0"></div>
+    <div id="settingsBackdrop" class="fixed inset-0 bg-black/50 z-[60] hidden transition-opacity duration-300 opacity-0"></div>
     <div id="settingsSidebar" class="fixed top-0 right-0 h-full w-full max-w-sm bg-[#221F2B]/60 backdrop-blur-2xl border-l border-white/10 shadow-2xl z-[70] transform translate-x-full transition-transform duration-300 flex flex-col">
         
         <div class="p-6 border-b border-white/10 flex justify-between items-center">
@@ -254,14 +255,6 @@
         </div>
 
         <div class="p-6 space-y-8 overflow-y-auto flex-grow">
-            
-            <div id="installAppContainer" class="hidden mb-6">
-                <button id="installAppBtn" class="w-full py-3 bg-[#56A3A6] text-white rounded-xl font-bold shadow-lg hover:bg-[#458a8d] transition flex items-center justify-center gap-2">
-                    <span class="material-symbols-outlined">download</span>
-                    Install App
-                </button>
-                <p class="text-center text-xs text-white/40 mt-2">Add to Home Screen for offline use</p>
-            </div>
             
             <div>
                 <label class="block text-xs uppercase tracking-wider text-[#56A3A6] mb-3 font-bold">Arabic Reciter</label>
@@ -351,6 +344,14 @@
                 </div>
             </div>
 
+            <div id="installAppContainer" class="hidden pt-4">
+                <button id="installAppBtn" class="w-full py-3 bg-transparent border-2 border-[#56A3A6] text-[#56A3A6] hover:bg-[#56A3A6] hover:text-white rounded-xl font-bold transition duration-300 flex items-center justify-center gap-2">
+                    <span class="material-symbols-outlined">download</span>
+                    Install App
+                </button>
+                <p class="text-center text-xs text-white/40 mt-2">Add to Home Screen for offline use</p>
+            </div>
+
         </div>
         
         <div class="p-6 border-t border-white/10 text-center text-white/20 text-xs font-['Forum'] tracking-widest uppercase">
@@ -358,10 +359,10 @@
         </div>
     </div>
 
-    <script src="js/audio-downloader.js?v=1.1.0"></script>
-    <script src="js/audio-player.js?v=1.1.0"></script>
-    <script src="js/ui-renderer.js?v=1.1.0"></script>
-    <script src="js/app.js?v=1.1.0"></script>
+    <script src="js/audio-downloader.js?v=1.1.1"></script>
+    <script src="js/audio-player.js?v=1.1.1"></script>
+    <script src="js/ui-renderer.js?v=1.1.1"></script>
+    <script src="js/app.js?v=1.1.1"></script>
 
 </body>
 </html>
