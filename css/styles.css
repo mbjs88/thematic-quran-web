@@ -1,0 +1,86 @@
+/* css/styles.css */
+
+/* --- GLOBAL SCROLL OFFSET FIX --- */
+html, body, #mainContainer {
+    scroll-padding-top: 280px; 
+}
+
+/* --- ARABIC FONTS OPTIONS --- */
+
+/* 1. Amiri Quran (Default) - High Contrast */
+.font-amiri {
+    font-family: 'Amiri Quran', serif;
+    line-height: 2.4 !important;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: block;
+}
+
+/* 2. Scheherazade New - Traditional Naskh */
+.font-scheherazade {
+    font-family: 'Scheherazade New', serif;
+    line-height: 2.0 !important;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: block;
+}
+
+/* 3. Lateef - Cursive / Flowy */
+.font-lateef {
+    font-family: 'Lateef', serif;
+    line-height: 1.8 !important;
+    font-size: 1.1em; /* Lateef is naturally smaller */
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: block;
+}
+
+/* 4. Noto Naskh - Modern / Clear */
+.font-noto {
+    font-family: 'Noto Naskh Arabic', serif;
+    line-height: 2.2 !important;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: block;
+}
+
+.font-urdu {
+    font-family: 'Noto Nastaliq Urdu', serif;
+}
+
+/* Audio Player Progress Bar */
+#progressBar {
+    box-shadow: 0 0 10px rgba(86, 163, 166, 0.5);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05); 
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(86, 163, 166, 0.5); 
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(86, 163, 166, 0.8); 
+}
+
+/* Active Verse Highlight */
+.active-verse {
+    background-color: rgba(255, 255, 255, 0.1); 
+    border-radius: 6px;
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1); 
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.verse-span {
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+.verse-span:hover {
+    opacity: 0.7;
+}

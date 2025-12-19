@@ -1,0 +1,7 @@
+# keep audio out of Git (it lives in R2)
+data/audio/
+audio/
+
+# optional OS/editor noise
+.DS_Store
+.vscode/
