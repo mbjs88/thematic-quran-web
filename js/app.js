@@ -1,7 +1,7 @@
 // js/app.js
 
 // --- VERSION DEBUGGER ---
-console.log("THEMATIC QURAN - VERSION 1.0.12 (Mobile Font Fix)"); 
+console.log("THEMATIC QURAN - VERSION 1.0.13 (Mobile Default 0.7)"); 
 
 const CONSTANTS = {
     KEY_SURAH_NO: 'surah_no',
@@ -26,6 +26,9 @@ let isSelectMode = false;
 let selectedItems = new Set(); 
 const MAX_SELECTION = 3; 
 
+// CHANGED: Renamed key to force a 'reset' for all users to the new default
+const STORAGE_KEY_SCALE = 'fontScale_v2'; 
+
 document.addEventListener('DOMContentLoaded', async () => {
     console.log("Initializing App...");
     
@@ -46,7 +49,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     mainContainer.addEventListener('scroll', () => {
         const currentScrollY = mainContainer.scrollTop;
-
         if (currentScrollY > 100) {
             if (currentScrollY > lastScrollY) {
                 header.classList.add('header-hidden');
@@ -97,24 +99,26 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 function loadPreferences() {
-    // 1. Load Font Family
+    // 1. Load Font Family (We keep the old key for font type, that's fine)
     const savedFont = localStorage.getItem('arabicFont');
     if (savedFont) {
         const fontSelect = document.getElementById('fontSelect');
         if(fontSelect) fontSelect.value = savedFont;
     }
 
-    // 2. Load Font Scale (With Mobile Auto-Default)
-    const savedScale = localStorage.getItem('fontScale');
+    // 2. Load Font Scale
+    // We check the NEW key. Since it's new, it will be null for everyone.
+    const savedScale = localStorage.getItem(STORAGE_KEY_SCALE);
+    
     if (savedScale) {
+        // If they have saved to the new key, respect it.
         currentFontScale = parseFloat(savedScale);
     } else {
-        // No preference saved? Check if mobile.
-        // < 768px is the standard breakpoint for tablets/mobile.
+        // DEFAULT LOGIC (This runs for everyone now)
         if (window.innerWidth < 768) {
-            currentFontScale = 0.8; // Default to 80% on mobile
+            currentFontScale = 0.7; // Mobile: 70%
         } else {
-            currentFontScale = 1.0; // Default to 100% on desktop
+            currentFontScale = 1.0; // Desktop: 100%
         }
     }
     updateFontDisplay();
@@ -312,10 +316,11 @@ function setupGlobalEventListeners() {
         loadSurah(parseInt(document.getElementById('surahSelect').value));
     });
 
+    // CHANGED: Use the new constant STORAGE_KEY_SCALE for saving
     document.getElementById('increaseFontBtn').addEventListener('click', () => {
         if (currentFontScale < 2.0) {
             currentFontScale += 0.1;
-            localStorage.setItem('fontScale', currentFontScale);
+            localStorage.setItem(STORAGE_KEY_SCALE, currentFontScale);
             updateFontDisplay();
             loadSurah(parseInt(document.getElementById('surahSelect').value));
         }
@@ -324,7 +329,7 @@ function setupGlobalEventListeners() {
     document.getElementById('decreaseFontBtn').addEventListener('click', () => {
         if (currentFontScale > 0.6) {
             currentFontScale -= 0.1;
-            localStorage.setItem('fontScale', currentFontScale);
+            localStorage.setItem(STORAGE_KEY_SCALE, currentFontScale);
             updateFontDisplay();
             loadSurah(parseInt(document.getElementById('surahSelect').value));
         }
