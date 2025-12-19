@@ -16,20 +16,24 @@ function getTranslationUrl(surah, verse, langValue) {
     const sPad = String(surah).padStart(3, '0');
     const aPad = String(verse).padStart(3, '0');
 
-    // --- NEW FIX FOR FRENCH AUDIO ---
+    // 1. French Fix (MP3Quran Mirror)
     if (langValue === 'mp3quran-french') {
-        // Using MP3Quran.net Mirror for Youssouf Leclerc
-        // Structure is usually: /leclerc_fr/001001.mp3
         return `https://mirrors.mp3quran.net/h_du/leclerc_fr/${sPad}${aPad}.mp3`;
     } 
-    // --------------------------------
-
+    
+    // 2. Beta/External Languages (EveryAyah)
     else if (langValue.startsWith('external-')) {
         const slug = langValue.replace('external-', '');
         return `https://everyayah.com/data/${slug}/${sPad}${aPad}.mp3`;
-    } else if (langValue === 'ur') {
+    } 
+    
+    // 3. Urdu (Your R2 Storage)
+    else if (langValue === 'ur') {
         return `https://audio.thematicquran.com/urdu/${sPad}${aPad}.mp3`;
-    } else {
+    } 
+    
+    // 4. English (Your R2 Storage)
+    else {
         return `https://audio.thematicquran.com/english/${sPad}${aPad}.mp3`;
     }
 }
@@ -44,6 +48,8 @@ function playRange(surah, start, end, startVerse = null, startType = null) {
     preloadCache = []; 
     currentSectionScope = { surah, start, end, totalVerses: (end - start + 1) };
     
+    // --- BLOCK MODE (All Arabic -> All Translation) ---
+
     // 1. Add all Arabic Verses
     for (let i = start; i <= end; i++) {
         const sPad = String(surah).padStart(3, '0');
@@ -58,9 +64,6 @@ function playRange(surah, start, end, startVerse = null, startType = null) {
     // 2. Add all Translation Verses
     for (let i = start; i <= end; i++) {
         const url = getTranslationUrl(surah, i, transValue);
-        // Log the URL so we can debug it in the console
-        console.log(`Queueing Translation [${i}]: ${url}`);
-        
         playQueue.push({
             url: url,
             verse: i,
@@ -79,6 +82,7 @@ function playRange(surah, start, end, startVerse = null, startType = null) {
         if (startType === 'arabic') {
             queueIndex = offset;
         } else {
+            // Jump to the start of the translation block + offset
             queueIndex = currentSectionScope.totalVerses + offset;
         }
     } else {
@@ -108,6 +112,7 @@ function playNextTrack() {
 
     const trackItem = playQueue[queueIndex];
 
+    // Highlight Verse UI
     const event = new CustomEvent('verse-changed', { 
         detail: { surah: currentSectionScope.surah, verse: trackItem.verse, type: trackItem.type } 
     });
@@ -121,7 +126,6 @@ function playNextTrack() {
         updateControlsUI();
     }).catch(err => {
         console.warn(`Playback failed for ${trackItem.url}. Skipping...`, err);
-        // If file not found, skip to next track
         queueIndex++;
         playNextTrack();
     });
@@ -144,6 +148,7 @@ function preloadNextSection(surah, start, end) {
     const arabicReciter = document.getElementById('reciterSelect').value;
     const arabicBaseURL = `https://everyayah.com/data/${arabicReciter}/`;
 
+    // Preload start of next section (Arabic)
     for (let i = start; i <= Math.min(end, start+2); i++) {
         const sPad = String(surah).padStart(3, '0');
         const aPad = String(i).padStart(3, '0');

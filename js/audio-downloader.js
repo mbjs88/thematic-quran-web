@@ -6,23 +6,28 @@ function getDownloadTransUrl(surah, verse, langValue) {
     const sPad = String(surah).padStart(3, '0');
     const aPad = String(verse).padStart(3, '0');
 
-    // --- FIX FOR DOWNLOADER ---
+    // 1. French Fix
     if (langValue === 'mp3quran-french') {
          return `https://mirrors.mp3quran.net/h_du/leclerc_fr/${sPad}${aPad}.mp3`;
     }
-    // --------------------------
-
+    
+    // 2. Beta/External
     else if (langValue.startsWith('external-')) {
         const slug = langValue.replace('external-', '');
         return `https://everyayah.com/data/${slug}/${sPad}${aPad}.mp3`;
-    } else if (langValue === 'ur') {
-        return `data/audio/urdu/${sPad}${aPad}.mp3`;
-    } else {
-        return `data/audio/english/${sPad}${aPad}.mp3`;
+    } 
+    
+    // 3. Urdu (R2)
+    else if (langValue === 'ur') {
+        return `https://audio.thematicquran.com/urdu/${sPad}${aPad}.mp3`;
+    } 
+    
+    // 4. English (R2)
+    else {
+        return `https://audio.thematicquran.com/english/${sPad}${aPad}.mp3`;
     }
 }
 
-// ... (Rest of the file remains exactly the same as the previous Block Mode version)
 async function downloadGroupedSection(surah, start, end, reciterSlug, langCode, surahName) {
     await downloadBulkStitched([{surah, start, end}], reciterSlug, langCode, surahName);
 }
@@ -33,6 +38,7 @@ async function downloadBulkStitched(sectionsArray, reciterSlug, langCode, surahN
     const ctx = new AudioContext();
     const urls = [];
 
+    // Build the Master List of URLs (BLOCK MODE)
     sectionsArray.forEach(sec => {
         // 1. Arabic Block
         for (let i = sec.start; i <= sec.end; i++) {
