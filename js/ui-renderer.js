@@ -55,7 +55,7 @@ function renderThematicSurah(surahNum, verses, breaks) {
 function createCard(surahNum, start, end, data) {
     const card = document.createElement('div');
     
-    // --- CHANGED: Unified scroll-mt to 85px for both mobile and desktop ---
+    // Unified scroll-mt to 85px for both mobile and desktop
     const baseClass = "thematic-card relative bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 shadow-lg p-6 md:p-8 transition-all duration-300 mb-8 scroll-mt-[85px]";
     card.className = (typeof isEditMode !== 'undefined' && isEditMode) 
         ? baseClass + " border-dashed border-white/30" 
@@ -104,9 +104,8 @@ function createCard(surahNum, start, end, data) {
             const url = `${window.location.origin}${window.location.pathname}#s=${surahNum}&v=${start}`;
             navigator.clipboard.writeText(url);
             
-            const originalIcon = shareBtn.innerHTML;
-            shareBtn.innerHTML = '<span class="material-symbols-outlined text-xl">check</span>';
-            setTimeout(() => shareBtn.innerHTML = originalIcon, 2000);
+            // Show Toast
+            if (window.showToast) window.showToast('Link copied to clipboard', 'link');
         };
 
         // Copy Text
@@ -134,9 +133,8 @@ function createCard(surahNum, start, end, data) {
             const fullText = `${arabicText}\n\n${transText}\n\n${surahName} ${surahNum}:${start}-${end}\nThematicQuran.com`;
             navigator.clipboard.writeText(fullText);
             
-            const originalIcon = copyTextBtn.innerHTML;
-            copyTextBtn.innerHTML = '<span class="material-symbols-outlined text-xl">check</span>';
-            setTimeout(() => copyTextBtn.innerHTML = originalIcon, 2000);
+            // Show Toast
+            if (window.showToast) window.showToast('Text copied to clipboard', 'content_copy');
         };
 
         // Download
@@ -351,3 +349,22 @@ function setSelectionMode(isActive) {
         }
     });
 }
+
+// --- GLOBAL TOAST SYSTEM ---
+window.showToast = function(message, icon = 'info') {
+    let toast = document.getElementById('toast-notification');
+    if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'toast-notification';
+        toast.className = 'toast-notification';
+        document.body.appendChild(toast);
+    }
+    toast.innerHTML = `<span class="material-symbols-outlined text-[#56A3A6]">${icon}</span> ${message}`;
+    requestAnimationFrame(() => {
+        toast.classList.add('toast-visible');
+    });
+    if (window.toastTimeout) clearTimeout(window.toastTimeout);
+    window.toastTimeout = setTimeout(() => {
+        toast.classList.remove('toast-visible');
+    }, 3000);
+};

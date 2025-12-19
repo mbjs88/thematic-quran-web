@@ -1,8 +1,5 @@
 // js/audio-downloader.js
 
-// Threshold: If verses > 50, warn the user.
-// 50 verses ~ 10-15 mins of audio ~ 100MB-150MB WAV file.
-// Going significantly higher (e.g. 200 verses) approaches the 1GB+ browser memory crash zone.
 const SAFE_VERSE_LIMIT = 50;
 
 async function downloadGroupedSection(surah, start, end, reciterSlug, langCode, surahName) {
@@ -25,14 +22,15 @@ async function downloadGroupedSection(surah, start, end, reciterSlug, langCode, 
     const statusEl = document.getElementById('dlStatusText');
     const progressEl = document.getElementById('dlProgressBar');
     const percentEl = document.getElementById('dlPercentText');
-    const confirmBtn = document.getElementById('dlConfirmBtn'); // To re-show if needed
+    const confirmBtn = document.getElementById('dlConfirmBtn');
 
     try {
+        if (window.showToast) window.showToast('Processing Audio Download...', 'downloading');
+
         statusEl.textContent = "Fetching audio files...";
         progressEl.style.width = '5%';
         percentEl.textContent = '5%';
 
-        // Generate list of files needed
         const filesToFetch = [];
         for (let i = start; i <= end; i++) {
             filesToFetch.push({ type: 'arabic', surah, verse: i, reciter: reciterSlug });
@@ -41,8 +39,6 @@ async function downloadGroupedSection(surah, start, end, reciterSlug, langCode, 
 
         const totalFiles = filesToFetch.length;
         const audioBuffers = [];
-
-        // Fetch and Decode
         const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 
         for (let i = 0; i < totalFiles; i++) {
@@ -56,15 +52,13 @@ async function downloadGroupedSection(surah, start, end, reciterSlug, langCode, 
                 const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
                 audioBuffers.push(audioBuffer);
 
-                // Update Progress
-                const percent = Math.round(((i + 1) / totalFiles) * 80); // 80% for fetching
+                const percent = Math.round(((i + 1) / totalFiles) * 80); 
                 progressEl.style.width = `${percent}%`;
                 percentEl.textContent = `${percent}%`;
                 statusEl.textContent = `Processing verse ${file.verse}...`;
 
             } catch (err) {
                 console.warn(`Skipping missing file: ${url}`);
-                // Push silence or handle error? For now, we skip to keep logic simple
             }
         }
 
@@ -74,13 +68,11 @@ async function downloadGroupedSection(surah, start, end, reciterSlug, langCode, 
         progressEl.style.width = '90%';
         percentEl.textContent = '90%';
 
-        // Stitch
         const finalBuffer = stitchBuffers(audioContext, audioBuffers);
         
         statusEl.textContent = "Encoding WAV...";
         const wavBlob = bufferToWave(finalBuffer, finalBuffer.length);
         
-        // Download
         const blobUrl = URL.createObjectURL(wavBlob);
         const filename = `ThematicQuran_${surahName}_${start}-${end}.wav`;
         
@@ -96,6 +88,8 @@ async function downloadGroupedSection(surah, start, end, reciterSlug, langCode, 
         progressEl.style.width = '100%';
         percentEl.textContent = '100%';
         
+        if (window.showToast) window.showToast('Download Complete!', 'check_circle');
+
         setTimeout(() => {
             closeDownloadModal();
             resetDownloadModal();
@@ -104,12 +98,7 @@ async function downloadGroupedSection(surah, start, end, reciterSlug, langCode, 
     } catch (error) {
         console.error("Download failed:", error);
         statusEl.textContent = "Error: " + error.message;
-        progressEl.style.backgroundColor = "#EF4444"; // Red
-        
-        // Re-enable button after error so user can try again or cancel
-        setTimeout(() => {
-             // Optional: reset UI logic here if desired
-        }, 3000);
+        progressEl.style.backgroundColor = "#EF4444"; 
     }
 }
 
@@ -133,12 +122,13 @@ async function downloadBulkStitched(sections, reciterSlug, langCode, surahNameBa
         }
     }
 
-    // 2. Start Process
     const statusEl = document.getElementById('dlStatusText');
     const progressEl = document.getElementById('dlProgressBar');
     const percentEl = document.getElementById('dlPercentText');
 
     try {
+        if (window.showToast) window.showToast('Processing Bulk Download...', 'downloading');
+
         statusEl.textContent = "Calculating queue...";
         const filesToFetch = [];
         
@@ -191,6 +181,8 @@ async function downloadBulkStitched(sections, reciterSlug, langCode, surahNameBa
         progressEl.style.width = '100%';
         percentEl.textContent = '100%';
 
+        if (window.showToast) window.showToast('Download Complete!', 'check_circle');
+
         setTimeout(() => {
             closeDownloadModal();
             resetDownloadModal();
@@ -211,12 +203,6 @@ function getAudioUrl(type, surah, verse, reciter, lang) {
     if (type === 'arabic') {
         return `https://everyayah.com/data/${reciter}/${padSurah}${padVerse}.mp3`;
     } else {
-        // Translation URLs (assuming your R2 structure or similar)
-        // For standard EveryAyah format:
-        // Note: You might need to adjust this depending on exactly where your translation files are hosted
-        // For the sake of this code, assuming the same R2 bucket structure you use for playback:
-        const langPath = (lang === 'ur') ? 'ur_junagarhi' : 'en_sahih'; // Adjust mapped names if needed
-        // OR if you are using the playback logic URL:
         return `https://audio.thematicquran.com/${lang}/${padSurah}${padVerse}.mp3`;
     }
 }
@@ -240,7 +226,6 @@ function stitchBuffers(context, buffers) {
     return output;
 }
 
-// Standard WAV Encoder
 function bufferToWave(abuffer, len) {
     const numOfChan = abuffer.numberOfChannels;
     const length = len * numOfChan * 2 + 44;
@@ -252,7 +237,6 @@ function bufferToWave(abuffer, len) {
     let offset = 0;
     let pos = 0;
 
-    // write WAVE header
     setUint32(0x46464952); // "RIFF"
     setUint32(length - 8); // file length - 8
     setUint32(0x45564157); // "WAVE"
@@ -264,20 +248,17 @@ function bufferToWave(abuffer, len) {
     setUint32(abuffer.sampleRate);
     setUint32(abuffer.sampleRate * 2 * numOfChan); // avg. bytes/sec
     setUint16(numOfChan * 2); // block-align
-    setUint16(16); // 16-bit (hardcoded in this encoder)
+    setUint16(16); // 16-bit 
 
     setUint32(0x61746164); // "data" - chunk
     setUint32(length - pos - 4); // chunk length
 
-    // write interleaved data
     for (i = 0; i < abuffer.numberOfChannels; i++)
         channels.push(abuffer.getChannelData(i));
 
     while (pos < length) {
         for (i = 0; i < numOfChan; i++) {
-            // clamp
             sample = Math.max(-1, Math.min(1, channels[i][offset])); 
-            // scale to 16-bit signed int
             sample = (0.5 + sample < 0 ? sample * 32768 : sample * 32767) | 0; 
             view.setInt16(pos, sample, true); 
             pos += 2;
@@ -309,6 +290,6 @@ function resetDownloadModal() {
     if(progressEl) progressEl.style.backgroundColor = '#56A3A6';
     if(statusEl) statusEl.textContent = 'Initializing...';
     if(percentEl) percentEl.textContent = '0%';
-    if(confirmBtn) confirmBtn.style.display = 'block'; // Show button again
-    if(container) container.classList.add('hidden'); // Hide progress bar
+    if(confirmBtn) confirmBtn.style.display = 'block'; 
+    if(container) container.classList.add('hidden'); 
 }

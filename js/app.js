@@ -1,7 +1,7 @@
 // js/app.js
 
 // --- VERSION DEBUGGER ---
-console.log("THEMATIC QURAN - VERSION 1.0.13 (Mobile Default 0.7)"); 
+console.log("THEMATIC QURAN - VERSION 1.1.0 (Toast, Shortcuts, PWA, Mobile Fix)"); 
 
 const CONSTANTS = {
     KEY_SURAH_NO: 'surah_no',
@@ -26,21 +26,53 @@ let isSelectMode = false;
 let selectedItems = new Set(); 
 const MAX_SELECTION = 3; 
 
-// CHANGED: Renamed key to force a 'reset' for all users to the new default
 const STORAGE_KEY_SCALE = 'fontScale_v2'; 
 
 document.addEventListener('DOMContentLoaded', async () => {
     console.log("Initializing App...");
     
-    // --- SPACEBAR LISTENER ---
+    // --- KEYBOARD SHORTCUTS ---
     document.addEventListener('keydown', (e) => {
+        if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+
+        // Space = Play/Pause
         if (e.code === 'Space') {
-            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
             e.preventDefault(); 
             const playBtn = document.getElementById('globalPlayPauseBtn');
             if (playBtn) playBtn.click();
         }
+        
+        // Arrows = Navigation
+        if (e.code === 'ArrowRight') {
+            e.preventDefault();
+            navigateSection('next');
+        }
+        if (e.code === 'ArrowLeft') {
+            e.preventDefault();
+            navigateSection('prev');
+        }
     });
+
+    // --- PWA INSTALL LOGIC ---
+    let deferredPrompt;
+    const installContainer = document.getElementById('installAppContainer');
+    const installBtn = document.getElementById('installAppBtn');
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        if (installContainer) installContainer.classList.remove('hidden');
+    });
+
+    if (installBtn) {
+        installBtn.addEventListener('click', async () => {
+            if (!deferredPrompt) return;
+            deferredPrompt.prompt();
+            const { outcome } = await deferredPrompt.userChoice;
+            deferredPrompt = null;
+            installContainer.classList.add('hidden');
+        });
+    }
 
     // --- SCROLL AWARE HEADER LOGIC ---
     const mainContainer = document.getElementById('mainContainer');
@@ -99,22 +131,20 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 function loadPreferences() {
-    // 1. Load Font Family (We keep the old key for font type, that's fine)
+    // 1. Load Font Family
     const savedFont = localStorage.getItem('arabicFont');
     if (savedFont) {
         const fontSelect = document.getElementById('fontSelect');
         if(fontSelect) fontSelect.value = savedFont;
     }
 
-    // 2. Load Font Scale
-    // We check the NEW key. Since it's new, it will be null for everyone.
+    // 2. Load Font Scale (v2 Key for Resets)
     const savedScale = localStorage.getItem(STORAGE_KEY_SCALE);
     
     if (savedScale) {
-        // If they have saved to the new key, respect it.
         currentFontScale = parseFloat(savedScale);
     } else {
-        // DEFAULT LOGIC (This runs for everyone now)
+        // DEFAULT LOGIC
         if (window.innerWidth < 768) {
             currentFontScale = 0.7; // Mobile: 70%
         } else {
@@ -316,7 +346,6 @@ function setupGlobalEventListeners() {
         loadSurah(parseInt(document.getElementById('surahSelect').value));
     });
 
-    // CHANGED: Use the new constant STORAGE_KEY_SCALE for saving
     document.getElementById('increaseFontBtn').addEventListener('click', () => {
         if (currentFontScale < 2.0) {
             currentFontScale += 0.1;
