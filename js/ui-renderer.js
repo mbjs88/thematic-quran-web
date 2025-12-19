@@ -15,11 +15,8 @@ function renderThematicSurah(surahNum, verses, breaks) {
     const spacer = document.getElementById('mainSpacer');
     if (spacer) {
         if (surahNum === 9) {
-            // Surah 9 has no Bismillah, so it needs less space
             spacer.className = "w-full h-[130px] md:h-[180px] shrink-0 transition-all duration-300";
         } else {
-            // Standard Surahs (With Bismillah)
-            // UPDATED: Mobile height set to 150px
             spacer.className = "w-full h-[150px] md:h-[160px] shrink-0 transition-all duration-300";
         }
     }
@@ -58,7 +55,8 @@ function renderThematicSurah(surahNum, verses, breaks) {
 function createCard(surahNum, start, end, data) {
     const card = document.createElement('div');
     
-    const baseClass = "thematic-card relative bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 shadow-lg p-6 md:p-8 transition-all duration-300 mb-8 scroll-mt-[200px]";
+    // UPDATED: Added scroll-mt-[180px] to create top margin for scroll snap
+    const baseClass = "thematic-card relative bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 shadow-lg p-6 md:p-8 transition-all duration-300 mb-8 scroll-mt-[180px]";
     card.className = (typeof isEditMode !== 'undefined' && isEditMode) 
         ? baseClass + " border-dashed border-white/30" 
         : baseClass + " hover:bg-white/10";
@@ -179,6 +177,7 @@ function createCard(surahNum, start, end, data) {
     data.forEach(v => {
         const verseNum = v[UI_KEYS.AYAH_NO];
         const span = document.createElement('span');
+        span.id = `ayah-ar-${surahNum}-${verseNum}`; // ID for Active Highlight
         let badgeHtml = `<span class="text-[#56A3A6] font-sans text-2xl mx-1">۝${verseNum}</span>`;
         
         if (typeof isEditMode !== 'undefined' && isEditMode) {
@@ -219,6 +218,7 @@ function createCard(surahNum, start, end, data) {
     data.forEach(v => {
         const verseNum = v[UI_KEYS.AYAH_NO];
         const span = document.createElement('span');
+        span.id = `ayah-en-${surahNum}-${verseNum}`; // ID for Active Highlight
         let badgeHtml = `<span class="align-super text-xs text-[#56A3A6] font-bold mx-1 font-['Nunito']">(${verseNum})</span>`;
 
         if (typeof isEditMode !== 'undefined' && isEditMode) {
@@ -320,10 +320,16 @@ function closeDownloadModal() {
 }
 
 window.highlightActiveVerseUI = function(surah, verse, type) {
+    // 1. Remove previous highlights
     document.querySelectorAll('.active-verse').forEach(el => el.classList.remove('active-verse'));
+    
+    // 2. Determine target ID based on type (Arabic or Translation)
+    // Note: We only highlight the specific type being played, not both, to focus the eye.
     const prefix = (type === 'arabic') ? 'ayah-ar' : 'ayah-en';
     const id = `${prefix}-${surah}-${verse}`;
     const el = document.getElementById(id);
+    
+    // 3. Apply highlight
     if (el) {
         el.classList.add('active-verse');
     }

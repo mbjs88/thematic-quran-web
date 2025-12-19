@@ -1,8 +1,7 @@
 // js/app.js
 
 // --- VERSION DEBUGGER ---
-// Look for this in your browser console to verify you have the latest code
-console.log("THEMATIC QURAN - VERSION 1.0.6 (Bismillah via R2)"); 
+console.log("THEMATIC QURAN - VERSION 1.0.7 (Auto Scroll & Highlights)"); 
 
 const CONSTANTS = {
     KEY_SURAH_NO: 'surah_no',
@@ -30,22 +29,40 @@ const MAX_SELECTION = 3;
 document.addEventListener('DOMContentLoaded', async () => {
     console.log("Initializing App...");
     
-    // --- NEW: SPACEBAR LISTENER ---
+    // --- SPACEBAR LISTENER ---
     document.addEventListener('keydown', (e) => {
-        // Check if Space is pressed
         if (e.code === 'Space') {
-            // Ignore if user is typing in a text box (e.g. search, though we don't have one yet)
             if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
-
-            e.preventDefault(); // Stop the page from scrolling down
-            
-            // Simulate a click on the Global Play Button
-            // This reuses all the smart logic we wrote in the button listener below
+            e.preventDefault(); 
             const playBtn = document.getElementById('globalPlayPauseBtn');
             if (playBtn) playBtn.click();
         }
     });
-    // ------------------------------
+
+    // --- SCROLL AWARE HEADER LOGIC ---
+    const mainContainer = document.getElementById('mainContainer');
+    const header = document.getElementById('mainHeader');
+    let lastScrollY = 0;
+
+    mainContainer.addEventListener('scroll', () => {
+        const currentScrollY = mainContainer.scrollTop;
+
+        // Threshold to avoid jitter at very top
+        if (currentScrollY > 100) {
+            if (currentScrollY > lastScrollY) {
+                // Scrolling DOWN -> Hide Header
+                header.classList.add('header-hidden');
+            } else {
+                // Scrolling UP -> Show Header
+                header.classList.remove('header-hidden');
+            }
+        } else {
+            // At top -> Always Show
+            header.classList.remove('header-hidden');
+        }
+        lastScrollY = currentScrollY;
+    });
+    // ---------------------------------
 
     loadPreferences();
 
@@ -355,7 +372,6 @@ function setupGlobalEventListeners() {
 
     const audio = document.getElementById('audioElement');
     
-    // --- GLOBAL PLAY BUTTON (Delegates to audio-player.js) ---
     document.getElementById('globalPlayPauseBtn').addEventListener('click', () => {
         if (typeof window.isPlayerActive === 'function' && window.isPlayerActive()) {
              playerTogglePlayPause();
@@ -563,7 +579,10 @@ function navigateSection(direction) {
     const targetCard = direction === 'next' ? currentCard.nextElementSibling : currentCard.previousElementSibling;
     if (targetCard && targetCard.classList.contains('thematic-card')) {
         targetCard.querySelector('.play-btn').click();
-        targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        
+        // --- CHANGED: Use 'start' to align to top, utilizing the css scroll-mt spacing
+        targetCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        
         triggerLookAheadPreload(targetCard);
     }
 }

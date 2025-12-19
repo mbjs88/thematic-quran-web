@@ -34,18 +34,56 @@
     <link rel="stylesheet" href="css/styles.css">
     
     <style>
-        html { background-color: #12101C; }
-        body { background-color: #12101C; overscroll-behavior-y: none; }
-        .custom-gradient { background: linear-gradient(to bottom, #12101C 0%, #221F2B 50%, #352B39 100%); }
-        .toggle-checkbox:checked { right: 0; border-color: #56A3A6; }
-        .toggle-checkbox:checked + .toggle-label { background-color: #56A3A6; }
-        .toggle-label { background-color: rgba(255, 255, 255, 0.1); }
+        html {
+            background-color: #12101C;
+        }
+
+        body {
+            background-color: #12101C;
+            overscroll-behavior-y: none;
+        }
+
+        .custom-gradient {
+            background: linear-gradient(to bottom, #12101C 0%, #221F2B 50%, #352B39 100%);
+        }
+        
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #56A3A6;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #56A3A6; 
+        }
+        .toggle-label {
+            background-color: rgba(255, 255, 255, 0.1); 
+        }
+
+        /* --- NEW STYLES FOR v1.0.7 --- */
+        
+        /* 1. Active Verse Highlight */
+        .active-verse {
+            background-color: rgba(0, 0, 0, 0.25); /* Dark transparent background */
+            border-radius: 0.5rem;   
+            padding: 0.1rem 0.4rem;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+            transition: background-color 0.3s ease;
+            display: inline; /* Keep inline flow but allow padding */
+            line-height: 2.0; /* Ensure padding doesn't overlap lines too much */
+            box-decoration-break: clone; /* Ensures styling wraps correctly across lines */
+            -webkit-box-decoration-break: clone;
+        }
+
+        /* 2. Header Slide Animation */
+        .header-hidden {
+            transform: translateY(-100%);
+            opacity: 0;
+            pointer-events: none;
+        }
     </style>
 </head>
-
 <body class="custom-gradient min-h-screen text-[#F3E4CE] font-['Nunito'] flex flex-col h-[100dvh] overflow-hidden">
 
-    <header class="fixed top-0 left-0 w-full z-40 bg-[#12101C]/30 backdrop-blur-2xl border-b border-white/10 shadow-lg p-4 flex flex-col items-center justify-center space-y-4 transition-all duration-300">
+    <header id="mainHeader" class="fixed top-0 left-0 w-full z-40 bg-[#12101C]/30 backdrop-blur-2xl border-b border-white/10 shadow-lg p-4 flex flex-col items-center justify-center space-y-4 transition-all duration-500 ease-in-out">
         <div class="flex flex-col items-center justify-center space-y-1">
             <h1 class="text-3xl md:text-5xl font-['Forum'] text-white tracking-widest text-center drop-shadow-lg">THE QUR'AN</h1>
             <h2 class="text-xs md:text-base font-['Forum'] text-white/80 tracking-[0.2em] text-center uppercase">A Thematic Audio Translation</h2>
@@ -183,37 +221,36 @@
         </div>
 
         <div class="p-6 space-y-8 overflow-y-auto flex-grow">
-            
             <div>
                 <label class="block text-xs uppercase tracking-wider text-[#56A3A6] mb-3 font-bold">Arabic Reciter</label>
                 <div class="bg-white/5 rounded-xl border border-white/10 overflow-hidden">
                     <select id="reciterSelect" class="w-full p-4 bg-transparent text-white focus:outline-none focus:bg-white/10 font-['Nunito'] cursor-pointer">
-                        <option value="Alafasy_128kbps" class="text-gray-900">Mishary Rashid Alafasy (Default)</option>
-                        <option value="Abdul_Basit_Murattal_192kbps" class="text-gray-900">Abdul Basit (Murattal)</option>
-                        <option value="Abdul_Basit_Mujawwad_128kbps" class="text-gray-900">Abdul Basit (Mujawwad)</option>
-                        <option value="Abdullah_Basfar_192kbps" class="text-gray-900">Abdullah Basfar</option>
-                        <option value="Abdurrahmaan_As-Sudais_192kbps" class="text-gray-900">Abdurrahmaan As-Sudais</option>
-                        <option value="Abu_Bakr_Ash-Shaatree_128kbps" class="text-gray-900">Abu Bakr Ash-Shaatree</option>
-                        <option value="Ahmed_ibn_Ali_al-Ajamy_128kbps_ketaballah.net" class="text-gray-900">Ahmed ibn Ali al-Ajamy</option>
-                        <option value="Ghamadi_40kbps" class="text-gray-900">Saad Al-Ghamdi</option>
-                        <option value="Hani_Rifai_192kbps" class="text-gray-900">Hani Ar-Rifai</option>
-                        <option value="Husary_128kbps" class="text-gray-900">Mahmoud Khalil Al-Husary</option>
-                        <option value="Husary_128kbps_Mujawwad" class="text-gray-900">Al-Husary (Mujawwad)</option>
-                        <option value="Hudhaify_128kbps" class="text-gray-900">Ali Al-Hudhaify</option>
-                        <option value="Ibrahim_Akhdar_32kbps" class="text-gray-900">Ibrahim Al-Akhdar</option>
-                        <option value="MaherAlMuaiqly128kbps" class="text-gray-900">Maher Al-Muaiqly</option>
-                        <option value="Minshawy_Murattal_128kbps" class="text-gray-900">Al-Minshawy (Murattal)</option>
-                        <option value="Minshawy_Mujawwad_192kbps" class="text-gray-900">Al-Minshawy (Mujawwad)</option>
-                        <option value="Mohammad_al_Tablaway_128kbps" class="text-gray-900">Mohammad Al-Tablaway</option>
-                        <option value="Muhammad_Ayyoub_128kbps" class="text-gray-900">Muhammad Ayyoub</option>
-                        <option value="Muhammad_Jibreel_128kbps" class="text-gray-900">Muhammad Jibreel</option>
-                        <option value="Nasser_Alqatami_128kbps" class="text-gray-900">Nasser Al-Qatami</option>
-                        <option value="Parhizgar_48kbps" class="text-gray-900">Shahriar Parhizgar</option>
-                        <option value="Sahl_Yassin_128kbps" class="text-gray-900">Sahl Yassin</option>
-                        <option value="Salaah_AbdulRahman_Bukhatir_128kbps" class="text-gray-900">Salah Bukhatir</option>
-                        <option value="Salah_Al_Budair_128kbps" class="text-gray-900">Salah Al-Budair</option>
-                        <option value="Saood_ash-Shuraym_128kbps" class="text-gray-900">Saood Ash-Shuraym</option>
-                        <option value="Yasser_Ad-Dussary_128kbps" class="text-gray-900">Yasser Al-Dosari</option>
+                        <option value="Alafasy_128kbps">Mishary Rashid Alafasy (Default)</option>
+                        <option value="Abdul_Basit_Murattal_192kbps">Abdul Basit (Murattal)</option>
+                        <option value="Abdul_Basit_Mujawwad_128kbps">Abdul Basit (Mujawwad)</option>
+                        <option value="Abdullah_Basfar_192kbps">Abdullah Basfar</option>
+                        <option value="Abdurrahmaan_As-Sudais_192kbps">Abdurrahmaan As-Sudais</option>
+                        <option value="Abu_Bakr_Ash-Shaatree_128kbps">Abu Bakr Ash-Shaatree</option>
+                        <option value="Ahmed_ibn_Ali_al-Ajamy_128kbps_ketaballah.net">Ahmed ibn Ali al-Ajamy</option>
+                        <option value="Ghamadi_40kbps">Saad Al-Ghamdi</option>
+                        <option value="Hani_Rifai_192kbps">Hani Ar-Rifai</option>
+                        <option value="Husary_128kbps">Mahmoud Khalil Al-Husary</option>
+                        <option value="Husary_128kbps_Mujawwad">Al-Husary (Mujawwad)</option>
+                        <option value="Hudhaify_128kbps">Ali Al-Hudhaify</option>
+                        <option value="Ibrahim_Akhdar_32kbps">Ibrahim Al-Akhdar</option>
+                        <option value="MaherAlMuaiqly128kbps">Maher Al-Muaiqly</option>
+                        <option value="Minshawy_Murattal_128kbps">Al-Minshawy (Murattal)</option>
+                        <option value="Minshawy_Mujawwad_192kbps">Al-Minshawy (Mujawwad)</option>
+                        <option value="Mohammad_al_Tablaway_128kbps">Mohammad Al-Tablaway</option>
+                        <option value="Muhammad_Ayyoub_128kbps">Muhammad Ayyoub</option>
+                        <option value="Muhammad_Jibreel_128kbps">Muhammad Jibreel</option>
+                        <option value="Nasser_Alqatami_128kbps">Nasser Al-Qatami</option>
+                        <option value="Parhizgar_48kbps">Shahriar Parhizgar</option>
+                        <option value="Sahl_Yassin_128kbps">Sahl Yassin</option>
+                        <option value="Salaah_AbdulRahman_Bukhatir_128kbps">Salah Bukhatir</option>
+                        <option value="Salah_Al_Budair_128kbps">Salah Al-Budair</option>
+                        <option value="Saood_ash-Shuraym_128kbps">Saood Ash-Shuraym</option>
+                        <option value="Yasser_Ad-Dussary_128kbps">Yasser Al-Dosari</option>
                     </select>
                 </div>
             </div>
@@ -222,8 +259,8 @@
                 <label class="block text-xs uppercase tracking-wider text-[#56A3A6] mb-3 font-bold">Translation</label>
                 <div class="bg-white/5 rounded-xl border border-white/10 overflow-hidden">
                     <select id="languageSelect" class="w-full p-4 bg-transparent text-white focus:outline-none focus:bg-white/10 font-['Nunito'] cursor-pointer">
-                        <option value="en" class="text-gray-900">English (Talal Itani)</option>
-                        <option value="ur" class="text-gray-900">Urdu (Muhammad Junagarhi)</option>
+                        <option value="en">English (Talal Itani)</option>
+                        <option value="ur">Urdu (Muhammad Junagarhi)</option>
                     </select>
                 </div>
             </div>
@@ -232,10 +269,10 @@
                 <label class="block text-xs uppercase tracking-wider text-[#56A3A6] mb-3 font-bold">Arabic Script</label>
                 <div class="bg-white/5 rounded-xl border border-white/10 overflow-hidden">
                     <select id="fontSelect" class="w-full p-4 bg-transparent text-white focus:outline-none focus:bg-white/10 font-['Nunito'] cursor-pointer">
-                        <option value="font-amiri" class="text-gray-900">Amiri (Default)</option>
-                        <option value="font-scheherazade" class="text-gray-900">Scheherazade New</option>
-                        <option value="font-lateef" class="text-gray-900">Lateef</option>
-                        <option value="font-noto" class="text-gray-900">Noto Naskh</option>
+                        <option value="font-amiri">Amiri (Default)</option>
+                        <option value="font-scheherazade">Scheherazade New</option>
+                        <option value="font-lateef">Lateef</option>
+                        <option value="font-noto">Noto Naskh</option>
                     </select>
                 </div>
             </div>
@@ -243,7 +280,6 @@
             <div>
                 <label class="block text-xs uppercase tracking-wider text-[#56A3A6] mb-3 font-bold">Grouping</label>
                 <div class="bg-white/5 rounded-xl border border-white/10 p-4">
-                    
                     <div class="flex items-center justify-between mb-2">
                         <span class="text-white text-sm font-bold">Edit Verse Grouping</span>
                         <div class="relative inline-block w-10 align-middle select-none transition duration-200 ease-in">
@@ -251,11 +287,9 @@
                             <label for="editModeToggle" class="toggle-label block overflow-hidden h-6 rounded-full cursor-pointer"></label>
                         </div>
                     </div>
-                    
                     <p class="text-xs text-white/50 leading-relaxed mb-4">
                         Enable this to customize the thematic breaks. Tap verse numbers on the page to merge or split sections. Changes save automatically.
                     </p>
-
                     <button id="restoreDefaultsBtn" class="w-full py-2 bg-red-500/20 hover:bg-red-500/30 text-red-300 border border-red-500/50 rounded-lg text-xs font-bold uppercase tracking-wider transition hidden">
                         Restore Defaults
                     </button>
@@ -274,7 +308,6 @@
                     </button>
                 </div>
             </div>
-
         </div>
         
         <div class="p-6 border-t border-white/10 text-center text-white/20 text-xs font-['Forum'] tracking-widest uppercase">
@@ -282,10 +315,10 @@
         </div>
     </div>
 
-    <script src="js/audio-downloader.js?v=1.0.6"></script>
-    <script src="js/audio-player.js?v=1.0.6"></script>
-    <script src="js/ui-renderer.js?v=1.0.6"></script>
-    <script src="js/app.js?v=1.0.6"></script>
+    <script src="js/audio-downloader.js?v=1.0.7"></script>
+    <script src="js/audio-player.js?v=1.0.7"></script>
+    <script src="js/ui-renderer.js?v=1.0.7"></script>
+    <script src="js/app.js?v=1.0.7"></script>
 
 </body>
 </html>
