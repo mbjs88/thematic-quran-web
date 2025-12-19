@@ -1,7 +1,7 @@
 // js/app.js
 
 // --- VERSION DEBUGGER ---
-console.log("THEMATIC QURAN - VERSION 1.0.8 (Auto Scroll & Highlights)"); 
+console.log("THEMATIC QURAN - VERSION 1.0.9 (Auto Scroll & Highlights)"); 
 
 const CONSTANTS = {
     KEY_SURAH_NO: 'surah_no',
