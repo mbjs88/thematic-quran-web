@@ -1,5 +1,9 @@
 // js/app.js
 
+// --- VERSION DEBUGGER ---
+// Look for this in your browser console to verify you have the latest code
+console.log("THEMATIC QURAN - VERSION 1.0.3 (Spacebar Added)"); 
+
 const CONSTANTS = {
     KEY_SURAH_NO: 'surah_no',
     KEY_AYAH_NO: 'ayah_no_surah',
@@ -26,6 +30,23 @@ const MAX_SELECTION = 3;
 document.addEventListener('DOMContentLoaded', async () => {
     console.log("Initializing App...");
     
+    // --- NEW: SPACEBAR LISTENER ---
+    document.addEventListener('keydown', (e) => {
+        // Check if Space is pressed
+        if (e.code === 'Space') {
+            // Ignore if user is typing in a text box (e.g. search, though we don't have one yet)
+            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+
+            e.preventDefault(); // Stop the page from scrolling down
+            
+            // Simulate a click on the Global Play Button
+            // This reuses all the smart logic we wrote in the button listener below
+            const playBtn = document.getElementById('globalPlayPauseBtn');
+            if (playBtn) playBtn.click();
+        }
+    });
+    // ------------------------------
+
     loadPreferences();
 
     try {
@@ -123,7 +144,6 @@ function populateSurahDropdown() {
 }
 
 function resetPlayerState() {
-    // Stop all audio cleanly using the player's internal helper
     if (typeof stopAllAudio === 'function') {
         stopAllAudio();
     }
@@ -288,7 +308,6 @@ function setupGlobalEventListeners() {
         }
     });
 
-    // --- EDIT MODE LISTENERS ---
     const editToggle = document.getElementById('editModeToggle');
     const banner = document.getElementById('editModeBanner');
     
@@ -311,7 +330,6 @@ function setupGlobalEventListeners() {
 
     document.getElementById('restoreDefaultsBtn').addEventListener('click', restoreDefaults);
 
-    // --- SIDEBAR ---
     const sidebar = document.getElementById('settingsSidebar');
     const backdrop = document.getElementById('settingsBackdrop');
     
@@ -337,14 +355,11 @@ function setupGlobalEventListeners() {
 
     const audio = document.getElementById('audioElement');
     
-    // --- GLOBAL PLAY BUTTON (Improved with isPlayerActive) ---
+    // --- GLOBAL PLAY BUTTON (Delegates to audio-player.js) ---
     document.getElementById('globalPlayPauseBtn').addEventListener('click', () => {
-        
-        // 1. Ask the Player if it has something ready/playing
         if (typeof window.isPlayerActive === 'function' && window.isPlayerActive()) {
              playerTogglePlayPause();
         } else {
-             // 2. Fallback: Nothing is playing, so start a new session
              const activeCard = document.querySelector('.thematic-card.ring-2');
              if (activeCard) {
                  activeCard.querySelector('.play-btn').click();
