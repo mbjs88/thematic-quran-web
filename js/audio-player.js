@@ -29,7 +29,7 @@ function playSession(surah, start, end) {
         isPlayingBismillah = true;
         
         // Use the MAIN audio object for Bismillah (Crucial for Mobile)
-        audioObj.src = 'data/audio/bismillah.mp3';
+        audioObj.src = 'https://audio.thematicquran.com/bismillah.mp3';
         
         document.getElementById('playerVerse').textContent = `Surah ${surah}: Starting...`;
         updateControlsUI(true);
