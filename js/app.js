@@ -1,7 +1,7 @@
 // js/app.js
 
 // --- VERSION DEBUGGER ---
-console.log("THEMATIC QURAN - VERSION 1.0.11 (Auto Scroll & Highlights)"); 
+console.log("THEMATIC QURAN - VERSION 1.0.11 (FAVICON FIX)"); 
 
 const CONSTANTS = {
     KEY_SURAH_NO: 'surah_no',
