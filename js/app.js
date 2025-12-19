@@ -2,7 +2,7 @@
 
 // --- VERSION DEBUGGER ---
 // Look for this in your browser console to verify you have the latest code
-console.log("THEMATIC QURAN - VERSION 1.0.4 (Bismillah via R2)"); 
+console.log("THEMATIC QURAN - VERSION 1.0.6 (Bismillah via R2)"); 
 
 const CONSTANTS = {
     KEY_SURAH_NO: 'surah_no',
