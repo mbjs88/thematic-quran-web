@@ -13,7 +13,6 @@ const CONSTANTS = {
 // Global State
 let QURAN_DATA = [];
 let THEME_BREAKS = {};
-window.currentBismillahAudio = null;
 
 // Settings State
 let currentFontScale = 1.0; 
@@ -124,20 +123,17 @@ function populateSurahDropdown() {
 }
 
 function resetPlayerState() {
-    const audio = document.getElementById('audioElement');
+    // This is called when switching Surahs.
+    // We should tell the audio player to stop everything.
+    if (typeof stopAllAudio === 'function') {
+        stopAllAudio();
+    }
+    
+    // Reset UI
     const playBtn = document.getElementById('globalPlayPauseBtn');
     const status = document.getElementById('playerStatus');
     const progressBar = document.getElementById('progressBar');
     const currentTime = document.getElementById('currentTime');
-    
-    audio.pause();
-    audio.removeAttribute('src'); 
-    audio.load();
-
-    if (window.currentBismillahAudio) {
-        window.currentBismillahAudio.pause();
-        window.currentBismillahAudio = null;
-    }
 
     if (playBtn) {
         playBtn.innerHTML = '<span class="material-symbols-outlined text-5xl">play_arrow</span>';
@@ -342,61 +338,32 @@ function setupGlobalEventListeners() {
     backdrop.addEventListener('click', closeSettings);
 
     const audio = document.getElementById('audioElement');
-    audio.addEventListener('timeupdate', () => {
-        const currentTime = document.getElementById('currentTime');
-        const progressBar = document.getElementById('progressBar');
-        
-        if (audio.duration) {
-            const minutes = Math.floor(audio.currentTime / 60);
-            const seconds = Math.floor(audio.currentTime % 60);
-            currentTime.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
-            
-            const percent = (audio.currentTime / audio.duration) * 100;
-            progressBar.style.width = `${percent}%`;
-        }
-    });
-
+    // Audio Time Update handled in audio-player.js mostly, but here if we need extra UI logic
+    
+    // --- GLOBAL PLAY BUTTON (Simplified) ---
     document.getElementById('globalPlayPauseBtn').addEventListener('click', () => {
-        const playBtn = document.getElementById('globalPlayPauseBtn');
-        const audio = document.getElementById('audioElement');
         
-        if (window.currentBismillahAudio) {
-            if (window.currentBismillahAudio.paused) {
-                window.currentBismillahAudio.play();
-                playBtn.innerHTML = '<span class="material-symbols-outlined text-5xl">pause</span>';
-            } else {
-                window.currentBismillahAudio.pause();
-                playBtn.innerHTML = '<span class="material-symbols-outlined text-5xl">play_arrow</span>';
-            }
-            return; 
-        }
-
-        if (!audio.paused) {
-            if (typeof playerTogglePlayPause === 'function') {
-                playerTogglePlayPause();
-            } else {
-                audio.pause();
-            }
-            return;
-        }
-
-        const activeCard = document.querySelector('.thematic-card.ring-2');
-        const fileLoaded = audio.getAttribute('src') && audio.duration > 0; 
-
-        if (fileLoaded) {
-            if (typeof playerTogglePlayPause === 'function') {
-                playerTogglePlayPause();
-            } else {
-                audio.play(); 
-            }
-        } else if (activeCard) {
-            activeCard.querySelector('.play-btn').click();
-        } else {
-            const firstCard = document.querySelector('.thematic-card');
-            if (firstCard) {
-                document.getElementById('autoAdvanceToggle').checked = true;
-                firstCard.querySelector('.play-btn').click();
-            }
+        // 1. Delegate to the Brain
+        if (typeof playerTogglePlayPause === 'function') {
+             // Check if anything is loaded at all
+             const audio = document.getElementById('audioElement');
+             const hasSrc = audio.getAttribute('src');
+             
+             // If nothing playing, nothing loaded, try to play the active card or first card
+             if (!hasSrc && typeof currentBismillah === 'undefined') {
+                 const activeCard = document.querySelector('.thematic-card.ring-2');
+                 if (activeCard) {
+                     activeCard.querySelector('.play-btn').click();
+                 } else {
+                     const firstCard = document.querySelector('.thematic-card');
+                     if (firstCard) {
+                         document.getElementById('autoAdvanceToggle').checked = true;
+                         firstCard.querySelector('.play-btn').click();
+                     }
+                 }
+             } else {
+                 playerTogglePlayPause();
+             }
         }
     });
 
@@ -414,6 +381,7 @@ function setupGlobalEventListeners() {
         }
     });
 
+    // Selection Logic remains unchanged
     document.getElementById('toggleSelectModeBtn').addEventListener('click', () => {
         isSelectMode = !isSelectMode;
         toggleSelectionModeUI(isSelectMode);
