@@ -23,10 +23,11 @@ function renderThematicSurah(surahNum, verses, breaks) {
         }
     }
 
-    // Bismillah Header
+    // --- BISMILLAH HEADER (Visual Only) ---
     if (surahNum !== 9) {
         const bismillahDiv = document.createElement('div');
-        bismillahDiv.className = "text-center mb-10 cursor-pointer opacity-80 hover:opacity-100 transition-opacity";
+        // Removed 'cursor-pointer' and hover effects since it's no longer clickable
+        bismillahDiv.className = "text-center mb-10 opacity-90 transition-opacity select-none";
         
         const fontSelect = document.getElementById('fontSelect');
         const currentFontClass = fontSelect ? fontSelect.value : 'font-amiri';
@@ -35,11 +36,7 @@ function renderThematicSurah(surahNum, verses, breaks) {
         
         bismillahDiv.innerHTML = `<span class="${currentFontClass} text-3xl md:text-3xl text-white">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</span>`;
         
-        // Manual Bismillah Click (Just plays Bismillah audio for effect)
-        bismillahDiv.onclick = () => {
-             // We can use a simple direct audio here as it's just a UI effect
-            new Audio('data/audio/bismillah.mp3').play();
-        };
+        // REMOVED: bismillahDiv.onclick... 
         
         container.appendChild(bismillahDiv);
     }
@@ -203,7 +200,6 @@ function createCard(surahNum, start, end, data) {
             span.className = "verse-span";
             span.onclick = (e) => {
                 e.stopPropagation();
-                // Play specific verse
                 triggerVersePlay(card, surahNum, start, end, verseNum, 'arabic');
             };
         }
@@ -259,23 +255,19 @@ function createCard(surahNum, start, end, data) {
     return card;
 }
 
-// --- SIMPLIFIED HELPER FUNCTIONS ---
+// --- HELPER FUNCTIONS ---
 
 function handleCardPlayClick(card, surah, start, end) {
-    // 1. UI Updates (Rings)
     document.querySelectorAll('.thematic-card').forEach(c => c.classList.remove('ring-2', 'ring-[#56A3A6]'));
     card.classList.add('ring-2', 'ring-[#56A3A6]');
     
-    // 2. Settings Update
     const autoToggle = document.getElementById('autoAdvanceToggle');
     if (autoToggle) autoToggle.checked = true;
 
-    // 3. START AUDIO (Delegated completely to audio-player.js)
     if (typeof playSession === 'function') {
         playSession(surah, start, end);
     }
 
-    // 4. Notify other listeners
     document.dispatchEvent(new CustomEvent('manual-play-started', { detail: { card: card } }));
 }
 
@@ -284,14 +276,13 @@ function triggerVersePlay(card, surah, start, end, verseNum, type) {
     card.classList.add('ring-2', 'ring-[#56A3A6]');
 
     if (typeof playRange === 'function') {
-        // playRange is lower level, skips Bismillah logic
+        // playRange skips bismillah logic, used for clicking specific verses
         playRange(surah, start, end, verseNum, type);
     }
     
     document.dispatchEvent(new CustomEvent('manual-play-started', { detail: { card: card } }));
 }
 
-// (Existing Download/Modal helpers remain unchanged)
 function openDownloadModal(surah, start, end) {
     const modal = document.getElementById('downloadModal');
     const reciterSelect = document.getElementById('reciterSelect');
@@ -301,7 +292,8 @@ function openDownloadModal(surah, start, end) {
     const reciterName = reciterSelect.options[reciterSelect.selectedIndex].text;
     const langName = langSelect.options[langSelect.selectedIndex].text;
     const surahText = surahSelect.options[surahSelect.selectedIndex].text;
-    
+    const surahName = surahText;
+
     document.getElementById('dlModalTitle').textContent = `Surah ${surah}: Verses ${start}-${end}`;
     document.getElementById('dlModalReciter').textContent = reciterName;
     document.getElementById('dlModalLang').textContent = langName;
@@ -317,7 +309,6 @@ function openDownloadModal(surah, start, end) {
         
         const reciterSlug = reciterSelect.value;
         const langCode = langSelect.value;
-        const surahName = surahText;
         
         if (typeof downloadGroupedSection === 'function') {
             downloadGroupedSection(surah, start, end, reciterSlug, langCode, surahName);
@@ -340,7 +331,7 @@ window.highlightActiveVerseUI = function(surah, verse, type) {
         el.classList.add('active-verse');
     }
 }
-// (Selection/Edit mode helpers remain unchanged)
+
 function setSelectionMode(isActive) {
     const cards = document.querySelectorAll('.thematic-card');
     cards.forEach(card => {

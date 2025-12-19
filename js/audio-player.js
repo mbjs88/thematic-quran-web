@@ -14,20 +14,23 @@ let currentSectionScope = { surah: 0, start: 0, end: 0, totalVerses: 0 };
 
 /**
  * 1. THE MASTER PLAY FUNCTION
+ * Called by the Section Play Buttons.
+ * Decides if we need Bismillah, then starts the queue.
  */
 function playSession(surah, start, end) {
-    // Reset everything
+    // 1. Reset everything (stops any previous audio)
     stopAllAudio();
 
-    // Decide: Play Bismillah first?
-    // Rule: Verse 1 of any Surah (except Surah 9) gets Bismillah
+    // 2. Save the session details globally so we can access them in the 'ended' event
+    window.pendingSession = { surah, start, end };
+
+    // 3. Logic: Play Bismillah if it's Verse 1, but NOT for Surah 9
     if (start === 1 && surah !== 9) {
         isPlayingBismillah = true;
         
         // Use the MAIN audio object for Bismillah (Crucial for Mobile)
         audioObj.src = 'data/audio/bismillah.mp3';
         
-        // Update UI
         document.getElementById('playerVerse').textContent = `Surah ${surah}: Starting...`;
         updateControlsUI(true);
 
@@ -35,7 +38,8 @@ function playSession(surah, start, end) {
         audioObj.play().then(() => {
             isAudioPlaying = true;
         }).catch(err => {
-            console.warn("Bismillah Autoplay blocked, skipping...", err);
+            console.warn("Bismillah Autoplay blocked/failed, skipping to verses...", err);
+            // If it fails (e.g. strict browser policy), skip Bismillah and start verses
             startMainSection(surah, start, end);
         });
 
@@ -49,7 +53,8 @@ function playSession(surah, start, end) {
  * Helper: Generates the Queue and starts the first verse
  */
 function startMainSection(surah, start, end) {
-    isPlayingBismillah = false;
+    isPlayingBismillah = false; // We are done with Bismillah
+    window.pendingSession = null; // Clear the pending session
     playRange(surah, start, end);
 }
 
@@ -57,6 +62,7 @@ function startMainSection(surah, start, end) {
  * 2. TOGGLE PLAY/PAUSE
  */
 function playerTogglePlayPause() {
+    // If the audio object has a source (Bismillah OR Verse), toggle it
     if (audioObj.src) {
         if (audioObj.paused) {
             audioObj.play().then(() => {
@@ -77,6 +83,8 @@ function playerTogglePlayPause() {
 function stopAllAudio() {
     audioObj.pause();
     audioObj.currentTime = 0;
+    // Do NOT clear audioObj.src here, or the UI might think "nothing is loaded"
+    
     isAudioPlaying = false;
     isPlayingBismillah = false;
     playQueue = [];
@@ -123,8 +131,9 @@ function playRange(surah, start, end, startVerse = null, startType = null) {
 
     // 2. Add all Translation Verses
     for (let i = start; i <= end; i++) {
+        const url = getTranslationUrl(surah, i, transValue);
         playQueue.push({
-            url: getTranslationUrl(surah, i, transValue),
+            url: url,
             verse: i,
             type: 'translation'
         });
@@ -150,7 +159,7 @@ function playRange(surah, start, end, startVerse = null, startType = null) {
 }
 
 function startPreloading() {
-    const limit = Math.min(playQueue.length, 5); // Reduced for mobile data safety
+    const limit = Math.min(playQueue.length, 5);
     for(let i=0; i<limit; i++) {
         const audio = new Audio();
         audio.src = playQueue[i].url;
@@ -190,59 +199,19 @@ function playNextTrack() {
 
 // --- EVENTS ---
 
-// The "Ended" event is the engine that drives the playlist
 audioObj.addEventListener('ended', () => {
-    // If we just finished Bismillah, start the main section
-    if (isPlayingBismillah) {
-        const surah = currentSectionScope.surah || parseInt(document.getElementById('surahSelect').value); // Fallback
-        // We need the original start/end args here. 
-        // Ideally we stored them, but for now we can infer or we need to pass them.
-        // A cleaner way: playSession stores these in a global variable? 
-        // ACTUALLY: playSession calls startMainSection() directly.
-        // But since we are inside an EVENT, we need to call startMainSection from here.
-        
-        // Wait! currentSectionScope isn't fully populated during Bismillah phase in previous logic.
-        // Let's fix that.
-        
-        // FIX: The easiest mobile way is to pre-calculate the queue even during Bismillah, 
-        // but just NOT play it yet.
-        // But to keep it simple: We simply call startMainSection using the params from the closure? 
-        // No, 'ended' is global.
-        
-        // BETTER FIX: When playSession is called, we save the "Next Move" in a variable.
-        if (window.pendingSession) {
-            startMainSection(window.pendingSession.surah, window.pendingSession.start, window.pendingSession.end);
-            window.pendingSession = null; // Clear it
-        }
+    // CRITICAL: This is the bridge.
+    // If Bismillah just finished, load the main verses.
+    if (isPlayingBismillah && window.pendingSession) {
+        const { surah, start, end } = window.pendingSession;
+        startMainSection(surah, start, end);
         return;
     }
 
-    // Normal Verse Ended
+    // Normal Verse Ended -> Play Next
     queueIndex++;
     playNextTrack();
 });
-
-// Update playSession to save the pending session
-const originalPlaySession = playSession;
-playSession = function(surah, start, end) {
-    stopAllAudio();
-    
-    // Save these for the "onended" event to use later
-    window.pendingSession = { surah, start, end };
-
-    if (start === 1 && surah !== 9) {
-        isPlayingBismillah = true;
-        audioObj.src = 'data/audio/bismillah.mp3';
-        document.getElementById('playerVerse').textContent = `Surah ${surah}: Starting...`;
-        updateControlsUI(true);
-        audioObj.play().catch(e => {
-            console.warn("Bismillah failed", e);
-            startMainSection(surah, start, end);
-        });
-    } else {
-        startMainSection(surah, start, end);
-    }
-};
 
 audioObj.addEventListener('timeupdate', () => {
     if(audioObj.duration) {
@@ -267,7 +236,7 @@ function updateControlsUI(isPlaying) {
     }
 }
 
-// Helper for App.js
+// Global Helper
 window.isPlayerActive = function() {
     return (audioObj.src && !audioObj.ended && audioObj.currentTime > 0) || isAudioPlaying || isPlayingBismillah;
 };
