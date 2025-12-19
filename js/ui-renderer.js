@@ -1,5 +1,3 @@
-// js/ui-renderer.js
-
 const UI_KEYS = {
     SURAH_NO: 'surah_no',
     AYAH_NO: 'ayah_no_surah',
@@ -17,8 +15,11 @@ function renderThematicSurah(surahNum, verses, breaks) {
     const spacer = document.getElementById('mainSpacer');
     if (spacer) {
         if (surahNum === 9) {
+            // Surah 9 has no Bismillah, so it needs less space
             spacer.className = "w-full h-[130px] md:h-[180px] shrink-0 transition-all duration-300";
         } else {
+            // Standard Surahs (With Bismillah)
+            // UPDATED: Mobile height set to 150px
             spacer.className = "w-full h-[150px] md:h-[160px] shrink-0 transition-all duration-300";
         }
     }
@@ -26,7 +27,6 @@ function renderThematicSurah(surahNum, verses, breaks) {
     // --- BISMILLAH HEADER (Visual Only) ---
     if (surahNum !== 9) {
         const bismillahDiv = document.createElement('div');
-        // Removed 'cursor-pointer' and hover effects since it's no longer clickable
         bismillahDiv.className = "text-center mb-10 opacity-90 transition-opacity select-none";
         
         const fontSelect = document.getElementById('fontSelect');
@@ -35,8 +35,6 @@ function renderThematicSurah(surahNum, verses, breaks) {
         bismillahDiv.style.fontSize = `calc(2.0rem * ${scale})`;
         
         bismillahDiv.innerHTML = `<span class="${currentFontClass} text-3xl md:text-3xl text-white">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</span>`;
-        
-        // REMOVED: bismillahDiv.onclick... 
         
         container.appendChild(bismillahDiv);
     }
@@ -276,7 +274,6 @@ function triggerVersePlay(card, surah, start, end, verseNum, type) {
     card.classList.add('ring-2', 'ring-[#56A3A6]');
 
     if (typeof playRange === 'function') {
-        // playRange skips bismillah logic, used for clicking specific verses
         playRange(surah, start, end, verseNum, type);
     }
     
