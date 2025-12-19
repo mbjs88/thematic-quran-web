@@ -179,4 +179,4 @@ function updateControlsUI() {
         icon.textContent = 'play_arrow';
         status.textContent = 'Paused';
     }
-} 
+}
