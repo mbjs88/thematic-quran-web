@@ -19,7 +19,7 @@ function renderThematicSurah(surahNum, verses, breaks) {
         if (surahNum === 9) {
             spacer.className = "w-full h-[130px] md:h-[180px] shrink-0 transition-all duration-300";
         } else {
-            spacer.className = "w-full h-[110px] md:h-[160px] shrink-0 transition-all duration-300";
+            spacer.className = "w-full h-[150px] md:h-[160px] shrink-0 transition-all duration-300";
         }
     }
 
