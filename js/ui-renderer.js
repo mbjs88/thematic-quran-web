@@ -55,8 +55,8 @@ function renderThematicSurah(surahNum, verses, breaks) {
 function createCard(surahNum, start, end, data) {
     const card = document.createElement('div');
     
-    // UPDATED: Added scroll-mt-[180px] to create top margin for scroll snap
-    const baseClass = "thematic-card relative bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 shadow-lg p-6 md:p-8 transition-all duration-300 mb-8 scroll-mt-[180px]";
+    // --- CHANGED: Unified scroll-mt to 85px for both mobile and desktop ---
+    const baseClass = "thematic-card relative bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 shadow-lg p-6 md:p-8 transition-all duration-300 mb-8 scroll-mt-[85px]";
     card.className = (typeof isEditMode !== 'undefined' && isEditMode) 
         ? baseClass + " border-dashed border-white/30" 
         : baseClass + " hover:bg-white/10";
@@ -177,7 +177,7 @@ function createCard(surahNum, start, end, data) {
     data.forEach(v => {
         const verseNum = v[UI_KEYS.AYAH_NO];
         const span = document.createElement('span');
-        span.id = `ayah-ar-${surahNum}-${verseNum}`; // ID for Active Highlight
+        span.id = `ayah-ar-${surahNum}-${verseNum}`;
         let badgeHtml = `<span class="text-[#56A3A6] font-sans text-2xl mx-1">۝${verseNum}</span>`;
         
         if (typeof isEditMode !== 'undefined' && isEditMode) {
@@ -218,7 +218,7 @@ function createCard(surahNum, start, end, data) {
     data.forEach(v => {
         const verseNum = v[UI_KEYS.AYAH_NO];
         const span = document.createElement('span');
-        span.id = `ayah-en-${surahNum}-${verseNum}`; // ID for Active Highlight
+        span.id = `ayah-en-${surahNum}-${verseNum}`;
         let badgeHtml = `<span class="align-super text-xs text-[#56A3A6] font-bold mx-1 font-['Nunito']">(${verseNum})</span>`;
 
         if (typeof isEditMode !== 'undefined' && isEditMode) {
@@ -320,16 +320,10 @@ function closeDownloadModal() {
 }
 
 window.highlightActiveVerseUI = function(surah, verse, type) {
-    // 1. Remove previous highlights
     document.querySelectorAll('.active-verse').forEach(el => el.classList.remove('active-verse'));
-    
-    // 2. Determine target ID based on type (Arabic or Translation)
-    // Note: We only highlight the specific type being played, not both, to focus the eye.
     const prefix = (type === 'arabic') ? 'ayah-ar' : 'ayah-en';
     const id = `${prefix}-${surah}-${verse}`;
     const el = document.getElementById(id);
-    
-    // 3. Apply highlight
     if (el) {
         el.classList.add('active-verse');
     }
