@@ -95,13 +95,16 @@ function createCard(surahNum, start, end, data) {
     actionsDiv.className = "flex items-center gap-2 transition-opacity duration-200";
 
     if (typeof isEditMode === 'undefined' || !isEditMode) {
-        // Share
+        // Share Button (UPDATED)
         const shareBtn = document.createElement('button');
         shareBtn.className = "text-white/40 hover:text-[#56A3A6] p-2 transition";
         shareBtn.innerHTML = '<span class="material-symbols-outlined text-xl">link</span>';
         shareBtn.onclick = (e) => {
             e.stopPropagation();
-            const url = `${window.location.origin}${window.location.pathname}#s=${surahNum}&v=${start}`;
+            
+            // CHANGED: URL now includes range (start-end)
+            const url = `${window.location.origin}${window.location.pathname}#s=${surahNum}&v=${start}-${end}`;
+            
             navigator.clipboard.writeText(url);
             
             // Show Toast

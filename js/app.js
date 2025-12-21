@@ -1,7 +1,7 @@
 // js/app.js
 
 // --- VERSION DEBUGGER ---
-console.log("THEMATIC QURAN - VERSION 1.1.2 (Icons Updated)"); 
+console.log("THEMATIC QURAN - VERSION 1.1.5"); 
 
 const CONSTANTS = {
     KEY_SURAH_NO: 'surah_no',
@@ -314,20 +314,35 @@ function handleDeepLink() {
     const hash = window.location.hash.substring(1);
     const params = new URLSearchParams(hash);
     const surah = parseInt(params.get('s'));
-    const verse = parseInt(params.get('v'));
+    
+    // UPDATED: Handle range 'v' which might look like "15" or "15-20"
+    const verseParam = params.get('v') || "1";
+    // We only really care about the start verse for finding the section
+    const verseStart = parseInt(verseParam.split('-')[0]);
 
     if (surah && !isNaN(surah)) {
         document.getElementById('surahSelect').value = surah;
+        
+        // 1. Load the Surah
         loadSurah(surah);
+        
+        // 2. Wait for DOM to render, then find the intelligent target
         setTimeout(() => {
-            const targetId = `section-${surah}-${verse}`;
-            const targetCard = document.getElementById(targetId);
+            // STRATEGY: Find the card where the target verse falls INSIDE the range
+            // (dataset.start <= verseStart <= dataset.end)
+            const cards = Array.from(document.querySelectorAll('.thematic-card'));
+            const targetCard = cards.find(card => {
+                const s = parseInt(card.dataset.start);
+                const e = parseInt(card.dataset.end);
+                return verseStart >= s && verseStart <= e;
+            });
+
             if (targetCard) {
                 targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 targetCard.classList.add('ring-4', 'ring-[#56A3A6]/50');
                 setTimeout(() => targetCard.classList.remove('ring-4', 'ring-[#56A3A6]/50'), 2000);
             }
-        }, 300);
+        }, 500); 
     } else {
         loadSurah(1);
     }
