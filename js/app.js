@@ -1,7 +1,7 @@
 // js/app.js
 
 // --- VERSION DEBUGGER ---
-console.log("THEMATIC QURAN - VERSION 1.1.1 (Toast, Shortcuts, PWA, Mobile Fix)"); 
+console.log("THEMATIC QURAN - VERSION 1.1.2 (Icons Updated)"); 
 
 const CONSTANTS = {
     KEY_SURAH_NO: 'surah_no',
