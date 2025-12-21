@@ -1,6 +1,7 @@
 # keep audio out of Git (it lives in R2)
 data/audio/
 audio/
+assets/icons.pptx
 
 # optional OS/editor noise
 .DS_Store
