@@ -55,8 +55,8 @@ function renderThematicSurah(surahNum, verses, breaks) {
 function createCard(surahNum, start, end, data) {
     const card = document.createElement('div');
     
-    // Unified scroll-mt to 85px for both mobile and desktop
-    const baseClass = "thematic-card relative bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 shadow-lg p-6 md:p-8 transition-all duration-300 mb-8 scroll-mt-[85px]";
+    // Scroll margin top set to 20px so it aligns near the top of the viewport
+    const baseClass = "thematic-card relative bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 shadow-lg p-6 md:p-8 transition-all duration-300 mb-8 scroll-mt-[20px]";
     card.className = (typeof isEditMode !== 'undefined' && isEditMode) 
         ? baseClass + " border-dashed border-white/30" 
         : baseClass + " hover:bg-white/10";
@@ -95,23 +95,39 @@ function createCard(surahNum, start, end, data) {
     actionsDiv.className = "flex items-center gap-2 transition-opacity duration-200";
 
     if (typeof isEditMode === 'undefined' || !isEditMode) {
-        // Share Button (UPDATED)
+        // Share Button (UPDATED to your specific format)
         const shareBtn = document.createElement('button');
         shareBtn.className = "text-white/40 hover:text-[#56A3A6] p-2 transition";
         shareBtn.innerHTML = '<span class="material-symbols-outlined text-xl">link</span>';
         shareBtn.onclick = (e) => {
             e.stopPropagation();
             
-            // CHANGED: URL now includes range (start-end)
+            // 1. Build URL
             const url = `${window.location.origin}${window.location.pathname}#s=${surahNum}&v=${start}-${end}`;
             
-            navigator.clipboard.writeText(url);
+            // 2. Get Name (remove number)
+            const surahSelect = document.getElementById('surahSelect');
+            let namePart = ""; 
             
-            // Show Toast
-            if (window.showToast) window.showToast('Link copied to clipboard', 'link');
+            if(surahSelect) {
+                const option = Array.from(surahSelect.options).find(opt => parseInt(opt.value) === surahNum);
+                if (option) {
+                    // Option text: "34 Saba (Sheba)" -> Remove "34 "
+                    namePart = option.text.replace(/^\d+\s+/, '');
+                }
+            }
+            if (!namePart) namePart = `Surah ${surahNum}`;
+
+            // 3. Format: Surah 34: Saba (Sheba) - Ayah 6 to 9.
+            //            thematicQuran.com (URL)
+            const rangeText = (start === end) ? `Ayah ${start}` : `Ayah ${start} to ${end}`;
+            const shareText = `Surah ${surahNum}: ${namePart} - ${rangeText}.\n${url}`;
+            
+            navigator.clipboard.writeText(shareText);
+            if (window.showToast) window.showToast('Link & details copied', 'link');
         };
 
-        // Copy Text
+        // Copy Text Button
         const copyTextBtn = document.createElement('button');
         copyTextBtn.className = "text-white/40 hover:text-[#56A3A6] p-2 transition";
         copyTextBtn.innerHTML = '<span class="material-symbols-outlined text-xl">content_copy</span>';
@@ -135,12 +151,10 @@ function createCard(surahNum, start, end, data) {
             }
             const fullText = `${arabicText}\n\n${transText}\n\n${surahName} ${surahNum}:${start}-${end}\nThematicQuran.com`;
             navigator.clipboard.writeText(fullText);
-            
-            // Show Toast
             if (window.showToast) window.showToast('Text copied to clipboard', 'content_copy');
         };
 
-        // Download
+        // Download Button
         const downloadBtn = document.createElement('button');
         downloadBtn.className = "text-white/40 hover:text-[#56A3A6] p-2 transition";
         downloadBtn.innerHTML = '<span class="material-symbols-outlined text-xl">download</span>';

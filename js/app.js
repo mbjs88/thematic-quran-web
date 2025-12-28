@@ -1,7 +1,7 @@
 // js/app.js
 
 // --- VERSION DEBUGGER ---
-console.log("THEMATIC QURAN - VERSION 1.1.5"); 
+console.log("THEMATIC QURAN - VERSION 1.1.6"); 
 
 const CONSTANTS = {
     KEY_SURAH_NO: 'surah_no',
@@ -315,9 +315,7 @@ function handleDeepLink() {
     const params = new URLSearchParams(hash);
     const surah = parseInt(params.get('s'));
     
-    // UPDATED: Handle range 'v' which might look like "15" or "15-20"
     const verseParam = params.get('v') || "1";
-    // We only really care about the start verse for finding the section
     const verseStart = parseInt(verseParam.split('-')[0]);
 
     if (surah && !isNaN(surah)) {
@@ -328,8 +326,6 @@ function handleDeepLink() {
         
         // 2. Wait for DOM to render, then find the intelligent target
         setTimeout(() => {
-            // STRATEGY: Find the card where the target verse falls INSIDE the range
-            // (dataset.start <= verseStart <= dataset.end)
             const cards = Array.from(document.querySelectorAll('.thematic-card'));
             const targetCard = cards.find(card => {
                 const s = parseInt(card.dataset.start);
@@ -338,7 +334,8 @@ function handleDeepLink() {
             });
 
             if (targetCard) {
-                targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                // CHANGED: Aligns to 'start' (top) instead of center
+                targetCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 targetCard.classList.add('ring-4', 'ring-[#56A3A6]/50');
                 setTimeout(() => targetCard.classList.remove('ring-4', 'ring-[#56A3A6]/50'), 2000);
             }
@@ -424,6 +421,7 @@ function setupGlobalEventListeners() {
     document.getElementById('closeSettingsBtn').addEventListener('click', closeSettings);
     backdrop.addEventListener('click', closeSettings);
 
+    // --- AUDIO LISTENERS (Including Wake Lock) ---
     const audio = document.getElementById('audioElement');
     
     document.getElementById('globalPlayPauseBtn').addEventListener('click', () => {
@@ -442,6 +440,13 @@ function setupGlobalEventListeners() {
              }
         }
     });
+
+    // NEW: Hook Wake Lock into Audio Events
+    if (audio) {
+        audio.addEventListener('play', () => toggleWakeLock(true));
+        audio.addEventListener('pause', () => toggleWakeLock(false));
+        audio.addEventListener('ended', () => toggleWakeLock(false));
+    }
 
     document.getElementById('nextSectionBtn').addEventListener('click', () => navigateSection('next'));
     document.getElementById('prevSectionBtn').addEventListener('click', () => navigateSection('prev'));
@@ -634,6 +639,7 @@ function navigateSection(direction) {
     if (targetCard && targetCard.classList.contains('thematic-card')) {
         targetCard.querySelector('.play-btn').click();
         
+        // CHANGED: Aligns to 'start' (top) for better readability
         targetCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
         
         triggerLookAheadPreload(targetCard);
@@ -649,3 +655,31 @@ function triggerLookAheadPreload(currentCard) {
         if (typeof preloadNextSection === 'function') preloadNextSection(surah, start, end);
     }
 }
+
+// --- WAKE LOCK LOGIC ---
+
+let wakeLock = null;
+
+async function toggleWakeLock(shouldLock) {
+    if ('wakeLock' in navigator) {
+        try {
+            if (shouldLock && !wakeLock) {
+                wakeLock = await navigator.wakeLock.request('screen');
+                console.log('Wake Lock active');
+            } else if (!shouldLock && wakeLock) {
+                await wakeLock.release();
+                wakeLock = null;
+                console.log('Wake Lock released');
+            }
+        } catch (err) {
+            console.error(`${err.name}, ${err.message}`);
+        }
+    }
+}
+
+// Re-acquire lock if visibility changes (e.g. user tabs out and back in)
+document.addEventListener('visibilitychange', async () => {
+    if (wakeLock !== null && document.visibilityState === 'visible') {
+        wakeLock = await navigator.wakeLock.request('screen');
+    }
+});
