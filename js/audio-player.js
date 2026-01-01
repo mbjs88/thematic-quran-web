@@ -24,8 +24,9 @@ function playSession(surah, start, end) {
     // 2. Save the session details globally so we can access them in the 'ended' event
     window.pendingSession = { surah, start, end };
 
-    // 3. Logic: Play Bismillah if it's Verse 1, but NOT for Surah 9
-    if (start === 1 && surah !== 9) {
+    // 3. Logic: Play Bismillah if it's Verse 1, but NOT for Surah 9 AND NOT for Surah 1
+    // (Because Surah 1 Verse 1 IS the Bismillah)
+    if (start === 1 && surah !== 9 && surah !== 1) {
         isPlayingBismillah = true;
         
         // Use the MAIN audio object for Bismillah (Crucial for Mobile)
@@ -44,7 +45,7 @@ function playSession(surah, start, end) {
         });
 
     } else {
-        // No Bismillah needed, jump straight to verses
+        // No Bismillah needed (or it's Surah 1/9), jump straight to verses
         startMainSection(surah, start, end);
     }
 }
