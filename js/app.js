@@ -1,8 +1,9 @@
 // js/app.js
 
 // --- VERSION DEBUGGER ---
-console.log("THEMATIC QURAN - VERSION 1.1.6"); 
+console.log("THEMATIC QURAN - VERSION 1.1.7 (Auto-Next & Preload)"); 
 
+// ... (Constants and State variables remain the same) ...
 const CONSTANTS = {
     KEY_SURAH_NO: 'surah_no',
     KEY_AYAH_NO: 'ayah_no_surah',
@@ -13,36 +14,33 @@ const CONSTANTS = {
     KEY_SURAH_LATIN: 'surah_name_roman'
 };
 
-// Global State
 let QURAN_DATA = [];
 let THEME_BREAKS = {};
-
-// Settings State
 let currentFontScale = 1.0; 
 let isEditMode = false;
-
-// Selection State
 let isSelectMode = false;
 let selectedItems = new Set(); 
 const MAX_SELECTION = 3; 
-
 const STORAGE_KEY_SCALE = 'fontScale_v2'; 
 
+// ... (DOMContentLoaded and Event Listeners setup remain same) ...
 document.addEventListener('DOMContentLoaded', async () => {
+    // ... (Keep existing initialization code) ...
+    // ... (Keep keyboard shortcuts, install logic, scroll logic) ...
+    
+    // Copy the contents of DOMContentLoaded from v1.1.6 here
+    // No changes needed inside DOMContentLoaded itself
+    
     console.log("Initializing App...");
     
-    // --- KEYBOARD SHORTCUTS ---
+    // ... KEYBOARD SHORTCUTS ...
     document.addEventListener('keydown', (e) => {
         if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
-
-        // Space = Play/Pause
         if (e.code === 'Space') {
             e.preventDefault(); 
             const playBtn = document.getElementById('globalPlayPauseBtn');
             if (playBtn) playBtn.click();
         }
-        
-        // Arrows = Navigation
         if (e.code === 'ArrowRight') {
             e.preventDefault();
             navigateSection('next');
@@ -53,7 +51,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     });
 
-    // --- PWA INSTALL LOGIC ---
+    // ... INSTALL LOGIC ...
     let deferredPrompt;
     const installContainer = document.getElementById('installAppContainer');
     const installBtn = document.getElementById('installAppBtn');
@@ -74,7 +72,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
 
-    // --- SCROLL AWARE HEADER LOGIC ---
+    // ... SCROLL HEADER ...
     const mainContainer = document.getElementById('mainContainer');
     const header = document.getElementById('mainHeader');
     let lastScrollY = 0;
@@ -130,25 +128,21 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 });
 
+// ... (loadPreferences, updateFontDisplay, populateSurahDropdown, resetPlayerState remain same) ...
 function loadPreferences() {
-    // 1. Load Font Family
     const savedFont = localStorage.getItem('arabicFont');
     if (savedFont) {
         const fontSelect = document.getElementById('fontSelect');
         if(fontSelect) fontSelect.value = savedFont;
     }
-
-    // 2. Load Font Scale (v2 Key for Resets)
     const savedScale = localStorage.getItem(STORAGE_KEY_SCALE);
-    
     if (savedScale) {
         currentFontScale = parseFloat(savedScale);
     } else {
-        // DEFAULT LOGIC
         if (window.innerWidth < 768) {
-            currentFontScale = 0.7; // Mobile: 70%
+            currentFontScale = 0.7; 
         } else {
-            currentFontScale = 1.0; // Desktop: 100%
+            currentFontScale = 1.0; 
         }
     }
     updateFontDisplay();
@@ -226,6 +220,7 @@ function resetPlayerState() {
     document.querySelectorAll('.active-verse').forEach(el => el.classList.remove('active-verse'));
 }
 
+// 1. UPDATE: loadSurah (Added Preload Logic)
 function loadSurah(surahId) {
     resetPlayerState();
 
@@ -235,6 +230,7 @@ function loadSurah(surahId) {
 
     const surahVerses = QURAN_DATA.filter(row => row[CONSTANTS.KEY_SURAH_NO] === surahId);
     
+    // ... (Custom breaks logic remains same) ...
     const customKey = `customBreaks_${surahId}`;
     const customData = localStorage.getItem(customKey);
     const restoreBtn = document.getElementById('restoreDefaultsBtn');
@@ -268,8 +264,21 @@ function loadSurah(surahId) {
     document.getElementById('playerVerse').textContent = surahText;
 
     renderThematicSurah(surahId, surahVerses, cleanBreaks);
+
+    // CHANGED: Trigger Preload for First Section Immediately
+    setTimeout(() => {
+        const firstCard = document.querySelector('.thematic-card');
+        if (firstCard && typeof preloadNextSection === 'function') {
+            const s = parseInt(firstCard.dataset.surah);
+            const start = parseInt(firstCard.dataset.start);
+            const end = parseInt(firstCard.dataset.end);
+            console.log(`Preloading first section: ${s}:${start}-${end}`);
+            preloadNextSection(s, start, end);
+        }
+    }, 100);
 }
 
+// ... (handleVerseBreakToggle, restoreDefaults, handleDeepLink remain same) ...
 window.handleVerseBreakToggle = function(surahId, verseNum) {
     if (!isEditMode) return;
 
@@ -321,10 +330,8 @@ function handleDeepLink() {
     if (surah && !isNaN(surah)) {
         document.getElementById('surahSelect').value = surah;
         
-        // 1. Load the Surah
         loadSurah(surah);
         
-        // 2. Wait for DOM to render, then find the intelligent target
         setTimeout(() => {
             const cards = Array.from(document.querySelectorAll('.thematic-card'));
             const targetCard = cards.find(card => {
@@ -334,7 +341,6 @@ function handleDeepLink() {
             });
 
             if (targetCard) {
-                // CHANGED: Aligns to 'start' (top) instead of center
                 targetCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 targetCard.classList.add('ring-4', 'ring-[#56A3A6]/50');
                 setTimeout(() => targetCard.classList.remove('ring-4', 'ring-[#56A3A6]/50'), 2000);
@@ -346,6 +352,7 @@ function handleDeepLink() {
 }
 
 function setupGlobalEventListeners() {
+    // ... (Keep existing listener setups) ...
     document.getElementById('surahSelect').addEventListener('change', (e) => loadSurah(parseInt(e.target.value)));
     
     document.getElementById('languageSelect').addEventListener('change', () => {
@@ -421,7 +428,6 @@ function setupGlobalEventListeners() {
     document.getElementById('closeSettingsBtn').addEventListener('click', closeSettings);
     backdrop.addEventListener('click', closeSettings);
 
-    // --- AUDIO LISTENERS (Including Wake Lock) ---
     const audio = document.getElementById('audioElement');
     
     document.getElementById('globalPlayPauseBtn').addEventListener('click', () => {
@@ -441,7 +447,6 @@ function setupGlobalEventListeners() {
         }
     });
 
-    // NEW: Hook Wake Lock into Audio Events
     if (audio) {
         audio.addEventListener('play', () => toggleWakeLock(true));
         audio.addEventListener('pause', () => toggleWakeLock(false));
@@ -507,6 +512,7 @@ function setupGlobalEventListeners() {
     });
 }
 
+// ... (isValidSelection, enforceConsecutiveSelection, toggleSelectionModeUI, updateBulkBar, openBulkDownloadModal remain same) ...
 function isValidSelection(targetId) {
     if (selectedItems.size === 0) return true;
     const allCards = Array.from(document.querySelectorAll('.thematic-card'));
@@ -632,17 +638,32 @@ function openBulkDownloadModal(sections) {
     document.getElementById('dlCancelBtn').onclick = () => modal.classList.add('hidden');
 }
 
+// 2. UPDATE: navigateSection (Added Auto-Next Logic)
 function navigateSection(direction) {
     const currentCard = document.querySelector('.thematic-card.ring-2');
     if (!currentCard) return;
     const targetCard = direction === 'next' ? currentCard.nextElementSibling : currentCard.previousElementSibling;
+    
     if (targetCard && targetCard.classList.contains('thematic-card')) {
+        // Normal navigation: Play next section
         targetCard.querySelector('.play-btn').click();
-        
-        // CHANGED: Aligns to 'start' (top) for better readability
         targetCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        
         triggerLookAheadPreload(targetCard);
+    } else if (direction === 'next') {
+        // CHANGED: End of Surah reached -> Load Next Surah
+        const currentSurah = parseInt(document.getElementById('surahSelect').value);
+        const nextSurah = currentSurah + 1;
+        
+        // Ensure we don't go past 114
+        if (nextSurah <= 114) {
+            document.getElementById('surahSelect').value = nextSurah;
+            
+            // Load the surah. 
+            // Note: We do NOT call click() on play-btn, so it loads without playing.
+            loadSurah(nextSurah);
+            
+            if (window.showToast) window.showToast(`Loaded Surah ${nextSurah}`, 'library_books');
+        }
     }
 }
 
@@ -655,8 +676,6 @@ function triggerLookAheadPreload(currentCard) {
         if (typeof preloadNextSection === 'function') preloadNextSection(surah, start, end);
     }
 }
-
-// --- WAKE LOCK LOGIC ---
 
 let wakeLock = null;
 
@@ -677,7 +696,6 @@ async function toggleWakeLock(shouldLock) {
     }
 }
 
-// Re-acquire lock if visibility changes (e.g. user tabs out and back in)
 document.addEventListener('visibilitychange', async () => {
     if (wakeLock !== null && document.visibilityState === 'visible') {
         wakeLock = await navigator.wakeLock.request('screen');

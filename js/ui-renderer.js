@@ -22,7 +22,8 @@ function renderThematicSurah(surahNum, verses, breaks) {
     }
 
     // --- BISMILLAH HEADER (Visual Only) ---
-    if (surahNum !== 9) {
+    // UPDATED: Added "&& surahNum !== 1" to hide header for Al-Fatihah
+    if (surahNum !== 9 && surahNum !== 1) {
         const bismillahDiv = document.createElement('div');
         bismillahDiv.className = "text-center mb-10 opacity-90 transition-opacity select-none";
         
@@ -95,7 +96,7 @@ function createCard(surahNum, start, end, data) {
     actionsDiv.className = "flex items-center gap-2 transition-opacity duration-200";
 
     if (typeof isEditMode === 'undefined' || !isEditMode) {
-        // Share Button (UPDATED to your specific format)
+        // Share Button (Format: Surah Name - Ayah Range)
         const shareBtn = document.createElement('button');
         shareBtn.className = "text-white/40 hover:text-[#56A3A6] p-2 transition";
         shareBtn.innerHTML = '<span class="material-symbols-outlined text-xl">link</span>';
