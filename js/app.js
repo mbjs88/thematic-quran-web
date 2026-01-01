@@ -1,9 +1,8 @@
 // js/app.js
 
 // --- VERSION DEBUGGER ---
-console.log("THEMATIC QURAN - VERSION 1.1.7 (Auto-Next & Preload)"); 
+console.log("THEMATIC QURAN - VERSION 1.1.9 (Manual Top Scroll Fix)"); 
 
-// ... (Constants and State variables remain the same) ...
 const CONSTANTS = {
     KEY_SURAH_NO: 'surah_no',
     KEY_AYAH_NO: 'ayah_no_surah',
@@ -14,33 +13,36 @@ const CONSTANTS = {
     KEY_SURAH_LATIN: 'surah_name_roman'
 };
 
+// Global State
 let QURAN_DATA = [];
 let THEME_BREAKS = {};
+
+// Settings State
 let currentFontScale = 1.0; 
 let isEditMode = false;
+
+// Selection State
 let isSelectMode = false;
 let selectedItems = new Set(); 
 const MAX_SELECTION = 3; 
+
 const STORAGE_KEY_SCALE = 'fontScale_v2'; 
 
-// ... (DOMContentLoaded and Event Listeners setup remain same) ...
 document.addEventListener('DOMContentLoaded', async () => {
-    // ... (Keep existing initialization code) ...
-    // ... (Keep keyboard shortcuts, install logic, scroll logic) ...
-    
-    // Copy the contents of DOMContentLoaded from v1.1.6 here
-    // No changes needed inside DOMContentLoaded itself
-    
     console.log("Initializing App...");
     
-    // ... KEYBOARD SHORTCUTS ...
+    // --- KEYBOARD SHORTCUTS ---
     document.addEventListener('keydown', (e) => {
         if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+
+        // Space = Play/Pause
         if (e.code === 'Space') {
             e.preventDefault(); 
             const playBtn = document.getElementById('globalPlayPauseBtn');
             if (playBtn) playBtn.click();
         }
+        
+        // Arrows = Navigation
         if (e.code === 'ArrowRight') {
             e.preventDefault();
             navigateSection('next');
@@ -51,7 +53,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     });
 
-    // ... INSTALL LOGIC ...
+    // --- PWA INSTALL LOGIC ---
     let deferredPrompt;
     const installContainer = document.getElementById('installAppContainer');
     const installBtn = document.getElementById('installAppBtn');
@@ -72,7 +74,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
 
-    // ... SCROLL HEADER ...
+    // --- SCROLL AWARE HEADER LOGIC ---
     const mainContainer = document.getElementById('mainContainer');
     const header = document.getElementById('mainHeader');
     let lastScrollY = 0;
@@ -128,7 +130,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 });
 
-// ... (loadPreferences, updateFontDisplay, populateSurahDropdown, resetPlayerState remain same) ...
 function loadPreferences() {
     const savedFont = localStorage.getItem('arabicFont');
     if (savedFont) {
@@ -140,9 +141,9 @@ function loadPreferences() {
         currentFontScale = parseFloat(savedScale);
     } else {
         if (window.innerWidth < 768) {
-            currentFontScale = 0.7; 
+            currentFontScale = 0.7; // Mobile: 70%
         } else {
-            currentFontScale = 1.0; 
+            currentFontScale = 1.0; // Desktop: 100%
         }
     }
     updateFontDisplay();
@@ -220,7 +221,6 @@ function resetPlayerState() {
     document.querySelectorAll('.active-verse').forEach(el => el.classList.remove('active-verse'));
 }
 
-// 1. UPDATE: loadSurah (Added Preload Logic)
 function loadSurah(surahId) {
     resetPlayerState();
 
@@ -230,7 +230,6 @@ function loadSurah(surahId) {
 
     const surahVerses = QURAN_DATA.filter(row => row[CONSTANTS.KEY_SURAH_NO] === surahId);
     
-    // ... (Custom breaks logic remains same) ...
     const customKey = `customBreaks_${surahId}`;
     const customData = localStorage.getItem(customKey);
     const restoreBtn = document.getElementById('restoreDefaultsBtn');
@@ -264,8 +263,11 @@ function loadSurah(surahId) {
     document.getElementById('playerVerse').textContent = surahText;
 
     renderThematicSurah(surahId, surahVerses, cleanBreaks);
+    
+    // --- RESET SCROLL FOR NEW SURAH ---
+    const mainContainer = document.getElementById('mainContainer');
+    if (mainContainer) mainContainer.scrollTop = 0;
 
-    // CHANGED: Trigger Preload for First Section Immediately
     setTimeout(() => {
         const firstCard = document.querySelector('.thematic-card');
         if (firstCard && typeof preloadNextSection === 'function') {
@@ -278,7 +280,6 @@ function loadSurah(surahId) {
     }, 100);
 }
 
-// ... (handleVerseBreakToggle, restoreDefaults, handleDeepLink remain same) ...
 window.handleVerseBreakToggle = function(surahId, verseNum) {
     if (!isEditMode) return;
 
@@ -341,7 +342,8 @@ function handleDeepLink() {
             });
 
             if (targetCard) {
-                targetCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                // CHANGED: Use manual scroll helper
+                scrollToCard(targetCard);
                 targetCard.classList.add('ring-4', 'ring-[#56A3A6]/50');
                 setTimeout(() => targetCard.classList.remove('ring-4', 'ring-[#56A3A6]/50'), 2000);
             }
@@ -352,7 +354,6 @@ function handleDeepLink() {
 }
 
 function setupGlobalEventListeners() {
-    // ... (Keep existing listener setups) ...
     document.getElementById('surahSelect').addEventListener('change', (e) => loadSurah(parseInt(e.target.value)));
     
     document.getElementById('languageSelect').addEventListener('change', () => {
@@ -512,7 +513,7 @@ function setupGlobalEventListeners() {
     });
 }
 
-// ... (isValidSelection, enforceConsecutiveSelection, toggleSelectionModeUI, updateBulkBar, openBulkDownloadModal remain same) ...
+// ... (Selection Helpers remain unchanged) ...
 function isValidSelection(targetId) {
     if (selectedItems.size === 0) return true;
     const allCards = Array.from(document.querySelectorAll('.thematic-card'));
@@ -638,30 +639,48 @@ function openBulkDownloadModal(sections) {
     document.getElementById('dlCancelBtn').onclick = () => modal.classList.add('hidden');
 }
 
-// 2. UPDATE: navigateSection (Added Auto-Next Logic)
+// ---------------------------------------------
+// NEW SCROLL HELPER: Forces Card to Top + 100px Buffer
+// ---------------------------------------------
+function scrollToCard(card) {
+    const container = document.getElementById('mainContainer');
+    if (!container || !card) return;
+
+    // Calculate exact position relative to the container
+    const cardRect = card.getBoundingClientRect();
+    const containerRect = container.getBoundingClientRect();
+    const relativeTop = cardRect.top - containerRect.top;
+    
+    // Add current scroll position to get absolute, then subtract buffer
+    const currentScroll = container.scrollTop;
+    const buffer = 100; // 100px (header + padding)
+    const targetScroll = currentScroll + relativeTop - buffer;
+
+    container.scrollTo({
+        top: targetScroll,
+        behavior: 'smooth'
+    });
+}
+
 function navigateSection(direction) {
     const currentCard = document.querySelector('.thematic-card.ring-2');
     if (!currentCard) return;
     const targetCard = direction === 'next' ? currentCard.nextElementSibling : currentCard.previousElementSibling;
     
     if (targetCard && targetCard.classList.contains('thematic-card')) {
-        // Normal navigation: Play next section
         targetCard.querySelector('.play-btn').click();
-        targetCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        
+        // CHANGED: Use the manual scroll function instead of scrollIntoView
+        scrollToCard(targetCard);
+        
         triggerLookAheadPreload(targetCard);
     } else if (direction === 'next') {
-        // CHANGED: End of Surah reached -> Load Next Surah
         const currentSurah = parseInt(document.getElementById('surahSelect').value);
         const nextSurah = currentSurah + 1;
         
-        // Ensure we don't go past 114
         if (nextSurah <= 114) {
             document.getElementById('surahSelect').value = nextSurah;
-            
-            // Load the surah. 
-            // Note: We do NOT call click() on play-btn, so it loads without playing.
             loadSurah(nextSurah);
-            
             if (window.showToast) window.showToast(`Loaded Surah ${nextSurah}`, 'library_books');
         }
     }

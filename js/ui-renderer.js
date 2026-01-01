@@ -22,7 +22,7 @@ function renderThematicSurah(surahNum, verses, breaks) {
     }
 
     // --- BISMILLAH HEADER (Visual Only) ---
-    // UPDATED: Added "&& surahNum !== 1" to hide header for Al-Fatihah
+    // LOGIC: Hide for Surah 9 (Tawbah) AND Surah 1 (Fatihah)
     if (surahNum !== 9 && surahNum !== 1) {
         const bismillahDiv = document.createElement('div');
         bismillahDiv.className = "text-center mb-10 opacity-90 transition-opacity select-none";
