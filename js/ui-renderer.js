@@ -6,6 +6,9 @@ const UI_KEYS = {
     URDU: 'urdu_translation'
 };
 
+/**
+ * Renders a Single Surah (Standard Mode)
+ */
 function renderThematicSurah(surahNum, verses, breaks) {
     const container = document.getElementById('contentArea');
     container.innerHTML = ''; 
@@ -53,6 +56,110 @@ function renderThematicSurah(surahNum, verses, breaks) {
     });
 }
 
+/**
+ * Renders a Juz (Juz Mode)
+ */
+function renderThematicJuz(juzId, verses, allBreaks) {
+    const container = document.getElementById('contentArea');
+    container.innerHTML = '';
+
+    // Adjust spacer for Juz mode
+    const spacer = document.getElementById('mainSpacer');
+    if (spacer) spacer.className = "w-full h-[100px] shrink-0 transition-all duration-300";
+
+    // Add Juz Title
+    const juzHeader = document.createElement('div');
+    juzHeader.className = "text-center mb-12";
+    juzHeader.innerHTML = `<h1 class="text-4xl font-['Forum'] text-white tracking-widest uppercase">Juz ${juzId}</h1>`;
+    container.appendChild(juzHeader);
+
+    if (!verses || verses.length === 0) return;
+
+    let currentSurah = null;
+    let currentSectionData = [];
+    let sectionStartVerse = -1;
+
+    verses.forEach((verse, index) => {
+        const surah = verse[UI_KEYS.SURAH_NO];
+        const verseNum = verse[UI_KEYS.AYAH_NO];
+        
+        // 1. CHECK FOR NEW SURAH
+        if (surah !== currentSurah) {
+            // Close previous section if exists
+            if (currentSectionData.length > 0) {
+                const endVerse = currentSectionData[currentSectionData.length - 1][UI_KEYS.AYAH_NO];
+                container.appendChild(createCard(currentSurah, sectionStartVerse, endVerse, currentSectionData));
+                currentSectionData = [];
+            }
+
+            // Inject Mini Header
+            const latinName = verse['surah_name_roman'] || "";
+            const engName = verse['surah_name_en'] || "";
+            container.appendChild(createMiniSurahHeader(surah, latinName, engName));
+
+            currentSurah = surah;
+            sectionStartVerse = verseNum;
+        }
+
+        // 2. CHECK FOR THEME BREAK
+        const surahBreaks = allBreaks[String(surah)] || [];
+        const isBreak = surahBreaks.includes(verseNum);
+
+        if (isBreak && verseNum !== sectionStartVerse && currentSectionData.length > 0) {
+             const endVerse = currentSectionData[currentSectionData.length - 1][UI_KEYS.AYAH_NO];
+             container.appendChild(createCard(surah, sectionStartVerse, endVerse, currentSectionData));
+             currentSectionData = [];
+             sectionStartVerse = verseNum;
+        }
+
+        currentSectionData.push(verse);
+    });
+
+    // Close final section
+    if (currentSectionData.length > 0) {
+        const endVerse = currentSectionData[currentSectionData.length - 1][UI_KEYS.AYAH_NO];
+        container.appendChild(createCard(currentSurah, sectionStartVerse, endVerse, currentSectionData));
+    }
+}
+
+/**
+ * Helper to draw headers inside the list
+ */
+function createMiniSurahHeader(surahNum, latinName, engName) {
+    const container = document.createElement('div');
+    container.className = "surah-mini-header mt-16 mb-8 text-center border-t border-white/10 pt-10";
+
+    // 1. Surah Name
+    const title = document.createElement('h2');
+    title.className = "text-2xl font-bold text-[#56A3A6] font-['Nunito'] mb-6";
+    
+    // Format: "78. An-Naba (The Tidings)"
+    let displayText = `${surahNum}. `;
+    if (latinName && engName) {
+        displayText += `${latinName} (${engName})`;
+    } else if (latinName) {
+        displayText += latinName;
+    } else {
+        displayText += `Surah ${surahNum}`;
+    }
+
+    title.textContent = displayText;
+    container.appendChild(title);
+
+    // 2. Bismillah (Unless Surah 9 or 1)
+    if (surahNum !== 9 && surahNum !== 1) {
+        const bismillah = document.createElement('div');
+        bismillah.className = "text-center opacity-80 select-none";
+        
+        const fontSelect = document.getElementById('fontSelect');
+        const currentFontClass = fontSelect ? fontSelect.value : 'font-amiri';
+        bismillah.innerHTML = `<span class="${currentFontClass} text-2xl text-white">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</span>`;
+        container.appendChild(bismillah);
+    }
+
+    return container;
+}
+
 function createCard(surahNum, start, end, data) {
     const card = document.createElement('div');
     
@@ -96,31 +203,22 @@ function createCard(surahNum, start, end, data) {
     actionsDiv.className = "flex items-center gap-2 transition-opacity duration-200";
 
     if (typeof isEditMode === 'undefined' || !isEditMode) {
-        // Share Button (Format: Surah Name - Ayah Range)
+        // Share Button
         const shareBtn = document.createElement('button');
         shareBtn.className = "text-white/40 hover:text-[#56A3A6] p-2 transition";
         shareBtn.innerHTML = '<span class="material-symbols-outlined text-xl">link</span>';
         shareBtn.onclick = (e) => {
             e.stopPropagation();
-            
-            // 1. Build URL
             const url = `${window.location.origin}${window.location.pathname}#s=${surahNum}&v=${start}-${end}`;
             
-            // 2. Get Name (remove number)
             const surahSelect = document.getElementById('surahSelect');
             let namePart = ""; 
-            
             if(surahSelect) {
                 const option = Array.from(surahSelect.options).find(opt => parseInt(opt.value) === surahNum);
-                if (option) {
-                    // Option text: "34 Saba (Sheba)" -> Remove "34 "
-                    namePart = option.text.replace(/^\d+\s+/, '');
-                }
+                if (option) namePart = option.text.replace(/^\d+\s+/, '');
             }
             if (!namePart) namePart = `Surah ${surahNum}`;
-
-            // 3. Format: Surah 34: Saba (Sheba) - Ayah 6 to 9.
-            //            thematicQuran.com (URL)
+            
             const rangeText = (start === end) ? `Ayah ${start}` : `Ayah ${start} to ${end}`;
             const shareText = `Surah ${surahNum}: ${namePart} - ${rangeText}.\n${url}`;
             
@@ -128,7 +226,6 @@ function createCard(surahNum, start, end, data) {
             if (window.showToast) window.showToast('Link & details copied', 'link');
         };
 
-        // Copy Text Button
         const copyTextBtn = document.createElement('button');
         copyTextBtn.className = "text-white/40 hover:text-[#56A3A6] p-2 transition";
         copyTextBtn.innerHTML = '<span class="material-symbols-outlined text-xl">content_copy</span>';
@@ -155,7 +252,6 @@ function createCard(surahNum, start, end, data) {
             if (window.showToast) window.showToast('Text copied to clipboard', 'content_copy');
         };
 
-        // Download Button
         const downloadBtn = document.createElement('button');
         downloadBtn.className = "text-white/40 hover:text-[#56A3A6] p-2 transition";
         downloadBtn.innerHTML = '<span class="material-symbols-outlined text-xl">download</span>';
@@ -164,7 +260,6 @@ function createCard(surahNum, start, end, data) {
             openDownloadModal(surahNum, start, end);
         };
 
-        // Play Button (Section)
         const playBtn = document.createElement('button');
         playBtn.className = "play-btn ml-2 w-10 h-10 rounded-full bg-[#56A3A6] hover:bg-[#458a8d] text-white flex items-center justify-center transition-colors shadow-md";
         playBtn.innerHTML = '<span class="material-symbols-outlined">play_arrow</span>';
@@ -195,7 +290,6 @@ function createCard(surahNum, start, end, data) {
         const span = document.createElement('span');
         span.id = `ayah-ar-${surahNum}-${verseNum}`;
         let badgeHtml = `<span class="text-[#56A3A6] font-sans text-2xl mx-1">۝${verseNum}</span>`;
-        
         if (typeof isEditMode !== 'undefined' && isEditMode) {
             span.className = "cursor-pointer transition hover:opacity-80";
             if (verseNum === start && verseNum !== 1) {
@@ -236,7 +330,6 @@ function createCard(surahNum, start, end, data) {
         const span = document.createElement('span');
         span.id = `ayah-en-${surahNum}-${verseNum}`;
         let badgeHtml = `<span class="align-super text-xs text-[#56A3A6] font-bold mx-1 font-['Nunito']">(${verseNum})</span>`;
-
         if (typeof isEditMode !== 'undefined' && isEditMode) {
             span.className = "cursor-pointer transition hover:opacity-80";
             if (verseNum === start && verseNum !== 1) {
@@ -257,7 +350,6 @@ function createCard(surahNum, start, end, data) {
                 triggerVersePlay(card, surahNum, start, end, verseNum, 'translation');
             };
         }
-        
         const text = v[textKey] || "";
         span.innerHTML = isUrdu ? `${text} ${badgeHtml} ` : `${badgeHtml} ${text} `;
         transDiv.appendChild(span);
@@ -289,8 +381,9 @@ function triggerVersePlay(card, surah, start, end, verseNum, type) {
     document.querySelectorAll('.thematic-card').forEach(c => c.classList.remove('ring-2', 'ring-[#56A3A6]'));
     card.classList.add('ring-2', 'ring-[#56A3A6]');
 
-    if (typeof playRange === 'function') {
-        playRange(surah, start, end, verseNum, type);
+    // CHANGED: Call the single item player instead of the whole section
+    if (typeof playSingleItem === 'function') {
+        playSingleItem(surah, verseNum, type);
     }
     
     document.dispatchEvent(new CustomEvent('manual-play-started', { detail: { card: card } }));
@@ -304,8 +397,10 @@ function openDownloadModal(surah, start, end) {
     
     const reciterName = reciterSelect.options[reciterSelect.selectedIndex].text;
     const langName = langSelect.options[langSelect.selectedIndex].text;
-    const surahText = surahSelect.options[surahSelect.selectedIndex].text;
-    const surahName = surahText;
+    
+    let surahName = `Surah ${surah}`;
+    const option = Array.from(surahSelect.options).find(opt => parseInt(opt.value) === surah);
+    if(option) surahName = option.text;
 
     document.getElementById('dlModalTitle').textContent = `Surah ${surah}: Verses ${start}-${end}`;
     document.getElementById('dlModalReciter').textContent = reciterName;

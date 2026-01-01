@@ -6,93 +6,127 @@ let isAudioPlaying = false;
 const audioObj = document.getElementById('audioElement');
 let preloadCache = []; 
 
-// State to track if we are currently playing the Intro (Bismillah)
-let isPlayingBismillah = false;
+// State to track if we are currently playing the Intro/Bismillah
+let isPlayingIntro = false;
 
 // Tracking current section details
 let currentSectionScope = { surah: 0, start: 0, end: 0, totalVerses: 0 };
 
 /**
  * 1. THE MASTER PLAY FUNCTION
- * Called by the Section Play Buttons.
- * Decides if we need Bismillah, then starts the queue.
+ * Called by the Section Play Buttons (Play whole block)
  */
 function playSession(surah, start, end) {
-    // 1. Reset everything (stops any previous audio)
     stopAllAudio();
 
-    // 2. Save the session details globally so we can access them in the 'ended' event
     window.pendingSession = { surah, start, end };
+    playQueue = [];
+    currentSectionScope = { surah, start, end, totalVerses: (end - start + 1) };
 
-    // 3. Logic: Play Bismillah if it's Verse 1, but NOT for Surah 9 AND NOT for Surah 1
-    // (Because Surah 1 Verse 1 IS the Bismillah)
+    // A. Intro (Name)
+    if (start === 1) {
+        const sPad = String(surah).padStart(3, '0');
+        playQueue.push({
+            url: `https://audio.thematicquran.com/intro/${sPad}.mp3`,
+            verse: 0,
+            type: 'intro'
+        });
+    }
+
+    // B. Bismillah (Except Surah 1 & 9)
     if (start === 1 && surah !== 9 && surah !== 1) {
-        isPlayingBismillah = true;
-        
-        // Use the MAIN audio object for Bismillah (Crucial for Mobile)
-        audioObj.src = 'https://audio.thematicquran.com/bismillah.mp3';
-        
-        document.getElementById('playerVerse').textContent = `Surah ${surah}: Starting...`;
-        updateControlsUI(true);
+        playQueue.push({
+            url: 'https://audio.thematicquran.com/bismillah.mp3',
+            verse: 0,
+            type: 'bismillah'
+        });
+    }
 
-        // Play it
-        audioObj.play().then(() => {
-            isAudioPlaying = true;
-        }).catch(err => {
-            console.warn("Bismillah Autoplay blocked/failed, skipping to verses...", err);
-            // If it fails (e.g. strict browser policy), skip Bismillah and start verses
-            startMainSection(surah, start, end);
+    // C. Verses
+    const arabicReciter = document.getElementById('reciterSelect').value;
+    const transValue = document.getElementById('languageSelect').value; 
+    const arabicBaseURL = `https://everyayah.com/data/${arabicReciter}/`;
+
+    for (let i = start; i <= end; i++) {
+        const sPad = String(surah).padStart(3, '0');
+        const aPad = String(i).padStart(3, '0');
+        
+        // Arabic
+        playQueue.push({
+            url: arabicBaseURL + `${sPad}${aPad}.mp3`,
+            verse: i,
+            type: 'arabic'
         });
 
+        // Translation
+        const transUrl = getTranslationUrl(surah, i, transValue);
+        playQueue.push({
+            url: transUrl,
+            verse: i,
+            type: 'translation'
+        });
+    }
+
+    document.getElementById('playerVerse').textContent = `Surah ${surah} : Verses ${start}-${end}`;
+    updateControlsUI(true);
+    
+    isPlayingIntro = (start === 1); 
+    
+    queueIndex = 0;
+    startPreloading();
+    playNextTrack();
+}
+
+/**
+ * 2. SINGLE ITEM PLAYER (NEW)
+ * Called when clicking a specific verse text
+ */
+function playSingleItem(surah, verse, type) {
+    stopAllAudio();
+
+    // Set scope so highlighting works
+    currentSectionScope = { surah: surah, start: verse, end: verse, totalVerses: 1 };
+    
+    const arabicReciter = document.getElementById('reciterSelect').value;
+    const transValue = document.getElementById('languageSelect').value; 
+    const arabicBaseURL = `https://everyayah.com/data/${arabicReciter}/`;
+
+    let url = "";
+    if (type === 'arabic') {
+        const sPad = String(surah).padStart(3, '0');
+        const aPad = String(verse).padStart(3, '0');
+        url = arabicBaseURL + `${sPad}${aPad}.mp3`;
+        document.getElementById('playerVerse').textContent = `Surah ${surah} : Verse ${verse} (Arabic)`;
     } else {
-        // No Bismillah needed (or it's Surah 1/9), jump straight to verses
-        startMainSection(surah, start, end);
+        url = getTranslationUrl(surah, verse, transValue);
+        document.getElementById('playerVerse').textContent = `Surah ${surah} : Verse ${verse} (Translation)`;
     }
+
+    // Queue of 1 item
+    playQueue = [{
+        url: url,
+        verse: verse,
+        type: type
+    }];
+
+    queueIndex = 0;
+    updateControlsUI(true);
+    playNextTrack();
 }
 
 /**
- * Helper: Generates the Queue and starts the first verse
- */
-function startMainSection(surah, start, end) {
-    isPlayingBismillah = false; // We are done with Bismillah
-    window.pendingSession = null; // Clear the pending session
-    playRange(surah, start, end);
-}
-
-/**
- * 2. TOGGLE PLAY/PAUSE
- */
-function playerTogglePlayPause() {
-    // If the audio object has a source (Bismillah OR Verse), toggle it
-    if (audioObj.src) {
-        if (audioObj.paused) {
-            audioObj.play().then(() => {
-                isAudioPlaying = true;
-                updateControlsUI(true);
-            });
-        } else {
-            audioObj.pause();
-            isAudioPlaying = false;
-            updateControlsUI(false);
-        }
-    }
-}
-
-/**
- * Helper: Stops everything and resets state.
+ * Helper: Stops everything
  */
 function stopAllAudio() {
     audioObj.pause();
     audioObj.currentTime = 0;
-    // Do NOT clear audioObj.src here, or the UI might think "nothing is loaded"
-    
     isAudioPlaying = false;
-    isPlayingBismillah = false;
+    isPlayingIntro = false;
     playQueue = [];
     queueIndex = 0;
 }
 
-// --- QUEUE GENERATION ---
+// --- QUEUE HELPERS ---
 
 function getTranslationUrl(surah, verse, langValue) {
     const sPad = String(surah).padStart(3, '0');
@@ -108,55 +142,6 @@ function getTranslationUrl(surah, verse, langValue) {
     } else {
         return `https://audio.thematicquran.com/english/${sPad}${aPad}.mp3`;
     }
-}
-
-function playRange(surah, start, end, startVerse = null, startType = null) {
-    const arabicReciter = document.getElementById('reciterSelect').value;
-    const transValue = document.getElementById('languageSelect').value; 
-    const arabicBaseURL = `https://everyayah.com/data/${arabicReciter}/`;
-
-    playQueue = [];
-    preloadCache = []; 
-    currentSectionScope = { surah, start, end, totalVerses: (end - start + 1) };
-    
-    // 1. Add all Arabic Verses
-    for (let i = start; i <= end; i++) {
-        const sPad = String(surah).padStart(3, '0');
-        const aPad = String(i).padStart(3, '0');
-        playQueue.push({
-            url: arabicBaseURL + `${sPad}${aPad}.mp3`,
-            verse: i,
-            type: 'arabic'
-        });
-    }
-
-    // 2. Add all Translation Verses
-    for (let i = start; i <= end; i++) {
-        const url = getTranslationUrl(surah, i, transValue);
-        playQueue.push({
-            url: url,
-            verse: i,
-            type: 'translation'
-        });
-    }
-
-    document.getElementById('playerVerse').textContent = `Surah ${surah} : Verses ${start}-${end}`;
-    
-    startPreloading();
-
-    // Index Logic
-    if (startVerse) {
-        const offset = startVerse - start;
-        if (startType === 'arabic') {
-            queueIndex = offset;
-        } else {
-            queueIndex = currentSectionScope.totalVerses + offset;
-        }
-    } else {
-        queueIndex = 0;
-    }
-
-    playNextTrack();
 }
 
 function startPreloading() {
@@ -179,13 +164,14 @@ function playNextTrack() {
 
     const trackItem = playQueue[queueIndex];
 
-    // Highlight Verse UI
-    const event = new CustomEvent('verse-changed', { 
-        detail: { surah: currentSectionScope.surah, verse: trackItem.verse, type: trackItem.type } 
-    });
-    document.dispatchEvent(event);
+    if (trackItem.type === 'arabic' || trackItem.type === 'translation') {
+        const event = new CustomEvent('verse-changed', { 
+            detail: { surah: currentSectionScope.surah, verse: trackItem.verse, type: trackItem.type } 
+        });
+        document.dispatchEvent(event);
+    }
 
-    console.log(`Playing [${queueIndex}]: ${trackItem.url}`);
+    console.log(`Playing [${queueIndex}]: ${trackItem.type} -> ${trackItem.url}`);
 
     audioObj.src = trackItem.url;
     audioObj.play().then(() => {
@@ -198,18 +184,13 @@ function playNextTrack() {
     });
 }
 
+function playRange(surah, start, end) {
+    playSession(surah, start, end);
+}
+
 // --- EVENTS ---
 
 audioObj.addEventListener('ended', () => {
-    // CRITICAL: This is the bridge.
-    // If Bismillah just finished, load the main verses.
-    if (isPlayingBismillah && window.pendingSession) {
-        const { surah, start, end } = window.pendingSession;
-        startMainSection(surah, start, end);
-        return;
-    }
-
-    // Normal Verse Ended -> Play Next
     queueIndex++;
     playNextTrack();
 });
@@ -224,6 +205,21 @@ audioObj.addEventListener('timeupdate', () => {
     }
 });
 
+function playerTogglePlayPause() {
+    if (audioObj.src) {
+        if (audioObj.paused) {
+            audioObj.play().then(() => {
+                isAudioPlaying = true;
+                updateControlsUI(true);
+            });
+        } else {
+            audioObj.pause();
+            isAudioPlaying = false;
+            updateControlsUI(false);
+        }
+    }
+}
+
 function updateControlsUI(isPlaying) {
     const icon = document.querySelector('#globalPlayPauseBtn span');
     const status = document.getElementById('playerStatus');
@@ -237,7 +233,6 @@ function updateControlsUI(isPlaying) {
     }
 }
 
-// Global Helper
 window.isPlayerActive = function() {
-    return (audioObj.src && !audioObj.ended && audioObj.currentTime > 0) || isAudioPlaying || isPlayingBismillah;
+    return (audioObj.src && !audioObj.ended && audioObj.currentTime > 0) || isAudioPlaying;
 };
