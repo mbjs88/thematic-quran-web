@@ -381,9 +381,9 @@ function triggerVersePlay(card, surah, start, end, verseNum, type) {
     document.querySelectorAll('.thematic-card').forEach(c => c.classList.remove('ring-2', 'ring-[#56A3A6]'));
     card.classList.add('ring-2', 'ring-[#56A3A6]');
 
-    // CHANGED: Call the single item player instead of the whole section
-    if (typeof playSingleItem === 'function') {
-        playSingleItem(surah, verseNum, type);
+    // CHANGED: Use playRange (which now supports targeting) to play rest of section
+    if (typeof playRange === 'function') {
+        playRange(surah, start, end, verseNum, type);
     }
     
     document.dispatchEvent(new CustomEvent('manual-play-started', { detail: { card: card } }));
