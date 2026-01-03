@@ -389,6 +389,7 @@ function triggerVersePlay(card, surah, start, end, verseNum, type) {
     document.dispatchEvent(new CustomEvent('manual-play-started', { detail: { card: card } }));
 }
 
+// UPDATED: openDownloadModal now triggers analytics
 function openDownloadModal(surah, start, end) {
     const modal = document.getElementById('downloadModal');
     const reciterSelect = document.getElementById('reciterSelect');
@@ -414,6 +415,11 @@ function openDownloadModal(surah, start, end) {
     document.getElementById('dlConfirmBtn').onclick = () => {
         document.getElementById('dlProgressContainer').classList.remove('hidden');
         document.getElementById('dlConfirmBtn').style.display = 'none';
+        
+        // ANALYTICS TRIGGER
+        if(typeof window.sendAnalyticsEvent === 'function') {
+            window.sendAnalyticsEvent('download_initiated', { type: 'single', surah: surah, count: (end-start+1) });
+        }
         
         const reciterSlug = reciterSelect.value;
         const langCode = langSelect.value;
