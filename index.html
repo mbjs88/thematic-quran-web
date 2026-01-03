@@ -65,28 +65,30 @@
             background-color: rgba(255, 255, 255, 0.1); 
         }
 
-        /* --- VERSE HIGHLIGHTING FIX (Adjusted) --- */
+        /* --- VERSE HIGHLIGHTING STABILITY FIX --- */
         
-        /* Reduced horizontal padding to 0.15rem so words flow naturally */
-        /* Vertical padding kept at 0.15rem for background coverage */
+        /* 1. Base Class (Applied to ALL verses) */
+        /* We add a transparent border here so the size is locked in */
         .verse-span {
-            padding: 0.15rem 0.15rem;
-            border-radius: 0.3rem;
+            padding: 0.15rem 0.2rem;       /* Comfortable padding */
+            border: 1px solid transparent; /* RESERVED SPACE - Prevents Jumping */
+            border-radius: 0.5rem;
             display: inline;
-            line-height: 2.0; 
+            line-height: 2.2;             
             box-decoration-break: clone;
             -webkit-box-decoration-break: clone;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.2s ease;
             cursor: pointer;
         }
 
-        /* Active State - Only changes background, no layout shift */
+        /* 2. Active State */
+        /* We only change the background color. The border stays transparent (or invisible) */
         .active-verse {
-            background-color: rgba(0, 0, 0, 0.25);
-            box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+            background-color: rgba(0, 0, 0, 0.25); /* Dark Black Highlight */
+            box-shadow: none;                     /* No glow/shadow */
         }
 
-        /* ------------------------------ */
+        /* --------------------------------------- */
 
         .header-hidden {
             transform: translateY(-100%);
@@ -235,17 +237,26 @@
             <h3 id="dlModalTitle" class="text-xl text-white font-['Forum'] mb-4 border-b border-white/10 pb-2">Download Audio</h3>
             
             <div class="space-y-4 mb-6 text-sm text-white/80 font-['Nunito']">
-                <div class="flex justify-between">
-                    <span class="text-[#56A3A6]">Reciter:</span>
-                    <span id="dlModalReciter" class="text-white"></span>
+                
+                <div>
+                    <label class="block text-[#56A3A6] text-xs uppercase font-bold mb-1">Reciter</label>
+                    <div class="bg-white/10 rounded border border-white/20">
+                        <select id="dlModalReciterSelect" class="w-full p-2 bg-transparent text-white outline-none cursor-pointer">
+                            </select>
+                    </div>
                 </div>
-                <div class="flex justify-between">
-                    <span class="text-[#56A3A6]">Translation:</span>
-                    <span id="dlModalLang" class="text-white"></span>
+
+                <div>
+                    <label class="block text-[#56A3A6] text-xs uppercase font-bold mb-1">Translation</label>
+                    <div class="bg-white/10 rounded border border-white/20">
+                        <select id="dlModalLangSelect" class="w-full p-2 bg-transparent text-white outline-none cursor-pointer">
+                            </select>
+                    </div>
                 </div>
+
             </div>
 
-            <div id="dlProgressContainer" class="hidden space-y-2">
+            <div id="dlProgressContainer" class="hidden space-y-2 mb-4">
                 <div class="w-full bg-white/10 rounded-full h-2 overflow-hidden">
                     <div id="dlProgressBar" class="bg-[#56A3A6] h-full transition-all duration-300 w-0"></div>
                 </div>
