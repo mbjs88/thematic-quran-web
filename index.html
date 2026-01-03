@@ -11,29 +11,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-   <title>Thematic Quran | Audio Translation & Study</title>
-    <meta name="description" content="Listen by theme, sync translations, and focus deeply. Create custom Quran audio mixes. Free & Ad-free.">
-    <meta name="keywords" content="Quran, Audio, Thematic, Translation, English, Urdu, Study, Islam, Custom Mix">
+    <title>Thematic Quran | Audio Translation & Study</title>
+    <meta name="description" content="Listen to the Quran by theme with synchronized translations (English & Urdu). Create custom audio mixes, study thematic connections, and focus deeply. Free & Ad-free.">
+    <meta name="keywords" content="Quran, Audio, Thematic, Translation, English, Urdu, Study, Islam, Custom Mix, Tafseer, Quran Audio App">
     <meta name="author" content="Thematic Quran Team">
+    <link rel="canonical" href="https://www.thematicquran.com/">
     
     <meta name="theme-color" content="#12101C">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.thematicquran.com/">
-    <meta property="og:title" content="Thematic Quran">
-    <meta property="og:description" content="Listen by theme, sync translations, and focus deeply. Create custom Quran audio mixes. Free & Ad-free.">
+    <meta property="og:title" content="Thematic Quran | Listen & Study">
+    <meta property="og:description" content="A new way to experience the Quran. Listen by theme, sync translations, and create custom mixes.">
     <meta property="og:image" content="https://www.thematicquran.com/assets/og-social-card.png">
 
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://www.thematicquran.com/">
     <meta property="twitter:title" content="Thematic Quran">
-    <meta property="twitter:description" content="Listen by theme, sync translations, and focus deeply. Create custom Quran audio mixes. Free & Ad-free.">
+    <meta property="twitter:description" content="A new way to experience the Quran. Listen by theme, sync translations, and create custom mixes.">
     <meta property="twitter:image" content="https://www.thematicquran.com/assets/og-social-card.png">
     
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
     <link rel="manifest" href="manifest.json">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Thematic Quran",
+      "url": "https://www.thematicquran.com/",
+      "description": "A web application for listening to the Quran with synchronized English and Urdu translations, featuring thematic verse grouping.",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "Thematic Quran Team"
+      }
+    }
+    </script>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Forum&family=Nunito:wght@300;400;600;700&family=Noto+Nastaliq+Urdu:wght@400;700&family=Scheherazade+New:wght@400;700&family=Lateef&family=Noto+Naskh+Arabic:wght@400;700&display=swap" rel="stylesheet">
@@ -41,100 +63,25 @@
     <link rel="stylesheet" href="css/styles.css">
     
     <style>
-        html {
-            background-color: #12101C;
-        }
-
-        body {
-            background-color: #12101C;
-            overscroll-behavior-y: none;
-        }
-
-        .custom-gradient {
-            background: linear-gradient(to bottom, #12101C 0%, #221F2B 50%, #352B39 100%);
-        }
-        
-        .toggle-checkbox:checked {
-            right: 0;
-            border-color: #56A3A6;
-        }
-        .toggle-checkbox:checked + .toggle-label {
-            background-color: #56A3A6; 
-        }
-        .toggle-label {
-            background-color: rgba(255, 255, 255, 0.1); 
-        }
-
-        /* --- VERSE HIGHLIGHTING STABILITY FIX --- */
-        
-        /* 1. Base Class (Applied to ALL verses) */
-        /* We add a transparent border here so the size is locked in */
-        .verse-span {
-            padding: 0.15rem 0.2rem;       /* Comfortable padding */
-            border: 1px solid transparent; /* RESERVED SPACE - Prevents Jumping */
-            border-radius: 0.5rem;
-            display: inline;
-            line-height: 2.2;             
-            box-decoration-break: clone;
-            -webkit-box-decoration-break: clone;
-            transition: background-color 0.2s ease;
-            cursor: pointer;
-        }
-
-        /* 2. Active State */
-        /* We only change the background color. The border stays transparent (or invisible) */
-        .active-verse {
-            background-color: rgba(0, 0, 0, 0.25); /* Dark Black Highlight */
-            box-shadow: none;                     /* No glow/shadow */
-        }
-
-        /* --------------------------------------- */
-
-        .header-hidden {
-            transform: translateY(-100%);
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .toast-notification {
-            position: fixed;
-            bottom: 100px; 
-            left: 50%;
-            transform: translateX(-50%) translateY(20px);
-            background-color: rgba(30, 20, 38, 0.95);
-            border: 1px solid rgba(86, 163, 166, 0.5);
-            color: #F3E4CE;
-            padding: 12px 24px;
-            border-radius: 50px;
-            font-family: 'Nunito', sans-serif;
-            font-size: 0.9rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            opacity: 0;
-            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-            z-index: 100;
-            pointer-events: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .toast-visible {
-            opacity: 1;
-            transform: translateX(-50%) translateY(0);
-        }
-        
-        input[type=range] {
-            -webkit-appearance: none; width: 100%; background: transparent;
-        }
-        input[type=range]::-webkit-slider-thumb {
-            -webkit-appearance: none; height: 16px; width: 16px; border-radius: 50%;
-            background: #56A3A6; cursor: pointer; margin-top: -6px; box-shadow: 0 0 10px rgba(0,0,0,0.5);
-            position: relative; z-index: 20;
-        }
-        input[type=range]::-webkit-slider-runnable-track {
-            width: 100%; height: 4px; cursor: pointer; background: rgba(255,255,255,0.1); border-radius: 2px;
-        }
+        /* ... (Keep your existing styles here) ... */
+        html { background-color: #12101C; }
+        body { background-color: #12101C; overscroll-behavior-y: none; }
+        .custom-gradient { background: linear-gradient(to bottom, #12101C 0%, #221F2B 50%, #352B39 100%); }
+        .toggle-checkbox:checked { right: 0; border-color: #56A3A6; }
+        .toggle-checkbox:checked + .toggle-label { background-color: #56A3A6; }
+        .toggle-label { background-color: rgba(255, 255, 255, 0.1); }
+        .verse-span { padding: 0.15rem 0.2rem; border: 1px solid transparent; border-radius: 0.5rem; display: inline; line-height: 2.2; box-decoration-break: clone; -webkit-box-decoration-break: clone; transition: background-color 0.2s ease; cursor: pointer; }
+        .active-verse { background-color: rgba(0, 0, 0, 0.25); box-shadow: none; }
+        .header-hidden { transform: translateY(-100%); opacity: 0; pointer-events: none; }
+        .toast-notification { position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%) translateY(20px); background-color: rgba(30, 20, 38, 0.95); border: 1px solid rgba(86, 163, 166, 0.5); color: #F3E4CE; padding: 12px 24px; border-radius: 50px; font-family: 'Nunito', sans-serif; font-size: 0.9rem; box-shadow: 0 10px 30px rgba(0,0,0,0.5); opacity: 0; transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55); z-index: 100; pointer-events: none; display: flex; align-items: center; gap: 8px; }
+        .toast-visible { opacity: 1; transform: translateX(-50%) translateY(0); }
+        input[type=range] { -webkit-appearance: none; width: 100%; background: transparent; }
+        input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; height: 16px; width: 16px; border-radius: 50%; background: #56A3A6; cursor: pointer; margin-top: -6px; box-shadow: 0 0 10px rgba(0,0,0,0.5); position: relative; z-index: 20; }
+        input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 4px; cursor: pointer; background: rgba(255,255,255,0.1); border-radius: 2px; }
     </style>
 </head>
+
+
 <body class="custom-gradient min-h-screen text-[#F3E4CE] font-['Nunito'] flex flex-col h-[100dvh] overflow-hidden">
 
     <header id="mainHeader" class="fixed top-0 left-0 w-full z-40 bg-[#12101C]/30 backdrop-blur-2xl border-b border-white/10 shadow-lg p-4 flex flex-col items-center justify-center space-y-4 transition-all duration-500 ease-in-out">

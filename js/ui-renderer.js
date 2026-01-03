@@ -1,3 +1,5 @@
+// js/ui-renderer.js
+
 const UI_KEYS = {
     SURAH_NO: 'surah_no',
     AYAH_NO: 'ayah_no_surah',
@@ -7,12 +9,40 @@ const UI_KEYS = {
 };
 
 /**
+ * SEO HELPER: Updates Title and Meta Tags dynamically
+ */
+function updatePageMetadata(title, description) {
+    document.title = title;
+    // Update Meta Description
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute("content", description);
+    
+    // Update Open Graph tags for social sharing
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) ogTitle.setAttribute("content", title);
+}
+
+/**
  * Renders a Single Surah (Standard Mode)
  */
 function renderThematicSurah(surahNum, verses, breaks) {
     const container = document.getElementById('contentArea');
     container.innerHTML = ''; 
     const lastVerseNum = verses.length > 0 ? verses[verses.length - 1][UI_KEYS.AYAH_NO] : 0;
+
+    // --- SEO UPDATE ---
+    const surahSelect = document.getElementById('surahSelect');
+    let surahName = `Surah ${surahNum}`;
+    if(surahSelect) {
+        const option = Array.from(surahSelect.options).find(opt => parseInt(opt.value) === surahNum);
+        if(option) surahName = option.text;
+    }
+    
+    updatePageMetadata(
+        `${surahName} | Thematic Quran`,
+        `Read and listen to ${surahName} with synchronized translation and thematic verse grouping.`
+    );
+    // ------------------
 
     // Spacer
     const spacer = document.getElementById('mainSpacer');
@@ -62,6 +92,13 @@ function renderThematicSurah(surahNum, verses, breaks) {
 function renderThematicJuz(juzId, verses, allBreaks) {
     const container = document.getElementById('contentArea');
     container.innerHTML = '';
+
+    // --- SEO UPDATE ---
+    updatePageMetadata(
+        `Juz ${juzId} | Thematic Quran`,
+        `Read and listen to Juz ${juzId} of the Quran with synchronized translation.`
+    );
+    // ------------------
 
     // Adjust spacer for Juz mode
     const spacer = document.getElementById('mainSpacer');
@@ -203,10 +240,11 @@ function createCard(surahNum, start, end, data) {
     actionsDiv.className = "flex items-center gap-2 transition-opacity duration-200";
 
     if (typeof isEditMode === 'undefined' || !isEditMode) {
-        // Share Button
+        // Share Button (Accessibility Updated)
         const shareBtn = document.createElement('button');
         shareBtn.className = "text-white/40 hover:text-[#56A3A6] p-2 transition";
-        shareBtn.innerHTML = '<span class="material-symbols-outlined text-xl">link</span>';
+        shareBtn.setAttribute('aria-label', `Share verses ${start} to ${end}`);
+        shareBtn.innerHTML = '<span class="material-symbols-outlined text-xl" aria-hidden="true">link</span>';
         shareBtn.onclick = (e) => {
             e.stopPropagation();
             const url = `${window.location.origin}${window.location.pathname}#s=${surahNum}&v=${start}-${end}`;
@@ -226,9 +264,11 @@ function createCard(surahNum, start, end, data) {
             if (window.showToast) window.showToast('Link & details copied', 'link');
         };
 
+        // Copy Text Button (Accessibility Updated)
         const copyTextBtn = document.createElement('button');
         copyTextBtn.className = "text-white/40 hover:text-[#56A3A6] p-2 transition";
-        copyTextBtn.innerHTML = '<span class="material-symbols-outlined text-xl">content_copy</span>';
+        copyTextBtn.setAttribute('aria-label', `Copy text for verses ${start} to ${end}`);
+        copyTextBtn.innerHTML = '<span class="material-symbols-outlined text-xl" aria-hidden="true">content_copy</span>';
         copyTextBtn.onclick = (e) => {
             e.stopPropagation();
             let arabicText = "";
@@ -252,17 +292,21 @@ function createCard(surahNum, start, end, data) {
             if (window.showToast) window.showToast('Text copied to clipboard', 'content_copy');
         };
 
+        // Download Button (Accessibility Updated)
         const downloadBtn = document.createElement('button');
         downloadBtn.className = "text-white/40 hover:text-[#56A3A6] p-2 transition";
-        downloadBtn.innerHTML = '<span class="material-symbols-outlined text-xl">download</span>';
+        downloadBtn.setAttribute('aria-label', `Download audio for verses ${start} to ${end}`);
+        downloadBtn.innerHTML = '<span class="material-symbols-outlined text-xl" aria-hidden="true">download</span>';
         downloadBtn.onclick = (e) => {
             e.stopPropagation();
             openDownloadModal(surahNum, start, end);
         };
 
+        // Play Button (Accessibility Updated)
         const playBtn = document.createElement('button');
         playBtn.className = "play-btn ml-2 w-10 h-10 rounded-full bg-[#56A3A6] hover:bg-[#458a8d] text-white flex items-center justify-center transition-colors shadow-md";
-        playBtn.innerHTML = '<span class="material-symbols-outlined">play_arrow</span>';
+        playBtn.setAttribute('aria-label', `Play Surah ${surahNum} verses ${start} to ${end}`);
+        playBtn.innerHTML = '<span class="material-symbols-outlined" aria-hidden="true">play_arrow</span>';
         playBtn.onclick = (e) => {
             handleCardPlayClick(card, surahNum, start, end);
         };
@@ -404,9 +448,25 @@ function openDownloadModal(surah, start, end) {
     if(option) surahName = option.text;
 
     document.getElementById('dlModalTitle').textContent = `Surah ${surah}: Verses ${start}-${end}`;
-    document.getElementById('dlModalReciter').textContent = reciterName;
-    document.getElementById('dlModalLang').textContent = langName;
+    // Elements dlModalReciter and dlModalLang might not exist in HTML if they were removed in previous steps, 
+    // but we can try to set them if they exist or just rely on the dropdowns in the modal.
+    // However, based on the *latest* index.html provided, the modal uses dropdowns (SELECT elements),
+    // so we should sync those dropdowns instead of setting text content.
     
+    // SYNC DROPDOWNS TO MAIN UI SELECTION
+    const dlReciterSelect = document.getElementById('dlModalReciterSelect');
+    const dlLangSelect = document.getElementById('dlModalLangSelect');
+    
+    if (dlReciterSelect) {
+        dlReciterSelect.innerHTML = reciterSelect.innerHTML;
+        dlReciterSelect.value = reciterSelect.value;
+    }
+    
+    if (dlLangSelect) {
+        dlLangSelect.innerHTML = langSelect.innerHTML;
+        dlLangSelect.value = langSelect.value;
+    }
+
     document.getElementById('dlProgressContainer').classList.add('hidden');
     document.getElementById('dlConfirmBtn').style.display = 'block';
     
@@ -421,11 +481,12 @@ function openDownloadModal(surah, start, end) {
             window.sendAnalyticsEvent('download_initiated', { type: 'single', surah: surah, count: (end-start+1) });
         }
         
-        const reciterSlug = reciterSelect.value;
-        const langCode = langSelect.value;
+        // Use values from the modal dropdowns if available, else fallback to main UI
+        const finalReciter = dlReciterSelect ? dlReciterSelect.value : reciterSelect.value;
+        const finalLang = dlLangSelect ? dlLangSelect.value : langSelect.value;
         
         if (typeof downloadGroupedSection === 'function') {
-            downloadGroupedSection(surah, start, end, reciterSlug, langCode, surahName);
+            downloadGroupedSection(surah, start, end, finalReciter, finalLang, surahName);
         }
     };
 
