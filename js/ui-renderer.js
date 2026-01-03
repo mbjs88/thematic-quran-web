@@ -431,12 +431,32 @@ function closeDownloadModal() {
 }
 
 window.highlightActiveVerseUI = function(surah, verse, type) {
+    // 1. Remove old highlight
     document.querySelectorAll('.active-verse').forEach(el => el.classList.remove('active-verse'));
+    
+    // 2. Add new highlight
     const prefix = (type === 'arabic') ? 'ayah-ar' : 'ayah-en';
     const id = `${prefix}-${surah}-${verse}`;
     const el = document.getElementById(id);
+    
     if (el) {
         el.classList.add('active-verse');
+
+        // 3. Smart Scroll Check
+        const rect = el.getBoundingClientRect();
+        const mainContainer = document.getElementById('mainContainer');
+        const containerRect = mainContainer.getBoundingClientRect();
+
+        // Check if element is outside the comfortable middle view
+        const isAbove = rect.top < (containerRect.top + 100); // 100px buffer for header
+        const isBelow = rect.bottom > (containerRect.bottom - 100); // 100px buffer for footer
+
+        if (isAbove || isBelow) {
+            el.scrollIntoView({
+                behavior: 'smooth',
+                block: 'center'
+            });
+        }
     }
 }
 

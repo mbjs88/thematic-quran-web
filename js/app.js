@@ -1,7 +1,6 @@
 // js/app.js
 
-// --- VERSION DEBUGGER ---
-console.log("THEMATIC QURAN - VERSION 2"); 
+console.log("THEMATIC QURAN - VERSION 2.1"); 
 
 const CONSTANTS = {
     KEY_SURAH_NO: 'surah_no',
@@ -13,20 +12,14 @@ const CONSTANTS = {
     KEY_SURAH_LATIN: 'surah_name_roman'
 };
 
-// Global State
 let QURAN_DATA = [];
 let THEME_BREAKS = {};
-
-// Settings State
 let currentFontScale = 1.0; 
 let isEditMode = false;
 let currentViewMode = 'surah'; 
-
-// Selection State
 let isSelectMode = false;
 let selectedItems = new Set(); 
 const MAX_SELECTION = 3; 
-
 const STORAGE_KEY_SCALE = 'fontScale_v2'; 
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -49,16 +42,15 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     });
 
+    // PWA Install Logic
     let deferredPrompt;
     const installContainer = document.getElementById('installAppContainer');
     const installBtn = document.getElementById('installAppBtn');
-
     window.addEventListener('beforeinstallprompt', (e) => {
         e.preventDefault();
         deferredPrompt = e;
         if (installContainer) installContainer.classList.remove('hidden');
     });
-
     if (installBtn) {
         installBtn.addEventListener('click', async () => {
             if (!deferredPrompt) return;
@@ -69,18 +61,15 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
 
+    // Scroll Aware Header
     const mainContainer = document.getElementById('mainContainer');
     const header = document.getElementById('mainHeader');
     let lastScrollY = 0;
-
     mainContainer.addEventListener('scroll', () => {
         const currentScrollY = mainContainer.scrollTop;
         if (currentScrollY > 100) {
-            if (currentScrollY > lastScrollY) {
-                header.classList.add('header-hidden');
-            } else {
-                header.classList.remove('header-hidden');
-            }
+            if (currentScrollY > lastScrollY) header.classList.add('header-hidden');
+            else header.classList.remove('header-hidden');
         } else {
             header.classList.remove('header-hidden');
         }
@@ -105,17 +94,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (window.location.hash) {
             handleDeepLink();
         } else {
-            const savedMode = localStorage.getItem('viewMode');
-            if (savedMode) currentViewMode = savedMode;
-            
-            const viewSelect = document.getElementById('viewModeSelect');
-            if(viewSelect) viewSelect.value = currentViewMode;
-            
-            populateDropdown();
-
-            const savedId = localStorage.getItem('lastContentId') || "1";
-            document.getElementById('surahSelect').value = savedId;
-            loadContent(parseInt(savedId));
+            restoreSessionState();
         }
 
         document.getElementById('loadingMessage').classList.add('hidden');
@@ -129,65 +108,77 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 function loadPreferences() {
     const savedFont = localStorage.getItem('arabicFont');
-    if (savedFont) {
-        const fontSelect = document.getElementById('fontSelect');
-        if(fontSelect) fontSelect.value = savedFont;
-    }
+    if (savedFont && document.getElementById('fontSelect')) document.getElementById('fontSelect').value = savedFont;
+    
     const savedScale = localStorage.getItem(STORAGE_KEY_SCALE);
-    if (savedScale) {
-        currentFontScale = parseFloat(savedScale);
-    } else {
-        if (window.innerWidth < 768) {
-            currentFontScale = 0.7; 
-        } else {
-            currentFontScale = 1.0; 
-        }
-    }
+    if (savedScale) currentFontScale = parseFloat(savedScale);
+    else currentFontScale = (window.innerWidth < 768) ? 0.7 : 1.0;
+    
     updateFontDisplay();
+
+    const arSpeed = localStorage.getItem('arabicSpeed') || "1.0";
+    const trSpeed = localStorage.getItem('translationSpeed') || "1.0";
+    const arInput = document.getElementById('arabicSpeedRange');
+    const trInput = document.getElementById('transSpeedRange');
+    if(arInput) { arInput.value = arSpeed; document.getElementById('arabicSpeedLabel').textContent = `${arSpeed}x`; }
+    if(trInput) { trInput.value = trSpeed; document.getElementById('transSpeedLabel').textContent = `${trSpeed}x`; }
 }
 
 function updateFontDisplay() {
     const display = document.getElementById('fontSizeDisplay');
-    if(display) {
-        display.textContent = Math.round(currentFontScale * 100) + '%';
+    if(display) display.textContent = Math.round(currentFontScale * 100) + '%';
+}
+
+function restoreSessionState() {
+    const savedState = localStorage.getItem('resumeState');
+    if (savedState) {
+        try {
+            const state = JSON.parse(savedState);
+            currentViewMode = state.mode || 'surah';
+            const id = state.id || 1;
+            const startVerse = state.startVerse || 1;
+
+            const viewSelect = document.getElementById('viewModeSelect');
+            if(viewSelect) viewSelect.value = currentViewMode;
+            populateDropdown();
+            document.getElementById('surahSelect').value = id;
+
+            loadContent(id, startVerse); 
+        } catch (e) {
+            console.error("Failed to restore session", e);
+            fallbackLoad();
+        }
+    } else {
+        fallbackLoad();
     }
+}
+
+function fallbackLoad() {
+    populateDropdown();
+    document.getElementById('surahSelect').value = 1;
+    loadContent(1);
 }
 
 function populateDropdown() {
     const select = document.getElementById('surahSelect');
     select.innerHTML = ''; 
-
     if (currentViewMode === 'juz') {
         for (let i = 1; i <= 30; i++) {
             const option = document.createElement('option');
-            option.value = i;
-            option.textContent = `Juz ${i}`;
-            select.appendChild(option);
+            option.value = i; option.textContent = `Juz ${i}`; select.appendChild(option);
         }
     } else {
         const uniqueSurahs = new Map();
         QURAN_DATA.forEach(row => {
             const num = row[CONSTANTS.KEY_SURAH_NO];
-            if (!uniqueSurahs.has(num)) {
-                uniqueSurahs.set(num, {
-                    meaning: row[CONSTANTS.KEY_SURAH_MEANING],
-                    latin: row[CONSTANTS.KEY_SURAH_LATIN]
-                });
-            }
+            if (!uniqueSurahs.has(num)) uniqueSurahs.set(num, { meaning: row[CONSTANTS.KEY_SURAH_MEANING], latin: row[CONSTANTS.KEY_SURAH_LATIN] });
         });
-
         uniqueSurahs.forEach((info, num) => {
             const option = document.createElement('option');
             option.value = num;
             const paddedNum = String(num).padStart(2, '0');
-            let text = `${paddedNum} `;
-            if (info.latin) {
-                text += `${info.latin} (${info.meaning})`;
-            } else {
-                text += info.meaning; 
-            }
-            option.textContent = text;
-            select.appendChild(option);
+            const text = info.latin ? `${paddedNum} ${info.latin} (${info.meaning})` : `${paddedNum} ${info.meaning}`;
+            option.textContent = text; select.appendChild(option);
         });
     }
 }
@@ -195,29 +186,24 @@ function populateDropdown() {
 function resetPlayerState() {
     if (typeof stopAllAudio === 'function') stopAllAudio();
     const playBtn = document.getElementById('globalPlayPauseBtn');
-    const status = document.getElementById('playerStatus');
-    const progressBar = document.getElementById('progressBar');
-    const currentTime = document.getElementById('currentTime');
-
     if (playBtn) playBtn.innerHTML = '<span class="material-symbols-outlined text-5xl">play_arrow</span>';
+    const status = document.getElementById('playerStatus');
     if (status) status.textContent = "Ready to Play";
+    const progressBar = document.getElementById('progressBar');
     if (progressBar) progressBar.style.width = '0%';
+    const currentTime = document.getElementById('currentTime');
     if (currentTime) currentTime.textContent = "0:00";
     
     document.querySelectorAll('.thematic-card').forEach(c => c.classList.remove('ring-2', 'ring-[#56A3A6]'));
     document.querySelectorAll('.active-verse').forEach(el => el.classList.remove('active-verse'));
 }
 
-function loadContent(id) {
-    localStorage.setItem('lastContentId', id);
-    if (currentViewMode === 'juz') {
-        loadJuz(id);
-    } else {
-        loadSurah(id);
-    }
+function loadContent(id, scrollTargetVerse = null) {
+    if (currentViewMode === 'juz') loadJuz(id, scrollTargetVerse);
+    else loadSurah(id, scrollTargetVerse);
 }
 
-function loadSurah(surahId) {
+function loadSurah(surahId, scrollTargetVerse = null) {
     resetPlayerState();
     if (isSelectMode) toggleSelectionModeUI(false);
 
@@ -227,7 +213,6 @@ function loadSurah(surahId) {
     const customData = localStorage.getItem(customKey);
     const restoreBtn = document.getElementById('restoreDefaultsBtn');
     let activeBreaks = [];
-
     if (customData) {
         activeBreaks = JSON.parse(customData);
         if (restoreBtn) restoreBtn.classList.remove('hidden');
@@ -235,7 +220,6 @@ function loadSurah(surahId) {
         activeBreaks = THEME_BREAKS[String(surahId)] || [];
         if (restoreBtn) restoreBtn.classList.add('hidden');
     }
-
     let cleanBreaks = activeBreaks.map(Number).filter(b => b < surahVerses.length).sort((a, b) => a - b);
     if (cleanBreaks.length === 0 || cleanBreaks[0] !== 1) {
         if(cleanBreaks[0] !== 1) cleanBreaks.unshift(1);
@@ -244,9 +228,7 @@ function loadSurah(surahId) {
 
     const select = document.getElementById('surahSelect');
     let surahText = `Surah ${surahId}`;
-    if (select.value == surahId && select.selectedIndex >= 0) {
-        surahText = select.options[select.selectedIndex].text;
-    }
+    if (select.value == surahId && select.selectedIndex >= 0) surahText = select.options[select.selectedIndex].text;
     document.getElementById('playerVerse').textContent = surahText;
 
     renderThematicSurah(surahId, surahVerses, cleanBreaks);
@@ -255,30 +237,41 @@ function loadSurah(surahId) {
     if (mainContainer) mainContainer.scrollTop = 0;
 
     setTimeout(() => {
-        const firstCard = document.querySelector('.thematic-card');
-        if (firstCard && typeof preloadNextSection === 'function') {
-            const s = parseInt(firstCard.dataset.surah);
-            const start = parseInt(firstCard.dataset.start);
-            const end = parseInt(firstCard.dataset.end);
-            console.log(`Preloading first section: ${s}:${start}-${end}`);
-            preloadNextSection(s, start, end);
+        if (scrollTargetVerse) {
+            const cards = Array.from(document.querySelectorAll('.thematic-card'));
+            const targetCard = cards.find(card => {
+                const s = parseInt(card.dataset.start);
+                const e = parseInt(card.dataset.end);
+                return scrollTargetVerse >= s && scrollTargetVerse <= e;
+            });
+            if (targetCard) {
+                scrollToCard(targetCard);
+                const s = parseInt(targetCard.dataset.surah);
+                const start = parseInt(targetCard.dataset.start);
+                const end = parseInt(targetCard.dataset.end);
+                if (typeof preloadNextSection === 'function') preloadNextSection(s, start, end);
+                localStorage.setItem('resumeState', JSON.stringify({ mode: 'surah', id: surahId, startVerse: start }));
+            }
+        } else {
+            const firstCard = document.querySelector('.thematic-card');
+            if (firstCard && typeof preloadNextSection === 'function') {
+                const s = parseInt(firstCard.dataset.surah);
+                const start = parseInt(firstCard.dataset.start);
+                const end = parseInt(firstCard.dataset.end);
+                preloadNextSection(s, start, end);
+                localStorage.setItem('resumeState', JSON.stringify({ mode: 'surah', id: surahId, startVerse: 1 }));
+            }
         }
     }, 100);
 }
 
-function loadJuz(juzId) {
+function loadJuz(juzId, scrollTargetVerse = null) {
     resetPlayerState();
     if (isSelectMode) toggleSelectionModeUI(false);
 
-    if (typeof JUZ_META === 'undefined') {
-        console.error("JUZ_META not loaded!");
-        return;
-    }
+    if (typeof JUZ_META === 'undefined') return;
     const meta = JUZ_META.find(j => j.id === juzId);
-    if (!meta) {
-        console.error("Juz Data not found for ID:", juzId);
-        return;
-    }
+    if (!meta) return;
 
     const juzVerses = QURAN_DATA.filter(row => {
         const s = row[CONSTANTS.KEY_SURAH_NO];
@@ -293,48 +286,49 @@ function loadJuz(juzId) {
     });
 
     document.getElementById('playerVerse').textContent = `Juz ${juzId}`;
-
     renderThematicJuz(juzId, juzVerses, THEME_BREAKS);
 
     const mainContainer = document.getElementById('mainContainer');
     if (mainContainer) mainContainer.scrollTop = 0;
 
     setTimeout(() => {
-        const firstCard = document.querySelector('.thematic-card');
-        if (firstCard && typeof preloadNextSection === 'function') {
-            const s = parseInt(firstCard.dataset.surah);
-            const start = parseInt(firstCard.dataset.start);
-            const end = parseInt(firstCard.dataset.end);
-            preloadNextSection(s, start, end);
+        if (scrollTargetVerse) {
+             const cards = Array.from(document.querySelectorAll('.thematic-card'));
+             const targetCard = cards.find(card => {
+                 const s = parseInt(card.dataset.start);
+                 const e = parseInt(card.dataset.end);
+                 return scrollTargetVerse >= s && scrollTargetVerse <= e; 
+             });
+             if(targetCard) scrollToCard(targetCard);
+        } else {
+            const firstCard = document.querySelector('.thematic-card');
+            if (firstCard && typeof preloadNextSection === 'function') {
+                const s = parseInt(firstCard.dataset.surah);
+                const start = parseInt(firstCard.dataset.start);
+                const end = parseInt(firstCard.dataset.end);
+                preloadNextSection(s, start, end);
+            }
         }
     }, 100);
 }
 
+// ... (Edit/Restore Functions) ...
 window.handleVerseBreakToggle = function(surahId, verseNum) {
     if (!isEditMode) return;
-    if (currentViewMode === 'juz') {
-        alert("Editing is only allowed in Surah Mode for now.");
-        return;
-    }
+    if (currentViewMode === 'juz') { alert("Editing only in Surah Mode."); return; }
     const customKey = `customBreaks_${surahId}`;
     const surahVerses = QURAN_DATA.filter(row => row[CONSTANTS.KEY_SURAH_NO] === surahId);
-    
     let currentBreaks = [];
     const saved = localStorage.getItem(customKey);
-    if (saved) {
-        currentBreaks = JSON.parse(saved);
-    } else {
+    if (saved) currentBreaks = JSON.parse(saved);
+    else {
         let defaults = THEME_BREAKS[String(surahId)] || [];
         currentBreaks = defaults.map(Number).filter(b => b < surahVerses.length).sort((a, b) => a - b);
         if (currentBreaks.length === 0 || currentBreaks[0] !== 1) currentBreaks.unshift(1);
     }
-
     const index = currentBreaks.indexOf(verseNum);
-    if (index !== -1) {
-        if (verseNum !== 1) currentBreaks.splice(index, 1);
-    } else {
-        currentBreaks.push(verseNum);
-    }
+    if (index !== -1) { if (verseNum !== 1) currentBreaks.splice(index, 1); } 
+    else currentBreaks.push(verseNum);
     currentBreaks.sort((a, b) => a - b);
     localStorage.setItem(customKey, JSON.stringify(currentBreaks));
     loadSurah(surahId);
@@ -359,25 +353,10 @@ function handleDeepLink() {
         const viewSelect = document.getElementById('viewModeSelect');
         if(viewSelect) viewSelect.value = 'surah';
         populateDropdown();
-
         document.getElementById('surahSelect').value = surah;
-        loadSurah(surah);
-        
-        setTimeout(() => {
-            const cards = Array.from(document.querySelectorAll('.thematic-card'));
-            const targetCard = cards.find(card => {
-                const s = parseInt(card.dataset.start);
-                const e = parseInt(card.dataset.end);
-                return verseStart >= s && verseStart <= e;
-            });
-            if (targetCard) {
-                scrollToCard(targetCard);
-                targetCard.classList.add('ring-4', 'ring-[#56A3A6]/50');
-                setTimeout(() => targetCard.classList.remove('ring-4', 'ring-[#56A3A6]/50'), 2000);
-            }
-        }, 500); 
+        loadContent(surah, verseStart);
     } else {
-        loadContent(1);
+        restoreSessionState();
     }
 }
 
@@ -397,80 +376,54 @@ function setupGlobalEventListeners() {
             loadContent(1);
         });
     }
+
+    const arSlider = document.getElementById('arabicSpeedRange');
+    const trSlider = document.getElementById('transSpeedRange');
+    if(arSlider) {
+        arSlider.addEventListener('input', (e) => {
+            const val = e.target.value;
+            document.getElementById('arabicSpeedLabel').textContent = `${val}x`;
+            localStorage.setItem('arabicSpeed', val);
+            document.dispatchEvent(new CustomEvent('speed-changed', { detail: { type: 'arabic', speed: val } }));
+        });
+    }
+    if(trSlider) {
+        trSlider.addEventListener('input', (e) => {
+            const val = e.target.value;
+            document.getElementById('transSpeedLabel').textContent = `${val}x`;
+            localStorage.setItem('translationSpeed', val);
+            document.dispatchEvent(new CustomEvent('speed-changed', { detail: { type: 'translation', speed: val } }));
+        });
+    }
     
-    document.getElementById('languageSelect').addEventListener('change', () => {
-        loadContent(parseInt(document.getElementById('surahSelect').value));
-    });
-
-    document.getElementById('fontSelect').addEventListener('change', (e) => {
-        localStorage.setItem('arabicFont', e.target.value);
-        loadContent(parseInt(document.getElementById('surahSelect').value));
-    });
-
-    document.getElementById('increaseFontBtn').addEventListener('click', () => {
-        if (currentFontScale < 2.0) {
-            currentFontScale += 0.1;
-            localStorage.setItem(STORAGE_KEY_SCALE, currentFontScale);
-            updateFontDisplay();
-            loadContent(parseInt(document.getElementById('surahSelect').value));
-        }
-    });
-
-    document.getElementById('decreaseFontBtn').addEventListener('click', () => {
-        if (currentFontScale > 0.6) {
-            currentFontScale -= 0.1;
-            localStorage.setItem(STORAGE_KEY_SCALE, currentFontScale);
-            updateFontDisplay();
-            loadContent(parseInt(document.getElementById('surahSelect').value));
-        }
-    });
+    document.getElementById('languageSelect').addEventListener('change', () => loadContent(parseInt(document.getElementById('surahSelect').value)));
+    document.getElementById('fontSelect').addEventListener('change', (e) => { localStorage.setItem('arabicFont', e.target.value); loadContent(parseInt(document.getElementById('surahSelect').value)); });
+    document.getElementById('increaseFontBtn').addEventListener('click', () => { if (currentFontScale < 2.0) { currentFontScale += 0.1; localStorage.setItem(STORAGE_KEY_SCALE, currentFontScale); updateFontDisplay(); loadContent(parseInt(document.getElementById('surahSelect').value)); } });
+    document.getElementById('decreaseFontBtn').addEventListener('click', () => { if (currentFontScale > 0.6) { currentFontScale -= 0.1; localStorage.setItem(STORAGE_KEY_SCALE, currentFontScale); updateFontDisplay(); loadContent(parseInt(document.getElementById('surahSelect').value)); } });
 
     const editToggle = document.getElementById('editModeToggle');
-    editToggle.addEventListener('change', (e) => {
-        isEditMode = e.target.checked;
-        const banner = document.getElementById('editModeBanner');
-        if (isEditMode) banner.classList.remove('hidden'); else banner.classList.add('hidden');
-        loadContent(parseInt(document.getElementById('surahSelect').value));
-    });
-
-    document.getElementById('exitEditModeBtn').addEventListener('click', () => {
-        isEditMode = false;
-        document.getElementById('editModeBanner').classList.add('hidden');
-        document.getElementById('editModeToggle').checked = false; 
-        loadContent(parseInt(document.getElementById('surahSelect').value));
-    });
+    editToggle.addEventListener('change', (e) => { isEditMode = e.target.checked; const banner = document.getElementById('editModeBanner'); if (isEditMode) banner.classList.remove('hidden'); else banner.classList.add('hidden'); loadContent(parseInt(document.getElementById('surahSelect').value)); });
+    document.getElementById('exitEditModeBtn').addEventListener('click', () => { isEditMode = false; document.getElementById('editModeBanner').classList.add('hidden'); document.getElementById('editModeToggle').checked = false; loadContent(parseInt(document.getElementById('surahSelect').value)); });
 
     document.getElementById('restoreDefaultsBtn').addEventListener('click', restoreDefaults);
 
     const sidebar = document.getElementById('settingsSidebar');
     const backdrop = document.getElementById('settingsBackdrop');
-    function openSettings() {
-        backdrop.classList.remove('hidden');
-        setTimeout(() => { backdrop.classList.remove('opacity-0'); sidebar.classList.remove('translate-x-full'); }, 10);
-    }
-    function closeSettings() {
-        sidebar.classList.add('translate-x-full');
-        backdrop.classList.add('opacity-0');
-        setTimeout(() => { backdrop.classList.add('hidden'); }, 300); 
-    }
+    function openSettings() { backdrop.classList.remove('hidden'); setTimeout(() => { backdrop.classList.remove('opacity-0'); sidebar.classList.remove('translate-x-full'); }, 10); }
+    function closeSettings() { sidebar.classList.add('translate-x-full'); backdrop.classList.add('opacity-0'); setTimeout(() => { backdrop.classList.add('hidden'); }, 300); }
     document.getElementById('openSettingsBtn').addEventListener('click', openSettings);
     document.getElementById('closeSettingsBtn').addEventListener('click', closeSettings);
     backdrop.addEventListener('click', closeSettings);
 
     const audio = document.getElementById('audioElement');
     document.getElementById('globalPlayPauseBtn').addEventListener('click', () => {
-        if (typeof window.isPlayerActive === 'function' && window.isPlayerActive()) {
-             playerTogglePlayPause();
-        } else {
+        if (typeof window.isPlayerActive === 'function' && window.isPlayerActive()) { playerTogglePlayPause(); } 
+        else {
              const activeCard = document.querySelector('.thematic-card.ring-2');
-             if (activeCard) {
-                 activeCard.querySelector('.play-btn').click();
-             } else {
+             if (activeCard) activeCard.querySelector('.play-btn').click();
+             else {
                  const firstCard = document.querySelector('.thematic-card');
-                 if (firstCard) {
-                     document.getElementById('autoAdvanceToggle').checked = true;
-                     firstCard.querySelector('.play-btn').click();
-                 }
+                 if (firstCard) { document.getElementById('autoAdvanceToggle').checked = true; firstCard.querySelector('.play-btn').click(); }
              }
         }
     });
@@ -482,11 +435,16 @@ function setupGlobalEventListeners() {
 
     document.getElementById('nextSectionBtn').addEventListener('click', () => navigateSection('next'));
     document.getElementById('prevSectionBtn').addEventListener('click', () => navigateSection('prev'));
-    document.addEventListener('section-ended', () => {
-        if (document.getElementById('autoAdvanceToggle').checked) navigateSection('next');
+    document.addEventListener('section-ended', () => { if (document.getElementById('autoAdvanceToggle').checked) navigateSection('next'); });
+
+    document.addEventListener('manual-play-started', (e) => {
+        const card = e.detail.card;
+        triggerLookAheadPreload(card);
+        const id = parseInt(document.getElementById('surahSelect').value);
+        const startVerse = parseInt(card.dataset.start);
+        localStorage.setItem('resumeState', JSON.stringify({ mode: currentViewMode, id: id, startVerse: startVerse }));
     });
 
-    document.addEventListener('manual-play-started', (e) => triggerLookAheadPreload(e.detail.card));
     document.addEventListener('verse-changed', (e) => {
         const { surah, verse, type } = e.detail;
         if (typeof window.highlightActiveVerseUI === 'function') {
@@ -494,159 +452,26 @@ function setupGlobalEventListeners() {
         }
     });
 
-    document.getElementById('toggleSelectModeBtn').addEventListener('click', () => {
-        isSelectMode = !isSelectMode;
-        toggleSelectionModeUI(isSelectMode);
-    });
-
-    document.getElementById('exitSelectModeBtn').addEventListener('click', () => {
-        toggleSelectionModeUI(false);
-    });
-
+    document.getElementById('toggleSelectModeBtn').addEventListener('click', () => { isSelectMode = !isSelectMode; toggleSelectionModeUI(isSelectMode); });
+    document.getElementById('exitSelectModeBtn').addEventListener('click', () => { toggleSelectionModeUI(false); });
     document.addEventListener('card-toggle-select', (e) => {
-        const card = e.detail.card;
-        const id = card.id;
-
-        if (selectedItems.has(id)) {
-            selectedItems.delete(id);
-            card.querySelector('.selection-overlay').classList.remove('opacity-100', 'bg-[#56A3A6]/20');
-            card.querySelector('.selection-overlay').classList.add('opacity-30');
-            card.classList.remove('ring-4', 'ring-[#56A3A6]');
-        } else {
-            if (selectedItems.size >= MAX_SELECTION) return; 
-            if (!isValidSelection(id)) return;
-            selectedItems.add(id);
-            card.querySelector('.selection-overlay').classList.remove('opacity-30');
-            card.querySelector('.selection-overlay').classList.add('opacity-100', 'bg-[#56A3A6]/20');
-            card.classList.add('ring-4', 'ring-[#56A3A6]');
-        }
-        enforceConsecutiveSelection();
-        updateBulkBar();
+        const card = e.detail.card; const id = card.id;
+        if (selectedItems.has(id)) { selectedItems.delete(id); card.querySelector('.selection-overlay').classList.remove('opacity-100', 'bg-[#56A3A6]/20'); card.querySelector('.selection-overlay').classList.add('opacity-30'); card.classList.remove('ring-4', 'ring-[#56A3A6]'); } 
+        else { if (selectedItems.size >= MAX_SELECTION) return; if (!isValidSelection(id)) return; selectedItems.add(id); card.querySelector('.selection-overlay').classList.remove('opacity-30'); card.querySelector('.selection-overlay').classList.add('opacity-100', 'bg-[#56A3A6]/20'); card.classList.add('ring-4', 'ring-[#56A3A6]'); }
+        enforceConsecutiveSelection(); updateBulkBar();
     });
-
     document.getElementById('btnDownloadBulk').addEventListener('click', () => {
-        const sectionsToDownload = Array.from(selectedItems).map(id => {
-            const card = document.getElementById(id);
-            return {
-                surah: parseInt(card.dataset.surah),
-                start: parseInt(card.dataset.start),
-                end: parseInt(card.dataset.end)
-            };
-        });
-        sectionsToDownload.sort((a, b) => a.start - b.start);
-        openBulkDownloadModal(sectionsToDownload);
+        const sectionsToDownload = Array.from(selectedItems).map(id => { const card = document.getElementById(id); return { surah: parseInt(card.dataset.surah), start: parseInt(card.dataset.start), end: parseInt(card.dataset.end) }; });
+        sectionsToDownload.sort((a, b) => a.start - b.start); openBulkDownloadModal(sectionsToDownload);
     });
 }
 
-function isValidSelection(targetId) {
-    if (selectedItems.size === 0) return true;
-    const allCards = Array.from(document.querySelectorAll('.thematic-card'));
-    const targetIdx = allCards.findIndex(c => c.id === targetId);
-    
-    const selectedIndices = [];
-    allCards.forEach((card, index) => {
-        if (selectedItems.has(card.id)) selectedIndices.push(index);
-    });
-
-    const minIdx = Math.min(...selectedIndices);
-    const maxIdx = Math.max(...selectedIndices);
-    return (targetIdx === minIdx - 1) || (targetIdx === maxIdx + 1);
-}
-
-function enforceConsecutiveSelection() {
-    const allCards = Array.from(document.querySelectorAll('.thematic-card'));
-    if (selectedItems.size === 0) {
-        allCards.forEach(card => card.classList.remove('opacity-40', 'pointer-events-none', 'grayscale'));
-        return;
-    }
-    if (selectedItems.size >= MAX_SELECTION) {
-        allCards.forEach(card => {
-            if (!selectedItems.has(card.id)) card.classList.add('opacity-40', 'pointer-events-none', 'grayscale');
-            else card.classList.remove('opacity-40', 'pointer-events-none', 'grayscale');
-        });
-        return;
-    }
-    const selectedIndices = [];
-    allCards.forEach((card, index) => {
-        if (selectedItems.has(card.id)) selectedIndices.push(index);
-    });
-    const minIdx = Math.min(...selectedIndices);
-    const maxIdx = Math.max(...selectedIndices);
-
-    allCards.forEach((card, index) => {
-        if (selectedItems.has(card.id)) {
-            card.classList.remove('opacity-40', 'pointer-events-none', 'grayscale');
-            return;
-        }
-        if ((index === maxIdx + 1) || (index === minIdx - 1)) {
-            card.classList.remove('opacity-40', 'pointer-events-none', 'grayscale');
-        } else {
-            card.classList.add('opacity-40', 'pointer-events-none', 'grayscale');
-        }
-    });
-}
-
-function toggleSelectionModeUI(active) {
-    const btn = document.getElementById('toggleSelectModeBtn');
-    const bulkBar = document.getElementById('bulkDownloadBar');
-    if(typeof setSelectionMode === 'function') setSelectionMode(active);
-
-    if (active) {
-        isSelectMode = true;
-        btn.classList.add('bg-[#56A3A6]', 'text-white');
-        btn.classList.remove('text-white/70');
-        bulkBar.classList.remove('-bottom-24');
-        bulkBar.classList.add('bottom-32');
-    } else {
-        isSelectMode = false;
-        btn.classList.remove('bg-[#56A3A6]', 'text-white');
-        btn.classList.add('text-white/70');
-        bulkBar.classList.remove('bottom-32');
-        bulkBar.classList.add('-bottom-24');
-        selectedItems.clear(); 
-        document.querySelectorAll('.thematic-card').forEach(c => c.classList.remove('opacity-40', 'pointer-events-none', 'grayscale'));
-        updateBulkBar();
-    }
-}
-
-function updateBulkBar() {
-    document.getElementById('selectedCount').textContent = selectedItems.size;
-    const dlBtn = document.getElementById('btnDownloadBulk');
-    if (selectedItems.size > 0) {
-        dlBtn.disabled = false;
-        dlBtn.classList.remove('disabled:text-gray-600', 'disabled:cursor-not-allowed');
-    } else {
-        dlBtn.disabled = true;
-        dlBtn.classList.add('disabled:text-gray-600', 'disabled:cursor-not-allowed');
-    }
-}
-
-function openBulkDownloadModal(sections) {
-    const modal = document.getElementById('downloadModal');
-    const reciterSelect = document.getElementById('reciterSelect');
-    const langSelect = document.getElementById('languageSelect');
-    const surahSelect = document.getElementById('surahSelect');
-    const surahText = surahSelect.options[surahSelect.selectedIndex].text;
-    const surahName = surahText;
-
-    document.getElementById('dlModalTitle').textContent = `Mix: ${sections.length} Consecutive Sections`;
-    document.getElementById('dlModalReciter').textContent = reciterSelect.options[reciterSelect.selectedIndex].text;
-    document.getElementById('dlModalLang').textContent = langSelect.options[langSelect.selectedIndex].text;
-    
-    document.getElementById('dlProgressContainer').classList.add('hidden');
-    document.getElementById('dlConfirmBtn').style.display = 'block';
-    modal.classList.remove('hidden');
-
-    document.getElementById('dlConfirmBtn').onclick = () => {
-        document.getElementById('dlProgressContainer').classList.remove('hidden');
-        document.getElementById('dlConfirmBtn').style.display = 'none';
-        
-        if (typeof downloadBulkStitched === 'function') {
-            downloadBulkStitched(sections, reciterSelect.value, langSelect.value, surahName);
-        }
-    };
-    document.getElementById('dlCancelBtn').onclick = () => modal.classList.add('hidden');
-}
+// ... (Helpers) ...
+function isValidSelection(targetId) { if (selectedItems.size === 0) return true; const allCards = Array.from(document.querySelectorAll('.thematic-card')); const targetIdx = allCards.findIndex(c => c.id === targetId); const selectedIndices = []; allCards.forEach((card, index) => { if (selectedItems.has(card.id)) selectedIndices.push(index); }); const minIdx = Math.min(...selectedIndices); const maxIdx = Math.max(...selectedIndices); return (targetIdx === minIdx - 1) || (targetIdx === maxIdx + 1); }
+function enforceConsecutiveSelection() { const allCards = Array.from(document.querySelectorAll('.thematic-card')); if (selectedItems.size === 0) { allCards.forEach(card => card.classList.remove('opacity-40', 'pointer-events-none', 'grayscale')); return; } if (selectedItems.size >= MAX_SELECTION) { allCards.forEach(card => { if (!selectedItems.has(card.id)) card.classList.add('opacity-40', 'pointer-events-none', 'grayscale'); else card.classList.remove('opacity-40', 'pointer-events-none', 'grayscale'); }); return; } const selectedIndices = []; allCards.forEach((card, index) => { if (selectedItems.has(card.id)) selectedIndices.push(index); }); const minIdx = Math.min(...selectedIndices); const maxIdx = Math.max(...selectedIndices); allCards.forEach((card, index) => { if (selectedItems.has(card.id)) { card.classList.remove('opacity-40', 'pointer-events-none', 'grayscale'); return; } if ((index === maxIdx + 1) || (index === minIdx - 1)) { card.classList.remove('opacity-40', 'pointer-events-none', 'grayscale'); } else { card.classList.add('opacity-40', 'pointer-events-none', 'grayscale'); } }); }
+function toggleSelectionModeUI(active) { const btn = document.getElementById('toggleSelectModeBtn'); const bulkBar = document.getElementById('bulkDownloadBar'); if(typeof setSelectionMode === 'function') setSelectionMode(active); if (active) { isSelectMode = true; btn.classList.add('bg-[#56A3A6]', 'text-white'); btn.classList.remove('text-white/70'); bulkBar.classList.remove('-bottom-24'); bulkBar.classList.add('bottom-32'); } else { isSelectMode = false; btn.classList.remove('bg-[#56A3A6]', 'text-white'); btn.classList.add('text-white/70'); bulkBar.classList.remove('bottom-32'); bulkBar.classList.add('-bottom-24'); selectedItems.clear(); document.querySelectorAll('.thematic-card').forEach(c => c.classList.remove('opacity-40', 'pointer-events-none', 'grayscale')); updateBulkBar(); } }
+function updateBulkBar() { document.getElementById('selectedCount').textContent = selectedItems.size; const dlBtn = document.getElementById('btnDownloadBulk'); if (selectedItems.size > 0) { dlBtn.disabled = false; dlBtn.classList.remove('disabled:text-gray-600', 'disabled:cursor-not-allowed'); } else { dlBtn.disabled = true; dlBtn.classList.add('disabled:text-gray-600', 'disabled:cursor-not-allowed'); } }
+function openBulkDownloadModal(sections) { const modal = document.getElementById('downloadModal'); const reciterSelect = document.getElementById('reciterSelect'); const langSelect = document.getElementById('languageSelect'); const surahSelect = document.getElementById('surahSelect'); const surahText = surahSelect.options[surahSelect.selectedIndex].text; const surahName = surahText; document.getElementById('dlModalTitle').textContent = `Mix: ${sections.length} Consecutive Sections`; document.getElementById('dlModalReciter').textContent = reciterSelect.options[reciterSelect.selectedIndex].text; document.getElementById('dlModalLang').textContent = langSelect.options[langSelect.selectedIndex].text; document.getElementById('dlProgressContainer').classList.add('hidden'); document.getElementById('dlConfirmBtn').style.display = 'block'; modal.classList.remove('hidden'); document.getElementById('dlConfirmBtn').onclick = () => { document.getElementById('dlProgressContainer').classList.remove('hidden'); document.getElementById('dlConfirmBtn').style.display = 'none'; if (typeof downloadBulkStitched === 'function') { downloadBulkStitched(sections, reciterSelect.value, langSelect.value, surahName); } }; document.getElementById('dlCancelBtn').onclick = () => modal.classList.add('hidden'); }
 
 function scrollToCard(card) {
     const container = document.getElementById('mainContainer');
@@ -660,45 +485,28 @@ function scrollToCard(card) {
     container.scrollTo({ top: targetScroll, behavior: 'smooth' });
 }
 
-// UPDATED: NAVIGATE SECTION (SKIPS HEADERS, SCROLLS TO HEADER, EXTENDED DELAY)
 function navigateSection(direction) {
     const currentCard = document.querySelector('.thematic-card.ring-2');
     if (!currentCard) return;
 
-    // SKIP HEADERS LOOP
     let targetCard = null;
     let sibling = direction === 'next' ? currentCard.nextElementSibling : currentCard.previousElementSibling;
-    
     while (sibling) {
-        if (sibling.classList.contains('thematic-card')) {
-            targetCard = sibling;
-            break;
-        }
+        if (sibling.classList.contains('thematic-card')) { targetCard = sibling; break; }
         sibling = direction === 'next' ? sibling.nextElementSibling : sibling.previousElementSibling;
     }
     
     if (targetCard) {
-        // Logic: If this is start of a Surah, scroll to header and wait longer
         const isSurahStart = targetCard.dataset.start === "1";
         let scrollTarget = targetCard;
-        let playDelay = 1000; // Default 1s
-
+        let playDelay = 1000; 
         if (isSurahStart) {
-            // Find header
             const prev = targetCard.previousElementSibling;
-            if (prev && prev.classList.contains('surah-mini-header')) {
-                scrollTarget = prev;
-            }
-            // Add extra pause (1s buffer + 1.5s appreciation = 2.5s total)
+            if (prev && prev.classList.contains('surah-mini-header')) scrollTarget = prev;
             playDelay = 2500; 
         }
-
         scrollToCard(scrollTarget);
-        
-        setTimeout(() => {
-            targetCard.querySelector('.play-btn').click();
-        }, playDelay);
-        
+        setTimeout(() => { targetCard.querySelector('.play-btn').click(); }, playDelay);
         triggerLookAheadPreload(targetCard);
     } else if (direction === 'next') {
         const currentId = parseInt(document.getElementById('surahSelect').value);
@@ -706,14 +514,14 @@ function navigateSection(direction) {
             const nextJuz = currentId + 1;
             if (nextJuz <= 30) {
                 document.getElementById('surahSelect').value = nextJuz;
-                loadJuz(nextJuz);
+                loadContent(nextJuz);
                 if (window.showToast) window.showToast(`Loaded Juz ${nextJuz}`, 'library_books');
             }
         } else {
             const nextSurah = currentId + 1;
             if (nextSurah <= 114) {
                 document.getElementById('surahSelect').value = nextSurah;
-                loadSurah(nextSurah);
+                loadContent(nextSurah);
                 if (window.showToast) window.showToast(`Loaded Surah ${nextSurah}`, 'library_books');
             }
         }
@@ -740,16 +548,21 @@ async function toggleWakeLock(shouldLock) {
             } else if (!shouldLock && wakeLock) {
                 await wakeLock.release();
                 wakeLock = null;
-                console.log('Wake Lock released');
             }
-        } catch (err) {
-            console.error(`${err.name}, ${err.message}`);
-        }
+        } catch (err) { console.error(`${err.name}, ${err.message}`); }
     }
 }
-
 document.addEventListener('visibilitychange', async () => {
     if (wakeLock !== null && document.visibilityState === 'visible') {
         wakeLock = await navigator.wakeLock.request('screen');
     }
 });
+
+// NEW: Global Helper to get Surah Name for Audio Player
+window.getSurahName = function(surahNum) {
+    if (!QURAN_DATA.length) return `Surah ${surahNum}`;
+    const row = QURAN_DATA.find(r => r[CONSTANTS.KEY_SURAH_NO] === surahNum);
+    if (!row) return `Surah ${surahNum}`;
+    const latin = row[CONSTANTS.KEY_SURAH_LATIN];
+    return `${surahNum} ${latin}`;
+};
