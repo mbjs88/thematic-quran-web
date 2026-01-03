@@ -2,6 +2,9 @@
 data/audio/
 audio/
 assets/icons.pptx
+assets/icons/
+js/generate-video.js
+js/output
 
 # optional OS/editor noise
 .DS_Store
