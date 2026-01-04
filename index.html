@@ -58,30 +58,141 @@
     </script>
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Forum&family=Nunito:wght@300;400;600;700&family=Noto+Nastaliq+Urdu:wght@400;700&family=Scheherazade+New:wght@400;700&family=Lateef&family=Noto+Naskh+Arabic:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Amiri+Quran&family=Forum&family=Nunito:wght@300;400;600;700&family=Noto+Nastaliq+Urdu:wght@400;700&family=Scheherazade+New:wght@400;700&family=Lateef&family=Noto+Naskh+Arabic:wght@400;700&display=swap" rel="stylesheet">
+    
     <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     
     <style>
-        /* ... (Keep your existing styles here) ... */
-        html { background-color: #12101C; }
-        body { background-color: #12101C; overscroll-behavior-y: none; }
-        .custom-gradient { background: linear-gradient(to bottom, #12101C 0%, #221F2B 50%, #352B39 100%); }
-        .toggle-checkbox:checked { right: 0; border-color: #56A3A6; }
-        .toggle-checkbox:checked + .toggle-label { background-color: #56A3A6; }
-        .toggle-label { background-color: rgba(255, 255, 255, 0.1); }
-        .verse-span { padding: 0.15rem 0.2rem; border: 1px solid transparent; border-radius: 0.5rem; display: inline; line-height: 2.2; box-decoration-break: clone; -webkit-box-decoration-break: clone; transition: background-color 0.2s ease; cursor: pointer; }
-        .active-verse { background-color: rgba(0, 0, 0, 0.25); box-shadow: none; }
-        .header-hidden { transform: translateY(-100%); opacity: 0; pointer-events: none; }
-        .toast-notification { position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%) translateY(20px); background-color: rgba(30, 20, 38, 0.95); border: 1px solid rgba(86, 163, 166, 0.5); color: #F3E4CE; padding: 12px 24px; border-radius: 50px; font-family: 'Nunito', sans-serif; font-size: 0.9rem; box-shadow: 0 10px 30px rgba(0,0,0,0.5); opacity: 0; transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55); z-index: 100; pointer-events: none; display: flex; align-items: center; gap: 8px; }
-        .toast-visible { opacity: 1; transform: translateX(-50%) translateY(0); }
-        input[type=range] { -webkit-appearance: none; width: 100%; background: transparent; }
-        input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; height: 16px; width: 16px; border-radius: 50%; background: #56A3A6; cursor: pointer; margin-top: -6px; box-shadow: 0 0 10px rgba(0,0,0,0.5); position: relative; z-index: 20; }
-        input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 4px; cursor: pointer; background: rgba(255,255,255,0.1); border-radius: 2px; }
+        html {
+            background-color: #12101C;
+        }
+
+        body {
+            background-color: #12101C;
+            overscroll-behavior-y: none;
+        }
+
+        .custom-gradient {
+            background: linear-gradient(to bottom, #12101C 0%, #221F2B 50%, #352B39 100%);
+        }
+        
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #56A3A6;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #56A3A6; 
+        }
+        .toggle-label {
+            background-color: rgba(255, 255, 255, 0.1); 
+        }
+
+        /* --- VERSE HIGHLIGHTING --- */
+        .verse-span {
+            padding: 0.15rem 0.2rem;       
+            border: 1px solid transparent; 
+            border-radius: 0.5rem;
+            display: inline;
+            line-height: 2.2;             
+            box-decoration-break: clone;
+            -webkit-box-decoration-break: clone;
+            transition: background-color 0.2s ease;
+            cursor: pointer;
+        }
+
+        .active-verse {
+            background-color: rgba(0, 0, 0, 0.25); 
+            box-shadow: none;
+        }
+
+        /* 1. The Container (Keep this as is) */
+        .ayah-badge {
+            display: inline-grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+            place-items: center;  
+            width: 2em;         
+            height: 2em;
+            margin: 0 0.2em; 
+            vertical-align: middle; 
+            position: relative;
+            unicode-bidi: isolate; 
+        }
+
+        /* 2. THE SYMBOL (Edit this to move the circle) */
+        .ayah-symbol {
+            grid-area: 1 / 1;
+            font-family: 'Amiri', serif; 
+            font-size: 1.7em;     
+            color: #56A3A6;
+            line-height: 1;
+            
+            /* --- THIS IS THE SLIDER --- */
+            /* -10% moves it UP. 10% moves it DOWN. */
+            /* Try -0.1em, -0.2em, etc. until it looks right */
+            transform: translateY(-0.15em); 
+        }
+
+        /* 3. THE NUMBER (Edit this to center the digit inside the circle) */
+        .ayah-number {
+            grid-area: 1 / 1;
+            font-family: 'Amiri', serif; 
+            font-size: 0.65em;    
+            font-weight: 700;
+            color: #56A3A6;
+            z-index: 1;
+            
+            /* Adjust this if the number looks too high/low inside the circle */
+            transform: translateY(-0.2em); 
+        }
+
+        .header-hidden {
+            transform: translateY(-100%);
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .toast-notification {
+            position: fixed;
+            bottom: 100px; 
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            background-color: rgba(30, 20, 38, 0.95);
+            border: 1px solid rgba(86, 163, 166, 0.5);
+            color: #F3E4CE;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-family: 'Nunito', sans-serif;
+            font-size: 0.9rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            opacity: 0;
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            z-index: 100;
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .toast-visible {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+        
+        input[type=range] {
+            -webkit-appearance: none; width: 100%; background: transparent;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none; height: 16px; width: 16px; border-radius: 50%;
+            background: #56A3A6; cursor: pointer; margin-top: -6px; box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            position: relative; z-index: 20;
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%; height: 4px; cursor: pointer; background: rgba(255,255,255,0.1); border-radius: 2px;
+        }
     </style>
 </head>
-
-
 <body class="custom-gradient min-h-screen text-[#F3E4CE] font-['Nunito'] flex flex-col h-[100dvh] overflow-hidden">
 
     <header id="mainHeader" class="fixed top-0 left-0 w-full z-40 bg-[#12101C]/30 backdrop-blur-2xl border-b border-white/10 shadow-lg p-4 flex flex-col items-center justify-center space-y-4 transition-all duration-500 ease-in-out">
@@ -308,7 +419,15 @@
                     </div>
                     <div class="relative w-full h-6 flex items-center">
                         <div class="absolute inset-0 flex justify-between items-center px-[8px] pointer-events-none">
-                            <div class="w-px h-1.5 bg-white/20"></div> <div class="w-px h-1.5 bg-white/20"></div> <div class="w-1 h-3 bg-white/60"></div>    <div class="w-px h-1.5 bg-white/20"></div> <div class="w-px h-1.5 bg-white/20"></div> <div class="w-px h-1.5 bg-white/20"></div> <div class="w-px h-1.5 bg-white/20"></div> <div class="w-px h-1.5 bg-white/20"></div> </div>
+                            <div class="w-px h-1.5 bg-white/20"></div>
+                            <div class="w-px h-1.5 bg-white/20"></div>
+                            <div class="w-1 h-3 bg-white/60"></div>
+                            <div class="w-px h-1.5 bg-white/20"></div>
+                            <div class="w-px h-1.5 bg-white/20"></div>
+                            <div class="w-px h-1.5 bg-white/20"></div>
+                            <div class="w-px h-1.5 bg-white/20"></div>
+                            <div class="w-px h-1.5 bg-white/20"></div>
+                        </div>
                         <input type="range" id="arabicSpeedRange" min="0.8" max="1.5" step="0.1" value="1.0" class="relative z-10 w-full">
                     </div>
                 </div>
