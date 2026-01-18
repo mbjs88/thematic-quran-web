@@ -188,7 +188,25 @@ function createCard(surahNum, start, end, data) {
         shareBtn.onclick = (e) => {
             e.stopPropagation();
             const url = `${window.location.origin}${window.location.pathname}#s=${surahNum}&v=${start}-${end}`;
-            navigator.clipboard.writeText(url);
+
+            // Get Surah Name from Select or Helper
+            let surahName = `Surah ${surahNum}`;
+            if (typeof window.getSurahName === 'function') {
+                // Formatting: "2 Al-Baqarah" -> "Al-Baqarah" usually handled by helper or substring
+                // Let's use the UI text if possible or helper
+                surahName = window.getSurahName(surahNum);
+                // Remove number prefix if present for cleaner copy? User text implies "Surah English Name"
+                // getSurahName returns "2 Al-Baqarah", let's keep it informative or strip.
+                // User Example: "Surah Al-Baqarah 1-5 https..."
+                // Logic: split by space, take rest?
+                const parts = surahName.split(' ');
+                if (parts.length > 1 && !isNaN(parts[0])) parts.shift();
+                surahName = "Surah " + parts.join(' ');
+            }
+
+            const copyString = `${surahName} ${start}-${end} ${url}`;
+
+            navigator.clipboard.writeText(copyString);
             if (window.showToast) window.showToast('Link copied', 'link');
         };
 
@@ -198,6 +216,38 @@ function createCard(surahNum, start, end, data) {
         copyTextBtn.innerHTML = '<span class="material-symbols-outlined text-xl" aria-hidden="true">content_copy</span>';
         copyTextBtn.onclick = (e) => {
             e.stopPropagation();
+
+            // Construct Text Payload
+            let arabicText = "";
+            let transText = "";
+            const isUrdu = (document.getElementById('languageSelect')?.value === 'ur');
+            const textKey = isUrdu ? UI_KEYS.URDU : UI_KEYS.ENGLISH;
+
+            data.forEach(v => {
+                const num = v[UI_KEYS.AYAH_NO];
+                arabicText += `${v[UI_KEYS.ARABIC]} (${num}) `;
+                transText += `${v[textKey]} (${num}) `;
+            });
+
+            // Clean up trailing spaces
+            arabicText = arabicText.trim();
+            transText = transText.trim();
+
+            let surahName = `Surah ${surahNum}`;
+            if (typeof window.getSurahName === 'function') {
+                surahName = window.getSurahName(surahNum);
+                const parts = surahName.split(' ');
+                if (parts.length > 1 && !isNaN(parts[0])) parts.shift();
+                surahName = "Surah " + parts.join(' ');
+            }
+
+            const url = `${window.location.origin}${window.location.pathname}#s=${surahNum}&v=${start}-${end}`;
+            const ref = `${surahName} : ${start}-${end} | Thematic Quran`;
+
+            const payload = `${arabicText}\n\n${transText}\n\n${ref}\n${url}`;
+
+            navigator.clipboard.writeText(payload);
+
             if (window.showToast) window.showToast('Text copied', 'content_copy');
         };
 
