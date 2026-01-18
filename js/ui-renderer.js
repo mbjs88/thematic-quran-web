@@ -23,16 +23,16 @@ function updatePageMetadata(title, description) {
 
 function renderThematicSurah(surahNum, verses, breaks) {
     const container = document.getElementById('contentArea');
-    container.innerHTML = ''; 
+    container.innerHTML = '';
     const lastVerseNum = verses.length > 0 ? verses[verses.length - 1][UI_KEYS.AYAH_NO] : 0;
 
     const surahSelect = document.getElementById('surahSelect');
     let surahName = `Surah ${surahNum}`;
-    if(surahSelect) {
+    if (surahSelect) {
         const option = Array.from(surahSelect.options).find(opt => parseInt(opt.value) === surahNum);
-        if(option) surahName = option.text;
+        if (option) surahName = option.text;
     }
-    
+
     updatePageMetadata(
         `${surahName} | Thematic Quran`,
         `Read and listen to ${surahName} with synchronized translation and thematic verse grouping.`
@@ -92,7 +92,7 @@ function renderThematicJuz(juzId, verses, allBreaks) {
     verses.forEach((verse, index) => {
         const surah = verse[UI_KEYS.SURAH_NO];
         const verseNum = verse[UI_KEYS.AYAH_NO];
-        
+
         if (surah !== currentSurah) {
             if (currentSectionData.length > 0) {
                 const endVerse = currentSectionData[currentSectionData.length - 1][UI_KEYS.AYAH_NO];
@@ -110,10 +110,10 @@ function renderThematicJuz(juzId, verses, allBreaks) {
         const isBreak = surahBreaks.includes(verseNum);
 
         if (isBreak && verseNum !== sectionStartVerse && currentSectionData.length > 0) {
-             const endVerse = currentSectionData[currentSectionData.length - 1][UI_KEYS.AYAH_NO];
-             container.appendChild(createCard(surah, sectionStartVerse, endVerse, currentSectionData));
-             currentSectionData = [];
-             sectionStartVerse = verseNum;
+            const endVerse = currentSectionData[currentSectionData.length - 1][UI_KEYS.AYAH_NO];
+            container.appendChild(createCard(surah, sectionStartVerse, endVerse, currentSectionData));
+            currentSectionData = [];
+            sectionStartVerse = verseNum;
         }
         currentSectionData.push(verse);
     });
@@ -129,8 +129,8 @@ function createMiniSurahHeader(surahNum, latinName, engName) {
     container.className = "surah-mini-header mt-16 mb-8 text-center border-t border-white/10 pt-10";
     const title = document.createElement('h2');
     title.className = "text-2xl font-bold text-[#56A3A6] font-['Nunito'] mb-6";
-    let displayText = `${surahNum}. ${latinName} (${engName})`; 
-    if(!latinName) displayText = `Surah ${surahNum}`;
+    let displayText = `${surahNum}. ${latinName} (${engName})`;
+    if (!latinName) displayText = `Surah ${surahNum}`;
     title.textContent = displayText;
     container.appendChild(title);
 
@@ -148,10 +148,10 @@ function createMiniSurahHeader(surahNum, latinName, engName) {
 function createCard(surahNum, start, end, data) {
     const card = document.createElement('div');
     const baseClass = "thematic-card relative bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 shadow-lg p-6 md:p-8 transition-all duration-300 mb-8 scroll-mt-[20px]";
-    card.className = (typeof isEditMode !== 'undefined' && isEditMode) 
-        ? baseClass + " border-dashed border-white/30" 
+    card.className = (typeof isEditMode !== 'undefined' && isEditMode)
+        ? baseClass + " border-dashed border-white/30"
         : baseClass + " hover:bg-white/10";
-        
+
     card.id = `section-${surahNum}-${start}`;
     card.dataset.surah = surahNum;
     card.dataset.start = start;
@@ -162,7 +162,7 @@ function createCard(surahNum, start, end, data) {
         overlay.className = "selection-overlay absolute inset-0 z-20 bg-[#56A3A6]/20 border-4 border-[#56A3A6] rounded-3xl hidden cursor-pointer flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity";
         overlay.innerHTML = `<div class="bg-[#1E1426] rounded-full p-2 shadow-lg"><span class="material-symbols-outlined text-[#56A3A6] text-3xl">check_circle</span></div>`;
         overlay.addEventListener('click', (e) => {
-            e.stopPropagation(); 
+            e.stopPropagation();
             const event = new CustomEvent('card-toggle-select', { detail: { card: card } });
             document.dispatchEvent(event);
         });
@@ -176,7 +176,7 @@ function createCard(surahNum, start, end, data) {
         editCue = `<span class="ml-2 text-xs text-red-300 bg-red-900/50 px-2 py-1 rounded border border-red-500/30">Start of Section</span>`;
     }
     const titleHtml = `<div class="flex items-center"><span class="text-sm font-bold text-white/60 tracking-widest uppercase font-['Nunito']">Verses ${start} - ${end}</span>${editCue}</div>`;
-    
+
     const actionsDiv = document.createElement('div');
     actionsDiv.className = "flex items-center gap-2 transition-opacity duration-200";
 
@@ -234,13 +234,13 @@ function createCard(surahNum, start, end, data) {
     // CRITICAL FIX: setAttribute('dir', 'rtl') forces the browser to treat this as RTL
     arabicDiv.setAttribute('dir', 'rtl');
     arabicDiv.className = `${currentFontClass} text-right text-[#F3E4CE] mb-8`;
-    arabicDiv.style.fontSize = `calc(1.875rem * ${scale})`; 
-    
+    arabicDiv.style.fontSize = `calc(1.875rem * ${scale})`;
+
     data.forEach(v => {
         const verseNum = v[UI_KEYS.AYAH_NO];
         const span = document.createElement('span');
         span.id = `ayah-ar-${surahNum}-${verseNum}`;
-        
+
         // --- BADGE (Arabic Digits + Amiri) ---
         let badgeHtml = `
             <span class="ayah-badge" aria-label="Verse ${verseNum}">
@@ -250,10 +250,10 @@ function createCard(surahNum, start, end, data) {
 
         if (typeof isEditMode !== 'undefined' && isEditMode) {
             span.className = "cursor-pointer transition hover:opacity-80";
-            if (verseNum === start && verseNum !== 1) badgeHtml = `<span class="text-red-400"> ۝ </span>`; 
+            if (verseNum === start && verseNum !== 1) badgeHtml = `<span class="text-red-400"> ۝ </span>`;
             span.onclick = (e) => {
                 e.stopPropagation();
-                if(typeof window.handleVerseBreakToggle === 'function') window.handleVerseBreakToggle(surahNum, verseNum);
+                if (typeof window.handleVerseBreakToggle === 'function') window.handleVerseBreakToggle(surahNum, verseNum);
             };
         } else {
             span.className = "verse-span";
@@ -262,7 +262,7 @@ function createCard(surahNum, start, end, data) {
                 triggerVersePlay(card, surahNum, start, end, verseNum, 'arabic');
             };
         }
-        
+
         // Use non-breaking space (&nbsp;) to glue badge to text
         span.innerHTML = `${v[UI_KEYS.ARABIC] || ""}&nbsp;${badgeHtml} `;
         arabicDiv.appendChild(span);
@@ -275,8 +275,8 @@ function createCard(surahNum, start, end, data) {
 
     const transDiv = document.createElement('div');
     if (isUrdu) transDiv.setAttribute('dir', 'rtl'); // Ensure Urdu is also RTL
-    transDiv.className = isUrdu 
-        ? "font-urdu text-right leading-[2.2] text-white/90" 
+    transDiv.className = isUrdu
+        ? "font-urdu text-right leading-[2.2] text-white/90"
         : "font-['Nunito'] text-left leading-relaxed text-white/80 tracking-normal";
     transDiv.style.fontSize = `calc(1.25rem * ${scale})`;
 
@@ -285,12 +285,12 @@ function createCard(surahNum, start, end, data) {
         const span = document.createElement('span');
         span.id = `ayah-en-${surahNum}-${verseNum}`;
         let badgeHtml = `<span class="align-super text-xs text-[#56A3A6] font-bold mx-1 font-['Nunito']">(${verseNum})</span>`;
-        
+
         if (typeof isEditMode !== 'undefined' && isEditMode) {
             span.className = "cursor-pointer transition hover:opacity-80";
             span.onclick = (e) => {
                 e.stopPropagation();
-                if(typeof window.handleVerseBreakToggle === 'function') window.handleVerseBreakToggle(surahNum, verseNum);
+                if (typeof window.handleVerseBreakToggle === 'function') window.handleVerseBreakToggle(surahNum, verseNum);
             };
         } else {
             span.className = "verse-span";
@@ -329,11 +329,11 @@ function openDownloadModal(surah, start, end) {
     const modal = document.getElementById('downloadModal');
     const reciterSelect = document.getElementById('reciterSelect');
     const langSelect = document.getElementById('languageSelect');
-    
+
     document.getElementById('dlModalTitle').textContent = `Surah ${surah}: Verses ${start}-${end}`;
     const dlReciterSelect = document.getElementById('dlModalReciterSelect');
     const dlLangSelect = document.getElementById('dlModalLangSelect');
-    
+
     if (dlReciterSelect) { dlReciterSelect.innerHTML = reciterSelect.innerHTML; dlReciterSelect.value = reciterSelect.value; }
     if (dlLangSelect) { dlLangSelect.innerHTML = langSelect.innerHTML; dlLangSelect.value = langSelect.value; }
 
@@ -349,7 +349,7 @@ function openDownloadModal(surah, start, end) {
         const surahSelect = document.getElementById('surahSelect');
         let surahName = `Surah ${surah}`;
         const option = Array.from(surahSelect.options).find(opt => parseInt(opt.value) === surah);
-        if(option) surahName = option.text;
+        if (option) surahName = option.text;
 
         if (typeof downloadGroupedSection === 'function') downloadGroupedSection(surah, start, end, finalReciter, finalLang, surahName);
     };
@@ -358,18 +358,46 @@ function openDownloadModal(surah, start, end) {
 
 function closeDownloadModal() { document.getElementById('downloadModal').classList.add('hidden'); }
 
-window.highlightActiveVerseUI = function(surah, verse, type) {
+window.highlightActiveVerseUI = function (surah, verse, type) {
     document.querySelectorAll('.active-verse').forEach(el => el.classList.remove('active-verse'));
     const prefix = (type === 'arabic') ? 'ayah-ar' : 'ayah-en';
     const id = `${prefix}-${surah}-${verse}`;
     const el = document.getElementById(id);
+
     if (el) {
         el.classList.add('active-verse');
-        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+        // SMART SCROLL LOGIC
+        const rect = el.getBoundingClientRect();
+        const headerHeight = document.getElementById('mainHeader')?.offsetHeight || 100;
+        const playerBarHeight = document.getElementById('playerBar')?.offsetHeight || 100;
+
+        // Define safe viewing area (viewport minus header and footer)
+        const safeTop = headerHeight + 20;
+        const safeBottom = window.innerHeight - playerBarHeight - 20;
+
+        // Check if element is outside the safe viewing area
+        const isOffScreenTop = rect.top < safeTop;
+        const isOffScreenBottom = rect.bottom > safeBottom;
+
+        if (isOffScreenTop || isOffScreenBottom) {
+            // If off-screen, scroll it near the top (but under the header)
+            const mainContainer = document.getElementById('mainContainer');
+            // Calculate where we want the element's top to be (relative to viewport top)
+            // We want (rect.top) to be (safeTop + 20)
+            // Current scroll position is mainContainer.scrollTop
+            // The scroll change needed is (rect.top - safeTop - 20)
+
+            // Note: rect.top is relative to viewport. 
+            // We need to adjust scrollTop by the difference between where it IS and where we WANT it.
+            const offset = rect.top - (safeTop + 20);
+
+            mainContainer.scrollBy({ top: offset, behavior: 'smooth' });
+        }
     }
 }
 
-window.showToast = function(message, icon = 'info') {
+window.showToast = function (message, icon = 'info') {
     let toast = document.getElementById('toast-notification');
     if (!toast) {
         toast = document.createElement('div');

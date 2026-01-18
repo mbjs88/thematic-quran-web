@@ -98,6 +98,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             restoreSessionState();
         }
 
+        setupAboutModal();
+
         document.getElementById('loadingMessage').classList.add('hidden');
         document.getElementById('contentArea').classList.remove('hidden');
 
@@ -626,5 +628,40 @@ function sendAnalyticsEvent(eventName, params = {}) {
     if (typeof window.gtag === 'function') {
         window.gtag('event', eventName, params);
         console.log(`[Analytics] Sent: ${eventName}`, params);
+    }
+}
+
+function setupAboutModal() {
+    const modal = document.getElementById('aboutModal');
+    const closeBtn = document.getElementById('closeAboutBtn');
+    const startBtn = document.getElementById('startExploringBtn');
+    const headerTitle = document.getElementById('headerTitleContainer');
+    const HAS_VISITED_KEY = 'has_visited_v1';
+
+    function openModal() {
+        if(!modal) return;
+        modal.classList.remove('hidden');
+        sendAnalyticsEvent('view_item', { item_id: 'about_modal', item_name: 'About Modal' });
+    }
+
+    function closeModal() {
+        if(!modal) return;
+        modal.classList.add('hidden');
+        localStorage.setItem(HAS_VISITED_KEY, 'true');
+    }
+
+    if(headerTitle) headerTitle.addEventListener('click', openModal);
+    if(closeBtn) closeBtn.addEventListener('click', closeModal);
+    if(startBtn) startBtn.addEventListener('click', closeModal);
+    
+    if(modal) {
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+    }
+
+    // Auto-show on first visit
+    if (!localStorage.getItem(HAS_VISITED_KEY)) {
+        setTimeout(openModal, 1500);
     }
 }

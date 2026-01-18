@@ -3,18 +3,42 @@
 let playQueue = [];
 let queueIndex = 0;
 let isAudioPlaying = false;
-const audioObj = document.getElementById('audioElement');
-let preloadCache = []; 
 let isPlayingIntro = false;
 let currentSectionScope = { surah: 0, start: 0, end: 0, totalVerses: 0 };
+
+// DUAL AUDIO PLAYER SYSTEM (Gapless Playback)
+const playerA = new Audio();
+const playerB = new Audio();
+let currentPlayer = playerA; // 'A' or 'B'
+let nextPlayer = playerB;
+
+playerA.preload = 'auto';
+playerB.preload = 'auto';
+
+// Attach Listeners to BOTH players
+[playerA, playerB].forEach(p => {
+    p.addEventListener('ended', onTrackEnded);
+    p.addEventListener('timeupdate', onTimeUpdate);
+    p.addEventListener('error', onPlaybackError);
+    // Ensure wake lock is handled
+    p.addEventListener('play', () => toggleWakeLock(true));
+    p.addEventListener('pause', () => toggleWakeLock(false));
+});
 
 document.addEventListener('speed-changed', (e) => {
     const { type, speed } = e.detail;
     if (!playQueue[queueIndex]) return;
     const currentType = playQueue[queueIndex].type;
     let isArabicGroup = (currentType === 'arabic' || currentType === 'intro' || currentType === 'bismillah');
-    if (type === 'arabic' && isArabicGroup) audioObj.playbackRate = parseFloat(speed);
-    else if (type === 'translation' && currentType === 'translation') audioObj.playbackRate = parseFloat(speed);
+
+    // Apply speed to BOTH players to be safe
+    if (type === 'arabic' && isArabicGroup) {
+        playerA.playbackRate = parseFloat(speed);
+        playerB.playbackRate = parseFloat(speed);
+    } else if (type === 'translation' && currentType === 'translation') {
+        playerA.playbackRate = parseFloat(speed);
+        playerB.playbackRate = parseFloat(speed);
+    }
 });
 
 function playSession(surah, start, end, targetVerse = null, targetType = null) {
@@ -23,7 +47,6 @@ function playSession(surah, start, end, targetVerse = null, targetType = null) {
     playQueue = [];
     currentSectionScope = { surah, start, end, totalVerses: (end - start + 1) };
 
-    // Get Name
     const surahName = (typeof window.getSurahName === 'function') ? window.getSurahName(surah) : `Surah ${surah}`;
 
     if (start === 1 && targetVerse === null) {
@@ -36,7 +59,7 @@ function playSession(surah, start, end, targetVerse = null, targetType = null) {
     }
 
     const arabicReciter = document.getElementById('reciterSelect').value;
-    const transValue = document.getElementById('languageSelect').value; 
+    const transValue = document.getElementById('languageSelect').value;
     const arabicBaseURL = `https://everyayah.com/data/${arabicReciter}/`;
 
     for (let i = start; i <= end; i++) {
@@ -50,38 +73,57 @@ function playSession(surah, start, end, targetVerse = null, targetType = null) {
         playQueue.push({ url: transUrl, verse: i, type: 'translation' });
     }
 
+    // TARGET JUMP LOGIC
     if (targetVerse !== null && targetType !== null) {
         const foundIndex = playQueue.findIndex(item => item.verse === targetVerse && item.type === targetType);
         if (foundIndex !== -1) {
             queueIndex = foundIndex;
             const typeLabel = targetType === 'arabic' ? 'Arabic' : 'Translation';
-            // UPDATED LABEL
             document.getElementById('playerVerse').textContent = `${surahName} : Verse ${targetVerse} (${typeLabel})`;
         } else {
             queueIndex = 0;
-            // UPDATED LABEL
             document.getElementById('playerVerse').textContent = `${surahName} : Verses ${start}-${end}`;
         }
-        isPlayingIntro = false; 
     } else {
         queueIndex = 0;
-        // UPDATED LABEL
         document.getElementById('playerVerse').textContent = `${surahName} : Verses ${start}-${end}`;
-        isPlayingIntro = (start === 1); 
     }
 
     updateControlsUI(true);
-    startPreloading();
-    playNextTrack();
+
+    // START PLAYBACK CYCLE
+    // 1. Set current player src
+    // 2. Play current
+    // 3. Preload next
+    loadTrackIntoPlayer(currentPlayer, queueIndex);
+    currentPlayer.play().then(() => {
+        isAudioPlaying = true;
+        updateControlsUI(true);
+        // Preload next track immediately
+        preloadNextTrack();
+        // Fire UI event for the *current* track
+        emitVerseChanged(queueIndex);
+    }).catch(err => {
+        console.error("Playback failed", err);
+        // Try next if fail
+        onTrackEnded();
+    });
 }
 
 function stopAllAudio() {
-    audioObj.pause();
-    audioObj.currentTime = 0;
+    playerA.pause();
+    playerB.pause();
+    playerA.currentTime = 0;
+    playerB.currentTime = 0;
+    // Unset src to stop downloading
+    playerA.removeAttribute('src');
+    playerB.removeAttribute('src');
+
     isAudioPlaying = false;
     isPlayingIntro = false;
     playQueue = [];
     queueIndex = 0;
+    updateControlsUI(false);
 }
 
 function getTranslationUrl(surah, verse, langValue) {
@@ -93,78 +135,112 @@ function getTranslationUrl(surah, verse, langValue) {
     else return `https://audio.thematicquran.com/english/${sPad}${aPad}.mp3`;
 }
 
-function startPreloading() {
-    const limit = Math.min(playQueue.length, 5);
-    for(let i=0; i<limit; i++) {
-        const audio = new Audio();
-        audio.src = playQueue[i].url;
-        audio.preload = 'auto';
-        preloadCache.push(audio);
-    }
-}
+function loadTrackIntoPlayer(player, index) {
+    if (index >= playQueue.length) return false;
+    const item = playQueue[index];
+    player.src = item.url;
 
-function playNextTrack() {
-    if (queueIndex >= playQueue.length) {
-        stopAllAudio();
-        updateControlsUI(false);
-        document.dispatchEvent(new CustomEvent('section-ended'));
-        return;
-    }
-
-    const trackItem = playQueue[queueIndex];
-
-    if (trackItem.type === 'arabic' || trackItem.type === 'translation') {
-        const event = new CustomEvent('verse-changed', { 
-            detail: { surah: currentSectionScope.surah, verse: trackItem.verse, type: trackItem.type } 
-        });
-        document.dispatchEvent(event);
-    }
-
-    console.log(`Playing [${queueIndex}]: ${trackItem.type} -> ${trackItem.url}`);
-
-    audioObj.src = trackItem.url;
-    
+    // Set Speed
     let speed = 1.0;
-    if (trackItem.type === 'translation') {
+    if (item.type === 'translation') {
         speed = parseFloat(localStorage.getItem('translationSpeed') || "1.0");
     } else {
         speed = parseFloat(localStorage.getItem('arabicSpeed') || "1.0");
     }
-    audioObj.playbackRate = speed;
+    player.playbackRate = speed;
+    return true;
+}
 
-    audioObj.play().then(() => {
+function preloadNextTrack() {
+    const nextIndex = queueIndex + 1;
+    if (nextIndex < playQueue.length) {
+        loadTrackIntoPlayer(nextPlayer, nextIndex);
+        nextPlayer.load(); // Start buffering
+    }
+}
+
+function onTrackEnded() {
+    // Current track finished.
+    // 1. Swap players
+    const temp = currentPlayer;
+    currentPlayer = nextPlayer;
+    nextPlayer = temp;
+
+    // 2. Increment index
+    queueIndex++;
+
+    if (queueIndex >= playQueue.length) {
+        stopAllAudio();
+        document.dispatchEvent(new CustomEvent('section-ended'));
+        return;
+    }
+
+    // 3. Play the (hopefully preloaded) 'currentPlayer'
+    // Ensure we trigger the UI update *before* or *immediately* as playing starts
+    emitVerseChanged(queueIndex);
+
+    currentPlayer.play().then(() => {
         isAudioPlaying = true;
         updateControlsUI(true);
+        // 4. Preload NEXT NEXT track into 'nextPlayer'
+        preloadNextTrack();
     }).catch(err => {
-        console.warn(`Playback failed for ${trackItem.url}. Skipping...`, err);
-        queueIndex++;
-        playNextTrack();
+        console.warn("Gapless playback failed or track error, skipping...", err);
+        onTrackEnded(); // Recursively skip
     });
+}
+
+function onTimeUpdate(e) {
+    // Only update UI if event comes from ACTIVE player
+    if (e.target !== currentPlayer) return;
+
+    if (currentPlayer.duration) {
+        const progressPercent = (currentPlayer.currentTime / currentPlayer.duration) * 100;
+        document.getElementById('progressBar').style.width = `${progressPercent}%`;
+        const curMins = Math.floor(currentPlayer.currentTime / 60);
+        const curSecs = Math.floor(currentPlayer.currentTime % 60).toString().padStart(2, '0');
+        document.getElementById('currentTime').textContent = `${curMins}:${curSecs}`;
+    }
+}
+
+function onPlaybackError(e) {
+    if (e.target !== currentPlayer) return;
+    console.warn("Playback error", e);
+    // Try to skip
+    onTrackEnded();
+}
+
+function emitVerseChanged(index) {
+    if (index >= playQueue.length) return;
+    const trackItem = playQueue[index];
+    console.log(`Playing [${index}]: ${trackItem.type}`);
+
+    if (trackItem.type === 'arabic' || trackItem.type === 'translation') {
+        const event = new CustomEvent('verse-changed', {
+            detail: { surah: currentSectionScope.surah, verse: trackItem.verse, type: trackItem.type }
+        });
+        document.dispatchEvent(event);
+    }
 }
 
 function playRange(surah, start, end, targetVerse = null, targetType = null) {
     playSession(surah, start, end, targetVerse, targetType);
 }
 
-audioObj.addEventListener('ended', () => { queueIndex++; playNextTrack(); });
-audioObj.addEventListener('timeupdate', () => {
-    if(audioObj.duration) {
-        const progressPercent = (audioObj.currentTime / audioObj.duration) * 100;
-        document.getElementById('progressBar').style.width = `${progressPercent}%`;
-        const curMins = Math.floor(audioObj.currentTime / 60);
-        const curSecs = Math.floor(audioObj.currentTime % 60).toString().padStart(2, '0');
-        document.getElementById('currentTime').textContent = `${curMins}:${curSecs}`;
-    }
-});
-
 function playerTogglePlayPause() {
-    if (audioObj.src) {
-        if (audioObj.paused) {
-            audioObj.play().then(() => { isAudioPlaying = true; updateControlsUI(true); });
+    if (isAudioPlaying) {
+        currentPlayer.pause();
+        isAudioPlaying = false;
+        updateControlsUI(false);
+    } else {
+        if (playQueue.length > 0 && currentPlayer.src) {
+            currentPlayer.play().then(() => {
+                isAudioPlaying = true;
+                updateControlsUI(true);
+            });
         } else {
-            audioObj.pause();
-            isAudioPlaying = false;
-            updateControlsUI(false);
+            // Maybe start from beginning if nothing loaded?
+            // For now, do nothing or user has to click specific ayah
         }
     }
 }
@@ -172,8 +248,8 @@ function playerTogglePlayPause() {
 function updateControlsUI(isPlaying) {
     const icon = document.querySelector('#globalPlayPauseBtn span');
     const status = document.getElementById('playerStatus');
-    if (isPlaying) { icon.textContent = 'pause'; status.textContent = 'Playing'; } 
+    if (isPlaying) { icon.textContent = 'pause'; status.textContent = 'Playing'; }
     else { icon.textContent = 'play_arrow'; status.textContent = 'Paused'; }
 }
 
-window.isPlayerActive = function() { return (audioObj.src && !audioObj.ended && audioObj.currentTime > 0) || isAudioPlaying; };
+window.isPlayerActive = function () { return isAudioPlaying || (currentPlayer && !currentPlayer.paused); };

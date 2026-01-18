@@ -1,37 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VH9J3NB19J"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-VH9J3NB19J');
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-VH9J3NB19J');
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    
+
     <title>Thematic Quran | Audio Translation & Study</title>
-    <meta name="description" content="Listen to the Quran by theme with synchronized translations (English & Urdu). Create custom audio mixes, study thematic connections, and focus deeply. Free & Ad-free.">
-    <meta name="keywords" content="Quran, Audio, Thematic, Translation, English, Urdu, Study, Islam, Custom Mix, Tafseer, Quran Audio App">
+    <meta name="description"
+        content="An immersive audio experience of the Quran. Listen by theme with synchronized translations (English & Urdu). Produced for deep reflection and understanding.">
+    <meta name="keywords"
+        content="Quran, Audio, Thematic, Translation, English, Urdu, Study, Islam, Custom Mix, Tafseer, Quran Audio App">
     <meta name="author" content="Thematic Quran Team">
     <link rel="canonical" href="https://www.thematicquran.com/">
-    
+
     <meta name="theme-color" content="#12101C">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.thematicquran.com/">
-    <meta property="og:title" content="Thematic Quran | Listen & Study">
-    <meta property="og:description" content="A new way to experience the Quran. Listen by theme, sync translations, and create custom mixes.">
+    <meta property="og:title" content="Thematic Quran | Audio Experience">
+    <meta property="og:description"
+        content="An immersive audio experience of the Quran. Listen by theme with synchronized translations and custom production.">
     <meta property="og:image" content="https://www.thematicquran.com/assets/og-social-card.png">
 
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://www.thematicquran.com/">
-    <meta property="twitter:title" content="Thematic Quran">
-    <meta property="twitter:description" content="A new way to experience the Quran. Listen by theme, sync translations, and create custom mixes.">
+    <meta property="twitter:title" content="Thematic Quran | Audio Experience">
+    <meta property="twitter:description"
+        content="An immersive audio experience of the Quran. Listen by theme with synchronized translations and custom production.">
     <meta property="twitter:image" content="https://www.thematicquran.com/assets/og-social-card.png">
-    
+
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
     <link rel="manifest" href="manifest.json">
@@ -58,12 +63,14 @@
     </script>
 
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Amiri+Quran&family=Forum&family=Nunito:wght@300;400;600;700&family=Noto+Nastaliq+Urdu:wght@400;700&family=Scheherazade+New:wght@400;700&family=Lateef&family=Noto+Naskh+Arabic:wght@400;700&display=swap" rel="stylesheet">
-    
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Amiri+Quran&family=Forum&family=Nunito:wght@300;400;600;700&family=Noto+Nastaliq+Urdu:wght@400;700&family=Scheherazade+New:wght@400;700&family=Lateef&family=Noto+Naskh+Arabic:wght@400;700&display=swap"
+        rel="stylesheet">
+
     <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
-    
+
     <style>
         html {
             background-color: #12101C;
@@ -77,25 +84,27 @@
         .custom-gradient {
             background: linear-gradient(to bottom, #12101C 0%, #221F2B 50%, #352B39 100%);
         }
-        
+
         .toggle-checkbox:checked {
             right: 0;
             border-color: #56A3A6;
         }
-        .toggle-checkbox:checked + .toggle-label {
-            background-color: #56A3A6; 
+
+        .toggle-checkbox:checked+.toggle-label {
+            background-color: #56A3A6;
         }
+
         .toggle-label {
-            background-color: rgba(255, 255, 255, 0.1); 
+            background-color: rgba(255, 255, 255, 0.1);
         }
 
         /* --- VERSE HIGHLIGHTING --- */
         .verse-span {
-            padding: 0.15rem 0.2rem;       
-            border: 1px solid transparent; 
+            padding: 0.15rem 0.2rem;
+            border: 1px solid transparent;
             border-radius: 0.5rem;
             display: inline;
-            line-height: 2.2;             
+            line-height: 2.2;
             box-decoration-break: clone;
             -webkit-box-decoration-break: clone;
             transition: background-color 0.2s ease;
@@ -103,7 +112,7 @@
         }
 
         .active-verse {
-            background-color: rgba(0, 0, 0, 0.25); 
+            background-color: rgba(0, 0, 0, 0.25);
             box-shadow: none;
         }
 
@@ -112,40 +121,40 @@
             display: inline-grid;
             grid-template-columns: 1fr;
             grid-template-rows: 1fr;
-            place-items: center;  
-            width: 2em;         
+            place-items: center;
+            width: 2em;
             height: 2em;
-            margin: 0 0.2em; 
-            vertical-align: middle; 
+            margin: 0 0.2em;
+            vertical-align: middle;
             position: relative;
-            unicode-bidi: isolate; 
+            unicode-bidi: isolate;
         }
 
         /* 2. THE SYMBOL (Edit this to move the circle) */
         .ayah-symbol {
             grid-area: 1 / 1;
-            font-family: 'Amiri', serif; 
-            font-size: 1.7em;     
+            font-family: 'Amiri', serif;
+            font-size: 1.7em;
             color: #56A3A6;
             line-height: 1;
-            
+
             /* --- THIS IS THE SLIDER --- */
             /* -10% moves it UP. 10% moves it DOWN. */
             /* Try -0.1em, -0.2em, etc. until it looks right */
-            transform: translateY(-0.15em); 
+            transform: translateY(-0.15em);
         }
 
         /* 3. THE NUMBER (Edit this to center the digit inside the circle) */
         .ayah-number {
             grid-area: 1 / 1;
-            font-family: 'Amiri', serif; 
-            font-size: 0.65em;    
+            font-family: 'Amiri', serif;
+            font-size: 0.65em;
             font-weight: 700;
             color: #56A3A6;
             z-index: 1;
-            
+
             /* Adjust this if the number looks too high/low inside the circle */
-            transform: translateY(-0.2em); 
+            transform: translateY(-0.2em);
         }
 
         .header-hidden {
@@ -156,7 +165,7 @@
 
         .toast-notification {
             position: fixed;
-            bottom: 100px; 
+            bottom: 100px;
             left: 50%;
             transform: translateX(-50%) translateY(20px);
             background-color: rgba(30, 20, 38, 0.95);
@@ -166,7 +175,7 @@
             border-radius: 50px;
             font-family: 'Nunito', sans-serif;
             font-size: 0.9rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             opacity: 0;
             transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
             z-index: 100;
@@ -175,37 +184,63 @@
             align-items: center;
             gap: 8px;
         }
+
         .toast-visible {
             opacity: 1;
             transform: translateX(-50%) translateY(0);
         }
-        
+
         input[type=range] {
-            -webkit-appearance: none; width: 100%; background: transparent;
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            background: transparent;
         }
+
         input[type=range]::-webkit-slider-thumb {
-            -webkit-appearance: none; height: 16px; width: 16px; border-radius: 50%;
-            background: #56A3A6; cursor: pointer; margin-top: -6px; box-shadow: 0 0 10px rgba(0,0,0,0.5);
-            position: relative; z-index: 20;
+            -webkit-appearance: none;
+            height: 16px;
+            width: 16px;
+            border-radius: 50%;
+            background: #56A3A6;
+            cursor: pointer;
+            margin-top: -6px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 20;
         }
+
         input[type=range]::-webkit-slider-runnable-track {
-            width: 100%; height: 4px; cursor: pointer; background: rgba(255,255,255,0.1); border-radius: 2px;
+            width: 100%;
+            height: 4px;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
         }
     </style>
 </head>
+
 <body class="custom-gradient min-h-screen text-[#F3E4CE] font-['Nunito'] flex flex-col h-[100dvh] overflow-hidden">
 
-    <header id="mainHeader" class="fixed top-0 left-0 w-full z-40 bg-[#12101C]/30 backdrop-blur-2xl border-b border-white/10 shadow-lg p-4 flex flex-col items-center justify-center space-y-4 transition-all duration-500 ease-in-out">
-        <div class="flex flex-col items-center justify-center space-y-1">
-            <h1 class="text-3xl md:text-5xl font-['Forum'] text-white tracking-widest text-center drop-shadow-lg">THE QUR'AN</h1>
-            <h2 class="text-xs md:text-base font-['Forum'] text-white/80 tracking-[0.2em] text-center uppercase">A Thematic Audio Translation</h2>
+    <header id="mainHeader"
+        class="fixed top-0 left-0 w-full z-40 bg-[#12101C]/30 backdrop-blur-2xl border-b border-white/10 shadow-lg p-4 flex flex-col items-center justify-center space-y-4 transition-all duration-500 ease-in-out">
+        <div class="flex flex-col items-center justify-center space-y-1 cursor-pointer group" id="headerTitleContainer">
+            <h1
+                class="text-3xl md:text-5xl font-['Forum'] text-white tracking-widest text-center drop-shadow-lg group-hover:text-[#56A3A6] transition-colors duration-300">
+                THE QUR'AN</h1>
+            <h2
+                class="text-xs md:text-base font-['Forum'] text-white/80 tracking-[0.2em] text-center uppercase group-hover:text-white transition-colors duration-300">
+                A Thematic Audio Translation</h2>
         </div>
 
         <div class="flex w-full max-w-3xl mx-auto gap-3 items-center">
-            <select id="surahSelect" class="flex-1 w-full p-2.5 rounded-lg bg-white/10 border border-white/20 text-[#F3E4CE] shadow-sm focus:outline-none focus:ring-2 focus:ring-[#56A3A6] backdrop-blur-md font-['Nunito'] truncate text-sm md:text-base">
+            <select id="surahSelect"
+                class="flex-1 w-full p-2.5 rounded-lg bg-white/10 border border-white/20 text-[#F3E4CE] shadow-sm focus:outline-none focus:ring-2 focus:ring-[#56A3A6] backdrop-blur-md font-['Nunito'] truncate text-sm md:text-base">
             </select>
 
-            <button id="openSettingsBtn" class="shrink-0 p-2.5 rounded-lg bg-white/10 border border-white/20 text-[#F3E4CE] hover:bg-white/20 hover:text-white transition focus:outline-none focus:ring-2 focus:ring-[#56A3A6] backdrop-blur-md" title="Settings">
+            <button id="openSettingsBtn"
+                class="shrink-0 p-2.5 rounded-lg bg-white/10 border border-white/20 text-[#F3E4CE] hover:bg-white/20 hover:text-white transition focus:outline-none focus:ring-2 focus:ring-[#56A3A6] backdrop-blur-md"
+                title="Settings">
                 <span class="material-symbols-outlined align-middle">settings</span>
             </button>
         </div>
@@ -213,9 +248,12 @@
 
     <main class="flex-grow overflow-y-auto p-4 md:p-8" id="mainContainer">
         <div id="mainSpacer" class="w-full shrink-0 transition-all duration-300"></div>
-        
-        <div id="editModeBanner" class="hidden mb-6 bg-[#56A3A6]/10 border border-[#56A3A6]/50 rounded-xl p-4 text-center backdrop-blur-md relative">
-            <button id="exitEditModeBtn" class="absolute top-2 right-2 p-1 text-white/40 hover:text-white hover:bg-white/10 rounded-full transition" title="Exit Edit Mode">
+
+        <div id="editModeBanner"
+            class="hidden mb-6 bg-[#56A3A6]/10 border border-[#56A3A6]/50 rounded-xl p-4 text-center backdrop-blur-md relative">
+            <button id="exitEditModeBtn"
+                class="absolute top-2 right-2 p-1 text-white/40 hover:text-white hover:bg-white/10 rounded-full transition"
+                title="Exit Edit Mode">
                 <span class="material-symbols-outlined text-lg">close</span>
             </button>
             <div class="flex items-center justify-center gap-2 mb-2">
@@ -223,8 +261,10 @@
                 <p class="text-[#56A3A6] font-bold text-sm uppercase tracking-wide">Edit Verse Grouping</p>
             </div>
             <p class="text-white/80 text-xs leading-relaxed">
-                <span class="inline-flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-green-400"></span> Tap <strong>Green</strong> numbers to <strong>START</strong> a new section.</span><br>
-                <span class="inline-flex items-center gap-1 mt-1"><span class="w-2 h-2 rounded-full bg-red-400"></span> Tap <strong>Red</strong> numbers to <strong>MERGE</strong> with previous.</span>
+                <span class="inline-flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-green-400"></span> Tap
+                    <strong>Green</strong> numbers to <strong>START</strong> a new section.</span><br>
+                <span class="inline-flex items-center gap-1 mt-1"><span class="w-2 h-2 rounded-full bg-red-400"></span>
+                    Tap <strong>Red</strong> numbers to <strong>MERGE</strong> with previous.</span>
             </p>
         </div>
 
@@ -234,25 +274,34 @@
         <div id="contentArea" class="max-w-4xl mx-auto space-y-8 hidden pb-64"></div>
     </main>
 
-    <div class="fixed bottom-0 left-0 w-full bg-[#12101C]/95 backdrop-blur-xl text-[#F3E4CE] shadow-[0_-5px_20px_rgba(0,0,0,0.5)] z-50 flex flex-col border-t border-white/10" id="playerBar">
+    <div class="fixed bottom-0 left-0 w-full bg-[#12101C]/95 backdrop-blur-xl text-[#F3E4CE] shadow-[0_-5px_20px_rgba(0,0,0,0.5)] z-50 flex flex-col border-t border-white/10"
+        id="playerBar">
         <div class="w-full h-1 bg-white/10 cursor-pointer group" id="timelineContainer">
             <div id="progressBar" class="h-full bg-[#56A3A6] w-0 transition-all duration-300 relative">
-                <div class="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-[#F3E4CE] rounded-full opacity-0 group-hover:opacity-100 transition-opacity shadow"></div>
+                <div
+                    class="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-[#F3E4CE] rounded-full opacity-0 group-hover:opacity-100 transition-opacity shadow">
+                </div>
             </div>
         </div>
 
         <div class="max-w-5xl mx-auto w-full p-4 flex items-center justify-between gap-4">
             <div class="flex-1 min-w-0 font-['Nunito']">
-                <p id="playerStatus" class="text-xs text-[#56A3A6] font-bold uppercase tracking-wider mb-1">Ready to Play</p>
-                <h3 id="playerVerse" class="font-bold truncate text-sm md:text-lg text-white font-['Forum'] tracking-wide">Select a Surah to begin</h3>
+                <p id="playerStatus" class="text-xs text-[#56A3A6] font-bold uppercase tracking-wider mb-1">Ready to
+                    Play</p>
+                <h3 id="playerVerse"
+                    class="font-bold truncate text-sm md:text-lg text-white font-['Forum'] tracking-wide">Select a Surah
+                    to begin</h3>
                 <div class="text-xs text-white/50 mt-1 flex items-center gap-2">
                     <span id="currentTime">0:00</span>
                 </div>
             </div>
 
             <div class="flex items-center gap-6">
-                <label class="flex items-center space-x-2 cursor-pointer text-sm select-none font-['Nunito']" title="Automatically play next section">
-                    <input type="checkbox" id="autoAdvanceToggle" class="form-checkbox h-4 w-4 text-[#56A3A6] rounded focus:ring-0 accent-[#56A3A6] bg-white/10 border-white/30" checked>
+                <label class="flex items-center space-x-2 cursor-pointer text-sm select-none font-['Nunito']"
+                    title="Automatically play next section">
+                    <input type="checkbox" id="autoAdvanceToggle"
+                        class="form-checkbox h-4 w-4 text-[#56A3A6] rounded focus:ring-0 accent-[#56A3A6] bg-white/10 border-white/30"
+                        checked>
                     <span class="hidden md:inline text-white/70">Continuous</span>
                 </label>
 
@@ -260,13 +309,16 @@
                     <button id="prevSectionBtn" class="hover:text-[#56A3A6] transition text-white/70">
                         <span class="material-symbols-outlined text-4xl">skip_previous</span>
                     </button>
-                    <button id="globalPlayPauseBtn" class="bg-[#56A3A6] text-white rounded-full w-14 h-14 flex items-center justify-center hover:bg-[#458a8d] transition shadow-lg hover:scale-105 active:scale-95">
+                    <button id="globalPlayPauseBtn"
+                        class="bg-[#56A3A6] text-white rounded-full w-14 h-14 flex items-center justify-center hover:bg-[#458a8d] transition shadow-lg hover:scale-105 active:scale-95">
                         <span class="material-symbols-outlined text-5xl">play_arrow</span>
                     </button>
                     <button id="nextSectionBtn" class="hover:text-[#56A3A6] transition text-white/70">
                         <span class="material-symbols-outlined text-4xl">skip_next</span>
                     </button>
-                    <button id="toggleSelectModeBtn" class="ml-4 text-white/70 hover:text-white p-2 rounded-full border border-white/20 hover:border-[#56A3A6] transition" title="Download Multiple Sections">
+                    <button id="toggleSelectModeBtn"
+                        class="ml-4 text-white/70 hover:text-white p-2 rounded-full border border-white/20 hover:border-[#56A3A6] transition"
+                        title="Download Multiple Sections">
                         <span class="material-symbols-outlined">download_for_offline</span>
                     </button>
                 </div>
@@ -275,40 +327,50 @@
         <audio id="audioElement" preload="auto"></audio>
     </div>
 
-    <div id="bulkDownloadBar" class="fixed -bottom-24 left-0 w-full flex justify-center z-40 transition-all duration-500 ease-in-out font-['Nunito']">
-        <div class="bg-[#12101C]/90 backdrop-blur-md text-[#F3E4CE] pl-6 pr-4 py-2 rounded-full shadow-2xl flex items-center gap-6 border border-[#56A3A6]/50">
+    <div id="bulkDownloadBar"
+        class="fixed -bottom-24 left-0 w-full flex justify-center z-40 transition-all duration-500 ease-in-out font-['Nunito']">
+        <div
+            class="bg-[#12101C]/90 backdrop-blur-md text-[#F3E4CE] pl-6 pr-4 py-2 rounded-full shadow-2xl flex items-center gap-6 border border-[#56A3A6]/50">
             <div class="text-sm font-bold whitespace-nowrap">
                 <span id="selectedCount">0</span>/3 Selected
             </div>
-            <button id="btnDownloadBulk" disabled class="text-[#56A3A6] hover:text-white disabled:text-gray-600 disabled:cursor-not-allowed transition transform active:scale-95" title="Download Selected">
+            <button id="btnDownloadBulk" disabled
+                class="text-[#56A3A6] hover:text-white disabled:text-gray-600 disabled:cursor-not-allowed transition transform active:scale-95"
+                title="Download Selected">
                 <span class="material-symbols-outlined text-4xl">download</span>
             </button>
             <div class="w-px h-6 bg-white/20 mx-1"></div>
-            <button id="exitSelectModeBtn" class="text-white/70 hover:text-white transition rounded-full p-1 hover:bg-white/10" title="Exit Selection Mode">
+            <button id="exitSelectModeBtn"
+                class="text-white/70 hover:text-white transition rounded-full p-1 hover:bg-white/10"
+                title="Exit Selection Mode">
                 <span class="material-symbols-outlined text-xl">close</span>
             </button>
         </div>
     </div>
 
-    <div id="downloadModal" class="fixed inset-0 z-[80] hidden overflow-y-auto bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div id="downloadModal"
+        class="fixed inset-0 z-[80] hidden overflow-y-auto bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
         <div class="bg-[#1E1426] border border-[#56A3A6] rounded-2xl shadow-2xl w-full max-w-md p-6 relative">
-            <h3 id="dlModalTitle" class="text-xl text-white font-['Forum'] mb-4 border-b border-white/10 pb-2">Download Audio</h3>
-            
+            <h3 id="dlModalTitle" class="text-xl text-white font-['Forum'] mb-4 border-b border-white/10 pb-2">Download
+                Audio</h3>
+
             <div class="space-y-4 mb-6 text-sm text-white/80 font-['Nunito']">
-                
+
                 <div>
                     <label class="block text-[#56A3A6] text-xs uppercase font-bold mb-1">Reciter</label>
                     <div class="bg-white/10 rounded border border-white/20">
-                        <select id="dlModalReciterSelect" class="w-full p-2 bg-transparent text-white outline-none cursor-pointer">
-                            </select>
+                        <select id="dlModalReciterSelect"
+                            class="w-full p-2 bg-transparent text-white outline-none cursor-pointer">
+                        </select>
                     </div>
                 </div>
 
                 <div>
                     <label class="block text-[#56A3A6] text-xs uppercase font-bold mb-1">Translation</label>
                     <div class="bg-white/10 rounded border border-white/20">
-                        <select id="dlModalLangSelect" class="w-full p-2 bg-transparent text-white outline-none cursor-pointer">
-                            </select>
+                        <select id="dlModalLangSelect"
+                            class="w-full p-2 bg-transparent text-white outline-none cursor-pointer">
+                        </select>
                     </div>
                 </div>
 
@@ -325,15 +387,87 @@
             </div>
 
             <div class="flex gap-3 mt-6">
-                <button id="dlCancelBtn" class="flex-1 py-2 rounded-lg border border-white/20 text-white/70 hover:bg-white/10 transition">Cancel</button>
-                <button id="dlConfirmBtn" class="flex-1 py-2 rounded-lg bg-[#56A3A6] text-white hover:bg-[#458a8d] shadow-lg transition">Download WAV</button>
+                <button id="dlCancelBtn"
+                    class="flex-1 py-2 rounded-lg border border-white/20 text-white/70 hover:bg-white/10 transition">Cancel</button>
+                <button id="dlConfirmBtn"
+                    class="flex-1 py-2 rounded-lg bg-[#56A3A6] text-white hover:bg-[#458a8d] shadow-lg transition">Download
+                    WAV</button>
             </div>
         </div>
     </div>
 
-    <div id="settingsBackdrop" class="fixed inset-0 bg-black/50 z-[60] hidden transition-opacity duration-300 opacity-0"></div>
-    <div id="settingsSidebar" class="fixed top-0 right-0 h-full w-full max-w-sm bg-[#221F2B]/60 backdrop-blur-2xl border-l border-white/10 shadow-2xl z-[70] transform translate-x-full transition-transform duration-300 flex flex-col">
-        
+    <!-- ABOUT MODAL -->
+    <div id="aboutModal"
+        class="fixed inset-0 z-[90] hidden overflow-y-auto bg-black/90 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="bg-[#1E1426] border border-[#56A3A6]/50 rounded-2xl shadow-2xl w-full max-w-2xl p-8 relative">
+            <button id="closeAboutBtn" class="absolute top-4 right-4 text-white/40 hover:text-white transition">
+                <span class="material-symbols-outlined text-2xl">close</span>
+            </button>
+            <div class="text-center mb-8">
+                <div
+                    class="inline-flex items-center justify-center gap-2 px-3 py-1 bg-[#56A3A6]/10 border border-[#56A3A6]/30 rounded-full mb-4">
+                    <span class="material-symbols-outlined text-[#56A3A6] text-sm">headphones</span>
+                    <span class="text-[#56A3A6] text-xs font-bold uppercase tracking-wider">Audio Experience</span>
+                </div>
+                <h2
+                    class="text-3xl md:text-5xl font-['Forum'] text-white tracking-widest drop-shadow-lg mb-2 uppercase">
+                    Thematic Quran</h2>
+                <p class="text-white/60 font-['Nunito'] text-sm uppercase tracking-[0.2em]">Recite &bull; Understand
+                    &bull; Reflect</p>
+            </div>
+
+            <div class="space-y-6 text-[#F3E4CE] font-['Nunito'] leading-relaxed text-lg text-center">
+                <p>
+                    The Quran is meant to be recited and understood.
+                </p>
+                <p>
+                    The Thematic Quran is an <strong>audio experience</strong> that pairs high-quality Arabic recitation
+                    with a custom narration of Talal Itani's English translation.
+                </p>
+                <p>
+                    Ayah are grouped together so listeners can understand both the <span
+                        class="text-[#56A3A6] font-bold">meaning</span> and the <span
+                        class="text-[#56A3A6] font-bold">context</span> of what is being explained.
+                </p>
+            </div>
+
+            <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 border-t border-white/10 pt-8">
+                <div class="bg-white/5 p-4 rounded-xl text-center">
+                    <span class="material-symbols-outlined text-[#56A3A6] text-3xl mb-2">record_voice_over</span>
+                    <h3 class="font-bold text-white mb-1 text-sm">Custom Narration</h3>
+                    <p class="text-[10px] text-white/60">Clear, paced English recitation.</p>
+                </div>
+                <div class="bg-white/5 p-4 rounded-xl text-center">
+                    <span class="material-symbols-outlined text-[#56A3A6] text-3xl mb-2">segment</span>
+                    <h3 class="font-bold text-white mb-1 text-sm">Thematic Groups</h3>
+                    <p class="text-[10px] text-white/60">Verses grouped by topic.</p>
+                </div>
+                <div class="bg-white/5 p-4 rounded-xl text-center">
+                    <span class="material-symbols-outlined text-[#56A3A6] text-3xl mb-2">graphic_eq</span>
+                    <h3 class="font-bold text-white mb-1 text-sm">Synced Audio</h3>
+                    <p class="text-[10px] text-white/60">Seamless Arabic & English.</p>
+                </div>
+                <div class="bg-white/5 p-4 rounded-xl text-center">
+                    <span class="material-symbols-outlined text-[#56A3A6] text-3xl mb-2">tune</span>
+                    <h3 class="font-bold text-white mb-1 text-sm">Custom Mixes</h3>
+                    <p class="text-[10px] text-white/60">Create your own compilations.</p>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center">
+                <button id="startExploringBtn"
+                    class="bg-[#56A3A6] text-white px-8 py-3 rounded-full font-bold hover:bg-[#458a8d] transition shadow-lg hover:scale-105 active:scale-95">
+                    Start Listening
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="settingsBackdrop"
+        class="fixed inset-0 bg-black/50 z-[60] hidden transition-opacity duration-300 opacity-0"></div>
+    <div id="settingsSidebar"
+        class="fixed top-0 right-0 h-full w-full max-w-sm bg-[#221F2B]/60 backdrop-blur-2xl border-l border-white/10 shadow-2xl z-[70] transform translate-x-full transition-transform duration-300 flex flex-col">
+
         <div class="p-6 border-b border-white/10 flex justify-between items-center">
             <h3 class="text-2xl font-bold font-['Forum'] tracking-wide text-white">Settings</h3>
             <button id="closeSettingsBtn" class="text-white/50 hover:text-white transition duration-300">
@@ -342,11 +476,12 @@
         </div>
 
         <div class="p-6 space-y-8 overflow-y-auto flex-grow">
-            
+
             <div>
                 <label class="block text-xs uppercase tracking-wider text-[#56A3A6] mb-3 font-bold">View Mode</label>
                 <div class="bg-white/5 rounded-xl border border-white/10 overflow-hidden">
-                    <select id="viewModeSelect" class="w-full p-4 bg-transparent text-white focus:outline-none focus:bg-white/10 font-['Nunito'] cursor-pointer">
+                    <select id="viewModeSelect"
+                        class="w-full p-4 bg-transparent text-white focus:outline-none focus:bg-white/10 font-['Nunito'] cursor-pointer">
                         <option value="surah" class="text-gray-900">Surah Mode (Chapter)</option>
                         <option value="juz" class="text-gray-900">Juz Mode (Para)</option>
                     </select>
@@ -354,16 +489,23 @@
             </div>
 
             <div>
-                <label class="block text-xs uppercase tracking-wider text-[#56A3A6] mb-3 font-bold">Arabic Reciter</label>
+                <label class="block text-xs uppercase tracking-wider text-[#56A3A6] mb-3 font-bold">Arabic
+                    Reciter</label>
                 <div class="bg-white/5 rounded-xl border border-white/10 overflow-hidden">
-                    <select id="reciterSelect" class="w-full p-4 bg-transparent text-white focus:outline-none focus:bg-white/10 font-['Nunito'] cursor-pointer">
+                    <select id="reciterSelect"
+                        class="w-full p-4 bg-transparent text-white focus:outline-none focus:bg-white/10 font-['Nunito'] cursor-pointer">
                         <option value="Alafasy_128kbps" class="text-gray-900">Mishary Rashid Alafasy (Default)</option>
-                        <option value="Abdul_Basit_Murattal_192kbps" class="text-gray-900">Abdul Basit (Murattal)</option>
-                        <option value="Abdul_Basit_Mujawwad_128kbps" class="text-gray-900">Abdul Basit (Mujawwad)</option>
+                        <option value="Abdul_Basit_Murattal_192kbps" class="text-gray-900">Abdul Basit (Murattal)
+                        </option>
+                        <option value="Abdul_Basit_Mujawwad_128kbps" class="text-gray-900">Abdul Basit (Mujawwad)
+                        </option>
                         <option value="Abdullah_Basfar_192kbps" class="text-gray-900">Abdullah Basfar</option>
-                        <option value="Abdurrahmaan_As-Sudais_192kbps" class="text-gray-900">Abdurrahmaan As-Sudais</option>
-                        <option value="Abu_Bakr_Ash-Shaatree_128kbps" class="text-gray-900">Abu Bakr Ash-Shaatree</option>
-                        <option value="Ahmed_ibn_Ali_al-Ajamy_128kbps_ketaballah.net" class="text-gray-900">Ahmed ibn Ali al-Ajamy</option>
+                        <option value="Abdurrahmaan_As-Sudais_192kbps" class="text-gray-900">Abdurrahmaan As-Sudais
+                        </option>
+                        <option value="Abu_Bakr_Ash-Shaatree_128kbps" class="text-gray-900">Abu Bakr Ash-Shaatree
+                        </option>
+                        <option value="Ahmed_ibn_Ali_al-Ajamy_128kbps_ketaballah.net" class="text-gray-900">Ahmed ibn
+                            Ali al-Ajamy</option>
                         <option value="Ghamadi_40kbps" class="text-gray-900">Saad Al-Ghamdi</option>
                         <option value="Hani_Rifai_192kbps" class="text-gray-900">Hani Ar-Rifai</option>
                         <option value="Husary_128kbps" class="text-gray-900">Mahmoud Khalil Al-Husary</option>
@@ -379,7 +521,8 @@
                         <option value="Nasser_Alqatami_128kbps" class="text-gray-900">Nasser Al-Qatami</option>
                         <option value="Parhizgar_48kbps" class="text-gray-900">Shahriar Parhizgar</option>
                         <option value="Sahl_Yassin_128kbps" class="text-gray-900">Sahl Yassin</option>
-                        <option value="Salaah_AbdulRahman_Bukhatir_128kbps" class="text-gray-900">Salah Bukhatir</option>
+                        <option value="Salaah_AbdulRahman_Bukhatir_128kbps" class="text-gray-900">Salah Bukhatir
+                        </option>
                         <option value="Salah_Al_Budair_128kbps" class="text-gray-900">Salah Al-Budair</option>
                         <option value="Saood_ash-Shuraym_128kbps" class="text-gray-900">Saood Ash-Shuraym</option>
                         <option value="Yasser_Ad-Dussary_128kbps" class="text-gray-900">Yasser Al-Dosari</option>
@@ -390,17 +533,20 @@
             <div>
                 <label class="block text-xs uppercase tracking-wider text-[#56A3A6] mb-3 font-bold">Translation</label>
                 <div class="bg-white/5 rounded-xl border border-white/10 overflow-hidden">
-                    <select id="languageSelect" class="w-full p-4 bg-transparent text-white focus:outline-none focus:bg-white/10 font-['Nunito'] cursor-pointer">
+                    <select id="languageSelect"
+                        class="w-full p-4 bg-transparent text-white focus:outline-none focus:bg-white/10 font-['Nunito'] cursor-pointer">
                         <option value="en" class="text-gray-900">English (Talal Itani)</option>
-                        <option value="ur" class="text-gray-900">Urdu (Muhammad Junagarhi)</option>
+                        <option value="ur" class="text-gray-900">[BETA] Urdu (Muhammad Junagarhi)</option>
                     </select>
                 </div>
             </div>
 
             <div>
-                <label class="block text-xs uppercase tracking-wider text-[#56A3A6] mb-3 font-bold">Arabic Script</label>
+                <label class="block text-xs uppercase tracking-wider text-[#56A3A6] mb-3 font-bold">Arabic
+                    Script</label>
                 <div class="bg-white/5 rounded-xl border border-white/10 overflow-hidden">
-                    <select id="fontSelect" class="w-full p-4 bg-transparent text-white focus:outline-none focus:bg-white/10 font-['Nunito'] cursor-pointer">
+                    <select id="fontSelect"
+                        class="w-full p-4 bg-transparent text-white focus:outline-none focus:bg-white/10 font-['Nunito'] cursor-pointer">
                         <option value="font-amiri" class="text-gray-900">Amiri (Default)</option>
                         <option value="font-scheherazade" class="text-gray-900">Scheherazade New</option>
                         <option value="font-lateef" class="text-gray-900">Lateef</option>
@@ -408,10 +554,11 @@
                     </select>
                 </div>
             </div>
-            
+
             <div>
-                <label class="block text-xs uppercase tracking-wider text-[#56A3A6] mb-4 font-bold">Playback Speed</label>
-                
+                <label class="block text-xs uppercase tracking-wider text-[#56A3A6] mb-4 font-bold">Playback
+                    Speed</label>
+
                 <div class="mb-6 relative">
                     <div class="flex justify-between text-xs text-white/70 mb-2">
                         <span class="font-bold">Arabic</span>
@@ -428,7 +575,8 @@
                             <div class="w-px h-1.5 bg-white/20"></div>
                             <div class="w-px h-1.5 bg-white/20"></div>
                         </div>
-                        <input type="range" id="arabicSpeedRange" min="0.8" max="1.5" step="0.1" value="1.0" class="relative z-10 w-full">
+                        <input type="range" id="arabicSpeedRange" min="0.8" max="1.5" step="0.1" value="1.0"
+                            class="relative z-10 w-full">
                     </div>
                 </div>
 
@@ -448,7 +596,8 @@
                             <div class="w-px h-1.5 bg-white/20"></div>
                             <div class="w-px h-1.5 bg-white/20"></div>
                         </div>
-                        <input type="range" id="transSpeedRange" min="0.8" max="1.5" step="0.1" value="1.0" class="relative z-10 w-full">
+                        <input type="range" id="transSpeedRange" min="0.8" max="1.5" step="0.1" value="1.0"
+                            class="relative z-10 w-full">
                     </div>
                 </div>
             </div>
@@ -458,15 +607,20 @@
                 <div class="bg-white/5 rounded-xl border border-white/10 p-4">
                     <div class="flex items-center justify-between mb-2">
                         <span class="text-white text-sm font-bold">Customise Verse Grouping</span>
-                        <div class="relative inline-block w-10 align-middle select-none transition duration-200 ease-in">
-                            <input type="checkbox" name="toggle" id="editModeToggle" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"/>
-                            <label for="editModeToggle" class="toggle-label block overflow-hidden h-6 rounded-full cursor-pointer"></label>
+                        <div
+                            class="relative inline-block w-10 align-middle select-none transition duration-200 ease-in">
+                            <input type="checkbox" name="toggle" id="editModeToggle"
+                                class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" />
+                            <label for="editModeToggle"
+                                class="toggle-label block overflow-hidden h-6 rounded-full cursor-pointer"></label>
                         </div>
                     </div>
                     <p class="text-xs text-white/50 leading-relaxed mb-4">
-                        Enable this to customize the thematic breaks. Tap verse numbers on the page to merge or split sections. Changes save automatically.
+                        Enable this to customize the thematic breaks. Tap verse numbers on the page to merge or split
+                        sections. Changes save automatically.
                     </p>
-                    <button id="restoreDefaultsBtn" class="w-full py-2 bg-red-500/20 hover:bg-red-500/30 text-red-300 border border-red-500/50 rounded-lg text-xs font-bold uppercase tracking-wider transition hidden">
+                    <button id="restoreDefaultsBtn"
+                        class="w-full py-2 bg-red-500/20 hover:bg-red-500/30 text-red-300 border border-red-500/50 rounded-lg text-xs font-bold uppercase tracking-wider transition hidden">
                         Restore Defaults
                     </button>
                 </div>
@@ -475,18 +629,21 @@
             <div>
                 <label class="block text-xs uppercase tracking-wider text-[#56A3A6] mb-3 font-bold">Font Size</label>
                 <div class="bg-white/5 rounded-xl border border-white/10 p-2 flex items-center justify-between">
-                    <button id="decreaseFontBtn" class="p-2 text-white/70 hover:text-white hover:bg-white/10 rounded-lg transition">
+                    <button id="decreaseFontBtn"
+                        class="p-2 text-white/70 hover:text-white hover:bg-white/10 rounded-lg transition">
                         <span class="material-symbols-outlined">remove</span>
                     </button>
                     <span id="fontSizeDisplay" class="text-white font-bold font-['Nunito']">100%</span>
-                    <button id="increaseFontBtn" class="p-2 text-white/70 hover:text-white hover:bg-white/10 rounded-lg transition">
+                    <button id="increaseFontBtn"
+                        class="p-2 text-white/70 hover:text-white hover:bg-white/10 rounded-lg transition">
                         <span class="material-symbols-outlined">add</span>
                     </button>
                 </div>
             </div>
 
             <div id="installAppContainer" class="hidden pt-4">
-                <button id="installAppBtn" class="w-full py-3 bg-transparent border-2 border-[#56A3A6] text-[#56A3A6] hover:bg-[#56A3A6] hover:text-white rounded-xl font-bold transition duration-300 flex items-center justify-center gap-2">
+                <button id="installAppBtn"
+                    class="w-full py-3 bg-transparent border-2 border-[#56A3A6] text-[#56A3A6] hover:bg-[#56A3A6] hover:text-white rounded-xl font-bold transition duration-300 flex items-center justify-center gap-2">
                     <span class="material-symbols-outlined">download</span>
                     Install App
                 </button>
@@ -494,25 +651,32 @@
             </div>
 
         </div>
-        
+
         <div class="p-6 border-t border-white/10 text-center">
             <div class="flex justify-center space-x-6 mb-4 items-center">
-                
-                <a href="https://podcasts.apple.com/podcast/id1853242036" target="_blank" class="text-white/40 hover:text-[#56A3A6] transition transform hover:scale-110" title="Apple Podcasts">
+
+                <a href="https://podcasts.apple.com/podcast/id1853242036" target="_blank"
+                    class="text-white/40 hover:text-[#56A3A6] transition transform hover:scale-110"
+                    title="Apple Podcasts">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.94 0 2.75-1.13 4.54-1.13 1.77.03 3.16.89 3.93 2.1-.02.04-2.35 1.35-2.32 4.02.02 2.41 2.12 3.2 2.22 3.26-.06.18-.34 1.18-1.77 3.5zM15.5 3.39c.79-1.04 1.28-2.41 1.14-3.39-1.1.04-2.42.73-3.19 1.63-.69.8-1.28 2.09-1.11 3.32 1.22.09 2.45-.63 3.16-1.56z"/>
+                        <path
+                            d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.94 0 2.75-1.13 4.54-1.13 1.77.03 3.16.89 3.93 2.1-.02.04-2.35 1.35-2.32 4.02.02 2.41 2.12 3.2 2.22 3.26-.06.18-.34 1.18-1.77 3.5zM15.5 3.39c.79-1.04 1.28-2.41 1.14-3.39-1.1.04-2.42.73-3.19 1.63-.69.8-1.28 2.09-1.11 3.32 1.22.09 2.45-.63 3.16-1.56z" />
                     </svg>
                 </a>
-                
-                <a href="https://open.spotify.com/show/5faWrLtYgEdBzoevFTBXlk" target="_blank" class="text-white/40 hover:text-[#1DB954] transition transform hover:scale-110" title="Spotify">
+
+                <a href="https://open.spotify.com/show/5faWrLtYgEdBzoevFTBXlk" target="_blank"
+                    class="text-white/40 hover:text-[#1DB954] transition transform hover:scale-110" title="Spotify">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+                        <path
+                            d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z" />
                     </svg>
                 </a>
-                
-                <a href="https://media.rss.com/the-thematic-quran-project/feed.xml" target="_blank" class="text-white/40 hover:text-[#EE802F] transition transform hover:scale-110" title="RSS Feed">
+
+                <a href="https://media.rss.com/the-thematic-quran-project/feed.xml" target="_blank"
+                    class="text-white/40 hover:text-[#EE802F] transition transform hover:scale-110" title="RSS Feed">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M6.18 15.64a2.18 2.18 0 0 1 2.18 2.18C8.36 19 7.38 20 6.18 20C5 20 4 19 4 17.82a2.18 2.18 0 0 1 2.18-2.18M4 4.44A15.56 15.56 0 0 1 19.56 20h-2.83A12.73 12.73 0 0 0 4 7.27V4.44m0 5.66a9.9 9.9 0 0 1 9.9 9.9h-2.83A7.07 7.07 0 0 0 4 12.93V10.1z"/>
+                        <path
+                            d="M6.18 15.64a2.18 2.18 0 0 1 2.18 2.18C8.36 19 7.38 20 6.18 20C5 20 4 19 4 17.82a2.18 2.18 0 0 1 2.18-2.18M4 4.44A15.56 15.56 0 0 1 19.56 20h-2.83A12.73 12.73 0 0 0 4 7.27V4.44m0 5.66a9.9 9.9 0 0 1 9.9 9.9h-2.83A7.07 7.07 0 0 0 4 12.93V10.1z" />
                     </svg>
                 </a>
             </div>
@@ -527,4 +691,5 @@
     <script src="js/app.js?v=2.2.6"></script>
 
 </body>
+
 </html>
