@@ -85,6 +85,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     loadPreferences();
 
+    // INITIAL POPULATE: Ensure "Welcome" is visible immediately, even if data takes time
+    populateDropdown();
+
     try {
         const [qResponse, bResponse] = await Promise.all([
             fetch('data/quran_data.json'),
