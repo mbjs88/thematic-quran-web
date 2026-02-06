@@ -1,11 +1,19 @@
 /* css/styles.css */
 
 /* --- GLOBAL SCROLL OFFSET FIX --- */
-html, body, #mainContainer {
-    scroll-padding-top: 280px; 
+html,
+body,
+#mainContainer {
+    scroll-padding-top: 280px;
 }
 
 /* --- ARABIC FONTS OPTIONS --- */
+
+@font-face {
+    font-family: 'Uthmanic Hafs';
+    src: url('../assets/fonts/UthmanicHafs1Ver18.woff2') format('woff2');
+    font-display: swap;
+}
 
 /* 1. Amiri Quran (Default) - High Contrast */
 .font-amiri {
@@ -29,7 +37,8 @@ html, body, #mainContainer {
 .font-lateef {
     font-family: 'Lateef', serif;
     line-height: 1.8 !important;
-    font-size: 1.1em; /* Lateef is naturally smaller */
+    font-size: 1.1em;
+    /* Lateef is naturally smaller */
     padding-top: 10px;
     padding-bottom: 10px;
     display: block;
@@ -41,6 +50,16 @@ html, body, #mainContainer {
     line-height: 2.2 !important;
     padding-top: 15px;
     padding-bottom: 15px;
+    display: block;
+}
+
+/* 5. Uthmanic Hafs - Madinah Style */
+.font-uthmanic {
+    font-family: 'Uthmanic Hafs', serif;
+    font-size: 1.3em;
+    line-height: 2.4 !important;
+    padding-top: 10px;
+    padding-bottom: 10px;
     display: block;
 }
 
@@ -57,22 +76,25 @@ html, body, #mainContainer {
 ::-webkit-scrollbar {
     width: 8px;
 }
+
 ::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.05); 
+    background: rgba(255, 255, 255, 0.05);
 }
+
 ::-webkit-scrollbar-thumb {
-    background: rgba(86, 163, 166, 0.5); 
+    background: rgba(86, 163, 166, 0.5);
     border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
-    background: rgba(86, 163, 166, 0.8); 
+    background: rgba(86, 163, 166, 0.8);
 }
 
 /* Active Verse Highlight */
 .active-verse {
-    background-color: rgba(255, 255, 255, 0.1); 
+    background-color: rgba(255, 255, 255, 0.1);
     border-radius: 6px;
-    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1); 
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1);
     transition: background-color 0.3s ease;
     cursor: pointer;
 }
@@ -81,6 +103,7 @@ html, body, #mainContainer {
     cursor: pointer;
     transition: opacity 0.2s;
 }
+
 .verse-span:hover {
     opacity: 0.7;
 }
@@ -89,7 +112,8 @@ html, body, #mainContainer {
 /* TOAST NOTIFICATION */
 .toast-notification {
     position: fixed;
-    bottom: 100px; /* Above the player bar */
+    bottom: 100px;
+    /* Above the player bar */
     left: 50%;
     transform: translateX(-50%) translateY(20px);
     background-color: rgba(30, 20, 38, 0.95);
@@ -99,7 +123,7 @@ html, body, #mainContainer {
     border-radius: 50px;
     font-family: 'Nunito', sans-serif;
     font-size: 0.9rem;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     opacity: 0;
     transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
     z-index: 100;
@@ -108,6 +132,7 @@ html, body, #mainContainer {
     align-items: center;
     gap: 8px;
 }
+
 .toast-visible {
     opacity: 1;
     transform: translateX(-50%) translateY(0);

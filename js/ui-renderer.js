@@ -460,3 +460,152 @@ window.showToast = function (message, icon = 'info') {
     if (window.toastTimeout) clearTimeout(window.toastTimeout);
     window.toastTimeout = setTimeout(() => toast.classList.remove('toast-visible'), 3000);
 };
+// --- WELCOME PAGE RENDERER ---
+// --- WELCOME PAGE RENDERER ---
+const WELCOME_PAGE_HTML = `
+    <!-- STATIC WELCOME PAGE (SEO OPTIMIZED) -->
+    <div id="staticWelcomeContent" class="py-8 md:py-16 animate-fade-in">
+        
+        <!-- HERO SECTION -->
+        <div class="text-center mb-16">
+            <div class="inline-flex items-center justify-center gap-2 px-3 py-1 bg-[#56A3A6]/10 border border-[#56A3A6]/30 rounded-full mb-6">
+                <span class="material-symbols-outlined text-[#56A3A6] text-sm">headphones</span>
+                <span class="text-[#56A3A6] text-xs font-bold uppercase tracking-wider">Audio Experience</span>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-['Forum'] text-white tracking-widest drop-shadow-2xl mb-4 uppercase">
+                THEMATIC QUR’AN</h1>
+            <p class="text-white/60 font-['Nunito'] text-sm md:text-base uppercase tracking-[0.3em]">LISTEN &bull; REFLECT &bull; UNDERSTAND</p>
+        </div>
+
+        <!-- HERO COPY -->
+        <div class="space-y-6 text-[#F3E4CE] font-['Nunito'] leading-relaxed text-lg md:text-xl text-center max-w-2xl mx-auto mb-16">
+            <p class="font-bold text-white/90 text-xl md:text-2xl">
+                The Qur’an is meant to be recited and understood.
+            </p>
+            <p>
+                Thematic Qur’an is a guided Qur’an audio experience that pairs beautiful Arabic recitation with clear English narration, based on Talal Itani’s translation — so you can follow the meaning without breaking your focus.
+            </p>
+            <p>
+                Ayahs are grouped into connected listening journeys, bringing verses together in a way that helps you understand both the <span class="text-[#56A3A6] font-bold">meaning</span> and the <span class="text-[#56A3A6] font-bold">context</span> of what you’re hearing.
+            </p>
+            <div class="w-24 h-px bg-white/10 mx-auto mt-8"></div>
+            <p class="text-sm text-white/40 uppercase tracking-widest mt-4">Listen in short sessions. Reflect at your own pace.</p>
+        </div>
+
+        <!-- CTA -->
+        <div class="text-center mb-20">
+            <button onclick="document.dispatchEvent(new CustomEvent('start-listening'))"
+                class="bg-[#56A3A6] text-white px-10 py-4 rounded-full font-bold hover:bg-[#458a8d] transition shadow-[0_0_20px_rgba(86,163,166,0.2)] hover:shadow-[0_0_30px_rgba(86,163,166,0.4)] hover:scale-105 active:scale-95 text-lg cursor-pointer mb-4" aria-label="Start Listening to Thematic Quran">
+                Start Listening
+            </button>
+            <br>
+            <a href="#howItWorks" class="text-xs text-white/40 hover:text-[#56A3A6] transition border-b border-transparent hover:border-[#56A3A6] pb-0.5 uppercase tracking-wider">How it works</a>
+        </div>
+
+        <!-- FEATURE CARDS -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 border-t border-white/10 pt-16 mb-20">
+            <div class="bg-white/5 p-6 rounded-2xl text-center hover:bg-white/10 transition duration-300 group">
+                <span class="material-symbols-outlined text-[#56A3A6] text-4xl mb-3 group-hover:scale-110 transition-transform">record_voice_over</span>
+                <h3 class="font-bold text-white mb-2 text-sm md:text-base">Custom Narration</h3>
+                <p class="text-xs text-white/60">Clear, paced English narration.</p>
+            </div>
+            <div class="bg-white/5 p-6 rounded-2xl text-center hover:bg-white/10 transition duration-300 group">
+                <span class="material-symbols-outlined text-[#56A3A6] text-4xl mb-3 group-hover:scale-110 transition-transform">segment</span>
+                <h3 class="font-bold text-white mb-2 text-sm md:text-base">Curated Listening</h3>
+                <p class="text-xs text-white/60">Ayahs grouped for meaning and context.</p>
+            </div>
+            <div class="bg-white/5 p-6 rounded-2xl text-center hover:bg-white/10 transition duration-300 group">
+                <span class="material-symbols-outlined text-[#56A3A6] text-4xl mb-3 group-hover:scale-110 transition-transform">graphic_eq</span>
+                <h3 class="font-bold text-white mb-2 text-sm md:text-base">Synced Audio</h3>
+                <p class="text-xs text-white/60">Seamless Arabic recitation + English meaning.</p>
+            </div>
+            <div class="bg-white/5 p-6 rounded-2xl text-center hover:bg-white/10 transition duration-300 group">
+                <span class="material-symbols-outlined text-[#56A3A6] text-4xl mb-3 group-hover:scale-110 transition-transform">tune</span>
+                <h3 class="font-bold text-white mb-2 text-sm md:text-base">Custom Mixes</h3>
+                <p class="text-xs text-white/60">Create your own compilations.</p>
+            </div>
+        </div>
+
+        <!-- HOW IT WORKS -->
+        <div id="howItWorks" class="max-w-2xl mx-auto mb-20 pt-10">
+            <h2 class="text-2xl md:text-3xl font-['Forum'] text-white text-center mb-10 tracking-wider">How it works</h2>
+            <div class="space-y-4">
+                <div class="flex items-center gap-6 p-4 rounded-xl hover:bg-white/5 transition">
+                    <span class="flex-shrink-0 w-10 h-10 rounded-full bg-[#56A3A6]/20 text-[#56A3A6] flex items-center justify-center font-bold">1</span>
+                    <p class="text-[#F3E4CE] text-lg">Press play</p>
+                </div>
+                <div class="flex items-center gap-6 p-4 rounded-xl hover:bg-white/5 transition">
+                    <span class="flex-shrink-0 w-10 h-10 rounded-full bg-[#56A3A6]/20 text-[#56A3A6] flex items-center justify-center font-bold">2</span>
+                    <p class="text-[#F3E4CE] text-lg">Listen to the Arabic recitation</p>
+                </div>
+                <div class="flex items-center gap-6 p-4 rounded-xl hover:bg-white/5 transition">
+                    <span class="flex-shrink-0 w-10 h-10 rounded-full bg-[#56A3A6]/20 text-[#56A3A6] flex items-center justify-center font-bold">3</span>
+                    <p class="text-[#F3E4CE] text-lg">Follow the English narration</p>
+                </div>
+                <div class="flex items-center gap-6 p-4 rounded-xl hover:bg-white/5 transition">
+                    <span class="flex-shrink-0 w-10 h-10 rounded-full bg-[#56A3A6]/20 text-[#56A3A6] flex items-center justify-center font-bold">4</span>
+                    <p class="text-[#F3E4CE] text-lg">Finish with a clearer understanding of meaning and context</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ -->
+        <div class="max-w-2xl mx-auto border-t border-white/10 pt-16">
+            <h2 class="text-2xl md:text-3xl font-['Forum'] text-white text-center mb-10 tracking-wider">FAQ</h2>
+            <div class="space-y-4">
+                <details class="group bg-white/5 rounded-xl border border-white/5 open:bg-white/10 transition-all duration-300">
+                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                        <span class="font-bold text-[#F3E4CE]">What is Thematic Qur’an?</span>
+                        <span class="material-symbols-outlined text-[#56A3A6] transform group-open:rotate-180 transition-transform">expand_more</span>
+                    </summary>
+                    <div class="px-6 pb-6 text-white/70 leading-relaxed text-sm">
+                        A guided Qur’an audio experience pairing Arabic recitation with English narration to support understanding.
+                    </div>
+                </details>
+                <details class="group bg-white/5 rounded-xl border border-white/5 open:bg-white/10 transition-all duration-300">
+                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                        <span class="font-bold text-[#F3E4CE]">Which English translation is used?</span>
+                        <span class="material-symbols-outlined text-[#56A3A6] transform group-open:rotate-180 transition-transform">expand_more</span>
+                    </summary>
+                    <div class="px-6 pb-6 text-white/70 leading-relaxed text-sm">
+                        English narration is based on Talal Itani’s translation.
+                    </div>
+                </details>
+                <details class="group bg-white/5 rounded-xl border border-white/5 open:bg-white/10 transition-all duration-300">
+                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                        <span class="font-bold text-[#F3E4CE]">How are ayahs arranged?</span>
+                        <span class="material-symbols-outlined text-[#56A3A6] transform group-open:rotate-180 transition-transform">expand_more</span>
+                    </summary>
+                    <div class="px-6 pb-6 text-white/70 leading-relaxed text-sm">
+                        Ayahs are grouped into connected sequences to help listeners follow meaning and context without interruption.
+                    </div>
+                </details>
+            </div>
+        </div>
+
+    </div>
+`;
+
+window.renderWelcomePage = function () {
+    const container = document.getElementById('contentArea');
+
+    // Adjust Spacer for Welcome Page
+    const spacer = document.getElementById('mainSpacer');
+    if (spacer) {
+        spacer.className = "w-full h-[160px] md:h-[180px] shrink-0 transition-all duration-300";
+    }
+
+    // Prefer the captured HTML if valid (non-empty), otherwise use hardcoded fallback
+    let contentToRender = window.STATIC_WELCOME_HTML && window.STATIC_WELCOME_HTML.trim().length > 100
+        ? window.STATIC_WELCOME_HTML
+        : WELCOME_PAGE_HTML;
+
+    container.innerHTML = contentToRender;
+
+    document.title = "Thematic Qur’an Audio | Listen, Reflect & Understand";
+
+    // Reset Player UI
+    if (typeof resetPlayerState === 'function') resetPlayerState();
+    const verseText = document.getElementById('playerVerse');
+    if (verseText) verseText.textContent = "Select a Surah to begin";
+};

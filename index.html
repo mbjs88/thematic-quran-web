@@ -12,9 +12,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title>Thematic Quran | Audio Translation & Study</title>
+    <title>Thematic Qur’an Audio | Listen, Reflect & Understand</title>
     <meta name="description"
-        content="An immersive audio experience of the Quran. Listen by theme with synchronized translations (English & Urdu). Produced for deep reflection and understanding.">
+        content="High-quality Arabic recitation with English narration based on Talal Itani’s translation. Ayahs arranged for meaning and context.">
     <meta name="keywords"
         content="Quran, Audio, Thematic, Translation, English, Urdu, Study, Islam, Custom Mix, Tafseer, Quran Audio App">
     <meta name="author" content="Thematic Quran Team">
@@ -227,10 +227,10 @@
         <div class="flex flex-col items-center justify-center space-y-1 cursor-pointer group" id="headerTitleContainer">
             <h1
                 class="text-3xl md:text-5xl font-['Forum'] text-white tracking-widest text-center drop-shadow-lg group-hover:text-[#56A3A6] transition-colors duration-300">
-                THE QUR'AN</h1>
+                THEMATIC QUR'AN</h1>
             <h2
                 class="text-xs md:text-base font-['Forum'] text-white/80 tracking-[0.2em] text-center uppercase group-hover:text-white transition-colors duration-300">
-                A Thematic Audio Translation</h2>
+                Listen &bull; Reflect &bull; Understand</h2>
         </div>
 
         <div class="flex w-full max-w-3xl mx-auto gap-3 items-center">
@@ -247,7 +247,7 @@
     </header>
 
     <main class="flex-grow overflow-y-auto p-4 md:p-8" id="mainContainer">
-        <div id="mainSpacer" class="w-full shrink-0 transition-all duration-300"></div>
+        <div id="mainSpacer" class="w-full h-[160px] md:h-[180px] shrink-0 transition-all duration-300"></div>
 
         <div id="editModeBanner"
             class="hidden mb-6 bg-[#56A3A6]/10 border border-[#56A3A6]/50 rounded-xl p-4 text-center backdrop-blur-md relative">
@@ -271,7 +271,159 @@
         <div id="loadingMessage" class="text-center text-lg text-white/60 font-['Nunito']">
             Loading Data... <span id="loadingPercent"></span>
         </div>
-        <div id="contentArea" class="max-w-4xl mx-auto space-y-8 hidden pb-64"></div>
+        <div id="contentArea" class="max-w-4xl mx-auto space-y-8 pb-64">
+            <!-- STATIC WELCOME PAGE (SEO OPTIMIZED) -->
+            <div id="staticWelcomeContent" class="py-8 md:py-16 animate-fade-in">
+
+                <!-- HERO SECTION -->
+                <div class="text-center mb-16">
+                    <div
+                        class="inline-flex items-center justify-center gap-2 px-3 py-1 bg-[#56A3A6]/10 border border-[#56A3A6]/30 rounded-full mb-6">
+                        <span class="material-symbols-outlined text-[#56A3A6] text-sm">headphones</span>
+                        <span class="text-[#56A3A6] text-xs font-bold uppercase tracking-wider">Audio Experience</span>
+                    </div>
+                    <h1
+                        class="text-4xl md:text-6xl font-['Forum'] text-white tracking-widest drop-shadow-2xl mb-4 uppercase">
+                        THEMATIC QUR’AN</h1>
+                    <p class="text-white/60 font-['Nunito'] text-sm md:text-base uppercase tracking-[0.3em]">LISTEN
+                        &bull; REFLECT &bull; UNDERSTAND</p>
+                </div>
+
+                <!-- HERO COPY -->
+                <div
+                    class="space-y-6 text-[#F3E4CE] font-['Nunito'] leading-relaxed text-lg md:text-xl text-center max-w-2xl mx-auto mb-16">
+                    <p class="font-bold text-white/90 text-xl md:text-2xl">
+                        The Qur’an is meant to be recited and understood.
+                    </p>
+                    <p>
+                        Thematic Qur’an is a guided Qur’an audio experience that pairs beautiful Arabic recitation with
+                        clear English narration, based on Talal Itani’s translation — so you can follow the meaning
+                        without breaking your focus.
+                    </p>
+                    <p>
+                        Ayahs are grouped into connected listening journeys, bringing verses together in a way that
+                        helps you understand both the <span class="text-[#56A3A6] font-bold">meaning</span> and the
+                        <span class="text-[#56A3A6] font-bold">context</span> of what you’re hearing.
+                    </p>
+                    <div class="w-24 h-px bg-white/10 mx-auto mt-8"></div>
+                    <p class="text-sm text-white/40 uppercase tracking-widest mt-4">Listen in short sessions. Reflect at
+                        your own pace.</p>
+                </div>
+
+                <!-- CTA -->
+                <div class="text-center mb-20">
+                    <button onclick="document.dispatchEvent(new CustomEvent('start-listening'))"
+                        class="bg-[#56A3A6] text-white px-10 py-4 rounded-full font-bold hover:bg-[#458a8d] transition shadow-[0_0_20px_rgba(86,163,166,0.2)] hover:shadow-[0_0_30px_rgba(86,163,166,0.4)] hover:scale-105 active:scale-95 text-lg cursor-pointer mb-4"
+                        aria-label="Start Listening to Thematic Quran">
+                        Start Listening
+                    </button>
+                    <br>
+                    <a href="#howItWorks"
+                        class="text-xs text-white/40 hover:text-[#56A3A6] transition border-b border-transparent hover:border-[#56A3A6] pb-0.5 uppercase tracking-wider">How
+                        it works</a>
+                </div>
+
+                <!-- FEATURE CARDS -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 border-t border-white/10 pt-16 mb-20">
+                    <div class="bg-white/5 p-6 rounded-2xl text-center hover:bg-white/10 transition duration-300 group">
+                        <span
+                            class="material-symbols-outlined text-[#56A3A6] text-4xl mb-3 group-hover:scale-110 transition-transform">record_voice_over</span>
+                        <h3 class="font-bold text-white mb-2 text-sm md:text-base">Custom Narration</h3>
+                        <p class="text-xs text-white/60">Clear, paced English narration.</p>
+                    </div>
+                    <div class="bg-white/5 p-6 rounded-2xl text-center hover:bg-white/10 transition duration-300 group">
+                        <span
+                            class="material-symbols-outlined text-[#56A3A6] text-4xl mb-3 group-hover:scale-110 transition-transform">segment</span>
+                        <h3 class="font-bold text-white mb-2 text-sm md:text-base">Curated Listening</h3>
+                        <p class="text-xs text-white/60">Ayahs grouped for meaning and context.</p>
+                    </div>
+                    <div class="bg-white/5 p-6 rounded-2xl text-center hover:bg-white/10 transition duration-300 group">
+                        <span
+                            class="material-symbols-outlined text-[#56A3A6] text-4xl mb-3 group-hover:scale-110 transition-transform">graphic_eq</span>
+                        <h3 class="font-bold text-white mb-2 text-sm md:text-base">Synced Audio</h3>
+                        <p class="text-xs text-white/60">Seamless Arabic recitation + English meaning.</p>
+                    </div>
+                    <div class="bg-white/5 p-6 rounded-2xl text-center hover:bg-white/10 transition duration-300 group">
+                        <span
+                            class="material-symbols-outlined text-[#56A3A6] text-4xl mb-3 group-hover:scale-110 transition-transform">tune</span>
+                        <h3 class="font-bold text-white mb-2 text-sm md:text-base">Custom Mixes</h3>
+                        <p class="text-xs text-white/60">Create your own compilations.</p>
+                    </div>
+                </div>
+
+                <!-- HOW IT WORKS -->
+                <div id="howItWorks" class="max-w-2xl mx-auto mb-20 pt-10">
+                    <h2 class="text-2xl md:text-3xl font-['Forum'] text-white text-center mb-10 tracking-wider">How it
+                        works</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-6 p-4 rounded-xl hover:bg-white/5 transition">
+                            <span
+                                class="flex-shrink-0 w-10 h-10 rounded-full bg-[#56A3A6]/20 text-[#56A3A6] flex items-center justify-center font-bold">1</span>
+                            <p class="text-[#F3E4CE] text-lg">Press play</p>
+                        </div>
+                        <div class="flex items-center gap-6 p-4 rounded-xl hover:bg-white/5 transition">
+                            <span
+                                class="flex-shrink-0 w-10 h-10 rounded-full bg-[#56A3A6]/20 text-[#56A3A6] flex items-center justify-center font-bold">2</span>
+                            <p class="text-[#F3E4CE] text-lg">Listen to the Arabic recitation</p>
+                        </div>
+                        <div class="flex items-center gap-6 p-4 rounded-xl hover:bg-white/5 transition">
+                            <span
+                                class="flex-shrink-0 w-10 h-10 rounded-full bg-[#56A3A6]/20 text-[#56A3A6] flex items-center justify-center font-bold">3</span>
+                            <p class="text-[#F3E4CE] text-lg">Follow the English narration</p>
+                        </div>
+                        <div class="flex items-center gap-6 p-4 rounded-xl hover:bg-white/5 transition">
+                            <span
+                                class="flex-shrink-0 w-10 h-10 rounded-full bg-[#56A3A6]/20 text-[#56A3A6] flex items-center justify-center font-bold">4</span>
+                            <p class="text-[#F3E4CE] text-lg">Finish with a clearer understanding of meaning and context
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ -->
+                <div class="max-w-2xl mx-auto border-t border-white/10 pt-16">
+                    <h2 class="text-2xl md:text-3xl font-['Forum'] text-white text-center mb-10 tracking-wider">FAQ</h2>
+                    <div class="space-y-4">
+                        <details
+                            class="group bg-white/5 rounded-xl border border-white/5 open:bg-white/10 transition-all duration-300">
+                            <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                                <span class="font-bold text-[#F3E4CE]">What is Thematic Qur’an?</span>
+                                <span
+                                    class="material-symbols-outlined text-[#56A3A6] transform group-open:rotate-180 transition-transform">expand_more</span>
+                            </summary>
+                            <div class="px-6 pb-6 text-white/70 leading-relaxed text-sm">
+                                A guided Qur’an audio experience pairing Arabic recitation with English narration to
+                                support understanding.
+                            </div>
+                        </details>
+                        <details
+                            class="group bg-white/5 rounded-xl border border-white/5 open:bg-white/10 transition-all duration-300">
+                            <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                                <span class="font-bold text-[#F3E4CE]">Which English translation is used?</span>
+                                <span
+                                    class="material-symbols-outlined text-[#56A3A6] transform group-open:rotate-180 transition-transform">expand_more</span>
+                            </summary>
+                            <div class="px-6 pb-6 text-white/70 leading-relaxed text-sm">
+                                English narration is based on Talal Itani’s translation.
+                            </div>
+                        </details>
+                        <details
+                            class="group bg-white/5 rounded-xl border border-white/5 open:bg-white/10 transition-all duration-300">
+                            <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                                <span class="font-bold text-[#F3E4CE]">How are ayahs arranged?</span>
+                                <span
+                                    class="material-symbols-outlined text-[#56A3A6] transform group-open:rotate-180 transition-transform">expand_more</span>
+                            </summary>
+                            <div class="px-6 pb-6 text-white/70 leading-relaxed text-sm">
+                                Ayahs are grouped into connected sequences to help listeners follow meaning and context
+                                without interruption.
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </main>
 
     <div class="fixed bottom-0 left-0 w-full bg-[#12101C]/95 backdrop-blur-xl text-[#F3E4CE] shadow-[0_-5px_20px_rgba(0,0,0,0.5)] z-50 flex flex-col border-t border-white/10"
@@ -396,74 +548,7 @@
         </div>
     </div>
 
-    <!-- ABOUT MODAL -->
-    <div id="aboutModal"
-        class="fixed inset-0 z-[90] hidden overflow-y-auto bg-black/90 backdrop-blur-md flex items-center justify-center p-4">
-        <div class="bg-[#1E1426] border border-[#56A3A6]/50 rounded-2xl shadow-2xl w-full max-w-2xl p-8 relative">
-            <button id="closeAboutBtn" class="absolute top-4 right-4 text-white/40 hover:text-white transition">
-                <span class="material-symbols-outlined text-2xl">close</span>
-            </button>
-            <div class="text-center mb-8">
-                <div
-                    class="inline-flex items-center justify-center gap-2 px-3 py-1 bg-[#56A3A6]/10 border border-[#56A3A6]/30 rounded-full mb-4">
-                    <span class="material-symbols-outlined text-[#56A3A6] text-sm">headphones</span>
-                    <span class="text-[#56A3A6] text-xs font-bold uppercase tracking-wider">Audio Experience</span>
-                </div>
-                <h2
-                    class="text-3xl md:text-5xl font-['Forum'] text-white tracking-widest drop-shadow-lg mb-2 uppercase">
-                    Thematic Quran</h2>
-                <p class="text-white/60 font-['Nunito'] text-sm uppercase tracking-[0.2em]">Listen &bull; Reflect
-                    &bull; Understand</p>
-            </div>
-
-            <div class="space-y-6 text-[#F3E4CE] font-['Nunito'] leading-relaxed text-lg text-center">
-                <p>
-                    The Quran is to be <strong>recited</strong> and <strong>understood</strong>.
-                </p>
-                <p>
-                    The Thematic Quran is an <strong
-                        class="underline decoration-[#56A3A6] decoration-2 underline-offset-2">audio experience</strong>
-                    that pairs high-quality Arabic recitation
-                    with a custom narration of Talal Itani's English translation.
-                </p>
-                <p>
-                    Ayah are grouped together so listeners can understand both the <span
-                        class="text-[#56A3A6] font-bold">meaning</span> and the <span
-                        class="text-[#56A3A6] font-bold">context</span> of what is being explained.
-                </p>
-            </div>
-
-            <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 border-t border-white/10 pt-8">
-                <div class="bg-white/5 p-4 rounded-xl text-center">
-                    <span class="material-symbols-outlined text-[#56A3A6] text-3xl mb-2">record_voice_over</span>
-                    <h3 class="font-bold text-white mb-1 text-sm">Custom Narration</h3>
-                    <p class="text-[10px] text-white/60">Clear, paced English recitation.</p>
-                </div>
-                <div class="bg-white/5 p-4 rounded-xl text-center">
-                    <span class="material-symbols-outlined text-[#56A3A6] text-3xl mb-2">segment</span>
-                    <h3 class="font-bold text-white mb-1 text-sm">Thematic Groups</h3>
-                    <p class="text-[10px] text-white/60">Verses grouped by topic.</p>
-                </div>
-                <div class="bg-white/5 p-4 rounded-xl text-center">
-                    <span class="material-symbols-outlined text-[#56A3A6] text-3xl mb-2">graphic_eq</span>
-                    <h3 class="font-bold text-white mb-1 text-sm">Synced Audio</h3>
-                    <p class="text-[10px] text-white/60">Seamless Arabic & English.</p>
-                </div>
-                <div class="bg-white/5 p-4 rounded-xl text-center">
-                    <span class="material-symbols-outlined text-[#56A3A6] text-3xl mb-2">tune</span>
-                    <h3 class="font-bold text-white mb-1 text-sm">Custom Mixes</h3>
-                    <p class="text-[10px] text-white/60">Create your own compilations.</p>
-                </div>
-            </div>
-
-            <div class="mt-8 text-center">
-                <button id="startExploringBtn"
-                    class="bg-[#56A3A6] text-white px-8 py-3 rounded-full font-bold hover:bg-[#458a8d] transition shadow-lg hover:scale-105 active:scale-95">
-                    Start Listening
-                </button>
-            </div>
-        </div>
-    </div>
+    <!-- ABOUT MODAL REMOVED -->
 
     <div id="settingsBackdrop"
         class="fixed inset-0 bg-black/50 z-[60] hidden transition-opacity duration-300 opacity-0"></div>
@@ -550,6 +635,7 @@
                     <select id="fontSelect"
                         class="w-full p-4 bg-transparent text-white focus:outline-none focus:bg-white/10 font-['Nunito'] cursor-pointer">
                         <option value="font-amiri" class="text-gray-900">Amiri (Default)</option>
+                        <option value="font-uthmanic" class="text-gray-900">Uthmanic Hafs (Madinah)</option>
                         <option value="font-scheherazade" class="text-gray-900">Scheherazade New</option>
                         <option value="font-lateef" class="text-gray-900">Lateef</option>
                         <option value="font-noto" class="text-gray-900">Noto Naskh</option>

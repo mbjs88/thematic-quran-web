@@ -95,7 +95,9 @@ function playSession(surah, start, end, targetVerse = null, targetType = null) {
     // 1. Set current player src
     // 2. Play current
     // 3. Preload next
+    // 3. Preload next
     loadTrackIntoPlayer(currentPlayer, queueIndex);
+    enforceCurrentSpeed(currentPlayer);
     currentPlayer.play().then(() => {
         isAudioPlaying = true;
         updateControlsUI(true);
@@ -179,6 +181,7 @@ function onTrackEnded() {
     // Ensure we trigger the UI update *before* or *immediately* as playing starts
     emitVerseChanged(queueIndex);
 
+    enforceCurrentSpeed(currentPlayer);
     currentPlayer.play().then(() => {
         isAudioPlaying = true;
         updateControlsUI(true);
@@ -234,6 +237,7 @@ function playerTogglePlayPause() {
         updateControlsUI(false);
     } else {
         if (playQueue.length > 0 && currentPlayer.src) {
+            enforceCurrentSpeed(currentPlayer);
             currentPlayer.play().then(() => {
                 isAudioPlaying = true;
                 updateControlsUI(true);
@@ -250,6 +254,27 @@ function updateControlsUI(isPlaying) {
     const status = document.getElementById('playerStatus');
     if (isPlaying) { icon.textContent = 'pause'; status.textContent = 'Playing'; }
     else { icon.textContent = 'play_arrow'; status.textContent = 'Paused'; }
+}
+
+function enforceCurrentSpeed(player) {
+    if (queueIndex >= playQueue.length) return;
+
+    // Check if item exists
+    if (!playQueue[queueIndex]) return;
+    const trackItem = playQueue[queueIndex];
+
+    let speed = 1.0;
+    if (trackItem.type === 'translation') {
+        speed = parseFloat(localStorage.getItem('translationSpeed') || "1.0");
+    } else {
+        speed = parseFloat(localStorage.getItem('arabicSpeed') || "1.0");
+    }
+
+    // Only set if different to avoid potential stutter
+    if (Math.abs(player.playbackRate - speed) > 0.01) {
+        player.playbackRate = speed;
+        console.log(`[Audio] Enforcing speed: ${speed}x for ${trackItem.type}`);
+    }
 }
 
 window.isPlayerActive = function () { return isAudioPlaying || (currentPlayer && !currentPlayer.paused); };
