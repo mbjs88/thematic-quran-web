@@ -9,11 +9,7 @@ body,
 
 /* --- ARABIC FONTS OPTIONS --- */
 
-@font-face {
-    font-family: 'Uthmanic Hafs';
-    src: url('../assets/fonts/UthmanicHafs1Ver18.woff2') format('woff2');
-    font-display: swap;
-}
+
 
 /* 1. Amiri Quran (Default) - High Contrast */
 .font-amiri {
@@ -53,15 +49,7 @@ body,
     display: block;
 }
 
-/* 5. Uthmanic Hafs - Madinah Style */
-.font-uthmanic {
-    font-family: 'Uthmanic Hafs', serif;
-    font-size: 1.3em;
-    line-height: 2.4 !important;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    display: block;
-}
+
 
 .font-urdu {
     font-family: 'Noto Nastaliq Urdu', serif;
