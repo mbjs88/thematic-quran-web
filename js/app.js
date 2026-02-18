@@ -240,7 +240,7 @@ function resetPlayerState() {
     document.querySelectorAll('.active-verse').forEach(el => el.classList.remove('active-verse'));
 }
 
-function loadContent(id, scrollTargetVerse = null) {
+function loadContent(id, scrollTargetVerse = null, autoPlay = false) {
     if (id === 0) {
         if (window.renderWelcomePage) window.renderWelcomePage();
         // Update URL to root?
@@ -249,11 +249,11 @@ function loadContent(id, scrollTargetVerse = null) {
         return;
     }
 
-    if (currentViewMode === 'juz') loadJuz(id, scrollTargetVerse);
-    else loadSurah(id, scrollTargetVerse);
+    if (currentViewMode === 'juz') loadJuz(id, scrollTargetVerse, autoPlay);
+    else loadSurah(id, scrollTargetVerse, autoPlay);
 }
 
-function loadSurah(surahId, scrollTargetVerse = null) {
+function loadSurah(surahId, scrollTargetVerse = null, autoPlay = false) {
     resetPlayerState();
     if (isSelectMode) toggleSelectionModeUI(false);
 
@@ -304,18 +304,34 @@ function loadSurah(surahId, scrollTargetVerse = null) {
             }
         } else {
             const firstCard = document.querySelector('.thematic-card');
-            if (firstCard && typeof preloadNextSection === 'function') {
-                const s = parseInt(firstCard.dataset.surah);
-                const start = parseInt(firstCard.dataset.start);
-                const end = parseInt(firstCard.dataset.end);
-                preloadNextSection(s, start, end);
-                localStorage.setItem('resumeState', JSON.stringify({ mode: 'surah', id: surahId, startVerse: 1 }));
+            if (firstCard) {
+                if (typeof preloadNextSection === 'function') {
+                    const s = parseInt(firstCard.dataset.surah);
+                    const start = parseInt(firstCard.dataset.start);
+                    const end = parseInt(firstCard.dataset.end);
+                    preloadNextSection(s, start, end);
+                    localStorage.setItem('resumeState', JSON.stringify({ mode: 'surah', id: surahId, startVerse: 1 }));
+                }
+
+                // NEW: Auto-Play Next Surah Logic
+                if (autoPlay) {
+                    console.log(`[AutoPlay] Scheduled for Surah ${surahId}`);
+                    setTimeout(() => {
+                        const playBtn = firstCard.querySelector('.play-btn');
+                        if (playBtn) {
+                            console.log(`[AutoPlay] Clicking play on first card of Surah ${surahId}`);
+                            playBtn.click();
+                        } else {
+                            console.error("[AutoPlay] Play button not found!");
+                        }
+                    }, 500); // 0.5s pause
+                }
             }
         }
     }, 100);
 }
 
-function loadJuz(juzId, scrollTargetVerse = null) {
+function loadJuz(juzId, scrollTargetVerse = null, autoPlay = false) {
     resetPlayerState();
     if (isSelectMode) toggleSelectionModeUI(false);
 
@@ -352,11 +368,27 @@ function loadJuz(juzId, scrollTargetVerse = null) {
             if (targetCard) scrollToCard(targetCard);
         } else {
             const firstCard = document.querySelector('.thematic-card');
-            if (firstCard && typeof preloadNextSection === 'function') {
-                const s = parseInt(firstCard.dataset.surah);
-                const start = parseInt(firstCard.dataset.start);
-                const end = parseInt(firstCard.dataset.end);
-                preloadNextSection(s, start, end);
+            if (firstCard) {
+                if (typeof preloadNextSection === 'function') {
+                    const s = parseInt(firstCard.dataset.surah);
+                    const start = parseInt(firstCard.dataset.start);
+                    const end = parseInt(firstCard.dataset.end);
+                    preloadNextSection(s, start, end);
+                }
+
+                // NEW: Auto-Play Next Juz Logic
+                if (autoPlay) {
+                    console.log(`[AutoPlay] Scheduled for Juz ${juzId}`);
+                    setTimeout(() => {
+                        const playBtn = firstCard.querySelector('.play-btn');
+                        if (playBtn) {
+                            console.log(`[AutoPlay] Clicking play on first card of Juz ${juzId}`);
+                            playBtn.click();
+                        } else {
+                            console.error("[AutoPlay] Play button not found!");
+                        }
+                    }, 500); // 0.5s pause
+                }
             }
         }
     }, 100);
@@ -597,14 +629,14 @@ function navigateSection(direction) {
             const nextJuz = currentId + 1;
             if (nextJuz <= 30) {
                 document.getElementById('surahSelect').value = nextJuz;
-                loadContent(nextJuz);
+                loadContent(nextJuz, null, true); // autoPlay = true
                 if (window.showToast) window.showToast(`Loaded Juz ${nextJuz}`, 'library_books');
             }
         } else {
             const nextSurah = currentId + 1;
             if (nextSurah <= 114) {
                 document.getElementById('surahSelect').value = nextSurah;
-                loadContent(nextSurah);
+                loadContent(nextSurah, null, true); // autoPlay = true
                 if (window.showToast) window.showToast(`Loaded Surah ${nextSurah}`, 'library_books');
             }
         }
