@@ -100,6 +100,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         THEME_BREAKS = await bResponse.json();
 
         setupGlobalEventListeners();
+        setupCustomScrollbar(); // NEW: Custom Scrollbar Init
 
         if (window.location.hash) {
             handleDeepLink();
@@ -739,4 +740,96 @@ function updateSpeedUI(containerId, activeSpeed) {
             btn.classList.remove('bg-[#56A3A6]', 'text-white', 'border-[#56A3A6]', 'shadow-lg');
         }
     });
+}
+
+function setupCustomScrollbar() {
+    const thumb = document.getElementById('scrollThumb');
+    const progress = document.getElementById('scrollProgress');
+    const mainContainer = document.getElementById('mainContainer');
+    const trackContainer = document.getElementById('customScrollbar');
+
+    if (!thumb || !progress || !mainContainer || !trackContainer) return;
+
+    // 1. Sync Scroll -> Custom Bar
+    const updateCustomScroll = () => {
+        const scrollTop = mainContainer.scrollTop;
+        const scrollHeight = mainContainer.scrollHeight;
+        const clientHeight = mainContainer.clientHeight;
+
+        const scrollableHeight = scrollHeight - clientHeight;
+        const percent = scrollableHeight > 0 ? scrollTop / scrollableHeight : 0;
+
+        // Calculate thumb position within the viewport height
+        // Thumb should stay within bounds (0% to 100% minus thumb height)
+        const thumbHeight = 12; // 3rem = 12px roughly (w-3 h-3)
+        const trackHeight = clientHeight;
+        const availableHeight = trackHeight - thumbHeight;
+
+        const thumbTop = percent * availableHeight;
+
+        thumb.style.top = `${thumbTop}px`;
+        progress.style.height = `${thumbTop + (thumbHeight / 2)}px`; // Trail ends at center of thumb
+    };
+
+    mainContainer.addEventListener('scroll', updateCustomScroll);
+    window.addEventListener('resize', updateCustomScroll);
+
+    // Initial call
+    requestAnimationFrame(updateCustomScroll);
+
+    // 2. Drag Logic
+    let isDragging = false;
+    let startY = 0;
+    let startScrollTop = 0;
+
+    const onDragStart = (e) => {
+        isDragging = true;
+        thumb.classList.add('cursor-grabbing', 'scale-125');
+        thumb.classList.remove('cursor-grab');
+
+        // Get Y position (Mouse or Touch)
+        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+        startY = clientY;
+        startScrollTop = mainContainer.scrollTop;
+
+        // Prevent text selection while dragging
+        document.body.style.userSelect = 'none';
+
+        e.preventDefault(); // Prevent default selection
+    };
+
+    const onDragMove = (e) => {
+        if (!isDragging) return;
+        e.preventDefault(); // Prevent scroll chain
+
+        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+        const deltaY = clientY - startY;
+
+        // Calculate scroll change
+        const trackHeight = mainContainer.clientHeight - 12;
+        const scrollableHeight = mainContainer.scrollHeight - mainContainer.clientHeight;
+
+        if (trackHeight > 0) {
+            const deltaScroll = (deltaY / trackHeight) * scrollableHeight;
+            mainContainer.scrollTop = startScrollTop + deltaScroll;
+        }
+    };
+
+    const onDragEnd = () => {
+        if (!isDragging) return;
+        isDragging = false;
+        thumb.classList.remove('cursor-grabbing', 'scale-125');
+        thumb.classList.add('cursor-grab');
+        document.body.style.userSelect = '';
+        thumb.style.transform = ''; // Clear inline transform if any
+    };
+
+    thumb.addEventListener('mousedown', onDragStart);
+    thumb.addEventListener('touchstart', onDragStart, { passive: false });
+
+    window.addEventListener('mousemove', onDragMove);
+    window.addEventListener('touchmove', onDragMove, { passive: false });
+
+    window.addEventListener('mouseup', onDragEnd);
+    window.addEventListener('touchend', onDragEnd);
 }

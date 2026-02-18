@@ -60,22 +60,19 @@ body,
     box-shadow: 0 0 10px rgba(86, 163, 166, 0.5);
 }
 
-/* Scrollbar Styling */
+/* Scrollbar Styling - Hidden for Custom Implementation */
 ::-webkit-scrollbar {
-    width: 8px;
-}
-
-::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.05);
+    width: 0px;
+    background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: rgba(86, 163, 166, 0.5);
-    border-radius: 4px;
+    background: transparent;
 }
 
-::-webkit-scrollbar-thumb:hover {
-    background: rgba(86, 163, 166, 0.8);
+/* Firefox */
+html {
+    scrollbar-width: none;
 }
 
 /* Active Verse Highlight */
