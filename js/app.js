@@ -141,10 +141,8 @@ function loadPreferences() {
 
     const arSpeed = localStorage.getItem('arabicSpeed') || "1.0";
     const trSpeed = localStorage.getItem('translationSpeed') || "1.0";
-    const arInput = document.getElementById('arabicSpeedRange');
-    const trInput = document.getElementById('transSpeedRange');
-    if (arInput) { arInput.value = arSpeed; document.getElementById('arabicSpeedLabel').textContent = `${arSpeed}x`; }
-    if (trInput) { trInput.value = trSpeed; document.getElementById('transSpeedLabel').textContent = `${trSpeed}x`; }
+    updateSpeedUI('arabicSpeedControls', arSpeed);
+    updateSpeedUI('transSpeedControls', trSpeed);
 
     // Analytics: User Snapshot
     setTimeout(() => {
@@ -432,30 +430,8 @@ function setupGlobalEventListeners() {
         });
     }
 
-    const arSlider = document.getElementById('arabicSpeedRange');
-    const trSlider = document.getElementById('transSpeedRange');
-    if (arSlider) {
-        arSlider.addEventListener('input', (e) => {
-            const val = e.target.value;
-            document.getElementById('arabicSpeedLabel').textContent = `${val}x`;
-            localStorage.setItem('arabicSpeed', val);
-            document.dispatchEvent(new CustomEvent('speed-changed', { detail: { type: 'arabic', speed: val } }));
-        });
-        arSlider.addEventListener('change', (e) => {
-            sendAnalyticsEvent('setting_changed', { category: 'audio', name: 'speed_arabic', value: e.target.value });
-        });
-    }
-    if (trSlider) {
-        trSlider.addEventListener('input', (e) => {
-            const val = e.target.value;
-            document.getElementById('transSpeedLabel').textContent = `${val}x`;
-            localStorage.setItem('translationSpeed', val);
-            document.dispatchEvent(new CustomEvent('speed-changed', { detail: { type: 'translation', speed: val } }));
-        });
-        trSlider.addEventListener('change', (e) => {
-            sendAnalyticsEvent('setting_changed', { category: 'audio', name: 'speed_translation', value: e.target.value });
-        });
-    }
+    setupSpeedControl('arabicSpeedControls', 'arabic');
+    setupSpeedControl('transSpeedControls', 'translation');
 
     document.getElementById('languageSelect').addEventListener('change', (e) => {
         loadContent(parseInt(document.getElementById('surahSelect').value));
@@ -722,4 +698,45 @@ function setupAboutModal() {
     if (!localStorage.getItem(HAS_VISITED_KEY)) {
         setTimeout(openModal, 1500);
     }
+}
+
+// --- SPEED CONTROL HELPERS ---
+function setupSpeedControl(containerId, type) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+
+    container.querySelectorAll('button').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const speed = btn.dataset.speed;
+            localStorage.setItem(`${type}Speed`, speed);
+            updateSpeedUI(containerId, speed);
+            document.dispatchEvent(new CustomEvent('speed-changed', { detail: { type: type, speed: speed } }));
+            sendAnalyticsEvent('setting_changed', { category: 'audio', name: `speed_${type}`, value: speed });
+        });
+    });
+}
+
+function updateSpeedUI(containerId, activeSpeed) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+
+    // Update Text Label
+    let labelId = '';
+    if (containerId === 'arabicSpeedControls') labelId = 'arabicSpeedValue';
+    if (containerId === 'transSpeedControls') labelId = 'transSpeedValue';
+    const label = document.getElementById(labelId);
+    if (label) label.textContent = `(${activeSpeed}x)`;
+
+    container.querySelectorAll('button').forEach(btn => {
+        const isSelected = btn.dataset.speed === activeSpeed;
+        if (isSelected) {
+            // Active State
+            btn.classList.remove('bg-white/5', 'hover:bg-white/10', 'text-white/60', 'border-white/5');
+            btn.classList.add('bg-[#56A3A6]', 'text-white', 'border-[#56A3A6]', 'shadow-lg');
+        } else {
+            // Inactive State
+            btn.classList.add('bg-white/5', 'hover:bg-white/10', 'text-white/60', 'border-white/5');
+            btn.classList.remove('bg-[#56A3A6]', 'text-white', 'border-[#56A3A6]', 'shadow-lg');
+        }
+    });
 }
