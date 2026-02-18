@@ -122,3 +122,20 @@ html {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
 }
+
+/* Play Button Glow Animation */
+@keyframes glow-pulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 20px rgba(86, 163, 166, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 0 35px rgba(86, 163, 166, 0.6);
+    }
+}
+
+.animate-glow {
+    animation: glow-pulse 3s infinite ease-in-out;
+}

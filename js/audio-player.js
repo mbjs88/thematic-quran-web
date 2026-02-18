@@ -250,10 +250,18 @@ function playerTogglePlayPause() {
 }
 
 function updateControlsUI(isPlaying) {
-    const icon = document.querySelector('#globalPlayPauseBtn span');
+    const btn = document.getElementById('globalPlayPauseBtn');
+    const icon = btn.querySelector('span');
     const status = document.getElementById('playerStatus');
-    if (isPlaying) { icon.textContent = 'pause'; status.textContent = 'Playing'; }
-    else { icon.textContent = 'play_arrow'; status.textContent = 'Paused'; }
+    if (isPlaying) {
+        icon.textContent = 'pause';
+        status.textContent = 'Playing';
+        btn.classList.remove('animate-glow');
+    } else {
+        icon.textContent = 'play_arrow';
+        status.textContent = 'Paused';
+        btn.classList.add('animate-glow');
+    }
 }
 
 function enforceCurrentSpeed(player) {
