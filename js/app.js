@@ -288,6 +288,22 @@ function loadSurah(surahId, scrollTargetVerse = null, autoPlay = false) {
 
     setTimeout(() => {
         if (scrollTargetVerse) {
+            // Find the active tab's span (either Arabic or English) to scroll precisely to the modified verse
+            const isUrdu = document.getElementById('languageSelect')?.value === 'ur';
+            const textKey = isUrdu ? 'ayah-en' : 'ayah-en'; // using translation span for scrolling anchor
+            const targetSpan = document.getElementById(`${textKey}-${surahId}-${scrollTargetVerse}`) || document.getElementById(`ayah-ar-${surahId}-${scrollTargetVerse}`);
+
+            if (targetSpan) {
+                // Ensure the span is visible
+                const container = document.getElementById('mainContainer');
+                const spanRect = targetSpan.getBoundingClientRect();
+                const containerRect = container.getBoundingClientRect();
+                const relativeTop = spanRect.top - containerRect.top;
+                const buffer = 150; // offset for the sticky header
+                const targetScroll = container.scrollTop + relativeTop - buffer;
+                container.scrollTo({ top: targetScroll, behavior: 'instant' });
+            }
+
             const cards = Array.from(document.querySelectorAll('.thematic-card'));
             const targetCard = cards.find(card => {
                 const s = parseInt(card.dataset.start);
@@ -295,7 +311,6 @@ function loadSurah(surahId, scrollTargetVerse = null, autoPlay = false) {
                 return scrollTargetVerse >= s && scrollTargetVerse <= e;
             });
             if (targetCard) {
-                scrollToCard(targetCard);
                 const s = parseInt(targetCard.dataset.surah);
                 const start = parseInt(targetCard.dataset.start);
                 const end = parseInt(targetCard.dataset.end);
@@ -352,20 +367,54 @@ function loadJuz(juzId, scrollTargetVerse = null, autoPlay = false) {
     });
 
     document.getElementById('playerVerse').textContent = `Juz ${juzId}`;
-    renderThematicJuz(juzId, juzVerses, THEME_BREAKS);
+
+    // NEW: Build dynamic breaks mapping combining defaults with custom user breaks
+    const unifiedBreaks = {};
+    const uniqueSurahsInJuz = [...new Set(juzVerses.map(v => v[CONSTANTS.KEY_SURAH_NO]))];
+
+    uniqueSurahsInJuz.forEach(surahId => {
+        const customKey = `customBreaks_${surahId}`;
+        const saved = localStorage.getItem(customKey);
+        if (saved) {
+            unifiedBreaks[String(surahId)] = JSON.parse(saved);
+        } else {
+            unifiedBreaks[String(surahId)] = THEME_BREAKS[String(surahId)] || [];
+        }
+    });
+
+    renderThematicJuz(juzId, juzVerses, unifiedBreaks);
 
     const mainContainer = document.getElementById('mainContainer');
     if (mainContainer) mainContainer.scrollTop = 0;
 
     setTimeout(() => {
         if (scrollTargetVerse) {
-            const cards = Array.from(document.querySelectorAll('.thematic-card'));
-            const targetCard = cards.find(card => {
-                const s = parseInt(card.dataset.start);
-                const e = parseInt(card.dataset.end);
-                return scrollTargetVerse >= s && scrollTargetVerse <= e;
-            });
-            if (targetCard) scrollToCard(targetCard);
+            // Find the active tab's span (either Arabic or English) to scroll precisely to the modified verse
+            const isUrdu = document.getElementById('languageSelect')?.value === 'ur';
+            const textKey = isUrdu ? 'ayah-en' : 'ayah-en';
+
+            // In Juz mode, we might not know the exact Surah ID initially from scrollTargetVerse if it crosses surahs, 
+            // but handleVerseBreakToggle operates within a specific Surah, and passes the targeted verse
+            // Let's find the active card bounding this verse, and use its Surah ID, or we assume it's the current surah.
+            // A more robust approach: find the first element matching `ayah-*-*-scrollTargetVerse`.
+            let targetSpan = null;
+            const possibleSpans = document.querySelectorAll(`[id$="-${scrollTargetVerse}"]`);
+            for (let span of possibleSpans) {
+                if (span.id.startsWith(textKey) || span.id.startsWith('ayah-ar')) {
+                    targetSpan = span;
+                    break;
+                }
+            }
+
+            if (targetSpan) {
+                const container = document.getElementById('mainContainer');
+                const spanRect = targetSpan.getBoundingClientRect();
+                const containerRect = container.getBoundingClientRect();
+                const relativeTop = spanRect.top - containerRect.top;
+                const buffer = 150;
+                const targetScroll = container.scrollTop + relativeTop - buffer;
+                container.scrollTo({ top: targetScroll, behavior: 'instant' });
+            }
         } else {
             const firstCard = document.querySelector('.thematic-card');
             if (firstCard) {
@@ -397,7 +446,6 @@ function loadJuz(juzId, scrollTargetVerse = null, autoPlay = false) {
 // ... (Edit/Restore Functions) ...
 window.handleVerseBreakToggle = function (surahId, verseNum) {
     if (!isEditMode) return;
-    if (currentViewMode === 'juz') { alert("Editing only in Surah Mode."); return; }
     const customKey = `customBreaks_${surahId}`;
     const surahVerses = QURAN_DATA.filter(row => row[CONSTANTS.KEY_SURAH_NO] === surahId);
     let currentBreaks = [];
@@ -413,8 +461,16 @@ window.handleVerseBreakToggle = function (surahId, verseNum) {
     else currentBreaks.push(verseNum);
     currentBreaks.sort((a, b) => a - b);
     localStorage.setItem(customKey, JSON.stringify(currentBreaks));
-    loadSurah(surahId);
-    sendAnalyticsEvent('edit_grouping', { surah: surahId, action: index !== -1 ? 'merge' : 'split' });
+
+    const currentId = parseInt(document.getElementById('surahSelect').value);
+    // Reload UI keeping scroll target focused on the verse clicked
+    if (currentViewMode === 'juz') {
+        loadJuz(currentId, verseNum);
+    } else {
+        loadSurah(surahId, verseNum);
+    }
+
+    sendAnalyticsEvent('edit_grouping', { surah: surahId, action: index !== -1 ? 'merge' : 'split', view_mode: currentViewMode });
 };
 
 function restoreDefaults() {
