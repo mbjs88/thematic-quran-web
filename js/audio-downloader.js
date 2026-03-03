@@ -257,13 +257,13 @@ async function stitchStereoBuffers(audioBufferObjects) {
         let panner;
         if (offlineCtx.createStereoPanner) {
             panner = offlineCtx.createStereoPanner();
-            // Arabic panned 50% Right (+0.50), Translation panned 50% Left (-0.50)
-            panner.pan.value = (item.type === 'arabic') ? 0.50 : -0.50;
+            // Arabic panned 25% Right (+0.25), Translation panned 25% Left (-0.25)
+            panner.pan.value = (item.type === 'arabic') ? 0.25 : -0.25;
         } else {
             // Legacy Safari Fallback
             panner = offlineCtx.createPanner();
             panner.panningModel = 'equalpower';
-            const panValue = (item.type === 'arabic') ? 0.50 : -0.50;
+            const panValue = (item.type === 'arabic') ? 0.25 : -0.25;
             panner.setPosition(panValue, 0, 1 - Math.abs(panValue));
         }
 

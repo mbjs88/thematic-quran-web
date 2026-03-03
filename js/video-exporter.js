@@ -203,7 +203,7 @@ const VideoExporter = {
             const baseURL = new URL('vendor/ffmpeg', window.location.href).href;
             await this.ffmpeg.load({
                 coreURL: `${baseURL}/ffmpeg-core.js`,
-                wasmURL: `${baseURL}/ffmpeg-core.wasm`,
+                wasmURL: 'https://audio.thematicquran.com/ffmpeg-core.wasm',
                 workerURL: `${baseURL}/814.ffmpeg.js`
             });
 
