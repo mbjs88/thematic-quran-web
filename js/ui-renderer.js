@@ -266,9 +266,23 @@ function createCard(surahNum, start, end, data) {
         playBtn.innerHTML = '<span class="material-symbols-outlined" aria-hidden="true">play_arrow</span>';
         playBtn.onclick = (e) => handleCardPlayClick(card, surahNum, start, end);
 
+        const videoBtn = document.createElement('button');
+        videoBtn.className = "text-white/40 hover:text-[#56A3A6] p-2 transition";
+        videoBtn.setAttribute('aria-label', `Export Video`);
+        videoBtn.innerHTML = '<span class="material-symbols-outlined text-xl" aria-hidden="true">videocam</span>';
+        videoBtn.onclick = (e) => {
+            e.stopPropagation();
+            if (window.VideoExporter && window.VideoExporter.isExporting) {
+                if (window.showToast) window.showToast('Already exporting a video.', 'warning');
+                return;
+            }
+            openVideoExportModal(card, surahNum, start, end, data);
+        };
+
         actionsDiv.appendChild(shareBtn);
         actionsDiv.appendChild(copyTextBtn);
         actionsDiv.appendChild(downloadBtn);
+        actionsDiv.appendChild(videoBtn);
         actionsDiv.appendChild(playBtn);
     }
 
@@ -407,6 +421,57 @@ function openDownloadModal(surah, start, end) {
 }
 
 function closeDownloadModal() { document.getElementById('downloadModal').classList.add('hidden'); }
+
+function openVideoExportModal(card, surah, start, end, data) {
+    const modal = document.getElementById('videoExportModal');
+    if (!modal) return;
+
+    document.getElementById('vidModalTitle').textContent = `Video: Verses ${start}-${end}`;
+
+    const warningEl = document.getElementById('vidModalWarning');
+    if (warningEl) {
+        // If the card's internal scroll height is tall, it will trigger the slow FFmpeg scrolling crop filter
+        if (card.scrollHeight > 1000) {
+            warningEl.classList.remove('hidden');
+        } else {
+            warningEl.classList.add('hidden');
+        }
+    }
+
+    const reciterSelect = document.getElementById('reciterSelect');
+    const langSelect = document.getElementById('languageSelect');
+    const vidReciterSelect = document.getElementById('vidModalReciterSelect');
+    const vidLangSelect = document.getElementById('vidModalLangSelect');
+    const vidPaceSelect = document.getElementById('vidModalPaceSelect');
+
+    if (vidReciterSelect) {
+        vidReciterSelect.innerHTML = reciterSelect.innerHTML;
+        vidReciterSelect.value = reciterSelect.value;
+    }
+    if (vidLangSelect) {
+        vidLangSelect.innerHTML = langSelect.innerHTML;
+        vidLangSelect.value = langSelect.value;
+    }
+
+    modal.classList.remove('hidden');
+
+    document.getElementById('vidConfirmBtn').onclick = () => {
+        modal.classList.add('hidden');
+        if (window.VideoExporter) {
+            const finalReciter = vidReciterSelect ? vidReciterSelect.value : reciterSelect.value;
+            const finalLang = vidLangSelect ? vidLangSelect.value : langSelect.value;
+            const finalPace = vidPaceSelect ? parseFloat(vidPaceSelect.value) : 1.0;
+
+            window.VideoExporter.exportCardToVideo(card, surah, start, end, data, finalReciter, finalLang, finalPace);
+        } else {
+            if (window.showToast) window.showToast('Video Exporter not loaded.', 'error');
+        }
+    };
+
+    document.getElementById('vidCancelBtn').onclick = () => {
+        modal.classList.add('hidden');
+    };
+}
 
 window.highlightActiveVerseUI = function (surah, verse, type) {
     document.querySelectorAll('.active-verse').forEach(el => el.classList.remove('active-verse'));

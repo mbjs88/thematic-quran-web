@@ -2,6 +2,55 @@
 
 const SAFE_VERSE_LIMIT = 50;
 
+async function createStitchedAudioBlob(surah, start, end, reciterSlug, langCode, onProgress) {
+    const filesToFetch = [];
+    for (let i = start; i <= end; i++) {
+        filesToFetch.push({ type: 'arabic', surah, verse: i, reciter: reciterSlug });
+    }
+    for (let i = start; i <= end; i++) {
+        filesToFetch.push({ type: 'translation', surah, verse: i, lang: langCode });
+    }
+
+    const totalFiles = filesToFetch.length;
+    const audioBuffers = [];
+    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+
+    for (let i = 0; i < totalFiles; i++) {
+        const file = filesToFetch[i];
+        const url = getAudioUrl(file.type, file.surah, file.verse, file.reciter, file.lang);
+
+        try {
+            const response = await fetch(url);
+            if (!response.ok) throw new Error(`Missing audio: ${url}`);
+            const arrayBuffer = await response.arrayBuffer();
+            const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
+
+            // Store the decoded buffer and its origin type for panning
+            audioBuffers.push({ buffer: audioBuffer, type: file.type });
+
+            if (onProgress) {
+                const percent = Math.round(((i + 1) / totalFiles) * 80);
+                onProgress('fetching', percent, `Processing verse ${file.verse}...`);
+            }
+
+        } catch (err) {
+            console.warn(`Skipping missing file: ${url}`);
+        }
+    }
+
+    if (audioBuffers.length === 0) throw new Error("No audio data found.");
+
+    if (onProgress) onProgress('stitching', 90, "Applying Stereo Pan & Stitching audio...");
+
+    // We await stitchStereoBuffers because OfflineAudioContext.startRendering() is async
+    const finalBuffer = await stitchStereoBuffers(audioBuffers);
+
+    if (onProgress) onProgress('encoding', 95, "Encoding WAV...");
+    const wavBlob = bufferToWave(finalBuffer, finalBuffer.length);
+
+    return wavBlob;
+}
+
 async function downloadGroupedSection(surah, start, end, reciterSlug, langCode, surahName) {
     // 1. Safety Check
     const verseCount = end - start + 1;
@@ -31,51 +80,15 @@ async function downloadGroupedSection(surah, start, end, reciterSlug, langCode, 
         progressEl.style.width = '5%';
         percentEl.textContent = '5%';
 
-        const filesToFetch = [];
-        for (let i = start; i <= end; i++) {
-            filesToFetch.push({ type: 'arabic', surah, verse: i, reciter: reciterSlug });
-            filesToFetch.push({ type: 'translation', surah, verse: i, lang: langCode });
-        }
+        const wavBlob = await createStitchedAudioBlob(surah, start, end, reciterSlug, langCode, (stage, percent, message) => {
+            progressEl.style.width = `${percent}%`;
+            percentEl.textContent = `${percent}%`;
+            statusEl.textContent = message;
+        });
 
-        const totalFiles = filesToFetch.length;
-        const audioBuffers = [];
-        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-
-        for (let i = 0; i < totalFiles; i++) {
-            const file = filesToFetch[i];
-            const url = getAudioUrl(file.type, file.surah, file.verse, file.reciter, file.lang);
-            
-            try {
-                const response = await fetch(url);
-                if (!response.ok) throw new Error(`Missing audio: ${url}`);
-                const arrayBuffer = await response.arrayBuffer();
-                const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
-                audioBuffers.push(audioBuffer);
-
-                const percent = Math.round(((i + 1) / totalFiles) * 80); 
-                progressEl.style.width = `${percent}%`;
-                percentEl.textContent = `${percent}%`;
-                statusEl.textContent = `Processing verse ${file.verse}...`;
-
-            } catch (err) {
-                console.warn(`Skipping missing file: ${url}`);
-            }
-        }
-
-        if (audioBuffers.length === 0) throw new Error("No audio data found.");
-
-        statusEl.textContent = "Stitching audio...";
-        progressEl.style.width = '90%';
-        percentEl.textContent = '90%';
-
-        const finalBuffer = stitchBuffers(audioContext, audioBuffers);
-        
-        statusEl.textContent = "Encoding WAV...";
-        const wavBlob = bufferToWave(finalBuffer, finalBuffer.length);
-        
         const blobUrl = URL.createObjectURL(wavBlob);
         const filename = `ThematicQuran_${surahName}_${start}-${end}.wav`;
-        
+
         const link = document.createElement('a');
         link.href = blobUrl;
         link.download = filename;
@@ -87,7 +100,7 @@ async function downloadGroupedSection(surah, start, end, reciterSlug, langCode, 
         statusEl.textContent = "Complete!";
         progressEl.style.width = '100%';
         percentEl.textContent = '100%';
-        
+
         if (window.showToast) window.showToast('Download Complete!', 'check_circle');
 
         setTimeout(() => {
@@ -98,7 +111,7 @@ async function downloadGroupedSection(surah, start, end, reciterSlug, langCode, 
     } catch (error) {
         console.error("Download failed:", error);
         statusEl.textContent = "Error: " + error.message;
-        progressEl.style.backgroundColor = "#EF4444"; 
+        progressEl.style.backgroundColor = "#EF4444";
     }
 }
 
@@ -131,10 +144,14 @@ async function downloadBulkStitched(sections, reciterSlug, langCode, surahNameBa
 
         statusEl.textContent = "Calculating queue...";
         const filesToFetch = [];
-        
+
         sections.forEach(section => {
             for (let i = section.start; i <= section.end; i++) {
                 filesToFetch.push({ type: 'arabic', surah: section.surah, verse: i, reciter: reciterSlug });
+            }
+        });
+        sections.forEach(section => {
+            for (let i = section.start; i <= section.end; i++) {
                 filesToFetch.push({ type: 'translation', surah: section.surah, verse: i, lang: langCode });
             }
         });
@@ -146,17 +163,17 @@ async function downloadBulkStitched(sections, reciterSlug, langCode, surahNameBa
         for (let i = 0; i < totalFiles; i++) {
             const file = filesToFetch[i];
             const url = getAudioUrl(file.type, file.surah, file.verse, file.reciter, file.lang);
-            
+
             try {
                 const response = await fetch(url);
                 const arrayBuffer = await response.arrayBuffer();
                 const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
-                audioBuffers.push(audioBuffer);
+                audioBuffers.push({ buffer: audioBuffer, type: file.type });
 
-                const percent = Math.round(((i + 1) / totalFiles) * 80); 
+                const percent = Math.round(((i + 1) / totalFiles) * 80);
                 progressEl.style.width = `${percent}%`;
                 percentEl.textContent = `${percent}%`;
-                statusEl.textContent = `Fetching ${i+1}/${totalFiles}...`;
+                statusEl.textContent = `Fetching ${i + 1}/${totalFiles}...`;
 
             } catch (err) {
                 console.warn("Skipping file", url);
@@ -164,19 +181,19 @@ async function downloadBulkStitched(sections, reciterSlug, langCode, surahNameBa
         }
 
         statusEl.textContent = "Stitching & Encoding...";
-        const finalBuffer = stitchBuffers(audioContext, audioBuffers);
+        const finalBuffer = await stitchStereoBuffers(audioBuffers);
         const wavBlob = bufferToWave(finalBuffer, finalBuffer.length);
 
         const blobUrl = URL.createObjectURL(wavBlob);
         const filename = `ThematicQuran_Mix_${sections.length}Sections.wav`;
-        
+
         const link = document.createElement('a');
         link.href = blobUrl;
         link.download = filename;
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
-        
+
         statusEl.textContent = "Complete!";
         progressEl.style.width = '100%';
         percentEl.textContent = '100%';
@@ -199,31 +216,71 @@ async function downloadBulkStitched(sections, reciterSlug, langCode, surahNameBa
 function getAudioUrl(type, surah, verse, reciter, lang) {
     const padSurah = String(surah).padStart(3, '0');
     const padVerse = String(verse).padStart(3, '0');
-    
+
     if (type === 'arabic') {
         return `https://everyayah.com/data/${reciter}/${padSurah}${padVerse}.mp3`;
     } else {
-        return `https://audio.thematicquran.com/${lang}/${padSurah}${padVerse}.mp3`;
+        const langString = lang === 'ur' ? 'urdu' : 'english';
+        const rawUrl = `https://audio.thematicquran.com/${langString}/${padSurah}${padVerse}.mp3`;
+        // Use a CORS proxy to bypass the strict Fetch restrictions on binary downloads
+        return `https://cors.eu.org/${rawUrl}`;
     }
 }
 
-function stitchBuffers(context, buffers) {
-    const totalLength = buffers.reduce((acc, b) => acc + b.length, 0);
-    const output = context.createBuffer(
-        buffers[0].numberOfChannels,
-        totalLength,
-        buffers[0].sampleRate
-    );
+async function stitchStereoBuffers(audioBufferObjects) {
+    // 1. Calculate the total continuous length across all buffers
+    let totalLength = 0;
+    // Assuming uniform sample rate across all downloads (usually 44100 or 48000)
+    const sampleRate = audioBufferObjects[0].buffer.sampleRate;
 
-    let offset = 0;
-    buffers.forEach(buffer => {
-        for (let channel = 0; channel < buffer.numberOfChannels; channel++) {
-            output.getChannelData(channel).set(buffer.getChannelData(channel), offset);
-        }
-        offset += buffer.length;
+    audioBufferObjects.forEach(item => {
+        totalLength += item.buffer.length;
     });
 
-    return output;
+    // 2. Initialize an OfflineAudioContext with 2 channels (Stereo)
+    const offlineCtx = new (window.OfflineAudioContext || window.webkitOfflineAudioContext)(
+        2,
+        totalLength,
+        sampleRate
+    );
+
+    // 3. Schedule each buffer sequentially
+    let currentTimeOffset = 0;
+
+    audioBufferObjects.forEach(item => {
+        // Create source
+        const source = offlineCtx.createBufferSource();
+        source.buffer = item.buffer;
+
+        // Create Panner
+        // Standard Web Audio API uses StereoPannerNode, fallback to createPanner if needed
+        let panner;
+        if (offlineCtx.createStereoPanner) {
+            panner = offlineCtx.createStereoPanner();
+            // Arabic panned 50% Right (+0.50), Translation panned 50% Left (-0.50)
+            panner.pan.value = (item.type === 'arabic') ? 0.50 : -0.50;
+        } else {
+            // Legacy Safari Fallback
+            panner = offlineCtx.createPanner();
+            panner.panningModel = 'equalpower';
+            const panValue = (item.type === 'arabic') ? 0.50 : -0.50;
+            panner.setPosition(panValue, 0, 1 - Math.abs(panValue));
+        }
+
+        // Connect nodes visually: source -> panner -> destination
+        source.connect(panner);
+        panner.connect(offlineCtx.destination);
+
+        // Schedule playback start time at the current running offset offset
+        source.start(currentTimeOffset);
+
+        // Advance the offset by the exact real-world duration of this buffer
+        currentTimeOffset += item.buffer.duration;
+    });
+
+    // 4. Render the master mix down to a flat audioBuffer
+    const renderedBuffer = await offlineCtx.startRendering();
+    return renderedBuffer;
 }
 
 function bufferToWave(abuffer, len) {
@@ -258,12 +315,12 @@ function bufferToWave(abuffer, len) {
 
     while (pos < length) {
         for (i = 0; i < numOfChan; i++) {
-            sample = Math.max(-1, Math.min(1, channels[i][offset])); 
-            sample = (0.5 + sample < 0 ? sample * 32768 : sample * 32767) | 0; 
-            view.setInt16(pos, sample, true); 
+            sample = Math.max(-1, Math.min(1, channels[i][offset]));
+            sample = (0.5 + sample < 0 ? sample * 32768 : sample * 32767) | 0;
+            view.setInt16(pos, sample, true);
             pos += 2;
         }
-        offset++; 
+        offset++;
     }
 
     return new Blob([buffer], { type: "audio/wav" });
@@ -286,10 +343,10 @@ function resetDownloadModal() {
     const confirmBtn = document.getElementById('dlConfirmBtn');
     const container = document.getElementById('dlProgressContainer');
 
-    if(progressEl) progressEl.style.width = '0';
-    if(progressEl) progressEl.style.backgroundColor = '#56A3A6';
-    if(statusEl) statusEl.textContent = 'Initializing...';
-    if(percentEl) percentEl.textContent = '0%';
-    if(confirmBtn) confirmBtn.style.display = 'block'; 
-    if(container) container.classList.add('hidden'); 
+    if (progressEl) progressEl.style.width = '0';
+    if (progressEl) progressEl.style.backgroundColor = '#56A3A6';
+    if (statusEl) statusEl.textContent = 'Initializing...';
+    if (percentEl) percentEl.textContent = '0%';
+    if (confirmBtn) confirmBtn.style.display = 'block';
+    if (container) container.classList.add('hidden');
 }

@@ -285,4 +285,8 @@ function enforceCurrentSpeed(player) {
     }
 }
 
-window.isPlayerActive = function () { return isAudioPlaying || (currentPlayer && !currentPlayer.paused); };
+window.isPlayerActive = function () {
+    // The player is considered "active" (capable of pausing or resuming)
+    // if there is a queue loaded in memory.
+    return playQueue && playQueue.length > 0;
+};
