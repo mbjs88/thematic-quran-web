@@ -62,10 +62,18 @@ const VideoExporter = {
             exportContainer.style.backgroundImage = 'linear-gradient(to bottom, #12101C 0%, #221F2B 50%, #352B39 100%)';
             exportContainer.style.display = 'flex';
             exportContainer.style.flexDirection = 'column';
-            exportContainer.style.justifyContent = 'center';
+            exportContainer.style.justifyContent = 'flex-start'; // Always start from top to prevent html2canvas cropping
             exportContainer.style.alignItems = 'center';
-            exportContainer.style.padding = '60px';
+            // We will dynamically add top padding to center if short, or keep 60px if tall
+            exportContainer.style.padding = '0px 30px';
             exportContainer.style.zIndex = '-9999';
+
+            // TOP SPACER guarantees breathing room inside html2canvas
+            const topSpacer = document.createElement('div');
+            topSpacer.style.height = '60px'; // Symmetrical breathing room
+            topSpacer.style.width = '100%';
+            topSpacer.style.flexShrink = '0';
+            exportContainer.appendChild(topSpacer);
 
             // 2. Add Custom Video Header
             const headerContainer = document.createElement('div');
@@ -76,7 +84,7 @@ const VideoExporter = {
             headerContainer.style.alignItems = 'flex-start';
             headerContainer.style.paddingBottom = '30px';
             headerContainer.style.borderBottom = '1px solid rgba(255, 255, 255, 0.1)';
-            headerContainer.style.marginBottom = '40px';
+            headerContainer.style.marginBottom = '60px';  // Symmetrical margin to match top padding
 
             // Get Surah Info from the passed verse data
             const surahInfo = data && data.length > 0 ? data[0] : null;
@@ -89,11 +97,11 @@ const VideoExporter = {
             const verseText = `Verses ${start} - ${end}`;
 
             headerContainer.innerHTML = `
-                <h1 style="color: white; font-family: 'Forum', serif; font-size: 40px; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 8px;">${subTitleText}</h1>
-                <h2 style="color: rgba(255,255,255,0.6); font-family: 'Nunito', sans-serif; font-size: 26px; margin-bottom: 50px;">${verseText}</h2>
+                <h1 style="color: white; font-family: 'Forum', serif; font-size: 40px; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 12px;">${subTitleText}</h1>
+                <h2 style="color: rgba(255,255,255,0.6); font-family: 'Nunito', sans-serif; font-size: 26px; margin-bottom: 40px;">${verseText}</h2>
                 <div style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 48px; opacity: 0.8;">
                     <img src="assets/icon-512-transparent.svg" alt="Thematic Quran Logo" style="width: 32px; height: 32px; object-fit: contain;">
-                    <span style="color: white; font-family: 'Forum', serif; font-size: 24px; letter-spacing: 0.1em;">thematicQuran.com</span>
+                    <span style="color: white; font-family: 'Forum', serif; font-size: 24px; letter-spacing: 0.1em;">ThematicQuran.com</span>
                 </div>
             `;
             exportContainer.appendChild(headerContainer);
@@ -103,12 +111,13 @@ const VideoExporter = {
             clonedCard.style.margin = '0';
             clonedCard.style.width = '100%';
             // Expand width and remove borders/background to look clean on the gradient
-            clonedCard.style.maxWidth = '680px';
+            clonedCard.style.maxWidth = '100%'; // Maximize width usage based on container
             clonedCard.style.boxShadow = 'none';
             clonedCard.style.border = 'none';
             clonedCard.style.backgroundColor = 'transparent';
             clonedCard.style.backdropFilter = 'none';
             clonedCard.style.maxHeight = 'none';
+            clonedCard.style.padding = '0'; // Remove internal padding to maximize space
 
             // Remove interactive elements and redundant structural headers
             const actionsDiv = clonedCard.querySelector('.flex.items-center.gap-2');
@@ -152,8 +161,39 @@ const VideoExporter = {
                 }
             });
 
+            // Make the text larger to improve readability in the video, 
+            // relying on reduced margins/padding to avoid scrolling.
+            const arabicDiv = clonedCard.querySelector('.text-\\[\\#F3E4CE\\]');
+            if (arabicDiv) {
+                arabicDiv.style.fontSize = '42px';
+                arabicDiv.style.lineHeight = '1.6';
+                arabicDiv.style.marginBottom = '24px';
+            }
+            // translation div is typically the last element
+            const transDiv = clonedCard.lastElementChild;
+            if (transDiv && transDiv !== arabicDiv) {
+                transDiv.style.fontSize = '30px';
+                transDiv.style.lineHeight = '1.6';
+            }
+
             exportContainer.appendChild(clonedCard);
+
+            // Add a bottom spacer to guarantee html2canvas captures the bottom padding
+            const bottomSpacer = document.createElement('div');
+            bottomSpacer.style.height = '60px'; // Symmetrical with top padding
+            bottomSpacer.style.width = '100%';
+            bottomSpacer.style.flexShrink = '0';
+            exportContainer.appendChild(bottomSpacer);
+
             document.body.appendChild(exportContainer);
+
+            // MANUALLY CENTER CONTENT IF SHORT
+            const innerContentHeight = headerContainer.scrollHeight + clonedCard.scrollHeight + 120; // 60 top + 60 bottom spacers
+            if (innerContentHeight < 1280) {
+                // Short content: add margin to the top spacer to vertically center it mathematically
+                const remainingSpace = 1280 - innerContentHeight;
+                topSpacer.style.height = `${60 + (remainingSpace / 2)}px`;
+            }
 
             // 3. Extract Audio processing
             if (progressText) progressText.textContent = 'Fetching High Quality Audio...';
@@ -183,6 +223,7 @@ const VideoExporter = {
 
             const viewportHeight = 1280;
             const contentHeight = fullCanvas.height;
+            // Pad the scrollable distance slightly to ensure the bottom spacer is fully visible at the end of the scroll
             const scrollableDistance = Math.max(0, contentHeight - viewportHeight);
 
             // 5. Initialize FFmpeg
@@ -195,8 +236,8 @@ const VideoExporter = {
 
             this.ffmpeg.on('progress', ({ progress }) => {
                 const percent = Math.min(Math.round(progress * 100), 100);
-                if (progressBar) progressBar.style.width = `${percent}%`;
-                if (progressPercent) progressPercent.textContent = `${percent}%`;
+                if (progressBar) progressBar.style.width = `${percent}% `;
+                if (progressPercent) progressPercent.textContent = `${percent}% `;
                 if (progressText) progressText.textContent = 'Rendering Video...';
             });
 
