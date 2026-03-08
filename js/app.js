@@ -562,13 +562,50 @@ function setupGlobalEventListeners() {
 
     const audio = document.getElementById('audioElement');
     document.getElementById('globalPlayPauseBtn').addEventListener('click', () => {
-        if (typeof window.isPlayerActive === 'function' && window.isPlayerActive()) { playerTogglePlayPause(); }
-        else {
+        if (typeof window.isPlayerActive === 'function' && window.isPlayerActive()) {
+            playerTogglePlayPause();
+        } else {
             const activeCard = document.querySelector('.thematic-card.ring-2');
-            if (activeCard) activeCard.querySelector('.play-btn').click();
-            else {
+            if (activeCard) {
+                activeCard.querySelector('.play-btn').click();
+            } else {
+                // Check for saved resume state first
+                const savedState = localStorage.getItem('resumeState');
+                if (savedState) {
+                    try {
+                        const state = JSON.parse(savedState);
+                        const surahId = state.id || 1;
+                        const startVerse = state.startVerse || 1;
+
+                        document.getElementById('autoAdvanceToggle').checked = true;
+
+                        // Update dropdown and view mode if needed
+                        const viewMode = state.mode || 'surah';
+                        if (currentViewMode !== viewMode) {
+                            currentViewMode = viewMode;
+                            const viewSelect = document.getElementById('viewModeSelect');
+                            if (viewSelect) viewSelect.value = currentViewMode;
+                            populateDropdown();
+                        }
+
+                        document.getElementById('surahSelect').value = surahId;
+
+                        // Load content and auto-play the specific verse
+                        loadContent(surahId, startVerse, true);
+                        if (window.showToast) window.showToast("Resuming playback...", "play_arrow");
+
+                        return; // Exit early since loadContent handles the rest
+                    } catch (e) {
+                        console.error("Failed to parse resume state for global play button", e);
+                    }
+                }
+
+                // Fallback: Just play the first card on the current screen
                 const firstCard = document.querySelector('.thematic-card');
-                if (firstCard) { document.getElementById('autoAdvanceToggle').checked = true; firstCard.querySelector('.play-btn').click(); }
+                if (firstCard) {
+                    document.getElementById('autoAdvanceToggle').checked = true;
+                    firstCard.querySelector('.play-btn').click();
+                }
             }
         }
     });
