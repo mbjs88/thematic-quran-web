@@ -576,25 +576,26 @@ function setupGlobalEventListeners() {
                         const state = JSON.parse(savedState);
                         const surahId = state.id || 1;
                         const startVerse = state.startVerse || 1;
+                        const savedMode = state.mode || 'surah';
+                        const currentId = parseInt(document.getElementById('surahSelect').value);
 
-                        document.getElementById('autoAdvanceToggle').checked = true;
+                        // Only resume if we are currently viewing the matching Surah/Juz
+                        if (currentViewMode === savedMode && currentId === surahId) {
+                            const cards = Array.from(document.querySelectorAll('.thematic-card'));
+                            const targetCard = cards.find(card => {
+                                const s = parseInt(card.dataset.start);
+                                const e = parseInt(card.dataset.end);
+                                return startVerse >= s && startVerse <= e;
+                            });
 
-                        // Update dropdown and view mode if needed
-                        const viewMode = state.mode || 'surah';
-                        if (currentViewMode !== viewMode) {
-                            currentViewMode = viewMode;
-                            const viewSelect = document.getElementById('viewModeSelect');
-                            if (viewSelect) viewSelect.value = currentViewMode;
-                            populateDropdown();
+                            if (targetCard) {
+                                document.getElementById('autoAdvanceToggle').checked = true;
+                                targetCard.querySelector('.play-btn').click();
+                                scrollToCard(targetCard);
+                                if (window.showToast) window.showToast("Resumed from last saved verse", "play_arrow");
+                                return; // Exit early, we found and played it
+                            }
                         }
-
-                        document.getElementById('surahSelect').value = surahId;
-
-                        // Load content and auto-play the specific verse
-                        loadContent(surahId, startVerse, true);
-                        if (window.showToast) window.showToast("Resuming playback...", "play_arrow");
-
-                        return; // Exit early since loadContent handles the rest
                     } catch (e) {
                         console.error("Failed to parse resume state for global play button", e);
                     }
