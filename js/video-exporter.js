@@ -50,61 +50,62 @@ const VideoExporter = {
         try {
             if (window.showToast) window.showToast('Preparing video export...', 'movie');
 
-            // 1. Create a styled container optimized for vertical video (9:16 aspect ratio, e.g., 1080x1920)
+            const VIEWPORT_WIDTH = 720;
+            const VIEWPORT_HEIGHT = 1560; // iPhone 19.5:9 aspect ratio
+
+            // 1. Create a styled container optimized for vertical video
             const exportContainer = document.createElement('div');
             exportContainer.id = 'video-export-container';
-            exportContainer.style.width = '720px';
-            exportContainer.style.minHeight = '1280px';
             exportContainer.style.position = 'fixed';
             exportContainer.style.top = '-9999px'; // Hide off-screen
             exportContainer.style.left = '0';
+            exportContainer.style.width = `${VIEWPORT_WIDTH}px`;
             exportContainer.style.backgroundColor = '#12101C';
             exportContainer.style.backgroundImage = 'linear-gradient(to bottom, #12101C 0%, #221F2B 50%, #352B39 100%)';
             exportContainer.style.display = 'flex';
             exportContainer.style.flexDirection = 'column';
-            exportContainer.style.justifyContent = 'flex-start'; // Always start from top to prevent html2canvas cropping
             exportContainer.style.alignItems = 'center';
-            // We will dynamically add top padding to center if short, or keep 60px if tall
-            exportContainer.style.padding = '0px 30px';
             exportContainer.style.zIndex = '-9999';
 
-            // TOP SPACER guarantees breathing room inside html2canvas
+            // 2. Build Intro Slate
+            const surahInfo = data && data.length > 0 ? data[0] : null;
+            const englishNameStr = surahInfo ? surahInfo.surah_name_en : '';
+            const romanNameStr = surahInfo ? surahInfo.surah_name_roman : `Surah ${surahNum}`;
+            const subTitleText = englishNameStr ? `${surahNum} ${romanNameStr} (${englishNameStr})` : `${surahNum} ${romanNameStr}`;
+            const verseText = `Verses ${start} - ${end}`;
+
+            const introSlate = document.createElement('div');
+            introSlate.style.width = '100%';
+            introSlate.style.height = `${VIEWPORT_HEIGHT}px`;
+            introSlate.style.display = 'flex';
+            introSlate.style.flexDirection = 'column';
+            introSlate.style.alignItems = 'center';
+            introSlate.style.justifyContent = 'center';
+            introSlate.style.padding = '0 60px'; // Side padding
+            introSlate.innerHTML = `
+                <h1 style="color: white; font-family: 'Forum', serif; font-size: 50px; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 20px; text-align: center;">${subTitleText}</h1>
+                <h2 style="color: rgba(255,255,255,0.6); font-family: 'Nunito', sans-serif; font-size: 30px; margin-bottom: 70px; text-align: center;">${verseText}</h2>
+                <p style="color: #56A3A6; font-family: 'Amiri Quran', serif; font-size: 80px; margin-bottom: 120px; text-align: center; width: 100%;" dir="rtl">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
+                <div style="display: flex; align-items: center; justify-content: center; gap: 30px; opacity: 0.8;">
+                    <img src="assets/icon-512-transparent.svg" alt="Thematic Quran Logo" style="width: 40px; height: 40px; object-fit: contain;">
+                    <span style="color: white; font-family: 'Forum', serif; font-size: 28px; letter-spacing: 0.1em;">ThematicQuran.com</span>
+                </div>
+            `;
+            exportContainer.appendChild(introSlate);
+
+            // 3. Build Verses Container
+            const versesContainer = document.createElement('div');
+            versesContainer.style.width = '100%';
+            versesContainer.style.minHeight = `${VIEWPORT_HEIGHT}px`;
+            versesContainer.style.display = 'flex';
+            versesContainer.style.flexDirection = 'column';
+            versesContainer.style.padding = '0px 30px';
+
             const topSpacer = document.createElement('div');
             topSpacer.style.height = '60px'; // Symmetrical breathing room
             topSpacer.style.width = '100%';
             topSpacer.style.flexShrink = '0';
-            exportContainer.appendChild(topSpacer);
-
-            // 2. Add Custom Video Header
-            const headerContainer = document.createElement('div');
-            headerContainer.style.width = '100%';
-            headerContainer.style.maxWidth = '680px';
-            headerContainer.style.display = 'flex';
-            headerContainer.style.flexDirection = 'column';
-            headerContainer.style.alignItems = 'flex-start';
-            headerContainer.style.paddingBottom = '30px';
-            headerContainer.style.borderBottom = '1px solid rgba(255, 255, 255, 0.1)';
-            headerContainer.style.marginBottom = '60px';  // Symmetrical margin to match top padding
-
-            // Get Surah Info from the passed verse data
-            const surahInfo = data && data.length > 0 ? data[0] : null;
-
-            // Expected format: "61 As-Saf (The Ranks)"
-            const englishNameStr = surahInfo ? surahInfo.surah_name_en : '';
-            const romanNameStr = surahInfo ? surahInfo.surah_name_roman : `Surah ${surahNum}`;
-            const subTitleText = englishNameStr ? `${surahNum} ${romanNameStr} (${englishNameStr})` : `${surahNum} ${romanNameStr}`;
-
-            const verseText = `Verses ${start} - ${end}`;
-
-            headerContainer.innerHTML = `
-                <h1 style="color: white; font-family: 'Forum', serif; font-size: 40px; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 12px;">${subTitleText}</h1>
-                <h2 style="color: rgba(255,255,255,0.6); font-family: 'Nunito', sans-serif; font-size: 26px; margin-bottom: 40px;">${verseText}</h2>
-                <div style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 48px; opacity: 0.8;">
-                    <img src="assets/icon-512-transparent.svg" alt="Thematic Quran Logo" style="width: 32px; height: 32px; object-fit: contain;">
-                    <span style="color: white; font-family: 'Forum', serif; font-size: 24px; letter-spacing: 0.1em;">ThematicQuran.com</span>
-                </div>
-            `;
-            exportContainer.appendChild(headerContainer);
+            versesContainer.appendChild(topSpacer);
 
             // 3. Clone the thematic card
             const clonedCard = card.cloneNode(true);
@@ -176,55 +177,66 @@ const VideoExporter = {
                 transDiv.style.lineHeight = '1.6';
             }
 
-            exportContainer.appendChild(clonedCard);
+            versesContainer.appendChild(clonedCard);
 
             // Add a bottom spacer to guarantee html2canvas captures the bottom padding
             const bottomSpacer = document.createElement('div');
             bottomSpacer.style.height = '60px'; // Symmetrical with top padding
             bottomSpacer.style.width = '100%';
             bottomSpacer.style.flexShrink = '0';
-            exportContainer.appendChild(bottomSpacer);
+            versesContainer.appendChild(bottomSpacer);
 
+            exportContainer.appendChild(versesContainer);
             document.body.appendChild(exportContainer);
 
             // MANUALLY CENTER CONTENT IF SHORT
-            const innerContentHeight = headerContainer.scrollHeight + clonedCard.scrollHeight + 120; // 60 top + 60 bottom spacers
-            if (innerContentHeight < 1280) {
+            // We use 120 because of the 60 top + 60 bottom spacer
+            const innerContentHeight = topSpacer.offsetHeight + clonedCard.scrollHeight + bottomSpacer.offsetHeight;
+            if (innerContentHeight < VIEWPORT_HEIGHT) {
                 // Short content: add margin to the top spacer to vertically center it mathematically
-                const remainingSpace = 1280 - innerContentHeight;
-                topSpacer.style.height = `${60 + (remainingSpace / 2)}px`;
+                const remainingSpace = VIEWPORT_HEIGHT - innerContentHeight;
+                topSpacer.style.height = `${60 + Math.floor(remainingSpace / 2)}px`;
             }
 
-            // 3. Extract Audio processing
+            // 3. Fetch Bismillah Audio & Content Audio
             if (progressText) progressText.textContent = 'Fetching High Quality Audio...';
+
+            const bismillahResponse = await fetch('https://audio.thematicquran.com/bismillah.mp3');
+            const bismillahArrayBuffer = await bismillahResponse.arrayBuffer();
+            const bismillahBlob = new Blob([bismillahArrayBuffer], { type: 'audio/mp3' });
 
             const audioBlob = await createStitchedAudioBlob(surahNum, start, end, reciterSlug, langCode, (stage, percent, msg) => { });
 
-            // Get audio duration to calculate scroll speed
+            // Get audio durations
             const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            const decodedBismillah = await audioContext.decodeAudioData(bismillahArrayBuffer.slice(0)); // slice to copy
+            const bismillahDuration = decodedBismillah.duration;
+
             const audioBuffer = await audioBlob.arrayBuffer();
-            const decodedAudio = await audioContext.decodeAudioData(audioBuffer);
-            // Adjusted duration based on pace
-            const audioDuration = decodedAudio.duration / pace;
+            const decodedContent = await audioContext.decodeAudioData(audioBuffer);
+            const contentDuration = decodedContent.duration / pace;
+
+            const totalDuration = bismillahDuration + contentDuration;
 
             // 4. Prepare Image Canvas
             await new Promise(r => setTimeout(r, 500)); // wait for fonts
 
-            // Render the full scrolling image once
+            // Render the full scrolling image
             const fullCanvas = await html2canvas(exportContainer, {
-                width: 720,
+                width: VIEWPORT_WIDTH,
                 scale: 1,
                 useCORS: true,
                 backgroundColor: null,
                 windowHeight: exportContainer.scrollHeight
             });
-            const imageData = fullCanvas.toDataURL('image/png', 0.8); // slight jpeg compression to save memory
+            const imageData = fullCanvas.toDataURL('image/jpeg', 0.85); // JPEG compression is more lightweight for FFmpeg than PNG
             document.body.removeChild(exportContainer);
 
-            const viewportHeight = 1280;
-            const contentHeight = fullCanvas.height;
-            // Pad the scrollable distance slightly to ensure the bottom spacer is fully visible at the end of the scroll
-            const scrollableDistance = Math.max(0, contentHeight - viewportHeight);
+            // Calculate exact scrolling distance. 
+            // Intro takes up the first VIEWPORT_HEIGHT exactly.
+            // Total canvas height is VIEWPORT_HEIGHT + VersesBlockHeight.
+            // The scrollable distance is thus fullCanvas.height - 2*VIEWPORT_HEIGHT.
+            const scrollableDistance = Math.max(0, fullCanvas.height - (2 * VIEWPORT_HEIGHT));
 
             // 5. Initialize FFmpeg
             if (!window.FFmpegWASM) { throw new Error("FFmpeg not loaded on page."); }
@@ -248,71 +260,49 @@ const VideoExporter = {
                 workerURL: `${baseURL}/814.ffmpeg.js`
             });
 
-            await this.ffmpeg.writeFile('image.png', await fetchFile(imageData));
+            await this.ffmpeg.writeFile('image.jpg', await fetchFile(imageData));
+            await this.ffmpeg.writeFile('bismillah.mp3', await fetchFile(bismillahBlob));
             await this.ffmpeg.writeFile('audio.wav', await fetchFile(audioBlob));
 
             // 7. Run FFmpeg command
             if (progressText) progressText.textContent = 'Muxing Streams...';
 
-            const fps = 20; // Lowered to 20fps for faster rendering
+            const fps = 20;
             let ffmpegArgs = [];
 
+            // We construct the crop formula to hold on Intro (Y=0), then snap to verses (Y=VIEWPORT_HEIGHT) and scroll.
+            // Scroll duration = contentDuration * 0.8
+            // Scroll start time = bismillahDuration + (contentDuration * 0.1)
+            const scrollTime = contentDuration * 0.8;
+            const startTime = bismillahDuration + (contentDuration * 0.1);
+
+            let yFormula;
             if (scrollableDistance > 0) {
-                // We have a tall image requiring scrolling
-                // We use FFmpeg's `crop` filter to animate the window panning down
-                // t is time in seconds. We pause for 10% of duration at start, 10% at end.
-                // Scroll duration = audioDuration * 0.8
-                // Scroll start time = audioDuration * 0.1
-                const scrollTime = audioDuration * 0.8;
-                const startTime = audioDuration * 0.1;
-
-                // Max Y offset is scrollableDistance
-                // Equation for Y offset during scroll: (t - startTime) / scrollTime * scrollableDistance
-                // Bound it between 0 and scrollableDistance
-                const yFormula = `min(max((t-${startTime})/${scrollTime}*${scrollableDistance}, 0), ${scrollableDistance})`;
-
-                // Apply crop then scale down to 540x960 for much faster encoding
-                // Also apply the atempo audio filter for pace adjustments
-                ffmpegArgs = [
-                    '-loop', '1',
-                    '-framerate', String(fps),
-                    '-i', 'image.png',
-                    '-i', 'audio.wav',
-                    '-filter_complex', `[0:v]crop=720:1280:0:'${yFormula}',scale=540:960[v];[1:a]atempo=${pace}[a]`,
-                    '-map', '[v]',
-                    '-map', '[a]',
-                    '-c:v', 'libx264',
-                    '-preset', 'ultrafast',
-                    '-pix_fmt', 'yuv420p',
-                    '-crf', '28', // Higher compression for video stream
-                    '-c:a', 'aac',
-                    '-b:a', '64k', // heavily compress audio for much smaller file footprint
-                    '-t', String(audioDuration), // exact length of audio
-                    'output.mp4'
-                ];
+                // If t < bismillahDuration, stay at y=0. Else, jump to y=VIEWPORT_HEIGHT + scroll.
+                yFormula = `if(lt(t,${bismillahDuration}),0,${VIEWPORT_HEIGHT}+min(max((t-${startTime})/${scrollTime}*${scrollableDistance},0),${scrollableDistance}))`;
             } else {
-                // Static image fits entirely in the 1280px tall viewport
-                // Apply scale down to 540x960 for faster encoding
-                // Also apply the atempo audio filter for pace adjustments
-                ffmpegArgs = [
-                    '-loop', '1',
-                    '-framerate', '2', // very slow framerate since it doesn't move
-                    '-i', 'image.png',
-                    '-i', 'audio.wav',
-                    '-filter_complex', `[0:v]scale=540:960[v];[1:a]atempo=${pace}[a]`,
-                    '-map', '[v]',
-                    '-map', '[a]',
-                    '-c:v', 'libx264',
-                    '-preset', 'ultrafast',
-                    '-tune', 'stillimage',
-                    '-c:a', 'aac',
-                    '-crf', '28', // Higher compression
-                    '-b:a', '64k', // half bitrate
-                    '-pix_fmt', 'yuv420p',
-                    '-t', String(audioDuration),
-                    'output.mp4'
-                ];
+                // Intro for Bismillah, then static verses.
+                yFormula = `if(lt(t,${bismillahDuration}),0,${VIEWPORT_HEIGHT})`;
             }
+
+            ffmpegArgs = [
+                '-loop', '1',
+                '-framerate', String(fps),
+                '-i', 'image.jpg',
+                '-i', 'bismillah.mp3',
+                '-i', 'audio.wav',
+                '-filter_complex', `[0:v]crop=${VIEWPORT_WIDTH}:${VIEWPORT_HEIGHT}:0:'${yFormula}',scale=540:1170[v];[1:a]aformat=sample_rates=44100:channel_layouts=stereo,atempo=1.0[a1];[2:a]aformat=sample_rates=44100:channel_layouts=stereo,atempo=${pace}[a2];[a1][a2]concat=n=2:v=0:a=1[a]`,
+                '-map', '[v]',
+                '-map', '[a]',
+                '-c:v', 'libx264',
+                '-preset', 'ultrafast',
+                '-pix_fmt', 'yuv420p',
+                '-crf', '28',
+                '-c:a', 'aac',
+                '-b:a', '64k',
+                '-t', String(totalDuration),
+                'output.mp4'
+            ];
 
             await this.ffmpeg.exec(ffmpegArgs);
 
