@@ -337,7 +337,7 @@ const VideoExporter = {
                 '-pix_fmt', 'yuv420p',
                 '-crf', '34',           // extremely high compression for static-heavy video to slash megabytes
                 '-c:a', 'aac',
-                '-b:a', '32k',          // half bit-rate for voice audio (perfectly clear on phones)
+                '-b:a', '64k',          // Restored to original audio bitrate for clearer sound
                 '-t', String(totalDuration),
                 'output.mp4'
             ];
