@@ -88,7 +88,7 @@ const VideoExporter = {
                 <p style="color: white; font-family: 'Amiri Quran', serif; font-size: 80px; margin-bottom: 120px; text-align: center; width: 100%;" dir="rtl">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
                 <div style="display: flex; align-items: center; justify-content: center; gap: 30px; opacity: 0.8;">
                     <img src="assets/icon-512-transparent.svg" alt="Thematic Quran Logo" style="width: 40px; height: 40px; object-fit: contain;">
-                    <span style="color: white; font-family: 'Forum', serif; font-size: 28px; letter-spacing: 0.1em;">ThematicQuran.com</span>
+                    <span style="color: white; font-family: 'Forum', serif; font-size: 28px; letter-spacing: 0.1em; transform: translateY(-5px);">ThematicQuran.com</span>
                 </div>
             `;
             exportContainer.appendChild(introSlate);
@@ -121,7 +121,7 @@ const VideoExporter = {
                 <h2 style="color: rgba(255,255,255,0.6); font-family: 'Nunito', sans-serif; font-size: 26px; margin-bottom: 30px;">${verseText}</h2>
                 <div style="display: flex; align-items: center; justify-content: flex-start; gap: 16px; opacity: 0.8;">
                     <img src="assets/icon-512-transparent.svg" alt="Thematic Quran Logo" style="width: 24px; height: 24px; object-fit: contain;">
-                    <span style="color: white; font-family: 'Forum', serif; font-size: 24px; letter-spacing: 0.05em;">ThematicQuran.com</span>
+                    <span style="color: white; font-family: 'Forum', serif; font-size: 24px; letter-spacing: 0.05em; transform: translateY(-5px);">ThematicQuran.com</span>
                 </div>
             `;
             versesContainer.appendChild(headerContainer);
@@ -185,7 +185,7 @@ const VideoExporter = {
             // relying on reduced margins/padding to avoid scrolling.
             const arabicDiv = clonedCard.querySelector('.text-\\[\\#F3E4CE\\]');
             if (arabicDiv) {
-                arabicDiv.style.fontSize = '40px';
+                arabicDiv.style.fontSize = '46px';
                 arabicDiv.style.lineHeight = '1.6';
                 arabicDiv.style.marginBottom = '24px';
             }
@@ -211,7 +211,7 @@ const VideoExporter = {
             footerContainer.style.borderTop = '1px solid rgba(255, 255, 255, 0.1)';
             footerContainer.innerHTML = `
                 <img src="assets/icon-512-transparent.svg" alt="Thematic Quran Logo" style="width: 28px; height: 28px; object-fit: contain;">
-                <span style="color: white; font-family: 'Forum', serif; font-size: 24px; letter-spacing: 0.05em;">ThematicQuran.com</span>
+                <span style="color: white; font-family: 'Forum', serif; font-size: 24px; letter-spacing: 0.05em; transform: translateY(-5px);">ThematicQuran.com</span>
             `;
             versesContainer.appendChild(footerContainer);
 
@@ -252,7 +252,8 @@ const VideoExporter = {
             const decodedContent = await audioContext.decodeAudioData(audioBuffer);
             const contentDuration = decodedContent.duration / pace;
 
-            const totalDuration = bismillahDuration + contentDuration;
+            const pauseDuration = 0.3; // 0.3s pause requested by user
+            const totalDuration = bismillahDuration + pauseDuration + contentDuration;
 
             // 4. Prepare Image Canvas
             await new Promise(r => setTimeout(r, 500)); // wait for fonts
@@ -308,34 +309,35 @@ const VideoExporter = {
 
             // We construct the crop formula to hold on Intro (Y=0), then snap to verses (Y=VIEWPORT_HEIGHT) and scroll.
             // Scroll duration = contentDuration * 0.8
-            // Scroll start time = bismillahDuration + (contentDuration * 0.1)
+            // Scroll start time = bismillahDuration + pauseDuration + (contentDuration * 0.1)
             const scrollTime = contentDuration * 0.8;
-            const startTime = bismillahDuration + (contentDuration * 0.1);
+            const startTime = bismillahDuration + pauseDuration + (contentDuration * 0.1);
 
             let yFormula;
             if (scrollableDistance > 0) {
-                // If t < bismillahDuration, stay at y=0. Else, jump to y=VIEWPORT_HEIGHT + scroll.
-                yFormula = `if(lt(t,${bismillahDuration}),0,${VIEWPORT_HEIGHT}+min(max((t-${startTime})/${scrollTime}*${scrollableDistance},0),${scrollableDistance}))`;
+                // If t < bismillahDuration + pause, stay at y=0. Else, jump to y=VIEWPORT_HEIGHT + scroll.
+                yFormula = `if(lt(t,${bismillahDuration + pauseDuration}),0,${VIEWPORT_HEIGHT}+min(max((t-${startTime})/${scrollTime}*${scrollableDistance},0),${scrollableDistance}))`;
             } else {
                 // Intro for Bismillah, then static verses.
-                yFormula = `if(lt(t,${bismillahDuration}),0,${VIEWPORT_HEIGHT})`;
+                yFormula = `if(lt(t,${bismillahDuration + pauseDuration}),0,${VIEWPORT_HEIGHT})`;
             }
 
+            // We use adelay to add a 0.3s (300ms) silence before the content audio begins
             ffmpegArgs = [
                 '-loop', '1',
                 '-framerate', String(fps),
                 '-i', 'image.jpg',
                 '-i', 'bismillah.mp3',
                 '-i', 'audio.wav',
-                '-filter_complex', `[0:v]crop=${VIEWPORT_WIDTH}:${VIEWPORT_HEIGHT}:0:'${yFormula}',scale=540:1170[v];[1:a]aformat=sample_rates=44100:channel_layouts=stereo,atempo=1.0[a1];[2:a]aformat=sample_rates=44100:channel_layouts=stereo,atempo=${pace}[a2];[a1][a2]concat=n=2:v=0:a=1[a]`,
+                '-filter_complex', `[0:v]crop=${VIEWPORT_WIDTH}:${VIEWPORT_HEIGHT}:0:'${yFormula}',scale=540:1170[v];[1:a]aformat=sample_rates=44100:channel_layouts=stereo,atempo=1.0[a1];[2:a]aformat=sample_rates=44100:channel_layouts=stereo,atempo=${pace},adelay=300|300[a2];[a1][a2]concat=n=2:v=0:a=1[a]`,
                 '-map', '[v]',
                 '-map', '[a]',
                 '-c:v', 'libx264',
-                '-preset', 'ultrafast',
+                '-preset', 'veryfast',  // better compression/speed balance
                 '-pix_fmt', 'yuv420p',
-                '-crf', '28',
+                '-crf', '34',           // extremely high compression for static-heavy video to slash megabytes
                 '-c:a', 'aac',
-                '-b:a', '64k',
+                '-b:a', '32k',          // half bit-rate for voice audio (perfectly clear on phones)
                 '-t', String(totalDuration),
                 'output.mp4'
             ];
