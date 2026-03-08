@@ -121,7 +121,7 @@ const VideoExporter = {
                 <h2 style="color: rgba(255,255,255,0.6); font-family: 'Nunito', sans-serif; font-size: 26px; margin-bottom: 30px;">${verseText}</h2>
                 <div style="display: flex; align-items: center; justify-content: flex-start; gap: 16px; opacity: 0.8;">
                     <img src="assets/icon-512-transparent.svg" alt="Thematic Quran Logo" style="width: 24px; height: 24px; object-fit: contain;">
-                    <span style="color: white; font-family: 'Forum', serif; font-size: 20px; letter-spacing: 0.05em;">ThematicQuran.com</span>
+                    <span style="color: white; font-family: 'Forum', serif; font-size: 24px; letter-spacing: 0.05em;">ThematicQuran.com</span>
                 </div>
             `;
             versesContainer.appendChild(headerContainer);
@@ -174,7 +174,7 @@ const VideoExporter = {
                     num.style.position = 'absolute';
                     num.style.top = '50%';
                     num.style.left = '50%';
-                    num.style.transform = 'translate(-50%, -60%)';
+                    num.style.transform = 'translate(-50%, -70%)';
                     num.style.marginTop = '5px';
                     num.style.margin = '0';
                     num.style.zIndex = '1';
@@ -185,7 +185,7 @@ const VideoExporter = {
             // relying on reduced margins/padding to avoid scrolling.
             const arabicDiv = clonedCard.querySelector('.text-\\[\\#F3E4CE\\]');
             if (arabicDiv) {
-                arabicDiv.style.fontSize = '42px';
+                arabicDiv.style.fontSize = '40px';
                 arabicDiv.style.lineHeight = '1.6';
                 arabicDiv.style.marginBottom = '24px';
             }
@@ -211,7 +211,7 @@ const VideoExporter = {
             footerContainer.style.borderTop = '1px solid rgba(255, 255, 255, 0.1)';
             footerContainer.innerHTML = `
                 <img src="assets/icon-512-transparent.svg" alt="Thematic Quran Logo" style="width: 28px; height: 28px; object-fit: contain;">
-                <span style="color: white; font-family: 'Forum', serif; font-size: 22px; letter-spacing: 0.05em;">ThematicQuran.com</span>
+                <span style="color: white; font-family: 'Forum', serif; font-size: 24px; letter-spacing: 0.05em;">ThematicQuran.com</span>
             `;
             versesContainer.appendChild(footerContainer);
 
