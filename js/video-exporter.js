@@ -115,10 +115,14 @@ const VideoExporter = {
             headerContainer.style.alignItems = 'flex-start';
             headerContainer.style.paddingBottom = '30px';
             headerContainer.style.borderBottom = '1px solid rgba(255, 255, 255, 0.1)';
-            headerContainer.style.marginBottom = '60px';
+            headerContainer.style.marginBottom = '0';
             headerContainer.innerHTML = `
                 <h1 style="color: white; font-family: 'Forum', serif; font-size: 40px; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 12px;">${subTitleText}</h1>
-                <h2 style="color: rgba(255,255,255,0.6); font-family: 'Nunito', sans-serif; font-size: 26px; margin-bottom: 0;">${verseText}</h2>
+                <h2 style="color: rgba(255,255,255,0.6); font-family: 'Nunito', sans-serif; font-size: 26px; margin-bottom: 30px;">${verseText}</h2>
+                <div style="display: flex; align-items: center; justify-content: flex-start; gap: 16px; opacity: 0.8;">
+                    <img src="assets/icon-512-transparent.svg" alt="Thematic Quran Logo" style="width: 24px; height: 24px; object-fit: contain;">
+                    <span style="color: white; font-family: 'Forum', serif; font-size: 20px; letter-spacing: 0.05em;">ThematicQuran.com</span>
+                </div>
             `;
             versesContainer.appendChild(headerContainer);
 
@@ -193,6 +197,23 @@ const VideoExporter = {
             }
 
             versesContainer.appendChild(clonedCard);
+
+            // 3.2 Add Footer Branding 
+            const footerContainer = document.createElement('div');
+            footerContainer.style.width = '100%';
+            footerContainer.style.display = 'flex';
+            footerContainer.style.alignItems = 'center';
+            footerContainer.style.justifyContent = 'center';
+            footerContainer.style.gap = '20px';
+            footerContainer.style.opacity = '0.6';
+            footerContainer.style.marginTop = '60px'; // Breathing room from translation
+            footerContainer.style.paddingTop = '40px';
+            footerContainer.style.borderTop = '1px solid rgba(255, 255, 255, 0.1)';
+            footerContainer.innerHTML = `
+                <img src="assets/icon-512-transparent.svg" alt="Thematic Quran Logo" style="width: 28px; height: 28px; object-fit: contain;">
+                <span style="color: white; font-family: 'Forum', serif; font-size: 22px; letter-spacing: 0.05em;">ThematicQuran.com</span>
+            `;
+            versesContainer.appendChild(footerContainer);
 
             // Add a bottom spacer to guarantee html2canvas captures the bottom padding
             const bottomSpacer = document.createElement('div');
