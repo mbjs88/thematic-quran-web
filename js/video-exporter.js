@@ -85,7 +85,7 @@ const VideoExporter = {
             introSlate.innerHTML = `
                 <h1 style="color: white; font-family: 'Forum', serif; font-size: 50px; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 20px; text-align: center;">${subTitleText}</h1>
                 <h2 style="color: rgba(255,255,255,0.6); font-family: 'Nunito', sans-serif; font-size: 30px; margin-bottom: 70px; text-align: center;">${verseText}</h2>
-                <p style="color: #56A3A6; font-family: 'Amiri Quran', serif; font-size: 80px; margin-bottom: 120px; text-align: center; width: 100%;" dir="rtl">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
+                <p style="color: white; font-family: 'Amiri Quran', serif; font-size: 80px; margin-bottom: 120px; text-align: center; width: 100%;" dir="rtl">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
                 <div style="display: flex; align-items: center; justify-content: center; gap: 30px; opacity: 0.8;">
                     <img src="assets/icon-512-transparent.svg" alt="Thematic Quran Logo" style="width: 40px; height: 40px; object-fit: contain;">
                     <span style="color: white; font-family: 'Forum', serif; font-size: 28px; letter-spacing: 0.1em;">ThematicQuran.com</span>
@@ -106,6 +106,21 @@ const VideoExporter = {
             topSpacer.style.width = '100%';
             topSpacer.style.flexShrink = '0';
             versesContainer.appendChild(topSpacer);
+
+            // 3.1. Add Header Container back inside verses
+            const headerContainer = document.createElement('div');
+            headerContainer.style.width = '100%';
+            headerContainer.style.display = 'flex';
+            headerContainer.style.flexDirection = 'column';
+            headerContainer.style.alignItems = 'flex-start';
+            headerContainer.style.paddingBottom = '30px';
+            headerContainer.style.borderBottom = '1px solid rgba(255, 255, 255, 0.1)';
+            headerContainer.style.marginBottom = '60px';
+            headerContainer.innerHTML = `
+                <h1 style="color: white; font-family: 'Forum', serif; font-size: 40px; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 12px;">${subTitleText}</h1>
+                <h2 style="color: rgba(255,255,255,0.6); font-family: 'Nunito', sans-serif; font-size: 26px; margin-bottom: 0;">${verseText}</h2>
+            `;
+            versesContainer.appendChild(headerContainer);
 
             // 3. Clone the thematic card
             const clonedCard = card.cloneNode(true);
