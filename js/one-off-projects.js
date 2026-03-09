@@ -103,10 +103,15 @@ window.generateCustomOneOffVideo = async function () {
             const card = document.createElement('div');
             card.style.display = 'flex';
             card.style.flexDirection = 'column';
-            card.style.marginBottom = '60px';
+            card.style.marginBottom = '80px';
+
+            const surahNameEn = row ? row.surah_name_en : '';
 
             card.innerHTML = `
-                <div style="color: #56A3A6; font-family: 'Nunito', sans-serif; font-size: 24px; font-weight: bold; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.05em;">Surah ${t.s} ${surahNameLat} - Ayah ${t.a}</div>
+                <div style="text-align: center; margin-bottom: 40px; padding-bottom: 30px; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                    <div style="color: #56A3A6; font-family: 'Forum', serif; font-size: 44px; letter-spacing: 0.05em; text-transform: uppercase;">Surah ${surahNameLat}</div>
+                    <div style="color: rgba(255,255,255,0.6); font-family: 'Nunito', sans-serif; font-size: 24px; margin-top: 10px;">${surahNameEn} - Verse ${t.a}</div>
+                </div>
                 <div style="display: flex; gap: 10px; margin-bottom: 24px;">
                     <div style="flex: 1;">
                         <p dir="rtl" style="color: #F3E4CE; font-family: 'Amiri Quran', serif; font-size: 46px; line-height: 1.8;">${arText}</p>
@@ -154,6 +159,12 @@ window.generateCustomOneOffVideo = async function () {
 
         for (let i = 0; i < targets.length; i++) {
             const t = targets[i];
+
+            // Insert a 1.5s silent pause before each new verse (after the first one)
+            if (i > 0) {
+                const silenceBuffer = audioContext.createBuffer(2, Math.floor(audioContext.sampleRate * 1.5), audioContext.sampleRate);
+                audioBuffers.push({ buffer: silenceBuffer, type: 'silence' });
+            }
 
             // Arabic
             const arUrl = window.getAudioUrl('arabic', t.s, t.a, reciterSlug, langCode);
@@ -207,7 +218,7 @@ window.generateCustomOneOffVideo = async function () {
             backgroundColor: null,
             windowHeight: exportContainer.scrollHeight
         });
-        const imageData = fullCanvas.toDataURL('image/jpeg', 0.85);
+        const imageData = fullCanvas.toDataURL('image/png'); // Using lossless PNG for much sharper text rendering
         document.body.removeChild(exportContainer);
 
         const scrollableDistance = Math.max(0, fullCanvas.height - (2 * VIEWPORT_HEIGHT));
@@ -232,7 +243,7 @@ window.generateCustomOneOffVideo = async function () {
             workerURL: `${baseURL}/814.ffmpeg.js`
         });
 
-        await ffmpeg.writeFile('image.jpg', await fetchFile(imageData));
+        await ffmpeg.writeFile('image.png', await fetchFile(imageData));
         await ffmpeg.writeFile('bismillah.mp3', await fetchFile(bismillahBlob));
         await ffmpeg.writeFile('audio.wav', await fetchFile(audioBlob));
 
@@ -253,18 +264,18 @@ window.generateCustomOneOffVideo = async function () {
         ffmpegArgs = [
             '-loop', '1',
             '-framerate', String(fps),
-            '-i', 'image.jpg',
+            '-i', 'image.png',
             '-i', 'bismillah.mp3',
             '-i', 'audio.wav',
             '-filter_complex', `[0:v]crop=${VIEWPORT_WIDTH}:${VIEWPORT_HEIGHT}:0:'${yFormula}',scale=540:1170[v];[1:a]aformat=sample_rates=44100:channel_layouts=stereo,atempo=1.0[a1];[2:a]aformat=sample_rates=44100:channel_layouts=stereo,atempo=${pace},adelay=300|300[a2];[a1][a2]concat=n=2:v=0:a=1[a]`,
             '-map', '[v]',
             '-map', '[a]',
             '-c:v', 'libx264',
-            '-preset', 'veryfast',
+            '-preset', 'fast',
             '-pix_fmt', 'yuv420p',
-            '-crf', '34',
+            '-crf', '24',           // High quality video compression
             '-c:a', 'aac',
-            '-b:a', '64k',
+            '-b:a', '128k',         // High quality audio format
             '-t', String(totalDuration),
             'output.mp4'
         ];
