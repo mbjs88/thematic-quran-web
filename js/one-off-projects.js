@@ -166,6 +166,17 @@ window.generateCustomOneOffVideo = async function () {
                 audioBuffers.push({ buffer: silenceBuffer, type: 'silence' });
             }
 
+            // Fetch Surah Intro (Surah Name Announcer)
+            const sPad = String(t.s).padStart(3, '0');
+            const introUrl = `https://audio.thematicquran.com/intro/${sPad}.mp3`;
+            try {
+                // Must use a CORS proxy to pull raw audio files from standard https sources
+                const req = await fetch(`https://cors.eu.org/${introUrl}`);
+                const arrBuf = await req.arrayBuffer();
+                const audBuf = await audioContext.decodeAudioData(arrBuf);
+                audioBuffers.push({ buffer: audBuf, type: 'intro' });
+            } catch (e) { console.error(`Failed to fetch Surah Info for Surah ${t.s}`, e); }
+
             // Arabic
             const arUrl = window.getAudioUrl('arabic', t.s, t.a, reciterSlug, langCode);
             try {
