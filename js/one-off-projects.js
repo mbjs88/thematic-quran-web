@@ -229,13 +229,15 @@ window.generateCustomOneOffVideo = async function () {
             backgroundColor: null,
             windowHeight: exportContainer.scrollHeight
         });
-        const imageData = fullCanvas.toDataURL('image/png'); // Using lossless PNG for much sharper text rendering
+        const imageData = fullCanvas.toDataURL('image/jpeg', 0.98); // High quality JPEG is 10x faster to encode than PNG
         document.body.removeChild(exportContainer);
 
         const scrollableDistance = Math.max(0, fullCanvas.height - (2 * VIEWPORT_HEIGHT));
 
         // 6. Initialize FFmpeg
-        if (!window.FFmpegWASM) { throw new Error("FFmpeg not loaded on page."); }
+        if (!window.FFmpegWASM) {
+            throw new Error("FFmpeg not loaded on page.");
+        }
 
         console.log("Loading FFmpeg engine...");
         const { FFmpeg } = window.FFmpegWASM;
@@ -254,7 +256,7 @@ window.generateCustomOneOffVideo = async function () {
             workerURL: `${baseURL}/814.ffmpeg.js`
         });
 
-        await ffmpeg.writeFile('image.png', await fetchFile(imageData));
+        await ffmpeg.writeFile('image.jpg', await fetchFile(imageData));
         await ffmpeg.writeFile('bismillah.mp3', await fetchFile(bismillahBlob));
         await ffmpeg.writeFile('audio.wav', await fetchFile(audioBlob));
 
@@ -275,16 +277,16 @@ window.generateCustomOneOffVideo = async function () {
         ffmpegArgs = [
             '-loop', '1',
             '-framerate', String(fps),
-            '-i', 'image.png',
+            '-i', 'image.jpg',
             '-i', 'bismillah.mp3',
             '-i', 'audio.wav',
             '-filter_complex', `[0:v]crop=${VIEWPORT_WIDTH}:${VIEWPORT_HEIGHT}:0:'${yFormula}',scale=540:1170[v];[1:a]aformat=sample_rates=44100:channel_layouts=stereo,atempo=1.0[a1];[2:a]aformat=sample_rates=44100:channel_layouts=stereo,atempo=${pace},adelay=300|300[a2];[a1][a2]concat=n=2:v=0:a=1[a]`,
             '-map', '[v]',
             '-map', '[a]',
             '-c:v', 'libx264',
-            '-preset', 'fast',
+            '-preset', 'ultrafast',
             '-pix_fmt', 'yuv420p',
-            '-crf', '24',           // High quality video compression
+            '-crf', '28',           // Balanced video compression
             '-c:a', 'aac',
             '-b:a', '128k',         // High quality audio format
             '-t', String(totalDuration),
