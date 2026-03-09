@@ -95,7 +95,7 @@ window.generateCustomOneOffVideo = async function () {
 
         // Add each target verse as a card
         targets.forEach(t => {
-            const row = window.QURAN_DATA.find(r => r.surah_no === t.s && r.ayah_no_surah === t.a);
+            const row = QURAN_DATA.find(r => r.surah_no === t.s && r.ayah_no_surah === t.a);
             const arText = row ? row.ayah_ar : '';
             const enText = row ? row.ayah_en : '';
             const surahNameLat = row ? row.surah_name_roman : '';
