@@ -5,6 +5,7 @@ assets/icons.pptx
 assets/icons/
 js/generate-video.js
 js/output
+js/one-off-projects.js
 
 # optional OS/editor noise
 .DS_Store
