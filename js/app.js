@@ -331,14 +331,16 @@ function loadSurah(surahId, scrollTargetVerse = null, autoPlay = false) {
                 // NEW: Auto-Play Next Surah Logic
                 if (autoPlay) {
                     console.log(`[AutoPlay] Scheduled for Surah ${surahId}`);
+                    // Play after a brief delay to avoid background throttling issues with DOM clicks
+                    const s = parseInt(firstCard.dataset.surah);
+                    const start = parseInt(firstCard.dataset.start);
+                    const end = parseInt(firstCard.dataset.end);
+
                     setTimeout(() => {
-                        const playBtn = firstCard.querySelector('.play-btn');
-                        if (playBtn) {
-                            console.log(`[AutoPlay] Clicking play on first card of Surah ${surahId}`);
-                            playBtn.click();
-                        } else {
-                            console.error("[AutoPlay] Play button not found!");
-                        }
+                        document.querySelectorAll('.thematic-card').forEach(c => c.classList.remove('ring-2', 'ring-[#56A3A6]'));
+                        firstCard.classList.add('ring-2', 'ring-[#56A3A6]');
+                        if (typeof playSession === 'function') playSession(s, start, end);
+                        document.dispatchEvent(new CustomEvent('manual-play-started', { detail: { card: firstCard } }));
                     }, 500); // 0.5s pause
                 }
             }
@@ -428,14 +430,16 @@ function loadJuz(juzId, scrollTargetVerse = null, autoPlay = false) {
                 // NEW: Auto-Play Next Juz Logic
                 if (autoPlay) {
                     console.log(`[AutoPlay] Scheduled for Juz ${juzId}`);
+                    // Play after a brief delay to avoid background throttling issues with DOM clicks
+                    const s = parseInt(firstCard.dataset.surah);
+                    const start = parseInt(firstCard.dataset.start);
+                    const end = parseInt(firstCard.dataset.end);
+
                     setTimeout(() => {
-                        const playBtn = firstCard.querySelector('.play-btn');
-                        if (playBtn) {
-                            console.log(`[AutoPlay] Clicking play on first card of Juz ${juzId}`);
-                            playBtn.click();
-                        } else {
-                            console.error("[AutoPlay] Play button not found!");
-                        }
+                        document.querySelectorAll('.thematic-card').forEach(c => c.classList.remove('ring-2', 'ring-[#56A3A6]'));
+                        firstCard.classList.add('ring-2', 'ring-[#56A3A6]');
+                        if (typeof playSession === 'function') playSession(s, start, end);
+                        document.dispatchEvent(new CustomEvent('manual-play-started', { detail: { card: firstCard } }));
                     }, 500); // 0.5s pause
                 }
             }
@@ -654,6 +658,10 @@ function setupGlobalEventListeners() {
         if (typeof window.highlightActiveVerseUI === 'function') {
             window.highlightActiveVerseUI(surah, verse, type);
         }
+
+        // Save the exact current verse to resumeState so progress is retained perfectly even if user leaves mid-section
+        const id = parseInt(document.getElementById('surahSelect').value);
+        localStorage.setItem('resumeState', JSON.stringify({ mode: currentViewMode, id: id, startVerse: verse }));
     });
 
     document.getElementById('toggleSelectModeBtn').addEventListener('click', () => {
@@ -706,16 +714,27 @@ function navigateSection(direction) {
     }
 
     if (targetCard) {
-        const isSurahStart = targetCard.dataset.start === "1";
         let scrollTarget = targetCard;
-        let playDelay = 1000;
+        const isSurahStart = targetCard.dataset.start === "1";
         if (isSurahStart) {
             const prev = targetCard.previousElementSibling;
             if (prev && prev.classList.contains('surah-mini-header')) scrollTarget = prev;
-            playDelay = 2500;
         }
         scrollToCard(scrollTarget);
-        setTimeout(() => { targetCard.querySelector('.play-btn').click(); }, playDelay);
+
+        // brief delay for audio transition
+        // Instead of using DOM click which may be throttled in background, directly call the logic.
+        const s = parseInt(targetCard.dataset.surah);
+        const start = parseInt(targetCard.dataset.start);
+        const end = parseInt(targetCard.dataset.end);
+
+        setTimeout(() => {
+            document.querySelectorAll('.thematic-card').forEach(c => c.classList.remove('ring-2', 'ring-[#56A3A6]'));
+            targetCard.classList.add('ring-2', 'ring-[#56A3A6]');
+            if (typeof playSession === 'function') playSession(s, start, end);
+            document.dispatchEvent(new CustomEvent('manual-play-started', { detail: { card: targetCard } }));
+        }, 500);
+
         triggerLookAheadPreload(targetCard);
     } else if (direction === 'next') {
         const currentId = parseInt(document.getElementById('surahSelect').value);
