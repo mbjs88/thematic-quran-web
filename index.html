@@ -12,29 +12,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title>Thematic Qur’an Audio | Listen, Reflect & Understand</title>
+    <title>Thematic Qur’an Audio & Podcast | Listen & Understand</title>
     <meta name="description"
-        content="High-quality Arabic recitation with English narration based on Talal Itani’s translation. Ayahs arranged for meaning and context.">
+        content="High-quality Arabic recitation with English narration based on Talal Itani’s translation. The official web experience for the Thematic Qur'an podcast.">
     <meta name="keywords"
-        content="Quran, Audio, Thematic, Translation, English, Urdu, Study, Islam, Custom Mix, Tafseer, Quran Audio App">
+        content="Quran, Audio, Thematic, Translation, English, Urdu, Study, Islam, Custom Mix, Tafseer, Quran Audio App, Podcast, Audio Series">
     <meta name="author" content="Thematic Quran Team">
-    <link rel="canonical" href="https://thematicquran.com/">
+    <link rel="canonical" href="https://www.thematicquran.com/">
 
     <meta name="theme-color" content="#12101C">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.thematicquran.com/">
-    <meta property="og:title" content="Thematic Quran | Audio Experience">
+    <meta property="og:title" content="Thematic Quran | Audio Experience & Podcast">
     <meta property="og:description"
-        content="An immersive audio experience of the Quran. Listen by theme with synchronized translations and custom production.">
+        content="An immersive audio experience of the Quran. The official web companion for the Thematic Qur'an podcast series.">
     <meta property="og:image" content="https://www.thematicquran.com/assets/og-social-card.png">
 
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://www.thematicquran.com/">
-    <meta property="twitter:title" content="Thematic Quran | Audio Experience">
+    <meta property="twitter:title" content="Thematic Quran | Audio Experience & Podcast">
     <meta property="twitter:description"
-        content="An immersive audio experience of the Quran. Listen by theme with synchronized translations and custom production.">
+        content="An immersive audio experience of the Quran. The official web companion for the Thematic Qur'an podcast series.">
     <meta property="twitter:image" content="https://www.thematicquran.com/assets/og-social-card.png">
 
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
@@ -47,7 +47,7 @@
       "@type": "WebApplication",
       "name": "Thematic Quran",
       "url": "https://www.thematicquran.com/",
-      "description": "A web application for listening to the Quran with synchronized English and Urdu translations, featuring thematic verse grouping.",
+      "description": "A web application for listening to the Quran with synchronized English and Urdu translations, featuring thematic verse grouping. Associated with the Thematic Qur'an podcast.",
       "applicationCategory": "EducationalApplication",
       "operatingSystem": "All",
       "offers": {
@@ -57,7 +57,11 @@
       },
       "author": {
         "@type": "Organization",
-        "name": "Thematic Quran Team"
+        "name": "Thematic Quran Team",
+        "sameAs": [
+          "https://podcasts.apple.com/",
+          "https://open.spotify.com/"
+        ]
       }
     }
     </script>
@@ -293,10 +297,10 @@
                 <div
                     class="space-y-6 text-[#F3E4CE] font-['Nunito'] leading-relaxed text-lg md:text-xl text-center max-w-2xl mx-auto mb-16">
                     <p class="font-bold text-white/90 text-xl md:text-2xl">
-                        The Qur’an is meant to be recited and understood.
+                        Recite and understand the Qur'an.
                     </p>
                     <p>
-                        Thematic Qur’an is a guided Qur’an audio experience that pairs beautiful Arabic recitation with
+                        The Thematic Qur’an project is a guided audio experience that pairs Arabic recitation with
                         clear English narration, based on Talal Itani’s translation — so you can follow the meaning
                         without breaking your focus.
                     </p>
@@ -313,11 +317,16 @@
                 <!-- CTA -->
                 <div class="text-center mb-20">
                     <button onclick="document.dispatchEvent(new CustomEvent('start-listening'))"
-                        class="bg-[#56A3A6] text-white px-10 py-4 rounded-full font-bold hover:bg-[#458a8d] transition animate-glow hover:scale-105 active:scale-95 text-lg cursor-pointer mb-4"
+                        class="bg-[#56A3A6] text-white px-10 py-4 rounded-full font-bold hover:bg-[#458a8d] transition animate-glow hover:scale-105 active:scale-95 text-lg cursor-pointer mb-6"
                         aria-label="Start Listening to Thematic Quran">
                         Start Listening
                     </button>
-                    <br>
+                    <!-- Podcast Affiliation Tag -->
+                    <div
+                        class="mb-6 flex items-center justify-center gap-2 text-white/50 text-xs uppercase tracking-widest font-bold">
+                        <span class="material-symbols-outlined text-sm">podcasts</span>
+                        The official web companion to the Thematic Qur'an Podcast
+                    </div>
                     <a href="#howItWorks"
                         class="text-xs text-white/40 hover:text-[#56A3A6] transition border-b border-transparent hover:border-[#56A3A6] pb-0.5 uppercase tracking-wider">How
                         it works</a>
@@ -392,8 +401,13 @@
                                     class="material-symbols-outlined text-[#56A3A6] transform group-open:rotate-180 transition-transform">expand_more</span>
                             </summary>
                             <div class="px-6 pb-6 text-white/70 leading-relaxed text-sm">
-                                A guided Qur’an audio experience pairing Arabic recitation with English narration to
-                                support understanding.
+                                <p class="mb-2">The Thematic Qur'an Project is an audio experience designed to provide a
+                                    foundational understanding of the Qur'an's message.</p>
+                                <p>By grouping verses thematically and ensuring you hear the connection between a verse
+                                    and those before and after it, this project gives listeners a clear overview of the
+                                    translation. Once this foundational "scaffold" of understanding is built, it
+                                    provides the perfect platform to progress into deeper, more nuanced studies
+                                    supported by other platforms.</p>
                             </div>
                         </details>
                         <details
@@ -415,8 +429,42 @@
                                     class="material-symbols-outlined text-[#56A3A6] transform group-open:rotate-180 transition-transform">expand_more</span>
                             </summary>
                             <div class="px-6 pb-6 text-white/70 leading-relaxed text-sm">
-                                Ayahs are grouped into connected sequences to help listeners follow meaning and context
-                                without interruption.
+                                <p class="mb-2">Ayahs are grouped into connected sequences to help listeners follow
+                                    meaning and context without interruption.</p>
+                                <p>Our methodology for thematic grouping takes structural inspiration from renowned
+                                    scholars, particularly the work of <strong>M.A.S. Abdel Haleem</strong> and
+                                    <strong>The Clear Quran</strong> by Dr. Mustafa Khattab, ensuring a logical and
+                                    authentic narrative flow.
+                                </p>
+                            </div>
+                        </details>
+                        <details
+                            class="group bg-white/5 rounded-xl border border-white/5 open:bg-white/10 transition-all duration-300">
+                            <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                                <span class="font-bold text-[#F3E4CE]">How do I know I can trust this?</span>
+                                <span
+                                    class="material-symbols-outlined text-[#56A3A6] transform group-open:rotate-180 transition-transform">expand_more</span>
+                            </summary>
+                            <div class="px-6 pb-6 text-white/70 leading-relaxed text-sm">
+                                <p>We rely strictly on established and authentic Quran translations. The English
+                                    narration utilizes the translation by Talal Itani, while the structural pacing draws
+                                    from widely acclaimed academic sources. We do not invent new translations or
+                                    exegeses; we simply curate the audio presentation to make the timeless message of
+                                    the Qur'an more accessible for daily reflection and Tadabbur.</p>
+                            </div>
+                        </details>
+                        <details
+                            class="group bg-white/5 rounded-xl border border-white/5 open:bg-white/10 transition-all duration-300">
+                            <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                                <span class="font-bold text-[#F3E4CE]">Can I use this for deep study and Tafseer?</span>
+                                <span
+                                    class="material-symbols-outlined text-[#56A3A6] transform group-open:rotate-180 transition-transform">expand_more</span>
+                            </summary>
+                            <div class="px-6 pb-6 text-white/70 leading-relaxed text-sm">
+                                <p>Thematic Qur’an is designed as a companion tool to build foundational familiarity,
+                                    flow, and Tadabbur (deep reflection). While it is an excellent starting point, users
+                                    seeking profound legal (Fiqh) or detailed theological understanding should consult
+                                    classical Tafseer volumes and qualified Islamic scholars.</p>
                             </div>
                         </details>
                     </div>

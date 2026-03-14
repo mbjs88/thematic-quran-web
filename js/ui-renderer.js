@@ -560,10 +560,14 @@ const WELCOME_PAGE_HTML = `
         <!-- CTA -->
         <div class="text-center mb-20">
             <button onclick="document.dispatchEvent(new CustomEvent('start-listening'))"
-                class="bg-[#56A3A6] text-white px-10 py-4 rounded-full font-bold hover:bg-[#458a8d] transition shadow-[0_0_20px_rgba(86,163,166,0.2)] hover:shadow-[0_0_30px_rgba(86,163,166,0.4)] hover:scale-105 active:scale-95 text-lg cursor-pointer mb-4" aria-label="Start Listening to Thematic Quran">
+                class="bg-[#56A3A6] text-white px-10 py-4 rounded-full font-bold hover:bg-[#458a8d] transition shadow-[0_0_20px_rgba(86,163,166,0.2)] hover:shadow-[0_0_30px_rgba(86,163,166,0.4)] hover:scale-105 active:scale-95 text-lg cursor-pointer mb-6" aria-label="Start Listening to Thematic Quran">
                 Start Listening
             </button>
-            <br>
+            <!-- Podcast Affiliation Tag -->
+            <div class="mb-6 flex items-center justify-center gap-2 text-white/50 text-xs uppercase tracking-widest font-bold">
+                <span class="material-symbols-outlined text-sm">podcasts</span>
+                The official web companion to the Thematic Qur'an Podcast
+            </div>
             <a href="#howItWorks" class="text-xs text-white/40 hover:text-[#56A3A6] transition border-b border-transparent hover:border-[#56A3A6] pb-0.5 uppercase tracking-wider">How it works</a>
         </div>
 
@@ -624,7 +628,8 @@ const WELCOME_PAGE_HTML = `
                         <span class="material-symbols-outlined text-[#56A3A6] transform group-open:rotate-180 transition-transform">expand_more</span>
                     </summary>
                     <div class="px-6 pb-6 text-white/70 leading-relaxed text-sm">
-                        A guided Qur’an audio experience pairing Arabic recitation with English narration to support understanding.
+                        <p class="mb-2">Thematic Qur'an is an audio experience designed to provide a foundational understanding of the Qur'an's message. While many resources offer deep dives into grammatical nuances or legal specificities, the first step should always be understanding the core guidance in its proper context.</p>
+                        <p>By grouping verses thematically and ensuring you hear the connection between a verse and those before and after it, this project gives listeners a clear overview of the translation. Once this foundational "scaffold" of understanding is built, it provides the perfect platform to progress into deeper, more nuanced studies supported by other platforms.</p>
                     </div>
                 </details>
                 <details class="group bg-white/5 rounded-xl border border-white/5 open:bg-white/10 transition-all duration-300">
@@ -642,7 +647,26 @@ const WELCOME_PAGE_HTML = `
                         <span class="material-symbols-outlined text-[#56A3A6] transform group-open:rotate-180 transition-transform">expand_more</span>
                     </summary>
                     <div class="px-6 pb-6 text-white/70 leading-relaxed text-sm">
-                        Ayahs are grouped into connected sequences to help listeners follow meaning and context without interruption.
+                        <p class="mb-2">Ayahs are grouped into connected sequences to help listeners follow meaning and context without interruption.</p>
+                        <p>Our methodology for thematic grouping takes structural inspiration from renowned scholars, particularly the work of <strong>M.A.S. Abdel Haleem</strong> and <strong>The Clear Quran</strong> by Dr. Mustafa Khattab, ensuring a logical and authentic narrative flow.</p>
+                    </div>
+                </details>
+                <details class="group bg-white/5 rounded-xl border border-white/5 open:bg-white/10 transition-all duration-300">
+                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                        <span class="font-bold text-[#F3E4CE]">How do I know I can trust this?</span>
+                        <span class="material-symbols-outlined text-[#56A3A6] transform group-open:rotate-180 transition-transform">expand_more</span>
+                    </summary>
+                    <div class="px-6 pb-6 text-white/70 leading-relaxed text-sm">
+                        <p>We rely strictly on established and authentic Quran translations. The English narration utilizes the translation by Talal Itani, while the structural pacing draws from widely acclaimed academic sources. We do not invent new translations or exegeses; we simply curate the audio presentation to make the timeless message of the Qur'an more accessible for daily reflection and Tadabbur.</p>
+                    </div>
+                </details>
+                <details class="group bg-white/5 rounded-xl border border-white/5 open:bg-white/10 transition-all duration-300">
+                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                        <span class="font-bold text-[#F3E4CE]">Can I use this for deep study and Tafseer?</span>
+                        <span class="material-symbols-outlined text-[#56A3A6] transform group-open:rotate-180 transition-transform">expand_more</span>
+                    </summary>
+                    <div class="px-6 pb-6 text-white/70 leading-relaxed text-sm">
+                        <p>Thematic Qur’an is designed as a companion tool to build foundational familiarity, flow, and Tadabbur (deep reflection). While it is an excellent starting point, users seeking profound legal (Fiqh) or detailed theological understanding should consult classical Tafseer volumes and qualified Islamic scholars.</p>
                     </div>
                 </details>
             </div>
