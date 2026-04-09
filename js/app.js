@@ -727,14 +727,24 @@ function setupGlobalEventListeners() {
             const tokenToDecode = idCookie ? idCookie : tokenCookieStr;
             const tokenVal = tokenToDecode.split('=')[1];
             const tokenData = decodeJWT(tokenVal);
-            if (tokenData) {
-                userName = tokenData.name || tokenData.given_name || tokenData.first_name || "User";
+            if (tokenData && (tokenData.name || tokenData.given_name || tokenData.first_name)) {
+                userName = tokenData.name || tokenData.given_name || tokenData.first_name;
                 initial = userName.charAt(0).toUpperCase();
+                welcomeMessage.textContent = `Assalamu alaikum, ${userName}`;
+                userInitial.textContent = initial;
+            } else {
+                // Tokens are opaque or missing standard OpenID attributes, utilize secure proxy layer!
+                fetch('/api/qf/user').then(r => r.json()).then(data => {
+                    const fetchedName = data.name || data.given_name || data.first_name;
+                    if (fetchedName) {
+                        welcomeMessage.textContent = `Assalamu alaikum, ${fetchedName}`;
+                        userInitial.textContent = fetchedName.charAt(0).toUpperCase();
+                    }
+                }).catch(e => {
+                    // Fallback to generic profiles or other endpoints if /user mismatches specs
+                });
             }
         } catch(e) {}
-
-        welcomeMessage.textContent = `Assalamu alaikum, ${userName}`;
-        userInitial.textContent = initial;
         console.log("Quran.com Access Token Detected.");
     }
 
