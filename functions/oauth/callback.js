@@ -25,7 +25,7 @@ export async function onRequest(context) {
     const CLIENT_SECRET = env.QURAN_CLIENT_SECRET || 'pEiQIH6pjpIwsjhP6dxa0c1.Xn';
     
     // Exact match for the registered callback URI
-    const REDIRECT_URI = "https://ThematicQuran.com/oauth/callback";
+    const REDIRECT_URI = "https://thematicquran.com/oauth/callback";
 
     try {
         const tokenResponse = await fetch("https://oauth2.quran.foundation/oauth2/token", {

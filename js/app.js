@@ -732,7 +732,7 @@ function setupGlobalEventListeners() {
             sendAnalyticsEvent('auth_initiated', { provider: 'quran.com' });
             
             const CLIENT_ID = '9791e50d-b76c-494e-a625-f5ea7de386ba';
-            const REDIRECT_URI = 'https://ThematicQuran.com/oauth/callback';
+            const REDIRECT_URI = 'https://thematicquran.com/oauth/callback';
             const SCOPE = 'openid offline_access user collection';
             
             // 1. Generate PKCE params
