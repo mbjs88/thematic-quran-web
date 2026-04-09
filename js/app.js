@@ -712,7 +712,7 @@ function setupGlobalEventListeners() {
             sendAnalyticsEvent('auth_initiated', { provider: 'quran.com' });
             
             const CLIENT_ID = '9791e50d-b76c-494e-a625-f5ea7de386ba';
-            const REDIRECT_URI = 'https://thematicquran.com/auth/callback';
+            const REDIRECT_URI = 'https://ThematicQuran.com/oauth/callback';
             
             // Redirect to the Quran Foundation OAuth server
             window.location.href = `https://quran.com/oauth/authorize?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=code`;
