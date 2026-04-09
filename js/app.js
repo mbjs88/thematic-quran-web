@@ -715,7 +715,7 @@ function setupGlobalEventListeners() {
             const REDIRECT_URI = 'https://ThematicQuran.com/oauth/callback';
             
             // Redirect to the Quran Foundation OAuth server
-            window.location.href = `https://quran.com/oauth/authorize?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=code`;
+            window.location.href = `https://quran.com/oauth/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_URI)}&response_type=code`;
         });
     }
 
