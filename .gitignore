@@ -10,3 +10,6 @@ js/one-off-projects.js
 # optional OS/editor noise
 .DS_Store
 .vscode/
+
+# Secrets
+.dev.vars
