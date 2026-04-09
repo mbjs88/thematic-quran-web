@@ -88,11 +88,15 @@ export async function onRequest(context) {
 
         const accessToken = tokenData.access_token;
         const refreshToken = tokenData.refresh_token;
+        const idToken = tokenData.id_token;
         const headers = new Headers();
         
         headers.append("Set-Cookie", `quran_access_token${config.cookieSuffix}=${accessToken}; Path=/; Secure; SameSite=Lax; Max-Age=2592000`);
         if (refreshToken) {
             headers.append("Set-Cookie", `qf_refresh_token${config.cookieSuffix}=${refreshToken}; Path=/; Secure; HttpOnly; SameSite=Lax; Max-Age=2592000`);
+        }
+        if (idToken) {
+            headers.append("Set-Cookie", `quran_id_token${config.cookieSuffix}=${idToken}; Path=/; Secure; SameSite=Lax; Max-Age=2592000`);
         }
         
         // Erase the temporary session cookies since they are fully spent

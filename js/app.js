@@ -722,7 +722,10 @@ function setupGlobalEventListeners() {
         let userName = "User";
         let initial = "U";
         try {
-            const tokenVal = tokenCookieStr.split('=')[1];
+            // First try decoding the OpenID Connect id_token (which inherently holds profile properties)
+            const idCookie = document.cookie.split(';').find(c => c.trim().startsWith('quran_id_token_'));
+            const tokenToDecode = idCookie ? idCookie : tokenCookieStr;
+            const tokenVal = tokenToDecode.split('=')[1];
             const tokenData = decodeJWT(tokenVal);
             if (tokenData) {
                 userName = tokenData.name || tokenData.given_name || tokenData.first_name || "User";

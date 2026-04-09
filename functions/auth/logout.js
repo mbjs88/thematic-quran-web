@@ -8,6 +8,9 @@ export async function onRequest(context) {
     // Invalidate main access token cookie
     headers.append("Set-Cookie", `quran_access_token${config.cookieSuffix}=; Path=/; Secure; SameSite=Lax; Max-Age=0`);
     
+    // Invalidate id_token cookie
+    headers.append("Set-Cookie", `quran_id_token${config.cookieSuffix}=; Path=/; Secure; SameSite=Lax; Max-Age=0`);
+    
     // Invalidate refresh token HttpOnly cookie
     headers.append("Set-Cookie", `qf_refresh_token${config.cookieSuffix}=; Path=/; Secure; HttpOnly; SameSite=Lax; Max-Age=0`);
     
