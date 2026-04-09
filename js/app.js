@@ -681,6 +681,53 @@ function setupGlobalEventListeners() {
         sectionsToDownload.sort((a, b) => a.start - b.start); openBulkDownloadModal(sectionsToDownload);
         sendAnalyticsEvent('download_initiated', { type: 'bulk', count: sectionsToDownload.length });
     });
+
+    // --- AUTHENTICATION LOGIC ---
+    function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+        return null;
+    }
+
+    const quranLoginBtn = document.getElementById('quranLoginBtn');
+    const quranLogoutBtn = document.getElementById('quranLogoutBtn');
+    const loggedOutState = document.getElementById('loggedOutState');
+    const loggedInState = document.getElementById('loggedInState');
+    const welcomeMessage = document.getElementById('welcomeMessage');
+    const userInitial = document.getElementById('userInitial');
+
+    // 1. Check for token on startup
+    const accessToken = getCookie('quran_access_token');
+    if (accessToken) {
+        loggedOutState.classList.add('hidden');
+        loggedInState.classList.remove('hidden');
+        welcomeMessage.textContent = "Assalamu alaikum, User";
+        userInitial.textContent = "U";
+        console.log("Quran.com Access Token Detected.");
+    }
+
+    if (quranLoginBtn) {
+        quranLoginBtn.addEventListener('click', () => {
+            sendAnalyticsEvent('auth_initiated', { provider: 'quran.com' });
+            
+            const CLIENT_ID = '9791e50d-b76c-494e-a625-f5ea7de386ba';
+            const REDIRECT_URI = 'https://thematicquran.com/auth/callback';
+            
+            // Redirect to the Quran Foundation OAuth server
+            window.location.href = `https://quran.com/oauth/authorize?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=code`;
+        });
+    }
+
+    if (quranLogoutBtn) {
+        quranLogoutBtn.addEventListener('click', () => {
+            // Delete the cookie to log out
+            document.cookie = "quran_access_token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+            loggedInState.classList.add('hidden');
+            loggedOutState.classList.remove('hidden');
+            sendAnalyticsEvent('auth_logout', {});
+        });
+    }
 }
 
 // ... (Helpers) ...
