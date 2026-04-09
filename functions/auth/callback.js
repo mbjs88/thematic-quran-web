@@ -1,6 +1,47 @@
+import { exchangeAuthorizationCode } from "../_shared/qfAuth.js";
+import { getQfOAuthConfig } from "../_shared/qfOAuthConfig.js";
+
 export async function onRequest(context) {
     const { request, env } = context;
     const url = new URL(request.url);
+    const config = getQfOAuthConfig(env);
+    
+    // Exact match for the registered callback URI
+    const REDIRECT_URI = "https://thematicquran.com/auth/callback";
+
+    // 1. Check for JSON payload (Frontend/Native App + Backend Exchange flow)
+    if (request.method === "POST" && request.headers.get("content-type")?.includes("application/json")) {
+        try {
+            const body = await request.json();
+            const { code, codeVerifier } = body;
+            
+            if (!code || !codeVerifier) {
+                return new Response(JSON.stringify({ error: "Missing code or codeVerifier in payload" }), { 
+                    status: 400,
+                    headers: { "Content-Type": "application/json" }
+                });
+            }
+
+            const tokenData = await exchangeAuthorizationCode({
+                env,
+                code,
+                redirectUri: REDIRECT_URI,
+                codeVerifier
+            });
+
+            return new Response(JSON.stringify(tokenData), {
+                status: 200,
+                headers: { "Content-Type": "application/json" }
+            });
+        } catch (error) {
+            return new Response(JSON.stringify({ error: error.message }), { 
+                status: 400,
+                headers: { "Content-Type": "application/json" }
+            });
+        }
+    }
+
+    // 2. Otherwise, handle standard Server-Initiated Web flow (GET callback)
     const code = url.searchParams.get("code");
     
     // Check if Quran.com returned an explicit error parameter (e.g. invalid scopes)
@@ -15,56 +56,49 @@ export async function onRequest(context) {
         return new Response("Missing authorization code from Quran.com. Did you navigate here directly?", { status: 400 });
     }
 
-    // Attempt to extract the PKCE wrapper code left by the frontend
     const cookieHeader = request.headers.get("Cookie") || "";
     let pkceVerifier = null;
+    let authState = null;
     cookieHeader.split(";").forEach(cookie => {
         const parts = cookie.split("=");
-        if (parts[0].trim() === "qf_pkce_verifier") {
-            pkceVerifier = parts[1].trim();
+        const name = parts[0] ? parts[0].trim() : "";
+        if (name === `qf_pkce_verifier${config.cookieSuffix}`) {
+            pkceVerifier = parts[1] ? parts[1].trim() : "";
+        } else if (name === `qf_auth_state${config.cookieSuffix}`) {
+            authState = parts[1] ? parts[1].trim() : "";
         }
     });
 
-    if (!pkceVerifier) {
-        return new Response("Security Error: Missing PKCE Verifier Cookie in callback.", { status: 400 });
+    if (!pkceVerifier || !authState) {
+        return new Response("Security Error: Missing session cookies.", { status: 400 });
     }
 
-    const CLIENT_ID = env.QURAN_CLIENT_ID || '9791e50d-b76c-494e-a625-f5ea7de386ba';
-    const CLIENT_SECRET = env.QURAN_CLIENT_SECRET || 'pEiQIH6pjpIwsjhP6dxa0c1.Xn';
-    
-    // Exact match for the registered callback URI
-    const REDIRECT_URI = "https://thematicquran.com/auth/callback";
+    const stateParam = url.searchParams.get("state");
+    if (!stateParam || stateParam !== authState) {
+        return new Response("Security Error: CSRF state mismatch.", { status: 400 });
+    }
 
     try {
-        const params = new URLSearchParams();
-        params.append("grant_type", "authorization_code");
-        params.append("client_id", CLIENT_ID);
-        params.append("client_secret", CLIENT_SECRET);
-        params.append("redirect_uri", REDIRECT_URI);
-        params.append("code", code);
-        params.append("code_verifier", pkceVerifier);
-
-        const tokenResponse = await fetch("https://oauth2.quran.foundation/oauth2/token", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/x-www-form-urlencoded",
-                "Accept": "application/json"
-            },
-            body: params.toString()
+        const tokenData = await exchangeAuthorizationCode({
+            env,
+            code,
+            redirectUri: REDIRECT_URI,
+            codeVerifier: pkceVerifier
         });
 
-        const tokenData = await tokenResponse.json();
-
-        if (!tokenResponse.ok) {
-            return new Response(`Failed to fetch token: ${JSON.stringify(tokenData)}`, { status: tokenResponse.status });
-        }
-
         const accessToken = tokenData.access_token;
+        const refreshToken = tokenData.refresh_token;
         const headers = new Headers();
         
-        headers.append("Set-Cookie", `quran_access_token=${accessToken}; Path=/; Secure; SameSite=Lax; Max-Age=2592000`);
-        // Erase the temporary PKCE verifier cookie since it is fully spent
-        headers.append("Set-Cookie", `qf_pkce_verifier=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT`);
+        headers.append("Set-Cookie", `quran_access_token${config.cookieSuffix}=${accessToken}; Path=/; Secure; SameSite=Lax; Max-Age=2592000`);
+        if (refreshToken) {
+            headers.append("Set-Cookie", `qf_refresh_token${config.cookieSuffix}=${refreshToken}; Path=/; Secure; HttpOnly; SameSite=Lax; Max-Age=2592000`);
+        }
+        
+        // Erase the temporary session cookies since they are fully spent
+        headers.append("Set-Cookie", `qf_pkce_verifier${config.cookieSuffix}=; Path=/; HttpOnly; Expires=Thu, 01 Jan 1970 00:00:00 GMT`);
+        headers.append("Set-Cookie", `qf_auth_state${config.cookieSuffix}=; Path=/; HttpOnly; Expires=Thu, 01 Jan 1970 00:00:00 GMT`);
+        headers.append("Set-Cookie", `qf_auth_nonce${config.cookieSuffix}=; Path=/; HttpOnly; Expires=Thu, 01 Jan 1970 00:00:00 GMT`);
         headers.append("Location", "/"); 
 
         return new Response(null, {
@@ -73,6 +107,7 @@ export async function onRequest(context) {
         });
 
     } catch (error) {
-        return new Response("Internal Server Error: " + error.message, { status: 500 });
+        // Output exactly "Failed to exchange authorization code for tokens" without leaking details.
+        return new Response(error.message, { status: 400 });
     }
 }

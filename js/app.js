@@ -698,8 +698,8 @@ function setupGlobalEventListeners() {
     const userInitial = document.getElementById('userInitial');
 
     // 1. Check for token on startup
-    const accessToken = getCookie('quran_access_token');
-    if (accessToken) {
+    const hasToken = document.cookie.split(';').some(c => c.trim().startsWith('quran_access_token_'));
+    if (hasToken) {
         loggedOutState.classList.add('hidden');
         loggedInState.classList.remove('hidden');
         welcomeMessage.textContent = "Assalamu alaikum, User";
@@ -707,71 +707,18 @@ function setupGlobalEventListeners() {
         console.log("Quran.com Access Token Detected.");
     }
 
-    // ---- PKCE HELPERS ----
-    function base64URLEncode(buffer) {
-        return btoa(String.fromCharCode.apply(null, new Uint8Array(buffer)))
-            .replace(/\+/g, '-')
-            .replace(/\//g, '_')
-            .replace(/=+$/, '');
-    }
-
-    function generateRandomString(length) {
-        const array = new Uint8Array(length);
-        window.crypto.getRandomValues(array);
-        return Array.from(array, byte => byte.toString(16).padStart(2, '0')).join('');
-    }
-
-    async function sha256(plain) {
-        const encoder = new TextEncoder();
-        const data = encoder.encode(plain);
-        return window.crypto.subtle.digest('SHA-256', data);
-    }
-
     if (quranLoginBtn) {
-        quranLoginBtn.addEventListener('click', async () => {
+        quranLoginBtn.addEventListener('click', () => {
             sendAnalyticsEvent('auth_initiated', { provider: 'quran.com' });
-            
-            const CLIENT_ID = '9791e50d-b76c-494e-a625-f5ea7de386ba';
-            const REDIRECT_URI = 'https://thematicquran.com/auth/callback';
-            const SCOPE = 'offline_access user collection';
-            
-            // 1. Generate PKCE params
-            const state = generateRandomString(16);
-            
-            // Verifier should be high entropy
-            const verifierBytes = new Uint8Array(32);
-            window.crypto.getRandomValues(verifierBytes);
-            const codeVerifier = base64URLEncode(verifierBytes);
-            
-            // 2. Generate Challenge
-            const hashed = await sha256(codeVerifier);
-            const codeChallenge = base64URLEncode(hashed);
-            
-            // 3. Store Verifier in a cookie so the Cloudflare Worker callback can read it
-            document.cookie = `qf_pkce_verifier=${codeVerifier}; Path=/; Max-Age=3600; SameSite=Lax`;
-            
-            // 4. Build strict redirect URL
-            const params = new URLSearchParams({
-                response_type: 'code',
-                client_id: CLIENT_ID,
-                redirect_uri: REDIRECT_URI,
-                scope: SCOPE,
-                state: state,
-                code_challenge: codeChallenge,
-                code_challenge_method: 'S256'
-            });
-            
-            // Redirect to the OFFICIAL Quran Foundation OAuth endpoint
-            window.location.href = `https://oauth2.quran.foundation/oauth2/auth?${params.toString()}`;
+            // Let the backend handle PKCE and CSRF generation securely
+            window.location.href = '/auth/login';
         });
     }
 
     if (quranLogoutBtn) {
         quranLogoutBtn.addEventListener('click', () => {
-            // Delete the cookie to log out
-            document.cookie = "quran_access_token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-            loggedInState.classList.add('hidden');
-            loggedOutState.classList.remove('hidden');
+            // Let the backend environment delete the explicit cookies linked to it securely
+            window.location.href = '/auth/logout';
             sendAnalyticsEvent('auth_logout', {});
         });
     }
