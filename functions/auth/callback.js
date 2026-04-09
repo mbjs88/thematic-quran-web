@@ -2,9 +2,17 @@ export async function onRequest(context) {
     const { request, env } = context;
     const url = new URL(request.url);
     const code = url.searchParams.get("code");
+    
+    // Check if Quran.com returned an explicit error parameter (e.g. invalid scopes)
+    const quranAuthError = url.searchParams.get("error");
+    const quranAuthErrorDesc = url.searchParams.get("error_description");
+    
+    if (quranAuthError) {
+        return new Response(`Quran Foundation Auth Error:\n\n${quranAuthError}\n${quranAuthErrorDesc || 'No description provided.'}\n\nPlease check your Developer Dashboard settings again.`, { status: 400 });
+    }
 
     if (!code) {
-        return new Response("Missing authorization code from Quran.com", { status: 400 });
+        return new Response("Missing authorization code from Quran.com. Did you navigate here directly?", { status: 400 });
     }
 
     // Attempt to extract the PKCE wrapper code left by the frontend
