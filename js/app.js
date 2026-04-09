@@ -707,15 +707,64 @@ function setupGlobalEventListeners() {
         console.log("Quran.com Access Token Detected.");
     }
 
+    // ---- PKCE HELPERS ----
+    function base64URLEncode(buffer) {
+        return btoa(String.fromCharCode.apply(null, new Uint8Array(buffer)))
+            .replace(/\+/g, '-')
+            .replace(/\//g, '_')
+            .replace(/=+$/, '');
+    }
+
+    function generateRandomString(length) {
+        const array = new Uint8Array(length);
+        window.crypto.getRandomValues(array);
+        return Array.from(array, byte => byte.toString(16).padStart(2, '0')).join('');
+    }
+
+    async function sha256(plain) {
+        const encoder = new TextEncoder();
+        const data = encoder.encode(plain);
+        return window.crypto.subtle.digest('SHA-256', data);
+    }
+
     if (quranLoginBtn) {
-        quranLoginBtn.addEventListener('click', () => {
+        quranLoginBtn.addEventListener('click', async () => {
             sendAnalyticsEvent('auth_initiated', { provider: 'quran.com' });
             
             const CLIENT_ID = '9791e50d-b76c-494e-a625-f5ea7de386ba';
             const REDIRECT_URI = 'https://ThematicQuran.com/oauth/callback';
+            const SCOPE = 'openid offline_access user collection';
             
-            // Redirect to the Quran Foundation OAuth server
-            window.location.href = `https://quran.com/oauth/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_URI)}&response_type=code`;
+            // 1. Generate PKCE params
+            const state = generateRandomString(16);
+            const nonce = generateRandomString(16);
+            
+            // Verifier should be high entropy
+            const verifierBytes = new Uint8Array(32);
+            window.crypto.getRandomValues(verifierBytes);
+            const codeVerifier = base64URLEncode(verifierBytes);
+            
+            // 2. Generate Challenge
+            const hashed = await sha256(codeVerifier);
+            const codeChallenge = base64URLEncode(hashed);
+            
+            // 3. Store Verifier in a cookie so the Cloudflare Worker callback can read it
+            document.cookie = `qf_pkce_verifier=${codeVerifier}; Path=/; Max-Age=3600; SameSite=Lax`;
+            
+            // 4. Build strict redirect URL
+            const params = new URLSearchParams({
+                response_type: 'code',
+                client_id: CLIENT_ID,
+                redirect_uri: REDIRECT_URI,
+                scope: SCOPE,
+                state: state,
+                nonce: nonce,
+                code_challenge: codeChallenge,
+                code_challenge_method: 'S256'
+            });
+            
+            // Redirect to the OFFICIAL Quran Foundation OAuth endpoint
+            window.location.href = `https://oauth2.quran.foundation/oauth2/auth?${params.toString()}`;
         });
     }
 
