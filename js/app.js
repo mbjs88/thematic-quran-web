@@ -697,13 +697,41 @@ function setupGlobalEventListeners() {
     const welcomeMessage = document.getElementById('welcomeMessage');
     const userInitial = document.getElementById('userInitial');
 
+    // Simple base64 URL JWT decoder
+    function decodeJWT(token) {
+        try {
+            const base64Url = token.split('.')[1];
+            if (!base64Url) return null;
+            const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+            const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+            }).join(''));
+            return JSON.parse(jsonPayload);
+        } catch(e) {
+            return null;
+        }
+    }
+
     // 1. Check for token on startup
-    const hasToken = document.cookie.split(';').some(c => c.trim().startsWith('quran_access_token_'));
+    const tokenCookieStr = document.cookie.split(';').find(c => c.trim().startsWith('quran_access_token_'));
+    const hasToken = !!tokenCookieStr;
     if (hasToken) {
         loggedOutState.classList.add('hidden');
         loggedInState.classList.remove('hidden');
-        welcomeMessage.textContent = "Assalamu alaikum, User";
-        userInitial.textContent = "U";
+        
+        let userName = "User";
+        let initial = "U";
+        try {
+            const tokenVal = tokenCookieStr.split('=')[1];
+            const tokenData = decodeJWT(tokenVal);
+            if (tokenData) {
+                userName = tokenData.name || tokenData.given_name || tokenData.first_name || "User";
+                initial = userName.charAt(0).toUpperCase();
+            }
+        } catch(e) {}
+
+        welcomeMessage.textContent = `Assalamu alaikum, ${userName}`;
+        userInitial.textContent = initial;
         console.log("Quran.com Access Token Detected.");
     }
 
