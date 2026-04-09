@@ -36,20 +36,21 @@ export async function onRequest(context) {
     const REDIRECT_URI = "https://thematicquran.com/auth/callback";
 
     try {
+        const params = new URLSearchParams();
+        params.append("grant_type", "authorization_code");
+        params.append("client_id", CLIENT_ID);
+        params.append("client_secret", CLIENT_SECRET);
+        params.append("redirect_uri", REDIRECT_URI);
+        params.append("code", code);
+        params.append("code_verifier", pkceVerifier);
+
         const tokenResponse = await fetch("https://oauth2.quran.foundation/oauth2/token", {
             method: "POST",
             headers: {
-                "Content-Type": "application/json",
+                "Content-Type": "application/x-www-form-urlencoded",
                 "Accept": "application/json"
             },
-            body: JSON.stringify({
-                grant_type: "authorization_code",
-                client_id: CLIENT_ID,
-                client_secret: CLIENT_SECRET,
-                redirect_uri: REDIRECT_URI,
-                code: code,
-                code_verifier: pkceVerifier
-            })
+            body: params.toString()
         });
 
         const tokenData = await tokenResponse.json();
