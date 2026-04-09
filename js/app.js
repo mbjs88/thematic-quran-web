@@ -733,11 +733,10 @@ function setupGlobalEventListeners() {
             
             const CLIENT_ID = '9791e50d-b76c-494e-a625-f5ea7de386ba';
             const REDIRECT_URI = 'https://thematicquran.com/auth/callback';
-            const SCOPE = 'openid offline_access user collection';
+            const SCOPE = 'offline_access user collection';
             
             // 1. Generate PKCE params
             const state = generateRandomString(16);
-            const nonce = generateRandomString(16);
             
             // Verifier should be high entropy
             const verifierBytes = new Uint8Array(32);
@@ -758,7 +757,6 @@ function setupGlobalEventListeners() {
                 redirect_uri: REDIRECT_URI,
                 scope: SCOPE,
                 state: state,
-                nonce: nonce,
                 code_challenge: codeChallenge,
                 code_challenge_method: 'S256'
             });
