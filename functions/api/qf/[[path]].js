@@ -1,5 +1,5 @@
-import { createQfApiClient } from "../../../_shared/qfApiClient.js";
-import { getQfOAuthConfig } from "../../../_shared/qfOAuthConfig.js";
+import { createQfApiClient } from "../../_shared/qfApiClient.js";
+import { getQfOAuthConfig } from "../../_shared/qfOAuthConfig.js";
 
 export async function onRequest(context) {
     const { request, env, params } = context;
