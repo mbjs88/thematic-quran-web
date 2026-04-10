@@ -734,14 +734,20 @@ function setupGlobalEventListeners() {
                 userInitial.textContent = initial;
             } else {
                 // Tokens are opaque or missing standard OpenID attributes, utilize secure proxy layer!
-                fetch('/api/qf/users/profile').then(r => r.json()).then(data => {
+                fetch('/api/qf/users/profile').then(r => {
+                    return r.text().then(text => {
+                        console.log("--- Quran Profile API Diagnostic Response ---");
+                        console.log(text);
+                        return JSON.parse(text);
+                    });
+                }).then(data => {
                     const fetchedName = data.firstName || data.username || data.name || data.given_name;
                     if (fetchedName) {
                         welcomeMessage.textContent = `Assalamu alaikum, ${fetchedName}`;
                         userInitial.textContent = fetchedName.charAt(0).toUpperCase();
                     }
                 }).catch(e => {
-                    // Fail silently and keep "User" default
+                    console.error("Profile fetch sequence aborted or failed JSON parse: ", e);
                 });
             }
         } catch(e) {}
