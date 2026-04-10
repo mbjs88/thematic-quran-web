@@ -719,38 +719,47 @@ function setupGlobalEventListeners() {
         loggedOutState.classList.add('hidden');
         loggedInState.classList.remove('hidden');
         
-        let userName = "User";
-        let initial = "U";
+        welcomeMessage.textContent = "Loading Profile...";
+        userInitial.textContent = "?";
+        
+        let tokenData = null;
         try {
-            // First try decoding the OpenID Connect id_token (which inherently holds profile properties)
             const idCookie = document.cookie.split(';').find(c => c.trim().startsWith('quran_id_token_'));
             const tokenToDecode = idCookie ? idCookie : tokenCookieStr;
             const tokenVal = tokenToDecode.split('=')[1];
-            const tokenData = decodeJWT(tokenVal);
-            if (tokenData && (tokenData.name || tokenData.given_name || tokenData.first_name)) {
-                userName = tokenData.name || tokenData.given_name || tokenData.first_name;
-                initial = userName.charAt(0).toUpperCase();
-                welcomeMessage.textContent = `Assalamu alaikum, ${userName}`;
-                userInitial.textContent = initial;
-            } else {
-                // Tokens are opaque or missing standard OpenID attributes, utilize secure proxy layer!
-                fetch('/api/qf/users/profile').then(r => {
-                    return r.text().then(text => {
-                        console.log("--- Quran Profile API Diagnostic Response ---");
-                        console.log(text);
-                        return JSON.parse(text);
-                    });
-                }).then(data => {
+            tokenData = decodeJWT(tokenVal);
+        } catch(e) {
+            console.error("JWT Decode error", e);
+        }
+
+        if (tokenData && (tokenData.firstName || tokenData.name || tokenData.given_name || tokenData.first_name || tokenData.username)) {
+            const fetchedName = tokenData.firstName || tokenData.username || tokenData.name || tokenData.given_name || tokenData.first_name;
+            welcomeMessage.textContent = `Assalamu alaikum, ${fetchedName}`;
+            userInitial.textContent = fetchedName.charAt(0).toUpperCase();
+        } else {
+            // Tokens are opaque or missing standard OpenID attributes, utilize secure proxy layer!
+            fetch('/api/qf/users/profile').then(r => r.text()).then(text => {
+                if (!text || text.includes('error') || text === 'Unauthorized' || text.startsWith('<!DOCTYPE') || text.startsWith('<html')) {
+                    welcomeMessage.textContent = `User (API Error: ${text ? text.substring(0, 40) : 'empty'})`;
+                    return;
+                }
+                try {
+                    const data = JSON.parse(text);
                     const fetchedName = data.firstName || data.username || data.name || data.given_name;
                     if (fetchedName) {
                         welcomeMessage.textContent = `Assalamu alaikum, ${fetchedName}`;
                         userInitial.textContent = fetchedName.charAt(0).toUpperCase();
+                    } else {
+                        // Expose exactly what JSON keys the API actually sent us back!
+                        welcomeMessage.textContent = `User (Keys: ${Object.keys(data).join(', ')})`;
                     }
-                }).catch(e => {
-                    console.error("Profile fetch sequence aborted or failed JSON parse: ", e);
-                });
-            }
-        } catch(e) {}
+                } catch(e) {
+                    welcomeMessage.textContent = `User (Invalid JSON: ${text.substring(0, 30)})`;
+                }
+            }).catch(e => {
+                welcomeMessage.textContent = `User (Network Drop: ${e.message})`;
+            });
+        }
         console.log("Quran.com Access Token Detected.");
     }
 
