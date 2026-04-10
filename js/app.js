@@ -744,14 +744,16 @@ function setupGlobalEventListeners() {
                     return;
                 }
                 try {
-                    const data = JSON.parse(text);
-                    const fetchedName = data.firstName || data.username || data.name || data.given_name;
+                    const rawJson = JSON.parse(text);
+                    const ProfileData = rawJson.data ? rawJson.data : rawJson;
+
+                    const fetchedName = ProfileData.firstName || ProfileData.username || ProfileData.name || ProfileData.given_name;
                     if (fetchedName) {
                         welcomeMessage.textContent = `Assalamu alaikum, ${fetchedName}`;
                         userInitial.textContent = fetchedName.charAt(0).toUpperCase();
                     } else {
                         // Expose exactly what JSON keys the API actually sent us back!
-                        welcomeMessage.textContent = `User (Keys: ${Object.keys(data).join(', ')})`;
+                        welcomeMessage.textContent = `User (Keys: ${Object.keys(ProfileData).join(', ')})`;
                     }
                 } catch(e) {
                     welcomeMessage.textContent = `User (Invalid JSON: ${text.substring(0, 30)})`;
