@@ -734,14 +734,14 @@ function setupGlobalEventListeners() {
                 userInitial.textContent = initial;
             } else {
                 // Tokens are opaque or missing standard OpenID attributes, utilize secure proxy layer!
-                fetch('/api/qf/user').then(r => r.json()).then(data => {
-                    const fetchedName = data.name || data.given_name || data.first_name;
+                fetch('/api/qf/users/profile').then(r => r.json()).then(data => {
+                    const fetchedName = data.firstName || data.username || data.name || data.given_name;
                     if (fetchedName) {
                         welcomeMessage.textContent = `Assalamu alaikum, ${fetchedName}`;
                         userInitial.textContent = fetchedName.charAt(0).toUpperCase();
                     }
                 }).catch(e => {
-                    // Fallback to generic profiles or other endpoints if /user mismatches specs
+                    // Fail silently and keep "User" default
                 });
             }
         } catch(e) {}
