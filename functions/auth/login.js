@@ -9,7 +9,7 @@ export async function onRequest(context) {
         const REDIRECT_URI = "https://thematicquran.com/auth/callback";
         const { url, state, nonce, codeVerifier } = await buildAuthorizationUrl(env, {
             redirectUri: REDIRECT_URI,
-            scopes: "offline_access user collection"
+            scopes: "offline_access user collection reading_session"
         });
         
         const headers = new Headers();
