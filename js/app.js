@@ -1211,12 +1211,8 @@ window.qfCollectionId = null;
 
 window.initQfCollectionsSync = async function() {
     try {
-        // Attempt fetch on standard path first
-        let res = await fetch('/api/qf/v1/collections');
-        if (res.status === 404 || res.status === 403) {
-             res = await fetch('/api/qf/auth/v1/collections'); 
-        }
-        
+        // From live logs, we definitively know the /auth/ prefix is mandatory for collection logic.
+        let res = await fetch('/api/qf/auth/v1/collections');
         let json = await res.json();
         let list = Array.isArray(json.data) ? json.data : (Array.isArray(json) ? json : []);
         
@@ -1228,19 +1224,11 @@ window.initQfCollectionsSync = async function() {
         }
         
         // Build isolated collection folder if missing
-        let createRes = await fetch('/api/qf/v1/collections', {
+        let createRes = await fetch('/api/qf/auth/v1/collections', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({ name: "Thematic Quran Saves" })
         });
-        
-        if (createRes.status === 404 || createRes.status === 403) {
-            createRes = await fetch('/api/qf/auth/v1/collections', {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({ name: "Thematic Quran Saves" })
-            });
-        }
         
         let createJson = await createRes.json();
         if (createJson.data && createJson.data.id) {
@@ -1267,16 +1255,8 @@ window.toggleBookmark = function(surah, start, end, data) {
         
         // Cloud Delete Execution
         if (window.qfCollectionId && deletedObj.remoteId) {
-            const deleteEndpoints = [
-                 `/api/qf/v1/collections/${window.qfCollectionId}/bookmarks/${deletedObj.remoteId}`,
-                 `/api/qf/v1/delete-collection-bookmark-by-id/${deletedObj.remoteId}`,
-                 `/api/qf/v1/collections/bookmarks/${deletedObj.remoteId}`,
-                 `/api/qf/auth/v1/delete-collection-bookmark-by-id/${deletedObj.remoteId}`
-            ];
-            // Blindly cast best-effort delete
-            deleteEndpoints.forEach(ep => {
-                fetch(ep, { method: 'DELETE' }).catch(()=>{});
-            });
+            const deleteEp = `/api/qf/auth/v1/collections/${window.qfCollectionId}/bookmarks/${deletedObj.remoteId}`;
+            fetch(deleteEp, { method: 'DELETE' }).catch(()=>{});
             console.log("[CloudSync] Destroyed remote anchor.");
         }
         return false;
@@ -1318,7 +1298,8 @@ window.toggleBookmark = function(surah, start, end, data) {
                 ayahNumber: st
             };
             
-            const writeEp = `/api/qf/v1/collections/${window.qfCollectionId}/bookmarks`;
+            // Strictly push to the authenticated routing namespace
+            const writeEp = `/api/qf/auth/v1/collections/${window.qfCollectionId}/bookmarks`;
             fetch(writeEp, {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
@@ -1333,8 +1314,8 @@ window.toggleBookmark = function(surah, start, end, data) {
                            console.log("[CloudSync] Remote Anchor linked:", j.data.id);
                       }
                  } else if (j && j.success === false) {
-                     // Try auth variant or fallback endpoint
-                     const fallbackEp = '/api/qf/v1/add-collection-bookmark';
+                     // Fire a legacy unauthenticated endpoint as an absolute fallback
+                     const fallbackEp = `/api/qf/auth/v1/add-collection-bookmark`;
                      fetch(fallbackEp, {
                          method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({...payload, collectionId: window.qfCollectionId})
                      }).catch(()=>{});
