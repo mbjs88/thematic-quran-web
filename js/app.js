@@ -793,6 +793,7 @@ function setupGlobalEventListeners() {
             });
         }
         console.log("Quran.com Access Token Detected.");
+        if (window.initQfCollectionsSync) window.initQfCollectionsSync();
 
         // SYNC IN from Quran.com
         fetch('/api/qf/auth/v1/reading-sessions?first=5')
@@ -1196,3 +1197,280 @@ function setupCustomScrollbar() {
     window.addEventListener('mouseup', onDragEnd);
     window.addEventListener('touchend', onDragEnd);
 }
+
+// ==========================================
+// BOOKMARK MANAGEMENT
+// ==========================================
+
+window.isBookmarked = function(surah, start, end) {
+    const saved = JSON.parse(localStorage.getItem('thematic_bookmarks')) || [];
+    return saved.some(b => b.surah === parseInt(surah) && b.start === parseInt(start) && b.end === parseInt(end));
+};
+
+window.qfCollectionId = null;
+
+window.initQfCollectionsSync = async function() {
+    try {
+        // Attempt fetch on standard path first
+        let res = await fetch('/api/qf/v1/collections');
+        if (res.status === 404 || res.status === 403) {
+             res = await fetch('/api/qf/auth/v1/collections'); 
+        }
+        
+        let json = await res.json();
+        let list = Array.isArray(json.data) ? json.data : (Array.isArray(json) ? json : []);
+        
+        let target = list.find(c => c.name === "Thematic Quran Saves");
+        if (target) {
+            window.qfCollectionId = target.id;
+            console.log("[CloudSync] Found Existing Collection:", window.qfCollectionId);
+            return;
+        }
+        
+        // Build isolated collection folder if missing
+        let createRes = await fetch('/api/qf/v1/collections', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({ name: "Thematic Quran Saves" })
+        });
+        
+        if (createRes.status === 404 || createRes.status === 403) {
+            createRes = await fetch('/api/qf/auth/v1/collections', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ name: "Thematic Quran Saves" })
+            });
+        }
+        
+        let createJson = await createRes.json();
+        if (createJson.data && createJson.data.id) {
+            window.qfCollectionId = createJson.data.id;
+            console.log("[CloudSync] Bootstrapped New Collection:", window.qfCollectionId);
+        }
+    } catch(e) {
+        console.error("[CloudSync] Collections Init Error:", e);
+    }
+};
+
+window.toggleBookmark = function(surah, start, end, data) {
+    let saved = JSON.parse(localStorage.getItem('thematic_bookmarks')) || [];
+    const s = parseInt(surah); 
+    const st = parseInt(start); 
+    const e = parseInt(end);
+    let idx = saved.findIndex(b => b.surah === s && b.start === st && b.end === e);
+    
+    if (idx >= 0) {
+        const deletedObj = saved[idx];
+        saved.splice(idx, 1);
+        localStorage.setItem('thematic_bookmarks', JSON.stringify(saved));
+        if (window.renderBookmarksGallery) window.renderBookmarksGallery();
+        
+        // Cloud Delete Execution
+        if (window.qfCollectionId && deletedObj.remoteId) {
+            const deleteEndpoints = [
+                 `/api/qf/v1/collections/${window.qfCollectionId}/bookmarks/${deletedObj.remoteId}`,
+                 `/api/qf/v1/delete-collection-bookmark-by-id/${deletedObj.remoteId}`,
+                 `/api/qf/v1/collections/bookmarks/${deletedObj.remoteId}`,
+                 `/api/qf/auth/v1/delete-collection-bookmark-by-id/${deletedObj.remoteId}`
+            ];
+            // Blindly cast best-effort delete
+            deleteEndpoints.forEach(ep => {
+                fetch(ep, { method: 'DELETE' }).catch(()=>{});
+            });
+            console.log("[CloudSync] Destroyed remote anchor.");
+        }
+        return false;
+    } else {
+        const surahSelect = document.getElementById('surahSelect');
+        let surahName = `Surah ${s}`;
+        if (surahSelect) {
+            const option = Array.from(surahSelect.options).find(opt => parseInt(opt.value) === s);
+            if (option) surahName = option.text;
+        }
+        
+        const newObj = {
+            surah: s,
+            surahName: surahName,
+            start: st,
+            end: e,
+            timestamp: Date.now()
+        };
+        saved.push(newObj);
+        localStorage.setItem('thematic_bookmarks', JSON.stringify(saved));
+        if (window.showToast) window.showToast("Bookmark saved", "bookmark_added");
+        if (window.renderBookmarksGallery) window.renderBookmarksGallery();
+        
+        // Cloud Write Execution
+        if (window.qfCollectionId) {
+            // According to API DOCS schemas:
+            const payload = {
+                key: s,             // The Surah number
+                type: "ayah",       // The bookmark type
+                verseNumber: st,    // The verse number
+                mushaf: 1,          // 1 = QCFV2
+                
+                // Polyfills for legacy endpoint variations
+                mushafId: 1,
+                chapterNumber: s,
+                chapter_number: s,
+                surahNumber: s,
+                verse_number: st,
+                ayahNumber: st
+            };
+            
+            const writeEp = `/api/qf/v1/collections/${window.qfCollectionId}/bookmarks`;
+            fetch(writeEp, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(payload)
+            }).then(r => r.json()).then(j => {
+                 if (j && j.data && j.data.id) {
+                      const updatedSaved = JSON.parse(localStorage.getItem('thematic_bookmarks')) || [];
+                      let syncIdx = updatedSaved.findIndex(b => b.surah === s && b.start === st && b.end === e);
+                      if (syncIdx >= 0) {
+                           updatedSaved[syncIdx].remoteId = j.data.id;
+                           localStorage.setItem('thematic_bookmarks', JSON.stringify(updatedSaved));
+                           console.log("[CloudSync] Remote Anchor linked:", j.data.id);
+                      }
+                 } else if (j && j.success === false) {
+                     // Try auth variant or fallback endpoint
+                     const fallbackEp = '/api/qf/v1/add-collection-bookmark';
+                     fetch(fallbackEp, {
+                         method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({...payload, collectionId: window.qfCollectionId})
+                     }).catch(()=>{});
+                 }
+            }).catch(e => console.error("[CloudSync] Network Write failed", e));
+        }
+        return true; 
+    }
+};
+
+window.renderBookmarksGallery = function() {
+    const container = document.getElementById('bookmarksContainer');
+    if (!container) return;
+    
+    let saved = JSON.parse(localStorage.getItem('thematic_bookmarks')) || [];
+    if (saved.length === 0) {
+        container.innerHTML = '<div class="text-white/40 text-center mt-20 font-[\'Nunito\']">You haven\'t saved any bookmarks yet.</div>';
+        return;
+    }
+    
+    // Sort ascending by Surah, then Start Ayah
+    saved.sort((a, b) => {
+        if (a.surah !== b.surah) return a.surah - b.surah;
+        return a.start - b.start;
+    });
+    
+    container.innerHTML = '';
+    
+    saved.forEach(b => {
+        const item = document.createElement('div');
+        item.className = "bg-white/5 hover:bg-[#56A3A6]/10 transition duration-300 rounded-2xl p-6 border border-white/10 hover:border-[#56A3A6]/30 flex items-center justify-between cursor-pointer group";
+        
+        item.innerHTML = `
+            <div>
+                <h4 class="text-white font-bold font-['Forum'] text-xl md:text-2xl mb-1 group-hover:text-[#56A3A6] transition">${b.surahName}</h4>
+                <p class="text-[#56A3A6] text-xs font-bold uppercase tracking-widest font-['Nunito']">Verses ${b.start} - ${b.end}</p>
+            </div>
+            <div class="flex items-center gap-2 md:gap-4">
+                <button class="bookmark-delete-btn text-white/30 hover:text-red-400 p-2 rounded-full hover:bg-red-400/10 transition z-10" aria-label="Delete Bookmark">
+                    <span class="material-symbols-outlined text-[20px]">delete</span>
+                </button>
+                <button class="bookmark-play-btn bg-[#56A3A6] w-12 h-12 rounded-full flex items-center justify-center text-white shadow-[0_5px_15px_rgba(86,163,166,0.3)] hover:scale-105 active:scale-95 transition focus:outline-none z-10">
+                    <span class="material-symbols-outlined">play_arrow</span>
+                </button>
+            </div>
+        `;
+        
+        // Navigate Only (Row Click)
+        item.onclick = (e) => {
+            const modal = document.getElementById('bookmarksModal');
+            if (modal) modal.classList.add('hidden');
+            
+            const surahSelect = document.getElementById('surahSelect');
+            if (surahSelect && surahSelect.value !== b.surah.toString()) {
+                surahSelect.value = b.surah;
+                surahSelect.dispatchEvent(new Event('change'));
+                
+                setTimeout(() => {
+                    const cardId = `section-${b.surah}-${b.start}`;
+                    const card = document.getElementById(cardId);
+                    if (card) { 
+                        card.scrollIntoView({behavior: 'smooth', block: 'center'}); 
+                    }
+                }, 800);
+            } else {
+                const cardId = `section-${b.surah}-${b.start}`;
+                const card = document.getElementById(cardId);
+                if (card) { 
+                    card.scrollIntoView({behavior: 'smooth', block: 'center'}); 
+                }
+            }
+        };
+
+        // Delete Logic
+        const deleteBtn = item.querySelector('.bookmark-delete-btn');
+        deleteBtn.onclick = (e) => {
+            e.stopPropagation();
+            window.toggleBookmark(b.surah, b.start, b.end, null);
+            
+            // Sync with physical UI card if currently loaded
+            const cardBtn = document.querySelector(`.bookmark-toggle-btn[data-surah="${b.surah}"][data-start="${b.start}"]`);
+            if (cardBtn) {
+                cardBtn.innerHTML = `<span class="material-symbols-outlined text-xl" aria-hidden="true">bookmark_border</span>`;
+                cardBtn.classList.remove('text-[#56A3A6]');
+            }
+        };
+
+        // Play Logic
+        const playBtn = item.querySelector('.bookmark-play-btn');
+        playBtn.onclick = (e) => {
+            e.stopPropagation();
+            const modal = document.getElementById('bookmarksModal');
+            if (modal) modal.classList.add('hidden');
+            
+            const surahSelect = document.getElementById('surahSelect');
+            if (surahSelect && surahSelect.value !== b.surah.toString()) {
+                surahSelect.value = b.surah;
+                surahSelect.dispatchEvent(new Event('change'));
+                
+                setTimeout(() => {
+                    const cardId = `section-${b.surah}-${b.start}`;
+                    const card = document.getElementById(cardId);
+                    if (card) { 
+                        card.scrollIntoView({behavior: 'smooth', block: 'center'}); 
+                        if(window.handleCardPlayClick) window.handleCardPlayClick(card, b.surah, b.start, b.end); 
+                    }
+                }, 800);
+            } else {
+                const cardId = `section-${b.surah}-${b.start}`;
+                const card = document.getElementById(cardId);
+                if (card) { 
+                    card.scrollIntoView({behavior: 'smooth', block: 'center'}); 
+                    if(window.handleCardPlayClick) window.handleCardPlayClick(card, b.surah, b.start, b.end); 
+                }
+            }
+        };
+
+        container.appendChild(item);
+    });
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+    const openBtn = document.getElementById('openBookmarksBtn');
+    if (openBtn) {
+        openBtn.addEventListener('click', () => {
+            if (window.renderBookmarksGallery) window.renderBookmarksGallery();
+            const modal = document.getElementById('bookmarksModal');
+            if (modal) modal.classList.remove('hidden');
+        });
+    }
+    
+    const closeBtn = document.getElementById('closeBookmarksBtn');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            const modal = document.getElementById('bookmarksModal');
+            if (modal) modal.classList.add('hidden');
+        });
+    }
+});

@@ -251,13 +251,37 @@ function createCard(surahNum, start, end, data) {
             if (window.showToast) window.showToast('Text copied', 'content_copy');
         };
 
+        const bookmarkBtn = document.createElement('button');
+        bookmarkBtn.className = "text-white/40 hover:text-[#56A3A6] p-2 transition bookmark-toggle-btn";
+        bookmarkBtn.setAttribute('aria-label', `Bookmark`);
+        bookmarkBtn.dataset.surah = surahNum;
+        bookmarkBtn.dataset.start = start;
+        bookmarkBtn.dataset.end = end;
+        
+        const isSaved = window.isBookmarked && window.isBookmarked(surahNum, start, end);
+        bookmarkBtn.innerHTML = `<span class="material-symbols-outlined text-xl" aria-hidden="true">${isSaved ? 'bookmark' : 'bookmark_border'}</span>`;
+        if (isSaved) bookmarkBtn.classList.add('text-[#56A3A6]');
+        
+        bookmarkBtn.onclick = (e) => {
+            e.stopPropagation();
+            if (window.toggleBookmark) {
+                const nowSaved = window.toggleBookmark(surahNum, start, end, data);
+                bookmarkBtn.innerHTML = `<span class="material-symbols-outlined text-xl" aria-hidden="true">${nowSaved ? 'bookmark' : 'bookmark_border'}</span>`;
+                if (nowSaved) {
+                    bookmarkBtn.classList.add('text-[#56A3A6]');
+                } else {
+                    bookmarkBtn.classList.remove('text-[#56A3A6]');
+                }
+            }
+        };
+
         const downloadBtn = document.createElement('button');
         downloadBtn.className = "text-white/40 hover:text-[#56A3A6] p-2 transition";
-        downloadBtn.setAttribute('aria-label', `Download`);
+        downloadBtn.setAttribute('aria-label', `Export`);
         downloadBtn.innerHTML = '<span class="material-symbols-outlined text-xl" aria-hidden="true">download</span>';
         downloadBtn.onclick = (e) => {
             e.stopPropagation();
-            openDownloadModal(surahNum, start, end);
+            openDownloadModal(card, surahNum, start, end, data);
         };
 
         const playBtn = document.createElement('button');
@@ -266,23 +290,10 @@ function createCard(surahNum, start, end, data) {
         playBtn.innerHTML = '<span class="material-symbols-outlined" aria-hidden="true">play_arrow</span>';
         playBtn.onclick = (e) => handleCardPlayClick(card, surahNum, start, end);
 
-        const videoBtn = document.createElement('button');
-        videoBtn.className = "text-white/40 hover:text-[#56A3A6] p-2 transition";
-        videoBtn.setAttribute('aria-label', `Export Video`);
-        videoBtn.innerHTML = '<span class="material-symbols-outlined text-xl" aria-hidden="true">videocam</span>';
-        videoBtn.onclick = (e) => {
-            e.stopPropagation();
-            if (window.VideoExporter && window.VideoExporter.isExporting) {
-                if (window.showToast) window.showToast('Already exporting a video.', 'warning');
-                return;
-            }
-            openVideoExportModal(card, surahNum, start, end, data);
-        };
-
+        actionsDiv.appendChild(bookmarkBtn);
         actionsDiv.appendChild(shareBtn);
         actionsDiv.appendChild(copyTextBtn);
         actionsDiv.appendChild(downloadBtn);
-        actionsDiv.appendChild(videoBtn);
         actionsDiv.appendChild(playBtn);
     }
 
@@ -389,49 +400,15 @@ function triggerVersePlay(card, surah, start, end, verseNum, type) {
     document.dispatchEvent(new CustomEvent('manual-play-started', { detail: { card: card } }));
 }
 
-function openDownloadModal(surah, start, end) {
+function openDownloadModal(card, surah, start, end, data) {
     const modal = document.getElementById('downloadModal');
-    const reciterSelect = document.getElementById('reciterSelect');
-    const langSelect = document.getElementById('languageSelect');
-
-    document.getElementById('dlModalTitle').textContent = `Surah ${surah}: Verses ${start}-${end}`;
-    const dlReciterSelect = document.getElementById('dlModalReciterSelect');
-    const dlLangSelect = document.getElementById('dlModalLangSelect');
-
-    if (dlReciterSelect) { dlReciterSelect.innerHTML = reciterSelect.innerHTML; dlReciterSelect.value = reciterSelect.value; }
-    if (dlLangSelect) { dlLangSelect.innerHTML = langSelect.innerHTML; dlLangSelect.value = langSelect.value; }
-
-    document.getElementById('dlProgressContainer').classList.add('hidden');
-    document.getElementById('dlConfirmBtn').style.display = 'block';
-    modal.classList.remove('hidden');
-
-    document.getElementById('dlConfirmBtn').onclick = () => {
-        document.getElementById('dlProgressContainer').classList.remove('hidden');
-        document.getElementById('dlConfirmBtn').style.display = 'none';
-        const finalReciter = dlReciterSelect ? dlReciterSelect.value : reciterSelect.value;
-        const finalLang = dlLangSelect ? dlLangSelect.value : langSelect.value;
-        const surahSelect = document.getElementById('surahSelect');
-        let surahName = `Surah ${surah}`;
-        const option = Array.from(surahSelect.options).find(opt => parseInt(opt.value) === surah);
-        if (option) surahName = option.text;
-
-        if (typeof downloadGroupedSection === 'function') downloadGroupedSection(surah, start, end, finalReciter, finalLang, surahName);
-    };
-    document.getElementById('dlCancelBtn').onclick = closeDownloadModal;
-}
-
-function closeDownloadModal() { document.getElementById('downloadModal').classList.add('hidden'); }
-
-function openVideoExportModal(card, surah, start, end, data) {
-    const modal = document.getElementById('videoExportModal');
     if (!modal) return;
 
-    document.getElementById('vidModalTitle').textContent = `Video: Verses ${start}-${end}`;
+    document.getElementById('dlModalTitle').textContent = `Export Surah ${surah}: ${start}-${end}`;
 
     const warningEl = document.getElementById('vidModalWarning');
     if (warningEl) {
-        // If the card's internal scroll height is tall, it will trigger the slow FFmpeg scrolling crop filter
-        if (card.scrollHeight > 1000) {
+        if (card && card.scrollHeight > 1000) {
             warningEl.classList.remove('hidden');
         } else {
             warningEl.classList.add('hidden');
@@ -440,26 +417,52 @@ function openVideoExportModal(card, surah, start, end, data) {
 
     const reciterSelect = document.getElementById('reciterSelect');
     const langSelect = document.getElementById('languageSelect');
-    const vidReciterSelect = document.getElementById('vidModalReciterSelect');
-    const vidLangSelect = document.getElementById('vidModalLangSelect');
+    const dlReciterSelect = document.getElementById('dlModalReciterSelect');
+    const dlLangSelect = document.getElementById('dlModalLangSelect');
     const vidPaceSelect = document.getElementById('vidModalPaceSelect');
 
-    if (vidReciterSelect) {
-        vidReciterSelect.innerHTML = reciterSelect.innerHTML;
-        vidReciterSelect.value = reciterSelect.value;
-    }
-    if (vidLangSelect) {
-        vidLangSelect.innerHTML = langSelect.innerHTML;
-        vidLangSelect.value = langSelect.value;
-    }
+    if (dlReciterSelect) { dlReciterSelect.innerHTML = reciterSelect.innerHTML; dlReciterSelect.value = reciterSelect.value; }
+    if (dlLangSelect) { dlLangSelect.innerHTML = langSelect.innerHTML; dlLangSelect.value = langSelect.value; }
 
+    document.getElementById('dlProgressContainer').classList.add('hidden');
+    document.getElementById('dlConfirmBtn').style.display = 'flex';
+    document.getElementById('vidConfirmBtn').style.display = 'flex';
+    
     modal.classList.remove('hidden');
 
+    // Audio Download Logic
+    document.getElementById('dlConfirmBtn').onclick = () => {
+        document.getElementById('dlProgressContainer').classList.remove('hidden');
+        document.getElementById('dlConfirmBtn').style.display = 'none';
+        document.getElementById('vidConfirmBtn').style.display = 'none';
+        
+        const finalReciter = dlReciterSelect ? dlReciterSelect.value : reciterSelect.value;
+        const finalLang = dlLangSelect ? dlLangSelect.value : langSelect.value;
+        
+        const surahSelect = document.getElementById('surahSelect');
+        let surahName = `Surah ${surah}`;
+        if (surahSelect) {
+            const option = Array.from(surahSelect.options).find(opt => parseInt(opt.value) === surah);
+            if (option) surahName = option.text;
+        }
+
+        if (typeof downloadGroupedSection === 'function') {
+            downloadGroupedSection(surah, start, end, finalReciter, finalLang, surahName).finally(() => {
+                closeDownloadModal();
+            });
+        }
+    };
+
+    // Video Export Logic
     document.getElementById('vidConfirmBtn').onclick = () => {
-        modal.classList.add('hidden');
+        closeDownloadModal();
         if (window.VideoExporter) {
-            const finalReciter = vidReciterSelect ? vidReciterSelect.value : reciterSelect.value;
-            const finalLang = vidLangSelect ? vidLangSelect.value : langSelect.value;
+            if (window.VideoExporter.isExporting) {
+                if (window.showToast) window.showToast('Already exporting a video.', 'warning');
+                return;
+            }
+            const finalReciter = dlReciterSelect ? dlReciterSelect.value : reciterSelect.value;
+            const finalLang = dlLangSelect ? dlLangSelect.value : langSelect.value;
             const finalPace = vidPaceSelect ? parseFloat(vidPaceSelect.value) : 1.0;
 
             window.VideoExporter.exportCardToVideo(card, surah, start, end, data, finalReciter, finalLang, finalPace);
@@ -468,9 +471,12 @@ function openVideoExportModal(card, surah, start, end, data) {
         }
     };
 
-    document.getElementById('vidCancelBtn').onclick = () => {
-        modal.classList.add('hidden');
-    };
+    document.getElementById('dlCancelBtn').onclick = closeDownloadModal;
+}
+
+function closeDownloadModal() { 
+    const modal = document.getElementById('downloadModal');
+    if (modal) modal.classList.add('hidden'); 
 }
 
 window.highlightActiveVerseUI = function (surah, verse, type) {
