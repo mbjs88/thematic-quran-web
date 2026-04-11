@@ -37,8 +37,9 @@ export async function onRequest(context) {
     });
 
     // Safely piece the path segments into the API string: /user, /profile, /me, etc
+    const urlObj = new URL(request.url);
     const routeSegments = Array.isArray(params.path) ? params.path : [params.path];
-    const routePath = `/${routeSegments.filter(Boolean).join('/')}`;
+    const routePath = `/${routeSegments.filter(Boolean).join('/')}${urlObj.search}`;
     
     try {
         const httpMethod = request.method;
