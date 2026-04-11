@@ -764,7 +764,6 @@ function setupGlobalEventListeners() {
                 userInitial.textContent = fetchedName.charAt(0).toUpperCase();
             }
         } else {
-        if (welcomeMessage) {
             fetch('/api/qf/auth/v1/users/profile').then(r => r.text()).then(text => {
                 if (!text || text.includes('error') || text === 'Unauthorized' || text.startsWith('<!DOCTYPE') || text.startsWith('<html')) {
                     welcomeMessage.textContent = `User (API Error: ${text ? text.substring(0, 40) : 'empty'})`;
