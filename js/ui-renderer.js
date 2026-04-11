@@ -262,9 +262,6 @@ function createCard(surahNum, start, end, data) {
         bookmarkBtn.innerHTML = `<span class="material-symbols-outlined text-xl" aria-hidden="true">${isSaved ? 'bookmark' : 'bookmark_border'}</span>`;
         if (isSaved) {
             bookmarkBtn.classList.add('text-[#56A3A6]');
-            card.classList.add('border-[#56A3A6]/40', 'bg-[#182a2a]/30');
-            card.classList.remove('border-white/5');
-            card.style.borderColor = "var(--tw-border-opacity) #56A3A6";
         }
         
         bookmarkBtn.onclick = (e) => {
@@ -274,14 +271,8 @@ function createCard(surahNum, start, end, data) {
                 bookmarkBtn.innerHTML = `<span class="material-symbols-outlined text-xl" aria-hidden="true">${nowSaved ? 'bookmark' : 'bookmark_border'}</span>`;
                 if (nowSaved) {
                     bookmarkBtn.classList.add('text-[#56A3A6]');
-                    card.classList.add('border-[#56A3A6]/40', 'bg-[#182a2a]/30');
-                    card.classList.remove('border-white/5');
-                    card.style.borderColor = ""; // remove inline if we add class, wait inline border not needed if class added
                 } else {
                     bookmarkBtn.classList.remove('text-[#56A3A6]');
-                    card.classList.remove('border-[#56A3A6]/40', 'bg-[#182a2a]/30');
-                    card.classList.add('border-white/5');
-                    card.style.borderColor = "";
                 }
             }
         };
