@@ -1211,8 +1211,8 @@ window.qfCollectionId = null;
 
 window.initQfCollectionsSync = async function() {
     try {
-        // Pass pagination variables which the QF APIs typically strictly require to avoid 422 Unprocessable Content errors on GET requests
-        let res = await fetch('/api/qf/auth/v1/collections?limit=50&first=50');
+        // Pass pagination variables which the QF APIs typically strictly require to avoid 422 Unprocessable Content errors on GET requests. Must be <= 20
+        let res = await fetch('/api/qf/auth/v1/collections?limit=20&first=20');
         
         if (!res.ok) {
              const errText = await res.text();
