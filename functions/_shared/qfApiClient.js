@@ -57,20 +57,11 @@ export function createQfApiClient(env, { accessToken, refreshToken, onTokensRefr
             try {
                 const cloned = response.clone();
                 const text = await cloned.text();
-                // Take up to 100 characters strictly for safe diagnosis without bloating logs
                 errSnippet = text.substring(0, 100).replace(/\s+/g, ' ');
             } catch(e) {}
             
             console.error(`[API Error] Env: ${config.env} | Path: /auth/v1${endpoint} | Status: ${response.status} | Body: ${errSnippet}`);
-
-            if (response.status === 401) {
-                throw new Error("Unauthorized request. Please log in again.");
-            }
-            if (response.status === 403) {
-                throw new Error("Permission denied. Missing required scopes. Please configure access or prompt user for correct consent.");
-            }
-            
-            throw new Error(`API Request failed with status ${response.status}`);
+            // Explicitly do not throw here. Allow the literal Quran.com Response to map back seamlessly to the client.
         }
 
         return response;
