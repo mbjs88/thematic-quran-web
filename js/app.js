@@ -676,7 +676,10 @@ function setupGlobalEventListeners() {
                         chapter_number: parseInt(surah),
                         verse_number: parseInt(verse)
                     })
-                }).catch(err => console.debug("Quran.com Sync Out Failed", err));
+                })
+                .then(r => r.text())
+                .then(txt => console.log("SYNC OUT RESPONSE:", txt))
+                .catch(err => console.debug("Quran.com Sync Out Failed", err));
             }, 3000);
         }
     });
@@ -786,10 +789,20 @@ function setupGlobalEventListeners() {
         fetch('/api/qf/v1/reading-sessions')
             .then(r => r.text())
             .then(text => {
-                if (!text || text.includes('error')) return;
+                if (!text || text.includes('error')) {
+                    console.log("SYNC ERROR/EMPTY:", text);
+                    if (text && text.includes('error')) {
+                        document.getElementById('welcomeMessage').textContent = `Sync Error: ${text.substring(0, 40)}`;
+                    }
+                    return;
+                }
                 const rawJson = JSON.parse(text);
                 const dataArray = rawJson.data ? rawJson.data : rawJson;
-                if (dataArray && dataArray.length > 0) {
+                
+                if (!dataArray || dataArray.length === 0) {
+                     console.log("SYNC: No sessions found in dataArray.");
+                     // No remote data, do nothing!
+                } else if (dataArray && dataArray.length > 0) {
                     const latestSession = dataArray[0];
                     const qSurah = parseInt(latestSession.chapterNumber || latestSession.chapter_number);
                     const qVerse = parseInt(latestSession.verseNumber || latestSession.verse_number);
@@ -856,7 +869,10 @@ function setupGlobalEventListeners() {
                     }
                 }
             })
-            .catch(e => console.debug("Quran.com Sync In Failed", e));
+            .catch(e => {
+                console.debug("Quran.com Sync In Failed", e);
+                document.getElementById('welcomeMessage').textContent = `Sync Fetch Failed: ${e.message}`;
+            });
     }
 
     if (quranLoginBtn) {
