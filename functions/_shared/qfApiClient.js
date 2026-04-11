@@ -9,7 +9,7 @@ export function createQfApiClient(env, { accessToken, refreshToken, onTokensRefr
     let refreshPromise = null;
 
     async function req(endpoint, options = {}) {
-        const url = `${config.apiBaseUrl}/auth/v1${endpoint}`;
+        let url = `${config.apiBaseUrl}${endpoint}`;
         
         const headers = new Headers(options.headers || {});
         headers.set('x-client-id', config.clientId);

@@ -756,10 +756,16 @@ function setupGlobalEventListeners() {
         if (tokenData && (tokenData.firstName || tokenData.name || tokenData.given_name || tokenData.first_name || tokenData.username)) {
             const fetchedName = tokenData.firstName || tokenData.username || tokenData.name || tokenData.given_name || tokenData.first_name;
             welcomeMessage.textContent = `Assalamu alaikum, ${fetchedName}`;
-            userInitial.textContent = fetchedName.charAt(0).toUpperCase();
+            
+            const pic = tokenData.avatar_url || tokenData.picture || tokenData.avatar || tokenData.photo || tokenData.avatarUrl || tokenData.pictureUrl;
+            if (pic) {
+                userInitial.innerHTML = `<img src="${pic}" alt="Profile" class="w-full h-full rounded-full object-cover">`;
+            } else {
+                userInitial.textContent = fetchedName.charAt(0).toUpperCase();
+            }
         } else {
-            // Tokens are opaque or missing standard OpenID attributes, utilize secure proxy layer!
-            fetch('/api/qf/users/profile').then(r => r.text()).then(text => {
+        if (welcomeMessage) {
+            fetch('/api/qf/auth/v1/users/profile').then(r => r.text()).then(text => {
                 if (!text || text.includes('error') || text === 'Unauthorized' || text.startsWith('<!DOCTYPE') || text.startsWith('<html')) {
                     welcomeMessage.textContent = `User (API Error: ${text ? text.substring(0, 40) : 'empty'})`;
                     return;
@@ -771,7 +777,13 @@ function setupGlobalEventListeners() {
                     const fetchedName = ProfileData.firstName || ProfileData.username || ProfileData.name || ProfileData.given_name;
                     if (fetchedName) {
                         welcomeMessage.textContent = `Assalamu alaikum, ${fetchedName}`;
-                        userInitial.textContent = fetchedName.charAt(0).toUpperCase();
+                        
+                        const pic = ProfileData.avatar_url || ProfileData.picture || ProfileData.avatar || ProfileData.photo || ProfileData.avatarUrl || ProfileData.pictureUrl;
+                        if (pic) {
+                            userInitial.innerHTML = `<img src="${pic}" alt="Profile" class="w-full h-full rounded-full object-cover">`;
+                        } else {
+                            userInitial.textContent = fetchedName.charAt(0).toUpperCase();
+                        }
                     } else {
                         // Expose exactly what JSON keys the API actually sent us back!
                         welcomeMessage.textContent = `User (Keys: ${Object.keys(ProfileData).join(', ')})`;
@@ -785,8 +797,21 @@ function setupGlobalEventListeners() {
         }
         console.log("Quran.com Access Token Detected.");
 
+        const testUrls = [
+            '/api/qf/v1/reading-sessions',
+            '/api/qf/auth/v1/reading-sessions',
+            '/api/qf/reading-sessions',
+            '/api/qf/user/reading-sessions',
+            '/api/qf/auth/v1/user/reading-sessions',
+            '/api/qf/users/reading-sessions',
+            '/api/qf/auth/v1/users/reading-sessions'
+        ];
+        testUrls.forEach(url => {
+             fetch(url).then(r => r.text().then(txt => console.log(`[DISCOVERY] ${url}: ${r.status}`, txt))).catch(e => console.log(e));
+        });
+
         // SYNC IN from Quran.com
-        fetch('/api/qf/user/reading-sessions')
+        fetch('/api/qf/auth/v1/user/reading-sessions')
             .then(r => r.text())
             .then(text => {
                 if (!text || text.includes('error')) {
