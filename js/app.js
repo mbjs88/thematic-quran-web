@@ -672,9 +672,7 @@ function setupGlobalEventListeners() {
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ 
                         chapterNumber: parseInt(surah), 
-                        verseNumber: parseInt(verse),
-                        chapter_number: parseInt(surah),
-                        verse_number: parseInt(verse)
+                        verseNumber: parseInt(verse)
                     })
                 })
                 .then(r => r.text())
