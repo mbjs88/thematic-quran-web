@@ -667,7 +667,7 @@ function setupGlobalEventListeners() {
         if (window.isLoggedIn) {
             if (window.syncOutTimeout) clearTimeout(window.syncOutTimeout);
             window.syncOutTimeout = setTimeout(() => {
-                fetch('/api/qf/user/reading-sessions', {
+                fetch('/api/qf/auth/v1/reading-sessions', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ 
@@ -796,21 +796,8 @@ function setupGlobalEventListeners() {
         }
         console.log("Quran.com Access Token Detected.");
 
-        const testUrls = [
-            '/api/qf/v1/reading-sessions',
-            '/api/qf/auth/v1/reading-sessions',
-            '/api/qf/reading-sessions',
-            '/api/qf/user/reading-sessions',
-            '/api/qf/auth/v1/user/reading-sessions',
-            '/api/qf/users/reading-sessions',
-            '/api/qf/auth/v1/users/reading-sessions'
-        ];
-        testUrls.forEach(url => {
-             fetch(url).then(r => r.text().then(txt => console.log(`[DISCOVERY] ${url}: ${r.status}`, txt))).catch(e => console.log(e));
-        });
-
         // SYNC IN from Quran.com
-        fetch('/api/qf/auth/v1/user/reading-sessions')
+        fetch('/api/qf/auth/v1/reading-sessions?first=5')
             .then(r => r.text())
             .then(text => {
                 if (!text || text.includes('error')) {
