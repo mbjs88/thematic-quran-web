@@ -1211,8 +1211,15 @@ window.qfCollectionId = null;
 
 window.initQfCollectionsSync = async function() {
     try {
-        // From live logs, we definitively know the /auth/ prefix is mandatory for collection logic.
-        let res = await fetch('/api/qf/auth/v1/collections');
+        // Pass pagination variables which the QF APIs typically strictly require to avoid 422 Unprocessable Content errors on GET requests
+        let res = await fetch('/api/qf/auth/v1/collections?limit=50&first=50');
+        
+        if (!res.ok) {
+             const errText = await res.text();
+             console.error("[CloudSync] GET Collections blocked. Aborting POST to prevent duplications. Status:", res.status, errText);
+             return;
+        }
+
         let json = await res.json();
         let list = Array.isArray(json.data) ? json.data : (Array.isArray(json) ? json : []);
         

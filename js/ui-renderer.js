@@ -261,7 +261,8 @@ function createCard(surahNum, start, end, data) {
         const isSaved = window.isBookmarked && window.isBookmarked(surahNum, start, end);
         bookmarkBtn.innerHTML = `<span class="material-symbols-outlined text-xl" aria-hidden="true">${isSaved ? 'bookmark' : 'bookmark_border'}</span>`;
         if (isSaved) {
-            bookmarkBtn.classList.add('text-[#56A3A6]');
+            bookmarkBtn.style.color = '#56A3A6';
+            bookmarkBtn.classList.remove('text-white/40');
         }
         
         bookmarkBtn.onclick = (e) => {
@@ -270,9 +271,11 @@ function createCard(surahNum, start, end, data) {
                 const nowSaved = window.toggleBookmark(surahNum, start, end, data);
                 bookmarkBtn.innerHTML = `<span class="material-symbols-outlined text-xl" aria-hidden="true">${nowSaved ? 'bookmark' : 'bookmark_border'}</span>`;
                 if (nowSaved) {
-                    bookmarkBtn.classList.add('text-[#56A3A6]');
+                    bookmarkBtn.style.color = '#56A3A6';
+                    bookmarkBtn.classList.remove('text-white/40');
                 } else {
-                    bookmarkBtn.classList.remove('text-[#56A3A6]');
+                    bookmarkBtn.style.color = '';
+                    bookmarkBtn.classList.add('text-white/40');
                 }
             }
         };
