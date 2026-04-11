@@ -662,6 +662,18 @@ function setupGlobalEventListeners() {
         // Save the exact current verse to resumeState so progress is retained perfectly even if user leaves mid-section
         const id = parseInt(document.getElementById('surahSelect').value);
         localStorage.setItem('resumeState', JSON.stringify({ mode: currentViewMode, id: id, startVerse: verse }));
+
+        // SYNC OUT to Quran.com if logged in
+        if (window.isLoggedIn) {
+            if (window.syncOutTimeout) clearTimeout(window.syncOutTimeout);
+            window.syncOutTimeout = setTimeout(() => {
+                fetch('/api/qf/v1/reading-sessions', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ chapterNumber: parseInt(surah), verseNumber: parseInt(verse) })
+                }).catch(err => console.debug("Quran.com Sync Out Failed", err));
+            }, 3000);
+        }
     });
 
     document.getElementById('toggleSelectModeBtn').addEventListener('click', () => {
@@ -703,11 +715,11 @@ function setupGlobalEventListeners() {
             const base64Url = token.split('.')[1];
             if (!base64Url) return null;
             const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-            const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+            const jsonPayload = decodeURIComponent(atob(base64).split('').map(function (c) {
                 return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
             }).join(''));
             return JSON.parse(jsonPayload);
-        } catch(e) {
+        } catch (e) {
             return null;
         }
     }
@@ -716,19 +728,20 @@ function setupGlobalEventListeners() {
     const tokenCookieStr = document.cookie.split(';').find(c => c.trim().startsWith('quran_access_token_'));
     const hasToken = !!tokenCookieStr;
     if (hasToken) {
+        window.isLoggedIn = true;
         loggedOutState.classList.add('hidden');
         loggedInState.classList.remove('hidden');
-        
+
         welcomeMessage.textContent = "Loading Profile...";
         userInitial.textContent = "?";
-        
+
         let tokenData = null;
         try {
             const idCookie = document.cookie.split(';').find(c => c.trim().startsWith('quran_id_token_'));
             const tokenToDecode = idCookie ? idCookie : tokenCookieStr;
             const tokenVal = tokenToDecode.split('=')[1];
             tokenData = decodeJWT(tokenVal);
-        } catch(e) {
+        } catch (e) {
             console.error("JWT Decode error", e);
         }
 
@@ -755,7 +768,7 @@ function setupGlobalEventListeners() {
                         // Expose exactly what JSON keys the API actually sent us back!
                         welcomeMessage.textContent = `User (Keys: ${Object.keys(ProfileData).join(', ')})`;
                     }
-                } catch(e) {
+                } catch (e) {
                     welcomeMessage.textContent = `User (Invalid JSON: ${text.substring(0, 30)})`;
                 }
             }).catch(e => {
@@ -763,6 +776,72 @@ function setupGlobalEventListeners() {
             });
         }
         console.log("Quran.com Access Token Detected.");
+
+        // SYNC IN from Quran.com
+        fetch('/api/qf/v1/reading-sessions')
+            .then(r => r.text())
+            .then(text => {
+                if (!text || text.includes('error')) return;
+                const rawJson = JSON.parse(text);
+                const dataArray = rawJson.data ? rawJson.data : rawJson;
+                if (dataArray && dataArray.length > 0) {
+                    const latestSession = dataArray[0];
+                    const qSurah = parseInt(latestSession.chapterNumber || latestSession.chapter_number);
+                    const qVerse = parseInt(latestSession.verseNumber || latestSession.verse_number);
+
+                    let localSurah = null;
+                    let localVerse = null;
+                    try {
+                        const localState = JSON.parse(localStorage.getItem('resumeState'));
+                        if (localState && localState.mode === 'surah') {
+                            localSurah = parseInt(localState.id);
+                            localVerse = parseInt(localState.startVerse);
+                        }
+                    } catch(e) {}
+
+                    // Diff Check - Prompt if Quran.com state exists and differs from local ThematicQuran state
+                    if (qSurah && qVerse && (qSurah !== localSurah || qVerse !== localVerse)) {
+                        const modal = document.getElementById('syncConflictModal');
+                        const textEl = document.getElementById('syncSurahText');
+                        const declineBtn = document.getElementById('declineSyncBtn');
+                        const acceptBtn = document.getElementById('acceptSyncBtn');
+
+                        if (modal && textEl) {
+                            const surahName = typeof window.getSurahName === 'function' ? window.getSurahName(qSurah) : `Surah ${qSurah}`;
+                            textEl.textContent = `${surahName}, Ayah ${qVerse}`;
+                            modal.classList.remove('translate-x-[150%]');
+
+                            declineBtn.onclick = () => {
+                                modal.classList.add('translate-x-[150%]');
+                            };
+
+                            acceptBtn.onclick = () => {
+                                modal.classList.add('translate-x-[150%]');
+                                // Overwrite local state with Quran.com state
+                                localStorage.setItem('resumeState', JSON.stringify({ mode: 'surah', id: qSurah, startVerse: qVerse }));
+                                
+                                document.getElementById('viewModeSelect').value = 'surah';
+                                document.getElementById('viewModeSelect').dispatchEvent(new Event('change'));
+                                document.getElementById('surahSelect').value = qSurah;
+                                document.getElementById('surahSelect').dispatchEvent(new Event('change'));
+                                
+                                setTimeout(() => {
+                                    if (typeof window.playRange === 'function') {
+                                        const allCards = Array.from(document.querySelectorAll('.thematic-card'));
+                                        const targetCard = allCards.find(c => parseInt(c.dataset.start) <= qVerse && parseInt(c.dataset.end) >= qVerse);
+                                        if(targetCard) {
+                                            window.playRange(qSurah, parseInt(targetCard.dataset.start), parseInt(targetCard.dataset.end), qVerse, 'arabic');
+                                        } else {
+                                            window.playRange(qSurah, qVerse, qVerse, qVerse, 'arabic');
+                                        }
+                                    }
+                                }, 800);
+                            };
+                        }
+                    }
+                }
+            })
+            .catch(e => console.debug("Quran.com Sync In Failed", e));
     }
 
     if (quranLoginBtn) {
