@@ -670,7 +670,12 @@ function setupGlobalEventListeners() {
                 fetch('/api/qf/v1/reading-sessions', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ chapterNumber: parseInt(surah), verseNumber: parseInt(verse) })
+                    body: JSON.stringify({ 
+                        chapterNumber: parseInt(surah), 
+                        verseNumber: parseInt(verse),
+                        chapter_number: parseInt(surah),
+                        verse_number: parseInt(verse)
+                    })
                 }).catch(err => console.debug("Quran.com Sync Out Failed", err));
             }, 3000);
         }
@@ -817,25 +822,35 @@ function setupGlobalEventListeners() {
 
                             acceptBtn.onclick = () => {
                                 modal.classList.add('translate-x-[150%]');
+                                
                                 // Overwrite local state with Quran.com state
                                 localStorage.setItem('resumeState', JSON.stringify({ mode: 'surah', id: qSurah, startVerse: qVerse }));
                                 
+                                // Manually change view mode without dispatching the event (which causes loadContent(1) race condition)
+                                currentViewMode = 'surah';
                                 document.getElementById('viewModeSelect').value = 'surah';
-                                document.getElementById('viewModeSelect').dispatchEvent(new Event('change'));
+                                populateDropdown();
                                 document.getElementById('surahSelect').value = qSurah;
-                                document.getElementById('surahSelect').dispatchEvent(new Event('change'));
                                 
-                                setTimeout(() => {
-                                    if (typeof window.playRange === 'function') {
-                                        const allCards = Array.from(document.querySelectorAll('.thematic-card'));
-                                        const targetCard = allCards.find(c => parseInt(c.dataset.start) <= qVerse && parseInt(c.dataset.end) >= qVerse);
-                                        if(targetCard) {
-                                            window.playRange(qSurah, parseInt(targetCard.dataset.start), parseInt(targetCard.dataset.end), qVerse, 'arabic');
-                                        } else {
-                                            window.playRange(qSurah, qVerse, qVerse, qVerse, 'arabic');
+                                // Cleanly load the target content
+                                if (typeof window.loadContent === 'function') {
+                                    window.loadContent(qSurah, qVerse);
+                                    
+                                    setTimeout(() => {
+                                        if (typeof window.playRange === 'function') {
+                                            const allCards = Array.from(document.querySelectorAll('.thematic-card'));
+                                            const targetCard = allCards.find(c => parseInt(c.dataset.start) <= qVerse && parseInt(c.dataset.end) >= qVerse);
+                                            if(targetCard) {
+                                                window.playRange(qSurah, parseInt(targetCard.dataset.start), parseInt(targetCard.dataset.end), qVerse, 'arabic');
+                                            } else {
+                                                window.playRange(qSurah, qVerse, qVerse, qVerse, 'arabic');
+                                            }
                                         }
-                                    }
-                                }, 800);
+                                    }, 1200); // give enough time for thematic cards to render
+                                } else {
+                                    // Fallback if loadContent is somehow unavailable
+                                    window.location.reload();
+                                }
                             };
                         }
                     }
