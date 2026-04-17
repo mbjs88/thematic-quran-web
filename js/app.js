@@ -1213,46 +1213,132 @@ function setupCustomScrollbar() {
 
 window.isBookmarked = function(surah, start, end) {
     const saved = JSON.parse(localStorage.getItem('thematic_bookmarks')) || [];
-    return saved.some(b => b.surah === parseInt(surah) && b.start === parseInt(start) && b.end === parseInt(end));
+    return saved.some(b => b.surah === parseInt(surah) && b.start === parseInt(start));
 };
 
 window.qfCollectionId = null;
 
 window.initQfCollectionsSync = async function() {
     try {
-        // Pass pagination variables which the QF APIs typically strictly require to avoid 422 Unprocessable Content errors on GET requests. Must be <= 20
         let res = await fetch('/api/qf/auth/v1/collections?first=20');
         
         if (!res.ok) {
-             const errText = await res.text();
-             console.error("[CloudSync] GET Collections blocked. Aborting POST to prevent duplications. Status:", res.status, errText);
+             console.error("[CloudSync] GET Collections blocked. Aborting. Status:", res.status);
              return;
         }
 
         let json = await res.json();
-        let list = Array.isArray(json.data) ? json.data : (Array.isArray(json) ? json : []);
+        
+        // Extensively search structural payload arrays 
+        let list = [];
+        if (Array.isArray(json.data)) list = json.data;
+        else if (json.data && Array.isArray(json.data.collections)) list = json.data.collections;
+        else if (Array.isArray(json.collections)) list = json.collections;
+        else if (Array.isArray(json)) list = json;
         
         let target = list.find(c => c.name === "Thematic Quran Saves");
         if (target) {
-            window.qfCollectionId = target.id;
+            window.qfCollectionId = target.id || target.collectionId;
             console.log("[CloudSync] Found Existing Collection:", window.qfCollectionId);
-            return;
+        } else {
+            // Build isolated collection folder if it definitively does not exist across all schemas
+            let createRes = await fetch('/api/qf/auth/v1/collections', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ name: "Thematic Quran Saves" })
+            });
+            
+            let createJson = await createRes.json();
+            if (createJson.data && createJson.data.id) {
+                window.qfCollectionId = createJson.data.id;
+                console.log("[CloudSync] Bootstrapped New Collection:", window.qfCollectionId);
+            }
         }
-        
-        // Build isolated collection folder if missing
-        let createRes = await fetch('/api/qf/auth/v1/collections', {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({ name: "Thematic Quran Saves" })
-        });
-        
-        let createJson = await createRes.json();
-        if (createJson.data && createJson.data.id) {
-            window.qfCollectionId = createJson.data.id;
-            console.log("[CloudSync] Bootstrapped New Collection:", window.qfCollectionId);
+
+        if (window.qfCollectionId) {
+            await window.execTwoWayBookmarkSync();
         }
     } catch(e) {
         console.error("[CloudSync] Collections Init Error:", e);
+    }
+};
+
+window.execTwoWayBookmarkSync = async function() {
+    try {
+        console.log("[CloudSync] Booting Two-Way Merge Engine...");
+        let remoteRes = await fetch(`/api/qf/auth/v1/collections/${window.qfCollectionId}/bookmarks?first=100`);
+        if (!remoteRes.ok) return;
+        
+        let rJson = await remoteRes.json();
+        let remoteList = [];
+        if (Array.isArray(rJson.data)) remoteList = rJson.data;
+        else if (rJson.data && Array.isArray(rJson.data.bookmarks)) remoteList = rJson.data.bookmarks;
+        else if (Array.isArray(rJson.bookmarks)) remoteList = rJson.bookmarks;
+        else if (Array.isArray(rJson)) remoteList = rJson;
+
+        let localSaved = JSON.parse(localStorage.getItem('thematic_bookmarks')) || [];
+        let didMutateLocal = false;
+
+        // 1. Download missing nodes from Cloud => Local Memory
+        remoteList.forEach(rbObj => {
+            const rb = rbObj.bookmark || rbObj;
+            const rSurah = parseInt(rb.key || rb.chapterNumber || rb.chapter_number);
+            const rStart = parseInt(rb.verseNumber || rb.verse_number);
+            const rId = rb.id || rbObj.id;
+
+            if (rSurah && rStart) {
+                let localIdx = localSaved.findIndex(lb => lb.surah === rSurah && lb.start === rStart);
+                if (localIdx === -1) {
+                    localSaved.push({
+                        surah: rSurah,
+                        start: rStart,
+                        end: rStart, // Auto-filling the visual range since Quran.com only anchors singular Ayahs natively
+                        remoteId: rId,
+                        timestamp: Date.now(),
+                        surahName: `Surah ${rSurah}`
+                    });
+                    didMutateLocal = true;
+                } else if (!localSaved[localIdx].remoteId) {
+                    localSaved[localIdx].remoteId = rId;
+                    didMutateLocal = true;
+                }
+            }
+        });
+
+        // 2. Upload missing local nodes => Cloud Folder
+        for (let i=0; i<localSaved.length; i++) {
+            let lb = localSaved[i];
+            if (!lb.remoteId) {
+                const payload = {
+                    key: lb.surah,
+                    type: "ayah",
+                    verseNumber: lb.start,
+                    mushaf: 1
+                };
+                
+                try {
+                     let upRes = await fetch(`/api/qf/auth/v1/collections/${window.qfCollectionId}/bookmarks`, {
+                         method: 'POST',
+                         headers: {'Content-Type': 'application/json'},
+                         body: JSON.stringify(payload)
+                     });
+                     let j = await upRes.json();
+                     if (j && j.data && j.data.id) {
+                          lb.remoteId = j.data.id;
+                          didMutateLocal = true;
+                          console.log("[CloudSync] Auto-Pushed Native Local to Cloud:", lb.remoteId);
+                     }
+                } catch(e) {}
+            }
+        }
+
+        if (didMutateLocal) {
+            localStorage.setItem('thematic_bookmarks', JSON.stringify(localSaved));
+            if (window.renderBookmarksGallery) window.renderBookmarksGallery();
+        }
+
+    } catch (e) {
+        console.error("[CloudSync] Two-way sync engine failure:", e);
     }
 };
 
@@ -1261,7 +1347,7 @@ window.toggleBookmark = function(surah, start, end, data) {
     const s = parseInt(surah); 
     const st = parseInt(start); 
     const e = parseInt(end);
-    let idx = saved.findIndex(b => b.surah === s && b.start === st && b.end === e);
+    let idx = saved.findIndex(b => b.surah === s && b.start === st);
     
     if (idx >= 0) {
         const deletedObj = saved[idx];
@@ -1271,8 +1357,13 @@ window.toggleBookmark = function(surah, start, end, data) {
         
         // Cloud Delete Execution
         if (window.qfCollectionId && deletedObj.remoteId) {
-            const deleteEp = `/api/qf/auth/v1/collections/${window.qfCollectionId}/bookmarks/${deletedObj.remoteId}`;
-            fetch(deleteEp, { method: 'DELETE' }).catch(()=>{});
+            const deleteEndpoints = [
+                 `/api/qf/auth/v1/collections/${window.qfCollectionId}/bookmarks/${deletedObj.remoteId}`,
+                 `/api/qf/auth/v1/delete-collection-bookmark-by-id/${deletedObj.remoteId}`
+            ];
+            deleteEndpoints.forEach(ep => {
+                fetch(ep, { method: 'DELETE' }).catch(()=>{});
+            });
             console.log("[CloudSync] Destroyed remote anchor.");
         }
         return false;
@@ -1298,7 +1389,6 @@ window.toggleBookmark = function(surah, start, end, data) {
         
         // Cloud Write Execution
         if (window.qfCollectionId) {
-            // According to API DOCS schemas:
             const payload = {
                 key: s,             // The Surah number
                 type: "ayah",       // The bookmark type
@@ -1314,7 +1404,6 @@ window.toggleBookmark = function(surah, start, end, data) {
                 ayahNumber: st
             };
             
-            // Strictly push to the authenticated routing namespace
             const writeEp = `/api/qf/auth/v1/collections/${window.qfCollectionId}/bookmarks`;
             fetch(writeEp, {
                 method: 'POST',
@@ -1323,14 +1412,13 @@ window.toggleBookmark = function(surah, start, end, data) {
             }).then(r => r.json()).then(j => {
                  if (j && j.data && j.data.id) {
                       const updatedSaved = JSON.parse(localStorage.getItem('thematic_bookmarks')) || [];
-                      let syncIdx = updatedSaved.findIndex(b => b.surah === s && b.start === st && b.end === e);
+                      let syncIdx = updatedSaved.findIndex(b => b.surah === s && b.start === st);
                       if (syncIdx >= 0) {
                            updatedSaved[syncIdx].remoteId = j.data.id;
                            localStorage.setItem('thematic_bookmarks', JSON.stringify(updatedSaved));
                            console.log("[CloudSync] Remote Anchor linked:", j.data.id);
                       }
                  } else if (j && j.success === false) {
-                     // Fire a legacy unauthenticated endpoint as an absolute fallback
                      const fallbackEp = `/api/qf/auth/v1/add-collection-bookmark`;
                      fetch(fallbackEp, {
                          method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({...payload, collectionId: window.qfCollectionId})
