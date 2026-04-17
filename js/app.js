@@ -1357,17 +1357,37 @@ window.toggleBookmark = function(surah, start, end, data) {
         
         // Cloud Delete Execution
         if (window.qfCollectionId) {
-            const payload = {
-                key: deletedObj.surah,
-                type: "ayah",
-                verseNumber: deletedObj.start,
-                mushaf: 1
-            };
-            fetch(`/api/qf/auth/v1/collections/${window.qfCollectionId}/bookmarks`, {
-                method: 'DELETE',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify(payload)
-            }).then(r => console.log("[CloudSync] Destroyed remote anchor.")).catch(()=>{});
+            (async function() {
+                const endpoints = [];
+                // 1. Primary Priority: Try natively deleting exact node by strict remote ID
+                if (deletedObj.remoteId) {
+                    endpoints.push({ url: `/api/qf/auth/v1/collections/${window.qfCollectionId}/bookmarks/${deletedObj.remoteId}`, method: 'DELETE' });
+                }
+                
+                // 2. Fallbacks: Try parameter deletion. 
+                // Quran.com hard-binds mushaf version. If they created it natively in mushaf 4, trying to delete via mushaf 1 throws 404.
+                endpoints.push({ url: `/api/qf/auth/v1/collections/${window.qfCollectionId}/bookmarks`, method: 'DELETE', body: {
+                    key: deletedObj.surah, type: "ayah", verseNumber: deletedObj.start, mushaf: 1
+                }});
+                endpoints.push({ url: `/api/qf/auth/v1/collections/${window.qfCollectionId}/bookmarks`, method: 'DELETE', body: {
+                    key: deletedObj.surah, type: "ayah", verseNumber: deletedObj.start, mushaf: 4
+                }});
+
+                for (let ep of endpoints) {
+                    try {
+                        let opts = { method: ep.method, headers: {} };
+                        if (ep.body) {
+                            opts.headers['Content-Type'] = 'application/json';
+                            opts.body = JSON.stringify(ep.body);
+                        }
+                        let r = await fetch(ep.url, opts);
+                        if (r.ok) {
+                            console.log("[CloudSync] Destroyed remote anchor.");
+                            break; // Halt the waterfall so we don't throw useless 404s
+                        }
+                    } catch(e) {}
+                }
+            })();
         }
         return false;
     } else {
