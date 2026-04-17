@@ -1299,13 +1299,20 @@ window.execTwoWayBookmarkSync = async function() {
             if (rSurah && rStart) {
                 let localIdx = localSaved.findIndex(lb => lb.surah === rSurah && lb.start === rStart);
                 if (localIdx === -1) {
+                    const surahSelect = document.getElementById('surahSelect');
+                    let sName = `Surah ${rSurah}`;
+                    if (surahSelect) {
+                        const option = Array.from(surahSelect.options).find(opt => parseInt(opt.value) === rSurah);
+                        if (option) sName = option.text;
+                    }
+                    
                     localSaved.push({
                         surah: rSurah,
                         start: rStart,
                         end: rStart, // Auto-filling the visual range since Quran.com only anchors singular Ayahs natively
                         remoteId: rId,
                         timestamp: Date.now(),
-                        surahName: `Surah ${rSurah}`
+                        surahName: sName
                     });
                     didMutateLocal = true;
                 } else if (!localSaved[localIdx].remoteId) {
