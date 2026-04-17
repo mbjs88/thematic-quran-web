@@ -1220,7 +1220,7 @@ window.qfCollectionId = null;
 
 window.initQfCollectionsSync = async function() {
     try {
-        let res = await fetch('/api/qf/auth/v1/collections?first=20');
+        let res = await fetch('/api/qf/auth/v1/collections?first=20&sortBy=recentlyUpdated');
         
         if (!res.ok) {
              console.error("[CloudSync] GET Collections blocked. Aborting. Status:", res.status);
@@ -1356,15 +1356,18 @@ window.toggleBookmark = function(surah, start, end, data) {
         if (window.renderBookmarksGallery) window.renderBookmarksGallery();
         
         // Cloud Delete Execution
-        if (window.qfCollectionId && deletedObj.remoteId) {
-            const deleteEndpoints = [
-                 `/api/qf/auth/v1/collections/${window.qfCollectionId}/bookmarks/${deletedObj.remoteId}`,
-                 `/api/qf/auth/v1/delete-collection-bookmark-by-id/${deletedObj.remoteId}`
-            ];
-            deleteEndpoints.forEach(ep => {
-                fetch(ep, { method: 'DELETE' }).catch(()=>{});
-            });
-            console.log("[CloudSync] Destroyed remote anchor.");
+        if (window.qfCollectionId) {
+            const payload = {
+                key: deletedObj.surah,
+                type: "ayah",
+                verseNumber: deletedObj.start,
+                mushaf: 1
+            };
+            fetch(`/api/qf/auth/v1/collections/${window.qfCollectionId}/bookmarks`, {
+                method: 'DELETE',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(payload)
+            }).then(r => console.log("[CloudSync] Destroyed remote anchor.")).catch(()=>{});
         }
         return false;
     } else {
