@@ -1220,7 +1220,7 @@ window.qfCollectionId = null;
 
 window.initQfCollectionsSync = async function() {
     try {
-        let res = await fetch('/api/qf/auth/v1/collections');
+        let res = await fetch('/api/qf/auth/v1/collections?first=20');
         
         if (!res.ok) {
              console.error("[CloudSync] GET Collections blocked. Aborting. Status:", res.status);
