@@ -1352,7 +1352,7 @@ window.execTwoWayBookmarkSync = async function() {
     }
 };
 
-window.toggleBookmark = function(surah, start, end, data) {
+window.toggleBookmark = async function(surah, start, end, data) {
     let saved = JSON.parse(localStorage.getItem('thematic_bookmarks')) || [];
     const s = parseInt(surah); 
     const st = parseInt(start); 
