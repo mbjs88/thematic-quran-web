@@ -1393,15 +1393,7 @@ window.toggleBookmark = function(surah, start, end, data) {
                 key: s,             // The Surah number
                 type: "ayah",       // The bookmark type
                 verseNumber: st,    // The verse number
-                mushaf: 1,          // 1 = QCFV2
-                
-                // Polyfills for legacy endpoint variations
-                mushafId: 1,
-                chapterNumber: s,
-                chapter_number: s,
-                surahNumber: s,
-                verse_number: st,
-                ayahNumber: st
+                mushaf: 1           // 1 = QCFV2
             };
             
             const writeEp = `/api/qf/auth/v1/collections/${window.qfCollectionId}/bookmarks`;
