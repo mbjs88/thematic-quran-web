@@ -1266,7 +1266,7 @@ window.initQfCollectionsSync = async function() {
 window.execTwoWayBookmarkSync = async function() {
     try {
         console.log("[CloudSync] Booting Two-Way Merge Engine...");
-        let remoteRes = await fetch(`/api/qf/auth/v1/collections/${window.qfCollectionId}/bookmarks?first=20`);
+        let remoteRes = await fetch(`/api/qf/auth/v1/collections/all?first=20`);
         if (!remoteRes.ok) return;
         
         let rJson = await remoteRes.json();
