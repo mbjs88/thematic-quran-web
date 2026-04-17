@@ -1220,7 +1220,7 @@ window.qfCollectionId = null;
 
 window.initQfCollectionsSync = async function() {
     try {
-        let res = await fetch('/api/qf/auth/v1/collections?first=20');
+        let res = await fetch('/api/qf/auth/v1/collections');
         
         if (!res.ok) {
              console.error("[CloudSync] GET Collections blocked. Aborting. Status:", res.status);
@@ -1229,14 +1229,14 @@ window.initQfCollectionsSync = async function() {
 
         let json = await res.json();
         
-        // Extensively search structural payload arrays 
+        // Extensively search structural payload arrays per JSON Schema
         let list = [];
         if (Array.isArray(json.data)) list = json.data;
         else if (json.data && Array.isArray(json.data.collections)) list = json.data.collections;
         else if (Array.isArray(json.collections)) list = json.collections;
         else if (Array.isArray(json)) list = json;
         
-        let target = list.find(c => c.name === "Thematic Quran Saves");
+        let target = list.find(c => c.name && c.name.trim().toLowerCase() === "thematic quran saves");
         if (target) {
             window.qfCollectionId = target.id || target.collectionId;
             console.log("[CloudSync] Found Existing Collection:", window.qfCollectionId);
