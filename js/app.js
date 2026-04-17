@@ -1357,37 +1357,15 @@ window.toggleBookmark = function(surah, start, end, data) {
         
         // Cloud Delete Execution
         if (window.qfCollectionId) {
-            (async function() {
-                const endpoints = [];
-                // 1. Primary Priority: Try natively deleting exact node by strict remote ID
-                if (deletedObj.remoteId) {
-                    endpoints.push({ url: `/api/qf/auth/v1/collections/${window.qfCollectionId}/bookmarks/${deletedObj.remoteId}`, method: 'DELETE' });
-                }
-                
-                // 2. Fallbacks: Try parameter deletion. 
-                // Quran.com hard-binds mushaf version. If they created it natively in mushaf 4, trying to delete via mushaf 1 throws 404.
-                endpoints.push({ url: `/api/qf/auth/v1/collections/${window.qfCollectionId}/bookmarks`, method: 'DELETE', body: {
-                    key: deletedObj.surah, type: "ayah", verseNumber: deletedObj.start, mushaf: 1
-                }});
-                endpoints.push({ url: `/api/qf/auth/v1/collections/${window.qfCollectionId}/bookmarks`, method: 'DELETE', body: {
-                    key: deletedObj.surah, type: "ayah", verseNumber: deletedObj.start, mushaf: 4
-                }});
-
-                for (let ep of endpoints) {
-                    try {
-                        let opts = { method: ep.method, headers: {} };
-                        if (ep.body) {
-                            opts.headers['Content-Type'] = 'application/json';
-                            opts.body = JSON.stringify(ep.body);
-                        }
-                        let r = await fetch(ep.url, opts);
-                        if (r.ok) {
-                            console.log("[CloudSync] Destroyed remote anchor.");
-                            break; // Halt the waterfall so we don't throw useless 404s
-                        }
-                    } catch(e) {}
-                }
-            })();
+            if (deletedObj.remoteId) {
+                fetch(`/api/qf/auth/v1/collections/${window.qfCollectionId}/bookmarks/${deletedObj.remoteId}`, {
+                    method: 'DELETE'
+                }).then(r => {
+                    if (r.ok) console.log("[CloudSync] Destroyed remote anchor.");
+                }).catch(()=>{});
+            } else {
+                console.log("[CloudSync] Deletion skipped explicitly: No Remote ID localized.");
+            }
         }
         return false;
     } else {
@@ -1424,20 +1402,11 @@ window.toggleBookmark = function(surah, start, end, data) {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify(payload)
-            }).then(r => r.json()).then(j => {
-                 if (j && j.data && j.data.id) {
-                      const updatedSaved = JSON.parse(localStorage.getItem('thematic_bookmarks')) || [];
-                      let syncIdx = updatedSaved.findIndex(b => b.surah === s && b.start === st);
-                      if (syncIdx >= 0) {
-                           updatedSaved[syncIdx].remoteId = j.data.id;
-                           localStorage.setItem('thematic_bookmarks', JSON.stringify(updatedSaved));
-                           console.log("[CloudSync] Remote Anchor linked:", j.data.id);
-                      }
-                 } else if (j && j.success === false) {
-                     const fallbackEp = `/api/qf/auth/v1/add-collection-bookmark`;
-                     fetch(fallbackEp, {
-                         method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({...payload, collectionId: window.qfCollectionId})
-                     }).catch(()=>{});
+            }).then(r => r.json()).then(async j => {
+                 if (j.success !== false) {
+                      // Because POST physically refuses to return the generated bookmark ID in the successful body {}, 
+                      // we rapidly trigger the TwoWayMerge Engine quietly in the background to instantaneously fetch it globally!
+                      if (window.execTwoWayBookmarkSync) await window.execTwoWayBookmarkSync();
                  }
             }).catch(e => console.error("[CloudSync] Network Write failed", e));
         }
