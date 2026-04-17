@@ -1220,28 +1220,44 @@ window.qfCollectionId = null;
 
 window.initQfCollectionsSync = async function() {
     try {
-        let res = await fetch('/api/qf/auth/v1/collections?first=20&sortBy=recentlyUpdated');
-        
-        if (!res.ok) {
-             console.error("[CloudSync] GET Collections blocked. Aborting. Status:", res.status);
-             return;
-        }
+        let fetchUrl = '/api/qf/auth/v1/collections?first=20&sortBy=recentlyUpdated';
+        let found = false;
 
-        let json = await res.json();
+        // Recursively crawl EVERY page of the user's collections to physically guarantee we don't accidentally skip the folder if they have > 20
+        while (fetchUrl && !found) {
+            let res = await fetch(fetchUrl);
+            if (!res.ok) {
+                 console.error("[CloudSync] GET Collections blocked natively. Status:", res.status);
+                 return;
+            }
+
+            let json = await res.json();
+            
+            // Defensively extract across multiple known API schema formats natively
+            let list = [];
+            if (Array.isArray(json.data)) list = json.data;
+            else if (json.data && Array.isArray(json.data.collections)) list = json.data.collections;
+            else if (Array.isArray(json.collections)) list = json.collections;
+            else if (Array.isArray(json)) list = json;
+            
+            let target = list.find(c => c.name && c.name.trim().toLowerCase() === "thematic quran saves");
+            if (target) {
+                window.qfCollectionId = target.id || target.collectionId;
+                found = true;
+                console.log("[CloudSync] Found Existing Collection cleanly:", window.qfCollectionId);
+                break;
+            }
+
+            // If we physically survived this page without confirming existence, attempt to safely advance the cursor
+            if (json.pagination && json.pagination.hasNextPage && json.pagination.endCursor) {
+                fetchUrl = `/api/qf/auth/v1/collections?first=20&sortBy=recentlyUpdated&after=${json.pagination.endCursor}`;
+            } else {
+                fetchUrl = null; // Kill the traversal loop instantly because we inherently hit rock bottom
+            }
+        }
         
-        // Extensively search structural payload arrays per JSON Schema
-        let list = [];
-        if (Array.isArray(json.data)) list = json.data;
-        else if (json.data && Array.isArray(json.data.collections)) list = json.data.collections;
-        else if (Array.isArray(json.collections)) list = json.collections;
-        else if (Array.isArray(json)) list = json;
-        
-        let target = list.find(c => c.name && c.name.trim().toLowerCase() === "thematic quran saves");
-        if (target) {
-            window.qfCollectionId = target.id || target.collectionId;
-            console.log("[CloudSync] Found Existing Collection:", window.qfCollectionId);
-        } else {
-            // Build isolated collection folder if it definitively does not exist across all schemas
+        // Only if we violently exhausted every single physically available page across their account will we build a new one
+        if (!found) {
             let createRes = await fetch('/api/qf/auth/v1/collections', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
@@ -1251,7 +1267,7 @@ window.initQfCollectionsSync = async function() {
             let createJson = await createRes.json();
             if (createJson.data && createJson.data.id) {
                 window.qfCollectionId = createJson.data.id;
-                console.log("[CloudSync] Bootstrapped New Collection:", window.qfCollectionId);
+                console.log("[CloudSync] Bootstrapped New Collection structurally:", window.qfCollectionId);
             }
         }
 
