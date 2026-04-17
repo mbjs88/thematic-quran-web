@@ -1261,20 +1261,8 @@ window.initQfCollectionsSync = async function() {
         
         // Only if we violently exhausted every single physically available page across their account will we build a new one
         if (!found) {
-            // FIRE TEMPORARY TELEMETRY DIAGNOSTICS: This physically isolates exactly what Quran.com returns!
-            prompt("CRITICAL DEBUGGING TRIGGERED! \n\nThematicQuran couldn't detect the Saves folder natively inside the API list. Please copy the entire string below from the box and paste it into the chat so we can exactly see what string names their API is feeding you natively:", JSON.stringify(diagnosticList));
-
-            let createRes = await fetch('/api/qf/auth/v1/collections', {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({ name: "Thematic Quran Saves" })
-            });
-            
-            let createJson = await createRes.json();
-            if (createJson.data && createJson.data.id) {
-                window.qfCollectionId = createJson.data.id;
-                console.log("[CloudSync] Bootstrapped New Collection structurally:", window.qfCollectionId);
-            }
+            console.log("[CloudSync] Target collection naturally hidden or absent. Will bootstrap dynamically on first save.");
+            window.qfCollectionId = null;
         }
 
         if (window.qfCollectionId) {
@@ -1383,7 +1371,14 @@ window.toggleBookmark = function(surah, start, end, data) {
                 fetch(`/api/qf/auth/v1/collections/${window.qfCollectionId}/bookmarks/${deletedObj.remoteId}`, {
                     method: 'DELETE'
                 }).then(r => {
-                    if (r.ok) console.log("[CloudSync] Destroyed remote anchor.");
+                    if (r.ok) {
+                        console.log("[CloudSync] Destroyed remote anchor.");
+                        if (saved.length === 0) {
+                            fetch(`/api/qf/auth/v1/collections/${window.qfCollectionId}`, { method: 'DELETE' }).catch(()=>{});
+                            console.log("[CloudSync] Local array natively empty. Erased native Cloud Folder.");
+                            window.qfCollectionId = null;
+                        }
+                    }
                 }).catch(()=>{});
             } else {
                 console.log("[CloudSync] Deletion skipped explicitly: No Remote ID localized.");
@@ -1411,6 +1406,21 @@ window.toggleBookmark = function(surah, start, end, data) {
         if (window.renderBookmarksGallery) window.renderBookmarksGallery();
         
         // Cloud Write Execution
+        if (!window.qfCollectionId) {
+             try {
+                 let upRes = await fetch('/api/qf/auth/v1/collections', {
+                     method: 'POST',
+                     headers: {'Content-Type': 'application/json'},
+                     body: JSON.stringify({ name: "Thematic Quran Saves" })
+                 });
+                 let upJson = await upRes.json();
+                 if (upJson.data && upJson.data.id) {
+                     window.qfCollectionId = upJson.data.id;
+                     console.log("[CloudSync] Late-bootstrapped Native Collection:", window.qfCollectionId);
+                 }
+             } catch(e) {}
+        }
+        
         if (window.qfCollectionId) {
             const payload = {
                 key: s,             // The Surah number
