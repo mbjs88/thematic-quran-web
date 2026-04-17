@@ -1293,11 +1293,33 @@ window.execTwoWayBookmarkSync = async function() {
         remoteList.forEach(rbObj => {
             const rb = rbObj.bookmark || rbObj;
             const rSurah = parseInt(rb.key || rb.chapterNumber || rb.chapter_number);
-            const rStart = parseInt(rb.verseNumber || rb.verse_number);
+            const rStartRaw = parseInt(rb.verseNumber || rb.verse_number);
             const rId = rb.id || rbObj.id;
 
-            if (rSurah && rStart) {
-                let localIdx = localSaved.findIndex(lb => lb.surah === rSurah && lb.start === rStart);
+            if (rSurah && rStartRaw) {
+                let blockStart = rStartRaw;
+                let blockEnd = rStartRaw;
+                
+                // Natively map mathematically isolated downloaded Ayahs directly into their correct Thematic Quran boundaries 
+                if (THEME_BREAKS && THEME_BREAKS[String(rSurah)]) {
+                    let breaks = THEME_BREAKS[String(rSurah)].map(Number).sort((a,b)=>a-b);
+                    if (breaks.length > 0 && breaks[0] !== 1) breaks.unshift(1);
+                    
+                    for (let i = 0; i < breaks.length; i++) {
+                        if (breaks[i] <= rStartRaw) blockStart = breaks[i];
+                        else break;
+                    }
+                    
+                    let bIndex = breaks.indexOf(blockStart);
+                    if (bIndex !== -1 && bIndex + 1 < breaks.length) {
+                        blockEnd = breaks[bIndex + 1] - 1;
+                    } else if (QURAN_DATA && QURAN_DATA.length > 0) { // Resolve end of surah naturally
+                        let sv = QURAN_DATA.filter(v => parseInt(v.surah_no) === rSurah);
+                        if (sv.length > 0) blockEnd = parseInt(sv[sv.length - 1].ayah_no_surah);
+                    }
+                }
+
+                let localIdx = localSaved.findIndex(lb => lb.surah === rSurah && lb.start === blockStart);
                 if (localIdx === -1) {
                     const surahSelect = document.getElementById('surahSelect');
                     let sName = `Surah ${rSurah}`;
@@ -1308,8 +1330,8 @@ window.execTwoWayBookmarkSync = async function() {
                     
                     localSaved.push({
                         surah: rSurah,
-                        start: rStart,
-                        end: rStart, // Auto-filling the visual range since Quran.com only anchors singular Ayahs natively
+                        start: blockStart,
+                        end: blockEnd,
                         remoteId: rId,
                         timestamp: Date.now(),
                         surahName: sName
