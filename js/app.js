@@ -1600,7 +1600,161 @@ document.addEventListener('DOMContentLoaded', () => {
     if (closeBtn) {
         closeBtn.addEventListener('click', () => {
             const modal = document.getElementById('bookmarksModal');
-            if (modal) modal.classList.add('hidden');
         });
     }
+});
+
+// ==========================================
+// SIRAT-UL-MUSTAQEEM VISUALIZATION ENGINE
+// ==========================================
+
+const getLocalYMD = (date) => {
+    let y = date.getFullYear();
+    let m = String(date.getMonth() + 1).padStart(2, '0');
+    let d = String(date.getDate()).padStart(2, '0');
+    return `${y}-${m}-${d}`;
+};
+
+window.calculateDeviations = function(daysArray) {
+    let T = 900; // 15 mins target
+    let k_drift = 16; // Intensity of shift when missing
+    let k_pull = 0.6; // Magnetism back to center when hitting
+    
+    let points = [];
+    points.push(0); // Origin at top
+    
+    let currentBias = 1;
+    let prevD = 0;
+
+    daysArray.forEach((day, index) => {
+        let R = Math.min(day.seconds / T, 1.2);
+        let nextD = 0;
+
+        if (R >= 1.0) {
+            nextD = prevD * Math.max(0, 1 - (R * k_pull));
+            if (Math.abs(nextD) < 2) nextD = 0; 
+            if (nextD === 0 && prevD !== 0) currentBias = currentBias === 1 ? -1 : 1; 
+        } else {
+            let penalty = k_drift * (1 - R);
+            // Inject organic flow wiggle 
+            let organicWiggle = Math.sin(index) * (k_drift * 0.3) * (1 - R);
+            nextD = prevD + (currentBias * penalty) + organicWiggle;
+        }
+        
+        // Prevent drifting violently off the SVG absolute edges
+        nextD = Math.max(-42, Math.min(42, nextD));
+        
+        points.push(nextD);
+        prevD = nextD;
+    });
+    
+    return points;
+};
+
+window.generateSiratPathString = function(points) {
+    let path = `M 0 0`; 
+    // SVGs total Y boundary mapped dynamically
+    let yStep = 400 / (points.length - 1);
+    
+    for (let i = 1; i < points.length; i++) {
+        let currX = points[i];
+        let currY = i * yStep;
+        
+        let prevX = points[i-1];
+        let prevY = (i-1) * yStep;
+        
+        // CUBIC BEZIER MAPPER -> Monotone-Y
+        let cpY = prevY + (yStep / 2);
+        path += ` C ${prevX} ${cpY}, ${currX} ${cpY}, ${currX} ${currY}`;
+    }
+    return path;
+};
+
+window.initSiratVisualizer = async function(forceOpen = false) {
+    let container = document.getElementById('siratContainer');
+    let svgPath = document.getElementById('siratPath');
+    let loader = document.getElementById('siratLoading');
+    let btn = document.getElementById('myPathBtn');
+    if (!container || !svgPath) return;
+    
+    const isOpen = container.style.maxHeight && container.style.maxHeight !== '0px';
+    
+    if (!isOpen || forceOpen) {
+        container.style.maxHeight = '400px';
+        container.style.opacity = '1';
+        container.style.marginTop = '16px';
+        loader.classList.remove('hidden');
+        if (btn) btn.classList.add('ring-2', 'ring-white/50');
+        
+        try {
+            const d = new Date();
+            const toStr = getLocalYMD(d);
+            const dPast = new Date();
+            dPast.setDate(dPast.getDate() - 29); // 30 days window natively
+            const fromStr = getLocalYMD(dPast);
+            
+            const url = `/api/qf/auth/v1/activity-days?from=${fromStr}&to=${toStr}&type=QURAN`;
+            let res = await fetch(url);
+            let json = await res.json();
+            
+            let dataArr = Array.isArray(json.data) ? json.data : [];
+            let mapObj = {};
+            dataArr.forEach(dItem => {
+                if(dItem && dItem.date) mapObj[dItem.date] = dItem.seconds || 0;
+            });
+            
+            // Build absolute chronological buckets
+            let daysArray = [];
+            for(let i=0; i<30; i++) {
+                let dt = new Date();
+                dt.setDate(dt.getDate() - (29 - i));
+                let dtStr = getLocalYMD(dt);
+                daysArray.push({
+                    date: dtStr,
+                    seconds: mapObj[dtStr] || 0
+                });
+            }
+            
+            let deviations = window.calculateDeviations(daysArray);
+            let pathString = window.generateSiratPathString(deviations);
+            
+            // Visually bind it!
+            svgPath.setAttribute('d', pathString);
+            
+            // Dynamic Stroke Styling based on latest read metric
+            let lastDay = daysArray[daysArray.length - 1];
+            if (lastDay.seconds >= 900) {
+                svgPath.setAttribute('stroke', '#88FFD1'); // Success Glow 
+            } else {
+                svgPath.setAttribute('stroke', '#FFB088'); // Warning Warm Glow
+            }
+
+        } catch(e) {
+            console.error("[Sirat Engine] Error Modeling Journey:", e);
+        } finally {
+            loader.classList.add('hidden');
+        }
+    } else {
+        container.style.maxHeight = '0px';
+        container.style.opacity = '0';
+        container.style.marginTop = '0px';
+        if (btn) btn.classList.remove('ring-2', 'ring-white/50');
+    }
+};
+
+// Bind UI triggers safely directly on mount
+document.addEventListener('DOMContentLoaded', () => {
+    const pBtn = document.getElementById('myPathBtn');
+    if (pBtn) pBtn.addEventListener('click', () => window.initSiratVisualizer(false));
+    
+    const cBtn = document.getElementById('closePathBtn');
+    if (cBtn) cBtn.addEventListener('click', () => {
+        let container = document.getElementById('siratContainer');
+        if (container) {
+            container.style.maxHeight = '0px';
+            container.style.opacity = '0';
+            container.style.marginTop = '0px';
+        }
+        if (pBtn) pBtn.classList.remove('ring-2', 'ring-white/50');
+    });
 });

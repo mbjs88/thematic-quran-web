@@ -702,10 +702,39 @@
                         class="text-[10px] text-[#56A3A6] font-bold uppercase tracking-wider mb-4 flex items-center gap-1 justify-center">
                         <span class="material-symbols-outlined text-[14px]">verified</span> Account Linked
                     </p>
-                    <button id="quranLogoutBtn"
-                        class="w-full py-2 bg-white/5 border border-white/10 hover:bg-white/10 text-white/70 hover:text-white rounded-xl transition duration-300 text-xs font-bold uppercase tracking-wider">
-                        Sign Out
-                    </button>
+                    <div class="w-full flex gap-2">
+                        <button id="myPathBtn" class="flex-1 py-2 bg-[#56A3A6] border border-[#56A3A6] text-white hover:bg-[#458a8d] rounded-xl transition duration-300 text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1 shadow-lg shadow-[#56A3A6]/20">
+                            <span class="material-symbols-outlined text-[14px]">timeline</span> My Path
+                        </button>
+                        <button id="quranLogoutBtn"
+                            class="flex-1 py-2 bg-white/5 border border-white/10 hover:bg-white/10 text-white/70 hover:text-white rounded-xl transition duration-300 text-xs font-bold uppercase tracking-wider">
+                            Sign Out
+                        </button>
+                    </div>
+
+                    <!-- SIRAT-UL-MUSTAQEEM CANVAS CONTAINER -->
+                    <div id="siratContainer" class="w-full mt-4 overflow-hidden transition-all duration-500 ease-in-out" style="max-height: 0px; opacity: 0;">
+                        <div class="relative w-full h-[400px] bg-black/40 border border-[#56A3A6]/30 rounded-2xl flex flex-col items-center overflow-hidden">
+                            <!-- Background Straight Baseline (Sirat) -->
+                            <div class="absolute inset-0 flex justify-center items-center opacity-30 pointer-events-none">
+                                <div class="w-[2px] h-full bg-[#56A3A6] shadow-[0_0_20px_#56A3A6]"></div>
+                            </div>
+                            <!-- Dynamic Overlay Render -->
+                            <svg id="siratSvg" class="absolute w-full h-full z-10 drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]" viewBox="-50 0 100 400" preserveAspectRatio="none">
+                                <path id="siratPath" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" />
+                            </svg>
+                            <!-- Controls -->
+                            <button id="closePathBtn" class="absolute top-3 right-3 text-white/50 hover:text-white bg-white/10 hover:bg-white/20 rounded-full w-6 h-6 flex items-center justify-center z-20 transition active:scale-95">
+                                <span class="material-symbols-outlined text-[14px]">expand_less</span>
+                            </button>
+                            <div class="absolute bottom-3 text-center text-[10px] uppercase text-[#56A3A6] font-bold tracking-[0.2em] opacity-90 backdrop-blur-md px-3 py-1 rounded-full bg-black/60 border border-[#56A3A6]/20 z-20 shadow-xl">Sirat-ul-Mustaqeem</div>
+                            <!-- Loader Overlay -->
+                            <div id="siratLoading" class="absolute inset-0 flex flex-col items-center justify-center text-xs text-[#56A3A6] font-['Forum'] tracking-widest hidden z-30 bg-[#0B1515]/90 backdrop-blur-sm">
+                                <span class="material-symbols-outlined animate-spin text-2xl mb-2">sync</span>
+                                Modeling...
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
