@@ -1222,6 +1222,7 @@ window.initQfCollectionsSync = async function() {
     try {
         let fetchUrl = '/api/qf/auth/v1/collections?first=20&sortBy=recentlyUpdated';
         let found = false;
+        let diagnosticList = [];
 
         // Recursively crawl EVERY page of the user's collections to physically guarantee we don't accidentally skip the folder if they have > 20
         while (fetchUrl && !found) {
@@ -1240,6 +1241,8 @@ window.initQfCollectionsSync = async function() {
             else if (Array.isArray(json.collections)) list = json.collections;
             else if (Array.isArray(json)) list = json;
             
+            diagnosticList.push(...list.map(c => c.name));
+
             let target = list.find(c => c.name && c.name.trim().toLowerCase() === "thematic quran saves");
             if (target) {
                 window.qfCollectionId = target.id || target.collectionId;
@@ -1258,6 +1261,9 @@ window.initQfCollectionsSync = async function() {
         
         // Only if we violently exhausted every single physically available page across their account will we build a new one
         if (!found) {
+            // FIRE TEMPORARY TELEMETRY DIAGNOSTICS: This physically isolates exactly what Quran.com returns!
+            prompt("CRITICAL DEBUGGING TRIGGERED! \n\nThematicQuran couldn't detect the Saves folder natively inside the API list. Please copy the entire string below from the box and paste it into the chat so we can exactly see what string names their API is feeding you natively:", JSON.stringify(diagnosticList));
+
             let createRes = await fetch('/api/qf/auth/v1/collections', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
