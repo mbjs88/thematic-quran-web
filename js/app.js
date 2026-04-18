@@ -1732,7 +1732,12 @@ window.generateSiratPathString = function(points, totalRangeNodes = 20) {
     return path;
 };
 
-window.initSiratVisualizer = async function(forceOpen = false) {
+window.simulateUserJourney = function(activeDays = 14) {
+    console.log(`%c[Simulator] Bypassing Quran Foundation API! Mocking lifespan of ${activeDays} Days...`, "color: #FF88AA; font-weight: bold;");
+    window.initSiratVisualizer(true, activeDays);
+};
+
+window.initSiratVisualizer = async function(forceOpen = false, mockDays = 0) {
     let container = document.getElementById('siratContainer');
     let svgPath = document.getElementById('siratPath');
     let loader = document.getElementById('siratLoading');
@@ -1749,34 +1754,37 @@ window.initSiratVisualizer = async function(forceOpen = false) {
         if (btn) btn.classList.add('ring-2', 'ring-white/50');
         
         try {
-            const d = new Date();
-            const toStr1 = getLocalYMD(d);
-            const dMid = new Date();
-            dMid.setDate(dMid.getDate() - 19); 
-            const fromStr1 = getLocalYMD(dMid);
-            
-            const dMidB = new Date();
-            dMidB.setDate(dMidB.getDate() - 20);
-            const toStr2 = getLocalYMD(dMidB);
-            const dPast = new Date();
-            dPast.setDate(dPast.getDate() - 27); // Expanding natively to 28 days trailing
-            const fromStr2 = getLocalYMD(dPast);
-            
-            const [res1, res2] = await Promise.all([
-                fetch(`/api/qf/auth/v1/activity-days?from=${fromStr1}&to=${toStr1}&type=QURAN&first=20`),
-                fetch(`/api/qf/auth/v1/activity-days?from=${fromStr2}&to=${toStr2}&type=QURAN&first=20`)
-            ]);
-            let json1 = await res1.json();
-            let json2 = await res2.json();
-            
-            let dataArr1 = Array.isArray(json1.data) ? json1.data : [];
-            let dataArr2 = Array.isArray(json2.data) ? json2.data : [];
-            let dataArr = dataArr1.concat(dataArr2);
-            
             let mapObj = {};
-            dataArr.forEach(dItem => {
-                if(dItem && dItem.date) mapObj[dItem.date] = dItem.seconds || 0;
-            });
+            
+            if (mockDays === 0) {
+                const d = new Date();
+                const toStr1 = getLocalYMD(d);
+                const dMid = new Date();
+                dMid.setDate(dMid.getDate() - 19); 
+                const fromStr1 = getLocalYMD(dMid);
+                
+                const dMidB = new Date();
+                dMidB.setDate(dMidB.getDate() - 20);
+                const toStr2 = getLocalYMD(dMidB);
+                const dPast = new Date();
+                dPast.setDate(dPast.getDate() - 27); // Expanding natively to 28 days trailing
+                const fromStr2 = getLocalYMD(dPast);
+                
+                const [res1, res2] = await Promise.all([
+                    fetch(`/api/qf/auth/v1/activity-days?from=${fromStr1}&to=${toStr1}&type=QURAN&first=20`),
+                    fetch(`/api/qf/auth/v1/activity-days?from=${fromStr2}&to=${toStr2}&type=QURAN&first=20`)
+                ]);
+                let json1 = await res1.json();
+                let json2 = await res2.json();
+                
+                let dataArr1 = Array.isArray(json1.data) ? json1.data : [];
+                let dataArr2 = Array.isArray(json2.data) ? json2.data : [];
+                let dataArr = dataArr1.concat(dataArr2);
+                
+                dataArr.forEach(dItem => {
+                    if(dItem && dItem.date) mapObj[dItem.date] = dItem.seconds || 0;
+                });
+            }
             
             // Build absolute chronological buckets exactly spanning 28 units reliably
             let daysArray = [];
@@ -1784,9 +1792,20 @@ window.initSiratVisualizer = async function(forceOpen = false) {
                 let dt = new Date();
                 dt.setDate(dt.getDate() - (27 - i));
                 let dtStr = getLocalYMD(dt);
+                
+                let actualSecs = mapObj[dtStr] || 0;
+                if (mockDays > 0) {
+                    let histOffset = 27 - i; 
+                    // activeDays determines how many days from Today mapping backwards they listened!
+                    actualSecs = (histOffset < mockDays) ? 300 : 0;
+                    
+                    // Mild drift injection for physics demonstration
+                    if (mockDays > 6 && histOffset === 4) actualSecs = 0; // Missed day 4 natively
+                }
+
                 daysArray.push({
                     date: dtStr,
-                    seconds: mapObj[dtStr] || 0
+                    seconds: actualSecs
                 });
             }
             
@@ -1841,6 +1860,7 @@ window.initSiratVisualizer = async function(forceOpen = false) {
             
             let badgeText = document.getElementById('siratBadgeText');
             let orbObj = document.getElementById('siratCleanSlateOrb');
+            let explanationText = document.getElementById('siratExplanationText');
 
             if (isCleanSlate) {
                 // Intro Phase
@@ -1852,6 +1872,10 @@ window.initSiratVisualizer = async function(forceOpen = false) {
                 if(badgeText) {
                     badgeText.innerText = 'Your journey begins here';
                     badgeText.className = 'text-[#F3E4CE] drop-shadow-[0_0_12px_rgba(243,228,206,0.6)] font-["Forum"] tracking-wider transition-colors duration-500';
+                }
+                if(explanationText) {
+                    explanationText.innerText = 'Every day, this trajectory visualizes how close you are to your straight path. Listen daily to stay centered.';
+                    explanationText.className = 'text-[#F3E4CE]/50 text-[10px] leading-relaxed mt-4 font-["Forum"] tracking-widest text-center px-4 w-full transition-colors duration-500';
                 }
             } else {
                 // Ensure default visibility arrays for organic math parsing
@@ -1870,6 +1894,10 @@ window.initSiratVisualizer = async function(forceOpen = false) {
                         badgeText.innerText = 'The space is waiting for you';
                         badgeText.className = 'text-[#8FA8A8] opacity-70 font-["Forum"] tracking-wider transition-colors duration-500';
                     }
+                    if(explanationText) {
+                        explanationText.innerText = 'You have drifted slightly from your daily habit. Reconnect today to gently realign your trajectory.';
+                        explanationText.className = 'text-[#8FA8A8]/60 text-[10px] leading-relaxed mt-4 font-["Forum"] tracking-widest text-center px-4 w-full transition-colors duration-500';
+                    }
                 } else if (lastDay.seconds > 0) {
                     // Centered Phase
                     svgPath.setAttribute('stroke', '#8FB9AA'); 
@@ -1879,6 +1907,10 @@ window.initSiratVisualizer = async function(forceOpen = false) {
                         badgeText.innerText = 'Centered in peace';
                         badgeText.className = 'text-[#8FB9AA] drop-shadow-[0_0_8px_rgba(143,185,170,0.5)] font-["Forum"] tracking-wider transition-colors duration-500';
                     }
+                    if(explanationText) {
+                        explanationText.innerText = 'You are currently staying on course. Keep listening daily to nurture this spiritual momentum.';
+                        explanationText.className = 'text-[#8FB9AA]/60 text-[10px] leading-relaxed mt-4 font-["Forum"] tracking-widest text-center px-4 w-full transition-colors duration-500';
+                    }
                 } else {
                     // Paused Phase
                     svgPath.setAttribute('stroke', '#D8C3A5'); 
@@ -1887,6 +1919,10 @@ window.initSiratVisualizer = async function(forceOpen = false) {
                     if(badgeText) {
                         badgeText.innerText = 'A quiet pause';
                         badgeText.className = 'text-[#D8C3A5] opacity-80 font-["Forum"] tracking-wider transition-colors duration-500';
+                    }
+                    if(explanationText) {
+                        explanationText.innerText = 'A momentary pause in your journey. Listen today to draw the path back towards the center.';
+                        explanationText.className = 'text-[#D8C3A5]/60 text-[10px] leading-relaxed mt-4 font-["Forum"] tracking-widest text-center px-4 w-full transition-colors duration-500';
                     }
                 }
                 
