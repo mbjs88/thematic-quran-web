@@ -1706,28 +1706,33 @@ window.calculateDeviations = function(daysArray) {
     return points;
 };
 
-window.generateSiratPathString = function(points, totalRangeNodes = 20) {
+window.generateSiratPathString = function(points, totalRangeNodes = 28) {
     if (!points || points.length === 0) return "";
     
-    // SVGs total Y boundary mapped dynamically to absolute timeline constraint natively
-    let yStep = 400 / (totalRangeNodes - 1);
+    // Physical Canvas Geometry Padding: Target space spans safely from Y=35 (Top Buffer) to Y=340 (Bottom Buffer)
+    const PAD_TOP = 35; 
+    const PAD_BOT = 340;
+    const BOUNDING_GRID = PAD_BOT - PAD_TOP;
     
-    // We anchor the OLDEST Genesis node to the absolute BOTTOM natively!
+    let yStep = BOUNDING_GRID / (totalRangeNodes - 1);
+    
+    // Anchor oldest Genesis node inherently to the physical layout margin padding
     let activeNodes = points.length;
-    let startY = 400 - ((activeNodes - 1) * yStep); // Dynamic upward root growth offset
+    let startY = PAD_BOT - ((activeNodes - 1) * yStep); // Dynamic upward root growth offset safely bounded
     
     let path = `M ${points[0]} ${startY}`; 
     
     for (let i = 1; i < activeNodes; i++) {
         let currX = points[i];
-        let currY = startY + (i * yStep); // Structurally mapping downwards towards historical Genesis 
+        let currY = startY + (i * yStep); 
         
         let prevX = points[i-1];
         let prevY = startY + ((i-1) * yStep);
         
-        // CUBIC BEZIER MAPPER -> Monotone-Y
-        let cpY = prevY + (yStep / 2);
-        path += ` C ${prevX} ${cpY}, ${currX} ${cpY}, ${currX} ${currY}`;
+        // Perfectly smoothed monotonic Cubic Bezier curve preventing hard vertical grid flattening natively
+        let cp1Y = prevY + (yStep * 0.5);
+        let cp2Y = currY - (yStep * 0.5);
+        path += ` C ${prevX} ${cp1Y}, ${currX} ${cp2Y}, ${currX} ${currY}`;
     }
     return path;
 };
@@ -1832,15 +1837,20 @@ window.initSiratVisualizer = async function(forceOpen = false, mockDays = 0) {
                     let islamicFormatter = new Intl.DateTimeFormat('en-US-u-ca-islamic-umalqura', { month: 'numeric', year: 'numeric' });
                     let prevHijriTag = null;
                     let activeNodes = deviations.length;
-                    let yStep = 400 / 27; // 28 bounds = 27 physical gaps tracking limits
-                    let startY = 400 - ((activeNodes - 1) * yStep);
+                    
+                    const PAD_TOP = 35;
+                    const PAD_BOT = 340;
+                    const BOUNDING_GRID = PAD_BOT - PAD_TOP;
+                    
+                    let yStep = BOUNDING_GRID / 27; // 28 bounds = 27 physical gaps
+                    let startY = PAD_BOT - ((activeNodes - 1) * yStep);
                     
                     activeDaysArray.forEach((dayObj, offsetI) => {
                         let i = (activeNodes - 1) - offsetI; // Geometric inverse correlating array origins structurally
                         let dObj = new Date(dayObj.date);
                         let hijriTag = islamicFormatter.format(dObj);
                         
-                        // Inject dividing axis boundary quietly upon calendar transition spanning
+                        // Inject dividing axis boundary quietly
                         if (prevHijriTag !== null && hijriTag !== prevHijriTag) {
                             let currY = startY + (i * yStep);
                             let monthNameStr = new Intl.DateTimeFormat('en-US-u-ca-islamic-umalqura', { month: 'short' }).format(dObj);
@@ -1887,9 +1897,9 @@ window.initSiratVisualizer = async function(forceOpen = false, mockDays = 0) {
 
                 if (isDisconnected) {
                     // Waiting Phase
-                    svgPath.setAttribute('stroke', '#8FA8A8'); 
+                    svgPath.setAttribute('stroke', 'url(#siratTrailGradient)'); 
                     svgPath.setAttribute('stroke-opacity', '0.25');
-                    svgPath.setAttribute('stroke-dasharray', '8,12');
+                    svgPath.setAttribute('stroke-dasharray', '3,5');
                     if(badgeText) {
                         badgeText.innerText = 'The space is waiting for you';
                         badgeText.className = 'text-[#8FA8A8] opacity-70 font-["Forum"] tracking-wider transition-colors duration-500';
@@ -1900,7 +1910,7 @@ window.initSiratVisualizer = async function(forceOpen = false, mockDays = 0) {
                     }
                 } else if (lastDay.seconds > 0) {
                     // Centered Phase
-                    svgPath.setAttribute('stroke', '#8FB9AA'); 
+                    svgPath.setAttribute('stroke', 'url(#siratTrailGradient)'); 
                     svgPath.removeAttribute('stroke-opacity');
                     svgPath.removeAttribute('stroke-dasharray');
                     if(badgeText) {
@@ -1913,8 +1923,8 @@ window.initSiratVisualizer = async function(forceOpen = false, mockDays = 0) {
                     }
                 } else {
                     // Paused Phase
-                    svgPath.setAttribute('stroke', '#D8C3A5'); 
-                    svgPath.setAttribute('stroke-opacity', '0.8');
+                    svgPath.setAttribute('stroke', 'url(#siratTrailGradient)'); 
+                    svgPath.setAttribute('stroke-opacity', '0.6');
                     svgPath.removeAttribute('stroke-dasharray');
                     if(badgeText) {
                         badgeText.innerText = 'A quiet pause';
@@ -1930,7 +1940,12 @@ window.initSiratVisualizer = async function(forceOpen = false, mockDays = 0) {
                 let tipDot = document.getElementById('siratTipDot');
                 if (tipDot && activeDaysArray.length > 0) {
                     tipDot.setAttribute('cx', deviations[0]);
-                    let tipY = 400 - ((activeDaysArray.length - 1) * (400 / 27)); // 28 divisions scaling natively
+                    
+                    const PAD_TOP = 35;
+                    const PAD_BOT = 340;
+                    const BOUNDING_GRID = PAD_BOT - PAD_TOP;
+                    
+                    let tipY = PAD_BOT - ((activeDaysArray.length - 1) * (BOUNDING_GRID / 27)); // 28 divisions scaling safely 
                     tipDot.setAttribute('cy', tipY);
                     tipDot.classList.remove('hidden');
                 }
