@@ -680,7 +680,46 @@ function setupGlobalEventListeners() {
                 .catch(err => console.debug("Quran.com Sync Out Failed", err));
             }, 3000);
         }
+        window.currentReadingCoords = { surah: parseInt(surah), verse: parseInt(verse) };
     });
+
+    // Native Background Activity-Days Aggregator (Stopwatch)
+    if (!window.activityTrackerRunning) {
+        window.activityTrackerRunning = true;
+        window.unreportedSeconds = 0;
+        window.currentReadingCoords = { surah: 1, verse: 1 };
+        
+        setInterval(() => {
+            let audio = document.getElementById('audioElement');
+            if (audio && !audio.paused && window.isLoggedIn) {
+                window.unreportedSeconds++;
+                if (window.unreportedSeconds >= 15) { // Push heartbeat broadly every 15 active seconds seamlessly
+                    let fSec = window.unreportedSeconds;
+                    window.unreportedSeconds = 0; 
+                    
+                    const dy = new Date();
+                    const urlFormattedDate = `${dy.getFullYear()}-${String(dy.getMonth()+1).padStart(2,'0')}-${String(dy.getDate()).padStart(2,'0')}`;
+                    
+                    const payload = {
+                        date: urlFormattedDate,
+                        type: "QURAN",
+                        seconds: fSec,
+                        ranges: [`${window.currentReadingCoords.surah}:${window.currentReadingCoords.verse}-${window.currentReadingCoords.surah}:${window.currentReadingCoords.verse}`],
+                        mushafId: 1
+                    };
+                    
+                    fetch('/api/qf/auth/v1/activity-days', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    }).then(r => r.json()).then(j => {
+                        let sc = document.getElementById('siratContainer');
+                        if (sc && sc.style.opacity === '1') window.initSiratVisualizer(true); // Repaint canvas smoothly
+                    }).catch(()=>{});
+                }
+            }
+        }, 1000);
+    }
 
     document.getElementById('toggleSelectModeBtn').addEventListener('click', () => {
         isSelectMode = !isSelectMode;
@@ -1616,28 +1655,26 @@ const getLocalYMD = (date) => {
 };
 
 window.calculateDeviations = function(daysArray) {
-    let T = 900; // 15 mins target
-    let k_drift = 16; // Intensity of shift when missing
-    let k_pull = 0.6; // Magnetism back to center when hitting
-    
+    let k_drift = 16; 
     let points = [];
-    points.push(0); // Origin at top
-    
     let currentBias = 1;
-    let prevD = 0;
 
+    // Anchor first historical day on baseline natively to begin curve computation
+    let prevD = 0; 
+    
+    // We calculate from historical (index 0) forward to mathematically simulate organic physics physics
     daysArray.forEach((day, index) => {
-        let R = Math.min(day.seconds / T, 1.2);
         let nextD = 0;
 
-        if (R >= 1.0) {
-            nextD = prevD * Math.max(0, 1 - (R * k_pull));
-            if (Math.abs(nextD) < 2) nextD = 0; 
-            if (nextD === 0 && prevD !== 0) currentBias = currentBias === 1 ? -1 : 1; 
+        if (day.seconds > 0) {
+            // Gold Standard Rest: Absolute locked baseline
+            nextD = 0; 
+            if (prevD !== 0) currentBias = currentBias === 1 ? -1 : 1; 
         } else {
-            let penalty = k_drift * (1 - R);
+            // Drifting Outward
+            let penalty = k_drift;
             // Inject organic flow wiggle 
-            let organicWiggle = Math.sin(index) * (k_drift * 0.3) * (1 - R);
+            let organicWiggle = Math.sin(index) * (k_drift * 0.4);
             nextD = prevD + (currentBias * penalty) + organicWiggle;
         }
         
@@ -1648,6 +1685,8 @@ window.calculateDeviations = function(daysArray) {
         prevD = nextD;
     });
     
+    // We physically REVERSE the array natively so that Timeline rendering dynamically mounts 'Today' at the mathematical top `y=0`.
+    points.reverse();
     return points;
 };
 
@@ -1721,12 +1760,41 @@ window.initSiratVisualizer = async function(forceOpen = false) {
             // Visually bind it!
             svgPath.setAttribute('d', pathString);
             
-            // Dynamic Stroke Styling based on latest read metric
-            let lastDay = daysArray[daysArray.length - 1];
-            if (lastDay.seconds >= 900) {
-                svgPath.setAttribute('stroke', '#88FFD1'); // Success Glow 
+            // Dynamic Trajectory CSS Rules engine structurally isolating user behaviors
+            let last7Days = daysArray.slice(-7);
+            let activeDaysCount = last7Days.filter(d => d.seconds > 0).length;
+            let lastDay = daysArray[daysArray.length - 1]; // TODAY
+            let isDisconnected = activeDaysCount === 0; // Missed entire last 7 days natively!
+            
+            let badgeText = document.getElementById('siratBadgeText');
+
+            if (isDisconnected) {
+                // Ghost Phase
+                svgPath.setAttribute('stroke', '#FFB088'); 
+                svgPath.setAttribute('stroke-opacity', '0.3');
+                svgPath.setAttribute('stroke-dasharray', '5,5');
+                if(badgeText) {
+                    badgeText.innerText = 'DISCONNECTED';
+                    badgeText.className = 'text-red-500 font-bold tracking-widest transition-colors duration-500';
+                }
+            } else if (lastDay.seconds > 0) {
+                // Solid Phase
+                svgPath.setAttribute('stroke', '#88FFD1'); 
+                svgPath.removeAttribute('stroke-opacity');
+                svgPath.removeAttribute('stroke-dasharray');
+                if(badgeText) {
+                    badgeText.innerText = 'HOLDING THE ROPE';
+                    badgeText.className = 'text-[#56A3A6] drop-shadow-[0_0_8px_rgba(86,163,166,0.8)] font-bold tracking-[0.2em] transition-colors duration-500';
+                }
             } else {
-                svgPath.setAttribute('stroke', '#FFB088'); // Warning Warm Glow
+                // Drifting Phase
+                svgPath.setAttribute('stroke', '#FFB088'); 
+                svgPath.removeAttribute('stroke-opacity');
+                svgPath.removeAttribute('stroke-dasharray');
+                if(badgeText) {
+                    badgeText.innerText = 'DRIFTING AWAY...';
+                    badgeText.className = 'text-orange-400 opacity-70 font-bold tracking-widest transition-colors duration-500';
+                }
             }
 
         } catch(e) {
