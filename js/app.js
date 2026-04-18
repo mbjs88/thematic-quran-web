@@ -1691,17 +1691,24 @@ window.calculateDeviations = function(daysArray) {
     return points;
 };
 
-window.generateSiratPathString = function(points) {
-    let path = `M 0 0`; 
-    // SVGs total Y boundary mapped dynamically
-    let yStep = 400 / (points.length - 1);
+window.generateSiratPathString = function(points, totalRangeNodes = 20) {
+    if (!points || points.length === 0) return "";
     
-    for (let i = 1; i < points.length; i++) {
+    // SVGs total Y boundary mapped dynamically to absolute timeline constraint natively
+    let yStep = 400 / (totalRangeNodes - 1);
+    
+    // We anchor the OLDEST Genesis node to the absolute BOTTOM natively!
+    let activeNodes = points.length;
+    let startY = 400 - ((activeNodes - 1) * yStep); // Dynamic upward root growth offset
+    
+    let path = `M ${points[0]} ${startY}`; 
+    
+    for (let i = 1; i < activeNodes; i++) {
         let currX = points[i];
-        let currY = i * yStep;
+        let currY = startY + (i * yStep); // Structurally mapping downwards towards historical Genesis 
         
         let prevX = points[i-1];
-        let prevY = (i-1) * yStep;
+        let prevY = startY + ((i-1) * yStep);
         
         // CUBIC BEZIER MAPPER -> Monotone-Y
         let cpY = prevY + (yStep / 2);
@@ -1755,15 +1762,18 @@ window.initSiratVisualizer = async function(forceOpen = false) {
                 });
             }
             
-            // CONNECTED BY DEFAULT: Clean Slate Override
-            let total20DaySeconds = daysArray.reduce((acc, curr) => acc + curr.seconds, 0);
-            let isCleanSlate = total20DaySeconds === 0;
-
-            let deviations = window.calculateDeviations(daysArray);
-            let pathString = window.generateSiratPathString(deviations);
+            // The Progressive Genesis Matrix:
+            let genesisIndex = daysArray.findIndex(d => d.seconds > 0);
+            let isCleanSlate = genesisIndex === -1;
+            
+            // Constrain arrays exactly binding natively to the user's explicit lifespan 
+            let activeDaysArray = isCleanSlate ? [] : daysArray.slice(genesisIndex);
+            
+            let deviations = activeDaysArray.length > 0 ? window.calculateDeviations(activeDaysArray) : [];
+            let pathString = activeDaysArray.length > 0 ? window.generateSiratPathString(deviations, 20) : "";
             
             // Visually bind SVG path natively
-            svgPath.setAttribute('d', pathString);
+            if (activeDaysArray.length > 0) svgPath.setAttribute('d', pathString);
             
             // Dynamic Trajectory CSS Rules engine structurally isolating user behaviors
             let last7Days = daysArray.slice(-7);
@@ -1821,6 +1831,29 @@ window.initSiratVisualizer = async function(forceOpen = false) {
                         badgeText.className = 'text-[#D8C3A5] opacity-80 font-["Forum"] tracking-wider transition-colors duration-500';
                     }
                 }
+                
+                // Plot Dynamic Spearhead Dot native mapping explicitly tracking upwards natively
+                let tipDot = document.getElementById('siratTipDot');
+                if (tipDot && activeDaysArray.length > 0) {
+                    tipDot.setAttribute('cx', deviations[0]);
+                    let tipY = 400 - ((activeDaysArray.length - 1) * (400 / 19));
+                    tipDot.setAttribute('cy', tipY);
+                    tipDot.classList.remove('hidden');
+                }
+                
+                // Toggle historical label visually to prevent timeline desynchronization layout metrics
+                let bottomAxisLabel = document.getElementById('timelineAxisBottom');
+                let topAxisLabel = document.getElementById('timelineAxisTop');
+                if (bottomAxisLabel) bottomAxisLabel.style.opacity = activeDaysArray.length < 20 ? '0' : '1';
+                if (topAxisLabel) topAxisLabel.style.opacity = '1';
+            }
+            
+            if (isCleanSlate) {
+                let tipDot = document.getElementById('siratTipDot');
+                if (tipDot) tipDot.classList.add('hidden');
+                
+                let bottomAxisLabel = document.getElementById('timelineAxisBottom');
+                if (bottomAxisLabel) bottomAxisLabel.style.opacity = '0';
             }
 
         } catch(e) {

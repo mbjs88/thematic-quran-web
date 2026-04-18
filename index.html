@@ -743,6 +743,7 @@
                                 viewBox="-50 0 100 400" preserveAspectRatio="none">
                                 <path id="siratPath" stroke="white" stroke-width="2.5" fill="none"
                                     stroke-linecap="round" />
+                                <circle id="siratTipDot" cx="0" cy="0" r="4" fill="#F3E4CE" stroke="none" class="hidden animate-pulse" style="filter: drop-shadow(0 0 12px #F3E4CE);" />
                             </svg>
                             
                             <!-- Clean Slate Orb & Gradient Track (Hidden by default) -->
@@ -751,8 +752,8 @@
                                 <div class="w-[6px] h-[150px] bg-gradient-to-b from-[#F3E4CE]/90 via-[#56A3A6]/40 to-transparent rounded-b-full"></div>
                             </div>
                             <!-- Vertical Axis Labels -->
-                            <div class="absolute left-2 top-3 text-[9px] font-bold text-white/50 tracking-[0.2em] z-20 font-['Nunito']">TODAY</div>
-                            <div class="absolute left-2 bottom-3 text-[9px] font-bold text-white/30 tracking-[0.2em] z-20 font-['Nunito']">-20 DAYS</div>
+                            <div id="timelineAxisTop" class="absolute left-2 top-3 text-[9px] font-bold text-white/50 tracking-[0.2em] z-20 font-['Nunito'] transition-opacity duration-500">TODAY</div>
+                            <div id="timelineAxisBottom" class="absolute left-2 bottom-3 text-[9px] font-bold text-white/30 tracking-[0.2em] z-20 font-['Nunito'] transition-opacity duration-500">-20 DAYS</div>
                             <!-- Controls -->
                             <button id="closePathBtn"
                                 class="absolute top-3 right-3 text-white/50 hover:text-white bg-white/10 hover:bg-white/20 rounded-full w-6 h-6 flex items-center justify-center z-20 transition active:scale-95">
@@ -769,6 +770,9 @@
                                 Modeling...
                             </div>
                         </div>
+                        <p class="text-white/40 text-[10px] leading-relaxed mt-4 font-['Forum'] tracking-widest text-center px-4 w-full">
+                            This visualizes your personal Sirat-ul-Mustaqeem&mdash;mapping how closely your daily habits align with a steady, continuous connection to the Quran.
+                        </p>
                     </div>
                 </div>
             </div>
