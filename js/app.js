@@ -1729,10 +1729,10 @@ window.initSiratVisualizer = async function(forceOpen = false) {
             const d = new Date();
             const toStr = getLocalYMD(d);
             const dPast = new Date();
-            dPast.setDate(dPast.getDate() - 29); // 30 days window natively
+            dPast.setDate(dPast.getDate() - 19); // 20 days window natively to bypass 422 constraints
             const fromStr = getLocalYMD(dPast);
             
-            const url = `/api/qf/auth/v1/activity-days?from=${fromStr}&to=${toStr}&type=QURAN`;
+            const url = `/api/qf/auth/v1/activity-days?from=${fromStr}&to=${toStr}&type=QURAN&first=20`;
             let res = await fetch(url);
             let json = await res.json();
             
@@ -1744,9 +1744,9 @@ window.initSiratVisualizer = async function(forceOpen = false) {
             
             // Build absolute chronological buckets
             let daysArray = [];
-            for(let i=0; i<30; i++) {
+            for(let i=0; i<20; i++) {
                 let dt = new Date();
-                dt.setDate(dt.getDate() - (29 - i));
+                dt.setDate(dt.getDate() - (19 - i));
                 let dtStr = getLocalYMD(dt);
                 daysArray.push({
                     date: dtStr,

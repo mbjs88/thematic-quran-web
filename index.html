@@ -744,14 +744,18 @@
                                 <path id="siratPath" stroke="white" stroke-width="2.5" fill="none"
                                     stroke-linecap="round" />
                             </svg>
+                            <!-- Vertical Axis Labels -->
+                            <div class="absolute left-2 top-3 text-[9px] font-bold text-white/50 tracking-[0.2em] z-20 font-['Nunito']">TODAY</div>
+                            <div class="absolute left-2 bottom-3 text-[9px] font-bold text-white/30 tracking-[0.2em] z-20 font-['Nunito']">-20 DAYS</div>
                             <!-- Controls -->
                             <button id="closePathBtn"
                                 class="absolute top-3 right-3 text-white/50 hover:text-white bg-white/10 hover:bg-white/20 rounded-full w-6 h-6 flex items-center justify-center z-20 transition active:scale-95">
                                 <span class="material-symbols-outlined text-[14px]">expand_less</span>
                             </button>
-                            <div
-                                class="absolute bottom-3 text-center text-[10px] uppercase text-[#56A3A6] font-bold tracking-[0.2em] opacity-90 backdrop-blur-md px-3 py-1 rounded-full bg-black/60 border border-[#56A3A6]/20 z-20 shadow-xl">
-                                Sirat-ul-Mustaqeem</div>
+                            <div id="siratBadgeContainer"
+                                class="absolute bottom-3 flex items-center text-center text-[9px] uppercase font-bold tracking-[0.2em] opacity-95 backdrop-blur-xl px-4 py-1.5 rounded-full bg-[#0B1515]/80 border shadow-2xl transition-all duration-700 z-20">
+                                <span id="siratBadgeText" class="text-[#56A3A6] transition-colors duration-500">HOLDING THE ROPE</span>
+                            </div>
                             <!-- Loader Overlay -->
                             <div id="siratLoading"
                                 class="absolute inset-0 flex flex-col items-center justify-center text-xs text-[#56A3A6] font-['Forum'] tracking-widest hidden z-30 bg-[#0B1515]/90 backdrop-blur-sm">
