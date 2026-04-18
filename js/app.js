@@ -1639,6 +1639,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (closeBtn) {
         closeBtn.addEventListener('click', () => {
             const modal = document.getElementById('bookmarksModal');
+            if (modal) modal.classList.add('hidden');
         });
     }
 });
@@ -1754,10 +1755,14 @@ window.initSiratVisualizer = async function(forceOpen = false) {
                 });
             }
             
+            // CONNECTED BY DEFAULT: Clean Slate Override
+            let total20DaySeconds = daysArray.reduce((acc, curr) => acc + curr.seconds, 0);
+            let isCleanSlate = total20DaySeconds === 0;
+
             let deviations = window.calculateDeviations(daysArray);
             let pathString = window.generateSiratPathString(deviations);
             
-            // Visually bind it!
+            // Visually bind SVG path natively
             svgPath.setAttribute('d', pathString);
             
             // Dynamic Trajectory CSS Rules engine structurally isolating user behaviors
@@ -1767,33 +1772,54 @@ window.initSiratVisualizer = async function(forceOpen = false) {
             let isDisconnected = activeDaysCount === 0; // Missed entire last 7 days natively!
             
             let badgeText = document.getElementById('siratBadgeText');
+            let orbObj = document.getElementById('siratCleanSlateOrb');
 
-            if (isDisconnected) {
-                // Ghost Phase
-                svgPath.setAttribute('stroke', '#FFB088'); 
-                svgPath.setAttribute('stroke-opacity', '0.3');
-                svgPath.setAttribute('stroke-dasharray', '5,5');
-                if(badgeText) {
-                    badgeText.innerText = 'DISCONNECTED';
-                    badgeText.className = 'text-red-500 font-bold tracking-widest transition-colors duration-500';
+            if (isCleanSlate) {
+                // Intro Phase
+                svgPath.style.opacity = '0';
+                if(orbObj) {
+                    orbObj.classList.remove('hidden');
+                    orbObj.classList.add('flex');
                 }
-            } else if (lastDay.seconds > 0) {
-                // Solid Phase
-                svgPath.setAttribute('stroke', '#88FFD1'); 
-                svgPath.removeAttribute('stroke-opacity');
-                svgPath.removeAttribute('stroke-dasharray');
                 if(badgeText) {
-                    badgeText.innerText = 'HOLDING THE ROPE';
-                    badgeText.className = 'text-[#56A3A6] drop-shadow-[0_0_8px_rgba(86,163,166,0.8)] font-bold tracking-[0.2em] transition-colors duration-500';
+                    badgeText.innerText = 'Your journey begins here';
+                    badgeText.className = 'text-[#F3E4CE] drop-shadow-[0_0_12px_rgba(243,228,206,0.6)] font-["Forum"] tracking-wider transition-colors duration-500';
                 }
             } else {
-                // Drifting Phase
-                svgPath.setAttribute('stroke', '#FFB088'); 
-                svgPath.removeAttribute('stroke-opacity');
-                svgPath.removeAttribute('stroke-dasharray');
-                if(badgeText) {
-                    badgeText.innerText = 'DRIFTING AWAY...';
-                    badgeText.className = 'text-orange-400 opacity-70 font-bold tracking-widest transition-colors duration-500';
+                // Ensure default visibility arrays for organic math parsing
+                svgPath.style.opacity = '1';
+                if(orbObj) {
+                    orbObj.classList.add('hidden');
+                    orbObj.classList.remove('flex');
+                }
+
+                if (isDisconnected) {
+                    // Waiting Phase
+                    svgPath.setAttribute('stroke', '#8FA8A8'); 
+                    svgPath.setAttribute('stroke-opacity', '0.25');
+                    svgPath.setAttribute('stroke-dasharray', '8,12');
+                    if(badgeText) {
+                        badgeText.innerText = 'The space is waiting for you';
+                        badgeText.className = 'text-[#8FA8A8] opacity-70 font-["Forum"] tracking-wider transition-colors duration-500';
+                    }
+                } else if (lastDay.seconds > 0) {
+                    // Centered Phase
+                    svgPath.setAttribute('stroke', '#8FB9AA'); 
+                    svgPath.removeAttribute('stroke-opacity');
+                    svgPath.removeAttribute('stroke-dasharray');
+                    if(badgeText) {
+                        badgeText.innerText = 'Centered in peace';
+                        badgeText.className = 'text-[#8FB9AA] drop-shadow-[0_0_8px_rgba(143,185,170,0.5)] font-["Forum"] tracking-wider transition-colors duration-500';
+                    }
+                } else {
+                    // Paused Phase
+                    svgPath.setAttribute('stroke', '#D8C3A5'); 
+                    svgPath.setAttribute('stroke-opacity', '0.8');
+                    svgPath.removeAttribute('stroke-dasharray');
+                    if(badgeText) {
+                        badgeText.innerText = 'A quiet pause';
+                        badgeText.className = 'text-[#D8C3A5] opacity-80 font-["Forum"] tracking-wider transition-colors duration-500';
+                    }
                 }
             }
 
