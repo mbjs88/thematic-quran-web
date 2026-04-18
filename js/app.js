@@ -1663,6 +1663,9 @@ window.calculateDeviations = function(daysArray) {
     // Anchor first historical day on baseline natively to begin curve computation
     let prevD = 0; 
     
+    // Diagnostic telemetry array
+    let mathDiagnostics = [];
+    
     // We calculate from historical (index 0) forward to mathematically simulate organic physics physics
     daysArray.forEach((day, index) => {
         let nextD = 0;
@@ -1682,9 +1685,21 @@ window.calculateDeviations = function(daysArray) {
         // Prevent drifting violently off the SVG absolute edges
         nextD = Math.max(-42, Math.min(42, nextD));
         
+        mathDiagnostics.push({
+            DayIndex: index,
+            Date: day.date || 'N/A',
+            ReadSeconds: day.seconds,
+            PreviousDeviation: prevD.toFixed(2),
+            CalculatedDeviation: nextD.toFixed(2)
+        });
+        
         points.push(nextD);
         prevD = nextD;
     });
+    
+    console.groupCollapsed('%c[Path Engine] Mathematical Trajectory Data', 'color: #88FFD1; font-weight: bold;');
+    console.table(mathDiagnostics);
+    console.groupEnd();
     
     // We physically REVERSE the array natively so that Timeline rendering dynamically mounts 'Today' at the mathematical top `y=0`.
     points.reverse();
@@ -1735,26 +1750,39 @@ window.initSiratVisualizer = async function(forceOpen = false) {
         
         try {
             const d = new Date();
-            const toStr = getLocalYMD(d);
+            const toStr1 = getLocalYMD(d);
+            const dMid = new Date();
+            dMid.setDate(dMid.getDate() - 19); 
+            const fromStr1 = getLocalYMD(dMid);
+            
+            const dMidB = new Date();
+            dMidB.setDate(dMidB.getDate() - 20);
+            const toStr2 = getLocalYMD(dMidB);
             const dPast = new Date();
-            dPast.setDate(dPast.getDate() - 19); // 20 days window natively to bypass 422 constraints
-            const fromStr = getLocalYMD(dPast);
+            dPast.setDate(dPast.getDate() - 27); // Expanding natively to 28 days trailing
+            const fromStr2 = getLocalYMD(dPast);
             
-            const url = `/api/qf/auth/v1/activity-days?from=${fromStr}&to=${toStr}&type=QURAN&first=20`;
-            let res = await fetch(url);
-            let json = await res.json();
+            const [res1, res2] = await Promise.all([
+                fetch(`/api/qf/auth/v1/activity-days?from=${fromStr1}&to=${toStr1}&type=QURAN&first=20`),
+                fetch(`/api/qf/auth/v1/activity-days?from=${fromStr2}&to=${toStr2}&type=QURAN&first=20`)
+            ]);
+            let json1 = await res1.json();
+            let json2 = await res2.json();
             
-            let dataArr = Array.isArray(json.data) ? json.data : [];
+            let dataArr1 = Array.isArray(json1.data) ? json1.data : [];
+            let dataArr2 = Array.isArray(json2.data) ? json2.data : [];
+            let dataArr = dataArr1.concat(dataArr2);
+            
             let mapObj = {};
             dataArr.forEach(dItem => {
                 if(dItem && dItem.date) mapObj[dItem.date] = dItem.seconds || 0;
             });
             
-            // Build absolute chronological buckets
+            // Build absolute chronological buckets exactly spanning 28 units reliably
             let daysArray = [];
-            for(let i=0; i<20; i++) {
+            for(let i=0; i<28; i++) {
                 let dt = new Date();
-                dt.setDate(dt.getDate() - (19 - i));
+                dt.setDate(dt.getDate() - (27 - i));
                 let dtStr = getLocalYMD(dt);
                 daysArray.push({
                     date: dtStr,
@@ -1766,14 +1794,44 @@ window.initSiratVisualizer = async function(forceOpen = false) {
             let genesisIndex = daysArray.findIndex(d => d.seconds > 0);
             let isCleanSlate = genesisIndex === -1;
             
+            console.log(`%c[Path Engine] Rendering Matrix. Genesis Node Index: ${genesisIndex} | Total Bounds: ${daysArray.length} Days`, 'color: #8FA8A8;');
+            
             // Constrain arrays exactly binding natively to the user's explicit lifespan 
             let activeDaysArray = isCleanSlate ? [] : daysArray.slice(genesisIndex);
             
             let deviations = activeDaysArray.length > 0 ? window.calculateDeviations(activeDaysArray) : [];
-            let pathString = activeDaysArray.length > 0 ? window.generateSiratPathString(deviations, 20) : "";
+            let pathString = activeDaysArray.length > 0 ? window.generateSiratPathString(deviations, 28) : "";
             
             // Visually bind SVG path natively
             if (activeDaysArray.length > 0) svgPath.setAttribute('d', pathString);
+            
+            // Construct Islamic Month Separators Graphically securely onto exact geometric intersections
+            let monthGroup = document.getElementById('islamicMonthLines');
+            if (monthGroup) {
+                monthGroup.innerHTML = ''; 
+                if (activeDaysArray.length > 0) {
+                    let islamicFormatter = new Intl.DateTimeFormat('en-US-u-ca-islamic-umalqura', { month: 'numeric', year: 'numeric' });
+                    let prevHijriTag = null;
+                    let activeNodes = deviations.length;
+                    let yStep = 400 / 27; // 28 bounds = 27 physical gaps tracking limits
+                    let startY = 400 - ((activeNodes - 1) * yStep);
+                    
+                    activeDaysArray.forEach((dayObj, offsetI) => {
+                        let i = (activeNodes - 1) - offsetI; // Geometric inverse correlating array origins structurally
+                        let dObj = new Date(dayObj.date);
+                        let hijriTag = islamicFormatter.format(dObj);
+                        
+                        // Inject dividing axis boundary quietly upon calendar transition spanning
+                        if (prevHijriTag !== null && hijriTag !== prevHijriTag) {
+                            let currY = startY + (i * yStep);
+                            let monthNameStr = new Intl.DateTimeFormat('en-US-u-ca-islamic-umalqura', { month: 'short' }).format(dObj);
+                            monthGroup.innerHTML += `<line x1="-50" y1="${currY}" x2="50" y2="${currY}" stroke="#56A3A6" stroke-width="0.3" stroke-dasharray="2,2" class="opacity-40 drop-shadow-[0_0_2px_rgba(86,163,166,0.3)]" />`;
+                            monthGroup.innerHTML += `<text x="-48" y="${currY - 2}" fill="#56A3A6" font-size="2.5" class="opacity-50 font-['Forum'] uppercase tracking-widest">${monthNameStr}</text>`;
+                        }
+                        prevHijriTag = hijriTag;
+                    });
+                }
+            }
             
             // Dynamic Trajectory CSS Rules engine structurally isolating user behaviors
             let last7Days = daysArray.slice(-7);
@@ -1836,7 +1894,7 @@ window.initSiratVisualizer = async function(forceOpen = false) {
                 let tipDot = document.getElementById('siratTipDot');
                 if (tipDot && activeDaysArray.length > 0) {
                     tipDot.setAttribute('cx', deviations[0]);
-                    let tipY = 400 - ((activeDaysArray.length - 1) * (400 / 19));
+                    let tipY = 400 - ((activeDaysArray.length - 1) * (400 / 27)); // 28 divisions scaling natively
                     tipDot.setAttribute('cy', tipY);
                     tipDot.classList.remove('hidden');
                 }
@@ -1844,7 +1902,8 @@ window.initSiratVisualizer = async function(forceOpen = false) {
                 // Toggle historical label visually to prevent timeline desynchronization layout metrics
                 let bottomAxisLabel = document.getElementById('timelineAxisBottom');
                 let topAxisLabel = document.getElementById('timelineAxisTop');
-                if (bottomAxisLabel) bottomAxisLabel.style.opacity = activeDaysArray.length < 20 ? '0' : '1';
+                // Bound axis toggle mapping relative strictly to 28 total maximum elements natively!
+                if (bottomAxisLabel) bottomAxisLabel.style.opacity = activeDaysArray.length < 28 ? '0' : '1';
                 if (topAxisLabel) topAxisLabel.style.opacity = '1';
             }
             

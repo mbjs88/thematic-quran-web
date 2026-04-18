@@ -741,19 +741,20 @@
                             <svg id="siratSvg"
                                 class="absolute w-full h-full z-10 drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]"
                                 viewBox="-50 0 100 400" preserveAspectRatio="none">
+                                <g id="islamicMonthLines"></g>
                                 <path id="siratPath" stroke="white" stroke-width="2.5" fill="none"
                                     stroke-linecap="round" />
                                 <circle id="siratTipDot" cx="0" cy="0" r="4" fill="#F3E4CE" stroke="none" class="hidden animate-pulse" style="filter: drop-shadow(0 0 12px #F3E4CE);" />
                             </svg>
                             
                             <!-- Clean Slate Orb & Gradient Track (Hidden by default) -->
-                            <div id="siratCleanSlateOrb" class="absolute inset-0 flex-col items-center hidden z-20 pointer-events-none transition-opacity duration-1000">
-                                <div class="w-4 h-4 bg-[#F3E4CE] rounded-full shadow-[0_0_25px_rgba(243,228,206,0.9)] mt-6 animate-pulse"></div>
-                                <div class="w-[6px] h-[150px] bg-gradient-to-b from-[#F3E4CE]/90 via-[#56A3A6]/40 to-transparent rounded-b-full"></div>
+                            <div id="siratCleanSlateOrb" class="absolute inset-x-0 bottom-0 pb-6 flex flex-col items-center hidden z-20 pointer-events-none transition-opacity duration-1000">
+                                <div class="w-[4px] h-[100px] bg-gradient-to-t from-[#56A3A6]/80 via-[#56A3A6]/20 to-transparent rounded-t-full"></div>
+                                <div class="w-4 h-4 bg-[#88FFD1] rounded-full shadow-[0_0_25px_rgba(136,255,209,0.9)] animate-pulse -mt-1"></div>
                             </div>
                             <!-- Vertical Axis Labels -->
                             <div id="timelineAxisTop" class="absolute left-2 top-3 text-[9px] font-bold text-white/50 tracking-[0.2em] z-20 font-['Nunito'] transition-opacity duration-500">TODAY</div>
-                            <div id="timelineAxisBottom" class="absolute left-2 bottom-3 text-[9px] font-bold text-white/30 tracking-[0.2em] z-20 font-['Nunito'] transition-opacity duration-500">-20 DAYS</div>
+                            <div id="timelineAxisBottom" class="absolute left-2 bottom-3 text-[9px] font-bold text-white/30 tracking-[0.2em] z-20 font-['Nunito'] transition-opacity duration-500">-28 DAYS</div>
                             <!-- Controls -->
                             <button id="closePathBtn"
                                 class="absolute top-3 right-3 text-white/50 hover:text-white bg-white/10 hover:bg-white/20 rounded-full w-6 h-6 flex items-center justify-center z-20 transition active:scale-95">
