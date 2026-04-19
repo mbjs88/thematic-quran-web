@@ -373,19 +373,28 @@
 
         if (activeTab !== 'tafsir') return;
 
-        const blocks = verseKeys.map((vk, i) => {
+        // Collapse consecutive ayahs that share identical tafsir text into one block
+        const groups = [];
+        let i = 0;
+        while (i < verseKeys.length) {
             const html = sanitizeTafsirHtml(results[i]);
-            return `
-                <section class="scholar-ayah-block">
-                    <header class="scholar-ayah-heading">
-                        <span class="scholar-ayah-marker">${escapeHtml(vk)}</span>
-                    </header>
-                    <div class="scholar-ayah-body">
-                        ${html ? html : '<p class="text-white/40 italic">No tafsir available for this ayah from the selected source.</p>'}
-                    </div>
-                </section>
-            `;
-        }).join('');
+            let j = i + 1;
+            while (j < verseKeys.length && sanitizeTafsirHtml(results[j]) === html) j++;
+            const label = j - i > 1 ? `${verseKeys[i]} – ${verseKeys[j - 1]}` : verseKeys[i];
+            groups.push({ label, html });
+            i = j;
+        }
+
+        const blocks = groups.map(({ label, html }) => `
+            <section class="scholar-ayah-block">
+                <header class="scholar-ayah-heading">
+                    <span class="scholar-ayah-marker">${escapeHtml(label)}</span>
+                </header>
+                <div class="scholar-ayah-body">
+                    ${html ? html : '<p class="text-white/40 italic">No tafsir available for this ayah from the selected source.</p>'}
+                </div>
+            </section>
+        `).join('');
 
         host.innerHTML = blocks || '<p class="text-white/60">No verses in this section.</p>';
     }
@@ -430,15 +439,89 @@
                     <article class="scholar-note" data-note-id="${escapeHtml(String(n.id))}">
                         <div class="scholar-note-body">${escapeHtml((n.body || n.text || '').toString()).replace(/\n/g, '<br>')}</div>
                     </article>`).join('')
-                : '<p class="text-white/40 italic text-sm">No notes for this ayah.</p>';
+                : '';
             return `
-                <section class="scholar-ayah-block">
+                <section class="scholar-ayah-block" data-verse-key="${escapeHtml(key)}">
                     <header class="scholar-ayah-heading">
                         <span class="scholar-ayah-marker">${escapeHtml(key)}</span>
                     </header>
-                    <div class="scholar-ayah-body">${notesHtml}</div>
+                    <div class="scholar-ayah-body">
+                        ${notesHtml || '<p class="text-white/40 italic text-sm mb-2">No notes for this ayah.</p>'}
+                        <button class="ayah-add-note-btn mt-2 flex items-center gap-1.5 text-[#56A3A6]/60 hover:text-[#56A3A6] text-xs font-bold uppercase tracking-wider transition font-['Nunito']">
+                            <span class="material-symbols-outlined text-sm">add_circle</span>Add a note for this ayah
+                        </button>
+                        <div class="ayah-note-form hidden mt-3">
+                            <textarea rows="3" placeholder="Your reflection on ${escapeHtml(key)}…"
+                                class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white/90 text-sm placeholder-white/30 focus:outline-none focus:border-[#56A3A6] resize-none font-['Nunito']"></textarea>
+                            <div class="flex items-center justify-between mt-2 gap-3">
+                                <span class="ayah-save-status text-xs text-white/40 font-['Nunito']"></span>
+                                <div class="flex gap-2">
+                                    <button class="ayah-cancel-btn text-white/40 hover:text-white/60 text-xs px-3 py-1.5 rounded-full border border-white/10 transition font-['Nunito']">Cancel</button>
+                                    <button class="ayah-save-btn inline-flex items-center gap-1.5 bg-[#56A3A6] hover:bg-[#458a8d] disabled:opacity-50 text-white font-bold text-xs px-4 py-1.5 rounded-full transition">
+                                        <span class="material-symbols-outlined text-sm">cloud_upload</span>Save
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </section>`;
         }).join('');
+    }
+
+    function wirePerAyahForms(container, surah, start, end, data) {
+        container.querySelectorAll('[data-verse-key]').forEach(section => {
+            const verseKey = section.dataset.verseKey;
+            const ayahNo = parseInt(verseKey.split(':')[1], 10);
+            const range = `${surah}:${ayahNo}-${surah}:${ayahNo}`;
+            const ayahUrl = `${window.location.origin}/?surah=${surah}&from=${ayahNo}&to=${ayahNo}`;
+            const ayahPrefix = `Re/ ${surah}:${ayahNo} [${ayahUrl}]:\n\n`;
+
+            const addBtn = section.querySelector('.ayah-add-note-btn');
+            const form = section.querySelector('.ayah-note-form');
+            const textarea = form.querySelector('textarea');
+            const cancelBtn = section.querySelector('.ayah-cancel-btn');
+            const saveBtn = section.querySelector('.ayah-save-btn');
+            const statusEl = section.querySelector('.ayah-save-status');
+            const icon = addBtn.querySelector('.material-symbols-outlined');
+
+            addBtn.addEventListener('click', () => {
+                const opening = form.classList.contains('hidden');
+                form.classList.toggle('hidden');
+                icon.textContent = opening ? 'remove_circle' : 'add_circle';
+                if (opening) {
+                    if (!textarea.value) textarea.value = ayahPrefix;
+                    textarea.focus();
+                    textarea.setSelectionRange(textarea.value.length, textarea.value.length);
+                }
+            });
+
+            cancelBtn.addEventListener('click', () => {
+                form.classList.add('hidden');
+                textarea.value = '';
+                statusEl.textContent = '';
+                icon.textContent = 'add_circle';
+            });
+
+            saveBtn.addEventListener('click', async () => {
+                const text = textarea.value.trim();
+                if (text.length < 6) { statusEl.textContent = 'Minimum 6 characters.'; return; }
+                saveBtn.disabled = true;
+                statusEl.textContent = 'Saving…';
+                const res = await saveNote(text, range);
+                if (res.ok) {
+                    textarea.value = ayahPrefix;
+                    form.classList.add('hidden');
+                    icon.textContent = 'add_circle';
+                    refreshNotesList(surah, start, end, data);
+                } else if (res.status === 401) {
+                    statusEl.textContent = 'Session expired.';
+                    saveBtn.disabled = false;
+                } else {
+                    statusEl.textContent = `Error: ${(res.data && res.data.error) || `HTTP ${res.status}`}`;
+                    saveBtn.disabled = false;
+                }
+            });
+        });
     }
 
     async function renderNotes() {
@@ -460,13 +543,15 @@
         }
 
         const { surah, start, end, data } = activeSection;
-        const range = `${surah}:${start}-${surah}:${end}`;
+        const sectionRange = `${surah}:${start}-${surah}:${end}`;
+        const sectionUrl = `${window.location.origin}/?surah=${surah}&from=${start}&to=${end}`;
+        const sectionPrefix = `Re/ ${surah}:${start} - ${surah}:${end} [${sectionUrl}]:\n\n`;
 
         body.innerHTML = `
             <div class="mb-8 bg-white/5 border border-white/10 rounded-2xl p-5 md:p-6">
-                <h4 class="text-white/60 text-xs uppercase tracking-widest font-bold mb-1 font-['Nunito']">Add a Note</h4>
+                <h4 class="text-white/60 text-xs uppercase tracking-widest font-bold mb-1 font-['Nunito']">Note for this section</h4>
                 <p class="text-white/30 text-xs font-['Nunito'] mb-4">${escapeHtml(prettySurahName(surah))}, verses ${start}–${end} · synced to Quran.com · minimum 6 characters</p>
-                <textarea id="scholarNoteInput" rows="5" placeholder="Write your reflection on this section…"
+                <textarea id="scholarNoteInput" rows="6"
                     class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white/90 text-sm placeholder-white/30 focus:outline-none focus:border-[#56A3A6] resize-none font-['Nunito']"></textarea>
                 <div class="flex items-center justify-between mt-3 gap-3">
                     <span id="scholarNoteSaveStatus" class="text-xs text-white/40 font-['Nunito']"></span>
@@ -484,6 +569,9 @@
                 </div>
             </div>`;
 
+        // Pre-populate section textarea with reference prefix
+        body.querySelector('#scholarNoteInput').value = sectionPrefix;
+
         const saveBtn = body.querySelector('#scholarNoteSaveBtn');
         const textarea = body.querySelector('#scholarNoteInput');
         const statusEl = body.querySelector('#scholarNoteSaveStatus');
@@ -493,9 +581,9 @@
             if (text.length < 6) { statusEl.textContent = 'Note must be at least 6 characters.'; return; }
             saveBtn.disabled = true;
             statusEl.textContent = 'Saving…';
-            const res = await saveNote(text, range);
+            const res = await saveNote(text, sectionRange);
             if (res.ok) {
-                textarea.value = '';
+                textarea.value = sectionPrefix;
                 statusEl.textContent = 'Saved and published to Quran.com!';
                 setTimeout(() => { if (statusEl) statusEl.textContent = ''; }, 4000);
                 refreshNotesList(surah, start, end, data);
@@ -537,6 +625,7 @@
         const notes = (res.data && (res.data.data || res.data.notes || [])) || [];
         const blocks = buildNoteBlocks(surah, data, notes);
         listEl.innerHTML = blocks || '<p class="text-white/40 italic text-sm py-4 font-[\'Nunito\']">No notes yet for this section.</p>';
+        if (blocks) wirePerAyahForms(listEl, surah, start, end, data);
     }
 
     // -----------------------------------------------------------------
