@@ -1,22 +1,16 @@
-import { getQfOAuthConfig } from "../../_shared/qfOAuthConfig.js";
-
-// Public proxy for QF content API (tafsirs, verses, etc.)
-// Does NOT require user auth — sends only x-client-id.
+// Public proxy for Quran.com content API (tafsirs, verses, etc.)
+// No user auth required — forwards directly to the public quran.com API.
 export async function onRequest(context) {
-    const { request, env, params } = context;
-    const config = getQfOAuthConfig(env);
+    const { request, params } = context;
 
     const urlObj = new URL(request.url);
     const routeSegments = Array.isArray(params.path) ? params.path : [params.path];
     const routePath = `/${routeSegments.filter(Boolean).join('/')}${urlObj.search}`;
 
-    const upstreamUrl = `${config.apiBaseUrl}${routePath}`;
-
-    const headers = new Headers();
-    headers.set('x-client-id', config.clientId);
+    const upstreamUrl = `https://api.quran.com${routePath}`;
 
     try {
-        const res = await fetch(upstreamUrl, { method: 'GET', headers });
+        const res = await fetch(upstreamUrl, { method: 'GET' });
         const body = await res.text();
         return new Response(body, {
             status: res.status,

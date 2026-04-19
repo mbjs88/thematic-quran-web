@@ -5,7 +5,7 @@
 (function () {
     'use strict';
 
-    const QF_BASE = '/api/qf-public/content/api/v4';
+    const QF_BASE = '/api/qf-public/api/v4';
     const QF_AUTH_BASE = '/api/qf/auth/v1';
     const DEFAULT_TAFSIR_SLUGS = ['en-tafisr-ibn-kathir', 'en-tafsir-ibn-kathir', 'en-tafsir-maarif-ul-quran'];
 
