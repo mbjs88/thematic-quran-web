@@ -1656,7 +1656,7 @@ const getLocalYMD = (date) => {
 };
 
 window.calculateDeviations = function(daysArray) {
-    let k_drift = 16; 
+    let k_drift = 24; // Expanded strictly reflecting broader physical 300px scale bounds natively 
     let points = [];
     let currentBias = 1;
 
@@ -1682,8 +1682,8 @@ window.calculateDeviations = function(daysArray) {
             nextD = prevD + (currentBias * penalty) + organicWiggle;
         }
         
-        // Prevent drifting violently off the SVG absolute edges
-        nextD = Math.max(-42, Math.min(42, nextD));
+        // Prevent drifting violently off the extended proportional SVG edges natively
+        nextD = Math.max(-130, Math.min(130, nextD));
         
         mathDiagnostics.push({
             DayIndex: index,
@@ -1804,8 +1804,10 @@ window.initSiratVisualizer = async function(forceOpen = false, mockDays = 0) {
                     // activeDays determines how many days from Today mapping backwards they listened!
                     actualSecs = (histOffset < mockDays) ? 300 : 0;
                     
-                    // Mild drift injection for physics demonstration
-                    if (mockDays > 6 && histOffset === 4) actualSecs = 0; // Missed day 4 natively
+                    // Procedural heuristic drift injection natively using randomization map matrix correctly dynamically
+                    if (actualSecs > 0 && Math.random() < 0.25) {
+                        actualSecs = 0; // Simulated missed isolated routine organically 
+                    }
                 }
 
                 daysArray.push({
@@ -1854,8 +1856,9 @@ window.initSiratVisualizer = async function(forceOpen = false, mockDays = 0) {
                         if (prevHijriTag !== null && hijriTag !== prevHijriTag) {
                             let currY = startY + (i * yStep);
                             let monthNameStr = new Intl.DateTimeFormat('en-US-u-ca-islamic-umalqura', { month: 'short' }).format(dObj);
-                            monthGroup.innerHTML += `<line x1="-50" y1="${currY}" x2="50" y2="${currY}" stroke="#56A3A6" stroke-width="0.3" stroke-dasharray="2,2" class="opacity-40 drop-shadow-[0_0_2px_rgba(86,163,166,0.3)]" />`;
-                            monthGroup.innerHTML += `<text x="-48" y="${currY - 2}" fill="#56A3A6" font-size="2.5" class="opacity-50 font-['Forum'] uppercase tracking-widest">${monthNameStr}</text>`;
+                            // Scale line structurally safely binding to mapping x:-150 parameters
+                            monthGroup.innerHTML += `<line x1="-150" y1="${currY}" x2="150" y2="${currY}" stroke="#56A3A6" stroke-width="0.3" stroke-dasharray="2,2" class="opacity-40 drop-shadow-[0_0_2px_rgba(86,163,166,0.3)]" />`;
+                            monthGroup.innerHTML += `<text x="-148" y="${currY - 2}" fill="#56A3A6" font-size="2.5" class="opacity-50 font-['Forum'] uppercase tracking-widest">${monthNameStr}</text>`;
                         }
                         prevHijriTag = hijriTag;
                     });
