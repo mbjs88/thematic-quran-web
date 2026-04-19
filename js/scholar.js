@@ -288,10 +288,11 @@
         const noteId = d && ((d.data && d.data.id) || (d.note && d.note.id) || d.id);
         if (!noteId) return createRes;
 
-        return fetchJson(`${QF_AUTH_BASE}/notes/${encodeURIComponent(String(noteId))}/publish`, {
+        return fetchJson(`${QF_AUTH_BASE}/notes`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload)
+            body: JSON.stringify(payload),
+            saveToQR: true
         });
     }
 
