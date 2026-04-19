@@ -1670,10 +1670,18 @@ window.calculateDeviations = function(daysArray) {
     daysArray.forEach((day, index) => {
         let nextD = 0;
 
+        let recovery_rate = k_drift * 1.5; // Physics pull threshold natively back towards zero
+
         if (day.seconds > 0) {
-            // Gold Standard Rest: Absolute locked baseline
-            nextD = 0; 
-            if (prevD !== 0) currentBias = currentBias === 1 ? -1 : 1; 
+            // Gradual geometric recentering pulling exactly towards absolute zero
+            if (prevD > 0) {
+                nextD = Math.max(0, prevD - recovery_rate);
+            } else if (prevD < 0) {
+                nextD = Math.min(0, prevD + recovery_rate);
+            } else {
+                nextD = 0;
+            }
+            if (prevD !== 0 && nextD === 0) currentBias = currentBias === 1 ? -1 : 1; 
         } else {
             // Drifting Outward
             let penalty = k_drift;
@@ -1875,6 +1883,12 @@ window.initSiratVisualizer = async function(forceOpen = false, mockDays = 0) {
             let orbObj = document.getElementById('siratCleanSlateOrb');
             let explanationText = document.getElementById('siratExplanationText');
 
+            let currentDeviation = deviations.length > 0 ? Math.abs(deviations[0]) : 0;
+            let recoveryPerDay = 24 * 1.5; // k_drift * 1.5
+            let daysToCenter = Math.ceil(currentDeviation / recoveryPerDay);
+
+            let globalExplanation = 'This trajectory maps exactly how far you are from the center based on your daily reading patterns. Listen daily to continuously pull your path back towards the straight line.';
+
             if (isCleanSlate) {
                 // Intro Phase
                 svgPath.style.opacity = '0';
@@ -1887,7 +1901,7 @@ window.initSiratVisualizer = async function(forceOpen = false, mockDays = 0) {
                     badgeText.className = 'text-[#F3E4CE] drop-shadow-[0_0_12px_rgba(243,228,206,0.6)] font-["Forum"] tracking-wider transition-colors duration-500';
                 }
                 if(explanationText) {
-                    explanationText.innerText = 'Every day, this trajectory visualizes how close you are to your straight path. Listen daily to stay centered.';
+                    explanationText.innerText = globalExplanation;
                     explanationText.className = 'text-[#F3E4CE]/50 text-[10px] leading-relaxed mt-4 font-["Forum"] tracking-widest text-center px-4 w-full transition-colors duration-500';
                 }
             } else {
@@ -1904,11 +1918,11 @@ window.initSiratVisualizer = async function(forceOpen = false, mockDays = 0) {
                     svgPath.setAttribute('stroke-opacity', '0.25');
                     svgPath.setAttribute('stroke-dasharray', '3,5');
                     if(badgeText) {
-                        badgeText.innerText = 'The space is waiting for you';
+                        badgeText.innerText = daysToCenter > 0 ? `Read for ${daysToCenter} days to return` : 'The space is waiting for you';
                         badgeText.className = 'text-[#8FA8A8] opacity-70 font-["Forum"] tracking-wider transition-colors duration-500';
                     }
                     if(explanationText) {
-                        explanationText.innerText = 'You have drifted slightly from your daily habit. Reconnect today to gently realign your trajectory.';
+                        explanationText.innerText = globalExplanation;
                         explanationText.className = 'text-[#8FA8A8]/60 text-[10px] leading-relaxed mt-4 font-["Forum"] tracking-widest text-center px-4 w-full transition-colors duration-500';
                     }
                 } else if (lastDay.seconds > 0) {
@@ -1917,11 +1931,11 @@ window.initSiratVisualizer = async function(forceOpen = false, mockDays = 0) {
                     svgPath.removeAttribute('stroke-opacity');
                     svgPath.removeAttribute('stroke-dasharray');
                     if(badgeText) {
-                        badgeText.innerText = 'Centered in peace';
+                        badgeText.innerText = daysToCenter > 0 ? `Read for ${daysToCenter} days to return` : 'Centered in peace';
                         badgeText.className = 'text-[#8FB9AA] drop-shadow-[0_0_8px_rgba(143,185,170,0.5)] font-["Forum"] tracking-wider transition-colors duration-500';
                     }
                     if(explanationText) {
-                        explanationText.innerText = 'You are currently staying on course. Keep listening daily to nurture this spiritual momentum.';
+                        explanationText.innerText = globalExplanation;
                         explanationText.className = 'text-[#8FB9AA]/60 text-[10px] leading-relaxed mt-4 font-["Forum"] tracking-widest text-center px-4 w-full transition-colors duration-500';
                     }
                 } else {
@@ -1930,11 +1944,11 @@ window.initSiratVisualizer = async function(forceOpen = false, mockDays = 0) {
                     svgPath.setAttribute('stroke-opacity', '0.6');
                     svgPath.removeAttribute('stroke-dasharray');
                     if(badgeText) {
-                        badgeText.innerText = 'A quiet pause';
+                        badgeText.innerText = daysToCenter > 0 ? `Read for ${daysToCenter} days to return` : 'A quiet pause';
                         badgeText.className = 'text-[#D8C3A5] opacity-80 font-["Forum"] tracking-wider transition-colors duration-500';
                     }
                     if(explanationText) {
-                        explanationText.innerText = 'A momentary pause in your journey. Listen today to draw the path back towards the center.';
+                        explanationText.innerText = globalExplanation;
                         explanationText.className = 'text-[#D8C3A5]/60 text-[10px] leading-relaxed mt-4 font-["Forum"] tracking-widest text-center px-4 w-full transition-colors duration-500';
                     }
                 }
