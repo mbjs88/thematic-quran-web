@@ -289,6 +289,13 @@
     });
 }
 
+    async function deleteNote(noteId) {
+        return fetchJson(`${QF_AUTH_BASE}/notes/${encodeURIComponent(String(noteId))}`, {
+            method: 'DELETE',
+            headers: { 'Accept': 'application/json' }
+        });
+    }
+
     async function renderTafsir() {
         const body = modalEl.querySelector('#scholarBody');
         if (!body || !activeSection) return;
@@ -437,7 +444,12 @@
             const notesHtml = ns.length
                 ? ns.map(n => `
                     <article class="scholar-note" data-note-id="${escapeHtml(String(n.id))}">
-                        <div class="scholar-note-body">${escapeHtml((n.body || n.text || '').toString()).replace(/\n/g, '<br>')}</div>
+                        <div class="flex items-start gap-2">
+                            <div class="scholar-note-body flex-1">${escapeHtml((n.body || n.text || '').toString()).replace(/\n/g, '<br>')}</div>
+                            <button class="delete-note-btn flex-shrink-0 text-white/20 hover:text-red-400 transition rounded p-0.5 mt-0.5" data-note-id="${escapeHtml(String(n.id))}" aria-label="Delete note">
+                                <span class="material-symbols-outlined text-base leading-none">delete</span>
+                            </button>
+                        </div>
                     </article>`).join('')
                 : '';
             return `
@@ -519,6 +531,50 @@
                 } else {
                     statusEl.textContent = `Error: ${(res.data && res.data.error) || `HTTP ${res.status}`}`;
                     saveBtn.disabled = false;
+                }
+            });
+        });
+    }
+
+    function wireDeleteButtons(container, surah, start, end, data) {
+        container.querySelectorAll('.delete-note-btn').forEach(btn => {
+            const noteId = btn.dataset.noteId;
+            const icon = btn.querySelector('.material-symbols-outlined');
+
+            btn.addEventListener('click', async () => {
+                if (btn.dataset.confirming !== '1') {
+                    // First click — arm the button
+                    btn.dataset.confirming = '1';
+                    icon.textContent = 'delete_forever';
+                    btn.classList.remove('text-white/20');
+                    btn.classList.add('text-red-400');
+                    btn.title = 'Click again to confirm deletion';
+                    // Auto-disarm after 3 s
+                    setTimeout(() => {
+                        if (btn.dataset.confirming === '1') {
+                            btn.dataset.confirming = '';
+                            icon.textContent = 'delete';
+                            btn.classList.remove('text-red-400');
+                            btn.classList.add('text-white/20');
+                            btn.title = '';
+                        }
+                    }, 3000);
+                    return;
+                }
+
+                // Second click — execute delete
+                btn.disabled = true;
+                icon.textContent = 'hourglass_empty';
+                const res = await deleteNote(noteId);
+                if (res.ok) {
+                    refreshNotesList(surah, start, end, data);
+                } else {
+                    btn.disabled = false;
+                    btn.dataset.confirming = '';
+                    icon.textContent = 'delete';
+                    btn.classList.remove('text-red-400');
+                    btn.classList.add('text-white/20');
+                    btn.title = res.status === 404 ? 'Note not found.' : `Error ${res.status}`;
                 }
             });
         });
@@ -625,7 +681,10 @@
         const notes = (res.data && (res.data.data || res.data.notes || [])) || [];
         const blocks = buildNoteBlocks(surah, data, notes);
         listEl.innerHTML = blocks || '<p class="text-white/40 italic text-sm py-4 font-[\'Nunito\']">No notes yet for this section.</p>';
-        if (blocks) wirePerAyahForms(listEl, surah, start, end, data);
+        if (blocks) {
+            wirePerAyahForms(listEl, surah, start, end, data);
+            wireDeleteButtons(listEl, surah, start, end, data);
+        }
     }
 
     // -----------------------------------------------------------------
