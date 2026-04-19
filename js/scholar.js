@@ -85,7 +85,8 @@
 
         const overlay = document.createElement('div');
         overlay.id = 'scholarModal';
-        overlay.className = 'fixed inset-0 z-[90] hidden bg-[#12101C]/95 backdrop-blur-3xl overflow-y-auto';
+        overlay.className = 'fixed inset-0 z-[90] hidden overflow-y-auto';
+        overlay.style.background = 'linear-gradient(to bottom, #12101C 0%, #221F2B 50%, #352B39 100%)';
         overlay.setAttribute('role', 'dialog');
         overlay.setAttribute('aria-modal', 'true');
         overlay.setAttribute('aria-labelledby', 'scholarModalTitle');
@@ -272,28 +273,17 @@
         return text;
     }
 
-    function renderSignInPrompt(body, message) {
-        body.innerHTML = `
-            <div class="text-center py-12 max-w-md mx-auto">
-                <span class="material-symbols-outlined text-5xl text-[#56A3A6]/60 block mb-3">auto_stories</span>
-                <h3 class="text-white text-lg font-bold mb-2">Sign in to access scholarship</h3>
-                <p class="text-white/60 mb-5">${escapeHtml(message)}</p>
-                <a href="/auth/login" class="inline-flex items-center gap-2 bg-[#56A3A6] hover:bg-[#458a8d] text-white font-bold px-6 py-3 rounded-full transition">
-                    <span class="material-symbols-outlined" aria-hidden="true">login</span>
-                    Sign in with Quran.com
-                </a>
-            </div>
-        `;
+    async function saveNote(noteText, range) {
+        return fetchJson(`${QF_AUTH_BASE}/notes`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ body: noteText, ranges: [range] })
+        });
     }
 
     async function renderTafsir() {
         const body = modalEl.querySelector('#scholarBody');
         if (!body || !activeSection) return;
-
-        if (!isLoggedIn()) {
-            renderSignInPrompt(body, 'Connect your Quran.com account to read Tafsir from trusted scholars, mapped to each ayah in this section.');
-            return;
-        }
 
         body.innerHTML = `
             <div class="flex items-center justify-center py-12 text-white/60">
@@ -316,19 +306,33 @@
             return;
         }
 
-        if (activeTab !== 'tafsir') return; // user switched
+        if (activeTab !== 'tafsir') return;
 
-        // Selector
-        const options = list.map(t => {
-            const label = (t.translated_name && t.translated_name.name) ? t.translated_name.name : (t.name || t.slug || t.id);
-            const lang = t.language_name ? ` (${t.language_name})` : '';
-            return `<option value="${escapeHtml(t.id)}" ${String(t.id) === String(selectedTafsirId) ? 'selected' : ''}>${escapeHtml(label)}${escapeHtml(lang)}</option>`;
+        // Group by language, English first then alphabetical
+        const byLang = {};
+        list.forEach(t => {
+            const lang = (t.language_name || 'other').toLowerCase();
+            if (!byLang[lang]) byLang[lang] = [];
+            byLang[lang].push(t);
+        });
+        const langOrder = Object.keys(byLang).sort((a, b) => {
+            if (a === 'english') return -1;
+            if (b === 'english') return 1;
+            return a.localeCompare(b);
+        });
+        const options = langOrder.map(lang => {
+            const groupLabel = lang.charAt(0).toUpperCase() + lang.slice(1);
+            const opts = byLang[lang].map(t => {
+                const name = (t.translated_name && t.translated_name.name) ? t.translated_name.name : (t.name || t.slug || String(t.id));
+                return `<option value="${escapeHtml(String(t.id))}" ${String(t.id) === String(selectedTafsirId) ? 'selected' : ''}>${escapeHtml(name)}</option>`;
+            }).join('');
+            return `<optgroup label="${escapeHtml(groupLabel)}">${opts}</optgroup>`;
         }).join('');
 
         body.innerHTML = `
             <div class="flex items-center justify-between flex-wrap gap-3 mb-5">
                 <label for="scholarTafsirSelect" class="text-white/60 text-xs uppercase tracking-widest font-bold">Tafsir</label>
-                <select id="scholarTafsirSelect" class="bg-white/10 border border-white/20 rounded-full px-4 py-2 text-sm text-white focus:outline-none focus:border-[#56A3A6] max-w-full">
+                <select id="scholarTafsirSelect" class="bg-white/10 border border-white/20 rounded-xl px-4 py-2 text-sm text-white focus:outline-none focus:border-[#56A3A6] max-w-full">
                     ${options}
                 </select>
             </div>
@@ -381,66 +385,7 @@
     // -----------------------------------------------------------------
     // NOTES TAB
     // -----------------------------------------------------------------
-    async function renderNotes() {
-        const body = modalEl.querySelector('#scholarBody');
-        if (!body || !activeSection) return;
-
-        if (!isLoggedIn()) {
-            body.innerHTML = `
-                <div class="text-center py-12 max-w-md mx-auto">
-                    <span class="material-symbols-outlined text-5xl text-[#56A3A6]/60 block mb-3">lock_person</span>
-                    <h3 class="text-white text-lg font-bold mb-2">Sign in to see your notes</h3>
-                    <p class="text-white/60 mb-5">Connect your Quran.com account to view personal notes mapped to every ayah in this section.</p>
-                    <a href="/auth/login" class="inline-flex items-center gap-2 bg-[#56A3A6] hover:bg-[#458a8d] text-white font-bold px-6 py-3 rounded-full transition">
-                        <span class="material-symbols-outlined" aria-hidden="true">login</span>
-                        Sign in with Quran.com
-                    </a>
-                </div>
-            `;
-            return;
-        }
-
-        body.innerHTML = `
-            <div class="flex items-center justify-center py-12 text-white/60">
-                <span class="material-symbols-outlined animate-spin mr-2">progress_activity</span>
-                Loading your notes…
-            </div>
-        `;
-
-        const { surah, start, end, data } = activeSection;
-        const res = await fetchJson(`${QF_AUTH_BASE}/notes/by-range?from=${surah}:${start}&to=${surah}:${end}`);
-
-        if (activeTab !== 'notes') return;
-
-        if (res.status === 401) {
-            body.innerHTML = `
-                <div class="text-center py-10 text-white/70">
-                    <span class="material-symbols-outlined text-4xl text-amber-400 block mb-2">key_off</span>
-                    <p class="font-bold">Your session has expired.</p>
-                    <p class="text-sm text-white/50 mt-1 mb-4">Please sign in again to continue.</p>
-                    <a href="/auth/login" class="inline-flex items-center gap-2 bg-[#56A3A6] hover:bg-[#458a8d] text-white font-bold px-5 py-2.5 rounded-full transition">
-                        <span class="material-symbols-outlined text-base" aria-hidden="true">login</span>Sign in
-                    </a>
-                </div>
-            `;
-            return;
-        }
-
-        if (!res.ok) {
-            body.innerHTML = `
-                <div class="text-center py-10 text-white/70">
-                    <span class="material-symbols-outlined text-4xl text-red-400 block mb-2">error</span>
-                    <p class="font-bold">Could not load notes.</p>
-                    <p class="text-sm text-white/50 mt-1">${escapeHtml((res.data && res.data.error) || `HTTP ${res.status}`)}</p>
-                </div>
-            `;
-            return;
-        }
-
-        const notes = (res.data && (res.data.data || res.data.notes || [])) || [];
-        notesCache = notes;
-
-        // Group notes by verse_key. A note may be associated with multiple verses via `ranges`.
+    function buildNoteBlocks(surah, data, notes) {
         const byVerseKey = {};
         data.forEach(v => { byVerseKey[`${surah}:${v.ayah_no_surah}`] = []; });
 
@@ -454,41 +399,31 @@
             let placed = false;
             ranges.forEach(r => {
                 if (typeof r === 'string' && r.indexOf('-') !== -1) {
-                    // "S:A-S:B"
                     const [a, b] = r.split('-');
                     const [s1, a1] = a.split(':').map(Number);
                     const [s2, a2] = (b || '').split(':').map(Number);
                     if (!Number.isNaN(s1)) {
                         const sFrom = s1, vFrom = a1;
                         const sTo = Number.isNaN(s2) ? s1 : s2, vTo = Number.isNaN(a2) ? a1 : a2;
-                        // For this section, only surah === activeSection.surah is relevant
                         if (sFrom === surah && sTo === surah) {
-                            for (let a = vFrom; a <= vTo; a++) {
-                                attachToKey(note, `${surah}:${a}`);
-                                placed = true;
-                            }
+                            for (let i = vFrom; i <= vTo; i++) { attachToKey(note, `${surah}:${i}`); placed = true; }
                         }
                     }
                 } else if (typeof r === 'string' && r.indexOf(':') !== -1) {
-                    attachToKey(note, r);
-                    placed = true;
+                    attachToKey(note, r); placed = true;
                 }
             });
-            // Fallbacks when ranges is missing
-            if (!placed && note.verse_key) {
-                attachToKey(note, note.verse_key);
-            }
+            if (!placed && note.verse_key) attachToKey(note, note.verse_key);
         });
 
-        const blocks = data.map(v => {
+        return data.map(v => {
             const key = `${surah}:${v.ayah_no_surah}`;
             const ns = byVerseKey[key];
             const notesHtml = (ns && ns.length)
                 ? ns.map(n => `
                     <article class="scholar-note" data-note-id="${escapeHtml(n.id)}">
                         <div class="scholar-note-body">${escapeHtml((n.body || n.text || '').toString()).replace(/\n/g, '<br>')}</div>
-                    </article>
-                `).join('')
+                    </article>`).join('')
                 : '<p class="text-white/40 italic text-sm">No note for this ayah.</p>';
             return `
                 <section class="scholar-ayah-block">
@@ -496,14 +431,109 @@
                         <span class="scholar-ayah-marker">${escapeHtml(key)}</span>
                     </header>
                     <div class="scholar-ayah-body">${notesHtml}</div>
-                </section>
-            `;
+                </section>`;
         }).join('');
+    }
 
+    async function renderNotes() {
+        const body = modalEl.querySelector('#scholarBody');
+        if (!body || !activeSection) return;
+
+        if (!isLoggedIn()) {
+            body.innerHTML = `
+                <div class="text-center py-12 max-w-md mx-auto">
+                    <span class="material-symbols-outlined text-5xl text-[#56A3A6]/60 block mb-3">lock_person</span>
+                    <h3 class="text-white text-lg font-bold mb-2">Sign in to manage notes</h3>
+                    <p class="text-white/60 mb-5">Connect your Quran.com account to write and sync personal notes for every section.</p>
+                    <a href="/auth/login" class="inline-flex items-center gap-2 bg-[#56A3A6] hover:bg-[#458a8d] text-white font-bold px-6 py-3 rounded-full transition">
+                        <span class="material-symbols-outlined" aria-hidden="true">login</span>
+                        Sign in with Quran.com
+                    </a>
+                </div>`;
+            return;
+        }
+
+        const { surah, start, end, data } = activeSection;
+        const range = `${surah}:${start}-${surah}:${end}`;
+
+        // Compose form (renders immediately, notes load below)
         body.innerHTML = `
-            <div class="mb-4 text-white/60 text-sm">Your notes for ${escapeHtml(prettySurahName(surah))}, verses ${start}–${end}.</div>
-            ${blocks}
-        `;
+            <div class="mb-8 bg-white/5 border border-white/10 rounded-2xl p-5">
+                <h4 class="text-white/60 text-xs uppercase tracking-widest font-bold mb-3">Add a Note — ${escapeHtml(prettySurahName(surah))} ${start}–${end}</h4>
+                <textarea id="scholarNoteInput" rows="4" placeholder="Write your reflection on this section…"
+                    class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white/90 text-sm placeholder-white/30 focus:outline-none focus:border-[#56A3A6] resize-none font-['Nunito']"></textarea>
+                <div class="flex items-center justify-between mt-3 gap-3">
+                    <span id="scholarNoteSaveStatus" class="text-xs text-white/40"></span>
+                    <button id="scholarNoteSaveBtn"
+                        class="inline-flex items-center gap-2 bg-[#56A3A6] hover:bg-[#458a8d] disabled:opacity-50 disabled:cursor-not-allowed text-white font-bold text-sm px-5 py-2 rounded-full transition">
+                        <span class="material-symbols-outlined text-base" aria-hidden="true">cloud_upload</span>
+                        Save to Quran.com
+                    </button>
+                </div>
+            </div>
+            <div id="scholarNotesList">
+                <div class="flex items-center py-6 text-white/40 text-sm">
+                    <span class="material-symbols-outlined animate-spin mr-2 text-base">progress_activity</span>
+                    Loading your notes…
+                </div>
+            </div>`;
+
+        // Wire up save button
+        const saveBtn = body.querySelector('#scholarNoteSaveBtn');
+        const textarea = body.querySelector('#scholarNoteInput');
+        const statusEl = body.querySelector('#scholarNoteSaveStatus');
+
+        saveBtn.addEventListener('click', async () => {
+            const text = textarea.value.trim();
+            if (!text) { statusEl.textContent = 'Please write something first.'; return; }
+            saveBtn.disabled = true;
+            statusEl.textContent = 'Saving…';
+            const res = await saveNote(text, range);
+            if (res.ok) {
+                textarea.value = '';
+                statusEl.textContent = 'Saved!';
+                setTimeout(() => { statusEl.textContent = ''; }, 3000);
+                refreshNotesList(surah, start, end, data);
+            } else if (res.status === 401) {
+                statusEl.textContent = 'Session expired — please sign in again.';
+            } else {
+                statusEl.textContent = `Error: ${(res.data && res.data.error) || `HTTP ${res.status}`}`;
+            }
+            saveBtn.disabled = false;
+        });
+
+        refreshNotesList(surah, start, end, data);
+    }
+
+    async function refreshNotesList(surah, start, end, data) {
+        const listEl = modalEl && modalEl.querySelector('#scholarNotesList');
+        if (!listEl) return;
+
+        const res = await fetchJson(`${QF_AUTH_BASE}/notes/by-range?from=${surah}:${start}&to=${surah}:${end}`);
+
+        if (activeTab !== 'notes' || !modalEl.querySelector('#scholarNotesList')) return;
+
+        if (res.status === 401) {
+            listEl.innerHTML = `
+                <div class="text-center py-8 text-white/70">
+                    <span class="material-symbols-outlined text-3xl text-amber-400 block mb-2">key_off</span>
+                    <p class="font-bold text-sm">Session expired.</p>
+                    <a href="/auth/login" class="inline-flex items-center gap-2 mt-3 bg-[#56A3A6] hover:bg-[#458a8d] text-white font-bold text-sm px-5 py-2 rounded-full transition">
+                        <span class="material-symbols-outlined text-base" aria-hidden="true">login</span>Sign in
+                    </a>
+                </div>`;
+            return;
+        }
+
+        if (!res.ok) {
+            listEl.innerHTML = `<p class="text-red-400/70 text-sm py-4">Could not load notes: ${escapeHtml((res.data && res.data.error) || `HTTP ${res.status}`)}</p>`;
+            return;
+        }
+
+        const notes = (res.data && (res.data.data || res.data.notes || [])) || [];
+        notesCache = notes;
+        const blocks = buildNoteBlocks(surah, data, notes);
+        listEl.innerHTML = blocks || '<p class="text-white/40 italic text-sm py-4">No notes yet for this section.</p>';
     }
 
     // -----------------------------------------------------------------
