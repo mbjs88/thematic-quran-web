@@ -50,6 +50,16 @@ export async function onRequest(context) {
         } else if (httpMethod === 'POST') {
             const body = await request.json();
             qfResponse = await qfApi.post(routePath, body);
+        } else if (httpMethod === 'PATCH') {
+            const body = await request.json();
+            qfResponse = await qfApi.fetch(routePath, {
+                method: 'PATCH',
+                body: JSON.stringify(body),
+                headers: { 'Content-Type': 'application/json' }
+            });
+        } else if (httpMethod === 'PUT') {
+            const body = await request.json();
+            qfResponse = await qfApi.put(routePath, body);
         } else if (httpMethod === 'DELETE') {
             let body = undefined;
             // Attempt to parse JSON body since DELETE with body is unconventional but strictly mandated here

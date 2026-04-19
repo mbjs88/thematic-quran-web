@@ -73,7 +73,7 @@
         rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css?v=2.3.0">
+    <link rel="stylesheet" href="css/styles.css?v=2.4.0">
 
     <style>
         html {
@@ -744,17 +744,27 @@
                                 <g id="islamicMonthLines"></g>
                                 <path id="siratPath" stroke="white" stroke-width="2.5" fill="none"
                                     stroke-linecap="round" />
-                                <circle id="siratTipDot" cx="0" cy="0" r="4" fill="#F3E4CE" stroke="none" class="hidden animate-pulse" style="filter: drop-shadow(0 0 12px #F3E4CE);" />
+                                <circle id="siratTipDot" cx="0" cy="0" r="4" fill="#F3E4CE" stroke="none"
+                                    class="hidden animate-pulse" style="filter: drop-shadow(0 0 12px #F3E4CE);" />
                             </svg>
-                            
+
                             <!-- Clean Slate Orb & Gradient Track (Hidden by default) -->
-                            <div id="siratCleanSlateOrb" class="absolute inset-x-0 bottom-0 pb-16 flex flex-col items-center hidden z-20 pointer-events-none transition-opacity duration-1000">
-                                <div class="w-[3px] h-[100px] bg-gradient-to-t from-white/60 via-white/10 to-transparent rounded-t-full"></div>
-                                <div class="w-4 h-4 bg-white rounded-full shadow-[0_0_20px_rgba(255,255,255,1)] animate-pulse -mt-1"></div>
+                            <div id="siratCleanSlateOrb"
+                                class="absolute inset-x-0 bottom-0 pb-16 flex flex-col items-center hidden z-20 pointer-events-none transition-opacity duration-1000">
+                                <div
+                                    class="w-[3px] h-[100px] bg-gradient-to-t from-white/60 via-white/10 to-transparent rounded-t-full">
+                                </div>
+                                <div
+                                    class="w-4 h-4 bg-white rounded-full shadow-[0_0_20px_rgba(255,255,255,1)] animate-pulse -mt-1">
+                                </div>
                             </div>
                             <!-- Vertical Axis Labels -->
-                            <div id="timelineAxisTop" class="absolute left-2 top-3 text-[9px] font-bold text-white/50 tracking-[0.2em] z-20 font-['Nunito'] transition-opacity duration-500">TODAY</div>
-                            <div id="timelineAxisBottom" class="absolute left-2 bottom-3 text-[9px] font-bold text-white/30 tracking-[0.2em] z-20 font-['Nunito'] transition-opacity duration-500">-28 DAYS</div>
+                            <div id="timelineAxisTop"
+                                class="absolute left-2 top-3 text-[9px] font-bold text-white/50 tracking-[0.2em] z-20 font-['Nunito'] transition-opacity duration-500">
+                                TODAY</div>
+                            <div id="timelineAxisBottom"
+                                class="absolute left-2 bottom-3 text-[9px] font-bold text-white/30 tracking-[0.2em] z-20 font-['Nunito'] transition-opacity duration-500">
+                                -28 DAYS</div>
                             <!-- Controls -->
                             <button id="closePathBtn"
                                 class="absolute top-3 right-3 text-white/50 hover:text-white bg-white/10 hover:bg-white/20 rounded-full w-6 h-6 flex items-center justify-center z-20 transition active:scale-95">
@@ -762,7 +772,9 @@
                             </button>
                             <div id="siratBadgeContainer"
                                 class="absolute bottom-3 flex items-center text-center text-[10px] opacity-95 backdrop-blur-xl px-4 py-1.5 rounded-full bg-[#0B1515]/80 border border-white/5 shadow-2xl transition-all duration-700 z-20">
-                                <span id="siratBadgeText" class="text-[#56A3A6] drop-shadow-[0_0_8px_rgba(86,163,166,0.5)] font-['Forum'] tracking-wider transition-colors duration-500">Your journey begins here</span>
+                                <span id="siratBadgeText"
+                                    class="text-[#56A3A6] drop-shadow-[0_0_8px_rgba(86,163,166,0.5)] font-['Forum'] tracking-wider transition-colors duration-500">Your
+                                    journey begins here</span>
                             </div>
                             <!-- Loader Overlay -->
                             <div id="siratLoading"
@@ -771,8 +783,10 @@
                                 Modeling...
                             </div>
                         </div>
-                        <p id="siratExplanationText" class="text-white/40 text-[10px] leading-relaxed mt-4 font-['Forum'] tracking-widest text-center px-4 w-full transition-colors duration-500">
-                            Every day, this trajectory visualizes how close you are to your straight path. Listen daily to stay centered.
+                        <p id="siratExplanationText"
+                            class="text-white/40 text-[10px] leading-relaxed mt-4 font-['Forum'] tracking-widest text-center px-4 w-full transition-colors duration-500">
+                            Every day, this trajectory visualizes how close you are to your straight path. Listen daily
+                            to stay centered.
                         </p>
                     </div>
                 </div>
@@ -1032,6 +1046,7 @@
     <script src="js/ui-renderer.js?v=2.3.0"></script>
     <script src="js/juz-data.js?v=2.3.0"></script>
     <script src="js/one-off-projects.js?v=1.0"></script>
+    <script src="js/scholar.js?v=1.0.0"></script>
     <script src="js/app.js?v=2.4.0"></script>
 
 </body>

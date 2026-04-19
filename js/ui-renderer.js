@@ -280,6 +280,20 @@ function createCard(surahNum, start, end, data) {
             }
         };
 
+        const scholarBtn = document.createElement('button');
+        scholarBtn.className = "text-white/40 hover:text-[#56A3A6] p-2 transition";
+        scholarBtn.setAttribute('aria-label', `Open Scholar for verses ${start} to ${end}`);
+        scholarBtn.setAttribute('title', 'Scholar — Tafsir & Notes');
+        scholarBtn.innerHTML = '<span class="material-symbols-outlined text-xl" aria-hidden="true">menu_book</span>';
+        scholarBtn.onclick = (e) => {
+            e.stopPropagation();
+            if (typeof window.openScholarModal === 'function') {
+                window.openScholarModal(surahNum, start, end, data);
+            } else {
+                if (window.showToast) window.showToast('Scholar view unavailable', 'error');
+            }
+        };
+
         const downloadBtn = document.createElement('button');
         downloadBtn.className = "text-white/40 hover:text-[#56A3A6] p-2 transition";
         downloadBtn.setAttribute('aria-label', `Export`);
@@ -298,6 +312,7 @@ function createCard(surahNum, start, end, data) {
         actionsDiv.appendChild(bookmarkBtn);
         actionsDiv.appendChild(shareBtn);
         actionsDiv.appendChild(copyTextBtn);
+        actionsDiv.appendChild(scholarBtn);
         actionsDiv.appendChild(downloadBtn);
         actionsDiv.appendChild(playBtn);
     }
