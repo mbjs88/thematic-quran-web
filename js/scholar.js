@@ -85,32 +85,36 @@
 
         const overlay = document.createElement('div');
         overlay.id = 'scholarModal';
-        overlay.className = 'fixed inset-0 z-[60] hidden items-start justify-center overflow-y-auto bg-black/70 backdrop-blur-sm p-4 md:p-8';
+        overlay.className = 'fixed inset-0 z-[90] hidden bg-[#12101C]/95 backdrop-blur-3xl overflow-y-auto';
         overlay.setAttribute('role', 'dialog');
         overlay.setAttribute('aria-modal', 'true');
         overlay.setAttribute('aria-labelledby', 'scholarModalTitle');
 
         overlay.innerHTML = `
-            <div id="scholarModalPanel" class="relative w-full max-w-3xl my-4 md:my-8 bg-[#1E1426] rounded-3xl border border-white/10 shadow-2xl flex flex-col max-h-[92vh]">
+            <div class="max-w-3xl mx-auto px-4 md:px-8 pt-8 md:pt-14 pb-32">
+
                 <!-- Header -->
-                <div class="flex items-center justify-between gap-3 px-5 md:px-7 py-4 border-b border-white/10 sticky top-0 bg-[#1E1426] rounded-t-3xl z-10">
-                    <div class="flex items-center gap-3 min-w-0">
-                        <span class="material-symbols-outlined text-[#56A3A6]" aria-hidden="true">menu_book</span>
-                        <div class="min-w-0">
-                            <h2 id="scholarModalTitle" class="text-white font-['Nunito'] text-lg md:text-xl font-bold truncate">Scholar</h2>
-                            <p id="scholarModalSubtitle" class="text-white/50 text-xs uppercase tracking-widest font-['Nunito']"></p>
+                <div class="flex items-center justify-between gap-3 mb-8">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-[#56A3A6]/20 flex items-center justify-center shrink-0">
+                            <span class="material-symbols-outlined text-2xl text-[#56A3A6]" aria-hidden="true">menu_book</span>
+                        </div>
+                        <div>
+                            <h2 id="scholarModalTitle" class="text-2xl md:text-3xl font-bold font-['Forum'] tracking-widest text-white uppercase">Scholar</h2>
+                            <p id="scholarModalSubtitle" class="text-xs text-[#56A3A6] font-bold font-['Nunito'] tracking-widest uppercase mt-1"></p>
                         </div>
                     </div>
-                    <button id="scholarCloseBtn" aria-label="Close Scholar" class="text-white/60 hover:text-white hover:bg-white/10 rounded-full p-2 transition">
-                        <span class="material-symbols-outlined" aria-hidden="true">close</span>
+                    <button id="scholarCloseBtn" aria-label="Close Scholar"
+                        class="text-white/50 hover:text-white hover:bg-white/10 w-10 h-10 rounded-full flex items-center justify-center transition border border-transparent hover:border-white/10 shrink-0">
+                        <span class="material-symbols-outlined text-2xl" aria-hidden="true">close</span>
                     </button>
                 </div>
 
                 <!-- Section card replica -->
-                <div id="scholarSectionReplica" class="px-5 md:px-7 pt-5"></div>
+                <div id="scholarSectionReplica"></div>
 
                 <!-- Tabs -->
-                <div class="px-5 md:px-7 mt-5 border-b border-white/10" role="tablist" aria-label="Scholar tabs">
+                <div class="mt-8 border-b border-white/10" role="tablist" aria-label="Scholar tabs">
                     <div class="flex gap-1">
                         <button id="scholarTabTafsir" role="tab" aria-selected="true" data-tab="tafsir"
                             class="scholar-tab-btn px-4 py-2.5 font-['Nunito'] text-sm font-bold uppercase tracking-wider border-b-2 transition">
@@ -124,20 +128,14 @@
                 </div>
 
                 <!-- Body -->
-                <div id="scholarBody" class="overflow-y-auto px-5 md:px-7 py-6 flex-1 font-['Nunito']"></div>
+                <div id="scholarBody" class="py-6 font-['Nunito']"></div>
             </div>
         `;
 
         document.body.appendChild(overlay);
         modalEl = overlay;
 
-        // Close on backdrop click (but not on panel)
-        overlay.addEventListener('click', (e) => {
-            if (e.target === overlay) closeModal();
-        });
-
         overlay.querySelector('#scholarCloseBtn').addEventListener('click', closeModal);
-
         overlay.querySelector('#scholarTabTafsir').addEventListener('click', () => setActiveTab('tafsir'));
         overlay.querySelector('#scholarTabNotes').addEventListener('click', () => setActiveTab('notes'));
 
@@ -165,7 +163,6 @@
     function closeModal() {
         if (!modalEl) return;
         modalEl.classList.add('hidden');
-        modalEl.classList.remove('flex');
         document.body.style.overflow = '';
         if (escHandler) {
             document.removeEventListener('keydown', escHandler);
@@ -521,8 +518,8 @@
         modalEl.querySelector('#scholarModalTitle').textContent = prettySurahName(surah);
         modalEl.querySelector('#scholarModalSubtitle').textContent = `Verses ${start}–${end}`;
 
+        modalEl.scrollTop = 0;
         modalEl.classList.remove('hidden');
-        modalEl.classList.add('flex');
         document.body.style.overflow = 'hidden';
 
         renderSectionReplica();
