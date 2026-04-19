@@ -18,7 +18,6 @@
     let tafsirList = null;    // cached list from /resources/tafsirs
     let selectedTafsirId = null;
     const tafsirCache = new Map(); // key = `${tafsirId}|${verseKey}` -> html
-    let notesCache = null;    // last fetched notes array (for current section only)
     let escHandler = null;
 
     // -----------------------------------------------------------------
@@ -273,11 +272,26 @@
         return text;
     }
 
-    async function saveNote(noteText, verseKey) {
-        return fetchJson(`${QF_AUTH_BASE}/notes`, {
+    async function saveNote(noteText, range) {
+        const payload = { body: noteText, ranges: [range] };
+
+        // Step 1: create the note
+        const createRes = await fetchJson(`${QF_AUTH_BASE}/notes`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ body: noteText, verse_key: verseKey })
+            body: JSON.stringify(payload)
+        });
+        if (!createRes.ok) return createRes;
+
+        // Step 2: publish the note
+        const d = createRes.data;
+        const noteId = d && ((d.data && d.data.id) || (d.note && d.note.id) || d.id);
+        if (!noteId) return createRes;
+
+        return fetchJson(`${QF_AUTH_BASE}/notes/${encodeURIComponent(String(noteId))}/publish`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
         });
     }
 
@@ -417,83 +431,20 @@
         return data.map(v => {
             const key = `${surah}:${v.ayah_no_surah}`;
             const ns = byVerseKey[key] || [];
-            const existingHtml = ns.length
+            const notesHtml = ns.length
                 ? ns.map(n => `
                     <article class="scholar-note" data-note-id="${escapeHtml(String(n.id))}">
                         <div class="scholar-note-body">${escapeHtml((n.body || n.text || '').toString()).replace(/\n/g, '<br>')}</div>
                     </article>`).join('')
-                : '<p class="text-white/40 italic text-sm mb-1">No notes yet.</p>';
-
+                : '<p class="text-white/40 italic text-sm">No notes for this ayah.</p>';
             return `
-                <section class="scholar-ayah-block" data-verse-key="${escapeHtml(key)}">
+                <section class="scholar-ayah-block">
                     <header class="scholar-ayah-heading">
                         <span class="scholar-ayah-marker">${escapeHtml(key)}</span>
                     </header>
-                    <div class="scholar-ayah-body">
-                        <div class="scholar-notes-list">${existingHtml}</div>
-                        <button class="scholar-add-note-btn mt-3 flex items-center gap-1.5 text-[#56A3A6]/60 hover:text-[#56A3A6] text-xs font-bold uppercase tracking-wider transition font-['Nunito']">
-                            <span class="material-symbols-outlined text-sm">add_circle</span>Add a note
-                        </button>
-                        <div class="scholar-note-form hidden mt-3">
-                            <textarea rows="3" placeholder="Your reflection on this ayah…"
-                                class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white/90 text-sm placeholder-white/30 focus:outline-none focus:border-[#56A3A6] resize-none font-['Nunito']"></textarea>
-                            <div class="flex items-center justify-between mt-2 gap-3">
-                                <span class="save-status text-xs text-white/40"></span>
-                                <div class="flex gap-2">
-                                    <button class="cancel-note-btn text-white/40 hover:text-white/60 text-xs px-3 py-1.5 rounded-full border border-white/10 transition font-['Nunito']">Cancel</button>
-                                    <button class="save-note-btn inline-flex items-center gap-1.5 bg-[#56A3A6] hover:bg-[#458a8d] disabled:opacity-50 text-white font-bold text-xs px-4 py-1.5 rounded-full transition">
-                                        <span class="material-symbols-outlined text-sm">cloud_upload</span>Save
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="scholar-ayah-body">${notesHtml}</div>
                 </section>`;
         }).join('');
-    }
-
-    function wireNoteForms(container, surah) {
-        container.querySelectorAll('[data-verse-key]').forEach(section => {
-            const verseKey = section.dataset.verseKey;
-            const addBtn = section.querySelector('.scholar-add-note-btn');
-            const form = section.querySelector('.scholar-note-form');
-            const textarea = form.querySelector('textarea');
-            const cancelBtn = section.querySelector('.cancel-note-btn');
-            const saveBtn = section.querySelector('.save-note-btn');
-            const statusEl = section.querySelector('.save-status');
-            const icon = addBtn.querySelector('.material-symbols-outlined');
-
-            addBtn.addEventListener('click', () => {
-                const opening = form.classList.contains('hidden');
-                form.classList.toggle('hidden');
-                icon.textContent = opening ? 'remove_circle' : 'add_circle';
-                if (opening) textarea.focus();
-            });
-
-            cancelBtn.addEventListener('click', () => {
-                form.classList.add('hidden');
-                textarea.value = '';
-                statusEl.textContent = '';
-                icon.textContent = 'add_circle';
-            });
-
-            saveBtn.addEventListener('click', async () => {
-                const text = textarea.value.trim();
-                if (!text) { statusEl.textContent = 'Please write something first.'; return; }
-                saveBtn.disabled = true;
-                statusEl.textContent = 'Saving…';
-                const res = await saveNote(text, verseKey);
-                if (res.ok) {
-                    refreshNotesList(surah, activeSection.start, activeSection.end, activeSection.data);
-                } else if (res.status === 401) {
-                    statusEl.textContent = 'Session expired — please sign in again.';
-                    saveBtn.disabled = false;
-                } else {
-                    statusEl.textContent = `Error: ${(res.data && res.data.error) || `HTTP ${res.status}`}`;
-                    saveBtn.disabled = false;
-                }
-            });
-        });
     }
 
     async function renderNotes() {
@@ -505,7 +456,7 @@
                 <div class="text-center py-12 max-w-md mx-auto">
                     <span class="material-symbols-outlined text-5xl text-[#56A3A6]/60 block mb-3">lock_person</span>
                     <h3 class="text-white text-lg font-bold mb-2">Sign in to manage notes</h3>
-                    <p class="text-white/60 mb-5">Connect your Quran.com account to write and sync personal notes for every ayah.</p>
+                    <p class="text-white/60 mb-5">Connect your Quran.com account to write and sync personal reflections on any section.</p>
                     <a href="/auth/login" class="inline-flex items-center gap-2 bg-[#56A3A6] hover:bg-[#458a8d] text-white font-bold px-6 py-3 rounded-full transition">
                         <span class="material-symbols-outlined" aria-hidden="true">login</span>
                         Sign in with Quran.com
@@ -514,30 +465,70 @@
             return;
         }
 
+        const { surah, start, end, data } = activeSection;
+        const range = `${surah}:${start}-${surah}:${end}`;
+
         body.innerHTML = `
-            <div class="flex items-center py-6 text-white/40 text-sm">
-                <span class="material-symbols-outlined animate-spin mr-2 text-base">progress_activity</span>
-                Loading notes…
+            <div class="mb-8 bg-white/5 border border-white/10 rounded-2xl p-5 md:p-6">
+                <h4 class="text-white/60 text-xs uppercase tracking-widest font-bold mb-1 font-['Nunito']">Add a Note</h4>
+                <p class="text-white/30 text-xs font-['Nunito'] mb-4">${escapeHtml(prettySurahName(surah))}, verses ${start}–${end} · synced to Quran.com · minimum 6 characters</p>
+                <textarea id="scholarNoteInput" rows="5" placeholder="Write your reflection on this section…"
+                    class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white/90 text-sm placeholder-white/30 focus:outline-none focus:border-[#56A3A6] resize-none font-['Nunito']"></textarea>
+                <div class="flex items-center justify-between mt-3 gap-3">
+                    <span id="scholarNoteSaveStatus" class="text-xs text-white/40 font-['Nunito']"></span>
+                    <button id="scholarNoteSaveBtn"
+                        class="inline-flex items-center gap-2 bg-[#56A3A6] hover:bg-[#458a8d] disabled:opacity-50 disabled:cursor-not-allowed text-white font-bold text-sm px-5 py-2.5 rounded-full transition">
+                        <span class="material-symbols-outlined text-base" aria-hidden="true">cloud_upload</span>
+                        Save to Quran.com
+                    </button>
+                </div>
+            </div>
+            <div id="scholarNotesList">
+                <div class="flex items-center py-4 text-white/40 text-sm font-['Nunito']">
+                    <span class="material-symbols-outlined animate-spin mr-2 text-base">progress_activity</span>
+                    Loading your notes…
+                </div>
             </div>`;
 
-        const { surah, start, end, data } = activeSection;
-        await refreshNotesList(surah, start, end, data);
+        const saveBtn = body.querySelector('#scholarNoteSaveBtn');
+        const textarea = body.querySelector('#scholarNoteInput');
+        const statusEl = body.querySelector('#scholarNoteSaveStatus');
+
+        saveBtn.addEventListener('click', async () => {
+            const text = textarea.value.trim();
+            if (text.length < 6) { statusEl.textContent = 'Note must be at least 6 characters.'; return; }
+            saveBtn.disabled = true;
+            statusEl.textContent = 'Saving…';
+            const res = await saveNote(text, range);
+            if (res.ok) {
+                textarea.value = '';
+                statusEl.textContent = 'Saved and published to Quran.com!';
+                setTimeout(() => { if (statusEl) statusEl.textContent = ''; }, 4000);
+                refreshNotesList(surah, start, end, data);
+            } else if (res.status === 401) {
+                statusEl.textContent = 'Session expired — please sign in again.';
+            } else {
+                statusEl.textContent = `Error: ${(res.data && res.data.error) || `HTTP ${res.status}`}`;
+            }
+            saveBtn.disabled = false;
+        });
+
+        refreshNotesList(surah, start, end, data);
     }
 
     async function refreshNotesList(surah, start, end, data) {
-        const body = modalEl && modalEl.querySelector('#scholarBody');
-        if (!body || activeTab !== 'notes') return;
+        const listEl = modalEl && modalEl.querySelector('#scholarNotesList');
+        if (!listEl || activeTab !== 'notes') return;
 
         const res = await fetchJson(`${QF_AUTH_BASE}/notes/by-range?from=${surah}:${start}&to=${surah}:${end}`);
-        if (activeTab !== 'notes') return;
+        if (activeTab !== 'notes' || !modalEl.querySelector('#scholarNotesList')) return;
 
         if (res.status === 401) {
-            body.innerHTML = `
-                <div class="text-center py-10 text-white/70">
-                    <span class="material-symbols-outlined text-4xl text-amber-400 block mb-2">key_off</span>
-                    <p class="font-bold">Your session has expired.</p>
-                    <p class="text-sm text-white/50 mt-1 mb-4">Please sign in again to continue.</p>
-                    <a href="/auth/login" class="inline-flex items-center gap-2 bg-[#56A3A6] hover:bg-[#458a8d] text-white font-bold px-5 py-2.5 rounded-full transition">
+            listEl.innerHTML = `
+                <div class="text-center py-8 text-white/70">
+                    <span class="material-symbols-outlined text-3xl text-amber-400 block mb-2">key_off</span>
+                    <p class="font-bold text-sm">Session expired.</p>
+                    <a href="/auth/login" class="inline-flex items-center gap-2 mt-3 bg-[#56A3A6] hover:bg-[#458a8d] text-white font-bold text-sm px-5 py-2 rounded-full transition">
                         <span class="material-symbols-outlined text-base" aria-hidden="true">login</span>Sign in
                     </a>
                 </div>`;
@@ -545,20 +536,13 @@
         }
 
         if (!res.ok) {
-            body.innerHTML = `
-                <div class="text-center py-10 text-white/70">
-                    <span class="material-symbols-outlined text-4xl text-red-400 block mb-2">error</span>
-                    <p class="font-bold">Could not load notes.</p>
-                    <p class="text-sm text-white/50 mt-1">${escapeHtml((res.data && res.data.error) || `HTTP ${res.status}`)}</p>
-                </div>`;
+            listEl.innerHTML = `<p class="text-red-400/70 text-sm py-2 font-['Nunito']">Could not load notes: ${escapeHtml((res.data && res.data.error) || `HTTP ${res.status}`)}</p>`;
             return;
         }
 
         const notes = (res.data && (res.data.data || res.data.notes || [])) || [];
-        notesCache = notes;
         const blocks = buildNoteBlocks(surah, data, notes);
-        body.innerHTML = blocks || '<p class="text-white/40 italic text-sm py-4">No notes yet for this section.</p>';
-        if (blocks) wireNoteForms(body, surah);
+        listEl.innerHTML = blocks || '<p class="text-white/40 italic text-sm py-4 font-[\'Nunito\']">No notes yet for this section.</p>';
     }
 
     // -----------------------------------------------------------------
@@ -567,7 +551,6 @@
     function openScholarModal(surah, start, end, data) {
         buildModal();
         activeSection = { surah, start, end, data: Array.isArray(data) ? data : [] };
-        notesCache = null;
         tafsirCache.clear(); // clear per-verse cache when section changes
 
         modalEl.querySelector('#scholarModalTitle').textContent = prettySurahName(surah);
