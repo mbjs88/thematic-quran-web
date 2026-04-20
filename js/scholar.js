@@ -50,6 +50,19 @@
             .replace(/'/g, '&#39;');
     }
 
+    function linkifyNoteBody(text) {
+        if (!text) return '';
+        // Split on URLs so we can escape non-URL parts and wrap URL parts in <a>
+        const urlRegex = /(https?:\/\/[^\s]+)/g;
+        return text.split(urlRegex).map((part, i) => {
+            if (i % 2 === 1) {
+                const safe = escapeHtml(part);
+                return `<a href="${safe}" target="_blank" rel="noopener noreferrer" class="text-[#56A3A6] underline hover:text-[#7cc4c7] transition break-all">${safe}</a>`;
+            }
+            return escapeHtml(part).replace(/\n/g, '<br>');
+        }).join('');
+    }
+
     // Strip <script> for basic safety; retain <p>/<em>/<strong>/<br> etc. from QF responses
     function sanitizeTafsirHtml(html) {
         if (!html) return '';
@@ -445,7 +458,7 @@
                 ? ns.map(n => `
                     <article class="scholar-note" data-note-id="${escapeHtml(String(n.id))}">
                         <div class="flex items-start gap-2">
-                            <div class="scholar-note-body flex-1">${escapeHtml((n.body || n.text || '').toString()).replace(/\n/g, '<br>')}</div>
+                            <div class="scholar-note-body flex-1">${linkifyNoteBody((n.body || n.text || '').toString())}</div>
                             <button class="delete-note-btn flex-shrink-0 text-white/20 hover:text-red-400 transition rounded p-0.5 mt-0.5" data-note-id="${escapeHtml(String(n.id))}" aria-label="Delete note">
                                 <span class="material-symbols-outlined text-base leading-none">delete</span>
                             </button>
@@ -536,46 +549,47 @@
         });
     }
 
+    function showDeleteConfirm(onConfirm) {
+        const overlay = document.createElement('div');
+        overlay.className = 'fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm';
+        overlay.innerHTML = `
+            <div class="bg-[#221F2B] border border-white/10 rounded-2xl p-6 max-w-sm w-full mx-4 shadow-2xl">
+                <div class="flex items-center gap-3 mb-3">
+                    <span class="material-symbols-outlined text-red-400 text-2xl">delete_forever</span>
+                    <h3 class="text-white font-bold text-lg font-['Forum']">Delete note?</h3>
+                </div>
+                <p class="text-white/60 text-sm font-['Nunito'] mb-6">This will permanently remove the note from Quran.com and cannot be undone.</p>
+                <div class="flex gap-3 justify-end">
+                    <button class="cancel-btn text-white/60 hover:text-white text-sm font-bold px-4 py-2 rounded-full border border-white/20 hover:border-white/40 transition font-['Nunito']">Cancel</button>
+                    <button class="confirm-btn inline-flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white font-bold text-sm px-5 py-2 rounded-full transition font-['Nunito']">
+                        <span class="material-symbols-outlined text-base">delete</span>Delete
+                    </button>
+                </div>
+            </div>`;
+        document.body.appendChild(overlay);
+        overlay.querySelector('.cancel-btn').addEventListener('click', () => overlay.remove());
+        overlay.querySelector('.confirm-btn').addEventListener('click', () => { overlay.remove(); onConfirm(); });
+        overlay.addEventListener('click', e => { if (e.target === overlay) overlay.remove(); });
+    }
+
     function wireDeleteButtons(container, surah, start, end, data) {
         container.querySelectorAll('.delete-note-btn').forEach(btn => {
             const noteId = btn.dataset.noteId;
             const icon = btn.querySelector('.material-symbols-outlined');
 
-            btn.addEventListener('click', async () => {
-                if (btn.dataset.confirming !== '1') {
-                    // First click — arm the button
-                    btn.dataset.confirming = '1';
-                    icon.textContent = 'delete_forever';
-                    btn.classList.remove('text-white/20');
-                    btn.classList.add('text-red-400');
-                    btn.title = 'Click again to confirm deletion';
-                    // Auto-disarm after 3 s
-                    setTimeout(() => {
-                        if (btn.dataset.confirming === '1') {
-                            btn.dataset.confirming = '';
-                            icon.textContent = 'delete';
-                            btn.classList.remove('text-red-400');
-                            btn.classList.add('text-white/20');
-                            btn.title = '';
-                        }
-                    }, 3000);
-                    return;
-                }
-
-                // Second click — execute delete
-                btn.disabled = true;
-                icon.textContent = 'hourglass_empty';
-                const res = await deleteNote(noteId);
-                if (res.ok) {
-                    refreshNotesList(surah, start, end, data);
-                } else {
-                    btn.disabled = false;
-                    btn.dataset.confirming = '';
-                    icon.textContent = 'delete';
-                    btn.classList.remove('text-red-400');
-                    btn.classList.add('text-white/20');
-                    btn.title = res.status === 404 ? 'Note not found.' : `Error ${res.status}`;
-                }
+            btn.addEventListener('click', () => {
+                showDeleteConfirm(async () => {
+                    btn.disabled = true;
+                    icon.textContent = 'hourglass_empty';
+                    const res = await deleteNote(noteId);
+                    if (res.ok) {
+                        refreshNotesList(surah, start, end, data);
+                    } else {
+                        btn.disabled = false;
+                        icon.textContent = 'delete';
+                        btn.title = res.status === 404 ? 'Note not found.' : `Error ${res.status}`;
+                    }
+                });
             });
         });
     }
