@@ -730,63 +730,62 @@
                     <!-- SIRAT-UL-MUSTAQEEM CANVAS CONTAINER -->
                     <div id="siratContainer" class="w-full mt-4 overflow-hidden transition-all duration-500 ease-in-out"
                         style="max-height: 0px; opacity: 0;">
-                        <div
-                            class="relative w-full h-[400px] bg-black/40 border border-[#56A3A6]/30 rounded-2xl flex flex-col items-center overflow-hidden">
-                            <!-- Background Straight Baseline (Sirat) -->
-                            <div
-                                class="absolute inset-0 flex justify-center items-center opacity-30 pointer-events-none">
-                                <div class="w-[2px] h-full bg-[#56A3A6] shadow-[0_0_20px_#56A3A6]"></div>
+                        <div class="relative w-full h-[400px] bg-black/40 border border-[#56A3A6]/30 rounded-2xl overflow-hidden">
+                            <!-- Background Straight Baseline (Sirat ul Mustaqeem) -->
+                            <div class="absolute inset-0 flex justify-center items-center opacity-25 pointer-events-none">
+                                <div class="w-[1.5px] h-full bg-[#56A3A6] shadow-[0_0_16px_#56A3A6]"></div>
                             </div>
-                            <!-- Dynamic Overlay Render -->
-                            <svg id="siratSvg"
-                                class="absolute w-full h-full z-10 drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]"
+                            <!-- SVG: trail path only (no circles — avoids preserveAspectRatio distortion) -->
+                            <svg id="siratSvg" class="absolute w-full h-full z-10"
                                 viewBox="-150 0 300 400" preserveAspectRatio="none">
+                                <defs>
+                                    <linearGradient id="siratTrailGradient" gradientUnits="userSpaceOnUse" x1="0" y1="340" x2="0" y2="35">
+                                        <stop offset="0%"   stop-color="#56A3A6" stop-opacity="0"/>
+                                        <stop offset="30%"  stop-color="#56A3A6" stop-opacity="0.35"/>
+                                        <stop offset="75%"  stop-color="white"   stop-opacity="0.55"/>
+                                        <stop offset="100%" stop-color="white"   stop-opacity="0.88"/>
+                                    </linearGradient>
+                                </defs>
                                 <g id="islamicMonthLines"></g>
-                                <path id="siratPath" stroke="white" stroke-width="2.5" fill="none"
-                                    stroke-linecap="round" />
-                                <circle id="siratTipDot" cx="0" cy="0" r="4" fill="#F3E4CE" stroke="none"
-                                    class="hidden animate-pulse" style="filter: drop-shadow(0 0 12px #F3E4CE);" />
+                                <path id="siratPath" stroke="url(#siratTrailGradient)" stroke-width="2" fill="none" stroke-linecap="round"/>
                             </svg>
-
-                            <!-- Clean Slate Orb & Gradient Track (Hidden by default) -->
-                            <div id="siratCleanSlateOrb"
-                                class="absolute inset-x-0 bottom-0 pb-16 flex flex-col items-center hidden z-20 pointer-events-none transition-opacity duration-1000">
-                                <div
-                                    class="w-[3px] h-[100px] bg-gradient-to-t from-white/60 via-white/10 to-transparent rounded-t-full">
-                                </div>
-                                <div
-                                    class="w-4 h-4 bg-white rounded-full shadow-[0_0_20px_rgba(255,255,255,1)] animate-pulse -mt-1">
-                                </div>
+                            <!-- Glowing orb — HTML div so it stays circular despite SVG scale distortion -->
+                            <div id="siratOrb" class="absolute hidden z-20 pointer-events-none"
+                                style="width:16px;height:16px;transform:translate(-50%,-50%);">
+                                <div class="absolute rounded-full" style="width:48px;height:48px;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(255,255,255,0.05);"></div>
+                                <div class="absolute rounded-full" style="width:28px;height:28px;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(255,255,255,0.13);"></div>
+                                <div class="w-full h-full rounded-full bg-white animate-pulse"
+                                    style="box-shadow:0 0 6px 2px rgba(255,255,255,0.95),0 0 14px 5px rgba(255,255,255,0.4),0 0 30px 10px rgba(255,255,255,0.12);"></div>
                             </div>
-                            <!-- Vertical Axis Labels -->
+                            <!-- Clean Slate orb (new user, no history yet) -->
+                            <div id="siratCleanSlateOrb"
+                                class="absolute inset-x-0 bottom-0 pb-14 flex flex-col items-center hidden z-20 pointer-events-none">
+                                <div class="w-[2px] h-[110px] bg-gradient-to-t from-white/40 via-white/10 to-transparent"></div>
+                                <div class="w-4 h-4 bg-white rounded-full -mt-1 animate-pulse"
+                                    style="box-shadow:0 0 6px 2px rgba(255,255,255,0.95),0 0 14px 5px rgba(255,255,255,0.4),0 0 30px 10px rgba(255,255,255,0.12);"></div>
+                            </div>
+                            <!-- "Today" label — JS repositions this to track the orb -->
                             <div id="timelineAxisTop"
-                                class="absolute left-2 top-3 text-[9px] font-bold text-white/50 tracking-[0.2em] z-20 font-['Nunito'] transition-opacity duration-500">
-                                TODAY</div>
+                                class="absolute text-[9px] font-bold text-white/40 tracking-[0.18em] z-20 font-['Nunito'] uppercase transition-all duration-500"
+                                style="left:8px;top:12px;">Today</div>
                             <div id="timelineAxisBottom"
-                                class="absolute left-2 bottom-3 text-[9px] font-bold text-white/30 tracking-[0.2em] z-20 font-['Nunito'] transition-opacity duration-500">
-                                -28 DAYS</div>
-                            <!-- Controls -->
+                                class="absolute left-2 bottom-3 text-[9px] font-bold text-white/20 tracking-[0.18em] z-20 font-['Nunito'] uppercase">28 days ago</div>
+                            <!-- Close -->
                             <button id="closePathBtn"
                                 class="absolute top-3 right-3 text-white/50 hover:text-white bg-white/10 hover:bg-white/20 rounded-full w-6 h-6 flex items-center justify-center z-20 transition active:scale-95">
                                 <span class="material-symbols-outlined text-[14px]">expand_less</span>
                             </button>
-                            <div id="siratBadgeContainer"
-                                class="absolute bottom-3 flex items-center text-center text-[10px] opacity-95 backdrop-blur-xl px-4 py-1.5 rounded-full bg-[#0B1515]/80 border border-white/5 shadow-2xl transition-all duration-700 z-20">
-                                <span id="siratBadgeText"
-                                    class="text-[#56A3A6] drop-shadow-[0_0_8px_rgba(86,163,166,0.5)] font-['Forum'] tracking-wider transition-colors duration-500">Your
-                                    journey begins here</span>
-                            </div>
-                            <!-- Loader Overlay -->
+                            <!-- Loader -->
                             <div id="siratLoading"
                                 class="absolute inset-0 flex flex-col items-center justify-center text-xs text-[#56A3A6] font-['Forum'] tracking-widest hidden z-30 bg-[#0B1515]/90 backdrop-blur-sm">
                                 <span class="material-symbols-outlined animate-spin text-2xl mb-2">sync</span>
                                 Modeling...
                             </div>
                         </div>
-                        <p id="siratExplanationText"
-                            class="text-white/40 text-[10px] leading-relaxed mt-4 font-['Forum'] tracking-widest text-center px-4 w-full transition-colors duration-500">
-                            Every day, this trajectory visualizes how close you are to your straight path. Listen daily
-                            to stay centered.
+                        <!-- State message below graphic (never overlaps the orb) -->
+                        <p id="siratBadgeText" class="text-[#56A3A6] text-[11px] font-bold font-['Forum'] tracking-wider text-center mt-3 px-2 min-h-[1.4em] transition-colors duration-500">Your journey begins here</p>
+                        <p id="siratExplanationText" class="text-white/30 text-[10px] leading-relaxed mt-1.5 font-['Nunito'] tracking-wide text-center px-2 w-full transition-colors duration-500">
+                            The centre line is the Straight Path. Daily reading keeps you close; missed days cause you to drift. The orb marks where you are today.
                         </p>
                     </div>
                 </div>

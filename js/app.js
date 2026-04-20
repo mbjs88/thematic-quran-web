@@ -1683,11 +1683,9 @@ window.calculateDeviations = function(daysArray) {
             }
             if (prevD !== 0 && nextD === 0) currentBias = currentBias === 1 ? -1 : 1; 
         } else {
-            // Drifting Outward
-            let penalty = k_drift;
-            // Inject organic flow wiggle 
-            let organicWiggle = Math.sin(index) * (k_drift * 0.4);
-            nextD = prevD + (currentBias * penalty) + organicWiggle;
+            // Drift outward — subtle sinusoidal curl makes the path look organic rather than mechanical
+            let organicCurl = Math.sin(index * 0.9) * (k_drift * 0.18);
+            nextD = prevD + (currentBias * k_drift) + organicCurl;
         }
         
         // Prevent drifting violently off the extended proportional SVG edges natively
@@ -1884,103 +1882,92 @@ window.initSiratVisualizer = async function(forceOpen = false, mockDays = 0) {
             let explanationText = document.getElementById('siratExplanationText');
 
             let currentDeviation = deviations.length > 0 ? Math.abs(deviations[0]) : 0;
-            let recoveryPerDay = 24 * 1.5; // k_drift * 1.5
+            let recoveryPerDay = 24 * 1.5;
             let daysToCenter = Math.ceil(currentDeviation / recoveryPerDay);
+            const plural = n => n === 1 ? 'day' : 'days';
 
-            let globalExplanation = 'This trajectory maps exactly how far you are from the center based on your daily reading patterns. Listen daily to continuously pull your path back towards the straight line.';
+            let orbEl = document.getElementById('siratOrb');
+            let topAxisLabel = document.getElementById('timelineAxisTop');
+            let bottomAxisLabel = document.getElementById('timelineAxisBottom');
 
             if (isCleanSlate) {
-                // Intro Phase
                 svgPath.style.opacity = '0';
-                if(orbObj) {
-                    orbObj.classList.remove('hidden');
-                    orbObj.classList.add('flex');
+                if (orbObj) { orbObj.classList.remove('hidden'); orbObj.classList.add('flex'); }
+                if (orbEl) orbEl.classList.add('hidden');
+                if (topAxisLabel) topAxisLabel.style.opacity = '0';
+                if (bottomAxisLabel) bottomAxisLabel.style.opacity = '0';
+                if (badgeText) {
+                    badgeText.innerText = 'Begin reading to start your path';
+                    badgeText.className = 'text-[#F3E4CE]/70 text-[11px] font-bold font-["Forum"] tracking-wider text-center mt-3 px-2 min-h-[1.4em] transition-colors duration-500';
                 }
-                if(badgeText) {
-                    badgeText.innerText = 'Your journey begins here';
-                    badgeText.className = 'text-[#F3E4CE] drop-shadow-[0_0_12px_rgba(243,228,206,0.6)] font-["Forum"] tracking-wider transition-colors duration-500';
-                }
-                if(explanationText) {
-                    explanationText.innerText = globalExplanation;
-                    explanationText.className = 'text-[#F3E4CE]/50 text-[10px] leading-relaxed mt-4 font-["Forum"] tracking-widest text-center px-4 w-full transition-colors duration-500';
+                if (explanationText) {
+                    explanationText.className = 'text-white/30 text-[10px] leading-relaxed mt-1.5 font-["Nunito"] tracking-wide text-center px-2 w-full transition-colors duration-500';
                 }
             } else {
-                // Ensure default visibility arrays for organic math parsing
                 svgPath.style.opacity = '1';
-                if(orbObj) {
-                    orbObj.classList.add('hidden');
-                    orbObj.classList.remove('flex');
-                }
+                if (orbObj) { orbObj.classList.add('hidden'); orbObj.classList.remove('flex'); }
 
                 if (isDisconnected) {
-                    // Waiting Phase
-                    svgPath.setAttribute('stroke', 'url(#siratTrailGradient)'); 
-                    svgPath.setAttribute('stroke-opacity', '0.25');
-                    svgPath.setAttribute('stroke-dasharray', '3,5');
-                    if(badgeText) {
-                        badgeText.innerText = daysToCenter > 0 ? `Read for ${daysToCenter} days to return` : 'The space is waiting for you';
-                        badgeText.className = 'text-[#8FA8A8] opacity-70 font-["Forum"] tracking-wider transition-colors duration-500';
+                    svgPath.setAttribute('stroke', 'url(#siratTrailGradient)');
+                    svgPath.setAttribute('stroke-opacity', '0.3');
+                    svgPath.setAttribute('stroke-dasharray', '3,6');
+                    if (badgeText) {
+                        badgeText.innerText = daysToCenter > 0
+                            ? `${daysToCenter} ${plural(daysToCenter)} of consistent reading will bring you back to the straight path`
+                            : 'Begin reading again to return to the straight path';
+                        badgeText.className = 'text-[#8FA8A8] text-[11px] font-bold font-["Forum"] tracking-wider text-center mt-3 px-2 min-h-[1.4em] transition-colors duration-500';
                     }
-                    if(explanationText) {
-                        explanationText.innerText = globalExplanation;
-                        explanationText.className = 'text-[#8FA8A8]/60 text-[10px] leading-relaxed mt-4 font-["Forum"] tracking-widest text-center px-4 w-full transition-colors duration-500';
-                    }
+                    if (explanationText) explanationText.className = 'text-white/30 text-[10px] leading-relaxed mt-1.5 font-["Nunito"] tracking-wide text-center px-2 w-full transition-colors duration-500';
                 } else if (lastDay.seconds > 0) {
-                    // Centered Phase
-                    svgPath.setAttribute('stroke', 'url(#siratTrailGradient)'); 
+                    svgPath.setAttribute('stroke', 'url(#siratTrailGradient)');
                     svgPath.removeAttribute('stroke-opacity');
                     svgPath.removeAttribute('stroke-dasharray');
-                    if(badgeText) {
-                        badgeText.innerText = daysToCenter > 0 ? `Read for ${daysToCenter} days to return` : 'Centered in peace';
-                        badgeText.className = 'text-[#8FB9AA] drop-shadow-[0_0_8px_rgba(143,185,170,0.5)] font-["Forum"] tracking-wider transition-colors duration-500';
+                    if (badgeText) {
+                        badgeText.innerText = daysToCenter > 0
+                            ? `${daysToCenter} more ${plural(daysToCenter)} of reading returns you to the straight path`
+                            : 'You are on the straight path · Keep reading daily';
+                        badgeText.className = 'text-[#8FB9AA] text-[11px] font-bold font-["Forum"] tracking-wider text-center mt-3 px-2 min-h-[1.4em] transition-colors duration-500';
                     }
-                    if(explanationText) {
-                        explanationText.innerText = globalExplanation;
-                        explanationText.className = 'text-[#8FB9AA]/60 text-[10px] leading-relaxed mt-4 font-["Forum"] tracking-widest text-center px-4 w-full transition-colors duration-500';
-                    }
+                    if (explanationText) explanationText.className = 'text-white/30 text-[10px] leading-relaxed mt-1.5 font-["Nunito"] tracking-wide text-center px-2 w-full transition-colors duration-500';
                 } else {
-                    // Paused Phase
-                    svgPath.setAttribute('stroke', 'url(#siratTrailGradient)'); 
-                    svgPath.setAttribute('stroke-opacity', '0.6');
+                    svgPath.setAttribute('stroke', 'url(#siratTrailGradient)');
+                    svgPath.setAttribute('stroke-opacity', '0.65');
                     svgPath.removeAttribute('stroke-dasharray');
-                    if(badgeText) {
-                        badgeText.innerText = daysToCenter > 0 ? `Read for ${daysToCenter} days to return` : 'A quiet pause';
-                        badgeText.className = 'text-[#D8C3A5] opacity-80 font-["Forum"] tracking-wider transition-colors duration-500';
+                    if (badgeText) {
+                        badgeText.innerText = daysToCenter > 0
+                            ? `Read daily for ${daysToCenter} more ${plural(daysToCenter)} to return to the straight path`
+                            : 'Read today to return to the straight path';
+                        badgeText.className = 'text-[#D8C3A5] text-[11px] font-bold font-["Forum"] tracking-wider text-center mt-3 px-2 min-h-[1.4em] transition-colors duration-500';
                     }
-                    if(explanationText) {
-                        explanationText.innerText = globalExplanation;
-                        explanationText.className = 'text-[#D8C3A5]/60 text-[10px] leading-relaxed mt-4 font-["Forum"] tracking-widest text-center px-4 w-full transition-colors duration-500';
+                    if (explanationText) explanationText.className = 'text-white/30 text-[10px] leading-relaxed mt-1.5 font-["Nunito"] tracking-wide text-center px-2 w-full transition-colors duration-500';
+                }
+
+                // Position the HTML orb at today's point
+                if (orbEl && activeDaysArray.length > 0) {
+                    const PAD_TOP_V = 35, PAD_BOT_V = 340;
+                    const orbY = PAD_BOT_V - ((activeDaysArray.length - 1) * ((PAD_BOT_V - PAD_TOP_V) / 27));
+                    const orbX = deviations[0]; // SVG x in range [-130, 130]
+                    // Map SVG x [-150,150] → CSS left [0%,100%]
+                    const leftPct = ((orbX + 150) / 300 * 100).toFixed(1);
+                    orbEl.style.left = `${leftPct}%`;
+                    orbEl.style.top = `${orbY}px`;
+                    orbEl.classList.remove('hidden');
+
+                    // "Today" label tracks orb Y; sits on the opposite horizontal side to avoid overlap
+                    if (topAxisLabel) {
+                        topAxisLabel.style.top = `${Math.max(8, orbY - 8)}px`;
+                        if (orbX >= 0) {
+                            topAxisLabel.style.left = '8px';
+                            topAxisLabel.style.removeProperty('right');
+                        } else {
+                            topAxisLabel.style.right = '8px';
+                            topAxisLabel.style.removeProperty('left');
+                        }
+                        topAxisLabel.style.opacity = '1';
                     }
                 }
-                
-                // Plot Dynamic Spearhead Dot native mapping explicitly tracking upwards natively
-                let tipDot = document.getElementById('siratTipDot');
-                if (tipDot && activeDaysArray.length > 0) {
-                    tipDot.setAttribute('cx', deviations[0]);
-                    
-                    const PAD_TOP = 35;
-                    const PAD_BOT = 340;
-                    const BOUNDING_GRID = PAD_BOT - PAD_TOP;
-                    
-                    let tipY = PAD_BOT - ((activeDaysArray.length - 1) * (BOUNDING_GRID / 27)); // 28 divisions scaling safely 
-                    tipDot.setAttribute('cy', tipY);
-                    tipDot.classList.remove('hidden');
-                }
-                
-                // Toggle historical label visually to prevent timeline desynchronization layout metrics
-                let bottomAxisLabel = document.getElementById('timelineAxisBottom');
-                let topAxisLabel = document.getElementById('timelineAxisTop');
-                // Bound axis toggle mapping relative strictly to 28 total maximum elements natively!
+
                 if (bottomAxisLabel) bottomAxisLabel.style.opacity = activeDaysArray.length < 28 ? '0' : '1';
-                if (topAxisLabel) topAxisLabel.style.opacity = '1';
-            }
-            
-            if (isCleanSlate) {
-                let tipDot = document.getElementById('siratTipDot');
-                if (tipDot) tipDot.classList.add('hidden');
-                
-                let bottomAxisLabel = document.getElementById('timelineAxisBottom');
-                if (bottomAxisLabel) bottomAxisLabel.style.opacity = '0';
             }
 
         } catch(e) {
