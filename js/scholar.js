@@ -499,7 +499,7 @@
             const ayahNo = parseInt(verseKey.split(':')[1], 10);
             const range = `${surah}:${ayahNo}-${surah}:${ayahNo}`;
             const ayahUrl = `${window.location.origin}/?surah=${surah}&from=${ayahNo}&to=${ayahNo}`;
-            const ayahPrefix = `Re/ ${surah}:${ayahNo} [${ayahUrl}]:\n\n`;
+            const ayahPrefix = `Surah ${surah}:${ayahNo}; ${ayahUrl} - \n`;
 
             const addBtn = section.querySelector('.ayah-add-note-btn');
             const form = section.querySelector('.ayah-note-form');
@@ -615,7 +615,7 @@
         const { surah, start, end, data } = activeSection;
         const sectionRange = `${surah}:${start}-${surah}:${end}`;
         const sectionUrl = `${window.location.origin}/?surah=${surah}&from=${start}&to=${end}`;
-        const sectionPrefix = `Re/ ${surah}:${start} - ${surah}:${end} [${sectionUrl}]:\n\n`;
+        const sectionPrefix = `Surah ${surah}:${start} - ${end}; ${sectionUrl} - \n`;
 
         body.innerHTML = `
             <div class="mb-8 bg-white/5 border border-white/10 rounded-2xl p-5 md:p-6">
