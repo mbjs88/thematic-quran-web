@@ -809,11 +809,11 @@ function setupGlobalEventListeners() {
                 try {
                     const rawJson = JSON.parse(text);
                     
-                    // Trap expired or invalid access tokens correctly and violently kick them to the structured logout module
                     if (rawJson.type === 'invalid_token' || rawJson.error === 'invalid_token') {
-                        console.log("[Auth] Token expired natively. Purging state.");
-                        welcomeMessage.textContent = "Session Expired. Logging out...";
-                        setTimeout(() => window.location.href = '/auth/logout', 600);
+                        fetch('/auth/silent-logout').catch(() => {});
+                        window.isLoggedIn = false;
+                        loggedInState.classList.add('hidden');
+                        loggedOutState.classList.remove('hidden');
                         return;
                     }
 
