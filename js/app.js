@@ -1825,7 +1825,16 @@ window.initSiratVisualizer = async function(forceOpen = false, mockDays = 0) {
             // The Progressive Genesis Matrix:
             let genesisIndex = daysArray.findIndex(d => d.seconds > 0);
             let isCleanSlate = genesisIndex === -1;
-            
+
+            console.groupCollapsed('%c[My Path] 28-day reading history', 'color: #56A3A6; font-weight: bold;');
+            console.table(daysArray.map(d => ({
+                date: d.date,
+                seconds: d.seconds,
+                read: d.seconds > 0 ? '✓' : '✗'
+            })));
+            console.log(`First reading day index: ${genesisIndex === -1 ? 'none (clean slate)' : genesisIndex} | Raw API entries found: ${Object.keys(mapObj).length}`);
+            console.groupEnd();
+
             console.log(`%c[Path Engine] Rendering Matrix. Genesis Node Index: ${genesisIndex} | Total Bounds: ${daysArray.length} Days`, 'color: #8FA8A8;');
             
             // Constrain arrays exactly binding natively to the user's explicit lifespan 
