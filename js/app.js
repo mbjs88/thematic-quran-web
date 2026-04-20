@@ -1758,7 +1758,7 @@ window.initSiratVisualizer = async function(forceOpen = false, mockDays = 0) {
     const isOpen = container.style.maxHeight && container.style.maxHeight !== '0px';
     
     if (!isOpen || forceOpen) {
-        container.style.maxHeight = '400px';
+        container.style.maxHeight = '520px';
         container.style.opacity = '1';
         container.style.marginTop = '16px';
         loader.classList.remove('hidden');
