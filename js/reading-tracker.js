@@ -1,255 +1,274 @@
-/**
- * Reading Tracker
- * ----------------------------------------------------------------------
- * Reports the user's listening activity to the Quran Foundation API so
- * that /activity-days, /streaks, and /reading-sessions return non-empty
- * data for this user — which is what the Sirat-al-Mustaqim visualizer
- * relies on.
+/* ============================================================
+ *  Reading Tracker
+ *  ------------------------------------------------------------
+ *  Reports the user's listening to the Quran Foundation API so
+ *  /activity-days, /streaks, and /reading-sessions can power the
+ *  Sirat-al-Mustaqim visualiser.
  *
- * Strategy:
- *   • Listen for the existing `verse-changed` event dispatched by
- *     audio-player.js whenever a new Arabic or translation track starts.
- *   • Listen for the `section-ended` event when a queue completes.
- *   • Track the start time of each verse and accumulate seconds while
- *     the audio is actively playing (pause/resume aware).
- *   • Batch-flush a "reading session" payload every FLUSH_MS, on user
- *     pause, and on `pagehide` / `visibilitychange:hidden` so we don't
- *     lose data if the tab closes.
- *   • Only fire when there's an authenticated session — guarded by the
- *     same cookie check the rest of the app uses.
+ *  How it works
+ *  ------------
+ *    · Hooks the existing `verse-changed` event from
+ *      js/audio-player.js (dispatched on the document).
+ *    · Times each Arabic recitation while the active player is
+ *      not paused. Translation tracks are NOT counted (per the
+ *      QF docs, activity is read-time on the Qur'an itself).
+ *    · Coalesces consecutive verses into compact range strings,
+ *      e.g. ["2:255-2:257", "112:1-112:4"].
+ *    · Flushes every FLUSH_INTERVAL_MS, on `pagehide`, and on
+ *      manual stop. Flush =
+ *        POST /v1/activity-days  { type:'QURAN', seconds, ranges, mushafId, date? }
+ *        POST /v1/reading-sessions { chapterNumber, verseNumber }  (last verse only)
+ *    · Skips if the user is not signed in (no QF cookie).
  *
- * IMPORTANT — Schema confirmation needed:
- *   The shape of the POST body for /auth/v1/reading-sessions is not yet
- *   verified against the live docs (docs domain blocked at fetch time).
- *   The body below is the most-likely shape based on how the QF API is
- *   structured elsewhere. After you verify against:
- *     https://api-docs.quran.foundation/docs/user-related-apis/reading-sessions-vs-activity-days/
- *   adjust the `buildSessionBody()` mapping below. The endpoint path
- *   is also a single constant — easy to swap.
- */
+ *  API references (from api-docs.quran.foundation):
+ *    Add/update activity day  -> body: type, seconds (>=1), ranges,
+ *                                       mushafId, [date]
+ *    Add/update reading session -> body: chapterNumber, verseNumber
+ *
+ *  This file is additive; it does not modify audio-player.js.
+ * ============================================================ */
+
 (function () {
     'use strict';
 
-    // -----------------------------------------------------------------
-    // Config — tweak these once the docs are confirmed.
-    // -----------------------------------------------------------------
-    const READING_SESSIONS_ENDPOINT = '/api/qf/auth/v1/reading-sessions';
-    const ACTIVITY_DAY_ENDPOINT     = '/api/qf/auth/v1/activity-days';   // fallback bump
-    const FLUSH_INTERVAL_MS         = 60_000;   // flush every minute while playing
-    const MIN_SECONDS_PER_FLUSH     = 5;        // don't bother with sub-5s flushes
-    const SESSION_TYPE              = 'QURAN';
+    // ---------------------------------------------------------
+    // Config
+    // ---------------------------------------------------------
+    const FLUSH_INTERVAL_MS = 60 * 1000; // every minute while playing
+    const MIN_FLUSH_SECONDS = 5;         // don't bother the API for trivial bursts
+    const MUSHAF_ID         = 4;         // 4 = UthmaniHafs (matches everyayah audio)
+    const ACTIVITY_URL      = '/api/qf/auth/v1/activity-days';
+    const SESSION_URL       = '/api/qf/auth/v1/reading-sessions';
 
-    // -----------------------------------------------------------------
-    // Auth gate — same cookie pattern used elsewhere in the app.
-    // -----------------------------------------------------------------
+    // ---------------------------------------------------------
+    // State
+    // ---------------------------------------------------------
+    // `verses` is an ordered list of { surah, verse } observed since the
+    // last successful flush. We add at most one entry per (surah, verse)
+    // pair per flush window so range coalescing stays clean.
+    const buffer = {
+        seconds: 0,           // accumulated listening time (Arabic only)
+        verses:  [],          // [{ surah, verse }, ...] in playback order
+        seen:    new Set(),   // dedupe key "surah:verse"
+        lastVerse: null       // most recent { surah, verse } for /reading-sessions
+    };
+
+    let timing = {
+        startMs:    0,        // when the current Arabic verse started timing
+        currentKey: null      // which verse is being timed
+    };
+
+    let flushTimer = null;
+
+    // ---------------------------------------------------------
+    // Helpers
+    // ---------------------------------------------------------
     function isLoggedIn() {
-        return /(?:^|; )quran_access_token_(?:prelive|production)=/.test(document.cookie || '');
+        // Cookie name is environment-suffixed (`_prelive` or `_production`),
+        // so a substring check is the simplest way to detect either.
+        return /(?:^|; )quran_access_token_/.test(document.cookie);
     }
 
-    // -----------------------------------------------------------------
-    // Listening accumulator
-    // -----------------------------------------------------------------
-    /** @type {{ surah:number, verse:number, type:string, start:number, accumulated:number }|null} */
-    let current = null;
-    /** @type {Array<{ surah:number, verse:number, seconds:number, started_at:string }>} */
-    let pendingVerses = [];
-    let pendingSeconds = 0;
-    let lastResumeAt = 0;
-    let isPlaying = false;
-    let flushTimerId = null;
-
-    function nowSec() { return Math.floor(performance.now() / 1000); }
-    function isoNow() { return new Date().toISOString(); }
-
-    function startVerse(detail) {
-        // Close out any verse we were already tracking.
-        finalizeVerse();
-        current = {
-            surah: detail.surah,
-            verse: detail.verse,
-            type:  detail.type,
-            start: nowSec(),
-            accumulated: 0,
-            started_at: isoNow()
-        };
-        lastResumeAt = nowSec();
-        isPlaying = true;
-    }
-
-    function finalizeVerse() {
-        if (!current) return;
-        if (isPlaying) {
-            current.accumulated += Math.max(0, nowSec() - lastResumeAt);
-            lastResumeAt = nowSec();
-        }
-        if (current.accumulated > 0) {
-            pendingVerses.push({
-                surah: current.surah,
-                verse: current.verse,
-                seconds: current.accumulated,
-                started_at: current.started_at
-            });
-            pendingSeconds += current.accumulated;
-        }
-        current = null;
-    }
-
-    function pauseAccumulation() {
-        if (!isPlaying || !current) return;
-        current.accumulated += Math.max(0, nowSec() - lastResumeAt);
-        isPlaying = false;
-    }
-
-    function resumeAccumulation() {
-        if (isPlaying || !current) return;
-        lastResumeAt = nowSec();
-        isPlaying = true;
-    }
-
-    // -----------------------------------------------------------------
-    // Network — POST a reading-session, fall back to bumping activity-day.
-    // -----------------------------------------------------------------
+    function nowMs() { return Date.now(); }
 
     /**
-     * ADJUST PER DOCS — the body shape below is the conservative best-guess.
-     * The QF API page name "reading-sessions-vs-activity-days" implies a
-     * granular event POST; common shapes in similar APIs are:
-     *
-     *   { type: 'QURAN', duration: 73, started_at, ended_at,
-     *     verses: [{ surah, verse, seconds }, ...] }
-     *
-     * If the docs specify `verse_key: "2:255"` instead of {surah, verse},
-     * change the .map below; everything else stays the same.
+     * Coalesce { surah, verse } observations into Quran Foundation range
+     * strings: e.g. [{2,1},{2,2},{2,3},{112,1}] -> ["2:1-2:3","112:1-112:1"].
      */
-    function buildSessionBody() {
-        return {
-            type: SESSION_TYPE,
-            duration: pendingSeconds,
-            started_at: pendingVerses[0] && pendingVerses[0].started_at || isoNow(),
-            ended_at:   isoNow(),
-            verses: pendingVerses.map(v => ({
-                // verse_key: `${v.surah}:${v.verse}`,    // ← uncomment if docs use verse_key
-                surah:   v.surah,
-                verse:   v.verse,
-                seconds: v.seconds
-            }))
-        };
-    }
+    function buildRanges(verses) {
+        if (!verses.length) return [];
+        const sorted = verses
+            .slice()
+            .sort((a, b) => (a.surah - b.surah) || (a.verse - b.verse));
 
-    /**
-     * Best-effort fallback in case /reading-sessions isn't accepted: bump
-     * the activity-day total by `seconds`. Many APIs accept a POST/PATCH
-     * here with `{ date, seconds, type }`.
-     */
-    function buildActivityDayBody(seconds) {
-        return {
-            date: new Date().toISOString().slice(0, 10),
-            seconds,
-            type: SESSION_TYPE
-        };
-    }
+        const ranges = [];
+        let start = sorted[0];
+        let end   = sorted[0];
 
-    async function flush(reason) {
-        // Make sure the in-flight verse contributes too.
-        if (current) finalizeVerse();
-        if (pendingSeconds < MIN_SECONDS_PER_FLUSH) return;
-        if (!isLoggedIn()) {
-            // No user — discard rather than queueing forever.
-            pendingVerses = []; pendingSeconds = 0;
-            return;
+        for (let i = 1; i < sorted.length; i++) {
+            const v = sorted[i];
+            const isNext = (v.surah === end.surah) && (v.verse === end.verse + 1);
+            if (isNext) {
+                end = v;
+            } else {
+                ranges.push(`${start.surah}:${start.verse}-${end.surah}:${end.verse}`);
+                start = v;
+                end   = v;
+            }
         }
-        const body = buildSessionBody();
-        const drainSeconds = pendingSeconds;
-        pendingVerses = []; pendingSeconds = 0;
+        ranges.push(`${start.surah}:${start.verse}-${end.surah}:${end.verse}`);
+        return ranges;
+    }
 
+    function bufferIsEmpty() {
+        return buffer.seconds < MIN_FLUSH_SECONDS && buffer.verses.length === 0;
+    }
+
+    function resetBuffer() {
+        buffer.seconds = 0;
+        buffer.verses  = [];
+        buffer.seen.clear();
+        // keep buffer.lastVerse so reading-sessions reflects where we are
+    }
+
+    // ---------------------------------------------------------
+    // Timing -- driven by the audio player events
+    // ---------------------------------------------------------
+    function stopTiming() {
+        if (timing.currentKey === null) return;
+        const elapsed = (nowMs() - timing.startMs) / 1000;
+        if (elapsed > 0 && elapsed < 60 * 30) { // ignore wildly long gaps (sleep)
+            buffer.seconds += elapsed;
+        }
+        timing.currentKey = null;
+        timing.startMs    = 0;
+    }
+
+    function startTiming(surah, verse) {
+        const key = `${surah}:${verse}`;
+        if (timing.currentKey !== null) stopTiming();
+        timing.currentKey = key;
+        timing.startMs    = nowMs();
+
+        if (!buffer.seen.has(key)) {
+            buffer.seen.add(key);
+            buffer.verses.push({ surah, verse });
+        }
+        buffer.lastVerse = { surah, verse };
+    }
+
+    // ---------------------------------------------------------
+    // Network -- fire-and-forget, errors are warnings only
+    // ---------------------------------------------------------
+    async function postActivityDay(seconds, ranges) {
+        const body = {
+            type:     'QURAN',
+            seconds:  Math.max(1, Math.round(seconds)),
+            ranges:   ranges,
+            mushafId: MUSHAF_ID
+            // `date` omitted -> server stamps today using x-timezone
+        };
         try {
-            const r = await fetch(READING_SESSIONS_ENDPOINT, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                credentials: 'same-origin',
-                body: JSON.stringify(body),
-                keepalive: reason === 'pagehide'      // critical for tab-close flush
+            const tz = (Intl && Intl.DateTimeFormat && Intl.DateTimeFormat().resolvedOptions().timeZone) || '';
+            const r = await fetch(ACTIVITY_URL, {
+                method:  'POST',
+                headers: Object.assign(
+                    { 'Content-Type': 'application/json' },
+                    tz ? { 'x-timezone': tz } : {}
+                ),
+                body: JSON.stringify(body)
             });
-            if (!r.ok) {
-                console.warn(`[ReadingTracker] reading-sessions POST → ${r.status}; falling back to activity-day bump`);
-                await fetch(ACTIVITY_DAY_ENDPOINT, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    credentials: 'same-origin',
-                    body: JSON.stringify(buildActivityDayBody(drainSeconds)),
-                    keepalive: reason === 'pagehide'
-                }).catch(() => {});
-            } else {
-                console.log(`%c[ReadingTracker] +${drainSeconds}s flushed (${reason})`,
-                    'color:#88FFD1');
-            }
+            if (!r.ok) console.warn('[ReadingTracker] activity-day flush failed', r.status, await r.text());
         } catch (e) {
-            console.warn('[ReadingTracker] flush failed', e);
+            console.warn('[ReadingTracker] activity-day flush error', e);
         }
     }
 
-    function ensureFlushTimer() {
-        if (flushTimerId) return;
-        flushTimerId = setInterval(() => flush('interval'), FLUSH_INTERVAL_MS);
-    }
-    function clearFlushTimer() {
-        if (!flushTimerId) return;
-        clearInterval(flushTimerId);
-        flushTimerId = null;
-    }
-
-    // -----------------------------------------------------------------
-    // Wire up to the existing audio-player events.
-    // -----------------------------------------------------------------
-    document.addEventListener('verse-changed', (e) => {
-        if (!e.detail) return;
-        // Only count Arabic recitation toward listening time. Translation
-        // tracks are educational but not "reading the Quran". Comment the
-        // next line out to count both.
-        if (e.detail.type !== 'arabic') {
-            // still close out any prior verse so seconds are flushed cleanly
-            finalizeVerse();
-            return;
+    async function postReadingSession(surah, verse) {
+        try {
+            const r = await fetch(SESSION_URL, {
+                method:  'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ chapterNumber: surah, verseNumber: verse })
+            });
+            if (!r.ok) console.warn('[ReadingTracker] reading-session post failed', r.status, await r.text());
+        } catch (e) {
+            console.warn('[ReadingTracker] reading-session post error', e);
         }
-        startVerse(e.detail);
-        ensureFlushTimer();
-    });
+    }
 
-    document.addEventListener('section-ended', () => {
-        finalizeVerse();
-        flush('section-ended');
-        clearFlushTimer();
-    });
+    // ---------------------------------------------------------
+    // Flush -- coalesce + send
+    // ---------------------------------------------------------
+    async function flush(reason = 'interval') {
+        // Roll the in-flight verse into the buffer first.
+        if (timing.currentKey !== null) {
+            const prevKey = timing.currentKey;
+            stopTiming();
+            // re-arm timing on the same verse so live playback keeps counting
+            const [s, v] = prevKey.split(':').map(Number);
+            startTiming(s, v);
+        }
 
-    // The audio-player keeps `isAudioPlaying` global; we shadow with our own
-    // play/pause state observed from the play/pause button on the document.
-    document.addEventListener('click', (e) => {
-        const btn = e.target && e.target.closest && e.target.closest('#globalPlayPauseBtn');
-        if (!btn) return;
-        // Defer one tick so the audio-player's internal state has flipped.
-        setTimeout(() => {
-            const status = document.getElementById('playerStatus');
-            if (status && status.textContent.trim().toLowerCase() === 'playing') {
-                resumeAccumulation();
-                ensureFlushTimer();
-            } else {
-                pauseAccumulation();
-                flush('user-pause');
+        if (!isLoggedIn() || bufferIsEmpty()) return;
+
+        const seconds = buffer.seconds;
+        const ranges  = buildRanges(buffer.verses);
+        const last    = buffer.lastVerse;
+        resetBuffer();
+
+        console.log(`%c[ReadingTracker] flush (${reason}): ${Math.round(seconds)}s, ranges=${ranges.join(',')}`,
+                    'color:#56A3A6');
+
+        await postActivityDay(seconds, ranges);
+        if (last) await postReadingSession(last.surah, last.verse);
+    }
+
+    function startFlushTimer() {
+        if (flushTimer) return;
+        flushTimer = setInterval(() => flush('interval'), FLUSH_INTERVAL_MS);
+    }
+
+    function stopFlushTimer() {
+        if (!flushTimer) return;
+        clearInterval(flushTimer);
+        flushTimer = null;
+    }
+
+    // ---------------------------------------------------------
+    // Wire up the audio player events
+    // ---------------------------------------------------------
+    function attach() {
+        // Fired by audio-player.js for both Arabic AND translation tracks.
+        // We only count Arabic toward QF activity.
+        document.addEventListener('verse-changed', (e) => {
+            if (!e || !e.detail) return;
+            const { surah, verse, type } = e.detail;
+            if (type !== 'arabic') {
+                // While translation plays, freeze the timer.
+                stopTiming();
+                return;
             }
-        }, 30);
-    });
+            startTiming(surah, verse);
+            startFlushTimer();
+        });
 
-    // Page hide / tab close: best-effort flush via fetch keepalive.
-    window.addEventListener('pagehide', () => flush('pagehide'));
-    document.addEventListener('visibilitychange', () => {
-        if (document.visibilityState === 'hidden') flush('hidden');
-    });
+        // Fired when the play queue completes naturally.
+        document.addEventListener('section-ended', () => {
+            stopTiming();
+            stopFlushTimer();
+            flush('section-ended');
+        });
 
-    // Expose for manual flushing / debugging.
-    window.flushReadingTracker = (reason = 'manual') => flush(reason);
-    window.__readingTrackerState = () => ({
-        current, pendingVerses, pendingSeconds, isPlaying
-    });
+        // Tab/window closed or backgrounded -- flush eagerly.
+        window.addEventListener('pagehide', () => { stopTiming(); flush('pagehide'); });
+        document.addEventListener('visibilitychange', () => {
+            if (document.visibilityState === 'hidden') {
+                stopTiming();
+                flush('hidden');
+            }
+        });
+    }
 
-    console.log('%c[ReadingTracker] active', 'color:#56A3A6');
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', attach);
+    } else {
+        attach();
+    }
+
+    // ---------------------------------------------------------
+    // Public introspection (handy in devtools)
+    // ---------------------------------------------------------
+    window.ReadingTracker = {
+        flushNow:    () => flush('manual'),
+        snapshot:    () => ({
+            seconds:     buffer.seconds,
+            ranges:      buildRanges(buffer.verses),
+            lastVerse:   buffer.lastVerse,
+            isLoggedIn:  isLoggedIn()
+        }),
+        // Diagnostic-only: try a no-op POST to verify the endpoint and
+        // OAuth scope are wired up correctly.
+        ping: () => postActivityDay(1, ['1:1-1:1'])
+    };
 })();

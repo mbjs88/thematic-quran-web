@@ -1,55 +1,60 @@
-/**
- * Straight Path Visualizer  ·  Sirat al-Mustaqim
- * ------------------------------------------------
- * Renders a 28-day journey of the user's engagement with the Quran as a
- * celestial-orbit curve around a vertical center line.
+/* ============================================================
+ *  Straight Path Visualizer  ·  Sirat al-Mustaqim
+ *  ------------------------------------------------------------
+ *  Renders the user's 28-day engagement with the Qur'an as a
+ *  celestial trajectory orbiting the central Straight Path.
  *
- *   Center line  →  the Straight Path
- *   Drift        →  days without engagement push the orb away from center
- *   Return       →  any day with engagement pulls the orb back, 10× stronger
- *   Polarity     →  flips on each clean return so the next drift is on the
- *                    opposite side, weaving an organic, balanced shape
+ *  Theological model
+ *  -----------------
+ *    · The vertical centre line is the Straight Path.
+ *    · Each missed day causes a small drift away (penalty).
+ *    · Each engaged day exerts a strong gravitational pull
+ *      back toward the centre (10x the drift -- a 10:1 reward
+ *      to penalty ratio, mirroring the hadith on multiplied
+ *      reward for good deeds).
+ *    · After every clean return to centre, polarity flips so
+ *      subsequent drifts alternate sides -- a balanced organic
+ *      weave over time rather than a one-sided drift.
  *
- * The 10:1 ratio is enforced exactly:
- *     DRIFT  = 0.10  (penalty per missed day, in normalized units)
- *     REWARD = 1.00  (pull toward 0 per active day)
+ *  Data source
+ *  -----------
+ *    GET /api/qf/auth/v1/activity-days?from=...&to=...&type=QURAN
+ *    -> { data: [{ date: 'YYYY-MM-DD', seconds: <int> }, ...] }
  *
- * The curve is rendered with a François Romain–style smoothed Bézier (a
- * tension-controlled cousin of centripetal Catmull-Rom). It is short, fast,
- * and produces the swooping celestial feel without the cusps that strict
- * monotonic curves create.
- *
- * Public API (kept on window for drop-in compatibility with the previous
- * inline implementation):
- *   window.calculateDeviations(daysArray)            → number[]   (today first)
- *   window.generateSiratPathString(deviations, n)    → string     (SVG path "d")
- *   window.initSiratVisualizer(forceOpen, mockDays)  → Promise<void>
- *   window.simulateUserJourney(activeDays)           → void
- *   window.simulatePathPattern(boolArray)            → void  (debug helper)
- *
- * SVG geometry contract (do not change without updating index.html):
- *   viewBox             "-150 0 300 400"   preserveAspectRatio="none"
- *   PAD_TOP / PAD_BOT   35 (today)         340 (28 days ago)
- *   X half-range        130                (deviation = ±1.0 → x = ±130)
- */
+ *  This module replaces the original window.initSiratVisualizer
+ *  / calculateDeviations / generateSiratPathString implementation.
+ *  It must load AFTER app.js so its window.* assignments win.
+ * ============================================================ */
+
 (function () {
     'use strict';
 
-    // ---------------------------------------------------------------------
-    // Geometry & math constants
-    // ---------------------------------------------------------------------
-    const TOTAL_DAYS    = 28;
-    const PAD_TOP       = 35;
-    const PAD_BOT       = 340;
-    const Y_STEP        = (PAD_BOT - PAD_TOP) / (TOTAL_DAYS - 1);
-    const X_HALF_RANGE  = 130;          // viewBox x clamp; viewBox half-width = 150
+    // ---------------------------------------------------------
+    // 1. Tunable constants -- all in normalised units [-1, 1]
+    // ---------------------------------------------------------
+    const DRIFT  = 0.10;   // penalty per missed day
+    const REWARD = 1.00;   // pull toward centre per engaged day (10x DRIFT)
+    const MIN_DEV = -1.0;
+    const MAX_DEV =  1.0;
+    const INITIAL_POLARITY = +1; // first drift goes to the right
 
-    const DRIFT         = 0.10;         // penalty per missed day  (10× weaker)
-    const REWARD        = 1.00;         // pull per listened day   (10× stronger)
-    const MIN_DEV       = -1.0;
-    const MAX_DEV       =  1.0;
-    const SMOOTHING     = 0.20;         // 0.15–0.25 looks best; higher = swoopier
-    const INITIAL_POLARITY = 1;         // first drift goes right; flips on each return
+    // SVG canvas geometry (mirrors viewBox="-150 0 300 400" in index.html)
+    const SVG_X_HALF       = 130; // visual half-width; 20px margin from viewBox edge
+    const PAD_TOP          = 35;  // y-coordinate of TODAY (top of trail)
+    const PAD_BOT          = 340; // y-coordinate of OLDEST observable day
+    const TOTAL_DAYS       = 28;
+    const Y_STEP           = (PAD_BOT - PAD_TOP) / (TOTAL_DAYS - 1);
+
+    // Path smoothing tension (Francois Romain method)
+    //   0    -> straight polyline
+    //   0.22 -> the soft, swooping celestial feel we want
+    //   0.3+ -> starts to overshoot
+    const SMOOTHING = 0.22;
+
+    // ---------------------------------------------------------
+    // 2. Helpers
+    // ---------------------------------------------------------
+    const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
 
     const getLocalYMD = (date) => {
         const y = date.getFullYear();
@@ -58,244 +63,288 @@
         return `${y}-${m}-${d}`;
     };
 
-    const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
-
-    // ---------------------------------------------------------------------
-    // Deviation engine
-    // ---------------------------------------------------------------------
-    /**
-     * Walk forward through days (oldest → newest) applying the 10:1 reward
-     * model with polarity flipping. Returns an array of deviations in
-     * **today-first** order (index 0 = today) so the renderer can map index
-     * directly onto Y from PAD_TOP downward.
-     *
-     * Each entry in `daysArray` is { date: 'YYYY-MM-DD', seconds: number }.
-     */
+    // ---------------------------------------------------------
+    // 3. Trajectory engine
+    //    Pure function: 28 days in chronological order ->
+    //                   28 deviations in [-1, 1].
+    //    The returned array is reversed so index 0 is TODAY
+    //    (top of canvas), matching the existing renderer.
+    // ---------------------------------------------------------
     function calculateDeviations(daysArray) {
-        if (!daysArray || daysArray.length === 0) return [];
-
         let x = 0;
         let polarity = INITIAL_POLARITY;
-        const out = [];
-        const trace = [];
+        const points  = [];
+        const trace   = [];
 
-        for (let i = 0; i < daysArray.length; i++) {
-            const day = daysArray[i];
-            const listened = day.seconds > 0;
-            const prevX = x;
-            let event = '·';
+        daysArray.forEach((day, i) => {
+            const listened = !!(day && day.seconds > 0);
+            let nextX;
+            let event = '';
 
             if (listened) {
-                if (x === 0) {
-                    // Already centered → stay centered, no flip.
-                    event = 'hold';
-                } else if (x > 0) {
-                    x = Math.max(0, x - REWARD);
-                    event = 'pull←';
-                } else {
-                    x = Math.min(0, x + REWARD);
-                    event = 'pull→';
-                }
-                // Polarity flips ONLY when we cleanly cross back to exact 0.
-                if (prevX !== 0 && x === 0) {
+                // Pull toward 0 by REWARD; never overshoot.
+                if      (x > 0) nextX = Math.max(0, x - REWARD);
+                else if (x < 0) nextX = Math.min(0, x + REWARD);
+                else            nextX = 0;
+
+                // Polarity flips ONLY on a clean return to centre,
+                // so the next drift cycle uses the opposite side.
+                if (x !== 0 && nextX === 0) {
                     polarity = -polarity;
-                    event += ' ⟲flip';
+                    event = 'returned + flipped';
+                } else if (nextX === 0) {
+                    event = 'rest at centre';
+                } else {
+                    event = 'pulled toward centre';
                 }
             } else {
-                x = clamp(x + polarity * DRIFT, MIN_DEV, MAX_DEV);
-                event = polarity > 0 ? 'drift→' : 'drift←';
+                nextX = clamp(x + polarity * DRIFT, MIN_DEV, MAX_DEV);
+                event = (Math.abs(nextX) >= MAX_DEV) ? 'drifted (clamped)' : 'drifted';
             }
 
-            out.push(x);
             trace.push({
-                day: day.date,
-                listened: listened ? '✓' : '✗',
-                seconds: day.seconds,
-                prev: prevX.toFixed(2),
-                next: x.toFixed(2),
-                polarity,
+                day:      i,
+                date:     day && day.date || '',
+                listened: listened ? '\u2713' : '\u00B7',
+                seconds:  day && day.seconds || 0,
+                fromX:    x.toFixed(2),
+                toX:      nextX.toFixed(2),
+                polarity: polarity > 0 ? '+1' : '-1',
                 event
             });
+
+            points.push(nextX);
+            x = nextX;
+        });
+
+        if (window.console && console.groupCollapsed) {
+            console.groupCollapsed('%c[Sirat] Trajectory model', 'color:#88FFD1;font-weight:bold;');
+            console.table(trace);
+            console.groupEnd();
         }
 
-        // eslint-disable-next-line no-console
-        console.groupCollapsed('%c[Sirat] deviation trace (oldest → newest)', 'color:#88FFD1;font-weight:bold;');
-        console.table(trace);
-        console.groupEnd();
-
-        // Flip so today is at index 0 (matches SVG Y orientation).
-        out.reverse();
-        return out;
+        // Reverse so index 0 = today, index N-1 = oldest.
+        return points.reverse();
     }
 
-    // ---------------------------------------------------------------------
-    // Path generation  ·  smoothed cubic Bezier ("François Romain" style)
-    // ---------------------------------------------------------------------
-    /**
-     * Convert a list of deviations (today-first, normalized [-1, +1]) into an
-     * SVG cubic-Bezier path string. Anchors today at PAD_TOP; if there are
-     * fewer than TOTAL_DAYS active days, the curve grows up from the bottom.
-     */
-    function generateSiratPathString(deviations) {
-        if (!deviations || deviations.length === 0) return '';
+    // ---------------------------------------------------------
+    // 4. Path renderer (Francois Romain smoothed cubic Bezier)
+    // ---------------------------------------------------------
+    function devsToPoints(deviations) {
+        const activeCount = deviations.length;
+        const startY = PAD_BOT - ((activeCount - 1) * Y_STEP);
+        return deviations.map((dev, i) => ({
+            x: dev * SVG_X_HALF,
+            y: startY + i * Y_STEP
+        }));
+    }
 
-        const n = deviations.length;
-        // startY = y-coordinate of the FIRST point we draw (= today, at top of canvas).
-        // When n < TOTAL_DAYS the curve floats so its bottom touches PAD_BOT.
-        const startY = PAD_BOT - (n - 1) * Y_STEP;
-
-        // deviations is today-first → pts[0] = today at the top of the canvas,
-        // pts[n-1] = oldest at PAD_BOT (bottom). The stroke gradient is defined
-        // in user-space so the rendering direction doesn't change appearance.
-        const pts = [];
-        for (let i = 0; i < n; i++) {
-            pts.push({
-                x: deviations[i] * X_HALF_RANGE,
-                y: startY + i * Y_STEP
-            });
+    function bezierPath(points) {
+        if (!points || points.length === 0) return '';
+        if (points.length === 1) {
+            const p = points[0];
+            return `M ${p.x.toFixed(2)} ${p.y.toFixed(2)} l 0 0.01`;
         }
 
-        if (pts.length === 1) return `M ${pts[0].x.toFixed(2)} ${pts[0].y.toFixed(2)}`;
-
-        // Smoothed cubic Bezier: each segment uses neighbours to estimate tangents.
         const line = (a, b) => ({
             length: Math.hypot(b.x - a.x, b.y - a.y),
             angle:  Math.atan2(b.y - a.y, b.x - a.x)
         });
-        const ctrl = (curr, prev, next, reverse) => {
-            const p = prev || curr;
-            const q = next || curr;
-            const o = line(p, q);
+
+        const controlPoint = (current, prev, next, reverse) => {
+            const p = prev || current;
+            const n = next || current;
+            const o = line(p, n);
             const angle  = o.angle + (reverse ? Math.PI : 0);
             const length = o.length * SMOOTHING;
-            return { x: curr.x + Math.cos(angle) * length, y: curr.y + Math.sin(angle) * length };
+            return {
+                x: current.x + Math.cos(angle) * length,
+                y: current.y + Math.sin(angle) * length
+            };
         };
 
-        let d = `M ${pts[0].x.toFixed(2)} ${pts[0].y.toFixed(2)}`;
-        for (let i = 1; i < pts.length; i++) {
-            const start = ctrl(pts[i - 1], pts[i - 2], pts[i],   false);
-            const end   = ctrl(pts[i],     pts[i - 1], pts[i + 1], true);
-            d += ` C ${start.x.toFixed(2)} ${start.y.toFixed(2)}, ${end.x.toFixed(2)} ${end.y.toFixed(2)}, ${pts[i].x.toFixed(2)} ${pts[i].y.toFixed(2)}`;
+        let d = `M ${points[0].x.toFixed(2)} ${points[0].y.toFixed(2)}`;
+        for (let i = 1; i < points.length; i++) {
+            const cps = controlPoint(points[i - 1], points[i - 2], points[i],     false);
+            const cpe = controlPoint(points[i],     points[i - 1], points[i + 1], true);
+            d += ` C ${cps.x.toFixed(2)} ${cps.y.toFixed(2)}, ` +
+                 `${cpe.x.toFixed(2)} ${cpe.y.toFixed(2)}, ` +
+                 `${points[i].x.toFixed(2)} ${points[i].y.toFixed(2)}`;
         }
         return d;
     }
 
-    // ---------------------------------------------------------------------
-    // Data fetch  ·  Quran Foundation /activity-days
-    // ---------------------------------------------------------------------
-    /**
-     * The QF activity-days API caps `to - from` at ~20 days, so we make two
-     * range calls in parallel and merge them. Returns `{ date → seconds }`.
-     */
-    async function fetchActivitySecondsByDate() {
-        const today = new Date();
-        const split = new Date(); split.setDate(split.getDate() - 19);
-        const splitB = new Date(); splitB.setDate(splitB.getDate() - 20);
-        const past = new Date(); past.setDate(past.getDate() - 27);
+    function generateSiratPathString(deviations /*, totalRangeNodes */) {
+        if (!deviations || deviations.length === 0) return '';
+        return bezierPath(devsToPoints(deviations));
+    }
+
+    // ---------------------------------------------------------
+    // 5. Quran-Foundation API fetch
+    //    /v1/activity-days has a `first` page-size cap, so we
+    //    split the 28-day window into two halves and parallelise.
+    // ---------------------------------------------------------
+    async function fetchActivityDays(daysBack /* default 28 */) {
+        const today  = new Date();
+        const splitAt = Math.floor(daysBack / 2);
+
+        const aTo   = getLocalYMD(today);
+        const aFrom = getLocalYMD(new Date(today.getTime() - (splitAt - 1) * 86400000));
+        const bTo   = getLocalYMD(new Date(today.getTime() - splitAt * 86400000));
+        const bFrom = getLocalYMD(new Date(today.getTime() - (daysBack - 1) * 86400000));
 
         const url = (from, to) =>
             `/api/qf/auth/v1/activity-days?from=${from}&to=${to}&type=QURAN&first=20`;
 
-        const responses = await Promise.all([
-            fetch(url(getLocalYMD(split), getLocalYMD(today))),
-            fetch(url(getLocalYMD(past),  getLocalYMD(splitB)))
-        ]);
-
-        const map = {};
-        for (const r of responses) {
-            if (!r.ok) {
-                console.warn(`[Sirat] activity-days fetch failed: ${r.status}`);
-                continue;
-            }
-            const json = await r.json().catch(() => ({}));
-            const arr  = Array.isArray(json.data) ? json.data : [];
-            for (const item of arr) {
-                if (item && item.date) map[item.date] = item.seconds || 0;
-            }
-        }
-        return map;
-    }
-
-    // ---------------------------------------------------------------------
-    // Streak (optional embellishment) — soft-failing
-    // ---------------------------------------------------------------------
-    async function fetchCurrentStreakDays() {
         try {
-            const r = await fetch('/api/qf/auth/v1/streaks/current?type=QURAN');
-            if (!r.ok) return 0;
-            const json = await r.json();
-            // Tolerate a few common shapes the API might return.
-            if (typeof json.days === 'number') return json.days;
-            if (json.data && typeof json.data.days === 'number') return json.data.days;
-            if (Array.isArray(json.data)) return json.data.length;
-            return 0;
-        } catch (_) {
-            return 0;
+            const [r1, r2] = await Promise.all([fetch(url(aFrom, aTo)), fetch(url(bFrom, bTo))]);
+            const j1 = await r1.json();
+            const j2 = await r2.json();
+            const out = {};
+            const merge = (arr) => {
+                if (!Array.isArray(arr)) return;
+                arr.forEach(d => { if (d && d.date) out[d.date] = d.seconds || 0; });
+            };
+            merge(j1.data);
+            merge(j2.data);
+            return out;
+        } catch (e) {
+            console.warn('[Sirat] activity-days fetch failed', e);
+            return {};
         }
     }
 
-    // ---------------------------------------------------------------------
-    // 28-day window assembly
-    // ---------------------------------------------------------------------
-    function buildDaysArray(secondsByDate, mockDays) {
-        const days = [];
-        for (let i = 0; i < TOTAL_DAYS; i++) {
-            const dt = new Date();
-            dt.setDate(dt.getDate() - (TOTAL_DAYS - 1 - i));
-            const ymd = getLocalYMD(dt);
-            let seconds = secondsByDate[ymd] || 0;
-
-            // Mock mode: simulate an "activeDays" trailing streak with sporadic misses.
-            if (mockDays > 0) {
-                const offsetFromToday = (TOTAL_DAYS - 1) - i;
-                seconds = (offsetFromToday < mockDays) ? 300 : 0;
-                if (seconds > 0 && Math.random() < 0.25) seconds = 0;
-            }
-            days.push({ date: ymd, seconds });
-        }
-        return days;
-    }
-
-    // ---------------------------------------------------------------------
-    // Hijri month divider lines
-    // ---------------------------------------------------------------------
-    function renderHijriMonthLines(activeDaysArray, deviationsTodayFirst) {
+    // ---------------------------------------------------------
+    // 6. Hijri month dividers (cosmetic; preserved from prior UX)
+    // ---------------------------------------------------------
+    function renderHijriDividers(activeDays, deviations) {
         const monthGroup = document.getElementById('islamicMonthLines');
         if (!monthGroup) return;
         monthGroup.innerHTML = '';
-        if (activeDaysArray.length === 0) return;
+        if (!deviations.length) return;
 
-        const fmtMonthYear = new Intl.DateTimeFormat('en-US-u-ca-islamic-umalqura', {
-            month: 'numeric', year: 'numeric'
-        });
-        const fmtMonthShort = new Intl.DateTimeFormat('en-US-u-ca-islamic-umalqura', {
-            month: 'short'
-        });
+        let fmtTag, fmtShort;
+        try {
+            fmtTag   = new Intl.DateTimeFormat('en-US-u-ca-islamic-umalqura', { month: 'numeric', year: 'numeric' });
+            fmtShort = new Intl.DateTimeFormat('en-US-u-ca-islamic-umalqura', { month: 'short' });
+        } catch (e) { return; }
 
-        const n = deviationsTodayFirst.length;
-        const startY = PAD_BOT - (n - 1) * Y_STEP;
+        const activeNodes = deviations.length;
+        const startY = PAD_BOT - ((activeNodes - 1) * Y_STEP);
         let prevTag = null;
 
-        // activeDaysArray is chronological (oldest → newest).
-        activeDaysArray.forEach((dayObj, offsetI) => {
-            const renderIndex = (n - 1) - offsetI; // 0 = bottom (oldest)
+        activeDays.forEach((dayObj, offsetI) => {
+            const i = (activeNodes - 1) - offsetI;
             const dObj = new Date(dayObj.date);
-            const tag  = fmtMonthYear.format(dObj);
+            const tag  = fmtTag.format(dObj);
             if (prevTag !== null && tag !== prevTag) {
-                const y = startY + renderIndex * Y_STEP;
-                const monthName = fmtMonthShort.format(dObj);
-                monthGroup.insertAdjacentHTML('beforeend',
-                    `<line x1="-150" y1="${y}" x2="150" y2="${y}" stroke="#56A3A6" stroke-width="0.3" stroke-dasharray="2,2" class="opacity-40 drop-shadow-[0_0_2px_rgba(86,163,166,0.3)]" />` +
-                    `<text x="-148" y="${y - 2}" fill="#56A3A6" font-size="2.5" class="opacity-50 font-['Forum'] uppercase tracking-widest">${monthName}</text>`
-                );
+                const y = startY + (i * Y_STEP);
+                const name = fmtShort.format(dObj);
+                monthGroup.innerHTML +=
+                    `<line x1="-150" y1="${y}" x2="150" y2="${y}" stroke="#56A3A6" stroke-width="0.3" stroke-dasharray="2,2" class="opacity-40" />` +
+                    `<text x="-148" y="${y - 2}" fill="#56A3A6" font-size="2.5" class="opacity-50 font-['Forum'] uppercase tracking-widest">${name}</text>`;
             }
             prevTag = tag;
         });
     }
 
-    // ---------------------------------------------------------------------
-    // Main entry: open the panel + render
-    // ---------------------------------------------------------------------
+    // ---------------------------------------------------------
+    // 7. State -> badge / orb / styling
+    // ---------------------------------------------------------
+    function renderStateOverlay(daysArray, deviations) {
+        const svgPath         = document.getElementById('siratPath');
+        const orbEl           = document.getElementById('siratOrb');
+        const cleanSlateOrb   = document.getElementById('siratCleanSlateOrb');
+        const badgeText       = document.getElementById('siratBadgeText');
+        const explanation     = document.getElementById('siratExplanationText');
+        const topAxisLabel    = document.getElementById('timelineAxisTop');
+        const bottomAxisLabel = document.getElementById('timelineAxisBottom');
+
+        const isCleanSlate    = deviations.length === 0;
+        const last7           = daysArray.slice(-7);
+        const lastDay         = daysArray[daysArray.length - 1];
+        const isDisconnected  = last7.every(d => !d || d.seconds <= 0);
+
+        const currentDeviation = deviations.length > 0 ? Math.abs(deviations[0]) : 0;
+        const daysToCenter = Math.ceil(currentDeviation / REWARD);
+        const plural = n => n === 1 ? 'day' : 'days';
+
+        if (isCleanSlate) {
+            if (svgPath) svgPath.style.opacity = '0';
+            if (cleanSlateOrb) { cleanSlateOrb.classList.remove('hidden'); cleanSlateOrb.classList.add('flex'); }
+            if (orbEl) orbEl.classList.add('hidden');
+            if (topAxisLabel)    topAxisLabel.style.opacity    = '0';
+            if (bottomAxisLabel) bottomAxisLabel.style.opacity = '0';
+            if (badgeText)   badgeText.textContent   = 'Begin reading to start your path';
+            if (explanation) explanation.textContent =
+                'The centre line is the Straight Path. Begin reading and your trail will appear here.';
+            return;
+        }
+
+        if (svgPath) svgPath.style.opacity = '1';
+        if (cleanSlateOrb) { cleanSlateOrb.classList.add('hidden'); cleanSlateOrb.classList.remove('flex'); }
+
+        if (isDisconnected) {
+            if (svgPath) {
+                svgPath.setAttribute('stroke', 'url(#siratTrailGradient)');
+                svgPath.setAttribute('stroke-opacity', '0.3');
+                svgPath.setAttribute('stroke-dasharray', '3,6');
+            }
+            if (badgeText) badgeText.textContent = daysToCenter > 0
+                ? `${daysToCenter} ${plural(daysToCenter)} of consistent reading will return you to the straight path`
+                : 'Begin reading again to return to the straight path';
+        } else if (lastDay && lastDay.seconds > 0) {
+            if (svgPath) {
+                svgPath.setAttribute('stroke', 'url(#siratTrailGradient)');
+                svgPath.removeAttribute('stroke-opacity');
+                svgPath.removeAttribute('stroke-dasharray');
+            }
+            if (badgeText) badgeText.textContent = daysToCenter > 0
+                ? `${daysToCenter} more ${plural(daysToCenter)} of reading returns you to the straight path`
+                : 'You are on the straight path \u00B7 Keep reading daily';
+        } else {
+            if (svgPath) {
+                svgPath.setAttribute('stroke', 'url(#siratTrailGradient)');
+                svgPath.setAttribute('stroke-opacity', '0.65');
+                svgPath.removeAttribute('stroke-dasharray');
+            }
+            if (badgeText) badgeText.textContent = daysToCenter > 0
+                ? `Read daily for ${daysToCenter} more ${plural(daysToCenter)} to return to the straight path`
+                : 'Read today to return to the straight path';
+        }
+
+        if (explanation) explanation.textContent =
+            'The centre line is the Straight Path. Daily reading keeps you close; missed days cause you to drift. The orb marks where you are today.';
+
+        if (orbEl) {
+            const orbY = PAD_BOT - ((deviations.length - 1) * Y_STEP);
+            const orbX = deviations[0] * SVG_X_HALF;
+            const leftPct = ((orbX + 150) / 300 * 100).toFixed(2);
+            orbEl.style.left = `${leftPct}%`;
+            orbEl.style.top  = `${orbY}px`;
+            orbEl.classList.remove('hidden');
+
+            if (topAxisLabel) {
+                topAxisLabel.style.top = `${Math.max(8, orbY - 8)}px`;
+                if (orbX >= 0) {
+                    topAxisLabel.style.left = '8px';
+                    topAxisLabel.style.removeProperty('right');
+                } else {
+                    topAxisLabel.style.right = '8px';
+                    topAxisLabel.style.removeProperty('left');
+                }
+                topAxisLabel.style.opacity = '1';
+            }
+        }
+
+        if (bottomAxisLabel) {
+            bottomAxisLabel.style.opacity = (deviations.length < TOTAL_DAYS) ? '0' : '1';
+        }
+    }
+
+    // ---------------------------------------------------------
+    // 8. Public entry point
+    // ---------------------------------------------------------
     async function initSiratVisualizer(forceOpen = false, mockDays = 0) {
         const container = document.getElementById('siratContainer');
         const svgPath   = document.getElementById('siratPath');
@@ -304,202 +353,101 @@
         if (!container || !svgPath) return;
 
         const isOpen = container.style.maxHeight && container.style.maxHeight !== '0px';
-
-        if (!(isOpen) || forceOpen) {
-            container.style.maxHeight = '520px';
-            container.style.opacity   = '1';
-            container.style.marginTop = '16px';
-            if (loader) loader.classList.remove('hidden');
-            if (btn) btn.classList.add('ring-2', 'ring-white/50');
-
-            try {
-                const secondsByDate = (mockDays === 0)
-                    ? await fetchActivitySecondsByDate()
-                    : {};
-                const daysArray = buildDaysArray(secondsByDate, mockDays);
-
-                const genesisIndex = daysArray.findIndex(d => d.seconds > 0);
-                const isCleanSlate = genesisIndex === -1;
-
-                console.groupCollapsed('%c[Sirat] 28-day window', 'color:#56A3A6;font-weight:bold;');
-                console.table(daysArray.map(d => ({
-                    date: d.date,
-                    seconds: d.seconds,
-                    read: d.seconds > 0 ? '✓' : '·'
-                })));
-                console.log(`Genesis day index: ${isCleanSlate ? 'none' : genesisIndex} | Raw API entries: ${Object.keys(secondsByDate).length}`);
-                console.groupEnd();
-
-                const activeDaysArray = isCleanSlate ? [] : daysArray.slice(genesisIndex);
-                const deviations = activeDaysArray.length > 0
-                    ? calculateDeviations(activeDaysArray)
-                    : [];
-                const pathString = generateSiratPathString(deviations);
-                if (pathString) svgPath.setAttribute('d', pathString);
-
-                renderHijriMonthLines(activeDaysArray, deviations);
-
-                // ---------- Status badge & orb placement --------------------
-                const last7 = daysArray.slice(-7);
-                const last7Active = last7.filter(d => d.seconds > 0).length;
-                const today = daysArray[daysArray.length - 1];
-                const isDisconnected = last7Active === 0;
-
-                const badgeText  = document.getElementById('siratBadgeText');
-                const cleanOrb   = document.getElementById('siratCleanSlateOrb');
-                const explainTxt = document.getElementById('siratExplanationText');
-                const orbEl      = document.getElementById('siratOrb');
-                const topAxis    = document.getElementById('timelineAxisTop');
-                const bottomAxis = document.getElementById('timelineAxisBottom');
-
-                // Days of consistent reading needed to reach center, given current deviation.
-                const currentDev = deviations.length > 0 ? Math.abs(deviations[0]) : 0;
-                const daysToCenter = Math.ceil(currentDev / REWARD);  // 1.0 unit per active day → almost always 1
-                const plural = (n) => (n === 1 ? 'day' : 'days');
-
-                if (isCleanSlate) {
-                    svgPath.style.opacity = '0';
-                    if (cleanOrb) { cleanOrb.classList.remove('hidden'); cleanOrb.classList.add('flex'); }
-                    if (orbEl) orbEl.classList.add('hidden');
-                    if (topAxis)    topAxis.style.opacity = '0';
-                    if (bottomAxis) bottomAxis.style.opacity = '0';
-                    if (badgeText) {
-                        badgeText.innerText = 'Begin reading to start your path';
-                        badgeText.className = "text-[#F3E4CE]/70 text-[11px] font-bold font-['Forum'] tracking-wider text-center mt-3 px-2 min-h-[1.4em] transition-colors duration-500";
-                    }
-                } else {
-                    svgPath.style.opacity = '1';
-                    if (cleanOrb) { cleanOrb.classList.add('hidden'); cleanOrb.classList.remove('flex'); }
-
-                    if (isDisconnected) {
-                        svgPath.setAttribute('stroke', 'url(#siratTrailGradient)');
-                        svgPath.setAttribute('stroke-opacity', '0.3');
-                        svgPath.setAttribute('stroke-dasharray', '3,6');
-                        if (badgeText) {
-                            badgeText.innerText = daysToCenter > 0
-                                ? `One day of reading returns you to the straight path`
-                                : 'Begin reading again to return to the straight path';
-                            badgeText.className = "text-[#8FA8A8] text-[11px] font-bold font-['Forum'] tracking-wider text-center mt-3 px-2 min-h-[1.4em] transition-colors duration-500";
-                        }
-                    } else if (today.seconds > 0) {
-                        svgPath.setAttribute('stroke', 'url(#siratTrailGradient)');
-                        svgPath.removeAttribute('stroke-opacity');
-                        svgPath.removeAttribute('stroke-dasharray');
-                        if (badgeText) {
-                            badgeText.innerText = currentDev === 0
-                                ? 'You are on the straight path · Keep reading daily'
-                                : `One more day returns you to the straight path`;
-                            badgeText.className = "text-[#8FB9AA] text-[11px] font-bold font-['Forum'] tracking-wider text-center mt-3 px-2 min-h-[1.4em] transition-colors duration-500";
-                        }
-                    } else {
-                        svgPath.setAttribute('stroke', 'url(#siratTrailGradient)');
-                        svgPath.setAttribute('stroke-opacity', '0.65');
-                        svgPath.removeAttribute('stroke-dasharray');
-                        if (badgeText) {
-                            badgeText.innerText = 'Read today to return to the straight path';
-                            badgeText.className = "text-[#D8C3A5] text-[11px] font-bold font-['Forum'] tracking-wider text-center mt-3 px-2 min-h-[1.4em] transition-colors duration-500";
-                        }
-                    }
-                    if (explainTxt) {
-                        explainTxt.className = "text-white/30 text-[10px] leading-relaxed mt-1.5 font-['Nunito'] tracking-wide text-center px-2 w-full transition-colors duration-500";
-                    }
-
-                    // Position the HTML orb on TODAY (top-of-curve point).
-                    if (orbEl && deviations.length > 0) {
-                        const orbY  = PAD_BOT - (deviations.length - 1) * Y_STEP;
-                        const orbX  = deviations[0] * X_HALF_RANGE;       // signed SVG x
-                        const leftPct = ((orbX + 150) / 300 * 100).toFixed(2);
-                        orbEl.style.left = `${leftPct}%`;
-                        orbEl.style.top  = `${orbY}px`;
-                        orbEl.classList.remove('hidden');
-
-                        if (topAxis) {
-                            topAxis.style.top = `${Math.max(8, orbY - 8)}px`;
-                            if (orbX >= 0) {
-                                topAxis.style.left = '8px';
-                                topAxis.style.removeProperty('right');
-                            } else {
-                                topAxis.style.right = '8px';
-                                topAxis.style.removeProperty('left');
-                            }
-                            topAxis.style.opacity = '1';
-                        }
-                    }
-                    if (bottomAxis) bottomAxis.style.opacity = (activeDaysArray.length < TOTAL_DAYS) ? '0' : '1';
-                }
-
-                // Optional: pull streak as decorative info; failure is silent.
-                fetchCurrentStreakDays().then(streak => {
-                    if (streak > 0) console.log(`%c[Sirat] current streak: ${streak} days`, 'color:#88FFD1;');
-                });
-
-            } catch (err) {
-                console.error('[Sirat] render failed:', err);
-            } finally {
-                if (loader) loader.classList.add('hidden');
-            }
-        } else {
-            // Toggle closed
+        if (isOpen && !forceOpen) {
             container.style.maxHeight = '0px';
             container.style.opacity   = '0';
             container.style.marginTop = '0px';
             if (btn) btn.classList.remove('ring-2', 'ring-white/50');
-        }
-    }
-
-    // ---------------------------------------------------------------------
-    // Debug helpers
-    // ---------------------------------------------------------------------
-    function simulateUserJourney(activeDays = 14) {
-        console.log(`%c[Sirat] mocking ${activeDays} listened days (with sporadic misses)`,
-            'color:#FF88AA;font-weight:bold;');
-        return initSiratVisualizer(true, activeDays);
-    }
-
-    /**
-     * Drive the visualizer with an explicit boolean array (length 28; index 0
-     * = oldest, last = today). Useful for reproducing exact patterns.
-     */
-    function simulatePathPattern(boolArray) {
-        if (!Array.isArray(boolArray) || boolArray.length !== TOTAL_DAYS) {
-            console.warn(`[Sirat] simulatePathPattern expects exactly ${TOTAL_DAYS} booleans`);
             return;
         }
-        const container = document.getElementById('siratContainer');
-        if (container) {
-            container.style.maxHeight = '520px';
-            container.style.opacity = '1';
-            container.style.marginTop = '16px';
-        }
-        const svgPath = document.getElementById('siratPath');
-        const days = boolArray.map((b, i) => {
-            const d = new Date(); d.setDate(d.getDate() - (TOTAL_DAYS - 1 - i));
-            return { date: getLocalYMD(d), seconds: b ? 300 : 0 };
-        });
-        const genesis = days.findIndex(d => d.seconds > 0);
-        const active = genesis === -1 ? [] : days.slice(genesis);
-        const dev = calculateDeviations(active);
-        const path = generateSiratPathString(dev);
-        if (svgPath && path) svgPath.setAttribute('d', path);
 
-        const orbEl = document.getElementById('siratOrb');
-        if (orbEl && dev.length > 0) {
-            const orbY = PAD_BOT - (dev.length - 1) * Y_STEP;
-            const orbX = dev[0] * X_HALF_RANGE;
-            orbEl.style.left = `${((orbX + 150) / 300 * 100).toFixed(2)}%`;
-            orbEl.style.top  = `${orbY}px`;
-            orbEl.classList.remove('hidden');
+        container.style.maxHeight = '520px';
+        container.style.opacity   = '1';
+        container.style.marginTop = '16px';
+        if (loader) loader.classList.remove('hidden');
+        if (btn)    btn.classList.add('ring-2', 'ring-white/50');
+
+        try {
+            const apiMap = (mockDays === 0) ? await fetchActivityDays(TOTAL_DAYS) : {};
+
+            const daysArray = [];
+            for (let i = 0; i < TOTAL_DAYS; i++) {
+                const dt = new Date();
+                dt.setDate(dt.getDate() - (TOTAL_DAYS - 1 - i));
+                const dtStr = getLocalYMD(dt);
+                let secs = apiMap[dtStr] || 0;
+
+                if (mockDays > 0) {
+                    const histOffset = TOTAL_DAYS - 1 - i;
+                    secs = (histOffset < mockDays) ? 300 : 0;
+                    if (secs > 0 && Math.random() < 0.25) secs = 0;
+                }
+
+                daysArray.push({ date: dtStr, seconds: secs });
+            }
+
+            const genesisIdx = daysArray.findIndex(d => d.seconds > 0);
+            const activeDays = (genesisIdx === -1) ? [] : daysArray.slice(genesisIdx);
+
+            const deviations = (activeDays.length > 0) ? calculateDeviations(activeDays) : [];
+            const pathStr    = (deviations.length > 0) ? generateSiratPathString(deviations) : '';
+            if (pathStr) svgPath.setAttribute('d', pathStr);
+
+            renderHijriDividers(activeDays, deviations);
+            renderStateOverlay(daysArray, deviations);
+
+        } catch (e) {
+            console.error('[Sirat] init error', e);
+        } finally {
+            if (loader) loader.classList.add('hidden');
         }
-        renderHijriMonthLines(active, dev);
     }
 
-    // ---------------------------------------------------------------------
-    // Expose on window — these win over any older definitions in app.js
-    // because this file loads AFTER app.js.
-    // ---------------------------------------------------------------------
-    window.calculateDeviations      = calculateDeviations;
-    window.generateSiratPathString  = generateSiratPathString;
-    window.initSiratVisualizer      = initSiratVisualizer;
-    window.simulateUserJourney      = simulateUserJourney;
-    window.simulatePathPattern      = simulatePathPattern;
+    // ---------------------------------------------------------
+    // 9. Devtools test harnesses
+    // ---------------------------------------------------------
+    function simulateUserJourney(activeDays = 14) {
+        console.log(`%c[Sirat] Simulating ${activeDays} active days`, 'color:#FF88AA;font-weight:bold;');
+        initSiratVisualizer(true, activeDays);
+    }
+
+    // window.simulatePathPattern([true,false,true,...]) -- exact control for QA
+    function simulatePathPattern(boolArray) {
+        const arr = boolArray.slice(-TOTAL_DAYS);
+        const today = new Date();
+        const padCount = TOTAL_DAYS - arr.length;
+        const full = [];
+        for (let i = 0; i < padCount; i++) {
+            const dt = new Date(today.getTime() - ((TOTAL_DAYS - 1 - i)) * 86400000);
+            full.push({ date: getLocalYMD(dt), seconds: 0 });
+        }
+        for (let i = 0; i < arr.length; i++) {
+            const dt = new Date(today.getTime() - ((arr.length - 1 - i)) * 86400000);
+            full.push({ date: getLocalYMD(dt), seconds: arr[i] ? 300 : 0 });
+        }
+
+        const container = document.getElementById('siratContainer');
+        const svgPath   = document.getElementById('siratPath');
+        if (container) {
+            container.style.maxHeight = '520px';
+            container.style.opacity   = '1';
+            container.style.marginTop = '16px';
+        }
+        const genesis = full.findIndex(d => d.seconds > 0);
+        const activeDays = (genesis === -1) ? [] : full.slice(genesis);
+        const devs = activeDays.length ? calculateDeviations(activeDays) : [];
+        const path = devs.length ? generateSiratPathString(devs) : '';
+        if (svgPath && path) svgPath.setAttribute('d', path);
+        renderHijriDividers(activeDays, devs);
+        renderStateOverlay(full, devs);
+    }
+
+    // ---------------------------------------------------------
+    // 10. Publish (overrides any earlier definitions on window)
+    // ---------------------------------------------------------
+    window.calculateDeviations     = calculateDeviations;
+    window.generateSiratPathString = generateSiratPathString;
+    window.initSiratVisualizer     = initSiratVisualizer;
+    window.simulateUserJourney     = simulateUserJourney;
+    window.simulatePathPattern     = simulatePathPattern;
 })();
