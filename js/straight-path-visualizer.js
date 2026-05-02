@@ -19,7 +19,10 @@
  *  Data source
  *  -----------
  *    GET /api/qf/auth/v1/activity-days?from=...&to=...&type=QURAN
- *    -> { data: [{ date: 'YYYY-MM-DD', seconds: <int> }, ...] }
+ *    -> { data: [{ date, secondsRead, manuallyAddedSeconds, ranges,
+ *                  mushafId, pagesRead, versesRead, ... }, ...] }
+ *    Total time per day = secondsRead + manuallyAddedSeconds.
+ *    The visualizer normalises this into a local `seconds` key.
  *
  *  This module replaces the original window.initSiratVisualizer
  *  / calculateDeviations / generateSiratPathString implementation.
@@ -201,9 +204,15 @@
             const j1 = await r1.json();
             const j2 = await r2.json();
             const out = {};
+            // QF returns `secondsRead` for recited time and `manuallyAddedSeconds`
+            // for time the user logged by hand. We treat both as engagement.
             const merge = (arr) => {
                 if (!Array.isArray(arr)) return;
-                arr.forEach(d => { if (d && d.date) out[d.date] = d.seconds || 0; });
+                arr.forEach(d => {
+                    if (!d || !d.date) return;
+                    const total = (d.secondsRead || 0) + (d.manuallyAddedSeconds || 0);
+                    out[d.date] = (out[d.date] || 0) + total;
+                });
             };
             merge(j1.data);
             merge(j2.data);
