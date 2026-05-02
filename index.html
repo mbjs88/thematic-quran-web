@@ -221,6 +221,83 @@
             background: rgba(255, 255, 255, 0.1);
             border-radius: 2px;
         }
+
+        /* --- SIRAT-AL-MUSTAQIM VISUALIZER --- */
+        @keyframes siratLinePulse {
+            0%, 100% { box-shadow: 0 0 12px #56A3A6, 0 0 28px rgba(86,163,166,0.45); opacity: 0.55; }
+            50%      { box-shadow: 0 0 22px #F5D67A, 0 0 48px rgba(245,214,122,0.55); opacity: 0.95; }
+        }
+        @keyframes siratOrbBirth {
+            0%   { transform: translate(-50%,-50%) scale(0.2); opacity: 0; }
+            60%  { transform: translate(-50%,-50%) scale(1.4); opacity: 1; }
+            100% { transform: translate(-50%,-50%) scale(1.0); opacity: 1; }
+        }
+        @keyframes siratDotBirth {
+            0%   { transform: translate(-50%,-50%) scale(0); opacity: 0; }
+            70%  { transform: translate(-50%,-50%) scale(1.25); opacity: 1; }
+            100% { transform: translate(-50%,-50%) scale(1.0); opacity: 1; }
+        }
+        @keyframes siratGhostFade {
+            0%   { opacity: 0; }
+            25%  { opacity: 0.55; }
+            100% { opacity: 0; }
+        }
+        #siratCenterLineBar.is-on-path {
+            animation: siratLinePulse 2.6s ease-in-out infinite;
+        }
+        #siratCenterLineBar.is-near {
+            box-shadow: 0 0 12px #56A3A6, 0 0 22px rgba(86,163,166,0.35);
+            opacity: 0.75;
+        }
+        #siratCenterLineBar.is-far {
+            box-shadow: 0 0 4px rgba(86,163,166,0.4);
+            opacity: 0.35;
+        }
+        .sirat-day-dot {
+            position: absolute;
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            transform: translate(-50%,-50%);
+            cursor: pointer;
+            pointer-events: auto;
+            transition: transform 0.18s ease, box-shadow 0.18s ease;
+            opacity: 0;
+        }
+        .sirat-day-dot.born {
+            animation: siratDotBirth 0.45s ease-out forwards;
+        }
+        .sirat-day-dot.engaged {
+            background: #F5D67A;
+            box-shadow: 0 0 6px rgba(245,214,122,0.85), 0 0 14px rgba(245,214,122,0.35);
+        }
+        .sirat-day-dot.missed {
+            background: transparent;
+            border: 1.4px solid rgba(199,107,95,0.55);
+        }
+        .sirat-day-dot:hover, .sirat-day-dot.is-active {
+            transform: translate(-50%,-50%) scale(1.45);
+            box-shadow: 0 0 10px rgba(255,255,255,0.7), 0 0 22px rgba(255,255,255,0.3);
+        }
+        #siratOrb.born {
+            animation: siratOrbBirth 0.7s ease-out;
+        }
+        #siratGhostPath.show {
+            animation: siratGhostFade 2.4s ease-out forwards;
+        }
+        .sirat-segment {
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            transition: stroke-dashoffset 0.6s cubic-bezier(.45,.05,.25,1);
+        }
+        .sirat-segment.drift  { stroke: #C76B5F; }   /* warm rust — drifting away */
+        .sirat-segment.return { stroke: #56A3A6; }   /* cool turquoise — returning */
+        .sirat-segment.rest   { stroke: #F5D67A; opacity: 0.85; }   /* white-gold — at centre */
+
+        #siratTooltip.show { opacity: 1 !important; }
+
+        #myPathMiniPreview { display: inline-block; vertical-align: middle; }
     </style>
 </head>
 
@@ -718,8 +795,15 @@
                     </p>
                     <div class="w-full flex gap-2">
                         <button id="myPathBtn"
-                            class="flex-1 py-2 bg-[#56A3A6] border border-[#56A3A6] text-white hover:bg-[#458a8d] rounded-xl transition duration-300 text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1 shadow-lg shadow-[#56A3A6]/20">
-                            <span class="material-symbols-outlined text-[14px]">timeline</span> My Path
+                            class="flex-1 py-2 bg-[#56A3A6] border border-[#56A3A6] text-white hover:bg-[#458a8d] rounded-xl transition duration-300 text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 shadow-lg shadow-[#56A3A6]/20">
+                            <span class="material-symbols-outlined text-[14px]">timeline</span>
+                            <span>My Path</span>
+                            <!-- Live mini-preview of the user's curve, so the button itself shows their state -->
+                            <svg id="myPathMiniPreview" width="44" height="14" viewBox="-6 0 12 28" preserveAspectRatio="none" aria-hidden="true">
+                                <line x1="0" y1="0" x2="0" y2="28" stroke="white" stroke-opacity="0.3" stroke-width="0.5"/>
+                                <path id="myPathMiniPath" fill="none" stroke="white" stroke-opacity="0.95" stroke-width="0.9" stroke-linecap="round"/>
+                                <circle id="myPathMiniOrb" r="1.6" fill="white" cx="0" cy="0" style="display:none;"/>
+                            </svg>
                         </button>
                         <button id="quranLogoutBtn"
                             class="flex-1 py-2 bg-white/5 border border-white/10 hover:bg-white/10 text-white/70 hover:text-white rounded-xl transition duration-300 text-xs font-bold uppercase tracking-wider">
@@ -731,11 +815,11 @@
                     <div id="siratContainer" class="w-full mt-4 overflow-hidden transition-all duration-500 ease-in-out"
                         style="max-height: 0px; opacity: 0;">
                         <div class="relative w-full h-[400px] bg-black/40 border border-[#56A3A6]/30 rounded-2xl overflow-hidden">
-                            <!-- Background Straight Baseline (Sirat ul Mustaqeem) -->
-                            <div class="absolute inset-0 flex justify-center items-center opacity-25 pointer-events-none">
-                                <div class="w-[1.5px] h-full bg-[#56A3A6] shadow-[0_0_16px_#56A3A6]"></div>
+                            <!-- Background centre line (Sirat) — JS toggles is-on-path/is-near/is-far -->
+                            <div class="absolute inset-0 flex justify-center items-center pointer-events-none">
+                                <div id="siratCenterLineBar" class="w-[1.5px] h-full bg-[#56A3A6] is-near"></div>
                             </div>
-                            <!-- SVG: trail path only (no circles — avoids preserveAspectRatio distortion) -->
+                            <!-- SVG: ghost path + path segments (single path kept for fallback only) -->
                             <svg id="siratSvg" class="absolute w-full h-full z-10"
                                 viewBox="-150 0 300 400" preserveAspectRatio="none">
                                 <defs>
@@ -747,8 +831,27 @@
                                     </linearGradient>
                                 </defs>
                                 <g id="islamicMonthLines"></g>
-                                <path id="siratPath" stroke="url(#siratTrailGradient)" stroke-width="2" fill="none" stroke-linecap="round"/>
+                                <g id="siratGhostPath"></g>
+                                <g id="siratPathSegments"></g>
+                                <!-- legacy single path retained for back-compat; new renderer hides it -->
+                                <path id="siratPath" stroke="url(#siratTrailGradient)" stroke-width="2" fill="none" stroke-linecap="round" style="display:none"/>
                             </svg>
+                            <!-- Day-dots overlay (HTML for circular shape regardless of SVG distortion) -->
+                            <div id="siratDayDots" class="absolute inset-0 z-15 pointer-events-none"></div>
+                            <!-- Genesis marker (logo + first-read date) -->
+                            <div id="siratGenesisMarker" class="absolute z-20 pointer-events-none flex flex-col items-center hidden"
+                                style="left:50%;transform:translate(-50%,-50%);">
+                                <img src="/assets/icon-512-transparent.svg" class="w-5 h-5 opacity-70" alt=""/>
+                                <span id="siratGenesisDate" class="text-[8px] text-white/40 mt-1 tracking-wider font-['Nunito'] uppercase whitespace-nowrap"></span>
+                            </div>
+                            <!-- Tap-to-inspect tooltip -->
+                            <div id="siratTooltip" class="absolute z-30 hidden transition-opacity duration-200" style="opacity:0;">
+                                <div class="bg-black/85 border border-[#56A3A6]/50 rounded-lg px-3 py-2 backdrop-blur-sm shadow-xl text-white text-[10px] font-['Nunito'] whitespace-nowrap">
+                                    <div id="siratTooltipDate" class="font-bold text-[11px] text-[#F5D67A] tracking-wider"></div>
+                                    <div id="siratTooltipState" class="mt-0.5 text-white/85"></div>
+                                    <div id="siratTooltipDuration" class="text-white/45 mt-0.5"></div>
+                                </div>
+                            </div>
                             <!-- Glowing orb — HTML div so it stays circular despite SVG scale distortion -->
                             <div id="siratOrb" class="absolute hidden z-20 pointer-events-none"
                                 style="width:16px;height:16px;transform:translate(-50%,-50%);">
@@ -1048,7 +1151,7 @@
     <script src="js/scholar.js?v=1.0.0"></script>
     <script src="js/app.js?v=2.4.0"></script>
     <!-- Sirat-al-Mustaqim visualizer · loads AFTER app.js so its window.* fns win -->
-    <script src="js/straight-path-visualizer.js?v=1.2.0"></script>
+    <script src="js/straight-path-visualizer.js?v=1.3.0"></script>
     <!-- Reading tracker · reports listening seconds to the QF API -->
     <script src="js/reading-tracker.js?v=1.1.0"></script>
 
