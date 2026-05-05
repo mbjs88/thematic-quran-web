@@ -4,17 +4,23 @@
  *  Renders the user's 28-day engagement with the Qur'an as a
  *  celestial trajectory orbiting the central Straight Path.
  *
- *  Theological model
- *  -----------------
+ *  Theological model (v1.4 — orbital mechanics)
+ *  --------------------------------------------
  *    · The vertical centre line is the Straight Path.
- *    · Each missed day causes a small drift away (penalty).
- *    · Each engaged day exerts a strong gravitational pull
- *      back toward the centre (10x the drift -- a 10:1 reward
- *      to penalty ratio, mirroring the hadith on multiplied
- *      reward for good deeds).
+ *    · Missed days: small outward drift that ACCELERATES with
+ *      each consecutive missed day (gravity-like inertia of
+ *      neglect — the further you stray, the easier to keep
+ *      straying), capped after a few days so we don't fly off.
+ *    · Engaged days: a soft gravitational pull back toward the
+ *      centre — proportional to current distance with a floor,
+ *      so a long absence requires 2–3 days of engagement to
+ *      fully return (gentle arc, not a snap).
  *    · After every clean return to centre, polarity flips so
- *      subsequent drifts alternate sides -- a balanced organic
- *      weave over time rather than a one-sided drift.
+ *      subsequent drifts alternate sides — a balanced weave.
+ *    · A subtle deterministic orbital sway is added at render
+ *      time, strongest at the centre and fading with distance,
+ *      so engagement streaks breathe instead of producing a
+ *      dead-straight vertical line.
  *
  *  Data source
  *  -----------
@@ -35,8 +41,26 @@
     // ---------------------------------------------------------
     // 1. Tunable constants -- all in normalised units [-1, 1]
     // ---------------------------------------------------------
-    const DRIFT  = 0.10;   // penalty per missed day
-    const REWARD = 1.00;   // pull toward centre per engaged day (10x DRIFT)
+    //
+    //   Drift (missed-day) — accelerates with consecutive misses,
+    //   like gravity from the centre once you've started straying.
+    const DRIFT_BASE      = 0.06;  // first missed day after engagement
+    const DRIFT_GROWTH    = 0.022; // additional push per consecutive miss
+    const DRIFT_CAP_DAYS  = 4;     // growth caps after this many consecutive misses
+    //
+    //   Return (engaged-day) — proportional gravitational pull toward
+    //   centre, with a floor so small distances still close. Spreads
+    //   a long return over 2–3 days for a gentle arc instead of a snap.
+    const REWARD_FRAC     = 0.55;  // fraction of remaining distance pulled per day
+    const REWARD_FLOOR    = 0.20;  // minimum absolute pull per engaged day
+    const NEAR_CENTRE     = 0.04;  // |x| at or below this counts as on the path
+    //
+    //   Orbital sway — a deterministic, slow sinusoidal modulation added
+    //   at render time. Strongest near the centre, fading with distance,
+    //   so the curve breathes during engagement streaks (no straight line).
+    const ORBIT_SWAY_AMP  = 0.055; // amplitude in normalised units
+    const ORBIT_SWAY_FREQ = 0.55;  // radians per day — slow celestial rhythm
+
     const MIN_DEV = -1.0;
     const MAX_DEV =  1.0;
     const INITIAL_POLARITY = +1; // first drift goes to the right
@@ -50,9 +74,11 @@
 
     // Path smoothing tension (Francois Romain method)
     //   0    -> straight polyline
-    //   0.22 -> the soft, swooping celestial feel we want
-    //   0.3+ -> starts to overshoot
-    const SMOOTHING = 0.22;
+    //   0.22 -> previous (slightly mathematical-looking) tension
+    //   0.32 -> celestial sweeping curves; pairs well with the orbital
+    //           sway above to give natural inflection points
+    //   0.4+ -> starts to overshoot / form loops
+    const SMOOTHING = 0.32;
 
     // ---------------------------------------------------------
     // 2. Helpers
@@ -77,46 +103,84 @@
     //      'rest'   — was already at centre and stayed
     // ---------------------------------------------------------
     function calculateTrajectory(daysArray) {
-        let x = 0;
+        let x = 0;                          // raw position (no sway)
         let polarity = INITIAL_POLARITY;
+        let consecutiveMisses = 0;
+        let phase = Math.PI / 4;            // sway phase, advances each day
+
         const points = [];
         const trace  = [];
 
         daysArray.forEach((day, i) => {
             const seconds  = day && day.seconds || 0;
             const listened = seconds > 0;
-            let nextX, eventType, eventLabel;
+            let nextRawX, eventType, eventLabel;
 
             if (listened) {
-                if      (x > 0) nextX = Math.max(0, x - REWARD);
-                else if (x < 0) nextX = Math.min(0, x + REWARD);
-                else            nextX = 0;
-
-                if (x !== 0 && nextX === 0) {
-                    polarity = -polarity;
-                    eventType = 'return'; eventLabel = 'returned home';
-                } else if (nextX === 0) {
-                    eventType = 'rest';   eventLabel = 'on the straight path';
+                if (Math.abs(x) <= NEAR_CENTRE) {
+                    // Already on (or essentially on) the path — settle to centre.
+                    // If we just arrived here from a previous drift, mark a return
+                    // and flip polarity so the next drift goes the opposite way.
+                    if (Math.abs(x) > 0.0001) {
+                        polarity = -polarity;
+                        eventType = 'return'; eventLabel = 'returned home';
+                    } else {
+                        eventType = 'rest';   eventLabel = 'on the straight path';
+                    }
+                    nextRawX = 0;
                 } else {
-                    eventType = 'return'; eventLabel = 'returned closer';
+                    // Soft gravitational pull: take a fraction of remaining
+                    // distance, with a floor so small distances still close.
+                    // This spreads a long return over 2–3 days, producing a
+                    // gentle arc instead of a vertical snap.
+                    const pull = Math.max(REWARD_FLOOR, Math.abs(x) * REWARD_FRAC);
+                    if (x > 0) nextRawX = Math.max(0, x - pull);
+                    else       nextRawX = Math.min(0, x + pull);
+
+                    if (Math.abs(nextRawX) < 0.0001) {
+                        nextRawX = 0;
+                        polarity = -polarity;
+                        eventType = 'return'; eventLabel = 'returned home';
+                    } else {
+                        eventType = 'return'; eventLabel = 'returned closer';
+                    }
                 }
+                consecutiveMisses = 0;
             } else {
-                nextX = clamp(x + polarity * DRIFT, MIN_DEV, MAX_DEV);
+                // Outward drift — accelerates with consecutive misses,
+                // like centrifugal pull once an orbit decays. Capped so
+                // the curve never sprints to the edge in a few days.
+                const accel       = Math.min(consecutiveMisses, DRIFT_CAP_DAYS);
+                const driftAmount = DRIFT_BASE + DRIFT_GROWTH * accel;
+                nextRawX = clamp(x + polarity * driftAmount, MIN_DEV, MAX_DEV);
                 eventType  = 'drift';
                 eventLabel = 'drifted away';
+                consecutiveMisses++;
             }
 
-            points.push(nextX);
+            // ---- Orbital sway -------------------------------------
+            // Add a small, deterministic sinusoidal sway to the rendered
+            // x-coordinate. Strongest at the centre, fading with distance,
+            // so engagement streaks gently weave instead of producing the
+            // dead-straight vertical line a discrete model would yield.
+            // The physics state `x` carries forward without sway, so the
+            // model still classifies days correctly day-to-day.
+            phase += ORBIT_SWAY_FREQ;
+            const centreProximity = 1 - Math.min(1, Math.abs(nextRawX) * 1.8);
+            const sway      = Math.sin(phase) * ORBIT_SWAY_AMP * centreProximity;
+            const renderedX = clamp(nextRawX + sway, MIN_DEV, MAX_DEV);
+
+            points.push(renderedX);
             trace.push({
-                date:     day && day.date || '',
-                seconds:  seconds,
-                listened: listened,
-                fromX:    x,
-                toX:      nextX,
+                date:      day && day.date || '',
+                seconds:   seconds,
+                listened:  listened,
+                fromX:     x,
+                toX:       renderedX,
                 eventType: eventType,
                 eventLabel: eventLabel
             });
-            x = nextX;
+            x = nextRawX; // physics carries forward without sway
         });
 
         return { points: points, trace: trace };
@@ -127,60 +191,25 @@
     //    Returns 28 deviations reversed so index 0 = today.
     // ---------------------------------------------------------
     function calculateDeviations(daysArray) {
-        let x = 0;
-        let polarity = INITIAL_POLARITY;
-        const points  = [];
-        const trace   = [];
-
-        daysArray.forEach((day, i) => {
-            const listened = !!(day && day.seconds > 0);
-            let nextX;
-            let event = '';
-
-            if (listened) {
-                // Pull toward 0 by REWARD; never overshoot.
-                if      (x > 0) nextX = Math.max(0, x - REWARD);
-                else if (x < 0) nextX = Math.min(0, x + REWARD);
-                else            nextX = 0;
-
-                // Polarity flips ONLY on a clean return to centre,
-                // so the next drift cycle uses the opposite side.
-                if (x !== 0 && nextX === 0) {
-                    polarity = -polarity;
-                    event = 'returned + flipped';
-                } else if (nextX === 0) {
-                    event = 'rest at centre';
-                } else {
-                    event = 'pulled toward centre';
-                }
-            } else {
-                nextX = clamp(x + polarity * DRIFT, MIN_DEV, MAX_DEV);
-                event = (Math.abs(nextX) >= MAX_DEV) ? 'drifted (clamped)' : 'drifted';
-            }
-
-            trace.push({
-                day:      i,
-                date:     day && day.date || '',
-                listened: listened ? '\u2713' : '\u00B7',
-                seconds:  day && day.seconds || 0,
-                fromX:    x.toFixed(2),
-                toX:      nextX.toFixed(2),
-                polarity: polarity > 0 ? '+1' : '-1',
-                event
-            });
-
-            points.push(nextX);
-            x = nextX;
-        });
+        // Delegate to the orbital trajectory engine, then reverse so
+        // index 0 = today (legacy contract for state-overlay code).
+        const traj = calculateTrajectory(daysArray);
 
         if (window.console && console.groupCollapsed) {
-            console.groupCollapsed('%c[Sirat] Trajectory model', 'color:#88FFD1;font-weight:bold;');
-            console.table(trace);
+            console.groupCollapsed('%c[Sirat] Orbital trajectory', 'color:#88FFD1;font-weight:bold;');
+            console.table(traj.trace.map((t, i) => ({
+                day:       i,
+                date:      t.date,
+                listened:  t.listened ? '\u2713' : '\u00B7',
+                seconds:   t.seconds,
+                fromX:     (typeof t.fromX === 'number') ? t.fromX.toFixed(2) : t.fromX,
+                toX:       (typeof t.toX === 'number')   ? t.toX.toFixed(2)   : t.toX,
+                event:     t.eventLabel
+            })));
             console.groupEnd();
         }
 
-        // Reverse so index 0 = today, index N-1 = oldest.
-        return points.reverse();
+        return traj.points.slice().reverse();
     }
 
     // ---------------------------------------------------------
@@ -655,7 +684,18 @@
         const isDisconnected  = last7.every(d => !d || d.seconds <= 0);
 
         const currentDeviation = deviations.length > 0 ? Math.abs(deviations[0]) : 0;
-        const daysToCenter = Math.ceil(currentDeviation / REWARD);
+        // Estimate days to return given the soft proportional pull model:
+        //   each engaged day pulls max(REWARD_FLOOR, REWARD_FRAC * |x|).
+        // Walk the model forward to count engaged days needed.
+        const daysToCenter = (() => {
+            let r = currentDeviation, n = 0;
+            while (r > NEAR_CENTRE && n < 14) {
+                const pull = Math.max(REWARD_FLOOR, r * REWARD_FRAC);
+                r = Math.max(0, r - pull);
+                n++;
+            }
+            return n;
+        })();
         const plural = n => n === 1 ? 'day' : 'days';
 
         if (isCleanSlate) {
