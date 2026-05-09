@@ -6,7 +6,8 @@ export async function onRequest(context) {
     const config = getQfOAuthConfig(env);
     
     try {
-        const REDIRECT_URI = "https://thematicquran.com/auth/silent-callback";
+        // Reuse the exact same registered callback URI!
+        const REDIRECT_URI = "https://thematicquran.com/auth/callback";
         let { url, state, nonce, codeVerifier } = await buildAuthorizationUrl(env, {
             redirectUri: REDIRECT_URI,
             scopes: "offline_access user collection reading_session bookmark collection preference activity_day goal streak comment note"
@@ -18,7 +19,7 @@ export async function onRequest(context) {
         const headers = new Headers();
         headers.append("Location", url);
         
-        // Persist PKCE and CSRF state in secure HttpOnly cookies (we'll use a prefix to not clobber normal login)
+        // Persist PKCE and CSRF state using the SILENT prefix
         headers.append("Set-Cookie", `qf_silent_auth_state${config.cookieSuffix}=${state}; Path=/; Secure; HttpOnly; SameSite=Lax; Max-Age=300`);
         headers.append("Set-Cookie", `qf_silent_auth_nonce${config.cookieSuffix}=${nonce}; Path=/; Secure; HttpOnly; SameSite=Lax; Max-Age=300`);
         headers.append("Set-Cookie", `qf_silent_pkce_verifier${config.cookieSuffix}=${codeVerifier}; Path=/; Secure; HttpOnly; SameSite=Lax; Max-Age=300`);
