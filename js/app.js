@@ -770,9 +770,9 @@ function setupGlobalEventListeners() {
     }
 
     // 1. Check for token on startup
-    const tokenCookieStr = document.cookie.split(';').find(c => c.trim().startsWith('quran_access_token_'));
-    const hasToken = !!tokenCookieStr;
-    if (hasToken) {
+    const hasToken = !!document.cookie.split(';').find(c => c.trim().startsWith('quran_access_token_'));
+    
+    function initLoggedInState() {
         window.isLoggedIn = true;
         loggedOutState.classList.add('hidden');
         loggedInState.classList.remove('hidden');
@@ -782,8 +782,9 @@ function setupGlobalEventListeners() {
 
         let tokenData = null;
         try {
+            const currentTokenStr = document.cookie.split(';').find(c => c.trim().startsWith('quran_access_token_'));
             const idCookie = document.cookie.split(';').find(c => c.trim().startsWith('quran_id_token_'));
-            const tokenToDecode = idCookie ? idCookie : tokenCookieStr;
+            const tokenToDecode = idCookie ? idCookie : currentTokenStr;
             const tokenVal = tokenToDecode.split('=')[1];
             tokenData = decodeJWT(tokenVal);
         } catch (e) {
@@ -830,7 +831,6 @@ function setupGlobalEventListeners() {
                             userInitial.textContent = fetchedName.charAt(0).toUpperCase();
                         }
                     } else {
-                        // Expose exactly what JSON keys the API actually sent us back!
                         welcomeMessage.textContent = `User (Keys: ${Object.keys(ProfileData).join(', ')})`;
                     }
                 } catch (e) {
@@ -859,7 +859,6 @@ function setupGlobalEventListeners() {
                 
                 if (!dataArray || dataArray.length === 0) {
                      console.log("SYNC: No sessions found in dataArray.");
-                     // No remote data, do nothing!
                 } else if (dataArray && dataArray.length > 0) {
                     const latestSession = dataArray[0];
                     const qSurah = parseInt(latestSession.chapterNumber || latestSession.chapter_number);
@@ -894,16 +893,13 @@ function setupGlobalEventListeners() {
                             acceptBtn.onclick = () => {
                                 modal.classList.add('translate-x-[150%]');
                                 
-                                // Overwrite local state with Quran.com state
                                 localStorage.setItem('resumeState', JSON.stringify({ mode: 'surah', id: qSurah, startVerse: qVerse }));
                                 
-                                // Manually change view mode without dispatching the event (which causes loadContent(1) race condition)
                                 currentViewMode = 'surah';
                                 document.getElementById('viewModeSelect').value = 'surah';
                                 populateDropdown();
                                 document.getElementById('surahSelect').value = qSurah;
                                 
-                                // Cleanly load the target content
                                 if (typeof window.loadContent === 'function') {
                                     window.loadContent(qSurah, qVerse);
                                     
@@ -917,9 +913,8 @@ function setupGlobalEventListeners() {
                                                 window.playRange(qSurah, qVerse, qVerse, qVerse, 'arabic');
                                             }
                                         }
-                                    }, 1200); // give enough time for thematic cards to render
+                                    }, 1200);
                                 } else {
-                                    // Fallback if loadContent is somehow unavailable
                                     window.location.reload();
                                 }
                             };
@@ -931,6 +926,27 @@ function setupGlobalEventListeners() {
                 console.debug("Quran.com Sync In Failed", e);
                 document.getElementById('welcomeMessage').textContent = `Sync Fetch Failed: ${e.message}`;
             });
+    }
+
+    if (hasToken) {
+        initLoggedInState();
+    } else {
+        // Attempt silent authentication
+        const iframe = document.createElement('iframe');
+        iframe.style.display = 'none';
+        iframe.src = '/auth/silent-login';
+        document.body.appendChild(iframe);
+        
+        window.addEventListener('message', (event) => {
+            if (event.data && event.data.type === 'QURAN_SILENT_AUTH') {
+                if (event.data.success) {
+                    console.log("Silent Auth Succeeded. Initializing logged-in state.");
+                    initLoggedInState();
+                } else {
+                    console.log("Silent Auth Failed:", event.data.error);
+                }
+            }
+        });
     }
 
     if (quranLoginBtn) {

@@ -296,8 +296,6 @@
         .sirat-segment.rest   { stroke: #F5D67A; opacity: 0.85; }   /* white-gold — at centre */
 
         #siratTooltip.show { opacity: 1 !important; }
-
-        #myPathMiniPreview { display: inline-block; vertical-align: middle; }
     </style>
 </head>
 
@@ -798,12 +796,6 @@
                             class="flex-1 py-2 bg-[#56A3A6] border border-[#56A3A6] text-white hover:bg-[#458a8d] rounded-xl transition duration-300 text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 shadow-lg shadow-[#56A3A6]/20">
                             <span class="material-symbols-outlined text-[14px]">timeline</span>
                             <span>My Path</span>
-                            <!-- Live mini-preview of the user's curve, so the button itself shows their state -->
-                            <svg id="myPathMiniPreview" width="44" height="14" viewBox="-6 0 12 28" preserveAspectRatio="none" aria-hidden="true">
-                                <line x1="0" y1="0" x2="0" y2="28" stroke="white" stroke-opacity="0.3" stroke-width="0.5"/>
-                                <path id="myPathMiniPath" fill="none" stroke="white" stroke-opacity="0.95" stroke-width="0.9" stroke-linecap="round"/>
-                                <circle id="myPathMiniOrb" r="1.6" fill="white" cx="0" cy="0" style="display:none;"/>
-                            </svg>
                         </button>
                         <button id="quranLogoutBtn"
                             class="flex-1 py-2 bg-white/5 border border-white/10 hover:bg-white/10 text-white/70 hover:text-white rounded-xl transition duration-300 text-xs font-bold uppercase tracking-wider">
