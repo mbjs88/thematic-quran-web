@@ -6,6 +6,7 @@ assets/icons/
 js/generate-video.js
 js/output
 js/one-off-projects.js
+ABOUT_ME/
 
 # optional OS/editor noise
 .DS_Store
@@ -13,3 +14,16 @@ js/one-off-projects.js
 
 # Secrets
 .dev.vars
+.env
+
+# Labeler run logs / status
+data/thematic_labels/.runs/
+
+# Model-comparison snapshots (one folder per run)
+data/thematic_labels/.compare/
+
+# Internal labeling methodology — keep private
+docs/labeling/LABELING_INSTRUCTIONS.md
+
+# Local-only admin tools
+admin/

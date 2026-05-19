@@ -12,29 +12,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title>Thematic Qur’an Audio & Podcast | Listen & Understand</title>
+    <title>Thematic Qur’an — Listen by paragraph, browse by theme</title>
     <meta name="description"
-        content="High-quality Arabic recitation with English narration based on Talal Itani’s translation. The official web experience for the Thematic Qur'an podcast.">
+        content="Listen to the Qur’an in paragraphs. Arabic recitation paired with English translation. Filter every passage by theme: people, prayers, divine attributes, and more. Free, built on Quran.com.">
     <meta name="keywords"
-        content="Quran, Audio, Thematic, Translation, English, Urdu, Study, Islam, Custom Mix, Tafseer, Quran Audio App, Podcast, Audio Series">
-    <meta name="author" content="Thematic Quran Team">
+        content="Quran, Qur'an, Quran audio, listen to Quran, Quran English translation, thematic Quran, Quran by theme, Quran webapp, Talal Itani, Quran paragraphs, Quran study, Tadabbur">
     <link rel="canonical" href="https://www.thematicquran.com/">
 
     <meta name="theme-color" content="#12101C">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="application-name" content="Thematic Qur'an">
 
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Thematic Qur'an">
     <meta property="og:url" content="https://www.thematicquran.com/">
-    <meta property="og:title" content="Thematic Quran | Audio Experience & Podcast">
+    <meta property="og:title" content="Thematic Qur'an — Listen by paragraph, browse by theme">
     <meta property="og:description"
-        content="An immersive audio experience of the Quran. The official web companion for the Thematic Qur'an podcast series.">
+        content="A free webapp for listening to the Qur'an in paragraphs — Arabic and English together — and for filtering every passage by theme.">
     <meta property="og:image" content="https://www.thematicquran.com/assets/og-social-card.png">
 
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://www.thematicquran.com/">
-    <meta property="twitter:title" content="Thematic Quran | Audio Experience & Podcast">
+    <meta property="twitter:title" content="Thematic Qur'an — Listen by paragraph, browse by theme">
     <meta property="twitter:description"
-        content="An immersive audio experience of the Quran. The official web companion for the Thematic Qur'an podcast series.">
+        content="A free webapp for listening to the Qur'an in paragraphs — Arabic and English together — and for filtering every passage by theme.">
     <meta property="twitter:image" content="https://www.thematicquran.com/assets/og-social-card.png">
 
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
@@ -45,24 +46,26 @@
     {
       "@context": "https://schema.org",
       "@type": "WebApplication",
-      "name": "Thematic Quran",
+      "name": "Thematic Qur'an",
       "url": "https://www.thematicquran.com/",
-      "description": "A web application for listening to the Quran with synchronized English and Urdu translations, featuring thematic verse grouping. Associated with the Thematic Qur'an podcast.",
+      "description": "A free web application for listening to the Qur'an in paragraphs, with Arabic recitation paired with English translation, and for filtering every passage by theme. Built on Quran.com data with optional account sync for bookmarks, reading history, and notes.",
       "applicationCategory": "EducationalApplication",
-      "operatingSystem": "All",
+      "applicationSubCategory": "Religious",
+      "operatingSystem": "Any (browser-based)",
+      "browserRequirements": "Requires JavaScript and a modern browser.",
+      "isAccessibleForFree": true,
+      "inLanguage": ["en", "ar"],
       "offers": {
         "@type": "Offer",
         "price": "0",
         "priceCurrency": "USD"
       },
-      "author": {
-        "@type": "Organization",
-        "name": "Thematic Quran Team",
-        "sameAs": [
-          "https://podcasts.apple.com/",
-          "https://open.spotify.com/"
-        ]
-      }
+      "featureList": [
+        "Paragraph-by-paragraph audio playback with Arabic recitation and English translation",
+        "Theme-based filtering across the whole Qur'an (people, prayers, divine attributes, and more)",
+        "Bookmarks and resume-where-you-left-off",
+        "Optional Quran.com account sync"
+      ]
     }
     </script>
 
@@ -73,7 +76,7 @@
         rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css?v=2.4.0">
+    <link rel="stylesheet" href="css/styles.css?v=2.5.0">
 
     <style>
         html {
@@ -317,6 +320,12 @@
                 class="flex-1 w-full p-2.5 rounded-lg bg-white/10 border border-white/20 text-[#F3E4CE] shadow-sm focus:outline-none focus:ring-2 focus:ring-[#56A3A6] backdrop-blur-md font-['Nunito'] truncate text-sm md:text-base">
             </select>
 
+            <button id="openFilterBtn"
+                class="shrink-0 p-2.5 rounded-lg bg-white/10 border border-white/20 text-[#F3E4CE] hover:bg-white/20 hover:text-white transition focus:outline-none focus:ring-2 focus:ring-[#56A3A6] backdrop-blur-md"
+                title="Theme Filters">
+                <span class="material-symbols-outlined align-middle">filter_list</span>
+            </button>
+
             <button id="openBookmarksBtn"
                 class="shrink-0 p-2.5 rounded-lg bg-white/10 border border-white/20 text-[#F3E4CE] hover:bg-white/20 hover:text-white transition focus:outline-none focus:ring-2 focus:ring-[#56A3A6] backdrop-blur-md"
                 title="Saved Bookmarks">
@@ -357,199 +366,233 @@
             Loading Data... <span id="loadingPercent"></span>
         </div>
         <div id="contentArea" class="max-w-4xl mx-auto space-y-8 pb-64">
-            <!-- STATIC WELCOME PAGE (SEO OPTIMIZED) -->
+            <!-- STATIC WELCOME PAGE (SEO + product pitch) -->
             <div id="staticWelcomeContent" class="py-8 md:py-16 animate-fade-in">
 
-                <!-- HERO SECTION -->
-                <div class="text-center mb-16">
-                    <div
-                        class="inline-flex items-center justify-center gap-2 px-3 py-1 bg-[#56A3A6]/10 border border-[#56A3A6]/30 rounded-full mb-6">
-                        <span class="material-symbols-outlined text-[#56A3A6] text-sm">headphones</span>
-                        <span class="text-[#56A3A6] text-xs font-bold uppercase tracking-wider">Audio Experience</span>
-                    </div>
+                <!-- HERO -->
+                <header class="text-center mb-12 md:mb-14 pt-4">
                     <h1
-                        class="text-4xl md:text-6xl font-['Forum'] text-white tracking-widest drop-shadow-2xl mb-4 uppercase">
-                        THEMATIC QUR’AN</h1>
-                    <p class="text-white/60 font-['Nunito'] text-sm md:text-base uppercase tracking-[0.3em]">LISTEN
-                        &bull; REFLECT &bull; UNDERSTAND</p>
-                </div>
+                        class="text-4xl md:text-6xl font-['Forum'] text-white tracking-wide mb-6 leading-tight">
+                        Listen to the Qur’an<br class="hidden md:inline"> by paragraph.
+                    </h1>
+                    <p class="text-[#F3E4CE]/90 font-['Nunito'] text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+                        Arabic recitation paired with English translation, played one paragraph at a time.
+                    </p>
+                </header>
 
-                <!-- HERO COPY -->
-                <div
-                    class="space-y-6 text-[#F3E4CE] font-['Nunito'] leading-relaxed text-lg md:text-xl text-center max-w-2xl mx-auto mb-16">
-                    <p class="font-bold text-white/90 text-xl md:text-2xl">
-                        Recite and understand the Qur'an.
-                    </p>
-                    <p>
-                        The Thematic Qur’an project is a guided audio experience that pairs Arabic recitation with
-                        clear English narration, based on Talal Itani’s translation — so you can follow the meaning
-                        without breaking your focus.
-                    </p>
-                    <p>
-                        Ayahs are grouped into connected listening journeys, bringing verses together in a way that
-                        helps you understand both the <span class="text-[#56A3A6] font-bold">meaning</span> and the
-                        <span class="text-[#56A3A6] font-bold">context</span> of what you’re hearing.
-                    </p>
-                    <div class="w-24 h-px bg-white/10 mx-auto mt-8"></div>
-                    <p class="text-sm text-white/40 uppercase tracking-widest mt-4">Listen in short sessions. Reflect at
-                        your own pace.</p>
-                </div>
+                <!-- FIRST-LISTEN WIDGET -->
+                <section aria-label="Pick a surah to start" class="max-w-xl mx-auto bg-white/5 border border-white/10 rounded-2xl p-5 md:p-6 mb-4">
+                    <label for="heroSurahSelect" class="block text-xs font-bold uppercase tracking-widest text-[#56A3A6] mb-3 font-['Nunito']">
+                        Pick a surah to start
+                    </label>
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <select id="heroSurahSelect"
+                            class="flex-1 p-3 rounded-lg bg-white/10 border border-white/20 text-[#F3E4CE] focus:outline-none focus:ring-2 focus:ring-[#56A3A6] font-['Nunito'] text-base"
+                            aria-label="Choose a surah to listen to">
+                            <option value="">Loading surahs…</option>
+                        </select>
+                        <button id="heroPlayBtn"
+                            class="flex items-center justify-center gap-2 bg-[#56A3A6] text-white px-6 py-3 rounded-lg font-bold hover:bg-[#458a8d] transition active:scale-95 font-['Nunito']"
+                            aria-label="Start listening to the selected surah">
+                            <span class="material-symbols-outlined">play_arrow</span>
+                            Listen
+                        </button>
+                    </div>
+                </section>
 
-                <!-- CTA -->
+                <!-- TRUST + ALTERNATIVE DOORWAY -->
                 <div class="text-center mb-20">
-                    <button onclick="document.dispatchEvent(new CustomEvent('start-listening'))"
-                        class="bg-[#56A3A6] text-white px-10 py-4 rounded-full font-bold hover:bg-[#458a8d] transition animate-glow hover:scale-105 active:scale-95 text-lg cursor-pointer mb-6"
-                        aria-label="Start Listening to Thematic Quran">
-                        Start Listening
+                    <p class="text-xs text-white/50 font-bold uppercase tracking-widest font-['Nunito'] mb-4">
+                        Free · No account · No ads
+                    </p>
+                    <button id="heroExploreThemesBtn"
+                        class="inline-flex items-center gap-2 text-sm text-white/70 hover:text-[#56A3A6] transition border border-white/10 hover:border-[#56A3A6]/50 rounded-full px-5 py-2.5 font-['Nunito']">
+                        <span class="material-symbols-outlined text-base">filter_list</span>
+                        Or explore by theme
                     </button>
-                    <!-- Podcast Affiliation Tag -->
-                    <div
-                        class="mb-6 flex items-center justify-center gap-2 text-white/50 text-xs uppercase tracking-widest font-bold">
-                        <span class="material-symbols-outlined text-sm">podcasts</span>
-                        The official web companion to the Thematic Qur'an Podcast
-                    </div>
-                    <a href="#howItWorks"
-                        class="text-xs text-white/40 hover:text-[#56A3A6] transition border-b border-transparent hover:border-[#56A3A6] pb-0.5 uppercase tracking-wider">How
-                        it works</a>
                 </div>
 
-                <!-- FEATURE CARDS -->
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 border-t border-white/10 pt-16 mb-20">
-                    <div class="bg-white/5 p-6 rounded-2xl text-center hover:bg-white/10 transition duration-300 group">
-                        <span
-                            class="material-symbols-outlined text-[#56A3A6] text-4xl mb-3 group-hover:scale-110 transition-transform">record_voice_over</span>
-                        <h3 class="font-bold text-white mb-2 text-sm md:text-base">Custom Narration</h3>
-                        <p class="text-xs text-white/60">Clear, paced English narration.</p>
-                    </div>
-                    <div class="bg-white/5 p-6 rounded-2xl text-center hover:bg-white/10 transition duration-300 group">
-                        <span
-                            class="material-symbols-outlined text-[#56A3A6] text-4xl mb-3 group-hover:scale-110 transition-transform">segment</span>
-                        <h3 class="font-bold text-white mb-2 text-sm md:text-base">Curated Listening</h3>
-                        <p class="text-xs text-white/60">Ayahs grouped for meaning and context.</p>
-                    </div>
-                    <div class="bg-white/5 p-6 rounded-2xl text-center hover:bg-white/10 transition duration-300 group">
-                        <span
-                            class="material-symbols-outlined text-[#56A3A6] text-4xl mb-3 group-hover:scale-110 transition-transform">graphic_eq</span>
-                        <h3 class="font-bold text-white mb-2 text-sm md:text-base">Synced Audio</h3>
-                        <p class="text-xs text-white/60">Seamless Arabic recitation + English meaning.</p>
-                    </div>
-                    <div class="bg-white/5 p-6 rounded-2xl text-center hover:bg-white/10 transition duration-300 group">
-                        <span
-                            class="material-symbols-outlined text-[#56A3A6] text-4xl mb-3 group-hover:scale-110 transition-transform">tune</span>
-                        <h3 class="font-bold text-white mb-2 text-sm md:text-base">Custom Mixes</h3>
-                        <p class="text-xs text-white/60">Create your own compilations.</p>
-                    </div>
-                </div>
+                <!-- THREE EXPLAINERS -->
+                <section aria-label="What this site does" class="grid md:grid-cols-3 gap-5 md:gap-6 mb-20">
+                    <article class="bg-white/5 border border-white/10 rounded-2xl p-6">
+                        <span class="material-symbols-outlined text-[#56A3A6] text-3xl mb-3" aria-hidden="true">format_align_left</span>
+                        <h2 class="text-xl font-bold text-white mb-3 font-['Forum'] tracking-wide">By paragraph</h2>
+                        <p class="text-sm text-white/70 leading-relaxed font-['Nunito']">
+                            Listen to a whole section as one coherent thought. Each paragraph plays in sequence: Arabic recitation, then English translation, and on to the next.
+                        </p>
+                    </article>
+                    <article class="bg-white/5 border border-white/10 rounded-2xl p-6">
+                        <span class="material-symbols-outlined text-[#56A3A6] text-3xl mb-3" aria-hidden="true">sell</span>
+                        <h2 class="text-xl font-bold text-white mb-3 font-['Forum'] tracking-wide">By theme</h2>
+                        <p class="text-sm text-white/70 leading-relaxed font-['Nunito']">
+                            Pick a theme and the site shows every paragraph that touches on it, across the whole Qur’an. Each paragraph carries around a dozen themes drawn from a library of roughly 130, covering people, the qualities of God, prayers, daily life, and the afterlife.
+                        </p>
+                    </article>
+                    <article class="bg-white/5 border border-white/10 rounded-2xl p-6">
+                        <span class="material-symbols-outlined text-[#56A3A6] text-3xl mb-3" aria-hidden="true">bookmark_added</span>
+                        <h2 class="text-xl font-bold text-white mb-3 font-['Forum'] tracking-wide">Continuity</h2>
+                        <p class="text-sm text-white/70 leading-relaxed font-['Nunito']">
+                            Bookmarks and resume-where-you-left-off work straight away. <a href="/auth/login" class="text-[#56A3A6] hover:underline">Sign in with Quran.com</a> to also sync your bookmarks, reading history, and personal notes across every device you use. Free, takes thirty seconds.
+                        </p>
+                    </article>
+                </section>
 
-                <!-- HOW IT WORKS -->
-                <div id="howItWorks" class="max-w-2xl mx-auto mb-20 pt-10">
-                    <h2 class="text-2xl md:text-3xl font-['Forum'] text-white text-center mb-10 tracking-wider">How it
-                        works</h2>
-                    <div class="space-y-4">
-                        <div class="flex items-center gap-6 p-4 rounded-xl hover:bg-white/5 transition">
-                            <span
-                                class="flex-shrink-0 w-10 h-10 rounded-full bg-[#56A3A6]/20 text-[#56A3A6] flex items-center justify-center font-bold">1</span>
-                            <p class="text-[#F3E4CE] text-lg">Press play</p>
-                        </div>
-                        <div class="flex items-center gap-6 p-4 rounded-xl hover:bg-white/5 transition">
-                            <span
-                                class="flex-shrink-0 w-10 h-10 rounded-full bg-[#56A3A6]/20 text-[#56A3A6] flex items-center justify-center font-bold">2</span>
-                            <p class="text-[#F3E4CE] text-lg">Listen to the Arabic recitation</p>
-                        </div>
-                        <div class="flex items-center gap-6 p-4 rounded-xl hover:bg-white/5 transition">
-                            <span
-                                class="flex-shrink-0 w-10 h-10 rounded-full bg-[#56A3A6]/20 text-[#56A3A6] flex items-center justify-center font-bold">3</span>
-                            <p class="text-[#F3E4CE] text-lg">Follow the English narration</p>
-                        </div>
-                        <div class="flex items-center gap-6 p-4 rounded-xl hover:bg-white/5 transition">
-                            <span
-                                class="flex-shrink-0 w-10 h-10 rounded-full bg-[#56A3A6]/20 text-[#56A3A6] flex items-center justify-center font-bold">4</span>
-                            <p class="text-[#F3E4CE] text-lg">Finish with a clearer understanding of meaning and context
+                <!-- SOURCES & METHOD -->
+                <section aria-label="Sources and method" class="max-w-3xl mx-auto border-t border-white/10 pt-16 mb-20">
+                    <h2 class="text-2xl md:text-3xl font-['Forum'] text-white text-center mb-10 tracking-wide">Sources and method</h2>
+                    <div class="space-y-5 text-[#F3E4CE]/85 font-['Nunito'] text-sm md:text-base leading-relaxed">
+                        <p>
+                            <strong class="text-white">English translation.</strong> Talal Itani’s <em>Quran in Modern English</em>, used unmodified.
+                        </p>
+                        <p>
+                            <strong class="text-white">Arabic recitation.</strong> Audio from <a class="text-[#56A3A6] hover:underline" href="https://everyayah.com" target="_blank" rel="noopener">everyayah.com</a>, with a choice of reciters.
+                        </p>
+                        <p>
+                            <strong class="text-white">Scholarly commentary.</strong> Tafsir for any ayah, available in many languages, drawn live from <a class="text-[#56A3A6] hover:underline" href="https://quran.com" target="_blank" rel="noopener">Quran.com</a>.
+                        </p>
+                        <p>
+                            <strong class="text-white">Paragraph boundaries.</strong> Structural work draws on the translations of <strong>M.A.S. Abdel Haleem</strong> and <strong>The Clear Quran</strong> by Dr. Mustafa Khattab, then adjusted manually where needed.
+                        </p>
+                        <p>
+                            <strong class="text-white">Thematic labels.</strong> A taxonomy of roughly 130 themes across 9 facets, applied at the paragraph level. No new exegesis is invented. Labels classify content already present in the translation.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- ABOUT (anonymous) -->
+                <section aria-label="About this project" class="max-w-2xl mx-auto border-t border-white/10 pt-16 mb-20 text-center">
+                    <h2 class="text-2xl md:text-3xl font-['Forum'] text-white mb-6 tracking-wide">About</h2>
+                    <p class="text-[#F3E4CE]/85 font-['Nunito'] leading-relaxed text-base md:text-lg">
+                        A personal, not-for-profit project. Built to make listening to the Qur’an feel like a continuous experience, and to make it easy to explore passages by common themes.
+                    </p>
+                </section>
+
+                <!-- BUILT ON QURAN.COM (HACKATHON CONTEXT) -->
+                <section aria-label="Built on Quran.com" class="max-w-3xl mx-auto border-t border-white/10 pt-16 mb-20">
+                    <div class="text-center mb-10">
+                        <p class="text-[#56A3A6] text-xs font-bold uppercase tracking-widest font-['Nunito'] mb-3">Submitted to the 2026 Quran Foundation Hackathon</p>
+                        <h2 class="text-2xl md:text-3xl font-['Forum'] text-white mb-4 tracking-wide">Built on Quran.com</h2>
+                        <p class="text-[#F3E4CE]/85 font-['Nunito'] text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
+                            This project sits on top of the data and features that the Quran Foundation team shares openly at <a class="text-[#56A3A6] hover:underline" href="https://quran.com" target="_blank" rel="noopener">Quran.com</a>. Almost everything you read, hear, and save here is theirs.
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-5 md:gap-6 mb-10">
+                        <article class="bg-white/5 border border-white/10 rounded-2xl p-6">
+                            <span class="material-symbols-outlined text-[#56A3A6] text-3xl mb-3" aria-hidden="true">menu_book</span>
+                            <h3 class="text-lg font-bold text-white mb-3 font-['Forum'] tracking-wide">Go deeper on any ayah</h3>
+                            <p class="text-sm text-white/70 font-['Nunito'] leading-relaxed mb-3">
+                                Open any paragraph into the Scholar view, and you have scholarly commentary (tafsir) served live from Quran.com. This is where you go from listening to study.
                             </p>
-                        </div>
+                            <ul class="text-sm text-white/80 font-['Nunito'] leading-relaxed space-y-2 list-disc pl-5">
+                                <li>Tafsir for any ayah in the Qur’an.</li>
+                                <li>Multiple languages, so you can read it in the one you study in.</li>
+                                <li>Multiple scholars side by side, classical and contemporary.</li>
+                            </ul>
+                        </article>
+
+                        <article class="bg-white/5 border border-white/10 rounded-2xl p-6">
+                            <span class="material-symbols-outlined text-[#56A3A6] text-3xl mb-3" aria-hidden="true">person_check</span>
+                            <h3 class="text-lg font-bold text-white mb-3 font-['Forum'] tracking-wide">Your free Quran.com account</h3>
+                            <p class="text-sm text-white/70 font-['Nunito'] leading-relaxed mb-3">
+                                Signing in is free and quick. Once you do, the site can carry your personal things across every device you use.
+                            </p>
+                            <ul class="text-sm text-white/80 font-['Nunito'] leading-relaxed space-y-2 list-disc pl-5">
+                                <li>Bookmarks that follow you everywhere.</li>
+                                <li>The ayah you last stopped on, offered back next time you open the site.</li>
+                                <li>Your own notes on any ayah, saved with your account.</li>
+                                <li>A view called <em>My Path</em> that turns your reading history into something tangible to look back on.</li>
+                            </ul>
+                        </article>
                     </div>
-                </div>
+
+                    <div class="text-center">
+                        <a href="/auth/login"
+                            class="inline-flex items-center gap-2 bg-[#56A3A6] text-white px-6 py-3 rounded-lg font-bold hover:bg-[#458a8d] transition active:scale-95 font-['Nunito']">
+                            <span class="material-symbols-outlined">login</span>
+                            Sign in with Quran.com
+                        </a>
+                        <p class="text-xs text-white/40 font-['Nunito'] mt-3">Free. Thirty seconds. Brings everything together.</p>
+                    </div>
+                </section>
 
                 <!-- FAQ -->
-                <div class="max-w-2xl mx-auto border-t border-white/10 pt-16">
-                    <h2 class="text-2xl md:text-3xl font-['Forum'] text-white text-center mb-10 tracking-wider">FAQ</h2>
+                <section aria-label="Frequently asked questions" class="max-w-2xl mx-auto border-t border-white/10 pt-16">
+                    <h2 class="text-2xl md:text-3xl font-['Forum'] text-white text-center mb-10 tracking-wide">FAQ</h2>
                     <div class="space-y-4">
-                        <details
-                            class="group bg-white/5 rounded-xl border border-white/5 open:bg-white/10 transition-all duration-300">
+
+                        <details class="group bg-white/5 rounded-xl border border-white/5 open:bg-white/10 transition-all duration-300">
                             <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
                                 <span class="font-bold text-[#F3E4CE]">What is Thematic Qur’an?</span>
-                                <span
-                                    class="material-symbols-outlined text-[#56A3A6] transform group-open:rotate-180 transition-transform">expand_more</span>
+                                <span class="material-symbols-outlined text-[#56A3A6] transform group-open:rotate-180 transition-transform" aria-hidden="true">expand_more</span>
                             </summary>
-                            <div class="px-6 pb-6 text-white/70 leading-relaxed text-sm">
-                                <p class="mb-2">The Thematic Qur'an Project is an audio experience designed to provide a
-                                    foundational understanding of the Qur'an's message.</p>
-                                <p>By grouping verses thematically and ensuring you hear the connection between a verse
-                                    and those before and after it, this project gives listeners a clear overview of the
-                                    translation. Once this foundational "scaffold" of understanding is built, it
-                                    provides the perfect platform to progress into deeper, more nuanced studies
-                                    supported by other platforms.</p>
+                            <div class="px-6 pb-6 text-white/70 leading-relaxed text-sm font-['Nunito']">
+                                A free webapp that does two things. It plays the Qur’an as paragraph-length audio: Arabic recitation followed by English translation, so meaning carries across verses as one continuous thought. And it lets every paragraph be filtered by theme, so passages can also be explored by what they share in common.
                             </div>
                         </details>
-                        <details
-                            class="group bg-white/5 rounded-xl border border-white/5 open:bg-white/10 transition-all duration-300">
+
+                        <details class="group bg-white/5 rounded-xl border border-white/5 open:bg-white/10 transition-all duration-300">
                             <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
                                 <span class="font-bold text-[#F3E4CE]">Which English translation is used?</span>
-                                <span
-                                    class="material-symbols-outlined text-[#56A3A6] transform group-open:rotate-180 transition-transform">expand_more</span>
+                                <span class="material-symbols-outlined text-[#56A3A6] transform group-open:rotate-180 transition-transform" aria-hidden="true">expand_more</span>
                             </summary>
-                            <div class="px-6 pb-6 text-white/70 leading-relaxed text-sm">
-                                English narration is based on Talal Itani’s translation.
+                            <div class="px-6 pb-6 text-white/70 leading-relaxed text-sm font-['Nunito']">
+                                Talal Itani’s <em>Quran in Modern English</em>, used unmodified.
                             </div>
                         </details>
-                        <details
-                            class="group bg-white/5 rounded-xl border border-white/5 open:bg-white/10 transition-all duration-300">
+
+                        <details class="group bg-white/5 rounded-xl border border-white/5 open:bg-white/10 transition-all duration-300">
                             <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
-                                <span class="font-bold text-[#F3E4CE]">How are ayahs arranged?</span>
-                                <span
-                                    class="material-symbols-outlined text-[#56A3A6] transform group-open:rotate-180 transition-transform">expand_more</span>
+                                <span class="font-bold text-[#F3E4CE]">How are verses grouped into paragraphs?</span>
+                                <span class="material-symbols-outlined text-[#56A3A6] transform group-open:rotate-180 transition-transform" aria-hidden="true">expand_more</span>
                             </summary>
-                            <div class="px-6 pb-6 text-white/70 leading-relaxed text-sm">
-                                <p class="mb-2">Ayahs are grouped into connected sequences to help listeners follow
-                                    meaning and context without interruption.</p>
-                                <p>Our methodology for thematic grouping takes structural inspiration from renowned
-                                    scholars, particularly the work of <strong>M.A.S. Abdel Haleem</strong> and
-                                    <strong>The Clear Quran</strong> by Dr. Mustafa Khattab, ensuring a logical and
-                                    authentic narrative flow.
-                                </p>
+                            <div class="px-6 pb-6 text-white/70 leading-relaxed text-sm font-['Nunito']">
+                                Paragraph boundaries draw on structural work by M.A.S. Abdel Haleem and Dr. Mustafa Khattab’s <em>The Clear Quran</em>, with manual adjustment where the source translations differ. The intent is to keep a single thought intact (an annunciation, a prayer, an argument) and play it as one continuous passage.
                             </div>
                         </details>
-                        <details
-                            class="group bg-white/5 rounded-xl border border-white/5 open:bg-white/10 transition-all duration-300">
+
+                        <details class="group bg-white/5 rounded-xl border border-white/5 open:bg-white/10 transition-all duration-300">
                             <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
-                                <span class="font-bold text-[#F3E4CE]">How do I know I can trust this?</span>
-                                <span
-                                    class="material-symbols-outlined text-[#56A3A6] transform group-open:rotate-180 transition-transform">expand_more</span>
+                                <span class="font-bold text-[#F3E4CE]">Where do the themes come from?</span>
+                                <span class="material-symbols-outlined text-[#56A3A6] transform group-open:rotate-180 transition-transform" aria-hidden="true">expand_more</span>
                             </summary>
-                            <div class="px-6 pb-6 text-white/70 leading-relaxed text-sm">
-                                <p>We rely strictly on established and authentic Quran translations. The English
-                                    narration utilizes the translation by Talal Itani, while the structural pacing draws
-                                    from widely acclaimed academic sources. We do not invent new translations or
-                                    exegeses; we simply curate the audio presentation to make the timeless message of
-                                    the Qur'an more accessible for daily reflection and Tadabbur.</p>
+                            <div class="px-6 pb-6 text-white/70 leading-relaxed text-sm font-['Nunito']">
+                                A curated library of roughly 130 themes across nine groups: people, the qualities of God, prayers, daily life, virtues, things to avoid, the afterlife, creation, and revelation. Each paragraph is reviewed and tagged against this library. No new exegesis is invented. Labels only classify what the translation already says.
                             </div>
                         </details>
-                        <details
-                            class="group bg-white/5 rounded-xl border border-white/5 open:bg-white/10 transition-all duration-300">
+
+                        <details class="group bg-white/5 rounded-xl border border-white/5 open:bg-white/10 transition-all duration-300">
+                            <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                                <span class="font-bold text-[#F3E4CE]">Is it free? Do I need an account?</span>
+                                <span class="material-symbols-outlined text-[#56A3A6] transform group-open:rotate-180 transition-transform" aria-hidden="true">expand_more</span>
+                            </summary>
+                            <div class="px-6 pb-6 text-white/70 leading-relaxed text-sm font-['Nunito']">
+                                Free, with no ads, ever. You can listen and explore without signing in. For the personal touches, <a href="/auth/login" class="text-[#56A3A6] hover:underline">sign in with a free Quran.com account</a>. That brings your bookmarks, your reading history, and your notes across every device you use, and remembers the last ayah you stopped on so you can pick up there next time. Worth the thirty seconds.
+                            </div>
+                        </details>
+
+                        <details class="group bg-white/5 rounded-xl border border-white/5 open:bg-white/10 transition-all duration-300">
+                            <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                                <span class="font-bold text-[#F3E4CE]">What is the relationship with Quran.com?</span>
+                                <span class="material-symbols-outlined text-[#56A3A6] transform group-open:rotate-180 transition-transform" aria-hidden="true">expand_more</span>
+                            </summary>
+                            <div class="px-6 pb-6 text-white/70 leading-relaxed text-sm font-['Nunito']">
+                                This project is built on the data and features that the Quran Foundation team shares openly at <a href="https://quran.com" target="_blank" rel="noopener" class="text-[#56A3A6] hover:underline">Quran.com</a>. The recitation audio, the Arabic, the English translation, and the scholarly commentary in multiple languages all come from there. If you choose to sign in with your free Quran.com account, your bookmarks, reading history, and notes sync back to the same account, so the work you do here travels with you. This project was submitted to the 2026 Quran Foundation Hackathon.
+                            </div>
+                        </details>
+
+                        <details class="group bg-white/5 rounded-xl border border-white/5 open:bg-white/10 transition-all duration-300">
                             <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
                                 <span class="font-bold text-[#F3E4CE]">Can I use this for deep study and Tafseer?</span>
-                                <span
-                                    class="material-symbols-outlined text-[#56A3A6] transform group-open:rotate-180 transition-transform">expand_more</span>
+                                <span class="material-symbols-outlined text-[#56A3A6] transform group-open:rotate-180 transition-transform" aria-hidden="true">expand_more</span>
                             </summary>
-                            <div class="px-6 pb-6 text-white/70 leading-relaxed text-sm">
-                                <p>Thematic Qur’an is designed as a companion tool to build foundational familiarity,
-                                    flow, and Tadabbur (deep reflection). While it is an excellent starting point, users
-                                    seeking profound legal (Fiqh) or detailed theological understanding should consult
-                                    classical Tafseer volumes and qualified Islamic scholars.</p>
+                            <div class="px-6 pb-6 text-white/70 leading-relaxed text-sm font-['Nunito']">
+                                This is a companion tool for foundational familiarity and Tadabbur (reflection), alongside traditional Tafseer. For Fiqh, classical exegesis, or detailed theology, consult traditional Tafseer volumes and qualified scholars. The thematic browser is useful for finding relevant passages quickly. What to do with them is the reader’s work.
                             </div>
                         </details>
+
                     </div>
-                </div>
+                </section>
 
             </div>
         </div>
@@ -597,10 +640,11 @@
                     <button id="nextSectionBtn" class="hover:text-[#56A3A6] transition text-white/70">
                         <span class="material-symbols-outlined text-4xl">skip_next</span>
                     </button>
-                    <button id="toggleSelectModeBtn"
-                        class="ml-4 text-white/70 hover:text-white p-2 rounded-full border border-white/20 hover:border-[#56A3A6] transition"
-                        title="Download Multiple Sections">
-                        <span class="material-symbols-outlined">download_for_offline</span>
+                    <button id="bottomQuranLoginBtn"
+                        class="ml-4 text-white/70 hover:text-[#56A3A6] p-2 rounded-full border border-white/20 hover:border-[#56A3A6] transition"
+                        title="Sign in with Quran.com"
+                        aria-label="Sign in with Quran.com">
+                        <span id="bottomQuranLoginIcon" class="material-symbols-outlined" aria-hidden="true">person</span>
                     </button>
                 </div>
             </div>
@@ -747,6 +791,60 @@
     </div>
 
     <!-- ABOUT MODAL REMOVED -->
+
+    <div id="filterBackdrop"
+        class="fixed inset-0 bg-black/50 z-[60] hidden transition-opacity duration-300 opacity-0"></div>
+    <div id="filterSidebar"
+        class="hidden fixed top-0 right-0 h-full w-[95vw] sm:w-full sm:max-w-md bg-[#221F2B]/95 backdrop-blur-3xl border-l border-y sm:border-y-0 border-white/10 rounded-l-3xl sm:rounded-none shadow-2xl z-[70] transition-transform duration-500 ease-out flex-col">
+
+        <div class="p-6 border-b border-white/10 flex justify-between items-center shrink-0">
+            <div>
+                <h3 class="text-xl md:text-2xl font-bold font-['Forum'] tracking-wide text-white flex items-center gap-2"><span class="material-symbols-outlined text-[#56A3A6]">filter_list</span> Themes</h3>
+            </div>
+            <button id="closeFilterBtn" class="text-white/50 hover:text-white transition duration-300">
+                <span class="material-symbols-outlined text-3xl">close</span>
+            </button>
+        </div>
+
+        <div class="p-4 shrink-0 border-b border-white/10">
+            <div class="mb-4 font-['Nunito']">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-[10px] text-white/50 font-bold uppercase tracking-wider">Theme Source</span>
+                    <span id="filterScopeHint" class="text-[10px] text-[#56A3A6] font-bold uppercase tracking-wider">This surah</span>
+                </div>
+                <div class="grid grid-cols-3 gap-1 bg-black/20 border border-white/10 rounded-xl p-1">
+                    <button id="filterScopeSurahBtn" type="button" class="filter-scope-btn active rounded-lg px-2 py-2 text-[11px] font-bold transition" data-scope="surah">This Surah</button>
+                    <button id="filterScopeJuzBtn" type="button" class="filter-scope-btn rounded-lg px-2 py-2 text-[11px] font-bold transition" data-scope="juz">This Juz</button>
+                    <button id="filterScopeMakkiBtn" type="button" class="filter-scope-btn rounded-lg px-2 py-2 text-[11px] font-bold transition" data-scope="makki">Makki</button>
+                    <button id="filterScopeMadaniBtn" type="button" class="filter-scope-btn rounded-lg px-2 py-2 text-[11px] font-bold transition" data-scope="madani">Madani</button>
+                    <button id="filterScopeQuranBtn" type="button" class="filter-scope-btn rounded-lg px-2 py-2 text-[11px] font-bold transition" data-scope="quran">Whole Quran</button>
+                    <button id="filterScopeRevelationBtn" type="button" class="filter-scope-btn rounded-lg px-2 py-2 text-[11px] font-bold transition" data-scope="revelation">Revelation Order</button>
+                </div>
+            </div>
+            <div class="mb-3 font-['Nunito']">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-[10px] text-white/50 font-bold uppercase tracking-wider">Match</span>
+                    <span class="text-[10px] text-white/40 tracking-wider" id="filterModeHint">ANY of the selected themes</span>
+                </div>
+                <div class="grid grid-cols-2 gap-1 bg-black/20 border border-white/10 rounded-xl p-1">
+                    <button id="filterModeAnyBtn" type="button" class="filter-mode-btn active rounded-lg px-3 py-2 text-xs font-bold transition" data-mode="any">Match ANY (OR)</button>
+                    <button id="filterModeAllBtn" type="button" class="filter-mode-btn rounded-lg px-3 py-2 text-xs font-bold transition" data-mode="all">Match ALL (AND)</button>
+                </div>
+            </div>
+            <div class="relative">
+                <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-white/40">search</span>
+                <input type="text" id="filterSearchInput" placeholder="Search themes or aliases..." class="w-full bg-white/5 border border-white/10 rounded-xl pl-10 pr-4 py-2 text-sm text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-[#56A3A6] font-['Nunito']">
+            </div>
+            <div class="flex justify-between items-center mt-3 font-['Nunito']">
+                <span class="text-xs text-white/50 font-bold uppercase tracking-wider" id="activeFilterCountText">0 selected</span>
+                <button id="clearFiltersBtn" class="text-xs text-[#56A3A6] hover:text-white transition font-bold uppercase hidden tracking-wider">Clear All</button>
+            </div>
+        </div>
+
+        <div id="filterFacetsContainer" class="flex-1 overflow-y-auto p-4 space-y-6 font-['Nunito']">
+            <!-- Facets and chips injected here -->
+        </div>
+    </div>
 
     <div id="settingsBackdrop"
         class="fixed inset-0 bg-black/50 z-[60] hidden transition-opacity duration-300 opacity-0"></div>
@@ -1137,11 +1235,11 @@
     <script src="vendor/ffmpeg/util.js"></script>
 
     <script src="js/video-exporter.js?v=2.3.0"></script>
-    <script src="js/ui-renderer.js?v=2.3.0"></script>
+    <script src="js/ui-renderer.js?v=2.3.3"></script>
     <script src="js/juz-data.js?v=2.3.0"></script>
     <script src="js/one-off-projects.js?v=1.0"></script>
     <script src="js/scholar.js?v=1.0.0"></script>
-    <script src="js/app.js?v=2.4.0"></script>
+    <script src="js/app.js?v=2.5.0"></script>
     <!-- Sirat-al-Mustaqim visualizer · loads AFTER app.js so its window.* fns win -->
     <script src="js/straight-path-visualizer.js?v=1.4.0"></script>
     <!-- Reading tracker · reports listening seconds to the QF API -->

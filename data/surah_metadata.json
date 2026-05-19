@@ -1,0 +1,462 @@
+{
+  "source": "Cairo Edition (1924 Egyptian standard) revelation order; Madani classification follows the most widely-accepted Egyptian standard",
+  "schemaVersion": 1,
+  "surahs": {
+    "1": {
+      "type": "makki",
+      "revelationOrder": 5
+    },
+    "2": {
+      "type": "madani",
+      "revelationOrder": 87
+    },
+    "3": {
+      "type": "madani",
+      "revelationOrder": 89
+    },
+    "4": {
+      "type": "madani",
+      "revelationOrder": 92
+    },
+    "5": {
+      "type": "madani",
+      "revelationOrder": 112
+    },
+    "6": {
+      "type": "makki",
+      "revelationOrder": 55
+    },
+    "7": {
+      "type": "makki",
+      "revelationOrder": 39
+    },
+    "8": {
+      "type": "madani",
+      "revelationOrder": 88
+    },
+    "9": {
+      "type": "madani",
+      "revelationOrder": 113
+    },
+    "10": {
+      "type": "makki",
+      "revelationOrder": 51
+    },
+    "11": {
+      "type": "makki",
+      "revelationOrder": 52
+    },
+    "12": {
+      "type": "makki",
+      "revelationOrder": 53
+    },
+    "13": {
+      "type": "madani",
+      "revelationOrder": 96
+    },
+    "14": {
+      "type": "makki",
+      "revelationOrder": 72
+    },
+    "15": {
+      "type": "makki",
+      "revelationOrder": 54
+    },
+    "16": {
+      "type": "makki",
+      "revelationOrder": 70
+    },
+    "17": {
+      "type": "makki",
+      "revelationOrder": 50
+    },
+    "18": {
+      "type": "makki",
+      "revelationOrder": 69
+    },
+    "19": {
+      "type": "makki",
+      "revelationOrder": 44
+    },
+    "20": {
+      "type": "makki",
+      "revelationOrder": 45
+    },
+    "21": {
+      "type": "makki",
+      "revelationOrder": 73
+    },
+    "22": {
+      "type": "madani",
+      "revelationOrder": 103
+    },
+    "23": {
+      "type": "makki",
+      "revelationOrder": 74
+    },
+    "24": {
+      "type": "madani",
+      "revelationOrder": 102
+    },
+    "25": {
+      "type": "makki",
+      "revelationOrder": 42
+    },
+    "26": {
+      "type": "makki",
+      "revelationOrder": 47
+    },
+    "27": {
+      "type": "makki",
+      "revelationOrder": 48
+    },
+    "28": {
+      "type": "makki",
+      "revelationOrder": 49
+    },
+    "29": {
+      "type": "makki",
+      "revelationOrder": 85
+    },
+    "30": {
+      "type": "makki",
+      "revelationOrder": 84
+    },
+    "31": {
+      "type": "makki",
+      "revelationOrder": 57
+    },
+    "32": {
+      "type": "makki",
+      "revelationOrder": 75
+    },
+    "33": {
+      "type": "madani",
+      "revelationOrder": 90
+    },
+    "34": {
+      "type": "makki",
+      "revelationOrder": 58
+    },
+    "35": {
+      "type": "makki",
+      "revelationOrder": 43
+    },
+    "36": {
+      "type": "makki",
+      "revelationOrder": 41
+    },
+    "37": {
+      "type": "makki",
+      "revelationOrder": 56
+    },
+    "38": {
+      "type": "makki",
+      "revelationOrder": 38
+    },
+    "39": {
+      "type": "makki",
+      "revelationOrder": 59
+    },
+    "40": {
+      "type": "makki",
+      "revelationOrder": 60
+    },
+    "41": {
+      "type": "makki",
+      "revelationOrder": 61
+    },
+    "42": {
+      "type": "makki",
+      "revelationOrder": 62
+    },
+    "43": {
+      "type": "makki",
+      "revelationOrder": 63
+    },
+    "44": {
+      "type": "makki",
+      "revelationOrder": 64
+    },
+    "45": {
+      "type": "makki",
+      "revelationOrder": 65
+    },
+    "46": {
+      "type": "makki",
+      "revelationOrder": 66
+    },
+    "47": {
+      "type": "madani",
+      "revelationOrder": 95
+    },
+    "48": {
+      "type": "madani",
+      "revelationOrder": 111
+    },
+    "49": {
+      "type": "madani",
+      "revelationOrder": 106
+    },
+    "50": {
+      "type": "makki",
+      "revelationOrder": 34
+    },
+    "51": {
+      "type": "makki",
+      "revelationOrder": 67
+    },
+    "52": {
+      "type": "makki",
+      "revelationOrder": 76
+    },
+    "53": {
+      "type": "makki",
+      "revelationOrder": 23
+    },
+    "54": {
+      "type": "makki",
+      "revelationOrder": 37
+    },
+    "55": {
+      "type": "madani",
+      "revelationOrder": 97
+    },
+    "56": {
+      "type": "makki",
+      "revelationOrder": 46
+    },
+    "57": {
+      "type": "madani",
+      "revelationOrder": 94
+    },
+    "58": {
+      "type": "madani",
+      "revelationOrder": 105
+    },
+    "59": {
+      "type": "madani",
+      "revelationOrder": 101
+    },
+    "60": {
+      "type": "madani",
+      "revelationOrder": 91
+    },
+    "61": {
+      "type": "madani",
+      "revelationOrder": 109
+    },
+    "62": {
+      "type": "madani",
+      "revelationOrder": 110
+    },
+    "63": {
+      "type": "madani",
+      "revelationOrder": 104
+    },
+    "64": {
+      "type": "madani",
+      "revelationOrder": 108
+    },
+    "65": {
+      "type": "madani",
+      "revelationOrder": 99
+    },
+    "66": {
+      "type": "madani",
+      "revelationOrder": 107
+    },
+    "67": {
+      "type": "makki",
+      "revelationOrder": 77
+    },
+    "68": {
+      "type": "makki",
+      "revelationOrder": 2
+    },
+    "69": {
+      "type": "makki",
+      "revelationOrder": 78
+    },
+    "70": {
+      "type": "makki",
+      "revelationOrder": 79
+    },
+    "71": {
+      "type": "makki",
+      "revelationOrder": 71
+    },
+    "72": {
+      "type": "makki",
+      "revelationOrder": 40
+    },
+    "73": {
+      "type": "makki",
+      "revelationOrder": 3
+    },
+    "74": {
+      "type": "makki",
+      "revelationOrder": 4
+    },
+    "75": {
+      "type": "makki",
+      "revelationOrder": 31
+    },
+    "76": {
+      "type": "madani",
+      "revelationOrder": 98
+    },
+    "77": {
+      "type": "makki",
+      "revelationOrder": 33
+    },
+    "78": {
+      "type": "makki",
+      "revelationOrder": 80
+    },
+    "79": {
+      "type": "makki",
+      "revelationOrder": 81
+    },
+    "80": {
+      "type": "makki",
+      "revelationOrder": 24
+    },
+    "81": {
+      "type": "makki",
+      "revelationOrder": 7
+    },
+    "82": {
+      "type": "makki",
+      "revelationOrder": 82
+    },
+    "83": {
+      "type": "makki",
+      "revelationOrder": 86
+    },
+    "84": {
+      "type": "makki",
+      "revelationOrder": 83
+    },
+    "85": {
+      "type": "makki",
+      "revelationOrder": 27
+    },
+    "86": {
+      "type": "makki",
+      "revelationOrder": 36
+    },
+    "87": {
+      "type": "makki",
+      "revelationOrder": 8
+    },
+    "88": {
+      "type": "makki",
+      "revelationOrder": 68
+    },
+    "89": {
+      "type": "makki",
+      "revelationOrder": 10
+    },
+    "90": {
+      "type": "makki",
+      "revelationOrder": 35
+    },
+    "91": {
+      "type": "makki",
+      "revelationOrder": 26
+    },
+    "92": {
+      "type": "makki",
+      "revelationOrder": 9
+    },
+    "93": {
+      "type": "makki",
+      "revelationOrder": 11
+    },
+    "94": {
+      "type": "makki",
+      "revelationOrder": 12
+    },
+    "95": {
+      "type": "makki",
+      "revelationOrder": 28
+    },
+    "96": {
+      "type": "makki",
+      "revelationOrder": 1
+    },
+    "97": {
+      "type": "makki",
+      "revelationOrder": 25
+    },
+    "98": {
+      "type": "madani",
+      "revelationOrder": 100
+    },
+    "99": {
+      "type": "madani",
+      "revelationOrder": 93
+    },
+    "100": {
+      "type": "makki",
+      "revelationOrder": 14
+    },
+    "101": {
+      "type": "makki",
+      "revelationOrder": 30
+    },
+    "102": {
+      "type": "makki",
+      "revelationOrder": 16
+    },
+    "103": {
+      "type": "makki",
+      "revelationOrder": 13
+    },
+    "104": {
+      "type": "makki",
+      "revelationOrder": 32
+    },
+    "105": {
+      "type": "makki",
+      "revelationOrder": 19
+    },
+    "106": {
+      "type": "makki",
+      "revelationOrder": 29
+    },
+    "107": {
+      "type": "makki",
+      "revelationOrder": 17
+    },
+    "108": {
+      "type": "makki",
+      "revelationOrder": 15
+    },
+    "109": {
+      "type": "makki",
+      "revelationOrder": 18
+    },
+    "110": {
+      "type": "madani",
+      "revelationOrder": 114
+    },
+    "111": {
+      "type": "makki",
+      "revelationOrder": 6
+    },
+    "112": {
+      "type": "makki",
+      "revelationOrder": 22
+    },
+    "113": {
+      "type": "makki",
+      "revelationOrder": 20
+    },
+    "114": {
+      "type": "makki",
+      "revelationOrder": 21
+    }
+  }
+}

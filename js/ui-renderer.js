@@ -320,6 +320,69 @@ function createCard(surahNum, start, end, data) {
     header.innerHTML = titleHtml;
     header.appendChild(actionsDiv);
 
+    // --- THEMATIC LABELS INJECTION ---
+    // Renders label chips beneath the title row. Uses DOM moves (not innerHTML)
+    // so the action buttons (bookmark/share/scholar/copy/download/play) keep
+    // their click listeners intact.
+    if (window.THEMATIC_TAXONOMY && window.THEMATIC_ASSIGNMENTS) {
+        const sectionId = `${surahNum}:${start}`;
+        const assignment = window.THEMATIC_ASSIGNMENTS[sectionId];
+
+        if (assignment && Array.isArray(assignment.labels) && assignment.labels.length > 0) {
+            const taxLabels = window.THEMATIC_TAXONOMY.labels;
+            const taxFacets = window.THEMATIC_TAXONOMY.facets || {};
+            const labelObjects = assignment.labels
+                .map(id => taxLabels.find(l => l.id === id))
+                .filter(Boolean);
+
+            const labelsDisclosure = document.createElement('details');
+            labelsDisclosure.className = "thematic-labels-disclosure mt-3 w-full";
+
+            const labelsSummary = document.createElement('summary');
+            labelsSummary.className = "thematic-labels-summary flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-white/45 hover:text-[#56A3A6] cursor-pointer font-['Nunito'] select-none";
+            labelsSummary.innerHTML = `<span class="material-symbols-outlined text-sm" aria-hidden="true">sell</span><span>Themes (${labelObjects.length})</span>`;
+            labelsDisclosure.appendChild(labelsSummary);
+
+            const labelsContainer = document.createElement('div');
+            labelsContainer.className = "thematic-label-strip flex flex-wrap gap-1.5 mt-3 w-full";
+
+            labelObjects.forEach(label => {
+                const chip = document.createElement('button');
+                chip.type = 'button';
+                chip.className = "thematic-chip text-[9px] md:text-[10px] px-2 py-0.5 rounded font-bold uppercase tracking-widest border font-['Nunito']";
+                const facetColor = (taxFacets[label.facet] && taxFacets[label.facet].color) || label.color || '#56A3A6';
+                chip.style.color = facetColor;
+                chip.style.borderColor = facetColor + '40';
+                chip.style.backgroundColor = facetColor + '10';
+                const displayText = (label.displayName && label.displayName.en) || label.id;
+                chip.textContent = displayText;
+                chip.title = `Filter this surah by ${displayText}`;
+                chip.dataset.labelId = label.id;
+                chip.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    if (typeof window.applyThematicLabelFilterFromSection === 'function') {
+                        window.applyThematicLabelFilterFromSection(label.id, surahNum);
+                    }
+                });
+                labelsContainer.appendChild(chip);
+            });
+            labelsDisclosure.appendChild(labelsContainer);
+
+            // Restructure header from row to column WITHOUT touching innerHTML.
+            // Move existing children (title + actionsDiv) into a row wrapper,
+            // then append the row + labels back to the (now column) header.
+            const rowWrapper = document.createElement('div');
+            rowWrapper.className = "flex justify-between items-center w-full";
+            while (header.firstChild) {
+                rowWrapper.appendChild(header.firstChild); // moves nodes — listeners preserved
+            }
+            header.className = "thematic-header-with-labels flex flex-col mb-6 border-b border-white/10 pb-4";
+            header.appendChild(rowWrapper);
+            header.appendChild(labelsDisclosure);
+        }
+    }
+
     // --- ARABIC TEXT RENDER ---
     const fontSelect = document.getElementById('fontSelect');
     const currentFontClass = fontSelect ? fontSelect.value : 'font-amiri';
@@ -723,4 +786,9 @@ window.renderWelcomePage = function () {
     if (typeof resetPlayerState === 'function') resetPlayerState();
     const verseText = document.getElementById('playerVerse');
     if (verseText) verseText.textContent = "Select a Surah to begin";
+
+    // The first-listen widget lives inside the welcome HTML. Every time we
+    // re-render the welcome page we lose its event listeners and reset the
+    // dropdown to its placeholder. Re-wire it here so it works every time.
+    if (typeof wireHeroWidget === 'function') wireHeroWidget();
 };

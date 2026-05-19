@@ -14,6 +14,17 @@ const CONSTANTS = {
 
 let QURAN_DATA = [];
 let THEME_BREAKS = {};
+// Thematic labels — exposed on window so ui-renderer.js (separate script) can read them.
+window.THEMATIC_TAXONOMY = null;
+window.THEMATIC_ASSIGNMENTS = null;
+let activeThematicFilters = new Set();
+let thematicFilterScope = 'surah';
+// 'any' = OR semantics (section must carry ANY of the active filters)
+// 'all' = AND semantics (section must carry EVERY active filter)
+let thematicFilterMatchMode = 'any';
+// Surah metadata (Makki/Madani + Cairo Edition revelation order) — loaded on init.
+window.SURAH_METADATA = null;
+let syncPromptDismissTimer = null;
 let currentFontScale = 1.0;
 let isEditMode = false;
 let currentViewMode = 'surah';
@@ -21,6 +32,105 @@ let isSelectMode = false;
 let selectedItems = new Set();
 const MAX_SELECTION = 3;
 const STORAGE_KEY_SCALE = 'fontScale_v2';
+const CORE_DATA_FETCH_TIMEOUT_MS = 30000;
+const OPTIONAL_LABEL_FETCH_TIMEOUT_MS = 5000;
+
+function readResumeState() {
+    try {
+        const raw = localStorage.getItem('resumeState');
+        return raw ? JSON.parse(raw) : null;
+    } catch (error) {
+        console.warn('[resume] Failed to parse saved state', error);
+        return null;
+    }
+}
+
+function saveResumeState(state, options = {}) {
+    const previous = readResumeState() || {};
+    const shouldTouch = options.touch !== false;
+    const nextState = {
+        ...state,
+        updatedAt: shouldTouch ? Date.now() : (state.updatedAt || previous.updatedAt || Date.now())
+    };
+    localStorage.setItem('resumeState', JSON.stringify(nextState));
+    return nextState;
+}
+
+function getQuranSessionTimestampMs(session) {
+    const candidates = [
+        session.updatedAt,
+        session.updated_at,
+        session.lastReadAt,
+        session.last_read_at,
+        session.lastReadTime,
+        session.last_read_time,
+        session.createdAt,
+        session.created_at
+    ];
+
+    for (const value of candidates) {
+        if (!value) continue;
+        const parsed = typeof value === 'number' ? value : Date.parse(value);
+        if (Number.isFinite(parsed)) return parsed < 100000000000 ? parsed * 1000 : parsed;
+    }
+    return null;
+}
+
+function dismissQuranSyncPrompt() {
+    if (syncPromptDismissTimer) {
+        clearTimeout(syncPromptDismissTimer);
+        syncPromptDismissTimer = null;
+    }
+    document.getElementById('syncConflictModal')?.classList.add('translate-x-[150%]');
+}
+
+window.dismissQuranSyncPrompt = dismissQuranSyncPrompt;
+
+async function fetchJsonWithTimeout(url, timeoutMs) {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
+
+    try {
+        const response = await fetch(url, {
+            signal: controller.signal,
+            cache: 'no-store'
+        });
+
+        if (!response.ok) {
+            throw new Error(`${url} returned ${response.status}`);
+        }
+
+        return await response.json();
+    } finally {
+        clearTimeout(timeoutId);
+    }
+}
+
+async function loadThematicLabelData() {
+    try {
+        const [taxonomy, assignments] = await Promise.all([
+            fetchJsonWithTimeout('data/thematic_labels/taxonomy.json', OPTIONAL_LABEL_FETCH_TIMEOUT_MS),
+            fetchJsonWithTimeout('data/thematic_labels/assignments.json', OPTIONAL_LABEL_FETCH_TIMEOUT_MS)
+        ]);
+
+        window.THEMATIC_TAXONOMY = taxonomy;
+        window.THEMATIC_ASSIGNMENTS = assignments;
+    } catch (error) {
+        window.THEMATIC_TAXONOMY = null;
+        window.THEMATIC_ASSIGNMENTS = null;
+        console.warn('[filter] Thematic labels unavailable; continuing without filters.', error);
+    }
+}
+
+async function loadSurahMetadata() {
+    try {
+        const meta = await fetchJsonWithTimeout('data/surah_metadata.json', OPTIONAL_LABEL_FETCH_TIMEOUT_MS);
+        window.SURAH_METADATA = meta && meta.surahs ? meta.surahs : null;
+    } catch (error) {
+        window.SURAH_METADATA = null;
+        console.warn('[filter] Surah metadata unavailable; Makki/Madani/revelation scopes will be disabled.', error);
+    }
+}
 
 document.addEventListener('DOMContentLoaded', async () => {
     // CAPTURE STATIC WELCOME HTML BEFORE ANYTHING ELSE
@@ -89,18 +199,22 @@ document.addEventListener('DOMContentLoaded', async () => {
     populateDropdown();
 
     try {
-        const [qResponse, bResponse] = await Promise.all([
-            fetch('data/quran_data.json'),
-            fetch('data/theme_breaks.json')
+        const [quranData, themeBreaks] = await Promise.all([
+            fetchJsonWithTimeout('data/quran_data.json', CORE_DATA_FETCH_TIMEOUT_MS),
+            fetchJsonWithTimeout('data/theme_breaks.json', CORE_DATA_FETCH_TIMEOUT_MS)
         ]);
 
-        if (!qResponse.ok || !bResponse.ok) throw new Error("Could not load data files.");
+        QURAN_DATA = quranData;
+        THEME_BREAKS = themeBreaks;
 
-        QURAN_DATA = await qResponse.json();
-        THEME_BREAKS = await bResponse.json();
+        // Thematic labels are optional. The page must still render if they
+        // are missing, slow, or temporarily blocked by the local server.
+        await Promise.all([loadThematicLabelData(), loadSurahMetadata()]);
 
         setupGlobalEventListeners();
         setupCustomScrollbar(); // NEW: Custom Scrollbar Init
+        setupThematicFilterUI();
+        wireHeroWidget();
 
         if (window.location.hash) {
             handleDeepLink();
@@ -282,6 +396,7 @@ function loadSurah(surahId, scrollTargetVerse = null, autoPlay = false) {
     document.getElementById('playerVerse').textContent = surahText;
 
     renderThematicSurah(surahId, surahVerses, cleanBreaks);
+    if (typeof applyFiltersToView === 'function') applyFiltersToView();
 
     const mainContainer = document.getElementById('mainContainer');
     if (mainContainer) mainContainer.scrollTop = 0;
@@ -315,7 +430,7 @@ function loadSurah(surahId, scrollTargetVerse = null, autoPlay = false) {
                 const start = parseInt(targetCard.dataset.start);
                 const end = parseInt(targetCard.dataset.end);
                 if (typeof preloadNextSection === 'function') preloadNextSection(s, start, end);
-                localStorage.setItem('resumeState', JSON.stringify({ mode: 'surah', id: surahId, startVerse: start }));
+                saveResumeState({ mode: 'surah', id: surahId, startVerse: start });
             }
         } else {
             const firstCard = document.querySelector('.thematic-card');
@@ -325,7 +440,7 @@ function loadSurah(surahId, scrollTargetVerse = null, autoPlay = false) {
                     const start = parseInt(firstCard.dataset.start);
                     const end = parseInt(firstCard.dataset.end);
                     preloadNextSection(s, start, end);
-                    localStorage.setItem('resumeState', JSON.stringify({ mode: 'surah', id: surahId, startVerse: 1 }));
+                    saveResumeState({ mode: 'surah', id: surahId, startVerse: 1 }, { touch: false });
                 }
 
                 // NEW: Auto-Play Next Surah Logic
@@ -385,6 +500,7 @@ function loadJuz(juzId, scrollTargetVerse = null, autoPlay = false) {
     });
 
     renderThematicJuz(juzId, juzVerses, unifiedBreaks);
+    if (typeof applyFiltersToView === 'function') applyFiltersToView();
 
     const mainContainer = document.getElementById('mainContainer');
     if (mainContainer) mainContainer.scrollTop = 0;
@@ -566,6 +682,7 @@ function setupGlobalEventListeners() {
 
     const audio = document.getElementById('audioElement');
     document.getElementById('globalPlayPauseBtn').addEventListener('click', () => {
+        dismissQuranSyncPrompt();
         if (typeof window.isPlayerActive === 'function' && window.isPlayerActive()) {
             playerTogglePlayPause();
         } else {
@@ -643,7 +760,8 @@ function setupGlobalEventListeners() {
         triggerLookAheadPreload(card);
         const id = parseInt(document.getElementById('surahSelect').value);
         const startVerse = parseInt(card.dataset.start);
-        localStorage.setItem('resumeState', JSON.stringify({ mode: currentViewMode, id: id, startVerse: startVerse }));
+        dismissQuranSyncPrompt();
+        saveResumeState({ mode: currentViewMode, id: id, startVerse: startVerse });
 
         // ANALYTICS TRACKING
         sendAnalyticsEvent('playback_start', {
@@ -661,7 +779,7 @@ function setupGlobalEventListeners() {
 
         // Save the exact current verse to resumeState so progress is retained perfectly even if user leaves mid-section
         const id = parseInt(document.getElementById('surahSelect').value);
-        localStorage.setItem('resumeState', JSON.stringify({ mode: currentViewMode, id: id, startVerse: verse }));
+        saveResumeState({ mode: currentViewMode, id: id, startVerse: verse });
 
         // SYNC OUT to Quran.com if logged in
         if (window.isLoggedIn) {
@@ -721,11 +839,17 @@ function setupGlobalEventListeners() {
         }, 1000);
     }
 
-    document.getElementById('toggleSelectModeBtn').addEventListener('click', () => {
-        isSelectMode = !isSelectMode;
-        toggleSelectionModeUI(isSelectMode);
-        if (isSelectMode) sendAnalyticsEvent('ui_interaction', { action: 'enter_select_mode' });
-    });
+    const bottomLoginBtn = document.getElementById('bottomQuranLoginBtn');
+    if (bottomLoginBtn) {
+        bottomLoginBtn.addEventListener('click', () => {
+            if (window.isLoggedIn) {
+                if (window.showToast) window.showToast('Already logged in with Quran.com', 'verified');
+                return;
+            }
+            sendAnalyticsEvent('auth_initiated', { provider: 'quran.com', source: 'bottom_bar' });
+            window.location.href = '/auth/login';
+        });
+    }
     document.getElementById('exitSelectModeBtn').addEventListener('click', () => { toggleSelectionModeUI(false); });
     document.addEventListener('card-toggle-select', (e) => {
         const card = e.detail.card; const id = card.id;
@@ -776,6 +900,8 @@ function setupGlobalEventListeners() {
         window.isLoggedIn = true;
         loggedOutState.classList.add('hidden');
         loggedInState.classList.remove('hidden');
+        // Drives the bottom-bar person-icon styling: outline → solid teal.
+        document.body.classList.add('is-logged-in');
 
         welcomeMessage.textContent = "Loading Profile...";
         userInitial.textContent = "?";
@@ -815,6 +941,7 @@ function setupGlobalEventListeners() {
                         window.isLoggedIn = false;
                         loggedInState.classList.add('hidden');
                         loggedOutState.classList.remove('hidden');
+                        document.body.classList.remove('is-logged-in');
                         return;
                     }
 
@@ -863,19 +990,22 @@ function setupGlobalEventListeners() {
                     const latestSession = dataArray[0];
                     const qSurah = parseInt(latestSession.chapterNumber || latestSession.chapter_number);
                     const qVerse = parseInt(latestSession.verseNumber || latestSession.verse_number);
+                    const quranReadAt = getQuranSessionTimestampMs(latestSession);
 
                     let localSurah = null;
                     let localVerse = null;
-                    try {
-                        const localState = JSON.parse(localStorage.getItem('resumeState'));
-                        if (localState && localState.mode === 'surah') {
-                            localSurah = parseInt(localState.id);
-                            localVerse = parseInt(localState.startVerse);
-                        }
-                    } catch(e) {}
+                    let localReadAt = 0;
+                    const localState = readResumeState();
+                    if (localState && localState.mode === 'surah') {
+                        localSurah = parseInt(localState.id);
+                        localVerse = parseInt(localState.startVerse);
+                        localReadAt = Number(localState.updatedAt) || 0;
+                    }
 
-                    // Diff Check - Prompt if Quran.com state exists and differs from local ThematicQuran state
-                    if (qSurah && qVerse && (qSurah !== localSurah || qVerse !== localVerse)) {
+                    const quranIsNewer = quranReadAt ? quranReadAt > localReadAt : localReadAt === 0;
+
+                    // Prompt only when Quran.com has a different, newer reading point.
+                    if (qSurah && qVerse && quranIsNewer && (qSurah !== localSurah || qVerse !== localVerse)) {
                         const modal = document.getElementById('syncConflictModal');
                         const textEl = document.getElementById('syncSurahText');
                         const declineBtn = document.getElementById('declineSyncBtn');
@@ -885,15 +1015,17 @@ function setupGlobalEventListeners() {
                             const surahName = typeof window.getSurahName === 'function' ? window.getSurahName(qSurah) : `Surah ${qSurah}`;
                             textEl.textContent = `${surahName}, Ayah ${qVerse}`;
                             modal.classList.remove('translate-x-[150%]');
+                            if (syncPromptDismissTimer) clearTimeout(syncPromptDismissTimer);
+                            syncPromptDismissTimer = setTimeout(dismissQuranSyncPrompt, 5000);
 
                             declineBtn.onclick = () => {
-                                modal.classList.add('translate-x-[150%]');
+                                dismissQuranSyncPrompt();
                             };
 
                             acceptBtn.onclick = () => {
-                                modal.classList.add('translate-x-[150%]');
+                                dismissQuranSyncPrompt();
                                 
-                                localStorage.setItem('resumeState', JSON.stringify({ mode: 'surah', id: qSurah, startVerse: qVerse }));
+                                saveResumeState({ mode: 'surah', id: qSurah, startVerse: qVerse });
                                 
                                 currentViewMode = 'surah';
                                 document.getElementById('viewModeSelect').value = 'surah';
@@ -966,10 +1098,726 @@ function setupGlobalEventListeners() {
     }
 }
 
+// ==============================================================
+//   WELCOME HERO — first-listen widget + "Explore themes" doorway
+// ==============================================================
+
+function wireHeroWidget() {
+    const select = document.getElementById('heroSurahSelect');
+    const playBtn = document.getElementById('heroPlayBtn');
+    const exploreBtn = document.getElementById('heroExploreThemesBtn');
+
+    // Welcome HTML may not be on the page (deep-link, resume, etc.).
+    if (!select && !playBtn && !exploreBtn) return;
+
+    // Mirror the surah list from the top-bar dropdown so the user gets the same
+    // labels (number + name). Falls back to a minimal 1–114 list if the top
+    // dropdown isn't populated yet.
+    if (select) {
+        select.innerHTML = '';
+        const placeholder = document.createElement('option');
+        placeholder.value = '';
+        placeholder.textContent = 'Choose a surah…';
+        placeholder.disabled = true;
+        placeholder.selected = true;
+        select.appendChild(placeholder);
+
+        const topSelect = document.getElementById('surahSelect');
+        const haveTopOptions = topSelect && topSelect.options && topSelect.options.length > 1;
+        if (haveTopOptions) {
+            Array.from(topSelect.options).forEach(opt => {
+                const v = parseInt(opt.value);
+                if (!v || v < 1 || v > 114) return;
+                const o = document.createElement('option');
+                o.value = String(v);
+                o.textContent = opt.textContent;
+                select.appendChild(o);
+            });
+        } else {
+            for (let n = 1; n <= 114; n++) {
+                const o = document.createElement('option');
+                o.value = String(n);
+                const name = (typeof window.getSurahName === 'function') ? window.getSurahName(n) : `Surah ${n}`;
+                o.textContent = name;
+                select.appendChild(o);
+            }
+        }
+
+        // Pre-select a sensible default: Surah Maryam (19) — it's one of the
+        // four fully labeled pilots and a strong first-listen, but only if no
+        // other choice is already set.
+        if (!select.value) select.value = '19';
+    }
+
+    if (playBtn && select) {
+        playBtn.addEventListener('click', () => {
+            const n = parseInt(select.value);
+            if (!n || n < 1 || n > 114) {
+                select.focus();
+                return;
+            }
+            // Mirror the choice into the top dropdown so subsequent navigation
+            // (next/prev section, view-mode change) is consistent.
+            const topSelect = document.getElementById('surahSelect');
+            if (topSelect) topSelect.value = String(n);
+            if (typeof loadContent === 'function') {
+                loadContent(n, null, true);   // autoPlay = true
+            }
+            if (typeof sendAnalyticsEvent === 'function') {
+                sendAnalyticsEvent('hero_first_listen', { surah: n });
+            }
+        });
+    }
+
+    if (exploreBtn) {
+        exploreBtn.addEventListener('click', () => {
+            // Drop user into the app on a defaulted surah so the filter has
+            // something to render against, then open the sidebar in Whole-Quran
+            // scope so themes are immediately useful as a corpus filter.
+            const topSelect = document.getElementById('surahSelect');
+            const target = (select && parseInt(select.value)) || (topSelect && parseInt(topSelect.value)) || 1;
+            if (topSelect) topSelect.value = String(target);
+            if (typeof loadContent === 'function') loadContent(target);
+            if (typeof setThematicFilterScope === 'function') setThematicFilterScope('quran');
+            const openBtn = document.getElementById('openFilterBtn');
+            if (openBtn) setTimeout(() => openBtn.click(), 150);
+            if (typeof sendAnalyticsEvent === 'function') {
+                sendAnalyticsEvent('hero_explore_themes', { surah: target });
+            }
+        });
+    }
+}
+
+// ==============================================================
+//   THEMATIC FILTER UI
+// ==============================================================
+
+function setupThematicFilterUI() {
+    const filterSidebar = document.getElementById('filterSidebar');
+    const filterBackdrop = document.getElementById('filterBackdrop');
+    const openBtn = document.getElementById('openFilterBtn');
+    const closeBtn = document.getElementById('closeFilterBtn');
+    const container = document.getElementById('filterFacetsContainer');
+    const scopeSurahBtn = document.getElementById('filterScopeSurahBtn');
+    const scopeQuranBtn = document.getElementById('filterScopeQuranBtn');
+
+    if (!filterSidebar || !filterBackdrop || !openBtn || !closeBtn || !container) {
+        console.warn('[filter] required DOM nodes missing — skipping filter UI setup');
+        return;
+    }
+
+    function openFilters() {
+        filterBackdrop.classList.remove('hidden');
+        filterSidebar.classList.remove('hidden');
+        filterSidebar.classList.add('flex');
+        setTimeout(() => {
+            filterBackdrop.classList.remove('opacity-0');
+            filterSidebar.classList.add('filter-sidebar-open');
+        }, 10);
+    }
+    function closeFilters() {
+        filterSidebar.classList.remove('filter-sidebar-open');
+        filterBackdrop.classList.add('opacity-0');
+        setTimeout(() => {
+            filterBackdrop.classList.add('hidden');
+            filterSidebar.classList.add('hidden');
+            filterSidebar.classList.remove('flex');
+        }, 300);
+    }
+
+    openBtn.addEventListener('click', openFilters);
+    closeBtn.addEventListener('click', closeFilters);
+    filterBackdrop.addEventListener('click', closeFilters);
+
+    // Scope buttons — wire each via data-scope attribute on the button.
+    document.querySelectorAll('.filter-scope-btn').forEach(btn => {
+        btn.addEventListener('click', () => setThematicFilterScope(btn.dataset.scope));
+    });
+
+    // Match-mode (ALL/ANY) toggle.
+    document.querySelectorAll('.filter-mode-btn').forEach(btn => {
+        btn.addEventListener('click', () => setThematicFilterMatchMode(btn.dataset.mode));
+    });
+
+    const tax = window.THEMATIC_TAXONOMY;
+    const assignments = window.THEMATIC_ASSIGNMENTS;
+    if (!tax || !tax.labels || !tax.facets || !assignments) {
+        container.innerHTML = '<p class="text-white/40 text-sm font-[\'Nunito\']">Themes not loaded.</p>';
+        return;
+    }
+
+    const searchInput = document.getElementById('filterSearchInput');
+    if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+            const q = e.target.value.toLowerCase().trim();
+            document.querySelectorAll('.filter-chip').forEach(chip => {
+                chip.style.display = (!q || chip.dataset.searchTerms.includes(q)) ? '' : 'none';
+            });
+            document.querySelectorAll('.filter-facet-group').forEach(group => {
+                const hasVisible = Array.from(group.querySelectorAll('.filter-chip')).some(c => c.style.display !== 'none');
+                group.style.display = hasVisible ? '' : 'none';
+            });
+        });
+    }
+
+    const clearBtn = document.getElementById('clearFiltersBtn');
+    if (clearBtn) {
+        clearBtn.addEventListener('click', clearThematicFilters);
+    }
+
+    syncFilterScopeButtons();
+    syncFilterMatchModeButtons();
+    renderThematicFilterChips();
+}
+
+// Returns the set of surah numbers (as strings) included in the active scope.
+// For 'surah' returns just the current surah; for 'juz' returns the surahs in
+// the current juz; for makki/madani/quran/revelation returns the relevant set
+// across the whole Qur'an. Used both to scope the sidebar chip list and to
+// decide whether cross-surah rendering applies.
+function getScopeSurahNumbers() {
+    const currentSurah = parseInt(document.getElementById('surahSelect')?.value);
+    const meta = window.SURAH_METADATA || {};
+
+    switch (thematicFilterScope) {
+        case 'surah':
+            return new Set([String(currentSurah || 1)]);
+        case 'juz': {
+            // Resolve the juz containing the currently-viewed surah (or, in juz
+            // view, the currently-viewed juz).
+            let juzId;
+            if (currentViewMode === 'juz') {
+                juzId = parseInt(document.getElementById('surahSelect')?.value);
+            } else if (typeof window.getJuzForSurah === 'function') {
+                juzId = window.getJuzForSurah(currentSurah);
+            } else if (Array.isArray(window.JUZ_DATA)) {
+                const entry = window.JUZ_DATA.find(j =>
+                    (j.surahs || []).includes(currentSurah) ||
+                    (j.start && j.start.surah <= currentSurah && j.end && j.end.surah >= currentSurah)
+                );
+                juzId = entry ? entry.id : null;
+            }
+            const juzSurahs = (Array.isArray(window.JUZ_DATA) && juzId)
+                ? (window.JUZ_DATA.find(j => j.id === juzId)?.surahs || [])
+                : [currentSurah];
+            return new Set(juzSurahs.map(String));
+        }
+        case 'makki':
+            return new Set(Object.entries(meta).filter(([, v]) => v.type === 'makki').map(([k]) => k));
+        case 'madani':
+            return new Set(Object.entries(meta).filter(([, v]) => v.type === 'madani').map(([k]) => k));
+        case 'quran':
+        case 'revelation':
+        default:
+            // Whole Quran — every surah is in scope (1..114).
+            return new Set(Array.from({ length: 114 }, (_, i) => String(i + 1)));
+    }
+}
+
+// Returns section IDs that fall within the active scope. Used by sidebar chip
+// rendering to only show labels actually assigned to in-scope sections.
+function getScopeSectionIds() {
+    const scopeSurahs = getScopeSurahNumbers();
+    const ids = new Set();
+    Object.keys(window.THEMATIC_ASSIGNMENTS || {}).forEach(sectionId => {
+        if (sectionId.startsWith('_')) return; // skip surah-summary entries
+        const surah = sectionId.split(':')[0];
+        if (scopeSurahs.has(surah)) ids.add(sectionId);
+    });
+    return ids;
+}
+
+function getAssignedLabelIdsForScope() {
+    const assignments = window.THEMATIC_ASSIGNMENTS || {};
+    const scopedSections = getScopeSectionIds();
+    const assignedIds = new Set();
+
+    Object.entries(assignments).forEach(([sectionId, entry]) => {
+        if (sectionId.startsWith('_')) return;
+        if (!scopedSections.has(sectionId)) return;
+        (entry.labels || []).forEach(labelId => assignedIds.add(labelId));
+    });
+
+    return assignedIds;
+}
+
+// True when the active scope spans multiple surahs AND we have an active filter
+// (i.e. we should render a cross-surah results view instead of the normal
+// single-surah/juz view).
+function shouldRenderCrossSurahResults() {
+    if (activeThematicFilters.size === 0) return false;
+    if (thematicFilterScope === 'surah') return false;
+    if (thematicFilterScope === 'juz' && currentViewMode === 'juz') return false;
+    return true;
+}
+
+function renderThematicFilterChips() {
+    const container = document.getElementById('filterFacetsContainer');
+    const tax = window.THEMATIC_TAXONOMY;
+    const assignments = window.THEMATIC_ASSIGNMENTS;
+    if (!container || !tax || !tax.labels || !tax.facets || !assignments) return;
+
+    const assignedIds = getAssignedLabelIdsForScope();
+    const searchValue = document.getElementById('filterSearchInput')?.value.toLowerCase().trim() || '';
+    container.innerHTML = '';
+    let renderedCount = 0;
+
+    Object.keys(tax.facets).forEach(fid => {
+        const facet = tax.facets[fid];
+        const labels = tax.labels.filter(label => label.facet === fid && assignedIds.has(label.id));
+        if (!labels.length) return;
+
+        const wrap = document.createElement('div');
+        wrap.className = 'mb-6 filter-facet-group';
+        wrap.dataset.facet = fid;
+
+        const title = document.createElement('h4');
+        title.className = 'text-xs font-bold uppercase tracking-widest mb-3 opacity-80';
+        title.style.color = facet.color || '#F3E4CE';
+        title.textContent = (facet.displayName && facet.displayName.en) || fid.replace(/-/g, ' ');
+        wrap.appendChild(title);
+
+        const chips = document.createElement('div');
+        chips.className = 'flex flex-wrap gap-2';
+
+        labels.forEach(label => {
+            const chip = document.createElement('button');
+            chip.type = 'button';
+            chip.className = 'filter-chip px-3 py-1.5 rounded-full text-xs border transition-colors duration-200';
+            chip.dataset.labelId = label.id;
+            const en = (label.displayName && label.displayName.en) || label.id;
+            const aliases = (label.aliases || []).join(' ');
+            chip.dataset.searchTerms = (en + ' ' + aliases + ' ' + label.id).toLowerCase();
+            chip.textContent = en;
+            chip.addEventListener('click', () => toggleFilter(label.id));
+            chips.appendChild(chip);
+            renderedCount++;
+        });
+
+        wrap.appendChild(chips);
+        container.appendChild(wrap);
+    });
+
+    if (renderedCount === 0) {
+        container.innerHTML = '<p class="text-white/40 text-sm font-[\'Nunito\']">No themes are available for this view yet.</p>';
+    }
+
+    syncFilterScopeButtons();
+    syncFilterChipStates();
+    updateFilterCount();
+
+    if (searchValue) {
+        document.querySelectorAll('.filter-chip').forEach(chip => {
+            chip.style.display = chip.dataset.searchTerms.includes(searchValue) ? '' : 'none';
+        });
+        document.querySelectorAll('.filter-facet-group').forEach(group => {
+            const hasVisible = Array.from(group.querySelectorAll('.filter-chip')).some(c => c.style.display !== 'none');
+            group.style.display = hasVisible ? '' : 'none';
+        });
+    }
+}
+
+const SCOPE_LABELS = {
+    surah: 'This surah',
+    juz: 'This juz',
+    makki: 'Makki surahs',
+    madani: 'Madani surahs',
+    quran: 'Whole Qur’an',
+    revelation: 'Revelation order'
+};
+
+function syncFilterScopeButtons() {
+    document.querySelectorAll('.filter-scope-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.scope === thematicFilterScope);
+    });
+    const hint = document.getElementById('filterScopeHint');
+    if (hint) hint.textContent = SCOPE_LABELS[thematicFilterScope] || 'This surah';
+}
+
+function setThematicFilterScope(scope) {
+    if (!SCOPE_LABELS[scope]) return;
+    // If the user picks a Makki/Madani/etc scope without metadata loaded, fall
+    // back to whole-quran semantics with a small console note.
+    if ((scope === 'makki' || scope === 'madani' || scope === 'revelation') && !window.SURAH_METADATA) {
+        console.warn('[filter] surah_metadata.json not loaded — falling back to whole-quran scope');
+        scope = 'quran';
+    }
+    thematicFilterScope = scope;
+    syncFilterScopeButtons();
+    renderThematicFilterChips();
+    applyFiltersToView();
+}
+
+function syncFilterMatchModeButtons() {
+    document.querySelectorAll('.filter-mode-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.mode === thematicFilterMatchMode);
+    });
+    const hint = document.getElementById('filterModeHint');
+    if (hint) {
+        hint.textContent = thematicFilterMatchMode === 'all'
+            ? 'ALL of the selected themes'
+            : 'ANY of the selected themes';
+    }
+}
+
+function setThematicFilterMatchMode(mode) {
+    if (mode !== 'any' && mode !== 'all') return;
+    thematicFilterMatchMode = mode;
+    syncFilterMatchModeButtons();
+    applyFiltersToView();
+}
+
+function syncFilterChipStates() {
+    const tax = window.THEMATIC_TAXONOMY;
+    if (!tax || !tax.labels) return;
+
+    document.querySelectorAll('.filter-chip').forEach(chip => {
+        const label = tax.labels.find(l => l.id === chip.dataset.labelId);
+        const facetColor = (tax.facets?.[label?.facet]?.color) || label?.color || '#56A3A6';
+        const active = activeThematicFilters.has(chip.dataset.labelId);
+        chip.classList.toggle('active-filter', active);
+        chip.style.backgroundColor = active ? facetColor : 'transparent';
+        chip.style.borderColor = active ? facetColor : facetColor + '40';
+        chip.style.color = active ? '#fff' : '#F3E4CE';
+    });
+}
+
+function toggleFilter(labelId) {
+    if (activeThematicFilters.has(labelId)) {
+        activeThematicFilters.delete(labelId);
+    } else {
+        activeThematicFilters.add(labelId);
+    }
+    syncFilterChipStates();
+    updateFilterCount();
+    applyFiltersToView();
+}
+
+function clearThematicFilters() {
+    activeThematicFilters.clear();
+    syncFilterChipStates();
+    updateFilterCount();
+    // If cross-surah results were on screen, reload the user's original view.
+    if (document.getElementById('crossSurahResults')) {
+        const surahId = parseInt(document.getElementById('surahSelect')?.value);
+        if (typeof loadContent === 'function' && surahId) {
+            loadContent(surahId);
+            return;
+        }
+    }
+    applyFiltersToView();
+}
+
+function getThematicLabelName(labelId) {
+    const label = window.THEMATIC_TAXONOMY?.labels?.find(l => l.id === labelId);
+    return (label?.displayName && label.displayName.en) || labelId;
+}
+
+function updateFilterCount() {
+    const count = activeThematicFilters.size;
+    const text = document.getElementById('activeFilterCountText');
+    const clearBtn = document.getElementById('clearFiltersBtn');
+    const openBtn = document.getElementById('openFilterBtn');
+    if (text) text.textContent = `${count} selected`;
+    if (clearBtn) clearBtn.classList.toggle('hidden', count === 0);
+    if (openBtn) {
+        openBtn.classList.toggle('ring-2', count > 0);
+        openBtn.classList.toggle('ring-[#56A3A6]', count > 0);
+        openBtn.classList.toggle('bg-white/20', count > 0);
+    }
+}
+
+function updateActiveFilterBanner(visibleCount) {
+    const contentArea = document.getElementById('contentArea');
+    if (!contentArea) return;
+
+    let banner = document.getElementById('activeFilterBanner');
+    if (activeThematicFilters.size === 0) {
+        banner?.remove();
+        return;
+    }
+
+    const join = thematicFilterMatchMode === 'all' ? ' AND ' : ' OR ';
+    const selectedNames = Array.from(activeThematicFilters).map(getThematicLabelName).join(join);
+    const scopeLabel = (SCOPE_LABELS[thematicFilterScope] || 'This surah').toLowerCase();
+
+    if (!banner) {
+        banner = document.createElement('div');
+        banner.id = 'activeFilterBanner';
+        banner.className = "active-filter-banner sticky top-0 z-20 mb-6 rounded-xl border border-[#56A3A6]/40 bg-[#12101C]/95 backdrop-blur px-4 py-3 text-[#F3E4CE] shadow-lg font-['Nunito']";
+        contentArea.prepend(banner);
+    }
+
+    banner.innerHTML = `
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+            <div class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-[#56A3A6] text-xl mt-0.5">filter_alt</span>
+                <div>
+                    <p class="text-xs font-bold uppercase tracking-wider text-[#56A3A6]">Filtered view</p>
+                    <p class="text-sm text-white/80">Showing ${visibleCount} section${visibleCount === 1 ? '' : 's'} matching ${selectedNames} from ${scopeLabel}.</p>
+                </div>
+            </div>
+            <button id="activeFilterBannerClearBtn" type="button" class="self-start sm:self-center text-xs font-bold uppercase tracking-wider text-[#56A3A6] hover:text-white transition">Clear filters</button>
+        </div>
+    `;
+    document.getElementById('activeFilterBannerClearBtn')?.addEventListener('click', clearThematicFilters);
+}
+
+window.applyThematicLabelFilterFromSection = function(labelId) {
+    thematicFilterScope = 'surah';
+    activeThematicFilters.clear();
+    activeThematicFilters.add(labelId);
+    renderThematicFilterChips();
+    applyFiltersToView();
+    if (window.showToast) window.showToast(`Filtered by ${getThematicLabelName(labelId)}`, 'filter_alt');
+};
+
+// Returns true if the section's labels satisfy the active filter set under the
+// current match mode ('any' = OR, 'all' = AND). Empty filter set always passes.
+function sectionMatchesFilters(sectionId) {
+    if (activeThematicFilters.size === 0) return true;
+    const entry = (window.THEMATIC_ASSIGNMENTS || {})[sectionId];
+    const labels = (entry && entry.labels) || [];
+    if (thematicFilterMatchMode === 'all') {
+        for (const l of activeThematicFilters) if (!labels.includes(l)) return false;
+        return true;
+    }
+    // 'any' (default OR)
+    return labels.some(l => activeThematicFilters.has(l));
+}
+
+// Filter rendered cards by section ID. Honors the active match mode.
+function applyFiltersToView() {
+    renderThematicFilterChips();
+
+    // Cross-surah results view takes over when scope spans multiple surahs and
+    // filters are active. Otherwise we just hide/show cards in the current view.
+    if (shouldRenderCrossSurahResults()) {
+        renderCrossSurahResults();
+        return;
+    }
+
+    // Cross-surah view may have run last time; if it's still mounted but no
+    // longer applicable, drop it and re-render the original view.
+    if (document.getElementById('crossSurahResults')) {
+        const surahId = parseInt(document.getElementById('surahSelect')?.value);
+        if (typeof loadContent === 'function' && surahId) loadContent(surahId);
+        return;
+    }
+
+    const cards = document.querySelectorAll('.thematic-card');
+    const haveFilters = activeThematicFilters.size > 0;
+    let visibleCount = 0;
+
+    cards.forEach(card => {
+        const sectionId = `${card.dataset.surah}:${card.dataset.start}`;
+        const show = sectionMatchesFilters(sectionId);
+        card.style.display = show ? '' : 'none';
+        if (show) visibleCount++;
+    });
+
+    updateActiveFilterBanner(visibleCount);
+
+    document.querySelectorAll('.surah-mini-header').forEach(header => {
+        let hasVisible = false;
+        let next = header.nextElementSibling;
+        while (next && !next.classList.contains('surah-mini-header')) {
+            if (next.classList.contains('thematic-card') && next.style.display !== 'none') {
+                hasVisible = true; break;
+            }
+            next = next.nextElementSibling;
+        }
+        header.style.display = hasVisible ? '' : 'none';
+    });
+
+    const contentArea = document.getElementById('contentArea');
+    let emptyState = document.getElementById('filterEmptyState');
+    if (haveFilters && visibleCount === 0) {
+        if (!emptyState && contentArea) {
+            emptyState = document.createElement('div');
+            emptyState.id = 'filterEmptyState';
+            emptyState.className = "text-center py-16 w-full";
+            emptyState.innerHTML = `
+                <span class="material-symbols-outlined text-4xl text-white/20 mb-4 block">filter_list_off</span>
+                <p class="text-white/60 font-['Nunito'] text-lg">No sections in this view match the selected themes.</p>
+                <button id="emptyStateClearBtn" class="mt-4 text-[#56A3A6] hover:text-white transition underline underline-offset-4 cursor-pointer font-['Nunito']">Clear filters</button>
+            `;
+            contentArea.appendChild(emptyState);
+            document.getElementById('emptyStateClearBtn').addEventListener('click', () => {
+                document.getElementById('clearFiltersBtn')?.click();
+            });
+        } else if (emptyState) {
+            emptyState.style.display = '';
+        }
+    } else if (emptyState) {
+        emptyState.style.display = 'none';
+    }
+}
+
+// Plays the surah intro mp3 (e.g. "Surah Al-Baqarah"), then runs `next`.
+// Uses the R2-hosted intro audio (matching the main player); falls back to
+// the local data/audio/intro/NNN.mp3 if R2 is unreachable.
+function playSurahIntroThen(surahId, next) {
+    if (!surahId || typeof next !== 'function') {
+        if (typeof next === 'function') next();
+        return;
+    }
+    const sPad = String(surahId).padStart(3, '0');
+    const remoteUrl = `https://audio.thematicquran.com/intro/${sPad}.mp3`;
+    const localUrl = `data/audio/intro/${sPad}.mp3`;
+
+    // Stop any existing main-player audio so the intro plays cleanly.
+    if (typeof stopAllAudio === 'function') {
+        try { stopAllAudio(); } catch (e) { /* no-op */ }
+    }
+
+    const player = new Audio(remoteUrl);
+    player.preload = 'auto';
+    let chained = false;
+    const chain = () => { if (chained) return; chained = true; next(); };
+
+    player.addEventListener('ended', chain);
+    player.addEventListener('error', () => {
+        // Try local fallback once.
+        if (player.src.indexOf(remoteUrl) !== -1) {
+            player.src = localUrl;
+            player.play().catch(chain);
+        } else {
+            chain();
+        }
+    });
+
+    // Safety net: never block forever on a broken intro.
+    setTimeout(chain, 12000);
+
+    player.play().catch(() => {
+        // Autoplay blocked? Just skip the intro and proceed.
+        chain();
+    });
+}
+
+// ==============================================================
+//   CROSS-SURAH RESULTS VIEW
+// ==============================================================
+// When the scope spans multiple surahs and filters are active, this takes
+// over the content area: renders every matching section grouped by surah,
+// in mushaf order (or revelation order if scope is 'revelation').
+function renderCrossSurahResults() {
+    const contentArea = document.getElementById('contentArea');
+    if (!contentArea) return;
+    if (typeof createCard !== 'function') {
+        console.warn('[filter] createCard() unavailable — cannot render cross-surah results');
+        return;
+    }
+
+    const scopeSurahs = getScopeSurahNumbers();
+    const meta = window.SURAH_METADATA || {};
+
+    // Sort surahs: mushaf order by default, revelation order if scope === 'revelation'.
+    const sortedSurahs = Array.from(scopeSurahs)
+        .map(Number)
+        .sort((a, b) => {
+            if (thematicFilterScope === 'revelation') {
+                const ao = meta[String(a)]?.revelationOrder ?? 999;
+                const bo = meta[String(b)]?.revelationOrder ?? 999;
+                return ao - bo;
+            }
+            return a - b;
+        });
+
+    // For each surah in scope, walk its theme_breaks and pick matched sections.
+    contentArea.innerHTML = '';
+    const wrapper = document.createElement('div');
+    wrapper.id = 'crossSurahResults';
+    wrapper.className = 'cross-surah-results';
+    contentArea.appendChild(wrapper);
+
+    let totalMatches = 0;
+    const matchedSurahs = [];
+
+    sortedSurahs.forEach(surahId => {
+        const breaks = THEME_BREAKS[String(surahId)] || [];
+        const surahVerses = QURAN_DATA.filter(v => v[CONSTANTS.KEY_SURAH_NO] === surahId);
+        if (!surahVerses.length || !breaks.length) return;
+        const lastVerse = surahVerses[surahVerses.length - 1][CONSTANTS.KEY_AYAH_NO];
+
+        const matchedSections = [];
+        breaks.forEach((startVerse, idx) => {
+            const start = (typeof startVerse === 'object') ? startVerse.start : startVerse;
+            const nextRaw = breaks[idx + 1];
+            const nextStart = nextRaw ? (typeof nextRaw === 'object' ? nextRaw.start : nextRaw) : null;
+            const endVerse = nextStart ? (nextStart - 1) : lastVerse;
+            const sectionId = `${surahId}:${start}`;
+            if (!sectionMatchesFilters(sectionId)) return;
+
+            const sectionData = surahVerses.filter(v => {
+                const vn = v[CONSTANTS.KEY_AYAH_NO];
+                return vn >= start && vn <= endVerse;
+            });
+            if (!sectionData.length) return;
+            matchedSections.push({ start, endVerse, data: sectionData });
+        });
+
+        if (!matchedSections.length) return;
+        matchedSurahs.push(surahId);
+
+        // Surah header (mini-header style matches juz view)
+        const header = document.createElement('div');
+        header.className = "surah-mini-header cross-surah-divider mt-4 mb-6 text-center";
+        const surahName = (typeof window.getSurahName === 'function')
+            ? window.getSurahName(surahId)
+            : `Surah ${surahId}`;
+        const cleanName = String(surahName).replace(/^\d+\s+/, '');
+        const revOrder = meta[String(surahId)]?.revelationOrder;
+        const typeBadge = meta[String(surahId)]?.type
+            ? `<span class="ml-2 align-middle text-[10px] uppercase tracking-widest text-[#56A3A6]/80">${meta[String(surahId)].type}</span>`
+            : '';
+        const revBadge = (thematicFilterScope === 'revelation' && revOrder)
+            ? `<span class="ml-2 align-middle text-[10px] uppercase tracking-widest text-white/40">Revealed #${revOrder}</span>`
+            : '';
+        header.innerHTML = `
+            <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 border border-white/10">
+                <span class="material-symbols-outlined text-[#56A3A6] text-base">menu_book</span>
+                <span class="font-['Forum'] text-lg text-white tracking-wide">Surah ${cleanName}</span>
+                ${typeBadge}
+                ${revBadge}
+                <span class="ml-2 text-[10px] uppercase tracking-widest text-white/40">${matchedSections.length} section${matchedSections.length === 1 ? '' : 's'}</span>
+            </div>
+        `;
+        wrapper.appendChild(header);
+
+        matchedSections.forEach(s => {
+            const card = createCard(surahId, s.start, s.endVerse, s.data);
+            wrapper.appendChild(card);
+            totalMatches++;
+        });
+    });
+
+    updateActiveFilterBanner(totalMatches);
+
+    if (totalMatches === 0) {
+        wrapper.innerHTML = `
+            <div class="text-center py-16">
+                <span class="material-symbols-outlined text-4xl text-white/20 mb-4 block">filter_list_off</span>
+                <p class="text-white/60 font-['Nunito'] text-lg">No sections in the selected scope match these themes.</p>
+                <button id="emptyStateClearBtn" class="mt-4 text-[#56A3A6] hover:text-white transition underline underline-offset-4 cursor-pointer font-['Nunito']">Clear filters</button>
+            </div>
+        `;
+        document.getElementById('emptyStateClearBtn')?.addEventListener('click', clearThematicFilters);
+    }
+
+    // Stash a queue on the wrapper for the audio player to walk.
+    wrapper.dataset.totalMatches = String(totalMatches);
+    wrapper.dataset.matchedSurahs = JSON.stringify(matchedSurahs);
+
+    const mainContainer = document.getElementById('mainContainer');
+    if (mainContainer) mainContainer.scrollTop = 0;
+}
+
 // ... (Helpers) ...
 function isValidSelection(targetId) { if (selectedItems.size === 0) return true; const allCards = Array.from(document.querySelectorAll('.thematic-card')); const targetIdx = allCards.findIndex(c => c.id === targetId); const selectedIndices = []; allCards.forEach((card, index) => { if (selectedItems.has(card.id)) selectedIndices.push(index); }); const minIdx = Math.min(...selectedIndices); const maxIdx = Math.max(...selectedIndices); return (targetIdx === minIdx - 1) || (targetIdx === maxIdx + 1); }
 function enforceConsecutiveSelection() { const allCards = Array.from(document.querySelectorAll('.thematic-card')); if (selectedItems.size === 0) { allCards.forEach(card => card.classList.remove('opacity-40', 'pointer-events-none', 'grayscale')); return; } if (selectedItems.size >= MAX_SELECTION) { allCards.forEach(card => { if (!selectedItems.has(card.id)) card.classList.add('opacity-40', 'pointer-events-none', 'grayscale'); else card.classList.remove('opacity-40', 'pointer-events-none', 'grayscale'); }); return; } const selectedIndices = []; allCards.forEach((card, index) => { if (selectedItems.has(card.id)) selectedIndices.push(index); }); const minIdx = Math.min(...selectedIndices); const maxIdx = Math.max(...selectedIndices); allCards.forEach((card, index) => { if (selectedItems.has(card.id)) { card.classList.remove('opacity-40', 'pointer-events-none', 'grayscale'); return; } if ((index === maxIdx + 1) || (index === minIdx - 1)) { card.classList.remove('opacity-40', 'pointer-events-none', 'grayscale'); } else { card.classList.add('opacity-40', 'pointer-events-none', 'grayscale'); } }); }
-function toggleSelectionModeUI(active) { const btn = document.getElementById('toggleSelectModeBtn'); const bulkBar = document.getElementById('bulkDownloadBar'); if (typeof setSelectionMode === 'function') setSelectionMode(active); if (active) { isSelectMode = true; btn.classList.add('bg-[#56A3A6]', 'text-white'); btn.classList.remove('text-white/70'); bulkBar.classList.remove('-bottom-24'); bulkBar.classList.add('bottom-32'); } else { isSelectMode = false; btn.classList.remove('bg-[#56A3A6]', 'text-white'); btn.classList.add('text-white/70'); bulkBar.classList.remove('bottom-32'); bulkBar.classList.add('-bottom-24'); selectedItems.clear(); document.querySelectorAll('.thematic-card').forEach(c => c.classList.remove('opacity-40', 'pointer-events-none', 'grayscale')); updateBulkBar(); } }
+function toggleSelectionModeUI(active) { const btn = document.getElementById('toggleSelectModeBtn'); const bulkBar = document.getElementById('bulkDownloadBar'); if (typeof setSelectionMode === 'function') setSelectionMode(active); if (active) { isSelectMode = true; btn?.classList.add('bg-[#56A3A6]', 'text-white'); btn?.classList.remove('text-white/70'); bulkBar?.classList.remove('-bottom-24'); bulkBar?.classList.add('bottom-32'); } else { isSelectMode = false; btn?.classList.remove('bg-[#56A3A6]', 'text-white'); btn?.classList.add('text-white/70'); bulkBar?.classList.remove('bottom-32'); bulkBar?.classList.add('-bottom-24'); selectedItems.clear(); document.querySelectorAll('.thematic-card').forEach(c => c.classList.remove('opacity-40', 'pointer-events-none', 'grayscale')); updateBulkBar(); } }
 function updateBulkBar() { document.getElementById('selectedCount').textContent = selectedItems.size; const dlBtn = document.getElementById('btnDownloadBulk'); if (selectedItems.size > 0) { dlBtn.disabled = false; dlBtn.classList.remove('disabled:text-gray-600', 'disabled:cursor-not-allowed'); } else { dlBtn.disabled = true; dlBtn.classList.add('disabled:text-gray-600', 'disabled:cursor-not-allowed'); } }
 function openBulkDownloadModal(sections) { const modal = document.getElementById('downloadModal'); const reciterSelect = document.getElementById('reciterSelect'); const langSelect = document.getElementById('languageSelect'); const surahSelect = document.getElementById('surahSelect'); const surahText = surahSelect.options[surahSelect.selectedIndex].text; const surahName = surahText; document.getElementById('dlModalTitle').textContent = `Mix: ${sections.length} Consecutive Sections`; document.getElementById('dlModalReciter').textContent = reciterSelect.options[reciterSelect.selectedIndex].text; document.getElementById('dlModalLang').textContent = langSelect.options[langSelect.selectedIndex].text; document.getElementById('dlProgressContainer').classList.add('hidden'); document.getElementById('dlConfirmBtn').style.display = 'block'; modal.classList.remove('hidden'); document.getElementById('dlConfirmBtn').onclick = () => { document.getElementById('dlProgressContainer').classList.remove('hidden'); document.getElementById('dlConfirmBtn').style.display = 'none'; if (typeof downloadBulkStitched === 'function') { downloadBulkStitched(sections, reciterSelect.value, langSelect.value, surahName); } }; document.getElementById('dlCancelBtn').onclick = () => modal.classList.add('hidden'); }
 
@@ -1010,11 +1858,25 @@ function navigateSection(direction) {
         const s = parseInt(targetCard.dataset.surah);
         const start = parseInt(targetCard.dataset.start);
         const end = parseInt(targetCard.dataset.end);
+        const prevSurah = parseInt(currentCard.dataset.surah);
+        const inCrossSurahResults = !!document.getElementById('crossSurahResults');
+        const surahChanged = prevSurah !== s;
 
         setTimeout(() => {
             document.querySelectorAll('.thematic-card').forEach(c => c.classList.remove('ring-2', 'ring-[#56A3A6]'));
             targetCard.classList.add('ring-2', 'ring-[#56A3A6]');
-            if (typeof playSession === 'function') playSession(s, start, end);
+            // In the cross-surah results view, when we cross a surah boundary
+            // mid-queue, play the new surah's intro mp3 first, then start
+            // the section. (playSession's own intro logic only fires when
+            // start === 1 with no target verse — which usually isn't true
+            // for filtered cross-surah results.)
+            if (inCrossSurahResults && surahChanged && typeof playSurahIntroThen === 'function') {
+                playSurahIntroThen(s, () => {
+                    if (typeof playSession === 'function') playSession(s, start, end);
+                });
+            } else if (typeof playSession === 'function') {
+                playSession(s, start, end);
+            }
             document.dispatchEvent(new CustomEvent('manual-play-started', { detail: { card: targetCard } }));
         }, 500);
 

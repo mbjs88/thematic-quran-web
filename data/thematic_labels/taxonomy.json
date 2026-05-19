@@ -1,0 +1,2476 @@
+{
+  "schemaVersion": 1,
+  "source": "docs/taxonomy.md",
+  "generatedAt": "2026-05-17",
+  "facets": {
+    "people": {
+      "id": "people",
+      "color": "#4f46e5"
+    },
+    "divine-attributes": {
+      "id": "divine-attributes",
+      "color": "#d4a017"
+    },
+    "dua": {
+      "id": "dua",
+      "color": "#0f9488"
+    },
+    "worldly-matters": {
+      "id": "worldly-matters",
+      "color": "#8b5e34"
+    },
+    "ethical-states": {
+      "id": "ethical-states",
+      "color": "#6b8e5a"
+    },
+    "negative-attributes": {
+      "id": "negative-attributes",
+      "color": "#be123c"
+    },
+    "eschatology": {
+      "id": "eschatology",
+      "color": "#6d28d9"
+    },
+    "cosmology": {
+      "id": "cosmology",
+      "color": "#475569"
+    },
+    "revelation": {
+      "id": "revelation",
+      "color": "#b45309"
+    }
+  },
+  "labels": [
+    {
+      "id": "adam",
+      "displayName": {
+        "en": "Adam",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "Ādam"
+      ],
+      "facet": "people",
+      "definition": "Sections featuring the creation, fall, or repentance of Adam, or his sons.",
+      "examples": [
+        "2:30",
+        "7:10",
+        "20:115"
+      ],
+      "color": "#4f46e5"
+    },
+    {
+      "id": "idris",
+      "displayName": {
+        "en": "Idris",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "Enoch"
+      ],
+      "facet": "people",
+      "definition": "A truthful prophet raised to a high station; pre-Flood.",
+      "examples": [
+        "19:56",
+        "21:85"
+      ],
+      "color": "#4f46e5"
+    },
+    {
+      "id": "noah",
+      "displayName": {
+        "en": "Noah",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "Nuh",
+        "Nūḥ"
+      ],
+      "facet": "people",
+      "definition": "The Flood narrative, Noah's da'wah, his son, or his prayer.",
+      "examples": [
+        "7:59",
+        "11:25",
+        "71:1"
+      ],
+      "color": "#4f46e5"
+    },
+    {
+      "id": "hud",
+      "displayName": {
+        "en": "Hud",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "Hūd"
+      ],
+      "facet": "people",
+      "definition": "Prophet sent to 'Ad; warns of their destruction by a barren wind.",
+      "examples": [
+        "7:65",
+        "11:50",
+        "26:123",
+        "46:21"
+      ],
+      "color": "#4f46e5"
+    },
+    {
+      "id": "salih",
+      "displayName": {
+        "en": "Salih",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "Sāliḥ"
+      ],
+      "facet": "people",
+      "definition": "Prophet sent to Thamud; the she-camel sign; the rock-cut homes.",
+      "examples": [
+        "7:73",
+        "11:61",
+        "26:141",
+        "27:45"
+      ],
+      "color": "#4f46e5"
+    },
+    {
+      "id": "abraham",
+      "displayName": {
+        "en": "Abraham",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "Ibrahim",
+        "Ibrāhīm",
+        "Khalilullah"
+      ],
+      "facet": "people",
+      "definition": "Abraham's monotheism, breaking idols, the sacrifice, his prayer for Mecca.",
+      "examples": [
+        "2:122",
+        "6:74",
+        "14:35",
+        "37:83"
+      ],
+      "color": "#4f46e5"
+    },
+    {
+      "id": "isaac",
+      "displayName": {
+        "en": "Isaac",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "Ishaq",
+        "Isḥāq"
+      ],
+      "facet": "people",
+      "definition": "Abraham's son; granted as a prophet, often paired with Jacob.",
+      "examples": [
+        "19:49",
+        "21:72",
+        "37:112"
+      ],
+      "color": "#4f46e5"
+    },
+    {
+      "id": "ishmael",
+      "displayName": {
+        "en": "Ishmael",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "Ismail",
+        "Ismāʿīl"
+      ],
+      "facet": "people",
+      "definition": "Abraham's eldest son; true to his promise; co-builder of the Ka'bah.",
+      "examples": [
+        "2:127",
+        "19:54",
+        "21:85"
+      ],
+      "color": "#4f46e5"
+    },
+    {
+      "id": "lot",
+      "displayName": {
+        "en": "Lot",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "Lut",
+        "Lūṭ"
+      ],
+      "facet": "people",
+      "definition": "Lot's people, their corruption, their destruction.",
+      "examples": [
+        "7:80",
+        "11:77",
+        "27:54"
+      ],
+      "color": "#4f46e5"
+    },
+    {
+      "id": "jacob",
+      "displayName": {
+        "en": "Jacob",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "Yaqub",
+        "Yaʿqūb",
+        "Israel",
+        "Isrāʾīl"
+      ],
+      "facet": "people",
+      "definition": "The patriarch (also called Israel); Abraham's grandson; father of Joseph.",
+      "examples": [
+        "12:6",
+        "19:6",
+        "19:49"
+      ],
+      "color": "#4f46e5"
+    },
+    {
+      "id": "joseph",
+      "displayName": {
+        "en": "Joseph",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "Yusuf",
+        "Yūsuf"
+      ],
+      "facet": "people",
+      "definition": "The Joseph narrative (almost entirely Surah Yusuf).",
+      "examples": [
+        "12:3",
+        "12:21",
+        "12:50"
+      ],
+      "color": "#4f46e5"
+    },
+    {
+      "id": "shuayb",
+      "displayName": {
+        "en": "Shuayb",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "Shuʿayb",
+        "Jethro"
+      ],
+      "facet": "people",
+      "definition": "Prophet sent to Madyan; warned them against fraud in trade and short-measuring.",
+      "examples": [
+        "7:85",
+        "11:84",
+        "26:177",
+        "29:36"
+      ],
+      "color": "#4f46e5"
+    },
+    {
+      "id": "moses",
+      "displayName": {
+        "en": "Moses",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "Musa",
+        "Mūsā",
+        "Kalimullah"
+      ],
+      "facet": "people",
+      "definition": "Moses's call, confrontation with Pharaoh, the Exodus, his time at Sinai.",
+      "examples": [
+        "7:103",
+        "20:9",
+        "28:7"
+      ],
+      "color": "#4f46e5"
+    },
+    {
+      "id": "aaron",
+      "displayName": {
+        "en": "Aaron",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "Harun",
+        "Hārūn"
+      ],
+      "facet": "people",
+      "definition": "Moses's brother; appointed prophet alongside him, often co-mentioned.",
+      "examples": [
+        "19:53",
+        "20:30",
+        "25:35"
+      ],
+      "color": "#4f46e5"
+    },
+    {
+      "id": "dhul-kifl",
+      "displayName": {
+        "en": "Dhul-Kifl",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "Dhū al-Kifl"
+      ],
+      "facet": "people",
+      "definition": "A patient prophet mentioned briefly alongside Ishmael and Idris; tradition associates him variably with Ezekiel or Isaiah.",
+      "examples": [
+        "21:85",
+        "38:48"
+      ],
+      "color": "#4f46e5"
+    },
+    {
+      "id": "david",
+      "displayName": {
+        "en": "David",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "Dawud",
+        "Dāwūd"
+      ],
+      "facet": "people",
+      "definition": "David's kingship, his judgment between disputants, his psalms.",
+      "examples": [
+        "21:78",
+        "34:10",
+        "38:17"
+      ],
+      "color": "#4f46e5"
+    },
+    {
+      "id": "solomon",
+      "displayName": {
+        "en": "Solomon",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "Sulaiman",
+        "Sulaymān"
+      ],
+      "facet": "people",
+      "definition": "Solomon's kingdom, his control over jinn/wind/animals, Queen of Sheba.",
+      "examples": [
+        "27:15",
+        "34:12",
+        "38:30"
+      ],
+      "color": "#4f46e5"
+    },
+    {
+      "id": "elijah",
+      "displayName": {
+        "en": "Elijah",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "Ilyas",
+        "Ilyās"
+      ],
+      "facet": "people",
+      "definition": "Prophet who called his people away from worshipping Ba'al.",
+      "examples": [
+        "6:85",
+        "37:123"
+      ],
+      "color": "#4f46e5"
+    },
+    {
+      "id": "elisha",
+      "displayName": {
+        "en": "Elisha",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "al-Yasa",
+        "al-Yasaʿ"
+      ],
+      "facet": "people",
+      "definition": "Prophet mentioned in brief lists of the favored.",
+      "examples": [
+        "6:86",
+        "38:48"
+      ],
+      "color": "#4f46e5"
+    },
+    {
+      "id": "jonah",
+      "displayName": {
+        "en": "Jonah",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "Yunus",
+        "Yūnus",
+        "Dhu an-Nun"
+      ],
+      "facet": "people",
+      "definition": "Jonah's flight, the fish, his repentance.",
+      "examples": [
+        "10:98",
+        "21:87",
+        "37:139"
+      ],
+      "color": "#4f46e5"
+    },
+    {
+      "id": "job",
+      "displayName": {
+        "en": "Job",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "Ayyub",
+        "Ayyūb"
+      ],
+      "facet": "people",
+      "definition": "Job's affliction and steadfast patience.",
+      "examples": [
+        "21:83",
+        "38:41"
+      ],
+      "color": "#4f46e5"
+    },
+    {
+      "id": "zechariah",
+      "displayName": {
+        "en": "Zechariah",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "Zakariya",
+        "Zakarīyā"
+      ],
+      "facet": "people",
+      "definition": "Zechariah's secret prayer for an heir; the sign of muteness; his guardianship of Mary.",
+      "examples": [
+        "3:37",
+        "19:1",
+        "21:89"
+      ],
+      "color": "#4f46e5"
+    },
+    {
+      "id": "john",
+      "displayName": {
+        "en": "John",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "Yahya",
+        "Yaḥyā"
+      ],
+      "facet": "people",
+      "definition": "John's birth, his given character — wisdom as a child, dutifulness, God-consciousness.",
+      "examples": [
+        "3:39",
+        "19:7",
+        "19:12",
+        "21:90"
+      ],
+      "color": "#4f46e5"
+    },
+    {
+      "id": "mary",
+      "displayName": {
+        "en": "Mary",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "Maryam"
+      ],
+      "facet": "people",
+      "definition": "Mary as a subject — her devotion, the annunciation, her trial.",
+      "examples": [
+        "3:35",
+        "19:16",
+        "66:12"
+      ],
+      "color": "#4f46e5"
+    },
+    {
+      "id": "jesus",
+      "displayName": {
+        "en": "Jesus",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "Isa",
+        "Eesa",
+        "ʿĪsā"
+      ],
+      "facet": "people",
+      "definition": "The conception, miracles, ministry, or theological status of Jesus.",
+      "examples": [
+        "3:45",
+        "5:110",
+        "19:27"
+      ],
+      "color": "#4f46e5"
+    },
+    {
+      "id": "muhammad",
+      "displayName": {
+        "en": "Muhammad ﷺ",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "Muḥammad",
+        "Ahmad"
+      ],
+      "facet": "people",
+      "definition": "Sections directly addressing the Prophet, his role, or his domestic life.",
+      "examples": [
+        "33:28",
+        "33:45",
+        "48:1",
+        "93:1"
+      ],
+      "color": "#4f46e5"
+    },
+    {
+      "id": "family-of-imran",
+      "displayName": {
+        "en": "Family of Imran",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "Āl ʿImrān"
+      ],
+      "facet": "people",
+      "definition": "The household of Imran, especially Mary's mother, Mary, and the chosen lineage named in Surah Al-Imran.",
+      "examples": [
+        "3:33",
+        "3:35",
+        "66:12"
+      ],
+      "color": "#4f46e5"
+    },
+    {
+      "id": "disciples",
+      "displayName": {
+        "en": "Disciples",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "Hawariyyun"
+      ],
+      "facet": "people",
+      "definition": "The disciples of Jesus who profess support for Allah and His messenger.",
+      "examples": [
+        "3:52",
+        "5:111",
+        "61:14"
+      ],
+      "color": "#4f46e5"
+    },
+    {
+      "id": "pharaoh",
+      "displayName": {
+        "en": "Pharaoh",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "Firaun",
+        "Firʿawn"
+      ],
+      "facet": "people",
+      "definition": "Pharaoh as antagonist — his court, his magicians, his drowning.",
+      "examples": [
+        "7:103",
+        "28:4",
+        "79:15"
+      ],
+      "color": "#4f46e5"
+    },
+    {
+      "id": "saul",
+      "displayName": {
+        "en": "Saul",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "Talut",
+        "Ṭālūt"
+      ],
+      "facet": "people",
+      "definition": "The king appointed for the Children of Israel before David's victory over Goliath.",
+      "examples": [
+        "2:247",
+        "2:249"
+      ],
+      "color": "#4f46e5"
+    },
+    {
+      "id": "goliath",
+      "displayName": {
+        "en": "Goliath",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "Jalut",
+        "Jālūt"
+      ],
+      "facet": "people",
+      "definition": "The opposing warrior defeated by David in the Saul narrative.",
+      "examples": [
+        "2:249",
+        "2:251"
+      ],
+      "color": "#4f46e5"
+    },
+    {
+      "id": "iblis",
+      "displayName": {
+        "en": "Iblis",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "Satan",
+        "Shaytan",
+        "Shayṭān"
+      ],
+      "facet": "people",
+      "definition": "The refusal to prostrate, the whispering, the tempter's role.",
+      "examples": [
+        "2:34",
+        "7:11",
+        "15:26"
+      ],
+      "color": "#4f46e5"
+    },
+    {
+      "id": "ad",
+      "displayName": {
+        "en": "'Ad",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "ʿĀd"
+      ],
+      "facet": "people",
+      "definition": "The people of Hud — known for might; destroyed by a barren wind.",
+      "examples": [
+        "7:65",
+        "11:50",
+        "46:21",
+        "89:6"
+      ],
+      "color": "#4f46e5"
+    },
+    {
+      "id": "thamud",
+      "displayName": {
+        "en": "Thamud",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "Thamūd"
+      ],
+      "facet": "people",
+      "definition": "The people of Salih — carvers of mountain dwellings; destroyed by the cry / earthquake after slaying the she-camel.",
+      "examples": [
+        "7:73",
+        "11:61",
+        "27:45",
+        "91:11"
+      ],
+      "color": "#4f46e5"
+    },
+    {
+      "id": "madyan",
+      "displayName": {
+        "en": "Madyan",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "Midian"
+      ],
+      "facet": "people",
+      "definition": "The people of Shuayb — destroyed for fraud in trade.",
+      "examples": [
+        "7:85",
+        "11:84",
+        "29:36"
+      ],
+      "color": "#4f46e5"
+    },
+    {
+      "id": "dhul-qarnayn",
+      "displayName": {
+        "en": "Dhul-Qarnayn",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "Dhū al-Qarnayn"
+      ],
+      "facet": "people",
+      "definition": "The traveler-king narrative and Gog & Magog.",
+      "examples": [
+        "18:83"
+      ],
+      "color": "#4f46e5"
+    },
+    {
+      "id": "companions-of-the-cave",
+      "displayName": {
+        "en": "People of the Cave",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "Ashab al-Kahf"
+      ],
+      "facet": "people",
+      "definition": "The narrative of the youths in the cave.",
+      "examples": [
+        "18:9",
+        "18:13"
+      ],
+      "color": "#4f46e5"
+    },
+    {
+      "id": "children-of-israel",
+      "displayName": {
+        "en": "Children of Israel",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "Bani Israel",
+        "Banū Isrāʾīl"
+      ],
+      "facet": "people",
+      "definition": "Bani Israel as collective subject — covenant, rebellion, prophets sent to them.",
+      "examples": [
+        "2:40",
+        "2:83",
+        "5:12",
+        "17:4"
+      ],
+      "color": "#4f46e5"
+    },
+    {
+      "id": "patriarchs",
+      "displayName": {
+        "en": "Patriarchs / Tribes",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "al-Asbat"
+      ],
+      "facet": "people",
+      "definition": "The patriarchal tribes or descendants named alongside Abraham, Ishmael, Isaac, Jacob, Moses, and Jesus in revelation lists.",
+      "examples": [
+        "2:136",
+        "2:140",
+        "3:84"
+      ],
+      "color": "#4f46e5"
+    },
+    {
+      "id": "people-of-the-book",
+      "displayName": {
+        "en": "People of the Book",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "Ahl al-Kitab"
+      ],
+      "facet": "people",
+      "definition": "Jews and Christians addressed collectively.",
+      "examples": [
+        "3:64",
+        "3:113",
+        "4:171",
+        "5:15"
+      ],
+      "color": "#4f46e5"
+    },
+    {
+      "id": "sabeans",
+      "displayName": {
+        "en": "Sabeans",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "Sabi'un",
+        "Ṣābiʾūn"
+      ],
+      "facet": "people",
+      "definition": "The Sabeans as a named religious community listed with believers, Jews, and Christians.",
+      "examples": [
+        "2:62",
+        "5:69",
+        "22:17"
+      ],
+      "color": "#4f46e5"
+    },
+    {
+      "id": "hypocrites",
+      "displayName": {
+        "en": "Hypocrites",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "Munafiqun",
+        "Munāfiqūn"
+      ],
+      "facet": "people",
+      "definition": "Sections about the Munafiqun — their behavior, their fate, their identification.",
+      "examples": [
+        "2:8",
+        "4:142",
+        "9:64",
+        "63:1"
+      ],
+      "color": "#4f46e5"
+    },
+    {
+      "id": "believers",
+      "displayName": {
+        "en": "Believers",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "Mu'minun",
+        "Muʾminūn"
+      ],
+      "facet": "people",
+      "definition": "Direct address to believers (`yā ayyuhā alladhīna āmanū`) as the rhetorical subject.",
+      "examples": [
+        "2:104",
+        "5:1",
+        "33:9",
+        "49:6"
+      ],
+      "color": "#4f46e5"
+    },
+    {
+      "id": "mankind",
+      "displayName": {
+        "en": "Mankind",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "Naas",
+        "an-Nās"
+      ],
+      "facet": "people",
+      "definition": "Universal address to all humanity (`yā ayyuhā an-nās`). A finite, identifiable set; high-value filter for users wanting every passage addressed to humans as such.",
+      "examples": [
+        "2:21",
+        "4:1",
+        "22:1",
+        "49:13"
+      ],
+      "color": "#4f46e5"
+    },
+    {
+      "id": "disbelievers",
+      "displayName": {
+        "en": "Disbelievers",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "Kafirun",
+        "Kāfirūn"
+      ],
+      "facet": "people",
+      "definition": "Disbelievers as collective subject — their arguments, their fate, their accusations.",
+      "examples": [
+        "6:1",
+        "25:4",
+        "109:1"
+      ],
+      "color": "#4f46e5"
+    },
+    {
+      "id": "polytheists",
+      "displayName": {
+        "en": "Polytheists",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "Mushrikun",
+        "Mushrikūn"
+      ],
+      "facet": "people",
+      "definition": "Mushrikun specifically — those associating partners with God.",
+      "examples": [
+        "9:1",
+        "22:31"
+      ],
+      "color": "#4f46e5"
+    },
+    {
+      "id": "quraysh",
+      "displayName": {
+        "en": "Quraysh",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "Meccans"
+      ],
+      "facet": "people",
+      "definition": "Sections aimed at the early Meccan opposition.",
+      "examples": [
+        "74:11",
+        "106:1",
+        "108:1"
+      ],
+      "color": "#4f46e5"
+    },
+    {
+      "id": "angels",
+      "displayName": {
+        "en": "Angels",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "Mala'ikah",
+        "Malāʾikah"
+      ],
+      "facet": "people",
+      "definition": "Angels as collective subject, including Gabriel/Jibril when not separately named.",
+      "examples": [
+        "2:30",
+        "2:285",
+        "35:1",
+        "78:38"
+      ],
+      "color": "#4f46e5"
+    },
+    {
+      "id": "harut-and-marut",
+      "displayName": {
+        "en": "Harut and Marut",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "Hārūt",
+        "Mārūt"
+      ],
+      "facet": "people",
+      "definition": "The two angels named in the Babylon sorcery passage.",
+      "examples": [
+        "2:102"
+      ],
+      "color": "#4f46e5"
+    },
+    {
+      "id": "jinn",
+      "displayName": {
+        "en": "Jinn",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "people",
+      "definition": "Jinn as collective subject.",
+      "examples": [
+        "55:14",
+        "72:1"
+      ],
+      "color": "#4f46e5"
+    },
+    {
+      "id": "tawhid",
+      "displayName": {
+        "en": "Oneness of God",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "divine-attributes",
+      "definition": "Sections asserting God's absolute oneness or refuting associates/sons.",
+      "examples": [
+        "2:163",
+        "112:1",
+        "39:4"
+      ],
+      "color": "#d4a017"
+    },
+    {
+      "id": "mercy",
+      "displayName": {
+        "en": "Mercy",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "divine-attributes",
+      "definition": "God's mercy, forgiveness, and compassion as the dominant theme.",
+      "examples": [
+        "7:156",
+        "39:53",
+        "55:1"
+      ],
+      "color": "#d4a017"
+    },
+    {
+      "id": "justice",
+      "displayName": {
+        "en": "Justice",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "divine-attributes",
+      "definition": "God's justice, fair judgment, never wronging by an atom's weight.",
+      "examples": [
+        "4:40",
+        "21:47",
+        "99:7"
+      ],
+      "color": "#d4a017"
+    },
+    {
+      "id": "sovereignty",
+      "displayName": {
+        "en": "Sovereignty",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "divine-attributes",
+      "definition": "God as King, owner of dominion, holder of all power.",
+      "examples": [
+        "3:26",
+        "25:2",
+        "67:1"
+      ],
+      "color": "#d4a017"
+    },
+    {
+      "id": "knowledge",
+      "displayName": {
+        "en": "Knowledge",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "divine-attributes",
+      "definition": "God's complete knowledge of the seen and unseen.",
+      "examples": [
+        "6:59",
+        "13:8",
+        "49:18"
+      ],
+      "color": "#d4a017"
+    },
+    {
+      "id": "power",
+      "displayName": {
+        "en": "Power",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "divine-attributes",
+      "definition": "God's omnipotence and ability over all things.",
+      "examples": [
+        "35:1",
+        "41:39"
+      ],
+      "color": "#d4a017"
+    },
+    {
+      "id": "wisdom",
+      "displayName": {
+        "en": "Wisdom",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "divine-attributes",
+      "definition": "God's wise ordering of events, decree, and law.",
+      "examples": [
+        "2:269",
+        "31:2"
+      ],
+      "color": "#d4a017"
+    },
+    {
+      "id": "creation",
+      "displayName": {
+        "en": "Creator",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "divine-attributes",
+      "definition": "God as Creator — bringing into being, originating.",
+      "examples": [
+        "40:62",
+        "59:24",
+        "87:1"
+      ],
+      "color": "#d4a017"
+    },
+    {
+      "id": "provision",
+      "displayName": {
+        "en": "Provider",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "divine-attributes",
+      "definition": "God as sustainer who provides rizq to all creatures.",
+      "examples": [
+        "11:6",
+        "29:60",
+        "51:58"
+      ],
+      "color": "#d4a017"
+    },
+    {
+      "id": "guidance",
+      "displayName": {
+        "en": "Guidance",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "divine-attributes",
+      "definition": "God as the source of guidance, sender of guidance, light through darkness.",
+      "examples": [
+        "1:6",
+        "24:35",
+        "28:56"
+      ],
+      "color": "#d4a017"
+    },
+    {
+      "id": "nearness-and-response",
+      "displayName": {
+        "en": "Nearness & Response",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "divine-attributes",
+      "definition": "God as near, hearing, responding to those who call.",
+      "examples": [
+        "2:186",
+        "50:16"
+      ],
+      "color": "#d4a017"
+    },
+    {
+      "id": "divine-decree",
+      "displayName": {
+        "en": "Decree",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "divine-attributes",
+      "definition": "God's decree, predestination, the lawh mahfuz, what He has written.",
+      "examples": [
+        "9:51",
+        "57:22"
+      ],
+      "color": "#d4a017"
+    },
+    {
+      "id": "dua-forgiveness",
+      "displayName": {
+        "en": "Du'a for Forgiveness",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "dua",
+      "definition": "Uttered supplication asking for forgiveness or removal of sin.",
+      "examples": [
+        "2:286",
+        "3:147",
+        "7:23",
+        "71:28"
+      ],
+      "color": "#0f9488"
+    },
+    {
+      "id": "dua-guidance",
+      "displayName": {
+        "en": "Du'a for Guidance",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "dua",
+      "definition": "Asking to be guided to or kept on the straight path.",
+      "examples": [
+        "1:6",
+        "3:8",
+        "2:250"
+      ],
+      "color": "#0f9488"
+    },
+    {
+      "id": "dua-distress",
+      "displayName": {
+        "en": "Du'a in Distress",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "dua",
+      "definition": "Calling on God in hardship, fear, or persecution.",
+      "examples": [
+        "21:83",
+        "21:87",
+        "7:126"
+      ],
+      "color": "#0f9488"
+    },
+    {
+      "id": "dua-family-offspring",
+      "displayName": {
+        "en": "Du'a for Family",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "dua",
+      "definition": "Asking for righteous offspring, spouses, or family.",
+      "examples": [
+        "3:38",
+        "19:5",
+        "25:74",
+        "46:15"
+      ],
+      "color": "#0f9488"
+    },
+    {
+      "id": "dua-knowledge-wisdom",
+      "displayName": {
+        "en": "Du'a for Knowledge",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "dua",
+      "definition": "Asking for understanding, wisdom, or eloquence.",
+      "examples": [
+        "20:25",
+        "20:114",
+        "26:83"
+      ],
+      "color": "#0f9488"
+    },
+    {
+      "id": "dua-protection",
+      "displayName": {
+        "en": "Du'a for Protection",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "dua",
+      "definition": "Seeking refuge from evil, satanic suggestion, calamity, hell.",
+      "examples": [
+        "2:201",
+        "23:97",
+        "113:1",
+        "114:1"
+      ],
+      "color": "#0f9488"
+    },
+    {
+      "id": "dua-gratitude",
+      "displayName": {
+        "en": "Du'a of Gratitude",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "dua",
+      "definition": "Supplications that thank or praise God for a blessing or favor.",
+      "examples": [
+        "27:15",
+        "27:19",
+        "46:15"
+      ],
+      "color": "#0f9488"
+    },
+    {
+      "id": "marriage-and-family",
+      "displayName": {
+        "en": "Marriage & Family",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "worldly-matters",
+      "definition": "Rules of marriage, treatment of spouses, family conduct.",
+      "examples": [
+        "4:1",
+        "4:19",
+        "30:21",
+        "33:35"
+      ],
+      "color": "#8b5e34"
+    },
+    {
+      "id": "divorce",
+      "displayName": {
+        "en": "Divorce",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "worldly-matters",
+      "definition": "Rules of divorce, iddah, custody, separation.",
+      "examples": [
+        "2:229",
+        "65:1",
+        "33:49"
+      ],
+      "color": "#8b5e34"
+    },
+    {
+      "id": "inheritance",
+      "displayName": {
+        "en": "Inheritance",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "worldly-matters",
+      "definition": "Distribution of estate and inheritance shares.",
+      "examples": [
+        "4:7",
+        "4:11",
+        "4:176"
+      ],
+      "color": "#8b5e34"
+    },
+    {
+      "id": "war-and-treaties",
+      "displayName": {
+        "en": "War & Treaties",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "worldly-matters",
+      "definition": "Rules of fighting, peace agreements, conduct during conflict.",
+      "examples": [
+        "2:190",
+        "8:1",
+        "9:1",
+        "48:1"
+      ],
+      "color": "#8b5e34"
+    },
+    {
+      "id": "migration",
+      "displayName": {
+        "en": "Migration (Hijrah)",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "worldly-matters",
+      "definition": "Leaving home or being expelled for Allah's cause; the moral and legal status of emigrants.",
+      "examples": [
+        "2:218",
+        "3:195",
+        "8:72",
+        "59:9"
+      ],
+      "color": "#8b5e34"
+    },
+    {
+      "id": "trade-and-debt",
+      "displayName": {
+        "en": "Trade & Debt",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "worldly-matters",
+      "definition": "Commerce, contracts, debt, witnessing.",
+      "examples": [
+        "2:282",
+        "4:29"
+      ],
+      "color": "#8b5e34"
+    },
+    {
+      "id": "interest",
+      "displayName": {
+        "en": "Interest (Riba)",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "worldly-matters",
+      "definition": "Sections legislating against or warning about riba — usury, interest, and unjust gain through lending.",
+      "examples": [
+        "2:275",
+        "2:278",
+        "3:130",
+        "30:39"
+      ],
+      "color": "#8b5e34"
+    },
+    {
+      "id": "intoxicants-and-gambling",
+      "displayName": {
+        "en": "Intoxicants & Gambling",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "worldly-matters",
+      "definition": "Wine/intoxicants, gambling, games of chance, and their social or spiritual harms.",
+      "examples": [
+        "2:219",
+        "5:90",
+        "5:91"
+      ],
+      "color": "#8b5e34"
+    },
+    {
+      "id": "food-and-dietary",
+      "displayName": {
+        "en": "Food & Dietary Law",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "worldly-matters",
+      "definition": "What is permitted and forbidden to eat; slaughter rules.",
+      "examples": [
+        "2:172",
+        "5:3",
+        "6:118",
+        "16:114"
+      ],
+      "color": "#8b5e34"
+    },
+    {
+      "id": "ritual-purity",
+      "displayName": {
+        "en": "Purity & Hygiene",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "worldly-matters",
+      "definition": "Wudu, ghusl, menstruation, ritual cleanliness.",
+      "examples": [
+        "4:43",
+        "5:6",
+        "2:222"
+      ],
+      "color": "#8b5e34"
+    },
+    {
+      "id": "prayer",
+      "displayName": {
+        "en": "Prayer (Salah)",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "worldly-matters",
+      "definition": "Establishment of salah, its times, its conduct.",
+      "examples": [
+        "2:43",
+        "4:103",
+        "20:14",
+        "73:1"
+      ],
+      "color": "#8b5e34"
+    },
+    {
+      "id": "fasting",
+      "displayName": {
+        "en": "Fasting",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "worldly-matters",
+      "definition": "Rules and virtues of fasting, primarily Ramadan.",
+      "examples": [
+        "2:183"
+      ],
+      "color": "#8b5e34"
+    },
+    {
+      "id": "hajj-and-pilgrimage",
+      "displayName": {
+        "en": "Hajj",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "worldly-matters",
+      "definition": "The pilgrimage, its rites, the sacred precincts.",
+      "examples": [
+        "2:196",
+        "3:97",
+        "22:25"
+      ],
+      "color": "#8b5e34"
+    },
+    {
+      "id": "sacred-mosque-and-qiblah",
+      "displayName": {
+        "en": "Sacred Mosque & Qiblah",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "worldly-matters",
+      "definition": "The Sacred Mosque, qiblah direction, and sanctuary-linked orientation or access rules.",
+      "examples": [
+        "2:142",
+        "2:144",
+        "2:149",
+        "9:19"
+      ],
+      "color": "#8b5e34"
+    },
+    {
+      "id": "zakat-and-charity",
+      "displayName": {
+        "en": "Zakat & Charity",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "worldly-matters",
+      "definition": "Obligatory zakat, voluntary sadaqah, spending in God's cause.",
+      "examples": [
+        "2:177",
+        "2:261",
+        "9:60",
+        "57:18"
+      ],
+      "color": "#8b5e34"
+    },
+    {
+      "id": "orphan-care",
+      "displayName": {
+        "en": "Orphan Care",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "worldly-matters",
+      "definition": "Care, protection, fair treatment, and property rights of orphans.",
+      "examples": [
+        "2:220",
+        "4:2",
+        "4:6",
+        "107:2"
+      ],
+      "color": "#8b5e34"
+    },
+    {
+      "id": "manumission-and-captives",
+      "displayName": {
+        "en": "Manumission & Captives",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "worldly-matters",
+      "definition": "Freeing slaves, ransom, captives, and liberation-linked obligations or virtues.",
+      "examples": [
+        "2:177",
+        "4:92",
+        "5:89",
+        "90:13"
+      ],
+      "color": "#8b5e34"
+    },
+    {
+      "id": "oaths-and-vows",
+      "displayName": {
+        "en": "Oaths & Vows",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "worldly-matters",
+      "definition": "Swearing, breaking oaths, expiation.",
+      "examples": [
+        "2:224",
+        "5:89",
+        "66:1"
+      ],
+      "color": "#8b5e34"
+    },
+    {
+      "id": "covenant",
+      "displayName": {
+        "en": "Covenant & Pledges",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "worldly-matters",
+      "definition": "Covenants, solemn pledges, and binding commitments between Allah and people or among people.",
+      "examples": [
+        "2:27",
+        "2:40",
+        "2:83",
+        "3:77"
+      ],
+      "color": "#8b5e34"
+    },
+    {
+      "id": "justice-and-witness",
+      "displayName": {
+        "en": "Justice & Testimony",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "worldly-matters",
+      "definition": "Bearing witness, just judgment between people, slander cases.",
+      "examples": [
+        "4:135",
+        "5:8",
+        "24:4"
+      ],
+      "color": "#8b5e34"
+    },
+    {
+      "id": "patience",
+      "displayName": {
+        "en": "Patience (Sabr)",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "ethical-states",
+      "definition": "Commendation or modeling of steadfast patience under trial.",
+      "examples": [
+        "2:153",
+        "3:200",
+        "103:1"
+      ],
+      "color": "#6b8e5a"
+    },
+    {
+      "id": "gratitude",
+      "displayName": {
+        "en": "Gratitude (Shukr)",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "ethical-states",
+      "definition": "Commendation of thankfulness, recognition of God's favors.",
+      "examples": [
+        "14:7",
+        "27:40",
+        "31:12"
+      ],
+      "color": "#6b8e5a"
+    },
+    {
+      "id": "taqwa",
+      "displayName": {
+        "en": "God-Consciousness (Taqwa)",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "ethical-states",
+      "definition": "The disposition of being mindful of God; the muttaqun.",
+      "examples": [
+        "2:2",
+        "49:13",
+        "92:5"
+      ],
+      "color": "#6b8e5a"
+    },
+    {
+      "id": "trust-in-god",
+      "displayName": {
+        "en": "Trust (Tawakkul)",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "ethical-states",
+      "definition": "Reliance on God in decision and outcome.",
+      "examples": [
+        "3:159",
+        "65:3"
+      ],
+      "color": "#6b8e5a"
+    },
+    {
+      "id": "repentance",
+      "displayName": {
+        "en": "Repentance (Tawbah)",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "ethical-states",
+      "definition": "Turning back to God, the door of repentance, accepting the repentant.",
+      "examples": [
+        "4:17",
+        "9:104",
+        "66:8"
+      ],
+      "color": "#6b8e5a"
+    },
+    {
+      "id": "humility",
+      "displayName": {
+        "en": "Humility",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "ethical-states",
+      "definition": "Lowering oneself before God or fellow humans; rejecting pride.",
+      "examples": [
+        "7:55",
+        "25:63",
+        "31:18"
+      ],
+      "color": "#6b8e5a"
+    },
+    {
+      "id": "sincerity",
+      "displayName": {
+        "en": "Sincerity (Ikhlas)",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "ethical-states",
+      "definition": "Acting purely for God's sake, free of ostentation.",
+      "examples": [
+        "7:29",
+        "39:2",
+        "98:5"
+      ],
+      "color": "#6b8e5a"
+    },
+    {
+      "id": "remembrance",
+      "displayName": {
+        "en": "Remembrance (Dhikr)",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "ethical-states",
+      "definition": "Remembering God by tongue or heart; the role of dhikr in calming the heart.",
+      "examples": [
+        "13:28",
+        "33:41",
+        "63:9"
+      ],
+      "color": "#6b8e5a"
+    },
+    {
+      "id": "praise",
+      "displayName": {
+        "en": "Praise (Hamd)",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "ethical-states",
+      "definition": "Sections containing explicit praise or glorification of God — `al-ḥamdu lillāh`, `tabāraka`, `subḥān`, `Allāhu akbar`. Distinct from `gratitude` (which marks shukr for specific blessings) and from divine-attribute labels (which mark the attribute being praised). Apply when praise is *uttered* in the section, not merely commanded.",
+      "examples": [
+        "1:2",
+        "17:111",
+        "67:1",
+        "87:1"
+      ],
+      "color": "#6b8e5a"
+    },
+    {
+      "id": "righteous-conduct",
+      "displayName": {
+        "en": "Righteous Conduct",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "ethical-states",
+      "definition": "Broad ethical conduct toward parents, neighbors, the poor — the \"righteousness\" passages.",
+      "examples": [
+        "2:177",
+        "17:23",
+        "90:12"
+      ],
+      "color": "#6b8e5a"
+    },
+    {
+      "id": "arrogance",
+      "displayName": {
+        "en": "Arrogance (Kibr)",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "negative-attributes",
+      "definition": "Pride that refuses truth or despises people; Iblis's defining flaw.",
+      "examples": [
+        "7:13",
+        "16:23",
+        "40:35"
+      ],
+      "color": "#be123c"
+    },
+    {
+      "id": "hypocrisy",
+      "displayName": {
+        "en": "Hypocrisy",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "negative-attributes",
+      "definition": "The trait of professing belief outwardly while disbelieving inwardly.",
+      "examples": [
+        "2:8",
+        "4:142",
+        "63:1"
+      ],
+      "color": "#be123c"
+    },
+    {
+      "id": "plotting",
+      "displayName": {
+        "en": "Plotting (Makr)",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "negative-attributes",
+      "definition": "Scheming and conspiracy against truth or against the believers; God's counter-plan.",
+      "examples": [
+        "3:54",
+        "8:30",
+        "27:50"
+      ],
+      "color": "#be123c"
+    },
+    {
+      "id": "shirk",
+      "displayName": {
+        "en": "Idolatry (Shirk)",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "negative-attributes",
+      "definition": "Associating partners with God in worship, lordship, or attributes.",
+      "examples": [
+        "4:48",
+        "31:13",
+        "39:65"
+      ],
+      "color": "#be123c"
+    },
+    {
+      "id": "mockery",
+      "displayName": {
+        "en": "Mockery",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "negative-attributes",
+      "definition": "Mocking the believers, the Prophet, or revelation; mocking past prophets.",
+      "examples": [
+        "9:65",
+        "83:29",
+        "104:1"
+      ],
+      "color": "#be123c"
+    },
+    {
+      "id": "slander-and-backbiting",
+      "displayName": {
+        "en": "Slander & Backbiting",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "negative-attributes",
+      "definition": "Spreading false accusations, gossiping, defamation.",
+      "examples": [
+        "24:11",
+        "49:11",
+        "68:11",
+        "104:1"
+      ],
+      "color": "#be123c"
+    },
+    {
+      "id": "greed-and-miserliness",
+      "displayName": {
+        "en": "Greed & Miserliness",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "negative-attributes",
+      "definition": "Hoarding, refusing to spend in God's cause, love of wealth.",
+      "examples": [
+        "3:180",
+        "47:38",
+        "92:8",
+        "102:1"
+      ],
+      "color": "#be123c"
+    },
+    {
+      "id": "sorcery",
+      "displayName": {
+        "en": "Sorcery (Sihr)",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "negative-attributes",
+      "definition": "Magic, witchcraft, sorcery accusations, or the practice and teaching of sihr.",
+      "examples": [
+        "2:102",
+        "7:116",
+        "20:66",
+        "113:4"
+      ],
+      "color": "#be123c"
+    },
+    {
+      "id": "anger-and-violence",
+      "displayName": {
+        "en": "Anger & Violence",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "negative-attributes",
+      "definition": "Unjust killing, wrath-driven action, the sin of Cain.",
+      "examples": [
+        "5:27",
+        "17:33"
+      ],
+      "color": "#be123c"
+    },
+    {
+      "id": "envy",
+      "displayName": {
+        "en": "Envy (Hasad)",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "negative-attributes",
+      "definition": "Resenting blessings God has given another; explicit refuge sought from it.",
+      "examples": [
+        "4:54",
+        "113:5"
+      ],
+      "color": "#be123c"
+    },
+    {
+      "id": "corruption-on-earth",
+      "displayName": {
+        "en": "Corruption on Earth",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "negative-attributes",
+      "definition": "Causing fasād — moral, social, or material corruption.",
+      "examples": [
+        "2:11",
+        "2:205",
+        "7:56",
+        "30:41"
+      ],
+      "color": "#be123c"
+    },
+    {
+      "id": "disbelief",
+      "displayName": {
+        "en": "Disbelief (Kufr)",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "negative-attributes",
+      "definition": "The state of denying truth after it has reached one.",
+      "examples": [
+        "2:6",
+        "47:32",
+        "109:1"
+      ],
+      "color": "#be123c"
+    },
+    {
+      "id": "day-of-judgment",
+      "displayName": {
+        "en": "Day of Judgment",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "eschatology",
+      "definition": "The Day described — its terror, its arrangement, the standing before God.",
+      "examples": [
+        "22:1",
+        "39:67",
+        "75:1",
+        "82:1"
+      ],
+      "color": "#6d28d9"
+    },
+    {
+      "id": "paradise",
+      "displayName": {
+        "en": "Paradise",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "eschatology",
+      "definition": "Descriptions of Jannah — its rivers, gardens, companions, rewards.",
+      "examples": [
+        "13:35",
+        "47:15",
+        "55:46",
+        "76:11"
+      ],
+      "color": "#6d28d9"
+    },
+    {
+      "id": "hell",
+      "displayName": {
+        "en": "Hell",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "eschatology",
+      "definition": "Descriptions of Jahannam — its punishments, its keepers, its inhabitants.",
+      "examples": [
+        "40:71",
+        "56:41",
+        "74:26",
+        "88:1"
+      ],
+      "color": "#6d28d9"
+    },
+    {
+      "id": "resurrection",
+      "displayName": {
+        "en": "Resurrection",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "eschatology",
+      "definition": "The raising of the dead, the trumpet, the gathering.",
+      "examples": [
+        "36:51",
+        "75:1",
+        "79:6"
+      ],
+      "color": "#6d28d9"
+    },
+    {
+      "id": "signs-of-the-hour",
+      "displayName": {
+        "en": "Signs of the Hour",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "eschatology",
+      "definition": "Cosmic signs preceding the Hour — sun darkened, mountains scattered.",
+      "examples": [
+        "81:1",
+        "82:1",
+        "99:1"
+      ],
+      "color": "#6d28d9"
+    },
+    {
+      "id": "reckoning",
+      "displayName": {
+        "en": "Reckoning",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "eschatology",
+      "definition": "The handing of records, weighing of deeds, accounting.",
+      "examples": [
+        "17:13",
+        "21:47",
+        "69:19",
+        "101:6"
+      ],
+      "color": "#6d28d9"
+    },
+    {
+      "id": "intercession",
+      "displayName": {
+        "en": "Intercession",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "eschatology",
+      "definition": "Who may intercede, who may not, on the Day.",
+      "examples": [
+        "2:255",
+        "19:87",
+        "20:109"
+      ],
+      "color": "#6d28d9"
+    },
+    {
+      "id": "punishment-of-past-nations",
+      "displayName": {
+        "en": "Punishment of Past Nations",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "eschatology",
+      "definition": "The destruction of 'Ad, Thamud, Pharaoh's people, Lot's people as warning.",
+      "examples": [
+        "7:65",
+        "11:50",
+        "54:18",
+        "89:6"
+      ],
+      "color": "#6d28d9"
+    },
+    {
+      "id": "creation-of-heavens-earth",
+      "displayName": {
+        "en": "Creation of Heavens & Earth",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "cosmology",
+      "definition": "The making of the cosmos in six days; the throne.",
+      "examples": [
+        "7:54",
+        "41:9",
+        "50:6"
+      ],
+      "color": "#475569"
+    },
+    {
+      "id": "human-creation",
+      "displayName": {
+        "en": "Creation of the Human",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "cosmology",
+      "definition": "Stages of human creation — clay, sperm, clot, lump.",
+      "examples": [
+        "22:5",
+        "23:12",
+        "40:67",
+        "96:1"
+      ],
+      "color": "#475569"
+    },
+    {
+      "id": "natural-signs",
+      "displayName": {
+        "en": "Natural Signs (Ayat)",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "cosmology",
+      "definition": "Rain, plants, wind, animals, the tame earth, birds in flight — earthly natural phenomena framed as signs of the Creator. Co-tag with `cosmic-bodies` when both are present.",
+      "examples": [
+        "16:10",
+        "30:46",
+        "67:19",
+        "78:6"
+      ],
+      "color": "#475569"
+    },
+    {
+      "id": "cosmic-bodies",
+      "displayName": {
+        "en": "Sun, Moon, Stars",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "cosmology",
+      "definition": "Celestial bodies — sun, moon, stars, lamps of heaven, night, day — framed as signs or as adornment of the heavens. Distinct from `natural-signs` and freely co-tagged with it; both apply when both are present in the section.",
+      "examples": [
+        "36:38",
+        "41:37",
+        "67:5",
+        "91:1"
+      ],
+      "color": "#475569"
+    },
+    {
+      "id": "death-and-dying",
+      "displayName": {
+        "en": "Death",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "cosmology",
+      "definition": "The reality of death, the taking of the soul, what comes after.",
+      "examples": [
+        "3:185",
+        "39:42",
+        "56:83"
+      ],
+      "color": "#475569"
+    },
+    {
+      "id": "previous-creations-destroyed",
+      "displayName": {
+        "en": "Past Civilizations",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "cosmology",
+      "definition": "Generic ruins-and-warnings — \"have they not traveled the land?\"",
+      "examples": [
+        "22:46",
+        "30:9"
+      ],
+      "color": "#475569"
+    },
+    {
+      "id": "the-quran",
+      "displayName": {
+        "en": "The Qur'an",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "revelation",
+      "definition": "Sections where the Qur'an is itself the subject — its origin, character, preservation.",
+      "examples": [
+        "15:9",
+        "17:88",
+        "41:1",
+        "85:21"
+      ],
+      "color": "#b45309"
+    },
+    {
+      "id": "disjoined-letters",
+      "displayName": {
+        "en": "Disjoined Letters",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "Al-Muqattaʿāt",
+        "mysterious letters",
+        "abbreviated letters"
+      ],
+      "facet": "revelation",
+      "definition": "Sections opening with the disjoined Arabic letters — Alif-Lām-Mīm, Ḥā-Mīm, Kāf-Hā-Yā-ʿAyn-Ṣād, Yā-Sīn, Ṭā-Hā, etc. Tag whenever the section begins with one of these openings, regardless of tafsir interpretation.",
+      "examples": [
+        "2:1",
+        "19:1",
+        "20:1",
+        "36:1",
+        "41:1"
+      ],
+      "color": "#b45309"
+    },
+    {
+      "id": "qul-statements",
+      "displayName": {
+        "en": "Qul Statements",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "Say-commands",
+        "Commands to recite"
+      ],
+      "facet": "revelation",
+      "definition": "Sections containing the rhetorical pattern `Qul…` (\"Say…\") — God commanding the Prophet (or, in some sections, the believers) to declare or recite a specific statement. Tag whenever the imperative `qul` appears. Use this **instead of** `muhammad` for the \"Say:\" pattern; `muhammad` is reserved for direct second-person address or sections substantively about him.",
+      "examples": [
+        "1:1",
+        "67:23",
+        "67:28",
+        "67:30",
+        "109:1",
+        "112:1",
+        "113:1",
+        "114:1"
+      ],
+      "color": "#b45309"
+    },
+    {
+      "id": "previous-scriptures",
+      "displayName": {
+        "en": "Previous Scriptures",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "revelation",
+      "definition": "Torah, Gospel, Psalms as subjects; their relationship to the Qur'an.",
+      "examples": [
+        "3:3",
+        "5:44",
+        "5:46",
+        "87:18"
+      ],
+      "color": "#b45309"
+    },
+    {
+      "id": "prophethood-general",
+      "displayName": {
+        "en": "Prophethood",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "revelation",
+      "definition": "Prophethood as a category — the sending of messengers, their common message.",
+      "examples": [
+        "4:165",
+        "16:36",
+        "40:78"
+      ],
+      "color": "#b45309"
+    },
+    {
+      "id": "miracles",
+      "displayName": {
+        "en": "Miracles",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "revelation",
+      "definition": "Miraculous signs given to prophets (Moses's staff, Jesus's healings, the splitting of the moon).",
+      "examples": [
+        "7:107",
+        "20:17",
+        "54:1"
+      ],
+      "color": "#b45309"
+    },
+    {
+      "id": "challenge-to-produce",
+      "displayName": {
+        "en": "Challenge to Produce Like",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "revelation",
+      "definition": "The Qur'anic challenge to produce a chapter or verse like it.",
+      "examples": [
+        "2:23",
+        "10:38",
+        "17:88"
+      ],
+      "color": "#b45309"
+    },
+    {
+      "id": "denial-of-revelation",
+      "displayName": {
+        "en": "Denial of Revelation",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [],
+      "facet": "revelation",
+      "definition": "Accusations that the Qur'an is poetry, magic, or fabrication, and the responses.",
+      "examples": [
+        "25:4",
+        "52:30",
+        "69:40"
+      ],
+      "color": "#b45309"
+    }
+  ]
+}
