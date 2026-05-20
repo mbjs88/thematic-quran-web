@@ -370,46 +370,70 @@
             <div id="staticWelcomeContent" class="py-8 md:py-16 animate-fade-in">
 
                 <!-- HERO -->
-                <header class="text-center mb-12 md:mb-14 pt-4">
+                <header class="text-center mb-10 md:mb-12 pt-4">
                     <h1
                         class="text-4xl md:text-6xl font-['Forum'] text-white tracking-wide mb-6 leading-tight">
-                        Listen to the Qur’an<br class="hidden md:inline"> by paragraph.
+                        Listen to the Qur’an by paragraph.<br class="hidden md:inline"> Explore it by theme.
                     </h1>
                     <p class="text-[#F3E4CE]/90 font-['Nunito'] text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-                        Arabic recitation paired with English translation, played one paragraph at a time.
+                        Two ways in. Pick one to start.
                     </p>
                 </header>
 
-                <!-- FIRST-LISTEN WIDGET -->
-                <section aria-label="Pick a surah to start" class="max-w-xl mx-auto bg-white/5 border border-white/10 rounded-2xl p-5 md:p-6 mb-4">
-                    <label for="heroSurahSelect" class="block text-xs font-bold uppercase tracking-widest text-[#56A3A6] mb-3 font-['Nunito']">
-                        Pick a surah to start
-                    </label>
-                    <div class="flex flex-col sm:flex-row gap-3">
-                        <select id="heroSurahSelect"
-                            class="flex-1 p-3 rounded-lg bg-white/10 border border-white/20 text-[#F3E4CE] focus:outline-none focus:ring-2 focus:ring-[#56A3A6] font-['Nunito'] text-base"
-                            aria-label="Choose a surah to listen to">
-                            <option value="">Loading surahs…</option>
-                        </select>
-                        <button id="heroPlayBtn"
-                            class="flex items-center justify-center gap-2 bg-[#56A3A6] text-white px-6 py-3 rounded-lg font-bold hover:bg-[#458a8d] transition active:scale-95 font-['Nunito']"
-                            aria-label="Start listening to the selected surah">
-                            <span class="material-symbols-outlined">play_arrow</span>
-                            Listen
-                        </button>
+                <!-- TWIN CTAs: LISTEN + EXPLORE -->
+                <section aria-label="Choose how to begin" class="grid md:grid-cols-2 gap-5 md:gap-6 max-w-4xl mx-auto mb-6">
+
+                    <!-- CTA 1: LISTEN -->
+                    <div class="bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="material-symbols-outlined text-[#56A3A6]" aria-hidden="true">headphones</span>
+                            <h2 class="text-lg font-bold text-white font-['Forum'] tracking-wide">Listen to a surah</h2>
+                        </div>
+                        <p class="text-sm text-white/60 font-['Nunito'] mb-4">Arabic recitation alongside English translation, one paragraph at a time.</p>
+                        <div class="mt-auto flex flex-col gap-3">
+                            <select id="heroSurahSelect"
+                                class="w-full p-3 rounded-lg bg-white/10 border border-white/20 text-[#F3E4CE] focus:outline-none focus:ring-2 focus:ring-[#56A3A6] font-['Nunito'] text-base"
+                                aria-label="Choose a surah to listen to">
+                                <option value="">Loading surahs…</option>
+                            </select>
+                            <button id="heroPlayBtn"
+                                class="flex items-center justify-center gap-2 bg-[#56A3A6] text-white px-6 py-3 rounded-lg font-bold hover:bg-[#458a8d] transition active:scale-95 font-['Nunito']"
+                                aria-label="Start listening to the selected surah">
+                                <span class="material-symbols-outlined">play_arrow</span>
+                                Listen
+                            </button>
+                        </div>
                     </div>
+
+                    <!-- CTA 2: EXPLORE A THEME -->
+                    <div class="bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="material-symbols-outlined text-[#56A3A6]" aria-hidden="true">sell</span>
+                            <h2 class="text-lg font-bold text-white font-['Forum'] tracking-wide">Explore a theme</h2>
+                        </div>
+                        <p class="text-sm text-white/60 font-['Nunito'] mb-4">Pick a theme and see every passage that touches on it, across the whole Qur’an.</p>
+                        <div class="mt-auto flex flex-col gap-3">
+                            <select id="heroThemeSelect"
+                                class="w-full p-3 rounded-lg bg-white/10 border border-white/20 text-[#F3E4CE] focus:outline-none focus:ring-2 focus:ring-[#56A3A6] font-['Nunito'] text-base"
+                                aria-label="Choose a theme to explore">
+                                <option value="">Loading themes…</option>
+                            </select>
+                            <button id="heroExploreBtn"
+                                class="flex items-center justify-center gap-2 bg-[#56A3A6] text-white px-6 py-3 rounded-lg font-bold hover:bg-[#458a8d] transition active:scale-95 font-['Nunito']"
+                                aria-label="Explore the selected theme across the Qur'an">
+                                <span class="material-symbols-outlined">travel_explore</span>
+                                Explore
+                            </button>
+                        </div>
+                    </div>
+
                 </section>
 
-                <!-- TRUST + ALTERNATIVE DOORWAY -->
+                <!-- TRUST LINE -->
                 <div class="text-center mb-20">
-                    <p class="text-xs text-white/50 font-bold uppercase tracking-widest font-['Nunito'] mb-4">
+                    <p class="text-xs text-white/50 font-bold uppercase tracking-widest font-['Nunito']">
                         Free · No account · No ads
                     </p>
-                    <button id="heroExploreThemesBtn"
-                        class="inline-flex items-center gap-2 text-sm text-white/70 hover:text-[#56A3A6] transition border border-white/10 hover:border-[#56A3A6]/50 rounded-full px-5 py-2.5 font-['Nunito']">
-                        <span class="material-symbols-outlined text-base">filter_list</span>
-                        Or explore by theme
-                    </button>
                 </div>
 
                 <!-- THREE EXPLAINERS -->
@@ -468,7 +492,7 @@
                 </section>
 
                 <!-- BUILT ON QURAN.COM (HACKATHON CONTEXT) -->
-                <section aria-label="Built on Quran.com" class="max-w-3xl mx-auto border-t border-white/10 pt-16 mb-20">
+                <section aria-label="Built on Quran.com" class="max-w-5xl mx-auto border-t border-white/10 pt-16 mb-20">
                     <div class="text-center mb-10">
                         <p class="text-[#56A3A6] text-xs font-bold uppercase tracking-widest font-['Nunito'] mb-3">Submitted to the 2026 Quran Foundation Hackathon</p>
                         <h2 class="text-2xl md:text-3xl font-['Forum'] text-white mb-4 tracking-wide">Built on Quran.com</h2>
@@ -477,10 +501,48 @@
                         </p>
                     </div>
 
+                    <!-- WHAT MAKES IT DIFFERENT -->
+                    <h3 class="text-center text-xs font-bold uppercase tracking-widest text-white/50 font-['Nunito'] mb-6">What makes it different</h3>
+                    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-5 mb-12">
+                        <article class="bg-white/5 border border-white/10 rounded-2xl p-5">
+                            <span class="material-symbols-outlined text-[#56A3A6] text-2xl mb-2" aria-hidden="true">format_align_left</span>
+                            <h4 class="text-base font-bold text-white mb-2 font-['Forum'] tracking-wide">Paragraph-shaped audio</h4>
+                            <p class="text-sm text-white/70 font-['Nunito'] leading-relaxed">Whole sections play as one continuous passage, so the meaning carries the way it was meant to be heard.</p>
+                        </article>
+                        <article class="bg-white/5 border border-white/10 rounded-2xl p-5">
+                            <span class="material-symbols-outlined text-[#56A3A6] text-2xl mb-2" aria-hidden="true">record_voice_over</span>
+                            <h4 class="text-base font-bold text-white mb-2 font-['Forum'] tracking-wide">English narration made to be heard</h4>
+                            <p class="text-sm text-white/70 font-['Nunito'] leading-relaxed">Clear spoken English sits alongside the Arabic recitation, paced for listening rather than reading.</p>
+                        </article>
+                        <article class="bg-white/5 border border-white/10 rounded-2xl p-5">
+                            <span class="material-symbols-outlined text-[#56A3A6] text-2xl mb-2" aria-hidden="true">movie</span>
+                            <h4 class="text-base font-bold text-white mb-2 font-['Forum'] tracking-wide">Make a video, right here</h4>
+                            <p class="text-sm text-white/70 font-['Nunito'] leading-relaxed">Turn any passage into a short, shareable video. It is made entirely on your own device, with nothing uploaded anywhere.</p>
+                        </article>
+                        <article class="bg-white/5 border border-white/10 rounded-2xl p-5">
+                            <span class="material-symbols-outlined text-[#56A3A6] text-2xl mb-2" aria-hidden="true">bolt</span>
+                            <h4 class="text-base font-bold text-white mb-2 font-['Forum'] tracking-wide">Steady and quick</h4>
+                            <p class="text-sm text-white/70 font-['Nunito'] leading-relaxed">Built light and fast. Pages open quickly and the Arabic and English audio stay in step, even on a modest phone or a slower connection.</p>
+                        </article>
+                        <article class="bg-white/5 border border-white/10 rounded-2xl p-5">
+                            <span class="material-symbols-outlined text-[#56A3A6] text-2xl mb-2" aria-hidden="true">palette</span>
+                            <h4 class="text-base font-bold text-white mb-2 font-['Forum'] tracking-wide">Designed with care</h4>
+                            <p class="text-sm text-white/70 font-['Nunito'] leading-relaxed">Adjust the text size, choose your Arabic script, set your own listening speed. The colours and logo were drawn from a photograph taken at dawn in the Australian outback.</p>
+                        </article>
+                        <article class="bg-white/5 border border-white/10 rounded-2xl p-5">
+                            <span class="material-symbols-outlined text-[#56A3A6] text-2xl mb-2" aria-hidden="true">timeline</span>
+                            <h4 class="text-base font-bold text-white mb-2 font-['Forum'] tracking-wide">Stay on your path</h4>
+                            <p class="text-sm text-white/70 font-['Nunito'] leading-relaxed">A gentle picture of your reading over time, so the habit stays visible and easy to return to.</p>
+                        </article>
+                    </div>
+
+                    <!-- INTEGRATION: CONTENT + USER APIs -->
+                    <h3 class="text-center text-xs font-bold uppercase tracking-widest text-white/50 font-['Nunito'] mb-2">And it’s built on Quran.com</h3>
+                    <p class="text-center text-sm text-white/60 font-['Nunito'] mb-6 max-w-2xl mx-auto">The project draws on both areas the hackathon asks for: a Content API for what you read and hear, and a User API for what you save.</p>
                     <div class="grid md:grid-cols-2 gap-5 md:gap-6 mb-10">
                         <article class="bg-white/5 border border-white/10 rounded-2xl p-6">
-                            <span class="material-symbols-outlined text-[#56A3A6] text-3xl mb-3" aria-hidden="true">menu_book</span>
-                            <h3 class="text-lg font-bold text-white mb-3 font-['Forum'] tracking-wide">Go deeper on any ayah</h3>
+                            <span class="inline-block text-[10px] font-bold uppercase tracking-widest text-[#56A3A6] bg-[#56A3A6]/10 border border-[#56A3A6]/30 rounded-full px-2.5 py-0.5 mb-3 font-['Nunito']">Content API</span>
+                            <h4 class="text-lg font-bold text-white mb-3 font-['Forum'] tracking-wide">Go deeper on any ayah</h4>
                             <p class="text-sm text-white/70 font-['Nunito'] leading-relaxed mb-3">
                                 Open any paragraph into the Scholar view, and you have scholarly commentary (tafsir) served live from Quran.com. This is where you go from listening to study.
                             </p>
@@ -492,8 +554,8 @@
                         </article>
 
                         <article class="bg-white/5 border border-white/10 rounded-2xl p-6">
-                            <span class="material-symbols-outlined text-[#56A3A6] text-3xl mb-3" aria-hidden="true">person_check</span>
-                            <h3 class="text-lg font-bold text-white mb-3 font-['Forum'] tracking-wide">Your free Quran.com account</h3>
+                            <span class="inline-block text-[10px] font-bold uppercase tracking-widest text-[#56A3A6] bg-[#56A3A6]/10 border border-[#56A3A6]/30 rounded-full px-2.5 py-0.5 mb-3 font-['Nunito']">User API</span>
+                            <h4 class="text-lg font-bold text-white mb-3 font-['Forum'] tracking-wide">Your free Quran.com account</h4>
                             <p class="text-sm text-white/70 font-['Nunito'] leading-relaxed mb-3">
                                 Signing in is free and quick. Once you do, the site can carry your personal things across every device you use.
                             </p>
@@ -1239,7 +1301,7 @@
     <script src="js/juz-data.js?v=2.3.0"></script>
     <script src="js/one-off-projects.js?v=1.0"></script>
     <script src="js/scholar.js?v=1.0.0"></script>
-    <script src="js/app.js?v=2.5.0"></script>
+    <script src="js/app.js?v=2.5.1"></script>
     <!-- Sirat-al-Mustaqim visualizer · loads AFTER app.js so its window.* fns win -->
     <script src="js/straight-path-visualizer.js?v=1.4.0"></script>
     <!-- Reading tracker · reports listening seconds to the QF API -->

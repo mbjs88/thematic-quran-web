@@ -1103,24 +1103,26 @@ function setupGlobalEventListeners() {
 // ==============================================================
 
 function wireHeroWidget() {
-    const select = document.getElementById('heroSurahSelect');
+    const surahSelect = document.getElementById('heroSurahSelect');
     const playBtn = document.getElementById('heroPlayBtn');
-    const exploreBtn = document.getElementById('heroExploreThemesBtn');
+    const themeSelect = document.getElementById('heroThemeSelect');
+    const exploreBtn = document.getElementById('heroExploreBtn');
 
     // Welcome HTML may not be on the page (deep-link, resume, etc.).
-    if (!select && !playBtn && !exploreBtn) return;
+    if (!surahSelect && !playBtn && !themeSelect && !exploreBtn) return;
 
+    // ---- Surah dropdown (Listen) -------------------------------------
     // Mirror the surah list from the top-bar dropdown so the user gets the same
-    // labels (number + name). Falls back to a minimal 1–114 list if the top
-    // dropdown isn't populated yet.
-    if (select) {
-        select.innerHTML = '';
+    // labels (number + name). Falls back to a 1–114 list if the top dropdown
+    // isn't populated yet.
+    if (surahSelect) {
+        surahSelect.innerHTML = '';
         const placeholder = document.createElement('option');
         placeholder.value = '';
         placeholder.textContent = 'Choose a surah…';
         placeholder.disabled = true;
         placeholder.selected = true;
-        select.appendChild(placeholder);
+        surahSelect.appendChild(placeholder);
 
         const topSelect = document.getElementById('surahSelect');
         const haveTopOptions = topSelect && topSelect.options && topSelect.options.length > 1;
@@ -1131,58 +1133,109 @@ function wireHeroWidget() {
                 const o = document.createElement('option');
                 o.value = String(v);
                 o.textContent = opt.textContent;
-                select.appendChild(o);
+                surahSelect.appendChild(o);
             });
         } else {
             for (let n = 1; n <= 114; n++) {
                 const o = document.createElement('option');
                 o.value = String(n);
-                const name = (typeof window.getSurahName === 'function') ? window.getSurahName(n) : `Surah ${n}`;
-                o.textContent = name;
-                select.appendChild(o);
+                o.textContent = (typeof window.getSurahName === 'function') ? window.getSurahName(n) : `Surah ${n}`;
+                surahSelect.appendChild(o);
             }
         }
-
-        // Pre-select a sensible default: Surah Maryam (19) — it's one of the
-        // four fully labeled pilots and a strong first-listen, but only if no
-        // other choice is already set.
-        if (!select.value) select.value = '19';
+        if (!surahSelect.value) surahSelect.value = '19';  // default: Maryam
     }
 
-    if (playBtn && select) {
+    if (playBtn && surahSelect) {
         playBtn.addEventListener('click', () => {
-            const n = parseInt(select.value);
-            if (!n || n < 1 || n > 114) {
-                select.focus();
-                return;
-            }
-            // Mirror the choice into the top dropdown so subsequent navigation
-            // (next/prev section, view-mode change) is consistent.
+            const n = parseInt(surahSelect.value);
+            if (!n || n < 1 || n > 114) { surahSelect.focus(); return; }
             const topSelect = document.getElementById('surahSelect');
             if (topSelect) topSelect.value = String(n);
-            if (typeof loadContent === 'function') {
-                loadContent(n, null, true);   // autoPlay = true
-            }
-            if (typeof sendAnalyticsEvent === 'function') {
-                sendAnalyticsEvent('hero_first_listen', { surah: n });
-            }
+            if (typeof loadContent === 'function') loadContent(n, null, true);  // autoPlay
+            if (typeof sendAnalyticsEvent === 'function') sendAnalyticsEvent('hero_first_listen', { surah: n });
         });
     }
 
-    if (exploreBtn) {
+    // ---- Theme dropdown (Explore) ------------------------------------
+    // Populate from the taxonomy, grouped by facet via <optgroup>. Only themes
+    // that are actually assigned to at least one section are shown, so the user
+    // never picks a theme that returns nothing.
+    if (themeSelect) {
+        const tax = window.THEMATIC_TAXONOMY;
+        const assignments = window.THEMATIC_ASSIGNMENTS || {};
+        themeSelect.innerHTML = '';
+        const placeholder = document.createElement('option');
+        placeholder.value = '';
+        placeholder.textContent = 'Choose a theme…';
+        placeholder.disabled = true;
+        placeholder.selected = true;
+        themeSelect.appendChild(placeholder);
+
+        if (tax && tax.labels && tax.facets) {
+            // Which label IDs are actually used anywhere in the corpus?
+            const usedIds = new Set();
+            Object.keys(assignments).forEach(sid => {
+                if (sid.startsWith('_')) return;
+                (assignments[sid].labels || []).forEach(l => usedIds.add(l));
+            });
+
+            Object.keys(tax.facets).forEach(fid => {
+                const facet = tax.facets[fid];
+                const labels = tax.labels.filter(l => l.facet === fid && usedIds.has(l.id));
+                if (!labels.length) return;
+                const group = document.createElement('optgroup');
+                group.label = (facet.displayName && facet.displayName.en) || fid.replace(/-/g, ' ');
+                labels.forEach(l => {
+                    const o = document.createElement('option');
+                    o.value = l.id;
+                    o.textContent = (l.displayName && l.displayName.en) || l.id;
+                    group.appendChild(o);
+                });
+                themeSelect.appendChild(group);
+            });
+
+            // Default to a recognisable theme if present (Mary), else first option.
+            if (usedIds.has('mary')) themeSelect.value = 'mary';
+        } else {
+            const opt = document.createElement('option');
+            opt.value = '';
+            opt.textContent = 'Themes unavailable';
+            opt.disabled = true;
+            themeSelect.appendChild(opt);
+        }
+    }
+
+    if (exploreBtn && themeSelect) {
         exploreBtn.addEventListener('click', () => {
-            // Drop user into the app on a defaulted surah so the filter has
-            // something to render against, then open the sidebar in Whole-Quran
-            // scope so themes are immediately useful as a corpus filter.
+            const labelId = themeSelect.value;
+            if (!labelId) { themeSelect.focus(); return; }
+
+            // Whole-Qur'an scope so the theme acts as a corpus-wide filter, then
+            // apply the chosen theme. applyFiltersToView renders the cross-surah
+            // results view because scope != 'surah' and a filter is active.
             const topSelect = document.getElementById('surahSelect');
-            const target = (select && parseInt(select.value)) || (topSelect && parseInt(topSelect.value)) || 1;
-            if (topSelect) topSelect.value = String(target);
-            if (typeof loadContent === 'function') loadContent(target);
-            if (typeof setThematicFilterScope === 'function') setThematicFilterScope('quran');
-            const openBtn = document.getElementById('openFilterBtn');
-            if (openBtn) setTimeout(() => openBtn.click(), 150);
+            const seed = (topSelect && parseInt(topSelect.value)) || 1;
+            if (topSelect) topSelect.value = String(seed);
+            if (typeof loadContent === 'function') loadContent(seed);
+
+            if (typeof activeThematicFilters !== 'undefined') {
+                activeThematicFilters.clear();
+                activeThematicFilters.add(labelId);
+                thematicFilterScope = 'quran';
+                if (typeof syncFilterScopeButtons === 'function') syncFilterScopeButtons();
+                if (typeof syncFilterChipStates === 'function') syncFilterChipStates();
+                if (typeof updateFilterCount === 'function') updateFilterCount();
+                // Renders the cross-surah results view (scope is whole-Qur'an and
+                // a filter is active). The "Filtered view" banner at the top of
+                // the results shows the active theme and a clear-filters control,
+                // so the sidebar does not need to auto-open (it would cover the
+                // results on mobile). The filter button is highlighted instead.
+                if (typeof applyFiltersToView === 'function') applyFiltersToView();
+            }
+
             if (typeof sendAnalyticsEvent === 'function') {
-                sendAnalyticsEvent('hero_explore_themes', { surah: target });
+                sendAnalyticsEvent('hero_explore_theme', { theme: labelId });
             }
         });
     }
