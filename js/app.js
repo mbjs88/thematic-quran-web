@@ -18,9 +18,11 @@ let THEME_BREAKS = {};
 window.THEMATIC_TAXONOMY = null;
 window.THEMATIC_ASSIGNMENTS = null;
 let activeThematicFilters = new Set();
+let thematicFilterGroups = [{ id: 1, op: 'or', terms: [] }];
+let activeThematicFilterGroupId = 1;
+let nextThematicFilterGroupId = 2;
 let thematicFilterScope = 'surah';
-// 'any' = OR semantics (section must carry ANY of the active filters)
-// 'all' = AND semantics (section must carry EVERY active filter)
+// Mirrors the active row's op for the existing ANY/ALL buttons.
 let thematicFilterMatchMode = 'any';
 // Surah metadata (Makki/Madani + Cairo Edition revelation order) — loaded on init.
 window.SURAH_METADATA = null;
@@ -1219,12 +1221,12 @@ function wireHeroWidget() {
             if (topSelect) topSelect.value = String(seed);
             if (typeof loadContent === 'function') loadContent(seed);
 
-            if (typeof activeThematicFilters !== 'undefined') {
-                activeThematicFilters.clear();
-                activeThematicFilters.add(labelId);
-                thematicFilterScope = 'quran';
+            if (typeof setSingleThematicFilter === 'function') {
+                setSingleThematicFilter(labelId, 'quran');
                 if (typeof syncFilterScopeButtons === 'function') syncFilterScopeButtons();
                 if (typeof syncFilterChipStates === 'function') syncFilterChipStates();
+                if (typeof renderThematicQueryBuilder === 'function') renderThematicQueryBuilder();
+                if (typeof syncFilterMatchModeButtons === 'function') syncFilterMatchModeButtons();
                 if (typeof updateFilterCount === 'function') updateFilterCount();
                 // Renders the cross-surah results view (scope is whole-Qur'an and
                 // a filter is active). The "Filtered view" banner at the top of
@@ -1245,6 +1247,278 @@ function wireHeroWidget() {
 //   THEMATIC FILTER UI
 // ==============================================================
 
+function syncActiveThematicFiltersFromGroups() {
+    activeThematicFilters.clear();
+    thematicFilterGroups.forEach(group => {
+        (group.terms || []).forEach(labelId => activeThematicFilters.add(labelId));
+    });
+}
+
+function normalizeThematicFilterGroups() {
+    if (!Array.isArray(thematicFilterGroups) || thematicFilterGroups.length === 0) {
+        thematicFilterGroups = [{ id: nextThematicFilterGroupId++, op: 'or', terms: [] }];
+    }
+
+    const seenGroupIds = new Set();
+    thematicFilterGroups = thematicFilterGroups.map(group => {
+        const id = group && Number.isFinite(group.id) && !seenGroupIds.has(group.id)
+            ? group.id
+            : nextThematicFilterGroupId++;
+        seenGroupIds.add(id);
+
+        const seenTerms = new Set();
+        const terms = [];
+        (Array.isArray(group?.terms) ? group.terms : []).forEach(labelId => {
+            if (!labelId || seenTerms.has(labelId)) return;
+            seenTerms.add(labelId);
+            terms.push(labelId);
+        });
+
+        return {
+            id,
+            op: group?.op === 'and' ? 'and' : 'or',
+            terms
+        };
+    });
+
+    if (!thematicFilterGroups.some(group => group.id === activeThematicFilterGroupId)) {
+        activeThematicFilterGroupId = thematicFilterGroups[0].id;
+    }
+
+    const activeGroup = thematicFilterGroups.find(group => group.id === activeThematicFilterGroupId);
+    thematicFilterMatchMode = activeGroup?.op === 'and' ? 'all' : 'any';
+    syncActiveThematicFiltersFromGroups();
+}
+
+function getActiveThematicFilterGroup() {
+    normalizeThematicFilterGroups();
+    return thematicFilterGroups.find(group => group.id === activeThematicFilterGroupId) || thematicFilterGroups[0];
+}
+
+function getNonEmptyThematicFilterGroups() {
+    normalizeThematicFilterGroups();
+    return thematicFilterGroups.filter(group => Array.isArray(group.terms) && group.terms.length > 0);
+}
+
+function hasActiveThematicQuery() {
+    return getNonEmptyThematicFilterGroups().length > 0;
+}
+
+function pruneEmptyThematicFilterGroups() {
+    if (thematicFilterGroups.length <= 1) return;
+
+    thematicFilterGroups = thematicFilterGroups.filter(group =>
+        group.terms.length > 0 || group.id === activeThematicFilterGroupId
+    );
+
+    if (thematicFilterGroups.length === 0) {
+        thematicFilterGroups = [{ id: nextThematicFilterGroupId++, op: 'or', terms: [] }];
+        activeThematicFilterGroupId = thematicFilterGroups[0].id;
+    }
+}
+
+function setSingleThematicFilter(labelId, scope = thematicFilterScope) {
+    const groupId = nextThematicFilterGroupId++;
+    thematicFilterGroups = [{ id: groupId, op: 'or', terms: [labelId] }];
+    activeThematicFilterGroupId = groupId;
+    thematicFilterMatchMode = 'any';
+    thematicFilterScope = scope;
+    syncActiveThematicFiltersFromGroups();
+}
+
+function resetThematicFilterQuery() {
+    const groupId = nextThematicFilterGroupId++;
+    thematicFilterGroups = [{ id: groupId, op: 'or', terms: [] }];
+    activeThematicFilterGroupId = groupId;
+    thematicFilterMatchMode = 'any';
+    syncActiveThematicFiltersFromGroups();
+}
+
+function addThematicFilterGroup() {
+    normalizeThematicFilterGroups();
+    const groupId = nextThematicFilterGroupId++;
+    thematicFilterGroups.push({ id: groupId, op: 'or', terms: [] });
+    activeThematicFilterGroupId = groupId;
+    syncActiveThematicFiltersFromGroups();
+    syncFilterMatchModeButtons();
+    renderThematicQueryBuilder();
+    updateFilterCount();
+}
+
+function removeThematicFilterGroup(groupId) {
+    normalizeThematicFilterGroups();
+    thematicFilterGroups = thematicFilterGroups.filter(group => group.id !== groupId);
+    if (thematicFilterGroups.length === 0) {
+        resetThematicFilterQuery();
+    } else if (!thematicFilterGroups.some(group => group.id === activeThematicFilterGroupId)) {
+        activeThematicFilterGroupId = thematicFilterGroups[0].id;
+    }
+    syncActiveThematicFiltersFromGroups();
+    syncFilterMatchModeButtons();
+    renderThematicQueryBuilder();
+    syncFilterChipStates();
+    updateFilterCount();
+    applyFiltersToView();
+}
+
+function removeThematicFilterTerm(labelId) {
+    normalizeThematicFilterGroups();
+    thematicFilterGroups.forEach(group => {
+        group.terms = group.terms.filter(term => term !== labelId);
+    });
+    pruneEmptyThematicFilterGroups();
+    normalizeThematicFilterGroups();
+}
+
+function getThematicFilterTermCount() {
+    normalizeThematicFilterGroups();
+    return activeThematicFilters.size;
+}
+
+function getThematicLabelFacetColor(labelId) {
+    const tax = window.THEMATIC_TAXONOMY;
+    const label = tax?.labels?.find(l => l.id === labelId);
+    return (tax?.facets?.[label?.facet]?.color) || label?.color || '#56A3A6';
+}
+
+function formatThematicFilterGroup(group) {
+    const names = (group.terms || []).map(getThematicLabelName);
+    if (names.length === 0) return 'Empty row';
+    const joiner = group.op === 'and' ? ' AND ' : ' OR ';
+    const text = names.join(joiner);
+    return names.length > 1 ? `(${text})` : text;
+}
+
+function getThematicQueryText() {
+    const groups = getNonEmptyThematicFilterGroups();
+    if (groups.length === 0) return '';
+    return groups.map(formatThematicFilterGroup).join(' AND ');
+}
+
+function getLabelCountsForScope() {
+    const assignments = window.THEMATIC_ASSIGNMENTS || {};
+    const scopedSections = getScopeSectionIds();
+    const counts = new Map();
+
+    Object.entries(assignments).forEach(([sectionId, entry]) => {
+        if (sectionId.startsWith('_')) return;
+        if (!scopedSections.has(sectionId)) return;
+        (entry.labels || []).forEach(labelId => {
+            counts.set(labelId, (counts.get(labelId) || 0) + 1);
+        });
+    });
+
+    return counts;
+}
+
+function renderThematicQueryBuilder() {
+    const rowsContainer = document.getElementById('filterQueryRows');
+    const currentRowText = document.getElementById('filterCurrentRowText');
+    if (!rowsContainer) return;
+
+    normalizeThematicFilterGroups();
+    rowsContainer.innerHTML = '';
+
+    thematicFilterGroups.forEach((group, index) => {
+        const row = document.createElement('div');
+        row.className = 'filter-query-row rounded-xl border px-3 py-3 transition-colors cursor-pointer';
+        row.classList.toggle('active', group.id === activeThematicFilterGroupId);
+        row.dataset.groupId = String(group.id);
+        row.addEventListener('click', () => {
+            activeThematicFilterGroupId = group.id;
+            syncFilterMatchModeButtons();
+            renderThematicQueryBuilder();
+        });
+
+        const header = document.createElement('div');
+        header.className = 'flex items-center justify-between gap-2 mb-2';
+
+        const rowTitle = document.createElement('div');
+        rowTitle.className = 'flex items-center gap-2 min-w-0';
+
+        if (index > 0) {
+            const connector = document.createElement('span');
+            connector.className = 'filter-query-connector text-[10px] font-bold tracking-widest px-1.5 py-0.5 rounded';
+            connector.textContent = 'AND';
+            rowTitle.appendChild(connector);
+        }
+
+        const label = document.createElement('span');
+        label.className = 'text-[11px] font-bold uppercase tracking-wider text-white/70';
+        label.textContent = `Row ${index + 1}`;
+        rowTitle.appendChild(label);
+
+        const op = document.createElement('span');
+        op.className = 'text-[10px] font-bold uppercase tracking-widest text-[#56A3A6]';
+        op.textContent = group.op === 'and' ? 'ALL' : 'ANY';
+        rowTitle.appendChild(op);
+
+        header.appendChild(rowTitle);
+
+        if (thematicFilterGroups.length > 1) {
+            const removeGroupBtn = document.createElement('button');
+            removeGroupBtn.type = 'button';
+            removeGroupBtn.className = 'filter-query-remove text-white/35 hover:text-white transition';
+            removeGroupBtn.setAttribute('aria-label', `Remove filter row ${index + 1}`);
+            removeGroupBtn.innerHTML = '<span class="material-symbols-outlined text-base">close</span>';
+            removeGroupBtn.addEventListener('click', (event) => {
+                event.stopPropagation();
+                removeThematicFilterGroup(group.id);
+            });
+            header.appendChild(removeGroupBtn);
+        }
+
+        row.appendChild(header);
+
+        const terms = document.createElement('div');
+        terms.className = 'flex flex-wrap gap-1.5';
+
+        if (group.terms.length === 0) {
+            const empty = document.createElement('span');
+            empty.className = 'text-xs text-white/35';
+            empty.textContent = 'Add themes from below';
+            terms.appendChild(empty);
+        } else {
+            group.terms.forEach(labelId => {
+                const term = document.createElement('span');
+                term.className = 'filter-query-term inline-flex items-center gap-1 rounded-full border px-2 py-1 text-[11px] font-bold';
+                const color = getThematicLabelFacetColor(labelId);
+                term.style.borderColor = color + '50';
+                term.style.backgroundColor = color + '18';
+                term.style.color = '#F3E4CE';
+
+                const name = document.createElement('span');
+                name.textContent = getThematicLabelName(labelId);
+                term.appendChild(name);
+
+                const removeTermBtn = document.createElement('button');
+                removeTermBtn.type = 'button';
+                removeTermBtn.className = 'text-white/45 hover:text-white leading-none';
+                removeTermBtn.setAttribute('aria-label', `Remove ${getThematicLabelName(labelId)}`);
+                removeTermBtn.textContent = '×';
+                removeTermBtn.addEventListener('click', (event) => {
+                    event.stopPropagation();
+                    removeThematicFilterTerm(labelId);
+                    renderThematicQueryBuilder();
+                    syncFilterChipStates();
+                    updateFilterCount();
+                    applyFiltersToView();
+                });
+                term.appendChild(removeTermBtn);
+                terms.appendChild(term);
+            });
+        }
+
+        row.appendChild(terms);
+        rowsContainer.appendChild(row);
+    });
+
+    if (currentRowText) {
+        const activeIndex = thematicFilterGroups.findIndex(group => group.id === activeThematicFilterGroupId);
+        currentRowText.textContent = `Row ${activeIndex + 1}`;
+    }
+}
+
 function setupThematicFilterUI() {
     const filterSidebar = document.getElementById('filterSidebar');
     const filterBackdrop = document.getElementById('filterBackdrop');
@@ -1253,6 +1527,7 @@ function setupThematicFilterUI() {
     const container = document.getElementById('filterFacetsContainer');
     const scopeSurahBtn = document.getElementById('filterScopeSurahBtn');
     const scopeQuranBtn = document.getElementById('filterScopeQuranBtn');
+    const addGroupBtn = document.getElementById('addFilterGroupBtn');
 
     if (!filterSidebar || !filterBackdrop || !openBtn || !closeBtn || !container) {
         console.warn('[filter] required DOM nodes missing — skipping filter UI setup');
@@ -1287,10 +1562,14 @@ function setupThematicFilterUI() {
         btn.addEventListener('click', () => setThematicFilterScope(btn.dataset.scope));
     });
 
-    // Match-mode (ALL/ANY) toggle.
+    // Match-mode toggle for the active query row.
     document.querySelectorAll('.filter-mode-btn').forEach(btn => {
         btn.addEventListener('click', () => setThematicFilterMatchMode(btn.dataset.mode));
     });
+
+    if (addGroupBtn) {
+        addGroupBtn.addEventListener('click', addThematicFilterGroup);
+    }
 
     const tax = window.THEMATIC_TAXONOMY;
     const assignments = window.THEMATIC_ASSIGNMENTS;
@@ -1320,6 +1599,7 @@ function setupThematicFilterUI() {
 
     syncFilterScopeButtons();
     syncFilterMatchModeButtons();
+    renderThematicQueryBuilder();
     renderThematicFilterChips();
 }
 
@@ -1398,7 +1678,7 @@ function getAssignedLabelIdsForScope() {
 // (i.e. we should render a cross-surah results view instead of the normal
 // single-surah/juz view).
 function shouldRenderCrossSurahResults() {
-    if (activeThematicFilters.size === 0) return false;
+    if (!hasActiveThematicQuery()) return false;
     if (thematicFilterScope === 'surah') return false;
     if (thematicFilterScope === 'juz' && currentViewMode === 'juz') return false;
     return true;
@@ -1411,6 +1691,7 @@ function renderThematicFilterChips() {
     if (!container || !tax || !tax.labels || !tax.facets || !assignments) return;
 
     const assignedIds = getAssignedLabelIdsForScope();
+    const labelCounts = getLabelCountsForScope();
     const searchValue = document.getElementById('filterSearchInput')?.value.toLowerCase().trim() || '';
     container.innerHTML = '';
     let renderedCount = 0;
@@ -1441,7 +1722,17 @@ function renderThematicFilterChips() {
             const en = (label.displayName && label.displayName.en) || label.id;
             const aliases = (label.aliases || []).join(' ');
             chip.dataset.searchTerms = (en + ' ' + aliases + ' ' + label.id).toLowerCase();
-            chip.textContent = en;
+            chip.innerHTML = '';
+            const labelText = document.createElement('span');
+            labelText.textContent = en;
+            chip.appendChild(labelText);
+            const count = labelCounts.get(label.id) || 0;
+            if (count > 0) {
+                const countText = document.createElement('span');
+                countText.className = 'ml-1 text-[10px] opacity-60';
+                countText.textContent = String(count);
+                chip.appendChild(countText);
+            }
             chip.addEventListener('click', () => toggleFilter(label.id));
             chips.appendChild(chip);
             renderedCount++;
@@ -1457,6 +1748,7 @@ function renderThematicFilterChips() {
 
     syncFilterScopeButtons();
     syncFilterChipStates();
+    renderThematicQueryBuilder();
     updateFilterCount();
 
     if (searchValue) {
@@ -1502,21 +1794,28 @@ function setThematicFilterScope(scope) {
 }
 
 function syncFilterMatchModeButtons() {
+    const activeGroup = getActiveThematicFilterGroup();
+    thematicFilterMatchMode = activeGroup?.op === 'and' ? 'all' : 'any';
+
     document.querySelectorAll('.filter-mode-btn').forEach(btn => {
         btn.classList.toggle('active', btn.dataset.mode === thematicFilterMatchMode);
     });
     const hint = document.getElementById('filterModeHint');
     if (hint) {
         hint.textContent = thematicFilterMatchMode === 'all'
-            ? 'ALL of the selected themes'
-            : 'ANY of the selected themes';
+            ? 'ALL themes in current row'
+            : 'ANY theme in current row';
     }
 }
 
 function setThematicFilterMatchMode(mode) {
     if (mode !== 'any' && mode !== 'all') return;
     thematicFilterMatchMode = mode;
+    const activeGroup = getActiveThematicFilterGroup();
+    activeGroup.op = mode === 'all' ? 'and' : 'or';
+    syncActiveThematicFiltersFromGroups();
     syncFilterMatchModeButtons();
+    renderThematicQueryBuilder();
     applyFiltersToView();
 }
 
@@ -1536,18 +1835,28 @@ function syncFilterChipStates() {
 }
 
 function toggleFilter(labelId) {
+    normalizeThematicFilterGroups();
+
     if (activeThematicFilters.has(labelId)) {
-        activeThematicFilters.delete(labelId);
+        removeThematicFilterTerm(labelId);
     } else {
-        activeThematicFilters.add(labelId);
+        const activeGroup = getActiveThematicFilterGroup();
+        activeGroup.terms.push(labelId);
+        syncActiveThematicFiltersFromGroups();
     }
+
+    pruneEmptyThematicFilterGroups();
+    normalizeThematicFilterGroups();
+    renderThematicQueryBuilder();
     syncFilterChipStates();
     updateFilterCount();
     applyFiltersToView();
 }
 
 function clearThematicFilters() {
-    activeThematicFilters.clear();
+    resetThematicFilterQuery();
+    renderThematicQueryBuilder();
+    syncFilterMatchModeButtons();
     syncFilterChipStates();
     updateFilterCount();
     // If cross-surah results were on screen, reload the user's original view.
@@ -1567,11 +1876,16 @@ function getThematicLabelName(labelId) {
 }
 
 function updateFilterCount() {
-    const count = activeThematicFilters.size;
+    const count = getThematicFilterTermCount();
+    const rowCount = getNonEmptyThematicFilterGroups().length;
     const text = document.getElementById('activeFilterCountText');
     const clearBtn = document.getElementById('clearFiltersBtn');
     const openBtn = document.getElementById('openFilterBtn');
-    if (text) text.textContent = `${count} selected`;
+    if (text) {
+        text.textContent = rowCount > 1
+            ? `${rowCount} rows · ${count} themes`
+            : `${count} selected`;
+    }
     if (clearBtn) clearBtn.classList.toggle('hidden', count === 0);
     if (openBtn) {
         openBtn.classList.toggle('ring-2', count > 0);
@@ -1585,13 +1899,12 @@ function updateActiveFilterBanner(visibleCount) {
     if (!contentArea) return;
 
     let banner = document.getElementById('activeFilterBanner');
-    if (activeThematicFilters.size === 0) {
+    if (!hasActiveThematicQuery()) {
         banner?.remove();
         return;
     }
 
-    const join = thematicFilterMatchMode === 'all' ? ' AND ' : ' OR ';
-    const selectedNames = Array.from(activeThematicFilters).map(getThematicLabelName).join(join);
+    const selectedNames = getThematicQueryText();
     const scopeLabel = (SCOPE_LABELS[thematicFilterScope] || 'This surah').toLowerCase();
 
     if (!banner) {
@@ -1617,26 +1930,27 @@ function updateActiveFilterBanner(visibleCount) {
 }
 
 window.applyThematicLabelFilterFromSection = function(labelId) {
-    thematicFilterScope = 'surah';
-    activeThematicFilters.clear();
-    activeThematicFilters.add(labelId);
+    setSingleThematicFilter(labelId, 'surah');
     renderThematicFilterChips();
     applyFiltersToView();
     if (window.showToast) window.showToast(`Filtered by ${getThematicLabelName(labelId)}`, 'filter_alt');
 };
 
-// Returns true if the section's labels satisfy the active filter set under the
-// current match mode ('any' = OR, 'all' = AND). Empty filter set always passes.
+// Returns true if the section's labels satisfy the grouped query. Rows are
+// joined by AND; terms inside each row use that row's OR/AND mode.
 function sectionMatchesFilters(sectionId) {
-    if (activeThematicFilters.size === 0) return true;
+    const groups = getNonEmptyThematicFilterGroups();
+    if (groups.length === 0) return true;
+
     const entry = (window.THEMATIC_ASSIGNMENTS || {})[sectionId];
-    const labels = (entry && entry.labels) || [];
-    if (thematicFilterMatchMode === 'all') {
-        for (const l of activeThematicFilters) if (!labels.includes(l)) return false;
-        return true;
-    }
-    // 'any' (default OR)
-    return labels.some(l => activeThematicFilters.has(l));
+    const labels = new Set((entry && entry.labels) || []);
+
+    return groups.every(group => {
+        if (group.op === 'and') {
+            return group.terms.every(labelId => labels.has(labelId));
+        }
+        return group.terms.some(labelId => labels.has(labelId));
+    });
 }
 
 // Filter rendered cards by section ID. Honors the active match mode.
@@ -1659,7 +1973,7 @@ function applyFiltersToView() {
     }
 
     const cards = document.querySelectorAll('.thematic-card');
-    const haveFilters = activeThematicFilters.size > 0;
+    const haveFilters = hasActiveThematicQuery();
     let visibleCount = 0;
 
     cards.forEach(card => {

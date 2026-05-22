@@ -238,6 +238,9 @@ html {
 .filter-chip {
     cursor: pointer;
     background-color: transparent;
+    display: inline-flex;
+    align-items: center;
+    max-width: 100%;
     transition: all 0.2s ease-in-out;
 }
 
@@ -271,6 +274,37 @@ html {
     background: rgba(243, 228, 206, 0.85);
     color: #1E1426;
     box-shadow: 0 6px 18px rgba(243, 228, 206, 0.14);
+}
+
+.filter-query-row {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+.filter-query-row:hover,
+.filter-query-row.active {
+    background: rgba(86, 163, 166, 0.12);
+    border-color: rgba(86, 163, 166, 0.48);
+}
+
+.filter-query-row.active {
+    box-shadow: 0 0 0 1px rgba(86, 163, 166, 0.22), 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.filter-query-connector {
+    background: rgba(243, 228, 206, 0.14);
+    color: rgba(243, 228, 206, 0.8);
+}
+
+.filter-query-term {
+    max-width: 100%;
+}
+
+.filter-query-term span {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .thematic-labels-summary::-webkit-details-marker {
