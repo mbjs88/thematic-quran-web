@@ -25,6 +25,12 @@ data/thematic_labels/.runs/
 # Model-comparison snapshots (one folder per run)
 data/thematic_labels/.compare/
 
+# Local MAS index extraction/review files, not public website data
+data/thematic_labels/MAS_index.md
+data/thematic_labels/index.md
+data/thematic_labels/uncategorized_index_items.md
+data/thematic_labels/theme_methodology_manuscript.md
+
 # Internal labeling methodology — keep private
 docs/labeling/LABELING_INSTRUCTIONS.md
 

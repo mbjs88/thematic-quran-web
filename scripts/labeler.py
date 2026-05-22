@@ -140,6 +140,11 @@ class SurahResult:
     duration_seconds: float = 0.0
     overflow_sections: list = field(default_factory=list)   # ids over the 12-cap
     suggested_new_labels: list = field(default_factory=list)
+    changed_sections: int = 0
+    unchanged_sections: int = 0
+    added_labels: int = 0
+    removed_labels: int = 0
+    section_diffs: list = field(default_factory=list)
     error: Optional[str] = None
     finished_at: Optional[str] = None
 
@@ -150,6 +155,7 @@ class JobState:
     model: str
     surahs: list                       # list of int
     started_at: str
+    mode: str = "label"                # label | compare
     status: str = "running"            # running | done | cancelled | error
     current_surah: Optional[int] = None
     results: dict = field(default_factory=dict)   # surah_no (str) -> SurahResult dict
@@ -162,6 +168,8 @@ class JobState:
     paused: bool = False
     paused_reason: Optional[str] = None
     retry_pass: int = 1                 # 1 = first pass; bumps on each retry sweep
+    baseline_path: Optional[str] = None
+    report_path: Optional[str] = None
 
     def to_json(self) -> dict:
         d = asdict(self)
@@ -365,6 +373,36 @@ def compute_surah_coverage() -> dict:
     return out
 
 
+def _section_ids_for_surahs(quran, breaks, surahs: list) -> list:
+    ids = []
+    for surah_no in surahs:
+        ids.extend(f"{surah_no}:{start}" for start, _, _ in _enumerate_sections(quran, breaks, surah_no))
+    return ids
+
+
+def _save_compare_baseline(job_id: str, surahs: list, quran, breaks) -> Path:
+    assignments = load_assignments()
+    section_ids = _section_ids_for_surahs(quran, breaks, surahs)
+    baseline = {
+        sid: assignments.get(sid, {"labels": [], "confidence": None})
+        for sid in section_ids
+    }
+    path = RUNS_DIR / f"compare-{job_id}-baseline.json"
+    path.write_text(json.dumps({
+        "jobId": job_id,
+        "savedAt": time.strftime("%Y-%m-%dT%H:%M:%S"),
+        "surahs": surahs,
+        "sections": baseline,
+    }, indent=2, ensure_ascii=False))
+    return path
+
+
+def _write_compare_report(state: JobState) -> Path:
+    path = RUNS_DIR / f"compare-{state.job_id}-report.json"
+    path.write_text(json.dumps(state.to_json(), indent=2, ensure_ascii=False))
+    return path
+
+
 # ---------------------------------------------------------------------------
 # Prompt construction
 # ---------------------------------------------------------------------------
@@ -509,7 +547,8 @@ def _parse_assignments_json(text: str) -> dict:
 
 def label_one_surah(surah_no: int, model: str, api_key: str,
                     quran, breaks, valid_ids,
-                    state: JobState, token: CancellationToken) -> SurahResult:
+                    state: JobState, token: CancellationToken,
+                    persist: bool = True) -> SurahResult:
     name = _surah_name(quran, surah_no)
     section_ids = [f"{surah_no}:{start}" for start, _, _ in _enumerate_sections(quran, breaks, surah_no)]
     result = SurahResult(surah=surah_no, status="running", sections_total=len(section_ids))
@@ -648,12 +687,18 @@ def label_one_surah(surah_no: int, model: str, api_key: str,
         append_log(state, f"  ERROR: {result.error}")
         return result
 
-    # Validate and merge into assignments.json
+    # Validate model output. In normal mode, merge into assignments.json. In
+    # compare mode, keep assignments.json untouched and report section diffs.
     assignments = load_assignments()
     accepted = 0
     overflow = []
     suggested = set()
     bad_labels = set()
+    changed_sections = 0
+    unchanged_sections = 0
+    added_label_count = 0
+    removed_label_count = 0
+    section_diffs = []
     for sid, entry in new_entries.items():
         if sid.startswith("_") or sid not in section_ids:
             continue
@@ -678,32 +723,67 @@ def label_one_surah(surah_no: int, model: str, api_key: str,
             for s in proposed:
                 if isinstance(s, str):
                     suggested.add(s)
-        assignments[sid] = {
-            "labels": cleaned,
-            "confidence": entry.get("confidence") or "medium",
-        }
+
+        confidence = entry.get("confidence") or "medium"
         notes = entry.get("notes")
-        if notes:
-            assignments[sid]["notes"] = notes
+        if persist:
+            assignments[sid] = {
+                "labels": cleaned,
+                "confidence": confidence,
+            }
+            if notes:
+                assignments[sid]["notes"] = notes
+        else:
+            previous = assignments.get(sid) or {}
+            old_labels = list(dict.fromkeys(previous.get("labels") or []))
+            new_labels = list(dict.fromkeys(cleaned))
+            old_set = set(old_labels)
+            new_set = set(new_labels)
+            added = [lab for lab in new_labels if lab not in old_set]
+            removed = [lab for lab in old_labels if lab not in new_set]
+            unchanged = [lab for lab in new_labels if lab in old_set]
+            if added or removed:
+                changed_sections += 1
+            else:
+                unchanged_sections += 1
+            added_label_count += len(added)
+            removed_label_count += len(removed)
+            section_diffs.append({
+                "sectionId": sid,
+                "oldLabels": old_labels,
+                "newLabels": new_labels,
+                "added": added,
+                "removed": removed,
+                "unchanged": unchanged,
+                "oldConfidence": previous.get("confidence"),
+                "newConfidence": confidence,
+                "notes": notes or "",
+            })
         accepted += 1
 
-    # Surah summary entry
-    assignments[f"_surah_summary_{surah_no}"] = {
-        "labeledAt": time.strftime("%Y-%m-%dT%H:%M:%S"),
-        "model": model,
-        "sectionsLabeled": accepted,
-        "sectionsTotal": len(section_ids),
-        "overflowSections": overflow,
-        "suggestedNewLabels": sorted(suggested),
-        "tokensIn": in_tok,
-        "tokensOut": out_tok,
-        "costUsd": round(cost, 4),
-    }
-    save_assignments(assignments)
+    if persist:
+        # Surah summary entry
+        assignments[f"_surah_summary_{surah_no}"] = {
+            "labeledAt": time.strftime("%Y-%m-%dT%H:%M:%S"),
+            "model": model,
+            "sectionsLabeled": accepted,
+            "sectionsTotal": len(section_ids),
+            "overflowSections": overflow,
+            "suggestedNewLabels": sorted(suggested),
+            "tokensIn": in_tok,
+            "tokensOut": out_tok,
+            "costUsd": round(cost, 4),
+        }
+        save_assignments(assignments)
 
     result.sections_labeled = accepted
     result.overflow_sections = overflow
     result.suggested_new_labels = sorted(suggested)
+    result.changed_sections = changed_sections
+    result.unchanged_sections = unchanged_sections
+    result.added_labels = added_label_count
+    result.removed_labels = removed_label_count
+    result.section_diffs = section_diffs
     result.duration_seconds = round(time.time() - started, 1)
     result.status = "done"
     result.finished_at = time.strftime("%Y-%m-%dT%H:%M:%S")
@@ -717,10 +797,18 @@ def label_one_surah(surah_no: int, model: str, api_key: str,
         extra += f" [{len(overflow)} sections >12 labels]"
     if suggested:
         extra += f" [{len(suggested)} new-label proposals: {', '.join(sorted(suggested))}]"
-    append_log(state,
-        f"  Done: {accepted}/{len(section_ids)} sections, "
-        f"{in_tok}+{out_tok} tokens, ${cost:.4f}, {result.duration_seconds}s{extra}"
-    )
+    if persist:
+        append_log(state,
+            f"  Done: {accepted}/{len(section_ids)} sections, "
+            f"{in_tok}+{out_tok} tokens, ${cost:.4f}, {result.duration_seconds}s{extra}"
+        )
+    else:
+        append_log(state,
+            f"  Compared: {accepted}/{len(section_ids)} sections, "
+            f"{changed_sections} changed, {unchanged_sections} unchanged, "
+            f"+{added_label_count}/-{removed_label_count} labels, "
+            f"{in_tok}+{out_tok} tokens, ${cost:.4f}, {result.duration_seconds}s{extra}"
+        )
     return result
 
 
@@ -741,6 +829,7 @@ def _end_job_threadsafe() -> None:
 
 
 def run_job(surahs: list, model: str, api_key: str,
+            compare_only: bool = False,
             on_complete: Optional[Callable[[JobState], None]] = None) -> JobState:
     """Synchronous job runner. Call from a thread to background it."""
     if not api_key:
@@ -763,16 +852,23 @@ def run_job(surahs: list, model: str, api_key: str,
         model=model,
         surahs=[int(s) for s in surahs],
         started_at=time.strftime("%Y-%m-%dT%H:%M:%S"),
+        mode="compare" if compare_only else "label",
     )
     for s in state.surahs:
         state.results[str(s)] = asdict(SurahResult(surah=s))
     write_status(state)
-    append_log(state, f"Starting job {job_id}: {len(state.surahs)} surah(s) via {model}")
+    mode_label = "comparison" if compare_only else "labeling"
+    append_log(state, f"Starting {mode_label} job {job_id}: {len(state.surahs)} surah(s) via {model}")
 
     try:
         quran = load_quran()
         breaks = load_theme_breaks()
         valid_ids = valid_label_ids()
+        if compare_only:
+            baseline_path = _save_compare_baseline(job_id, state.surahs, quran, breaks)
+            state.baseline_path = str(baseline_path.relative_to(REPO_ROOT))
+            append_log(state, f"Saved comparison baseline: {state.baseline_path}")
+            write_status(state)
     except Exception as e:
         state.status = "error"
         state.finished_at = time.strftime("%Y-%m-%dT%H:%M:%S")
@@ -800,7 +896,8 @@ def run_job(surahs: list, model: str, api_key: str,
                     append_log(state, "Job cancelled by user.")
                     state.status = "cancelled"
                     break
-                label_one_surah(surah_no, model, api_key, quran, breaks, valid_ids, state, token)
+                label_one_surah(surah_no, model, api_key, quran, breaks, valid_ids, state, token,
+                                persist=not compare_only)
                 write_status(state)
             # Recompute the failures-list for the next pass.
             remaining = [s for s in remaining
@@ -823,6 +920,11 @@ def run_job(surahs: list, model: str, api_key: str,
         state.current_surah = None
         state.finished_at = time.strftime("%Y-%m-%dT%H:%M:%S")
         write_status(state)
+        if compare_only:
+            report_path = _write_compare_report(state)
+            state.report_path = str(report_path.relative_to(REPO_ROOT))
+            write_status(state)
+            append_log(state, f"Saved comparison report: {state.report_path}")
         append_log(state,
             f"Job {state.status}. Totals: {state.tokens_in_total}+{state.tokens_out_total} tokens, "
             f"${state.cost_usd_total:.4f}"
@@ -845,6 +947,20 @@ def run_job_in_background(surahs: list, model: str, api_key: str) -> str:
         run_job(surahs, model, api_key)
 
     t = threading.Thread(target=_wrapped, name=f"labeler-{job_id}", daemon=True)
+    t.start()
+    return job_id
+
+
+def run_compare_in_background(surahs: list, model: str, api_key: str) -> str:
+    """Spawn a daemon thread for a no-write comparison run. Returns the job id."""
+    if is_running():
+        raise RuntimeError("A labeling run is already in progress.")
+    job_id = time.strftime("%Y%m%dT%H%M%S")
+
+    def _wrapped():
+        run_job(surahs, model, api_key, compare_only=True)
+
+    t = threading.Thread(target=_wrapped, name=f"labeler-compare-{job_id}", daemon=True)
     t.start()
     return job_id
 
@@ -882,6 +998,8 @@ def main() -> int:
                    help=f"Model name (default {DEFAULT_MODEL})")
     p.add_argument("--api-key", default=None,
                    help="Override API key (otherwise reads ANTHROPIC_API_KEY env / .env)")
+    p.add_argument("--compare", action="store_true",
+                   help="Run without writing assignments.json; compare model output against current labels.")
     args = p.parse_args()
 
     key = args.api_key or get_api_key()
@@ -894,10 +1012,15 @@ def main() -> int:
         print("Error: no valid surah numbers parsed from --surahs", file=sys.stderr)
         return 2
 
-    print(f"Labeling {len(surahs)} surah(s) via {args.model}: {surahs}")
-    state = run_job(surahs, args.model, key)
+    action = "Comparing" if args.compare else "Labeling"
+    print(f"{action} {len(surahs)} surah(s) via {args.model}: {surahs}")
+    state = run_job(surahs, args.model, key, compare_only=args.compare)
     print(f"\nFinal status: {state.status}")
     print(f"Tokens: {state.tokens_in_total}+{state.tokens_out_total}, cost: ${state.cost_usd_total:.4f}")
+    if state.baseline_path:
+        print(f"Baseline: {state.baseline_path}")
+    if state.report_path:
+        print(f"Report: {state.report_path}")
     return 0 if state.status == "done" else 1
 
 

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "source": "docs/taxonomy.md",
-  "generatedAt": "2026-05-17",
+  "generatedAt": "2026-05-22",
   "facets": {
     "people": {
       "id": "people",
@@ -56,7 +56,8 @@
         "Habil",
         "Qabil",
         "Hābīl",
-        "Qābīl"
+        "Qābīl",
+        "Eve"
       ],
       "facet": "people",
       "definition": "Sections featuring the creation, fall, or repentance of Adam, or his sons.",
@@ -101,7 +102,9 @@
         "the ark",
         "flood",
         "the flood",
-        "deluge"
+        "deluge",
+        "Noah’s Ark",
+        "Mount Judi"
       ],
       "facet": "people",
       "definition": "The Flood narrative, Noah's da'wah, his son, or his prayer.",
@@ -146,7 +149,8 @@
         "Saleh",
         "Saalih",
         "she-camel",
-        "the she-camel"
+        "the she-camel",
+        "camel"
       ],
       "facet": "people",
       "definition": "Prophet sent to Thamud; the she-camel sign; the rock-cut homes.",
@@ -173,7 +177,9 @@
         "Ebrahim",
         "Abram",
         "Khalil",
-        "friend of God"
+        "friend of God",
+        "Azar",
+        "Hagar"
       ],
       "facet": "people",
       "definition": "Abraham's monotheism, breaking idols, the sacrifice, his prayer for Mecca.",
@@ -294,7 +300,8 @@
         "Yousuf",
         "Yousef",
         "Yusif",
-        "Yousaf"
+        "Yousaf",
+        "Benjamin"
       ],
       "facet": "people",
       "definition": "The Joseph narrative (almost entirely Surah Yusuf).",
@@ -342,7 +349,8 @@
         "Moosa",
         "Mousa",
         "Exodus",
-        "the staff"
+        "the staff",
+        "burning bush"
       ],
       "facet": "people",
       "definition": "Moses's call, confrontation with Pharaoh, the Exodus, his time at Sinai.",
@@ -389,7 +397,8 @@
         "Zul-Kifl",
         "Zulkifl",
         "Ezekiel",
-        "Isaiah"
+        "Isaiah",
+        "Dhu ’l-Kifl"
       ],
       "facet": "people",
       "definition": "A patient prophet mentioned briefly alongside Ishmael and Idris; tradition associates him variably with Ezekiel or Isaiah.",
@@ -510,7 +519,8 @@
         "whale",
         "the whale",
         "the fish",
-        "Dhun-Nun"
+        "Dhun-Nun",
+        "Jonah’s people"
       ],
       "facet": "people",
       "definition": "Jonah's flight, the fish, his repentance.",
@@ -633,9 +643,9 @@
         "Christ",
         "Messiah",
         "Masih",
-        "al-Masih",
         "son of Mary",
-        "Ibn Maryam"
+        "Ibn Maryam",
+        "Ascension to Heaven"
       ],
       "facet": "people",
       "definition": "The conception, miracles, ministry, or theological status of Jesus.",
@@ -662,7 +672,8 @@
         "Ahmed",
         "Mustafa",
         "the Prophet",
-        "Rasulullah"
+        "Rasulullah",
+        "ummi"
       ],
       "facet": "people",
       "definition": "Sections directly addressing the Prophet, his role, or his domestic life.",
@@ -735,7 +746,9 @@
         "Pharoah",
         "Faraoh",
         "Fir'aun",
-        "Fir'awn"
+        "Haman",
+        "Pharaoh’s people",
+        "dhu ’l-awtad"
       ],
       "facet": "people",
       "definition": "Pharaoh as antagonist — his court, his magicians, his drowning.",
@@ -757,7 +770,8 @@
         "Talut",
         "Ṭālūt",
         "Taloot",
-        "Talout"
+        "Talout",
+        "Ark [of the Covenant]"
       ],
       "facet": "people",
       "definition": "The king appointed for the Children of Israel before David's victory over Goliath.",
@@ -806,7 +820,9 @@
         "the devil",
         "Lucifer",
         "Shaitan",
-        "Shaytaan"
+        "Shaytaan",
+        "devils",
+        "evil ones"
       ],
       "facet": "people",
       "definition": "The refusal to prostrate, the whispering, the tempter's role.",
@@ -828,7 +844,9 @@
         "ʿĀd",
         "Aad",
         "tribe of Aad",
-        "people of Aad"
+        "people of Aad",
+        "Iram",
+        "sand dunes"
       ],
       "facet": "people",
       "definition": "The people of Hud — known for might; destroyed by a barren wind.",
@@ -851,7 +869,8 @@
         "Thamūd",
         "Thamood",
         "Samood",
-        "Thamoud"
+        "Thamoud",
+        "al-Hijr"
       ],
       "facet": "people",
       "definition": "The people of Salih — carvers of mountain dwellings; destroyed by the cry / earthquake after slaying the she-camel.",
@@ -874,7 +893,8 @@
         "Midian",
         "Madian",
         "Median",
-        "Midianites"
+        "Midianites",
+        "Forest-Dwellers"
       ],
       "facet": "people",
       "definition": "The people of Shuayb — destroyed for fraud in trade.",
@@ -902,7 +922,9 @@
         "Yajuj",
         "Majuj",
         "Gog",
-        "Magog"
+        "Magog",
+        "Alexander the Great",
+        "Dhu ’l-Qarnayn"
       ],
       "facet": "people",
       "definition": "The traveler-king narrative and Gog & Magog.",
@@ -923,7 +945,8 @@
         "Seven Sleepers",
         "cave dwellers",
         "sleepers of the cave",
-        "As-hab al-Kahf"
+        "As-hab al-Kahf",
+        "al-Raqim"
       ],
       "facet": "people",
       "definition": "The narrative of the youths in the cave.",
@@ -946,7 +969,10 @@
         "Israelites",
         "Bani Israil",
         "Bani Isra'il",
-        "tribes of Israel"
+        "tribes of Israel",
+        "golden calf",
+        "al-Samiri",
+        "Children of Israel"
       ],
       "facet": "people",
       "definition": "Bani Israel as collective subject — covenant, rebellion, prophets sent to them.",
@@ -993,7 +1019,14 @@
         "Ahl al-Kitaab",
         "Jews and Christians",
         "scripture people",
-        "People of Scripture"
+        "People of Scripture",
+        "Christians",
+        "Ezra",
+        "Jews and Judaism",
+        "religious divisions",
+        "Christianity",
+        "monasticism",
+        "People of the Book"
       ],
       "facet": "people",
       "definition": "Jews and Christians addressed collectively.",
@@ -1041,7 +1074,8 @@
         "Munafiqeen",
         "Munafiq",
         "hypocrite",
-        "two-faced"
+        "two-faced",
+        "Ibn Ubayy"
       ],
       "facet": "people",
       "definition": "Sections about the Munafiqun — their behavior, their fate, their identification.",
@@ -1067,7 +1101,10 @@
         "Mu'mineen",
         "Momineen",
         "the faithful",
-        "faithful"
+        "faithful",
+        "faith",
+        "Muslims",
+        "Islam"
       ],
       "facet": "people",
       "definition": "Direct address to believers (`yā ayyuhā alladhīna āmanū`) as the rhetorical subject.",
@@ -1092,7 +1129,9 @@
         "humanity",
         "humankind",
         "an-Nas",
-        "all humanity"
+        "all humanity",
+        "insan",
+        "mankind"
       ],
       "facet": "people",
       "definition": "Universal address to all humanity (`yā ayyuhā an-nās`). A finite, identifiable set; high-value filter for users wanting every passage addressed to humans as such.",
@@ -1119,7 +1158,12 @@
         "Kafir",
         "unbelievers",
         "infidels",
-        "deniers"
+        "deniers",
+        "doubters",
+        "evildoers",
+        "Meccan disbelievers",
+        "guilty",
+        "rebellious"
       ],
       "facet": "people",
       "definition": "Disbelievers as collective subject — their arguments, their fate, their accusations.",
@@ -1144,7 +1188,8 @@
         "Mushrik",
         "idolaters",
         "pagans",
-        "associaters"
+        "associaters",
+        "polytheists"
       ],
       "facet": "people",
       "definition": "Mushrikun specifically — those associating partners with God.",
@@ -1165,7 +1210,8 @@
         "Meccans",
         "Quraish",
         "Qureysh",
-        "Koreish"
+        "Koreish",
+        "Quraysh"
       ],
       "facet": "people",
       "definition": "Sections aimed at the early Meccan opposition.",
@@ -1266,7 +1312,8 @@
         "one God",
         "Ahad",
         "Wahid",
-        "no god but Allah"
+        "no god but Allah",
+        "samad"
       ],
       "facet": "divine-attributes",
       "definition": "Sections asserting God's absolute oneness or refuting associates/sons.",
@@ -1295,7 +1342,8 @@
         "merciful",
         "grace",
         "kindness",
-        "clemency"
+        "clemency",
+        "rahim"
       ],
       "facet": "divine-attributes",
       "definition": "God's mercy, forgiveness, and compassion as the dominant theme.",
@@ -1320,7 +1368,8 @@
         "equity",
         "Qist",
         "impartiality",
-        "fair judgment"
+        "fair judgment",
+        "justice"
       ],
       "facet": "divine-attributes",
       "definition": "God's justice, fair judgment, never wronging by an atom's weight.",
@@ -1373,7 +1422,10 @@
         "Al-Alim",
         "Ghayb",
         "the unseen",
-        "awareness"
+        "awareness",
+        "knowing",
+        "learning/knowing",
+        "education"
       ],
       "facet": "divine-attributes",
       "definition": "God's complete knowledge of the seen and unseen.",
@@ -1442,7 +1494,6 @@
         "Khaliq",
         "Al-Khaliq",
         "Khalaq",
-        "creation",
         "originator",
         "Bari",
         "Fatir",
@@ -1473,7 +1524,8 @@
         "sustainer",
         "provision",
         "livelihood",
-        "rizk"
+        "rizk",
+        "providence"
       ],
       "facet": "divine-attributes",
       "definition": "God as sustainer who provides rizq to all creatures.",
@@ -1494,7 +1546,6 @@
       "aliases": [
         "Hidayah",
         "Hadi",
-        "Al-Hadi",
         "Huda",
         "straight path",
         "guide",
@@ -1750,7 +1801,14 @@
         "marital",
         "wife",
         "husband",
-        "Zawj"
+        "Zawj",
+        "marriage",
+        "polygamy",
+        "widows",
+        "wives",
+        "women",
+        "household behaviour",
+        "husbands"
       ],
       "facet": "worldly-matters",
       "definition": "Rules of marriage, treatment of spouses, family conduct.",
@@ -1759,6 +1817,83 @@
         "4:19",
         "30:21",
         "33:35"
+      ],
+      "color": "#8b5e34"
+    },
+    {
+      "id": "children-and-parents",
+      "displayName": {
+        "en": "Children & Parents",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "parents",
+        "children",
+        "father",
+        "mother",
+        "mothers",
+        "fathers",
+        "sons",
+        "daughters",
+        "siblings",
+        "kinship",
+        "lineage",
+        "adoption",
+        "weaning",
+        "nursing",
+        "family duties",
+        "filial piety",
+        "brothers",
+        "kinship ties",
+        "milk-mothers",
+        "milk-sisters",
+        "relatives",
+        "sisters",
+        "walad"
+      ],
+      "facet": "worldly-matters",
+      "definition": "Parent-child duties, lineage, nursing or weaning, adoption or kinship, and respectful conduct toward parents or children.",
+      "examples": [
+        "2:233",
+        "4:11",
+        "17:22",
+        "33:5"
+      ],
+      "color": "#8b5e34"
+    },
+    {
+      "id": "chastity-and-boundaries",
+      "displayName": {
+        "en": "Chastity & Boundaries",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "chastity",
+        "adultery",
+        "zina",
+        "fornication",
+        "lewdness",
+        "modesty",
+        "private boundaries",
+        "marital boundaries",
+        "forbidden intimacy",
+        "prostitution",
+        "secret lovers",
+        "lowering gaze",
+        "adna al-jilbab",
+        "homosexuality",
+        "lesbian acts",
+        "sexual intercourse"
+      ],
+      "facet": "worldly-matters",
+      "definition": "Conduct around chastity, prohibited intimacy, private boundaries, modesty, and lawful marital limits.",
+      "examples": [
+        "4:15",
+        "4:22",
+        "24:1",
+        "24:27"
       ],
       "color": "#8b5e34"
     },
@@ -1775,7 +1910,9 @@
         "iddah",
         "separation",
         "khula",
-        "divorced"
+        "divorced",
+        "remarriage",
+        "divorce"
       ],
       "facet": "worldly-matters",
       "definition": "Rules of divorce, iddah, custody, separation.",
@@ -1801,7 +1938,8 @@
         "heirs",
         "bequest",
         "will",
-        "Wirathah"
+        "Wirathah",
+        "inheritances"
       ],
       "facet": "worldly-matters",
       "definition": "Distribution of estate and inheritance shares.",
@@ -1829,7 +1967,25 @@
         "warfare",
         "combat",
         "conflict",
-        "armistice"
+        "armistice",
+        "battle gains",
+        "Byzantines",
+        "combatants",
+        "non-combatants",
+        "oppressed",
+        "persecution",
+        "self-defence",
+        "treaties",
+        "war",
+        "war and warfare",
+        "jizya",
+        "martyrdom",
+        "martyrs",
+        "peace",
+        "safe conduct",
+        "silm",
+        "treaty obligations",
+        "warhorses"
       ],
       "facet": "worldly-matters",
       "definition": "Rules of fighting, peace agreements, conduct during conflict.",
@@ -1856,7 +2012,14 @@
         "Muhajirun",
         "Muhajireen",
         "exile",
-        "fleeing for faith"
+        "fleeing for faith",
+        "Medina",
+        "migrants",
+        "Migration",
+        "refugees",
+        "refugees from persecution",
+        "Yathrib",
+        "Madina"
       ],
       "facet": "worldly-matters",
       "definition": "Leaving home or being expelled for Allah's cause; the moral and legal status of emigrants.",
@@ -1865,6 +2028,38 @@
         "3:195",
         "8:72",
         "59:9"
+      ],
+      "color": "#8b5e34"
+    },
+    {
+      "id": "islamic-history-and-community",
+      "displayName": {
+        "en": "Islamic History & Community",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "Badr",
+        "Uhud",
+        "Trench",
+        "Hudaybiyya",
+        "Tabuk",
+        "Hunayn",
+        "ansar",
+        "community",
+        "early Muslims",
+        "Rightly Guided Caliphs",
+        "Banu Nadir",
+        "Banu Qaynuqa",
+        "Medinans"
+      ],
+      "facet": "worldly-matters",
+      "definition": "Early Muslim community events, migration and community formation, and historically specific episodes affecting the believers.",
+      "examples": [
+        "8:1",
+        "9:38",
+        "48:1",
+        "59:1"
       ],
       "color": "#8b5e34"
     },
@@ -1884,13 +2079,52 @@
         "buying and selling",
         "Dayn",
         "transactions",
-        "witnessing debt"
+        "witnessing debt",
+        "debts",
+        "short measure",
+        "trade and trading",
+        "weights",
+        "loans"
       ],
       "facet": "worldly-matters",
       "definition": "Commerce, contracts, debt, witnessing.",
       "examples": [
         "2:282",
         "4:29"
+      ],
+      "color": "#8b5e34"
+    },
+    {
+      "id": "wealth-and-property-law",
+      "displayName": {
+        "en": "Wealth & Property Law",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "property",
+        "wealth",
+        "dowry",
+        "bride-gift",
+        "bequest",
+        "finance",
+        "measure",
+        "inheritance",
+        "orphan property",
+        "property rights",
+        "commercial law",
+        "bequests",
+        "feeble-minded",
+        "taxation",
+        "wealthy"
+      ],
+      "facet": "worldly-matters",
+      "definition": "Property rights and financial obligations, including bequests, dowries, debts, measures, and protected wealth.",
+      "examples": [
+        "2:180",
+        "2:282",
+        "4:2",
+        "4:7"
       ],
       "color": "#8b5e34"
     },
@@ -1936,7 +2170,8 @@
         "games of chance",
         "intoxicants",
         "liquor",
-        "betting"
+        "betting",
+        "intoxicants and intoxication"
       ],
       "facet": "worldly-matters",
       "definition": "Wine/intoxicants, gambling, games of chance, and their social or spiritual harms.",
@@ -1964,7 +2199,11 @@
         "pork",
         "swine",
         "Dhabihah",
-        "eating"
+        "eating",
+        "dietary laws",
+        "fishing",
+        "food",
+        "hunting"
       ],
       "facet": "worldly-matters",
       "definition": "What is permitted and forbidden to eat; slaughter rules.",
@@ -1993,7 +2232,8 @@
         "cleanliness",
         "menstruation",
         "Tayammum",
-        "ritual washing"
+        "ritual washing",
+        "impurity"
       ],
       "facet": "worldly-matters",
       "definition": "Wudu, ghusl, menstruation, ritual cleanliness.",
@@ -2020,7 +2260,13 @@
         "establishing prayer",
         "ritual prayer",
         "Iqamah",
-        "to pray"
+        "to pray",
+        "Friday prayer",
+        "worship",
+        "devotional practices",
+        "mihrab",
+        "sajada",
+        "sujud"
       ],
       "facet": "worldly-matters",
       "definition": "Establishment of salah, its times, its conduct.",
@@ -2065,12 +2311,15 @@
       "aliases": [
         "pilgrimage",
         "Umrah",
-        "Arafat",
         "Tawaf",
         "Ihram",
         "Haj",
         "Mecca pilgrimage",
-        "Hajj rites"
+        "Hajj rites",
+        "Hajj pilgrimage",
+        "pilgrimages",
+        "sacrifices",
+        "tamattu"
       ],
       "facet": "worldly-matters",
       "definition": "The pilgrimage, its rites, the sacred precincts.",
@@ -2078,6 +2327,37 @@
         "2:196",
         "3:97",
         "22:25"
+      ],
+      "color": "#8b5e34"
+    },
+    {
+      "id": "ritual-calendar-and-sacred-time",
+      "displayName": {
+        "en": "Ritual Calendar & Sacred Time",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "calendar",
+        "sacred months",
+        "holy month",
+        "appointed days",
+        "designated days",
+        "Night of Glory",
+        "Laylat al-Qadr",
+        "Sabbath",
+        "Ashura",
+        "Dhu'l-Hijjah",
+        "ritual time",
+        "sacred time"
+      ],
+      "facet": "worldly-matters",
+      "definition": "Months, appointed days or nights, Sabbath, pilgrimage timing, and other time markers that structure worship.",
+      "examples": [
+        "2:183",
+        "2:189",
+        "2:203",
+        "97:1"
       ],
       "color": "#8b5e34"
     },
@@ -2098,7 +2378,8 @@
         "prayer direction",
         "House of God",
         "Bait Allah",
-        "sanctuary"
+        "sanctuary",
+        "Ka ba"
       ],
       "facet": "worldly-matters",
       "definition": "The Sacred Mosque, qiblah direction, and sanctuary-linked orientation or access rules.",
@@ -2107,6 +2388,44 @@
         "2:144",
         "2:149",
         "9:19"
+      ],
+      "color": "#8b5e34"
+    },
+    {
+      "id": "mosques-and-sacred-places",
+      "displayName": {
+        "en": "Mosques & Sacred Places",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "mosques",
+        "masjid",
+        "mosque",
+        "Sacred Mosque",
+        "Masjid al-Haram",
+        "Farthest Mosque",
+        "Aqsa",
+        "Arafat",
+        "Mina",
+        "Muzdalifa",
+        "Safa",
+        "Marwa",
+        "Mount Sinai",
+        "sacred places",
+        "sanctuary",
+        "Hira",
+        "Jerusalem",
+        "Mecca",
+        "Mount of Mercy"
+      ],
+      "facet": "worldly-matters",
+      "definition": "Mosques and named sacred sites as places of worship, pilgrimage, orientation, or sacred history.",
+      "examples": [
+        "2:149",
+        "2:196",
+        "17:1",
+        "22:25"
       ],
       "color": "#8b5e34"
     },
@@ -2128,7 +2447,9 @@
         "alms",
         "Infaq",
         "spending in charity",
-        "giving"
+        "giving",
+        "needy",
+        "yunfiquna"
       ],
       "facet": "worldly-matters",
       "definition": "Obligatory zakat, voluntary sadaqah, spending in God's cause.",
@@ -2209,7 +2530,9 @@
         "Nadhr",
         "Kaffarah",
         "expiation",
-        "breaking oaths"
+        "breaking oaths",
+        "oathbreaking",
+        "oathtaking"
       ],
       "facet": "worldly-matters",
       "definition": "Swearing, breaking oaths, expiation.",
@@ -2236,7 +2559,10 @@
         "Bay'ah",
         "Bayah",
         "promise",
-        "solemn pledge"
+        "solemn pledge",
+        "pledges",
+        "trust",
+        "faithfulness"
       ],
       "facet": "worldly-matters",
       "definition": "Covenants, solemn pledges, and binding commitments between Allah and people or among people.",
@@ -2264,7 +2590,14 @@
         "evidence",
         "just judgment",
         "fair judgment",
-        "adjudication"
+        "adjudication",
+        "fair dealings",
+        "retaliation",
+        "retribution",
+        "theft",
+        "judges",
+        "shahid",
+        "testimonies"
       ],
       "facet": "worldly-matters",
       "definition": "Bearing witness, just judgment between people, slander cases.",
@@ -2339,7 +2672,10 @@
         "muttaqeen",
         "fear of God",
         "mindfulness of God",
-        "Taqua"
+        "Taqua",
+        "taqwa",
+        "mindfulness",
+        "w-q-y"
       ],
       "facet": "ethical-states",
       "definition": "The disposition of being mindful of God; the muttaqun.",
@@ -2386,7 +2722,8 @@
         "turning to God",
         "penitence",
         "Inabah",
-        "Tawbat"
+        "Tawbat",
+        "repentance"
       ],
       "facet": "ethical-states",
       "definition": "Turning back to God, the door of repentance, accepting the repentant.",
@@ -2407,7 +2744,6 @@
       "aliases": [
         "Tawadu",
         "humbleness",
-        "modesty",
         "lowliness",
         "Khushu",
         "meekness",
@@ -2435,7 +2771,8 @@
         "sincere",
         "Mukhlis",
         "devotion",
-        "genuineness"
+        "genuineness",
+        "ikhlas"
       ],
       "facet": "ethical-states",
       "definition": "Acting purely for God's sake, free of ostentation.",
@@ -2459,7 +2796,8 @@
         "Dhikrullah",
         "invocation",
         "Tasbih",
-        "recollection of God"
+        "recollection of God",
+        "dhikr"
       ],
       "facet": "ethical-states",
       "definition": "Remembering God by tongue or heart; the role of dhikr in calming the heart.",
@@ -2484,7 +2822,9 @@
         "Takbir",
         "Allahu akbar",
         "praising God",
-        "extolling God"
+        "extolling God",
+        "ham",
+        "tabarak"
       ],
       "facet": "ethical-states",
       "definition": "Sections containing explicit praise or glorification of God — `al-ḥamdu lillāh`, `tabāraka`, `subḥān`, `Allāhu akbar`. Distinct from `gratitude` (which marks shukr for specific blessings) and from divine-attribute labels (which mark the attribute being praised). Apply when praise is *uttered* in the section, not merely commanded.",
@@ -2493,6 +2833,39 @@
         "17:111",
         "67:1",
         "87:1"
+      ],
+      "color": "#6b8e5a"
+    },
+    {
+      "id": "practical-ethics",
+      "displayName": {
+        "en": "Practical Ethics",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "kindness",
+        "common kindnesses",
+        "good speech",
+        "reconciliation",
+        "advocacy",
+        "idle talk",
+        "private counsel",
+        "good conduct",
+        "social manners",
+        "everyday ethics",
+        "consultation",
+        "joking",
+        "personal responsibility",
+        "shura"
+      ],
+      "facet": "ethical-states",
+      "definition": "Everyday moral conduct in speech, counsel, reconciliation, assistance, and ordinary social dealings.",
+      "examples": [
+        "4:114",
+        "17:23",
+        "49:11",
+        "107:1"
       ],
       "color": "#6b8e5a"
     },
@@ -2511,7 +2884,9 @@
         "virtue",
         "Ihsan",
         "doing good",
-        "good conduct"
+        "good conduct",
+        "obedience",
+        "righteous"
       ],
       "facet": "ethical-states",
       "definition": "Broad ethical conduct toward parents, neighbors, the poor — the \"righteousness\" passages.",
@@ -2536,7 +2911,8 @@
         "Istikbar",
         "conceit",
         "boastfulness",
-        "arrogant"
+        "arrogant",
+        "tyrants"
       ],
       "facet": "negative-attributes",
       "definition": "Pride that refuses truth or despises people; Iblis's defining flaw.",
@@ -2560,7 +2936,8 @@
         "two-faced",
         "hypocrite",
         "false belief",
-        "double-dealing"
+        "double-dealing",
+        "praying for show"
       ],
       "facet": "negative-attributes",
       "definition": "The trait of professing belief outwardly while disbelieving inwardly.",
@@ -2609,7 +2986,16 @@
         "idol worship",
         "associationism",
         "worshipping others",
-        "Mushrik"
+        "Mushrik",
+        "goddesses",
+        "idolatry",
+        "al-Lat",
+        "shirk",
+        "Sirius",
+        "Trinity",
+        "associate",
+        "taghut",
+        "al-Uzza"
       ],
       "facet": "negative-attributes",
       "definition": "Associating partners with God in worship, lordship, or attributes.",
@@ -2663,7 +3049,10 @@
         "Buhtan",
         "Namimah",
         "calumny",
-        "Ifk"
+        "Ifk",
+        "broadcasting",
+        "Mistah",
+        "Safwan"
       ],
       "facet": "negative-attributes",
       "definition": "Spreading false accusations, gossiping, defamation.",
@@ -2691,7 +3080,11 @@
         "avarice",
         "love of wealth",
         "Hirs",
-        "niggardliness"
+        "niggardliness",
+        "Qarun",
+        "Korah",
+        "plenty",
+        "privation"
       ],
       "facet": "negative-attributes",
       "definition": "Hoarding, refusing to spend in God's cause, love of wealth.",
@@ -2747,7 +3140,12 @@
         "aggression",
         "fury",
         "Cain and Abel",
-        "unjust killing"
+        "unjust killing",
+        "infanticide",
+        "life saving",
+        "anger",
+        "self-destruction",
+        "suicide"
       ],
       "facet": "negative-attributes",
       "definition": "Unjust killing, wrath-driven action, the sin of Cain.",
@@ -2795,7 +3193,13 @@
         "spreading corruption",
         "moral decay",
         "Mufsidun",
-        "wrongdoing on earth"
+        "wrongdoing on earth",
+        "bribes",
+        "corruption spreaders condemned",
+        "mischief-makers",
+        "oppression",
+        "wrongdoers",
+        "dhalama"
       ],
       "facet": "negative-attributes",
       "definition": "Causing fasād — moral, social, or material corruption.",
@@ -2821,7 +3225,8 @@
         "rejection of faith",
         "infidelity",
         "Kafara",
-        "ingratitude"
+        "ingratitude",
+        "apostasy"
       ],
       "facet": "negative-attributes",
       "definition": "The state of denying truth after it has reached one.",
@@ -2849,7 +3254,20 @@
         "Yawm ad-Din",
         "the Hour",
         "Doomsday",
-        "end times"
+        "end times",
+        "afterlife",
+        "Day of Gathering",
+        "Day of Judgement",
+        "Day of Resurrection",
+        "Final Judgement",
+        "Hereafter",
+        "judgement",
+        "smoke",
+        "Crashing Blow",
+        "Hour",
+        "Summoner",
+        "Ways of Ascent",
+        "zurq"
       ],
       "facet": "eschatology",
       "definition": "The Day described — its terror, its arrangement, the standing before God.",
@@ -2876,7 +3294,15 @@
         "gardens of bliss",
         "Firdaws",
         "Eden",
-        "reward of believers"
+        "reward of believers",
+        "gardens",
+        "Illiyyin",
+        "kafur",
+        "Paradise",
+        "pearls",
+        "rivers",
+        "Salsabil",
+        "Tasnim"
       ],
       "facet": "eschatology",
       "definition": "Descriptions of Jannah — its rivers, gardens, companions, rewards.",
@@ -2905,7 +3331,10 @@
         "Jaheem",
         "Saqar",
         "Hawiyah",
-        "inferno"
+        "inferno",
+        "Zaqqum",
+        "Hell",
+        "torments"
       ],
       "facet": "eschatology",
       "definition": "Descriptions of Jahannam — its punishments, its keepers, its inhabitants.",
@@ -2932,7 +3361,9 @@
         "gathering",
         "Hashr",
         "rising again",
-        "revival of the dead"
+        "revival of the dead",
+        "graves",
+        "Resurrection"
       ],
       "facet": "eschatology",
       "definition": "The raising of the dead, the trumpet, the gathering.",
@@ -3008,7 +3439,8 @@
         "intercede",
         "intercessor",
         "mediation",
-        "pleading on behalf"
+        "pleading on behalf",
+        "shafa a"
       ],
       "facet": "eschatology",
       "definition": "Who may intercede, who may not, on the Day.",
@@ -3032,7 +3464,10 @@
         "Aad and Thamud",
         "divine punishment",
         "perished communities",
-        "wrath on past peoples"
+        "wrath on past peoples",
+        "disbelieving communities",
+        "al-Rass",
+        "Tubba"
       ],
       "facet": "eschatology",
       "definition": "The destruction of 'Ad, Thamud, Pharaoh's people, Lot's people as warning.",
@@ -3060,7 +3495,9 @@
         "Arsh",
         "Kursi",
         "making of the world",
-        "universe"
+        "universe",
+        "skies",
+        "creation"
       ],
       "facet": "cosmology",
       "definition": "The making of the cosmos in six days; the throne.",
@@ -3087,7 +3524,11 @@
         "Alaqah",
         "sperm drop",
         "human origin",
-        "from dust"
+        "from dust",
+        "man",
+        "alaq",
+        "birth",
+        "foetuses"
       ],
       "facet": "cosmology",
       "definition": "Stages of human creation — clay, sperm, clot, lump.",
@@ -3115,7 +3556,19 @@
         "natural phenomena",
         "signs in creation",
         "earthly signs",
-        "Ayaat"
+        "Ayaat",
+        "camels",
+        "insects",
+        "livestock",
+        "ships",
+        "spider",
+        "water",
+        "winds",
+        "bahira",
+        "bahr",
+        "hoopoe",
+        "ibl",
+        "lote trees"
       ],
       "facet": "cosmology",
       "definition": "Rain, plants, wind, animals, the tame earth, birds in flight — earthly natural phenomena framed as signs of the Creator. Co-tag with `cosmic-bodies` when both are present.",
@@ -3142,7 +3595,9 @@
         "constellations",
         "Nujum",
         "planets",
-        "heavenly bodies"
+        "heavenly bodies",
+        "moon",
+        "sun"
       ],
       "facet": "cosmology",
       "definition": "Celestial bodies — sun, moon, stars, lamps of heaven, night, day — framed as signs or as adornment of the heavens. Distinct from `natural-signs` and freely co-tagged with it; both apply when both are present in the section.",
@@ -3169,7 +3624,10 @@
         "mortality",
         "Angel of Death",
         "death throes",
-        "passing away"
+        "passing away",
+        "dead",
+        "death",
+        "souls"
       ],
       "facet": "cosmology",
       "definition": "The reality of death, the taking of the soul, what comes after.",
@@ -3221,7 +3679,8 @@
         "the recitation",
         "Furqan",
         "Tanzil",
-        "revelation"
+        "revelation",
+        "Qur an"
       ],
       "facet": "revelation",
       "definition": "Sections where the Qur'an is itself the subject — its origin, character, preservation.",
@@ -3230,6 +3689,46 @@
         "17:88",
         "41:1",
         "85:21"
+      ],
+      "color": "#b45309"
+    },
+    {
+      "id": "language-and-revelation-terms",
+      "displayName": {
+        "en": "Language & Revelation Terms",
+        "ar": "",
+        "ur": ""
+      },
+      "aliases": [
+        "Arabic",
+        "ayas",
+        "ayat",
+        "suras",
+        "reading",
+        "recitation",
+        "clear Arabic",
+        "grammar",
+        "rhetoric",
+        "translation",
+        "sent down",
+        "revelation terms",
+        "Quranic language",
+        "ayat of God",
+        "bayan",
+        "dialogue",
+        "mubin",
+        "rhetorical questions",
+        "words",
+        "writing",
+        "writing ability"
+      ],
+      "facet": "revelation",
+      "definition": "Qur'anic language, recitation, Arabic clarity, surah or ayah terminology, and revelation as communicated words.",
+      "examples": [
+        "12:1",
+        "20:1",
+        "41:1",
+        "96:1"
       ],
       "color": "#b45309"
     },
@@ -3312,7 +3811,8 @@
         "Zabur",
         "Bible",
         "earlier scriptures",
-        "Suhuf"
+        "Suhuf",
+        "Scriptures"
       ],
       "facet": "revelation",
       "definition": "Torah, Gospel, Psalms as subjects; their relationship to the Qur'an.",
@@ -3340,7 +3840,8 @@
         "Rusul",
         "Nubuwwah",
         "messengership",
-        "prophecy"
+        "prophecy",
+        "prophets condemned"
       ],
       "facet": "revelation",
       "definition": "Prophethood as a category — the sending of messengers, their common message.",
@@ -3365,7 +3866,8 @@
         "miracle",
         "wonders",
         "splitting of the moon",
-        "supernatural signs"
+        "supernatural signs",
+        "miracles"
       ],
       "facet": "revelation",
       "definition": "Miraculous signs given to prophets (Moses's staff, Jesus's healings, the splitting of the moon).",
@@ -3415,7 +3917,8 @@
         "fabrication claim",
         "denying the Quran",
         "calling it lies",
-        "Quran is poetry"
+        "Quran is poetry",
+        "poets"
       ],
       "facet": "revelation",
       "definition": "Accusations that the Qur'an is poetry, magic, or fabrication, and the responses.",

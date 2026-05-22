@@ -164,11 +164,15 @@ Sections that legislate or instruct on conduct in this life.
 | id | Display | Definition | Examples |
 |---|---|---|---|
 | `marriage-and-family` | Marriage & Family | Rules of marriage, treatment of spouses, family conduct. | `4:1`, `4:19`, `30:21`, `33:35` |
+| `children-and-parents` | Children & Parents | Parent-child duties, lineage, nursing or weaning, adoption or kinship, and respectful conduct toward parents or children. | `2:233`, `4:11`, `17:22`, `33:5` |
+| `chastity-and-boundaries` | Chastity & Boundaries | Conduct around chastity, prohibited intimacy, private boundaries, modesty, and lawful marital limits. | `4:15`, `4:22`, `24:1`, `24:27` |
 | `divorce` | Divorce | Rules of divorce, iddah, custody, separation. | `2:229`, `65:1`, `33:49` |
 | `inheritance` | Inheritance | Distribution of estate and inheritance shares. | `4:7`, `4:11`, `4:176` |
 | `war-and-treaties` | War & Treaties | Rules of fighting, peace agreements, conduct during conflict. | `2:190`, `8:1`, `9:1`, `48:1` |
 | `migration` | Migration (Hijrah) | Leaving home or being expelled for Allah's cause; the moral and legal status of emigrants. | `2:218`, `3:195`, `8:72`, `59:9` |
+| `islamic-history-and-community` | Islamic History & Community | Early Muslim community events, migration and community formation, and historically specific episodes affecting the believers. | `8:1`, `9:38`, `48:1`, `59:1` |
 | `trade-and-debt` | Trade & Debt | Commerce, contracts, debt, witnessing. | `2:282`, `4:29` |
+| `wealth-and-property-law` | Wealth & Property Law | Property rights and financial obligations, including bequests, dowries, debts, measures, and protected wealth. | `2:180`, `2:282`, `4:2`, `4:7` |
 | `interest` | Interest (Riba) | Sections legislating against or warning about riba — usury, interest, and unjust gain through lending. | `2:275`, `2:278`, `3:130`, `30:39` |
 | `intoxicants-and-gambling` | Intoxicants & Gambling | Wine/intoxicants, gambling, games of chance, and their social or spiritual harms. | `2:219`, `5:90`, `5:91` |
 | `food-and-dietary` | Food & Dietary Law | What is permitted and forbidden to eat; slaughter rules. | `2:172`, `5:3`, `6:118`, `16:114` |
@@ -176,7 +180,9 @@ Sections that legislate or instruct on conduct in this life.
 | `prayer` | Prayer (Salah) | Establishment of salah, its times, its conduct. | `2:43`, `4:103`, `20:14`, `73:1` |
 | `fasting` | Fasting | Rules and virtues of fasting, primarily Ramadan. | `2:183` |
 | `hajj-and-pilgrimage` | Hajj | The pilgrimage, its rites, the sacred precincts. | `2:196`, `3:97`, `22:25` |
+| `ritual-calendar-and-sacred-time` | Ritual Calendar & Sacred Time | Months, appointed days or nights, Sabbath, pilgrimage timing, and other time markers that structure worship. | `2:183`, `2:189`, `2:203`, `97:1` |
 | `sacred-mosque-and-qiblah` | Sacred Mosque & Qiblah | The Sacred Mosque, qiblah direction, and sanctuary-linked orientation or access rules. | `2:142`, `2:144`, `2:149`, `9:19` |
+| `mosques-and-sacred-places` | Mosques & Sacred Places | Mosques and named sacred sites as places of worship, pilgrimage, orientation, or sacred history. | `2:149`, `2:196`, `17:1`, `22:25` |
 | `zakat-and-charity` | Zakat & Charity | Obligatory zakat, voluntary sadaqah, spending in God's cause. | `2:177`, `2:261`, `9:60`, `57:18` |
 | `orphan-care` | Orphan Care | Care, protection, fair treatment, and property rights of orphans. | `2:220`, `4:2`, `4:6`, `107:2` |
 | `manumission-and-captives` | Manumission & Captives | Freeing slaves, ransom, captives, and liberation-linked obligations or virtues. | `2:177`, `4:92`, `5:89`, `90:13` |
@@ -201,6 +207,7 @@ Positive inner dispositions and virtues. Tag when the section commends, defines,
 | `sincerity` | Sincerity (Ikhlas) | Acting purely for God's sake, free of ostentation. | `7:29`, `39:2`, `98:5` |
 | `remembrance` | Remembrance (Dhikr) | Remembering God by tongue or heart; the role of dhikr in calming the heart. | `13:28`, `33:41`, `63:9` |
 | `praise` | Praise (Hamd) | Sections containing explicit praise or glorification of God — `al-ḥamdu lillāh`, `tabāraka`, `subḥān`, `Allāhu akbar`. Distinct from `gratitude` (which marks shukr for specific blessings) and from divine-attribute labels (which mark the attribute being praised). Apply when praise is *uttered* in the section, not merely commanded. | `1:2`, `17:111`, `67:1`, `87:1` |
+| `practical-ethics` | Practical Ethics | Everyday moral conduct in speech, counsel, reconciliation, assistance, and ordinary social dealings. | `4:114`, `17:23`, `49:11`, `107:1` |
 | `righteous-conduct` | Righteous Conduct | Broad ethical conduct toward parents, neighbors, the poor — the "righteousness" passages. | `2:177`, `17:23`, `90:12` |
 
 ---
@@ -265,6 +272,7 @@ Sections about the Qur'an itself, prior books, and the office of prophethood.
 | id | Display | Definition | Examples |
 |---|---|---|---|
 | `the-quran` | The Qur'an | Sections where the Qur'an is itself the subject — its origin, character, preservation. | `15:9`, `17:88`, `41:1`, `85:21` |
+| `language-and-revelation-terms` | Language & Revelation Terms | Qur'anic language, recitation, Arabic clarity, surah or ayah terminology, and revelation as communicated words. | `12:1`, `20:1`, `41:1`, `96:1` |
 | `disjoined-letters` | Disjoined Letters *(Al-Muqattaʿāt, mysterious letters, abbreviated letters)* | Sections opening with the disjoined Arabic letters — Alif-Lām-Mīm, Ḥā-Mīm, Kāf-Hā-Yā-ʿAyn-Ṣād, Yā-Sīn, Ṭā-Hā, etc. Tag whenever the section begins with one of these openings, regardless of tafsir interpretation. | `2:1`, `19:1`, `20:1`, `36:1`, `41:1` |
 | `qul-statements` | Qul Statements *(Say-commands, Commands to recite)* | Sections containing the rhetorical pattern `Qul…` ("Say…") — God commanding the Prophet (or, in some sections, the believers) to declare or recite a specific statement. Tag whenever the imperative `qul` appears. Use this **instead of** `muhammad` for the "Say:" pattern; `muhammad` is reserved for direct second-person address or sections substantively about him. | `1:1` (basmala once 1:1 is added), `67:23`, `67:28`, `67:30`, `109:1`, `112:1`, `113:1`, `114:1` |
 | `previous-scriptures` | Previous Scriptures | Torah, Gospel, Psalms as subjects; their relationship to the Qur'an. | `3:3`, `5:44`, `5:46`, `87:18` |
@@ -282,20 +290,21 @@ Sections about the Qur'an itself, prior books, and the office of prophethood.
 | people | 50 |
 | divine-attributes | 12 |
 | dua | 7 |
-| worldly-matters | 20 |
-| ethical-states | 10 |
+| worldly-matters | 26 |
+| ethical-states | 11 |
 | negative-attributes | 12 |
 | eschatology | 8 |
 | cosmology | 6 |
-| revelation | 8 |
-| **Total** | **133** |
+| revelation | 9 |
+| **Total** | **141** |
 
-People is the largest facet by design — generous tagging of named figures is a core retrieval use case ("show me every section that names Moses"). The 133 reflects four batches of additions on top of v0:
+People is the largest facet by design — generous tagging of named figures is a core retrieval use case ("show me every section that names Moses"). The 141 reflects five batches of additions on top of v0:
 
 - **Maryam-pass additions:** `mankind`, `aaron`, `isaac`, `ishmael`, `jacob`, `idris`, `interest` (7 labels).
 - **Full prophet batch:** `john` (split from `zechariah-and-john`, which was renamed to `zechariah`), `hud`, `salih`, `shuayb`, `elijah`, `elisha`, `dhul-kifl`, plus the punished-peoples split into `ad`, `thamud`, `madyan` (replacing the old `ad-thamud-madyan` collective).
 - **Al-Baqarah additions:** `migration`, `intoxicants-and-gambling`, `sacred-mosque-and-qiblah`, `orphan-care`, `manumission-and-captives`, `covenant`, `sorcery` (7 labels).
 - **Named-entity correction:** `family-of-imran`, `disciples`, `saul`, `goliath`, `patriarchs`, `sabeans`, `harut-and-marut` (7 labels).
+- **Full-Qur'an expansion run:** `children-and-parents`, `chastity-and-boundaries`, `islamic-history-and-community`, `wealth-and-property-law`, `ritual-calendar-and-sacred-time`, `mosques-and-sacred-places`, `practical-ethics`, `language-and-revelation-terms` (8 labels).
 
 ---
 

@@ -146,6 +146,34 @@ def _api_start_job(handler) -> None:
     return _send_json(handler, 202, {"jobId": job_id, "surahs": surahs, "model": model})
 
 
+def _api_start_compare(handler) -> None:
+    body = _read_json_body(handler)
+    surahs = body.get("surahs") or []
+    model = body.get("model") or labeler.DEFAULT_MODEL
+
+    if not isinstance(surahs, list) or not all(isinstance(s, int) for s in surahs):
+        return _send_json(handler, 400, {"error": "surahs must be an array of integers"})
+    surahs = [s for s in surahs if 1 <= s <= 114]
+    if not surahs:
+        return _send_json(handler, 400, {"error": "no valid surah numbers provided"})
+
+    if model not in labeler.MODEL_PRICING:
+        return _send_json(handler, 400, {"error": f"unknown model: {model}"})
+
+    api_key = labeler.get_api_key()
+    if not api_key:
+        return _send_json(handler, 400, {"error": "ANTHROPIC_API_KEY is not set. Add it via the admin panel or .env file."})
+
+    if labeler.is_running():
+        return _send_json(handler, 409, {"error": "A labeling run is already in progress."})
+
+    try:
+        job_id = labeler.run_compare_in_background(surahs, model, api_key)
+    except Exception as e:
+        return _send_json(handler, 500, {"error": f"failed to start comparison: {e}"})
+    return _send_json(handler, 202, {"jobId": job_id, "surahs": surahs, "model": model, "mode": "compare"})
+
+
 def _api_current_job(handler) -> None:
     state = labeler.read_status() or {}
     state["isRunning"] = labeler.is_running()
@@ -166,6 +194,7 @@ _ROUTES = {
     ("POST", "/api/labeler/config"):      _api_save_config,
     ("GET", "/api/labeler/coverage"):     _api_get_coverage,
     ("POST", "/api/labeler/jobs"):        _api_start_job,
+    ("POST", "/api/labeler/compare"):     _api_start_compare,
     ("GET", "/api/labeler/jobs/current"): _api_current_job,
     ("POST", "/api/labeler/jobs/cancel"): _api_cancel,
     ("GET", "/api/labeler/pricing"):      _api_pricing,
