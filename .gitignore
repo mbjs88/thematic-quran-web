@@ -2,11 +2,14 @@
 data/audio/
 audio/
 assets/icons.pptx
+assets/icons_2.pptx
 assets/icons/
 js/generate-video.js
 js/output
 js/one-off-projects.js
 ABOUT_ME/
+HACKATHON_SUBMISSION.md
+THEMATIC_LABELS_ROADMAP.md
 
 # optional OS/editor noise
 .DS_Store
