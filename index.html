@@ -922,18 +922,30 @@
             </div>
             <div id="filterQueryBuilder" class="mb-4 font-['Nunito'] rounded-2xl border border-white/10 bg-black/15 p-3">
                 <div class="flex items-center justify-between gap-3 mb-3">
-                    <span class="text-[10px] text-white/50 font-bold uppercase tracking-wider">Query</span>
+                    <span class="text-[10px] text-white/50 font-bold uppercase tracking-wider">Build a search</span>
                     <button id="addFilterGroupBtn" type="button" class="inline-flex items-center gap-1 text-[10px] text-[#56A3A6] hover:text-white transition font-bold uppercase tracking-wider">
                         <span class="material-symbols-outlined text-sm">add</span>
-                        AND row
+                        Condition
                     </button>
                 </div>
                 <div id="filterQueryRows" class="space-y-2"></div>
             </div>
+            <div id="relatedThemeContainer" class="hidden mb-4 font-['Nunito'] rounded-2xl border border-white/10 bg-white/[0.03] p-3">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-[10px] text-white/50 font-bold uppercase tracking-wider">Related themes</span>
+                </div>
+                <div id="relatedThemeList" class="flex flex-wrap gap-2"></div>
+            </div>
+            <div id="filterTemplateContainer" class="mb-4 font-['Nunito']">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-[10px] text-white/50 font-bold uppercase tracking-wider">Study starters</span>
+                </div>
+                <div id="filterTemplateList" class="grid grid-cols-2 gap-2"></div>
+            </div>
             <div class="mb-3 font-['Nunito']">
                 <div class="flex items-center justify-between mb-2">
-                    <span class="text-[10px] text-white/50 font-bold uppercase tracking-wider">Current row</span>
-                    <span class="text-[10px] text-white/40 tracking-wider" id="filterCurrentRowText">Row 1</span>
+                    <span class="text-[10px] text-white/50 font-bold uppercase tracking-wider">Editing</span>
+                    <span class="text-[10px] text-white/40 tracking-wider" id="filterCurrentRowText">First condition</span>
                 </div>
                 <div class="flex items-center justify-between mb-2">
                     <span class="text-[10px] text-white/50 font-bold uppercase tracking-wider">Match</span>
@@ -944,13 +956,26 @@
                     <button id="filterModeAllBtn" type="button" class="filter-mode-btn rounded-lg px-3 py-2 text-xs font-bold transition" data-mode="all">ALL (AND)</button>
                 </div>
             </div>
+            <div class="mb-3 font-['Nunito']">
+                <label for="filterSortSelect" class="block text-[10px] text-white/50 font-bold uppercase tracking-wider mb-2">Result order</label>
+                <select id="filterSortSelect" class="w-full bg-black/20 border border-white/10 rounded-xl px-3 py-2 text-xs text-[#F3E4CE] focus:outline-none focus:ring-2 focus:ring-[#56A3A6]">
+                    <option value="mushaf">Mushaf order</option>
+                    <option value="revelation">Revelation order</option>
+                    <option value="makki-madani">Makki then Madani</option>
+                    <option value="best-match">Most matching themes</option>
+                    <option value="shortest">Shortest passages first</option>
+                </select>
+            </div>
             <div class="relative">
                 <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-white/40">search</span>
                 <input type="text" id="filterSearchInput" placeholder="Search themes or aliases..." class="w-full bg-white/5 border border-white/10 rounded-xl pl-10 pr-4 py-2 text-sm text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-[#56A3A6] font-['Nunito']">
             </div>
             <div class="flex justify-between items-center mt-3 font-['Nunito']">
                 <span class="text-xs text-white/50 font-bold uppercase tracking-wider" id="activeFilterCountText">0 selected</span>
-                <button id="clearFiltersBtn" class="text-xs text-[#56A3A6] hover:text-white transition font-bold uppercase hidden tracking-wider">Clear All</button>
+                <div class="flex items-center gap-3">
+                    <button id="copyFilterQueryBtn" class="text-xs text-[#56A3A6] hover:text-white transition font-bold uppercase hidden tracking-wider">Copy Link</button>
+                    <button id="clearFiltersBtn" class="text-xs text-[#56A3A6] hover:text-white transition font-bold uppercase hidden tracking-wider">Clear All</button>
+                </div>
             </div>
         </div>
 

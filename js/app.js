@@ -24,6 +24,7 @@ let nextThematicFilterGroupId = 2;
 let thematicFilterScope = 'surah';
 // Mirrors the active row's op for the existing ANY/ALL buttons.
 let thematicFilterMatchMode = 'any';
+let thematicResultSortMode = 'mushaf';
 // Surah metadata (Makki/Madani + Cairo Edition revelation order) — loaded on init.
 window.SURAH_METADATA = null;
 let syncPromptDismissTimer = null;
@@ -218,7 +219,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         setupThematicFilterUI();
         wireHeroWidget();
 
-        if (window.location.hash) {
+        const restoredQueryFromUrl = restoreThematicQueryFromUrl();
+        if (restoredQueryFromUrl) {
+            // Query links own the initial view when present.
+        } else if (window.location.hash) {
             handleDeepLink();
         } else {
             // Check session state
@@ -1334,6 +1338,41 @@ function resetThematicFilterQuery() {
     syncActiveThematicFiltersFromGroups();
 }
 
+function applyThematicFilterGroups(groups, scope = thematicFilterScope, activeIndex = 0) {
+    const knownIds = new Set((window.THEMATIC_TAXONOMY?.labels || []).map(label => label.id));
+    const nextGroups = [];
+
+    (Array.isArray(groups) ? groups : []).forEach(group => {
+        const terms = [];
+        const seenTerms = new Set();
+        (Array.isArray(group?.terms) ? group.terms : []).forEach(labelId => {
+            if (!labelId || seenTerms.has(labelId)) return;
+            if (knownIds.size && !knownIds.has(labelId)) return;
+            seenTerms.add(labelId);
+            terms.push(labelId);
+        });
+        if (!terms.length) return;
+        nextGroups.push({
+            id: nextThematicFilterGroupId++,
+            op: group?.op === 'and' ? 'and' : 'or',
+            terms
+        });
+    });
+
+    if (!nextGroups.length) {
+        resetThematicFilterQuery();
+        return false;
+    }
+
+    thematicFilterGroups = nextGroups;
+    const safeIndex = Math.max(0, Math.min(activeIndex, thematicFilterGroups.length - 1));
+    activeThematicFilterGroupId = thematicFilterGroups[safeIndex].id;
+    thematicFilterMatchMode = thematicFilterGroups[safeIndex].op === 'and' ? 'all' : 'any';
+    if (SCOPE_LABELS[scope]) thematicFilterScope = scope;
+    syncActiveThematicFiltersFromGroups();
+    return true;
+}
+
 function addThematicFilterGroup() {
     normalizeThematicFilterGroups();
     const groupId = nextThematicFilterGroupId++;
@@ -1389,10 +1428,143 @@ function formatThematicFilterGroup(group) {
     return names.length > 1 ? `(${text})` : text;
 }
 
+function getConditionPhrase(group, index) {
+    const mode = group.op === 'and' ? 'Require all of' : 'Include any of';
+    return index === 0 ? mode : `Also ${mode.toLowerCase()}`;
+}
+
+function getConditionName(index) {
+    return index === 0 ? 'First condition' : `Condition ${index + 1}`;
+}
+
 function getThematicQueryText() {
     const groups = getNonEmptyThematicFilterGroups();
     if (groups.length === 0) return '';
     return groups.map(formatThematicFilterGroup).join(' AND ');
+}
+
+function getThematicSearchTitle() {
+    const groups = getNonEmptyThematicFilterGroups();
+    const names = [];
+    const seen = new Set();
+
+    groups.forEach(group => {
+        group.terms.forEach(labelId => {
+            if (seen.has(labelId)) return;
+            seen.add(labelId);
+            names.push(getThematicLabelName(labelId));
+        });
+    });
+
+    if (names.length === 0) return 'Theme search';
+    const visible = names.slice(0, 3).join(' + ');
+    const suffix = names.length > 3 ? ` + ${names.length - 3} more` : '';
+    return `${visible}${suffix} search`;
+}
+
+function encodeThematicQueryState() {
+    const groups = getNonEmptyThematicFilterGroups().map(group => ({
+        op: group.op,
+        terms: group.terms
+    }));
+    if (!groups.length) return '';
+
+    const state = {
+        scope: thematicFilterScope,
+        sort: thematicResultSortMode,
+        id: parseInt(document.getElementById('surahSelect')?.value) || 1,
+        groups
+    };
+    const encoded = btoa(JSON.stringify(state))
+        .replace(/\+/g, '-')
+        .replace(/\//g, '_')
+        .replace(/=+$/g, '');
+    return encoded;
+}
+
+function decodeThematicQueryState(encoded) {
+    if (!encoded) return null;
+    try {
+        const normalized = encoded.replace(/-/g, '+').replace(/_/g, '/');
+        const padded = normalized + '='.repeat((4 - normalized.length % 4) % 4);
+        const state = JSON.parse(atob(padded));
+        if (!state || !Array.isArray(state.groups)) return null;
+        return state;
+    } catch (error) {
+        console.warn('[filter] Failed to decode query URL state', error);
+        return null;
+    }
+}
+
+function syncThematicQueryToUrl() {
+    const url = new URL(window.location.href);
+    const encoded = encodeThematicQueryState();
+    if (encoded) {
+        url.searchParams.set('tq', encoded);
+    } else {
+        url.searchParams.delete('tq');
+    }
+    window.history.replaceState({}, '', url);
+}
+
+function restoreThematicQueryFromUrl() {
+    const url = new URL(window.location.href);
+    const state = decodeThematicQueryState(url.searchParams.get('tq'));
+    if (!state) return false;
+
+    const restored = applyThematicFilterGroups(state.groups, state.scope);
+    if (!restored) return false;
+    if (state.sort) thematicResultSortMode = state.sort;
+
+    const seed = Number.isFinite(parseInt(state.id)) ? parseInt(state.id) : 1;
+    const topSelect = document.getElementById('surahSelect');
+    if (topSelect && seed > 0) topSelect.value = String(seed);
+    if (typeof loadContent === 'function') loadContent(seed > 0 ? seed : 1);
+
+    syncFilterScopeButtons();
+    syncFilterMatchModeButtons();
+    const sortSelect = document.getElementById('filterSortSelect');
+    if (sortSelect) sortSelect.value = thematicResultSortMode;
+    renderThematicQueryBuilder();
+    renderThematicFilterChips();
+    applyFiltersToView();
+    return true;
+}
+
+async function copyThematicQueryLink() {
+    syncThematicQueryToUrl();
+    const url = window.location.href;
+    try {
+        await copyTextWithFallback(url);
+        if (window.showToast) window.showToast('Search link copied', 'link');
+    } catch (error) {
+        console.warn('[filter] Could not copy query link', error);
+        if (window.showToast) window.showToast('Could not copy link', 'error');
+    }
+}
+
+async function copyTextWithFallback(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        try {
+            await navigator.clipboard.writeText(text);
+            return;
+        } catch (error) {
+            // Fall through to the legacy path for local HTTP and embedded browsers.
+        }
+    }
+
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.setAttribute('readonly', '');
+    textarea.style.position = 'fixed';
+    textarea.style.left = '-9999px';
+    textarea.style.top = '0';
+    document.body.appendChild(textarea);
+    textarea.focus();
+    textarea.select();
+    const copied = document.execCommand('copy');
+    textarea.remove();
+    if (!copied) throw new Error('copy command failed');
 }
 
 function getLabelCountsForScope() {
@@ -1409,6 +1581,57 @@ function getLabelCountsForScope() {
     });
 
     return counts;
+}
+
+function getRelatedThemeSuggestions(limit = 8) {
+    const activeIds = new Set(activeThematicFilters);
+    if (activeIds.size === 0) return [];
+
+    const assignments = window.THEMATIC_ASSIGNMENTS || {};
+    const scopedSections = getScopeSectionIds();
+    const counts = new Map();
+
+    Object.entries(assignments).forEach(([sectionId, entry]) => {
+        if (sectionId.startsWith('_')) return;
+        if (!scopedSections.has(sectionId)) return;
+
+        const labels = entry.labels || [];
+        if (!labels.some(labelId => activeIds.has(labelId))) return;
+
+        labels.forEach(labelId => {
+            if (activeIds.has(labelId)) return;
+            counts.set(labelId, (counts.get(labelId) || 0) + 1);
+        });
+    });
+
+    return Array.from(counts.entries())
+        .map(([labelId, count]) => ({ labelId, count }))
+        .sort((a, b) => b.count - a.count || getThematicLabelName(a.labelId).localeCompare(getThematicLabelName(b.labelId)))
+        .slice(0, limit);
+}
+
+function renderRelatedThemeSuggestions() {
+    const container = document.getElementById('relatedThemeContainer');
+    const list = document.getElementById('relatedThemeList');
+    if (!container || !list) return;
+
+    const suggestions = getRelatedThemeSuggestions();
+    container.classList.toggle('hidden', suggestions.length === 0);
+    list.innerHTML = '';
+
+    suggestions.forEach(({ labelId, count }) => {
+        const chip = document.createElement('button');
+        chip.type = 'button';
+        chip.className = 'related-theme-chip inline-flex items-center gap-1 rounded-full border px-3 py-1.5 text-xs font-bold transition';
+        chip.dataset.labelId = labelId;
+        const color = getThematicLabelFacetColor(labelId);
+        chip.style.borderColor = color + '45';
+        chip.style.backgroundColor = color + '10';
+        chip.style.color = '#F3E4CE';
+        chip.innerHTML = `<span>${getThematicLabelName(labelId)}</span><span class="text-[10px] opacity-60">${count}</span>`;
+        chip.addEventListener('click', () => toggleFilter(labelId));
+        list.appendChild(chip);
+    });
 }
 
 function renderThematicQueryBuilder() {
@@ -1444,14 +1667,9 @@ function renderThematicQueryBuilder() {
         }
 
         const label = document.createElement('span');
-        label.className = 'text-[11px] font-bold uppercase tracking-wider text-white/70';
-        label.textContent = `Row ${index + 1}`;
+        label.className = 'text-[11px] font-bold tracking-wide text-white/70';
+        label.textContent = getConditionPhrase(group, index);
         rowTitle.appendChild(label);
-
-        const op = document.createElement('span');
-        op.className = 'text-[10px] font-bold uppercase tracking-widest text-[#56A3A6]';
-        op.textContent = group.op === 'and' ? 'ALL' : 'ANY';
-        rowTitle.appendChild(op);
 
         header.appendChild(rowTitle);
 
@@ -1515,7 +1733,7 @@ function renderThematicQueryBuilder() {
 
     if (currentRowText) {
         const activeIndex = thematicFilterGroups.findIndex(group => group.id === activeThematicFilterGroupId);
-        currentRowText.textContent = `Row ${activeIndex + 1}`;
+        currentRowText.textContent = getConditionName(activeIndex);
     }
 }
 
@@ -1597,9 +1815,25 @@ function setupThematicFilterUI() {
         clearBtn.addEventListener('click', clearThematicFilters);
     }
 
+    const copyQueryBtn = document.getElementById('copyFilterQueryBtn');
+    if (copyQueryBtn) {
+        copyQueryBtn.addEventListener('click', copyThematicQueryLink);
+    }
+
+    const sortSelect = document.getElementById('filterSortSelect');
+    if (sortSelect) {
+        sortSelect.value = thematicResultSortMode;
+        sortSelect.addEventListener('change', (event) => {
+            thematicResultSortMode = event.target.value || 'mushaf';
+            applyFiltersToView();
+        });
+    }
+
     syncFilterScopeButtons();
     syncFilterMatchModeButtons();
     renderThematicQueryBuilder();
+    renderThematicQueryTemplates();
+    renderRelatedThemeSuggestions();
     renderThematicFilterChips();
 }
 
@@ -1749,6 +1983,7 @@ function renderThematicFilterChips() {
     syncFilterScopeButtons();
     syncFilterChipStates();
     renderThematicQueryBuilder();
+    renderRelatedThemeSuggestions();
     updateFilterCount();
 
     if (searchValue) {
@@ -1770,6 +2005,90 @@ const SCOPE_LABELS = {
     quran: 'Whole Qur’an',
     revelation: 'Revelation order'
 };
+
+const THEMATIC_QUERY_TEMPLATES = [
+    {
+        id: 'mercy-return',
+        title: 'Mercy + return',
+        icon: 'favorite',
+        scope: 'quran',
+        groups: [
+            { op: 'or', terms: ['mercy', 'repentance'] },
+            { op: 'or', terms: ['dua-forgiveness', 'guidance'] }
+        ]
+    },
+    {
+        id: 'prophet-stories',
+        title: 'Prophet stories',
+        icon: 'auto_stories',
+        scope: 'quran',
+        groups: [
+            { op: 'or', terms: ['moses', 'noah', 'abraham', 'joseph'] },
+            { op: 'or', terms: ['guidance', 'disbelievers', 'pharaoh'] }
+        ]
+    },
+    {
+        id: 'worship-character',
+        title: 'Worship + character',
+        icon: 'self_improvement',
+        scope: 'quran',
+        groups: [
+            { op: 'or', terms: ['prayer', 'dua'] },
+            { op: 'or', terms: ['patience', 'justice', 'zakat-and-charity'] }
+        ]
+    },
+    {
+        id: 'afterlife-contrast',
+        title: 'Afterlife contrast',
+        icon: 'balance',
+        scope: 'quran',
+        groups: [
+            { op: 'or', terms: ['paradise', 'hell'] },
+            { op: 'or', terms: ['believers', 'disbelievers', 'day-of-judgment'] }
+        ]
+    }
+];
+
+function renderThematicQueryTemplates() {
+    const container = document.getElementById('filterTemplateList');
+    if (!container) return;
+
+    const knownIds = new Set((window.THEMATIC_TAXONOMY?.labels || []).map(label => label.id));
+    container.innerHTML = '';
+
+    THEMATIC_QUERY_TEMPLATES.forEach(template => {
+        const hasRequiredTerms = template.groups.every(group =>
+            group.terms.some(labelId => !knownIds.size || knownIds.has(labelId))
+        );
+        if (!hasRequiredTerms) return;
+
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'filter-template-btn rounded-xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.07] text-left px-3 py-2 transition';
+        button.dataset.templateId = template.id;
+        button.innerHTML = `
+            <span class="flex items-center gap-2 text-[11px] font-bold text-[#F3E4CE]">
+                <span class="material-symbols-outlined text-sm text-[#56A3A6]" aria-hidden="true">${template.icon}</span>
+                <span>${template.title}</span>
+            </span>
+        `;
+        button.addEventListener('click', () => applyThematicQueryTemplate(template.id));
+        container.appendChild(button);
+    });
+}
+
+function applyThematicQueryTemplate(templateId) {
+    const template = THEMATIC_QUERY_TEMPLATES.find(item => item.id === templateId);
+    if (!template) return;
+
+    applyThematicFilterGroups(template.groups, template.scope);
+    syncFilterScopeButtons();
+    syncFilterMatchModeButtons();
+    renderThematicQueryBuilder();
+    renderThematicFilterChips();
+    applyFiltersToView();
+    if (window.showToast) window.showToast(`Started ${template.title}`, 'filter_alt');
+}
 
 function syncFilterScopeButtons() {
     document.querySelectorAll('.filter-scope-btn').forEach(btn => {
@@ -1803,8 +2122,8 @@ function syncFilterMatchModeButtons() {
     const hint = document.getElementById('filterModeHint');
     if (hint) {
         hint.textContent = thematicFilterMatchMode === 'all'
-            ? 'ALL themes in current row'
-            : 'ANY theme in current row';
+            ? 'Require every selected theme'
+            : 'Accept any selected theme';
     }
 }
 
@@ -1854,16 +2173,25 @@ function toggleFilter(labelId) {
 }
 
 function clearThematicFilters() {
+    const hadCrossSurahResults = !!document.getElementById('crossSurahResults');
     resetThematicFilterQuery();
     renderThematicQueryBuilder();
     syncFilterMatchModeButtons();
     syncFilterChipStates();
+    renderRelatedThemeSuggestions();
     updateFilterCount();
+    syncThematicQueryToUrl();
+
     // If cross-surah results were on screen, reload the user's original view.
-    if (document.getElementById('crossSurahResults')) {
-        const surahId = parseInt(document.getElementById('surahSelect')?.value);
-        if (typeof loadContent === 'function' && surahId) {
-            loadContent(surahId);
+    if (hadCrossSurahResults) {
+        const select = document.getElementById('surahSelect');
+        let targetId = parseInt(select?.value);
+        if (!Number.isFinite(targetId) || targetId < 1) {
+            targetId = 1;
+            if (select) select.value = String(targetId);
+        }
+        if (typeof loadContent === 'function') {
+            loadContent(targetId);
             return;
         }
     }
@@ -1880,6 +2208,7 @@ function updateFilterCount() {
     const rowCount = getNonEmptyThematicFilterGroups().length;
     const text = document.getElementById('activeFilterCountText');
     const clearBtn = document.getElementById('clearFiltersBtn');
+    const copyBtn = document.getElementById('copyFilterQueryBtn');
     const openBtn = document.getElementById('openFilterBtn');
     if (text) {
         text.textContent = rowCount > 1
@@ -1887,6 +2216,7 @@ function updateFilterCount() {
             : `${count} selected`;
     }
     if (clearBtn) clearBtn.classList.toggle('hidden', count === 0);
+    if (copyBtn) copyBtn.classList.toggle('hidden', count === 0);
     if (openBtn) {
         openBtn.classList.toggle('ring-2', count > 0);
         openBtn.classList.toggle('ring-[#56A3A6]', count > 0);
@@ -1905,6 +2235,7 @@ function updateActiveFilterBanner(visibleCount) {
     }
 
     const selectedNames = getThematicQueryText();
+    const searchTitle = getThematicSearchTitle();
     const scopeLabel = (SCOPE_LABELS[thematicFilterScope] || 'This surah').toLowerCase();
 
     if (!banner) {
@@ -1919,13 +2250,17 @@ function updateActiveFilterBanner(visibleCount) {
             <div class="flex items-start gap-3">
                 <span class="material-symbols-outlined text-[#56A3A6] text-xl mt-0.5">filter_alt</span>
                 <div>
-                    <p class="text-xs font-bold uppercase tracking-wider text-[#56A3A6]">Filtered view</p>
+                    <p class="text-xs font-bold uppercase tracking-wider text-[#56A3A6]">${searchTitle}</p>
                     <p class="text-sm text-white/80">Showing ${visibleCount} section${visibleCount === 1 ? '' : 's'} matching ${selectedNames} from ${scopeLabel}.</p>
                 </div>
             </div>
-            <button id="activeFilterBannerClearBtn" type="button" class="self-start sm:self-center text-xs font-bold uppercase tracking-wider text-[#56A3A6] hover:text-white transition">Clear filters</button>
+            <div class="flex items-center gap-3">
+                <button id="activeFilterBannerCopyBtn" type="button" class="text-xs font-bold uppercase tracking-wider text-[#56A3A6] hover:text-white transition">Copy link</button>
+                <button id="activeFilterBannerClearBtn" type="button" class="text-xs font-bold uppercase tracking-wider text-[#56A3A6] hover:text-white transition">Clear filters</button>
+            </div>
         </div>
     `;
+    document.getElementById('activeFilterBannerCopyBtn')?.addEventListener('click', copyThematicQueryLink);
     document.getElementById('activeFilterBannerClearBtn')?.addEventListener('click', clearThematicFilters);
 }
 
@@ -1953,9 +2288,122 @@ function sectionMatchesFilters(sectionId) {
     });
 }
 
+function getSectionFilterMatchDetails(sectionId) {
+    const groups = getNonEmptyThematicFilterGroups();
+    const entry = (window.THEMATIC_ASSIGNMENTS || {})[sectionId];
+    const labels = new Set((entry && entry.labels) || []);
+    const matchedIds = [];
+    const seen = new Set();
+
+    groups.forEach(group => {
+        group.terms.forEach(labelId => {
+            if (!labels.has(labelId) || seen.has(labelId)) return;
+            seen.add(labelId);
+            matchedIds.push(labelId);
+        });
+    });
+
+    return matchedIds;
+}
+
+function renderFilterMatchExplanationForCard(card, sectionId) {
+    card.querySelector('.filter-match-explanation')?.remove();
+    if (!hasActiveThematicQuery()) return;
+
+    const matchedIds = getSectionFilterMatchDetails(sectionId);
+    if (!matchedIds.length) return;
+
+    const explanation = document.createElement('div');
+    explanation.className = "filter-match-explanation mb-6 rounded-2xl border border-[#56A3A6]/20 bg-[#56A3A6]/10 px-3 py-3 font-['Nunito']";
+
+    const header = document.createElement('div');
+    header.className = 'flex items-center gap-2 text-[10px] font-bold uppercase tracking-wider text-[#56A3A6] mb-2';
+    header.innerHTML = '<span class="material-symbols-outlined text-sm" aria-hidden="true">task_alt</span><span>Matched</span>';
+    explanation.appendChild(header);
+
+    const chips = document.createElement('div');
+    chips.className = 'flex flex-wrap gap-1.5';
+    matchedIds.forEach(labelId => {
+        const chip = document.createElement('span');
+        chip.className = 'filter-match-chip rounded-full border px-2 py-1 text-[11px] font-bold';
+        const color = getThematicLabelFacetColor(labelId);
+        chip.style.borderColor = color + '55';
+        chip.style.backgroundColor = color + '18';
+        chip.style.color = '#F3E4CE';
+        chip.textContent = getThematicLabelName(labelId);
+        chips.appendChild(chip);
+    });
+    explanation.appendChild(chips);
+
+    const headerNode = card.querySelector('.thematic-header-with-labels') ||
+        Array.from(card.children).find(child => child.classList?.contains('border-b'));
+    if (headerNode && headerNode.nextSibling) {
+        card.insertBefore(explanation, headerNode.nextSibling);
+    } else {
+        card.appendChild(explanation);
+    }
+}
+
+function broadenThematicQuery() {
+    normalizeThematicFilterGroups();
+    const hasStrictRows = thematicFilterGroups.some(group => group.op === 'and' && group.terms.length > 1);
+
+    if (hasStrictRows) {
+        thematicFilterGroups.forEach(group => {
+            if (group.op === 'and' && group.terms.length > 1) group.op = 'or';
+        });
+    } else if (thematicFilterGroups.length > 1) {
+        const mergedTerms = [];
+        const seen = new Set();
+        thematicFilterGroups.forEach(group => {
+            group.terms.forEach(labelId => {
+                if (seen.has(labelId)) return;
+                seen.add(labelId);
+                mergedTerms.push(labelId);
+            });
+        });
+        thematicFilterGroups = [{ id: nextThematicFilterGroupId++, op: 'or', terms: mergedTerms }];
+        activeThematicFilterGroupId = thematicFilterGroups[0].id;
+    }
+
+    normalizeThematicFilterGroups();
+    syncFilterMatchModeButtons();
+    renderThematicQueryBuilder();
+    syncFilterChipStates();
+    updateFilterCount();
+    applyFiltersToView();
+}
+
+function attachFilterEmptyStateActions() {
+    document.getElementById('emptyStateClearBtn')?.addEventListener('click', clearThematicFilters);
+    document.getElementById('emptyStateWholeQuranBtn')?.addEventListener('click', () => {
+        thematicFilterScope = 'quran';
+        syncFilterScopeButtons();
+        renderThematicFilterChips();
+        applyFiltersToView();
+    });
+    document.getElementById('emptyStateBroadenBtn')?.addEventListener('click', broadenThematicQuery);
+}
+
+function renderFilterEmptyStateHtml(message) {
+    const scopeAction = thematicFilterScope === 'quran'
+        ? ''
+        : '<button id="emptyStateWholeQuranBtn" class="rounded-full border border-[#56A3A6]/40 px-4 py-2 text-xs font-bold uppercase tracking-wider text-[#56A3A6] hover:text-white hover:bg-[#56A3A6]/15 transition">Whole Qur’an</button>';
+    return `
+        <span class="material-symbols-outlined text-4xl text-white/20 mb-4 block">filter_list_off</span>
+        <p class="text-white/60 font-['Nunito'] text-lg">${message}</p>
+        <div class="mt-5 flex flex-wrap items-center justify-center gap-3 font-['Nunito']">
+            ${scopeAction}
+            <button id="emptyStateBroadenBtn" class="rounded-full border border-white/15 px-4 py-2 text-xs font-bold uppercase tracking-wider text-[#F3E4CE] hover:bg-white/10 transition">Broaden search</button>
+            <button id="emptyStateClearBtn" class="rounded-full border border-white/15 px-4 py-2 text-xs font-bold uppercase tracking-wider text-white/60 hover:text-white hover:bg-white/10 transition">Clear filters</button>
+        </div>
+    `;
+}
+
 // Filter rendered cards by section ID. Honors the active match mode.
 function applyFiltersToView() {
     renderThematicFilterChips();
+    syncThematicQueryToUrl();
 
     // Cross-surah results view takes over when scope spans multiple surahs and
     // filters are active. Otherwise we just hide/show cards in the current view.
@@ -1980,7 +2428,12 @@ function applyFiltersToView() {
         const sectionId = `${card.dataset.surah}:${card.dataset.start}`;
         const show = sectionMatchesFilters(sectionId);
         card.style.display = show ? '' : 'none';
-        if (show) visibleCount++;
+        if (show) {
+            visibleCount++;
+            renderFilterMatchExplanationForCard(card, sectionId);
+        } else {
+            card.querySelector('.filter-match-explanation')?.remove();
+        }
     });
 
     updateActiveFilterBanner(visibleCount);
@@ -2004,17 +2457,13 @@ function applyFiltersToView() {
             emptyState = document.createElement('div');
             emptyState.id = 'filterEmptyState';
             emptyState.className = "text-center py-16 w-full";
-            emptyState.innerHTML = `
-                <span class="material-symbols-outlined text-4xl text-white/20 mb-4 block">filter_list_off</span>
-                <p class="text-white/60 font-['Nunito'] text-lg">No sections in this view match the selected themes.</p>
-                <button id="emptyStateClearBtn" class="mt-4 text-[#56A3A6] hover:text-white transition underline underline-offset-4 cursor-pointer font-['Nunito']">Clear filters</button>
-            `;
+            emptyState.innerHTML = renderFilterEmptyStateHtml('No sections in this view match the selected themes.');
             contentArea.appendChild(emptyState);
-            document.getElementById('emptyStateClearBtn').addEventListener('click', () => {
-                document.getElementById('clearFiltersBtn')?.click();
-            });
+            attachFilterEmptyStateActions();
         } else if (emptyState) {
+            emptyState.innerHTML = renderFilterEmptyStateHtml('No sections in this view match the selected themes.');
             emptyState.style.display = '';
+            attachFilterEmptyStateActions();
         }
     } else if (emptyState) {
         emptyState.style.display = 'none';
@@ -2069,6 +2518,59 @@ function playSurahIntroThen(surahId, next) {
 // When the scope spans multiple surahs and filters are active, this takes
 // over the content area: renders every matching section grouped by surah,
 // in mushaf order (or revelation order if scope is 'revelation').
+
+function getSurahSortTuple(surahId) {
+    const meta = window.SURAH_METADATA || {};
+    const surahMeta = meta[String(surahId)] || {};
+    const revelationOrder = surahMeta.revelationOrder ?? 999;
+    const typeOrder = surahMeta.type === 'makki' ? 0 : surahMeta.type === 'madani' ? 1 : 2;
+    return { revelationOrder, typeOrder };
+}
+
+function compareCrossSurahMatches(a, b) {
+    const aTuple = getSurahSortTuple(a.surahId);
+    const bTuple = getSurahSortTuple(b.surahId);
+
+    switch (thematicResultSortMode) {
+        case 'revelation':
+            return aTuple.revelationOrder - bTuple.revelationOrder || a.surahId - b.surahId || a.start - b.start;
+        case 'makki-madani':
+            return aTuple.typeOrder - bTuple.typeOrder || a.surahId - b.surahId || a.start - b.start;
+        case 'best-match':
+            return b.matchCount - a.matchCount || a.verseCount - b.verseCount || a.surahId - b.surahId || a.start - b.start;
+        case 'shortest':
+            return a.verseCount - b.verseCount || b.matchCount - a.matchCount || a.surahId - b.surahId || a.start - b.start;
+        case 'mushaf':
+        default:
+            return a.surahId - b.surahId || a.start - b.start;
+    }
+}
+
+function getCrossSurahHeaderHtml(surahId, sectionCount) {
+    const meta = window.SURAH_METADATA || {};
+    const surahName = (typeof window.getSurahName === 'function')
+        ? window.getSurahName(surahId)
+        : `Surah ${surahId}`;
+    const cleanName = String(surahName).replace(/^\d+\s+/, '');
+    const revOrder = meta[String(surahId)]?.revelationOrder;
+    const typeBadge = meta[String(surahId)]?.type
+        ? `<span class="ml-2 align-middle text-[10px] uppercase tracking-widest text-[#56A3A6]/80">${meta[String(surahId)].type}</span>`
+        : '';
+    const revBadge = (thematicResultSortMode === 'revelation' && revOrder)
+        ? `<span class="ml-2 align-middle text-[10px] uppercase tracking-widest text-white/40">Revealed #${revOrder}</span>`
+        : '';
+
+    return `
+        <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 border border-white/10">
+            <span class="material-symbols-outlined text-[#56A3A6] text-base">menu_book</span>
+            <span class="font-['Forum'] text-lg text-white tracking-wide">Surah ${cleanName}</span>
+            ${typeBadge}
+            ${revBadge}
+            <span class="ml-2 text-[10px] uppercase tracking-widest text-white/40">${sectionCount} section${sectionCount === 1 ? '' : 's'}</span>
+        </div>
+    `;
+}
+
 function renderCrossSurahResults() {
     const contentArea = document.getElementById('contentArea');
     if (!contentArea) return;
@@ -2078,19 +2580,7 @@ function renderCrossSurahResults() {
     }
 
     const scopeSurahs = getScopeSurahNumbers();
-    const meta = window.SURAH_METADATA || {};
-
-    // Sort surahs: mushaf order by default, revelation order if scope === 'revelation'.
-    const sortedSurahs = Array.from(scopeSurahs)
-        .map(Number)
-        .sort((a, b) => {
-            if (thematicFilterScope === 'revelation') {
-                const ao = meta[String(a)]?.revelationOrder ?? 999;
-                const bo = meta[String(b)]?.revelationOrder ?? 999;
-                return ao - bo;
-            }
-            return a - b;
-        });
+    const sortedSurahs = Array.from(scopeSurahs).map(Number).sort((a, b) => a - b);
 
     // For each surah in scope, walk its theme_breaks and pick matched sections.
     contentArea.innerHTML = '';
@@ -2099,8 +2589,7 @@ function renderCrossSurahResults() {
     wrapper.className = 'cross-surah-results';
     contentArea.appendChild(wrapper);
 
-    let totalMatches = 0;
-    const matchedSurahs = [];
+    const matches = [];
 
     sortedSurahs.forEach(surahId => {
         const breaks = THEME_BREAKS[String(surahId)] || [];
@@ -2108,7 +2597,6 @@ function renderCrossSurahResults() {
         if (!surahVerses.length || !breaks.length) return;
         const lastVerse = surahVerses[surahVerses.length - 1][CONSTANTS.KEY_AYAH_NO];
 
-        const matchedSections = [];
         breaks.forEach((startVerse, idx) => {
             const start = (typeof startVerse === 'object') ? startVerse.start : startVerse;
             const nextRaw = breaks[idx + 1];
@@ -2122,42 +2610,39 @@ function renderCrossSurahResults() {
                 return vn >= start && vn <= endVerse;
             });
             if (!sectionData.length) return;
-            matchedSections.push({ start, endVerse, data: sectionData });
+            const matchedIds = getSectionFilterMatchDetails(sectionId);
+            matches.push({
+                surahId,
+                start,
+                endVerse,
+                data: sectionData,
+                matchCount: matchedIds.length,
+                verseCount: sectionData.length
+            });
         });
+    });
 
-        if (!matchedSections.length) return;
-        matchedSurahs.push(surahId);
+    matches.sort(compareCrossSurahMatches);
+    const totalMatches = matches.length;
+    const matchedSurahs = Array.from(new Set(matches.map(match => match.surahId)));
 
-        // Surah header (mini-header style matches juz view)
-        const header = document.createElement('div');
-        header.className = "surah-mini-header cross-surah-divider mt-4 mb-6 text-center";
-        const surahName = (typeof window.getSurahName === 'function')
-            ? window.getSurahName(surahId)
-            : `Surah ${surahId}`;
-        const cleanName = String(surahName).replace(/^\d+\s+/, '');
-        const revOrder = meta[String(surahId)]?.revelationOrder;
-        const typeBadge = meta[String(surahId)]?.type
-            ? `<span class="ml-2 align-middle text-[10px] uppercase tracking-widest text-[#56A3A6]/80">${meta[String(surahId)].type}</span>`
-            : '';
-        const revBadge = (thematicFilterScope === 'revelation' && revOrder)
-            ? `<span class="ml-2 align-middle text-[10px] uppercase tracking-widest text-white/40">Revealed #${revOrder}</span>`
-            : '';
-        header.innerHTML = `
-            <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 border border-white/10">
-                <span class="material-symbols-outlined text-[#56A3A6] text-base">menu_book</span>
-                <span class="font-['Forum'] text-lg text-white tracking-wide">Surah ${cleanName}</span>
-                ${typeBadge}
-                ${revBadge}
-                <span class="ml-2 text-[10px] uppercase tracking-widest text-white/40">${matchedSections.length} section${matchedSections.length === 1 ? '' : 's'}</span>
-            </div>
-        `;
-        wrapper.appendChild(header);
+    const countsBySurah = new Map();
+    matches.forEach(match => {
+        countsBySurah.set(match.surahId, (countsBySurah.get(match.surahId) || 0) + 1);
+    });
 
-        matchedSections.forEach(s => {
-            const card = createCard(surahId, s.start, s.endVerse, s.data);
-            wrapper.appendChild(card);
-            totalMatches++;
-        });
+    let lastRenderedSurah = null;
+    matches.forEach(match => {
+        if (match.surahId !== lastRenderedSurah) {
+            const header = document.createElement('div');
+            header.className = "surah-mini-header cross-surah-divider mt-4 mb-6 text-center";
+            header.innerHTML = getCrossSurahHeaderHtml(match.surahId, countsBySurah.get(match.surahId) || 1);
+            wrapper.appendChild(header);
+            lastRenderedSurah = match.surahId;
+        }
+        const card = createCard(match.surahId, match.start, match.endVerse, match.data);
+        renderFilterMatchExplanationForCard(card, `${match.surahId}:${match.start}`);
+        wrapper.appendChild(card);
     });
 
     updateActiveFilterBanner(totalMatches);
@@ -2165,12 +2650,10 @@ function renderCrossSurahResults() {
     if (totalMatches === 0) {
         wrapper.innerHTML = `
             <div class="text-center py-16">
-                <span class="material-symbols-outlined text-4xl text-white/20 mb-4 block">filter_list_off</span>
-                <p class="text-white/60 font-['Nunito'] text-lg">No sections in the selected scope match these themes.</p>
-                <button id="emptyStateClearBtn" class="mt-4 text-[#56A3A6] hover:text-white transition underline underline-offset-4 cursor-pointer font-['Nunito']">Clear filters</button>
+                ${renderFilterEmptyStateHtml('No sections in the selected scope match these themes.')}
             </div>
         `;
-        document.getElementById('emptyStateClearBtn')?.addEventListener('click', clearThematicFilters);
+        attachFilterEmptyStateActions();
     }
 
     // Stash a queue on the wrapper for the audio player to walk.

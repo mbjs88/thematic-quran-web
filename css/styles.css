@@ -307,6 +307,34 @@ html {
     white-space: nowrap;
 }
 
+.filter-template-btn {
+    min-height: 42px;
+}
+
+.filter-template-btn .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 450, 'GRAD' 0, 'opsz' 20;
+}
+
+.related-theme-chip:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    transform: translateY(-1px);
+}
+
+.filter-match-explanation {
+    animation: filter-match-fade 0.2s ease-out;
+}
+
+@keyframes filter-match-fade {
+    from {
+        opacity: 0;
+        transform: translateY(-3px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .thematic-labels-summary::-webkit-details-marker {
     display: none;
 }
