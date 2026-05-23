@@ -320,6 +320,463 @@ html {
     transform: translateY(-1px);
 }
 
+body.theme-search-page-open {
+    overflow: hidden;
+}
+
+.theme-search-page {
+    background:
+        radial-gradient(circle at 18% 6%, rgba(86, 163, 166, 0.16), transparent 32%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 36%);
+}
+
+.theme-search-hero {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    margin-bottom: 28px;
+    padding-top: 18px;
+    padding-bottom: 28px;
+}
+
+.theme-search-hero-copy {
+    max-width: 760px;
+    margin-bottom: 22px;
+}
+
+.theme-search-eyebrow,
+.theme-search-action-kicker,
+.theme-search-mini-heading,
+.theme-search-section-heading span:first-child {
+    color: #56A3A6;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.theme-search-hero-title {
+    margin-top: 8px;
+    color: #fff;
+    font-family: 'Forum', serif;
+    font-size: clamp(2.4rem, 5vw, 5rem);
+    line-height: 0.95;
+    letter-spacing: 0;
+    max-width: 900px;
+}
+
+.theme-search-input-wrap {
+    position: relative;
+    max-width: 900px;
+    margin-bottom: 28px;
+}
+
+.theme-search-input-icon {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(30, 20, 38, 0.48);
+    pointer-events: none;
+    font-size: 28px;
+}
+
+.theme-search-input {
+    width: 100%;
+    min-height: 66px;
+    border-radius: 18px;
+    border: 1px solid rgba(243, 228, 206, 0.78);
+    background: #F3E4CE;
+    color: #1E1426;
+    padding: 0 22px 0 58px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.22), 0 0 0 1px rgba(255, 255, 255, 0.08) inset;
+}
+
+.theme-search-input::placeholder {
+    color: rgba(30, 20, 38, 0.52);
+}
+
+.theme-search-input:focus {
+    outline: none;
+    border-color: #56A3A6;
+    box-shadow: 0 0 0 4px rgba(86, 163, 166, 0.28), 0 18px 45px rgba(0, 0, 0, 0.24);
+}
+
+/* ── Prediction dropdown (Google-style typeahead under the search input) ── */
+.theme-search-predictions {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    z-index: 90;
+    background: #1B1726;
+    border: 1px solid rgba(243, 228, 206, 0.18);
+    border-radius: 16px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+    max-height: min(360px, 60vh);
+    overflow-y: auto;
+    padding: 6px;
+    font-family: 'Nunito', sans-serif;
+}
+
+.theme-search-predictions.hidden {
+    display: none;
+}
+
+.theme-search-prediction {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    min-height: 48px;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 12px;
+    background: transparent;
+    color: #F3E4CE;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.12s ease;
+}
+
+.theme-search-prediction:hover,
+.theme-search-prediction.is-active {
+    background: rgba(86, 163, 166, 0.16);
+}
+
+.theme-search-prediction-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    flex: none;
+}
+
+.theme-search-prediction-text {
+    flex: 1 1 auto;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.theme-search-prediction-name {
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 1.25;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.theme-search-prediction-name mark {
+    background: rgba(86, 163, 166, 0.38);
+    color: #fff;
+    border-radius: 3px;
+    padding: 0 1px;
+}
+
+.theme-search-prediction-facet {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: capitalize;
+    color: rgba(243, 228, 206, 0.5);
+}
+
+.theme-search-prediction-count {
+    flex: none;
+    font-size: 12px;
+    font-weight: 800;
+    color: rgba(243, 228, 206, 0.55);
+}
+
+.theme-search-prediction-check {
+    flex: none;
+    color: #56A3A6;
+}
+
+.theme-search-prediction-empty {
+    padding: 14px;
+    font-size: 14px;
+    color: rgba(243, 228, 206, 0.5);
+}
+
+.theme-search-section-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 12px;
+}
+
+.theme-search-section-heading span:last-child {
+    color: rgba(243, 228, 206, 0.55);
+    font-size: 13px;
+}
+
+.theme-starter-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.filter-template-btn {
+    min-height: 148px;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.045);
+    padding: 16px;
+    text-align: left;
+    transition: border-color 0.18s ease, background 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.filter-template-btn:hover,
+.filter-template-btn.active-template {
+    transform: translateY(-2px);
+    border-color: rgba(86, 163, 166, 0.56);
+    background: rgba(86, 163, 166, 0.1);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+}
+
+.filter-template-btn .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 450, 'GRAD' 0, 'opsz' 20;
+}
+
+.theme-starter-kicker {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    color: rgba(243, 228, 206, 0.52);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+}
+
+.theme-starter-title {
+    display: block;
+    color: #fff;
+    font-family: 'Forum', serif;
+    font-size: 1.34rem;
+    line-height: 1.05;
+    margin: 18px 0 10px;
+}
+
+.theme-starter-description,
+.theme-starter-logic {
+    color: rgba(243, 228, 206, 0.62);
+    font-size: 12px;
+    line-height: 1.45;
+}
+
+.theme-starter-logic {
+    color: rgba(86, 163, 166, 0.95);
+    margin-top: 12px;
+    font-weight: 800;
+}
+
+.theme-search-workspace {
+    display: grid;
+    grid-template-columns: minmax(300px, 390px) minmax(0, 1fr);
+    gap: 28px;
+    align-items: start;
+}
+
+.theme-search-panel,
+.theme-search-summary-panel {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.035);
+    padding: 18px;
+}
+
+.theme-search-library-column {
+    min-width: 0;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.035);
+    padding: 22px;
+}
+
+.theme-library-facets {
+    columns: 2 300px;
+    column-gap: 22px;
+}
+
+.theme-library-facets .filter-facet-group {
+    break-inside: avoid;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 26px;
+}
+
+.theme-search-summary-panel {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.theme-search-action-bar {
+    font-family: 'Nunito', sans-serif;
+}
+
+.theme-search-action-text {
+    color: rgba(243, 228, 206, 0.74);
+    font-size: 14px;
+    line-height: 1.35;
+    margin-top: 4px;
+}
+
+.theme-search-active-sentence {
+    color: #fff;
+    font-family: 'Forum', serif;
+    font-size: 1.35rem;
+    line-height: 1.2;
+    margin-top: 14px;
+}
+
+.theme-search-action-buttons {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 8px;
+    margin-top: 18px;
+    margin-bottom: 20px;
+}
+
+.theme-search-primary-btn,
+.theme-search-secondary-btn {
+    min-height: 40px;
+    border-radius: 9999px;
+    padding: 0 16px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+}
+
+.theme-search-primary-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: #56A3A6;
+    color: #fff;
+    border: 1px solid #56A3A6;
+}
+
+.theme-search-primary-btn:hover {
+    background: #458a8d;
+    border-color: #458a8d;
+}
+
+.theme-search-primary-btn:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.theme-search-secondary-btn {
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    color: rgba(243, 228, 206, 0.7);
+}
+
+.theme-search-secondary-btn:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.theme-search-related-panel,
+.theme-search-scope-block,
+.theme-search-advanced {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 18px;
+    margin-top: 18px;
+    font-family: 'Nunito', sans-serif;
+}
+
+.theme-search-advanced summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    color: rgba(243, 228, 206, 0.74);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    list-style: none;
+}
+
+.theme-search-advanced summary::-webkit-details-marker {
+    display: none;
+}
+
+.theme-search-advanced summary .material-symbols-outlined {
+    transition: transform 0.18s ease;
+}
+
+.theme-search-advanced[open] summary .material-symbols-outlined {
+    transform: rotate(180deg);
+}
+
+@media (max-width: 640px) {
+    .theme-search-hero {
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+    }
+
+    .theme-search-hero-title {
+        font-size: 2.7rem;
+    }
+
+    .theme-search-input {
+        min-height: 58px;
+        font-size: 15px;
+    }
+
+    .theme-search-section-heading {
+        align-items: start;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .theme-starter-grid,
+    .theme-search-workspace {
+        grid-template-columns: 1fr;
+    }
+
+    .theme-search-library-column {
+        padding: 16px;
+    }
+
+    .theme-library-facets {
+        columns: 1;
+    }
+
+    .filter-template-btn {
+        min-height: 124px;
+    }
+
+    .theme-search-action-bar {
+        padding: 0;
+    }
+
+    .theme-search-action-buttons {
+        grid-template-columns: 0.78fr 1.22fr;
+    }
+
+    .theme-search-primary-btn,
+    .theme-search-secondary-btn {
+        justify-content: center;
+        padding: 0 12px;
+    }
+
+    .theme-search-panel {
+        border-radius: 14px;
+        padding: 14px;
+    }
+
+}
+
 .filter-match-explanation {
     animation: filter-match-fade 0.2s ease-out;
 }
@@ -383,4 +840,152 @@ body.is-logged-in #bottomQuranLoginBtn:hover {
 
 body.is-logged-in #bottomQuranLoginIcon {
     font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+}
+
+/* ==============================================================
+   THEME SEARCH WELCOME TUTORIAL
+   A small, dependency-free contextual coachmark. The overlay is a
+   click-through layer that only hosts the popover; the page is not dimmed
+   so the highlighted target stays legible and the search page stays fully
+   interactive — the user is never trapped.
+   ============================================================== */
+.theme-tutorial-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 130;            /* above the filter sidebar (z-70) */
+    pointer-events: none;    /* only the popover is interactive */
+}
+
+.theme-tutorial-popover {
+    position: absolute;
+    width: min(340px, calc(100vw - 24px));
+    background: #1E1B27;
+    border: 1px solid rgba(86, 163, 166, 0.55);
+    border-radius: 16px;
+    padding: 18px 18px 14px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55);
+    color: #F3E4CE;
+    font-family: 'Nunito', sans-serif;
+    pointer-events: auto;
+    animation: theme-tutorial-pop 0.18s ease-out;
+}
+
+@keyframes theme-tutorial-pop {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.theme-tutorial-progress {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #56A3A6;
+    margin-bottom: 6px;
+}
+
+.theme-tutorial-title {
+    font-family: 'Forum', serif;
+    font-size: 1.15rem;
+    letter-spacing: 0.02em;
+    color: #fff;
+    margin: 0 0 6px;
+}
+
+.theme-tutorial-body {
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: rgba(243, 228, 206, 0.85);
+    margin: 0 0 16px;
+}
+
+.theme-tutorial-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.theme-tutorial-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.theme-tutorial-skip,
+.theme-tutorial-back,
+.theme-tutorial-next {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    border-radius: 9999px;
+    padding: 7px 16px;
+    cursor: pointer;
+    transition: all 0.18s ease;
+    border: 1px solid transparent;
+}
+
+.theme-tutorial-skip {
+    background: transparent;
+    color: rgba(243, 228, 206, 0.55);
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.theme-tutorial-skip:hover {
+    color: #fff;
+}
+
+.theme-tutorial-back {
+    background: transparent;
+    border-color: rgba(255, 255, 255, 0.18);
+    color: rgba(243, 228, 206, 0.8);
+}
+
+.theme-tutorial-back:hover {
+    border-color: rgba(255, 255, 255, 0.4);
+    color: #fff;
+}
+
+.theme-tutorial-back.is-hidden {
+    display: none;
+}
+
+.theme-tutorial-next {
+    background: #56A3A6;
+    color: #fff;
+    box-shadow: 0 6px 18px rgba(86, 163, 166, 0.3);
+}
+
+.theme-tutorial-next:hover {
+    background: #458a8d;
+}
+
+/* Bottom-sheet variant for narrow screens (side popovers are too cramped). */
+.theme-tutorial-popover.is-sheet {
+    top: auto !important;
+    left: 0 !important;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    padding-bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    animation: theme-tutorial-sheet 0.22s ease-out;
+}
+
+@keyframes theme-tutorial-sheet {
+    from { transform: translateY(100%); }
+    to   { transform: translateY(0); }
+}
+
+/* Highlight ring drawn on the active target inside Theme Search. */
+.theme-tutorial-highlight {
+    position: relative;
+    z-index: 1;
+    border-radius: 14px;
+    box-shadow: 0 0 0 2px #56A3A6, 0 0 0 7px rgba(86, 163, 166, 0.28);
+    transition: box-shadow 0.2s ease;
 }

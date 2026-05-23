@@ -317,23 +317,19 @@
 
         <div class="flex w-full max-w-3xl mx-auto gap-3 items-center">
             <select id="surahSelect"
-                class="flex-1 w-full p-2.5 rounded-lg bg-white/10 border border-white/20 text-[#F3E4CE] shadow-sm focus:outline-none focus:ring-2 focus:ring-[#56A3A6] backdrop-blur-md font-['Nunito'] truncate text-sm md:text-base">
+                class="flex-1 w-full h-11 px-3 rounded-lg bg-white/10 border border-white/20 text-[#F3E4CE] shadow-sm focus:outline-none focus:ring-2 focus:ring-[#56A3A6] backdrop-blur-md font-['Nunito'] truncate text-sm md:text-base">
             </select>
 
             <button id="openFilterBtn"
-                class="shrink-0 p-2.5 rounded-lg bg-white/10 border border-white/20 text-[#F3E4CE] hover:bg-white/20 hover:text-white transition focus:outline-none focus:ring-2 focus:ring-[#56A3A6] backdrop-blur-md"
-                title="Theme Filters">
-                <span class="material-symbols-outlined align-middle">filter_list</span>
-            </button>
-
-            <button id="openBookmarksBtn"
-                class="shrink-0 p-2.5 rounded-lg bg-white/10 border border-white/20 text-[#F3E4CE] hover:bg-white/20 hover:text-white transition focus:outline-none focus:ring-2 focus:ring-[#56A3A6] backdrop-blur-md"
-                title="Saved Bookmarks">
-                <span class="material-symbols-outlined align-middle">bookmarks</span>
+                class="shrink-0 h-11 flex items-center gap-1.5 px-3 rounded-lg bg-white/10 border border-white/20 text-[#F3E4CE] hover:bg-white/20 hover:text-white transition focus:outline-none focus:ring-2 focus:ring-[#56A3A6] backdrop-blur-md"
+                title="Theme Search">
+                <span class="material-symbols-outlined align-middle text-xl leading-none">filter_list</span>
+                <span id="openFilterBtnLabel" class="hidden md:inline text-sm font-bold font-['Nunito'] whitespace-nowrap">Theme Search</span>
+                <span id="openFilterBtnLabelMobile" class="md:hidden text-sm font-bold font-['Nunito'] whitespace-nowrap"></span>
             </button>
 
             <button id="openSettingsBtn"
-                class="shrink-0 p-2.5 rounded-lg bg-white/10 border border-white/20 text-[#F3E4CE] hover:bg-white/20 hover:text-white transition focus:outline-none focus:ring-2 focus:ring-[#56A3A6] backdrop-blur-md"
+                class="shrink-0 h-11 w-11 rounded-lg bg-white/10 border border-white/20 text-[#F3E4CE] hover:bg-white/20 hover:text-white transition focus:outline-none focus:ring-2 focus:ring-[#56A3A6] backdrop-blur-md flex items-center justify-center"
                 title="Settings">
                 <span class="material-symbols-outlined align-middle">settings</span>
             </button>
@@ -405,24 +401,24 @@
                         </div>
                     </div>
 
-                    <!-- CTA 2: EXPLORE A THEME -->
+                    <!-- CTA 2: START A THEME SEARCH -->
                     <div class="bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col">
                         <div class="flex items-center gap-2 mb-1">
                             <span class="material-symbols-outlined text-[#56A3A6]" aria-hidden="true">sell</span>
-                            <h2 class="text-lg font-bold text-white font-['Forum'] tracking-wide">Explore a theme</h2>
+                            <h2 class="text-lg font-bold text-white font-['Forum'] tracking-wide">Start a Theme Search</h2>
                         </div>
-                        <p class="text-sm text-white/60 font-['Nunito'] mb-4">Pick a theme and see every passage that touches on it, across the whole Qur’an.</p>
+                        <p class="text-sm text-white/60 font-['Nunito'] mb-4">Choose one theme to begin. From there you can add related themes or conditions to refine your search across the whole Qur’an.</p>
                         <div class="mt-auto flex flex-col gap-3">
                             <select id="heroThemeSelect"
                                 class="w-full p-3 rounded-lg bg-white/10 border border-white/20 text-[#F3E4CE] focus:outline-none focus:ring-2 focus:ring-[#56A3A6] font-['Nunito'] text-base"
-                                aria-label="Choose a theme to explore">
+                                aria-label="Choose a theme to start your search">
                                 <option value="">Loading themes…</option>
                             </select>
                             <button id="heroExploreBtn"
                                 class="flex items-center justify-center gap-2 bg-[#56A3A6] text-white px-6 py-3 rounded-lg font-bold hover:bg-[#458a8d] transition active:scale-95 font-['Nunito']"
-                                aria-label="Explore the selected theme across the Qur'an">
+                                aria-label="Start a Theme Search with the selected theme">
                                 <span class="material-symbols-outlined">travel_explore</span>
-                                Explore
+                                Start Theme Search
                             </button>
                         </div>
                     </div>
@@ -892,95 +888,150 @@
     <!-- ABOUT MODAL REMOVED -->
 
     <div id="filterBackdrop"
-        class="fixed inset-0 bg-black/50 z-[60] hidden transition-opacity duration-300 opacity-0"></div>
+        class="hidden"></div>
     <div id="filterSidebar"
-        class="hidden fixed top-0 right-0 h-full w-[95vw] sm:w-full sm:max-w-lg bg-[#221F2B]/95 backdrop-blur-3xl border-l border-y sm:border-y-0 border-white/10 rounded-l-3xl sm:rounded-none shadow-2xl z-[70] transition-transform duration-500 ease-out flex-col">
+        class="hidden fixed inset-0 z-[70] bg-[#12101C]/98 backdrop-blur-3xl overflow-y-auto">
+        <div class="min-h-[100dvh] px-4 py-5 md:px-8 md:py-8 theme-search-page">
+            <div class="mx-auto max-w-7xl">
+                <div class="sticky top-0 z-20 -mx-4 mb-8 border-b border-white/10 bg-[#12101C]/95 px-4 py-4 backdrop-blur-xl md:-mx-8 md:px-8">
+                    <div class="mx-auto flex max-w-7xl items-center justify-between gap-4">
+                        <div>
+                            <p class="font-['Nunito'] text-[10px] font-bold uppercase tracking-[0.18em] text-[#56A3A6]">Explore by concept</p>
+                            <h3 class="font-['Forum'] text-3xl tracking-wide text-white md:text-4xl">Theme Search</h3>
+                        </div>
+                        <div class="flex items-center gap-1">
+                            <button id="themeSearchHelpBtn" type="button" class="text-white/50 hover:text-white hover:bg-white/10 rounded-full p-2 transition duration-300" title="Replay the Theme Search tutorial" aria-label="Replay the Theme Search tutorial">
+                                <span class="material-symbols-outlined text-2xl">help</span>
+                            </button>
+                            <button id="closeFilterBtn" class="text-white/50 hover:text-white hover:bg-white/10 rounded-full p-2 transition duration-300" aria-label="Close Theme Search">
+                                <span class="material-symbols-outlined text-3xl">close</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
-        <div class="p-6 border-b border-white/10 flex justify-between items-center shrink-0">
-            <div>
-                <h3 class="text-xl md:text-2xl font-bold font-['Forum'] tracking-wide text-white flex items-center gap-2"><span class="material-symbols-outlined text-[#56A3A6]">filter_list</span> Themes</h3>
-            </div>
-            <button id="closeFilterBtn" class="text-white/50 hover:text-white transition duration-300">
-                <span class="material-symbols-outlined text-3xl">close</span>
-            </button>
-        </div>
+                <section id="themeSearchControlsPanel" class="theme-search-hero">
+                    <div class="theme-search-hero-copy">
+                        <h3 class="theme-search-hero-title">Find passages by theme</h3>
+                    </div>
 
-        <div class="p-4 shrink-0 border-b border-white/10">
-            <div class="mb-4 font-['Nunito']">
-                <div class="flex items-center justify-between mb-2">
-                    <span class="text-[10px] text-white/50 font-bold uppercase tracking-wider">Theme Source</span>
-                    <span id="filterScopeHint" class="text-[10px] text-[#56A3A6] font-bold uppercase tracking-wider">This surah</span>
-                </div>
-                <div class="grid grid-cols-3 gap-1 bg-black/20 border border-white/10 rounded-xl p-1">
-                    <button id="filterScopeSurahBtn" type="button" class="filter-scope-btn active rounded-lg px-2 py-2 text-[11px] font-bold transition" data-scope="surah">This Surah</button>
-                    <button id="filterScopeJuzBtn" type="button" class="filter-scope-btn rounded-lg px-2 py-2 text-[11px] font-bold transition" data-scope="juz">This Juz</button>
-                    <button id="filterScopeMakkiBtn" type="button" class="filter-scope-btn rounded-lg px-2 py-2 text-[11px] font-bold transition" data-scope="makki">Makki</button>
-                    <button id="filterScopeMadaniBtn" type="button" class="filter-scope-btn rounded-lg px-2 py-2 text-[11px] font-bold transition" data-scope="madani">Madani</button>
-                    <button id="filterScopeQuranBtn" type="button" class="filter-scope-btn rounded-lg px-2 py-2 text-[11px] font-bold transition" data-scope="quran">Whole Quran</button>
-                    <button id="filterScopeRevelationBtn" type="button" class="filter-scope-btn rounded-lg px-2 py-2 text-[11px] font-bold transition" data-scope="revelation">Revelation Order</button>
-                </div>
-            </div>
-            <div id="filterQueryBuilder" class="mb-4 font-['Nunito'] rounded-2xl border border-white/10 bg-black/15 p-3">
-                <div class="flex items-center justify-between gap-3 mb-3">
-                    <span class="text-[10px] text-white/50 font-bold uppercase tracking-wider">Build a search</span>
-                    <button id="addFilterGroupBtn" type="button" class="inline-flex items-center gap-1 text-[10px] text-[#56A3A6] hover:text-white transition font-bold uppercase tracking-wider">
-                        <span class="material-symbols-outlined text-sm">add</span>
-                        Condition
-                    </button>
-                </div>
-                <div id="filterQueryRows" class="space-y-2"></div>
-            </div>
-            <div id="relatedThemeContainer" class="hidden mb-4 font-['Nunito'] rounded-2xl border border-white/10 bg-white/[0.03] p-3">
-                <div class="flex items-center justify-between mb-2">
-                    <span class="text-[10px] text-white/50 font-bold uppercase tracking-wider">Related themes</span>
-                </div>
-                <div id="relatedThemeList" class="flex flex-wrap gap-2"></div>
-            </div>
-            <div id="filterTemplateContainer" class="mb-4 font-['Nunito']">
-                <div class="flex items-center justify-between mb-2">
-                    <span class="text-[10px] text-white/50 font-bold uppercase tracking-wider">Study starters</span>
-                </div>
-                <div id="filterTemplateList" class="grid grid-cols-2 gap-2"></div>
-            </div>
-            <div class="mb-3 font-['Nunito']">
-                <div class="flex items-center justify-between mb-2">
-                    <span class="text-[10px] text-white/50 font-bold uppercase tracking-wider">Editing</span>
-                    <span class="text-[10px] text-white/40 tracking-wider" id="filterCurrentRowText">First condition</span>
-                </div>
-                <div class="flex items-center justify-between mb-2">
-                    <span class="text-[10px] text-white/50 font-bold uppercase tracking-wider">Match</span>
-                    <span class="text-[10px] text-white/40 tracking-wider" id="filterModeHint">ANY of the selected themes</span>
-                </div>
-                <div class="grid grid-cols-2 gap-1 bg-black/20 border border-white/10 rounded-xl p-1">
-                    <button id="filterModeAnyBtn" type="button" class="filter-mode-btn active rounded-lg px-3 py-2 text-xs font-bold transition" data-mode="any">ANY (OR)</button>
-                    <button id="filterModeAllBtn" type="button" class="filter-mode-btn rounded-lg px-3 py-2 text-xs font-bold transition" data-mode="all">ALL (AND)</button>
-                </div>
-            </div>
-            <div class="mb-3 font-['Nunito']">
-                <label for="filterSortSelect" class="block text-[10px] text-white/50 font-bold uppercase tracking-wider mb-2">Result order</label>
-                <select id="filterSortSelect" class="w-full bg-black/20 border border-white/10 rounded-xl px-3 py-2 text-xs text-[#F3E4CE] focus:outline-none focus:ring-2 focus:ring-[#56A3A6]">
-                    <option value="mushaf">Mushaf order</option>
-                    <option value="revelation">Revelation order</option>
-                    <option value="makki-madani">Makki then Madani</option>
-                    <option value="best-match">Most matching themes</option>
-                    <option value="shortest">Shortest passages first</option>
-                </select>
-            </div>
-            <div class="relative">
-                <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-white/40">search</span>
-                <input type="text" id="filterSearchInput" placeholder="Search themes or aliases..." class="w-full bg-white/5 border border-white/10 rounded-xl pl-10 pr-4 py-2 text-sm text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-[#56A3A6] font-['Nunito']">
-            </div>
-            <div class="flex justify-between items-center mt-3 font-['Nunito']">
-                <span class="text-xs text-white/50 font-bold uppercase tracking-wider" id="activeFilterCountText">0 selected</span>
-                <div class="flex items-center gap-3">
-                    <button id="copyFilterQueryBtn" class="text-xs text-[#56A3A6] hover:text-white transition font-bold uppercase hidden tracking-wider">Copy Link</button>
-                    <button id="clearFiltersBtn" class="text-xs text-[#56A3A6] hover:text-white transition font-bold uppercase hidden tracking-wider">Clear All</button>
-                </div>
-            </div>
-        </div>
+                    <div class="theme-search-input-wrap">
+                        <span class="material-symbols-outlined theme-search-input-icon">search</span>
+                        <input type="text" id="filterSearchInput" placeholder="Search themes, people, laws, afterlife, creation..." class="theme-search-input" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-controls="themeSearchPredictions" autocomplete="off">
+                        <div id="themeSearchPredictions" class="theme-search-predictions hidden" role="listbox" aria-label="Theme suggestions"></div>
+                    </div>
 
-        <div id="filterFacetsContainer" class="flex-1 overflow-y-auto p-4 space-y-6 font-['Nunito']">
-            <!-- Facets and chips injected here -->
+                    <details id="filterTemplateContainer" class="theme-search-advanced font-['Nunito']">
+                        <summary>
+                            <span>Suggested paths</span>
+                            <span class="material-symbols-outlined">expand_more</span>
+                        </summary>
+                        <p class="mt-2 mb-3 text-[12px] text-white/45">Tap one to see how combined themes narrow the Qur’an.</p>
+                        <div id="filterTemplateList" class="theme-starter-grid"></div>
+                    </details>
+                </section>
+
+                <div id="themeSearchGrid" class="theme-search-workspace">
+                    <aside id="themeSearchSidebarColumn" class="space-y-4 lg:sticky lg:top-28">
+                        <section class="theme-search-summary-panel">
+                            <div id="themeSearchActionBar" class="theme-search-action-bar">
+                                <p class="theme-search-action-kicker">Page filter</p>
+                                <p id="themeSearchActionText" class="theme-search-action-text">Choose a theme to preview matching sections.</p>
+                                <p id="themeSearchActiveSentence" class="theme-search-active-sentence">No active search yet.</p>
+                            </div>
+
+                            <div class="theme-search-action-buttons">
+                                <button id="themeSearchClearBtn" type="button" class="theme-search-secondary-btn">Clear</button>
+                                <button id="themeSearchApplyBtn" type="button" class="theme-search-primary-btn">
+                                    <span class="material-symbols-outlined text-base" aria-hidden="true">check</span>
+                                    Apply to page
+                                </button>
+                            </div>
+
+                            <div id="relatedThemeContainer" class="hidden theme-search-related-panel">
+                                <p class="theme-search-mini-heading">Related themes</p>
+                                <div id="relatedThemeList" class="flex flex-wrap gap-2"></div>
+                            </div>
+
+                            <div class="theme-search-scope-block">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="theme-search-mini-heading">Scope</span>
+                                    <span id="filterScopeHint" class="text-[10px] text-[#56A3A6] font-bold uppercase tracking-wider">Whole Qur’an</span>
+                                </div>
+                                <div class="grid grid-cols-2 gap-1 bg-black/20 border border-white/10 rounded-xl p-1">
+                                    <button id="filterScopeSurahBtn" type="button" class="filter-scope-btn rounded-lg px-3 py-2.5 text-xs font-bold transition" data-scope="surah">This Surah</button>
+                                    <button id="filterScopeQuranBtn" type="button" class="filter-scope-btn active rounded-lg px-3 py-2.5 text-xs font-bold transition" data-scope="quran">Whole Qur’an</button>
+                                </div>
+                            </div>
+
+                            <details class="theme-search-advanced">
+                                <summary>
+                                    <span>Advanced search</span>
+                                    <span class="material-symbols-outlined">expand_more</span>
+                                </summary>
+
+                                <p class="mt-3 text-[12px] leading-relaxed text-white/50 font-['Nunito']">Build a boolean strategy: each condition row is joined with <strong class="text-white/70">AND</strong>; within a row, choose <strong class="text-white/70">ANY</strong> (or) or <strong class="text-white/70">ALL</strong> (and) of the selected themes.</p>
+
+                                <div id="filterQueryBuilder" class="mt-4 font-['Nunito'] rounded-2xl border border-white/10 bg-black/15 p-3">
+                                    <div class="flex items-center justify-between gap-3 mb-3">
+                                        <span class="text-[10px] text-white/50 font-bold uppercase tracking-wider">Conditions</span>
+                                        <button id="addFilterGroupBtn" type="button" class="inline-flex items-center gap-1 text-[10px] text-[#56A3A6] hover:text-white transition font-bold uppercase tracking-wider">
+                                            <span class="material-symbols-outlined text-sm">add</span>
+                                            Condition
+                                        </button>
+                                    </div>
+                                    <div id="filterQueryRows" class="space-y-2"></div>
+                                </div>
+
+                                <div class="mt-4">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="text-[10px] text-white/50 font-bold uppercase tracking-wider">Editing</span>
+                                        <span class="text-[10px] text-white/40 tracking-wider" id="filterCurrentRowText">First condition</span>
+                                    </div>
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="text-[10px] text-white/50 font-bold uppercase tracking-wider">Match</span>
+                                        <span class="text-[10px] text-white/40 tracking-wider" id="filterModeHint">ANY of the selected themes</span>
+                                    </div>
+                                    <div class="grid grid-cols-2 gap-1 bg-black/20 border border-white/10 rounded-xl p-1">
+                                        <button id="filterModeAnyBtn" type="button" class="filter-mode-btn active rounded-lg px-3 py-2 text-xs font-bold transition" data-mode="any">ANY</button>
+                                        <button id="filterModeAllBtn" type="button" class="filter-mode-btn rounded-lg px-3 py-2 text-xs font-bold transition" data-mode="all">ALL</button>
+                                    </div>
+                                </div>
+
+                                <div class="mt-4">
+                                    <label for="filterSortSelect" class="block text-[10px] text-white/50 font-bold uppercase tracking-wider mb-2">Result order</label>
+                                    <select id="filterSortSelect" class="w-full bg-black/20 border border-white/10 rounded-xl px-3 py-2 text-xs text-[#F3E4CE] focus:outline-none focus:ring-2 focus:ring-[#56A3A6]">
+                                        <option value="mushaf">Mushaf order</option>
+                                        <option value="revelation">Revelation order</option>
+                                        <option value="makki-madani">Makki then Madani</option>
+                                        <option value="best-match">Most matching themes</option>
+                                        <option value="shortest">Shortest passages first</option>
+                                    </select>
+                                </div>
+
+                                <div class="flex justify-between items-center mt-4 font-['Nunito']">
+                                    <span class="text-xs text-white/50 font-bold uppercase tracking-wider" id="activeFilterCountText">0 selected</span>
+                                    <div class="flex items-center gap-3">
+                                        <button id="copyFilterQueryBtn" class="text-xs text-[#56A3A6] hover:text-white transition font-bold uppercase hidden tracking-wider">Copy Link</button>
+                                        <button id="clearFiltersBtn" class="hidden" aria-hidden="true" tabindex="-1">Clear All</button>
+                                    </div>
+                                </div>
+                            </details>
+                        </section>
+
+                    </aside>
+
+                    <section id="themeSearchLibraryColumn" class="theme-search-library-column">
+                        <div class="theme-search-section-heading mb-5">
+                            <span>Theme library</span>
+                            <span>Add individual themes to the active search.</span>
+                        </div>
+                        <div id="filterFacetsContainer" class="theme-library-facets font-['Nunito']">
+                            <!-- Facets and chips injected here -->
+                        </div>
+                    </section>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -1121,6 +1172,18 @@
                     </div>
                 </div>
             </div>
+
+            <button id="settingsBookmarksBtn"
+                class="mt-4 w-full flex items-center justify-between gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-left text-[#F3E4CE] transition hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-[#56A3A6]">
+                <span class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-[#56A3A6]">bookmarks</span>
+                    <span>
+                        <span class="block font-['Forum'] text-lg tracking-wide text-white">Saved Bookmarks</span>
+                        <span class="block font-['Nunito'] text-xs text-white/50">Your saved sections and Quran.com sync</span>
+                    </span>
+                </span>
+                <span class="material-symbols-outlined text-white/35">chevron_right</span>
+            </button>
         </div>
 
         <div class="p-6 space-y-8 overflow-y-auto flex-grow">

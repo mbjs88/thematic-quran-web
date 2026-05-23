@@ -21,7 +21,7 @@ let activeThematicFilters = new Set();
 let thematicFilterGroups = [{ id: 1, op: 'or', terms: [] }];
 let activeThematicFilterGroupId = 1;
 let nextThematicFilterGroupId = 2;
-let thematicFilterScope = 'surah';
+let thematicFilterScope = 'quran';
 // Mirrors the active row's op for the existing ANY/ALL buttons.
 let thematicFilterMatchMode = 'any';
 let thematicResultSortMode = 'mushaf';
@@ -1233,11 +1233,23 @@ function wireHeroWidget() {
                 if (typeof syncFilterMatchModeButtons === 'function') syncFilterMatchModeButtons();
                 if (typeof updateFilterCount === 'function') updateFilterCount();
                 // Renders the cross-surah results view (scope is whole-Qur'an and
-                // a filter is active). The "Filtered view" banner at the top of
-                // the results shows the active theme and a clear-filters control,
-                // so the sidebar does not need to auto-open (it would cover the
-                // results on mobile). The filter button is highlighted instead.
+                // a filter is active), populating the matched-theme badges,
+                // related-theme suggestions, and the result banner.
                 if (typeof applyFiltersToView === 'function') applyFiltersToView();
+            }
+
+            // The welcome flow is the beginner doorway into Theme Search, so open
+            // the dedicated search surface with the condition the user just started.
+            if (typeof window.openThemeSearchSidebar === 'function') {
+                window.openThemeSearchSidebar();
+            }
+
+            // First-timers arriving from the welcome page get a short, 3-step
+            // contextual tour. Returning users (or anyone who has skipped or
+            // finished it before) are not interrupted. Defer slightly so the
+            // page is laid out before we measure its highlight targets.
+            if (typeof startThemeSearchTutorialIfFirstTime === 'function') {
+                setTimeout(() => startThemeSearchTutorialIfFirstTime(), 200);
             }
 
             if (typeof sendAnalyticsEvent === 'function') {
@@ -1245,6 +1257,281 @@ function wireHeroWidget() {
             }
         });
     }
+}
+
+// ==============================================================
+//   THEME SEARCH WELCOME TUTORIAL  (contextual 3-step coachmark)
+// ==============================================================
+// Shown the first time a user lands in Theme Search from the welcome page. It
+// points at the first query condition, the related-theme suggestions, and the
+// "Condition" button. Desktop renders a popover beside each target; narrow
+// screens get a bottom sheet. The "seen" flag is persisted ONLY when the user
+// skips or finishes (never on a partial dismissal-by-navigation), and the help
+// button in the sidebar can replay it any time. No third-party library: this is
+// a small self-contained overlay.
+
+const THEME_SEARCH_TUTORIAL_STORAGE_KEY = 'themeSearchWelcomeTutorialSeen';
+
+const themeSearchTutorialState = {
+    active: false,
+    index: 0,
+    steps: [],
+    overlay: null,
+    popover: null,
+    highlightEl: null,
+    onReposition: null,
+    onKeydown: null
+};
+
+function hasSeenThemeSearchTutorial() {
+    try {
+        return localStorage.getItem(THEME_SEARCH_TUTORIAL_STORAGE_KEY) === '1';
+    } catch (e) {
+        return false;
+    }
+}
+
+function markThemeSearchTutorialSeen() {
+    try {
+        localStorage.setItem(THEME_SEARCH_TUTORIAL_STORAGE_KEY, '1');
+    } catch (e) {
+        /* private mode / storage disabled — the tutorial simply re-shows later */
+    }
+}
+
+// Entry point used by the welcome "Start Theme Search" flow. No-op for anyone
+// who has already seen (skipped or finished) the tour.
+function startThemeSearchTutorialIfFirstTime() {
+    if (hasSeenThemeSearchTutorial()) return;
+    startThemeSearchTutorial(false);
+}
+
+function buildThemeSearchTutorialSteps() {
+    // Step 1 copy names the actual first theme so it reads naturally.
+    const firstThemeId = (Array.isArray(thematicFilterGroups) && thematicFilterGroups[0]
+        && thematicFilterGroups[0].terms[0]) || null;
+    const firstThemeName = firstThemeId ? getThematicLabelName(firstThemeId) : 'a theme';
+
+    // Step 2 copy name-drops up to two real related suggestions when available,
+    // falling back to a generic example otherwise.
+    let relatedExample = 'nearby ideas like Repentance or Guidance';
+    try {
+        const suggestions = (typeof getRelatedThemeSuggestions === 'function')
+            ? getRelatedThemeSuggestions(2)
+            : [];
+        const names = suggestions.map(s => getThematicLabelName(s.labelId)).filter(Boolean);
+        if (names.length >= 2) relatedExample = `nearby ideas like ${names[0]} or ${names[1]}`;
+        else if (names.length === 1) relatedExample = `a nearby idea like ${names[0]}`;
+    } catch (e) { /* keep the generic copy above */ }
+
+    return [
+        {
+            title: 'Your first condition',
+            body: `You started with ${firstThemeName}. This is your first search condition — every passage shown carries this theme.`,
+            target: () => document.getElementById('filterQueryRows')
+        },
+        {
+            title: 'Broaden with related themes',
+            body: `Add ${relatedExample} to widen the search and surface more passages.`,
+            target: () => {
+                const related = document.getElementById('relatedThemeContainer');
+                if (related && !related.classList.contains('hidden')) return related;
+                // No suggestions in view yet → point at the theme list, which is
+                // the other place a reader can add a nearby idea from.
+                return document.getElementById('filterTemplateContainer')
+                    || document.getElementById('filterFacetsContainer');
+            }
+        },
+        {
+            title: 'Combine ideas',
+            body: 'Add a condition when you want passages that combine ideas — like Mercy AND Prayer.',
+            target: () => document.getElementById('addFilterGroupBtn')
+        }
+    ];
+}
+
+function startThemeSearchTutorial(force = false) {
+    if (!force && hasSeenThemeSearchTutorial()) return;
+    // If somehow already running, tear down first so we never stack overlays.
+    if (themeSearchTutorialState.active) teardownThemeSearchTutorial();
+
+    const steps = buildThemeSearchTutorialSteps();
+    if (!steps.length) return;
+
+    themeSearchTutorialState.active = true;
+    themeSearchTutorialState.index = 0;
+    themeSearchTutorialState.steps = steps;
+
+    // The overlay is a transparent, click-through layer that only hosts the
+    // popover. pointer-events stay off so the Theme Search page remains fully
+    // interactive while the popover is visible.
+    const overlay = document.createElement('div');
+    overlay.id = 'themeSearchTutorialOverlay';
+    overlay.className = 'theme-tutorial-overlay';
+    overlay.innerHTML = `
+        <div id="themeSearchTutorialPopover" class="theme-tutorial-popover" role="dialog" aria-modal="false" aria-labelledby="themeSearchTutorialTitle">
+            <div class="theme-tutorial-progress" id="themeSearchTutorialProgress"></div>
+            <h4 class="theme-tutorial-title" id="themeSearchTutorialTitle"></h4>
+            <p class="theme-tutorial-body" id="themeSearchTutorialBody"></p>
+            <div class="theme-tutorial-actions">
+                <button type="button" class="theme-tutorial-skip" id="themeSearchTutorialSkip">Skip</button>
+                <div class="theme-tutorial-nav">
+                    <button type="button" class="theme-tutorial-back" id="themeSearchTutorialBack">Back</button>
+                    <button type="button" class="theme-tutorial-next" id="themeSearchTutorialNext">Next</button>
+                </div>
+            </div>
+        </div>
+    `;
+    document.body.appendChild(overlay);
+
+    themeSearchTutorialState.overlay = overlay;
+    themeSearchTutorialState.popover = overlay.querySelector('#themeSearchTutorialPopover');
+
+    overlay.querySelector('#themeSearchTutorialSkip').addEventListener('click', () => finishThemeSearchTutorial('skip'));
+    overlay.querySelector('#themeSearchTutorialBack').addEventListener('click', () => stepThemeSearchTutorial(-1));
+    overlay.querySelector('#themeSearchTutorialNext').addEventListener('click', () => {
+        if (themeSearchTutorialState.index >= themeSearchTutorialState.steps.length - 1) {
+            finishThemeSearchTutorial('done');
+        } else {
+            stepThemeSearchTutorial(1);
+        }
+    });
+
+    // Keep the popover anchored to its target as the layout shifts.
+    themeSearchTutorialState.onReposition = () => positionThemeSearchTutorial();
+    window.addEventListener('resize', themeSearchTutorialState.onReposition);
+    window.addEventListener('scroll', themeSearchTutorialState.onReposition, true);
+
+    // Esc must never trap the user — treat it as "skip" (records seen + closes).
+    themeSearchTutorialState.onKeydown = (e) => {
+        if (e.key === 'Escape') { e.preventDefault(); finishThemeSearchTutorial('escape'); }
+    };
+    document.addEventListener('keydown', themeSearchTutorialState.onKeydown);
+
+    if (typeof sendAnalyticsEvent === 'function') {
+        sendAnalyticsEvent('theme_search_tutorial_start', { forced: !!force });
+    }
+
+    renderThemeSearchTutorialStep();
+}
+
+function stepThemeSearchTutorial(delta) {
+    const next = themeSearchTutorialState.index + delta;
+    if (next < 0 || next >= themeSearchTutorialState.steps.length) return;
+    themeSearchTutorialState.index = next;
+    renderThemeSearchTutorialStep();
+}
+
+function renderThemeSearchTutorialStep() {
+    const state = themeSearchTutorialState;
+    if (!state.active || !state.overlay) return;
+    const step = state.steps[state.index];
+    const total = state.steps.length;
+
+    const titleEl = state.overlay.querySelector('#themeSearchTutorialTitle');
+    const bodyEl = state.overlay.querySelector('#themeSearchTutorialBody');
+    const progressEl = state.overlay.querySelector('#themeSearchTutorialProgress');
+    const backBtn = state.overlay.querySelector('#themeSearchTutorialBack');
+    const nextBtn = state.overlay.querySelector('#themeSearchTutorialNext');
+
+    if (titleEl) titleEl.textContent = step.title;
+    if (bodyEl) bodyEl.textContent = step.body;
+    if (progressEl) progressEl.textContent = `Step ${state.index + 1} of ${total}`;
+
+    // Back is hidden on the first step; Next becomes Done on the last step.
+    if (backBtn) backBtn.classList.toggle('is-hidden', state.index === 0);
+    if (nextBtn) nextBtn.textContent = (state.index === total - 1) ? 'Done' : 'Next';
+
+    // Move the highlight ring to the new target.
+    if (state.highlightEl) state.highlightEl.classList.remove('theme-tutorial-highlight');
+    const target = (typeof step.target === 'function') ? step.target() : null;
+    state.highlightEl = (target && target.nodeType === 1) ? target : null;
+    if (state.highlightEl) {
+        state.highlightEl.classList.add('theme-tutorial-highlight');
+        try { state.highlightEl.scrollIntoView({ block: 'center', behavior: 'smooth' }); } catch (e) { /* no-op */ }
+    }
+
+    // Position now and again after layout settles (scrollIntoView can shift it).
+    positionThemeSearchTutorial();
+    requestAnimationFrame(() => positionThemeSearchTutorial());
+}
+
+function positionThemeSearchTutorial() {
+    const state = themeSearchTutorialState;
+    if (!state.active || !state.popover) return;
+    const pop = state.popover;
+    const isMobile = window.matchMedia('(max-width: 767px)').matches;
+
+    if (isMobile) {
+        // Bottom-sheet: CSS docks it; clear any desktop inline coordinates.
+        pop.classList.add('is-sheet');
+        pop.style.top = '';
+        pop.style.left = '';
+        return;
+    }
+
+    pop.classList.remove('is-sheet');
+    const popW = pop.offsetWidth || 320;
+    const popH = pop.offsetHeight || 180;
+    const gap = 16;
+    const margin = 12;
+    const target = state.highlightEl;
+
+    if (!target) {
+        // No anchor available → center it so instructions are never lost.
+        pop.style.left = Math.max(margin, (window.innerWidth - popW) / 2) + 'px';
+        pop.style.top = Math.max(margin, (window.innerHeight - popH) / 2) + 'px';
+        return;
+    }
+
+    const r = target.getBoundingClientRect();
+    // Prefer placing the popover to the left of the target; fall back to below
+    // (then above) if there isn't room.
+    let left = r.left - popW - gap;
+    let top = r.top + (r.height / 2) - (popH / 2);
+
+    if (left < margin) {
+        left = Math.min(Math.max(margin, r.left), window.innerWidth - popW - margin);
+        top = (r.bottom + gap + popH <= window.innerHeight)
+            ? r.bottom + gap
+            : Math.max(margin, r.top - gap - popH);
+    }
+
+    top = Math.min(Math.max(margin, top), window.innerHeight - popH - margin);
+    left = Math.min(Math.max(margin, left), window.innerWidth - popW - margin);
+    pop.style.left = left + 'px';
+    pop.style.top = top + 'px';
+}
+
+// Records "seen" and closes. Used by Skip, Done and Esc — every exit path the
+// user can take, so the flag is only ever written on a deliberate dismissal.
+function finishThemeSearchTutorial(reason) {
+    const step = themeSearchTutorialState.index + 1;
+    const total = themeSearchTutorialState.steps.length;
+    markThemeSearchTutorialSeen();
+    if (typeof sendAnalyticsEvent === 'function') {
+        sendAnalyticsEvent('theme_search_tutorial_end', { reason: reason || 'done', step, total });
+    }
+    teardownThemeSearchTutorial();
+}
+
+function teardownThemeSearchTutorial() {
+    const state = themeSearchTutorialState;
+    if (state.highlightEl) state.highlightEl.classList.remove('theme-tutorial-highlight');
+    if (state.onReposition) {
+        window.removeEventListener('resize', state.onReposition);
+        window.removeEventListener('scroll', state.onReposition, true);
+    }
+    if (state.onKeydown) document.removeEventListener('keydown', state.onKeydown);
+    if (state.overlay && state.overlay.parentNode) state.overlay.parentNode.removeChild(state.overlay);
+    state.active = false;
+    state.index = 0;
+    state.steps = [];
+    state.overlay = null;
+    state.popover = null;
+    state.highlightEl = null;
+    state.onReposition = null;
+    state.onKeydown = null;
 }
 
 // ==============================================================
@@ -1472,6 +1759,7 @@ function encodeThematicQueryState() {
     const state = {
         scope: thematicFilterScope,
         sort: thematicResultSortMode,
+        mode: currentViewMode,
         id: parseInt(document.getElementById('surahSelect')?.value) || 1,
         groups
     };
@@ -1515,6 +1803,11 @@ function restoreThematicQueryFromUrl() {
     const restored = applyThematicFilterGroups(state.groups, state.scope);
     if (!restored) return false;
     if (state.sort) thematicResultSortMode = state.sort;
+
+    currentViewMode = state.mode === 'juz' ? 'juz' : 'surah';
+    const viewSelect = document.getElementById('viewModeSelect');
+    if (viewSelect) viewSelect.value = currentViewMode;
+    populateDropdown();
 
     const seed = Number.isFinite(parseInt(state.id)) ? parseInt(state.id) : 1;
     const topSelect = document.getElementById('surahSelect');
@@ -1737,6 +2030,135 @@ function renderThematicQueryBuilder() {
     }
 }
 
+function isThemeSearchPageOpen() {
+    const page = document.getElementById('filterSidebar');
+    return !!page && !page.classList.contains('hidden');
+}
+
+function syncThemeSearchLayoutOrder() {
+    // The redesigned page keeps one stable order across breakpoints:
+    // discovery and active search first, then the theme library.
+}
+
+function escapeThematicSearchHtml(value) {
+    return String(value ?? '').replace(/[&<>"']/g, char => ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;'
+    }[char]));
+}
+
+function getThemeSearchMatches() {
+    if (!hasActiveThematicQuery()) return [];
+
+    const scopeSurahs = getScopeSurahNumbers();
+    const sortedSurahs = Array.from(scopeSurahs).map(Number).sort((a, b) => a - b);
+    const matches = [];
+
+    sortedSurahs.forEach(surahId => {
+        const breaks = THEME_BREAKS[String(surahId)] || [];
+        const surahVerses = QURAN_DATA.filter(v => v[CONSTANTS.KEY_SURAH_NO] === surahId);
+        if (!surahVerses.length || !breaks.length) return;
+        const lastVerse = surahVerses[surahVerses.length - 1][CONSTANTS.KEY_AYAH_NO];
+
+        breaks.forEach((startVerse, idx) => {
+            const start = (typeof startVerse === 'object') ? startVerse.start : startVerse;
+            const nextRaw = breaks[idx + 1];
+            const nextStart = nextRaw ? (typeof nextRaw === 'object' ? nextRaw.start : nextRaw) : null;
+            const endVerse = nextStart ? (nextStart - 1) : lastVerse;
+            const sectionId = `${surahId}:${start}`;
+            if (!sectionMatchesFilters(sectionId)) return;
+
+            const sectionData = surahVerses.filter(v => {
+                const vn = v[CONSTANTS.KEY_AYAH_NO];
+                return vn >= start && vn <= endVerse;
+            });
+            if (!sectionData.length) return;
+
+            const matchedIds = getSectionFilterMatchDetails(sectionId);
+            matches.push({
+                surahId,
+                start,
+                endVerse,
+                data: sectionData,
+                matchedIds,
+                matchCount: matchedIds.length,
+                verseCount: sectionData.length
+            });
+        });
+    });
+
+    return matches.sort(compareCrossSurahMatches);
+}
+
+function openThemeSearchResult(match) {
+    if (!match) return;
+    if (typeof window.closeThemeSearchSidebar === 'function') window.closeThemeSearchSidebar();
+
+    currentViewMode = 'surah';
+    const viewSelect = document.getElementById('viewModeSelect');
+    if (viewSelect) viewSelect.value = 'surah';
+    populateDropdown();
+    const surahSelect = document.getElementById('surahSelect');
+    if (surahSelect) surahSelect.value = String(match.surahId);
+
+    if (typeof loadContent === 'function') {
+        loadContent(match.surahId, match.start);
+        setTimeout(() => {
+            const card = document.getElementById(`section-${match.surahId}-${match.start}`);
+            if (card) {
+                card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                card.classList.add('ring-2', 'ring-[#56A3A6]');
+            }
+        }, 350);
+    }
+}
+
+function renderThemeSearchResultsList() {
+    const actionText = document.getElementById('themeSearchActionText');
+    const activeSentence = document.getElementById('themeSearchActiveSentence');
+    const applyBtn = document.getElementById('themeSearchApplyBtn');
+    const clearActionBtn = document.getElementById('themeSearchClearBtn');
+    const scopeLabel = SCOPE_LABELS[thematicFilterScope] || 'This surah';
+    renderThematicQueryTemplates();
+
+    if (!hasActiveThematicQuery()) {
+        if (actionText) actionText.textContent = 'Choose a theme to preview matching sections.';
+        if (activeSentence) activeSentence.textContent = 'No active search yet.';
+        if (applyBtn) applyBtn.disabled = true;
+        if (clearActionBtn) clearActionBtn.disabled = true;
+        return;
+    }
+
+    const matches = getThemeSearchMatches();
+    const matchedSurahs = new Set(matches.map(match => match.surahId));
+    const queryText = getThematicQueryText();
+    if (actionText) {
+        actionText.textContent = matches.length > 0
+            ? `${matches.length} matching section${matches.length === 1 ? '' : 's'} will be shown when this search is applied.`
+            : 'No matching sections yet. Adjust the search or clear it.';
+    }
+    if (activeSentence) {
+        activeSentence.textContent = `Find passages tagged with ${queryText} across ${scopeLabel.toLowerCase()}.`;
+    }
+    if (applyBtn) applyBtn.disabled = false;
+    if (clearActionBtn) clearActionBtn.disabled = false;
+}
+
+function applyThemeSearchToPage() {
+    const page = document.getElementById('filterSidebar');
+    if (page) page.classList.add('hidden');
+    document.body.classList.remove('theme-search-page-open');
+
+    if (hasActiveThematicQuery()) {
+        applyFiltersToView();
+    } else {
+        clearThematicFilters();
+    }
+}
+
 function setupThematicFilterUI() {
     const filterSidebar = document.getElementById('filterSidebar');
     const filterBackdrop = document.getElementById('filterBackdrop');
@@ -1753,27 +2175,55 @@ function setupThematicFilterUI() {
     }
 
     function openFilters() {
-        filterBackdrop.classList.remove('hidden');
+        filterBackdrop.classList.add('hidden');
         filterSidebar.classList.remove('hidden');
-        filterSidebar.classList.add('flex');
+        filterSidebar.scrollTop = 0;
+        document.body.classList.add('theme-search-page-open');
+        syncThemeSearchLayoutOrder();
         setTimeout(() => {
-            filterBackdrop.classList.remove('opacity-0');
             filterSidebar.classList.add('filter-sidebar-open');
         }, 10);
+        renderThemeSearchResultsList();
+        sendAnalyticsEvent('ui_interaction', { action: 'open_theme_search' });
     }
     function closeFilters() {
         filterSidebar.classList.remove('filter-sidebar-open');
-        filterBackdrop.classList.add('opacity-0');
+        document.body.classList.remove('theme-search-page-open');
+        if (themeSearchTutorialState.active) teardownThemeSearchTutorial();
         setTimeout(() => {
-            filterBackdrop.classList.add('hidden');
             filterSidebar.classList.add('hidden');
-            filterSidebar.classList.remove('flex');
+            if (hasActiveThematicQuery()) applyFiltersToView();
         }, 300);
     }
 
     openBtn.addEventListener('click', openFilters);
     closeBtn.addEventListener('click', closeFilters);
     filterBackdrop.addEventListener('click', closeFilters);
+    window.addEventListener('resize', syncThemeSearchLayoutOrder);
+
+    const applyBtn = document.getElementById('themeSearchApplyBtn');
+    if (applyBtn) {
+        applyBtn.addEventListener('click', applyThemeSearchToPage);
+    }
+
+    const clearActionBtn = document.getElementById('themeSearchClearBtn');
+    if (clearActionBtn) {
+        clearActionBtn.addEventListener('click', clearThematicFilters);
+    }
+
+    // Expose a safe wrapper so other entry points (e.g. the welcome "Start Theme
+    // Search" flow) can open the dedicated search page without duplicating logic.
+    window.openThemeSearchSidebar = openFilters;
+    window.closeThemeSearchSidebar = closeFilters;
+
+    // Help button inside the Theme Search header: replay the contextual tutorial
+    // on demand (force = ignore the "seen" flag).
+    const helpBtn = document.getElementById('themeSearchHelpBtn');
+    if (helpBtn) {
+        helpBtn.addEventListener('click', () => {
+            if (typeof startThemeSearchTutorial === 'function') startThemeSearchTutorial(true);
+        });
+    }
 
     // Scope buttons — wire each via data-scope attribute on the button.
     document.querySelectorAll('.filter-scope-btn').forEach(btn => {
@@ -1807,6 +2257,16 @@ function setupThematicFilterUI() {
                 const hasVisible = Array.from(group.querySelectorAll('.filter-chip')).some(c => c.style.display !== 'none');
                 group.style.display = hasVisible ? '' : 'none';
             });
+            renderThemePredictions();
+        });
+        searchInput.addEventListener('keydown', handleThemePredictionKeydown);
+        searchInput.addEventListener('focus', () => {
+            if (searchInput.value.trim()) renderThemePredictions();
+        });
+        // Dismiss the dropdown when tapping/clicking outside the input wrapper.
+        document.addEventListener('click', (event) => {
+            const wrap = searchInput.closest('.theme-search-input-wrap');
+            if (wrap && !wrap.contains(event.target)) hideThemePredictions();
         });
     }
 
@@ -1997,6 +2457,179 @@ function renderThematicFilterChips() {
     }
 }
 
+/* ──────────────────────────────────────────────────────────────────────────
+ * Prediction dropdown — Google-style typeahead under the Theme Search input.
+ * Suggests scope-aware themes (with match counts) as the user types, ranked by
+ * match quality across display name + aliases. Selecting one adds it to the
+ * active query, clears the input, and keeps focus for rapid multi-theme building.
+ * ────────────────────────────────────────────────────────────────────────── */
+const THEME_PREDICTION_LIMIT = 8;
+let themePredictionItems = [];
+let themePredictionActiveIndex = -1;
+
+function buildThemePredictions(query) {
+    const q = String(query || '').toLowerCase().trim();
+    if (!q) return [];
+    const tax = window.THEMATIC_TAXONOMY;
+    if (!tax || !tax.labels) return [];
+
+    const assignedIds = getAssignedLabelIdsForScope(); // in-scope themes only — every hit returns results
+    const counts = getLabelCountsForScope();
+    const scored = [];
+
+    tax.labels.forEach(label => {
+        if (!assignedIds.has(label.id)) return;
+        const name = (label.displayName && label.displayName.en) || label.id;
+        const nameLower = name.toLowerCase();
+        const aliases = (label.aliases || []).map(a => String(a).toLowerCase());
+
+        let tier = -1;
+        if (nameLower.startsWith(q)) tier = 0;
+        else if (aliases.some(a => a.startsWith(q))) tier = 1;
+        else if (nameLower.includes(q)) tier = 2;
+        else if (aliases.some(a => a.includes(q))) tier = 3;
+        if (tier === -1) return;
+
+        scored.push({
+            labelId: label.id,
+            name,
+            facet: label.facet,
+            count: counts.get(label.id) || 0,
+            tier
+        });
+    });
+
+    scored.sort((a, b) => a.tier - b.tier || b.count - a.count || a.name.localeCompare(b.name));
+    return scored.slice(0, THEME_PREDICTION_LIMIT);
+}
+
+function highlightThemePredictionMatch(text, query) {
+    const safe = escapeThematicSearchHtml(text);
+    const q = String(query || '').trim();
+    if (!q) return safe;
+    const idx = text.toLowerCase().indexOf(q.toLowerCase());
+    if (idx === -1) return safe; // matched via an alias — leave the display name unmarked
+    return escapeThematicSearchHtml(text.slice(0, idx))
+        + '<mark>' + escapeThematicSearchHtml(text.slice(idx, idx + q.length)) + '</mark>'
+        + escapeThematicSearchHtml(text.slice(idx + q.length));
+}
+
+function hideThemePredictions() {
+    const panel = document.getElementById('themeSearchPredictions');
+    const input = document.getElementById('filterSearchInput');
+    if (panel) { panel.classList.add('hidden'); panel.innerHTML = ''; }
+    if (input) input.setAttribute('aria-expanded', 'false');
+    themePredictionItems = [];
+    themePredictionActiveIndex = -1;
+}
+
+function renderThemePredictions() {
+    const input = document.getElementById('filterSearchInput');
+    const panel = document.getElementById('themeSearchPredictions');
+    if (!input || !panel) return;
+
+    const query = input.value;
+    if (!query.trim()) { hideThemePredictions(); return; }
+
+    const items = buildThemePredictions(query);
+    themePredictionItems = items;
+    themePredictionActiveIndex = -1;
+    panel.innerHTML = '';
+
+    if (!items.length) {
+        const scopeWord = thematicFilterScope === 'quran'
+            ? 'the Qur’an'
+            : (SCOPE_LABELS[thematicFilterScope] || 'this scope').toLowerCase();
+        const empty = document.createElement('div');
+        empty.className = 'theme-search-prediction-empty';
+        empty.textContent = `No themes match “${query.trim()}” in ${scopeWord}.`;
+        panel.appendChild(empty);
+        panel.classList.remove('hidden');
+        input.setAttribute('aria-expanded', 'true');
+        return;
+    }
+
+    const facets = window.THEMATIC_TAXONOMY?.facets || {};
+    items.forEach(item => {
+        const isSelected = activeThematicFilters.has(item.labelId);
+        const facetName = (facets[item.facet]?.displayName?.en) || String(item.facet || '').replace(/-/g, ' ');
+        const row = document.createElement('button');
+        row.type = 'button';
+        row.className = 'theme-search-prediction';
+        row.dataset.labelId = item.labelId;
+        row.setAttribute('role', 'option');
+        row.setAttribute('aria-selected', isSelected ? 'true' : 'false');
+        row.innerHTML =
+            `<span class="theme-search-prediction-dot" style="background:${getThematicLabelFacetColor(item.labelId)}"></span>` +
+            `<span class="theme-search-prediction-text">` +
+                `<span class="theme-search-prediction-name">${highlightThemePredictionMatch(item.name, query)}</span>` +
+                `<span class="theme-search-prediction-facet">${escapeThematicSearchHtml(facetName)}</span>` +
+            `</span>` +
+            (item.count ? `<span class="theme-search-prediction-count">${item.count}</span>` : '') +
+            (isSelected ? `<span class="material-symbols-outlined text-base theme-search-prediction-check">check</span>` : '');
+        // Use mousedown (not click) so selection runs before the input loses focus.
+        row.addEventListener('mousedown', (event) => {
+            event.preventDefault();
+            selectThemePrediction(item.labelId);
+        });
+        panel.appendChild(row);
+    });
+
+    panel.classList.remove('hidden');
+    input.setAttribute('aria-expanded', 'true');
+}
+
+function selectThemePrediction(labelId) {
+    if (!labelId) return;
+    toggleFilter(labelId); // add (or remove if already active), then re-apply the view
+    const input = document.getElementById('filterSearchInput');
+    if (input) {
+        input.value = '';
+        input.focus();
+    }
+    // Reset the parallel chip-library filter so the full library is visible again.
+    document.querySelectorAll('.filter-chip').forEach(chip => { chip.style.display = ''; });
+    document.querySelectorAll('.filter-facet-group').forEach(group => { group.style.display = ''; });
+    hideThemePredictions();
+}
+
+function moveThemePredictionActive(delta) {
+    const panel = document.getElementById('themeSearchPredictions');
+    if (!panel || panel.classList.contains('hidden')) return;
+    const rows = Array.from(panel.querySelectorAll('.theme-search-prediction'));
+    if (!rows.length) return;
+    themePredictionActiveIndex = (themePredictionActiveIndex + delta + rows.length) % rows.length;
+    rows.forEach((row, i) => row.classList.toggle('is-active', i === themePredictionActiveIndex));
+    const active = rows[themePredictionActiveIndex];
+    if (active) active.scrollIntoView({ block: 'nearest' });
+}
+
+function handleThemePredictionKeydown(event) {
+    const panel = document.getElementById('themeSearchPredictions');
+    const open = panel && !panel.classList.contains('hidden');
+    switch (event.key) {
+        case 'ArrowDown':
+            if (!open) { renderThemePredictions(); return; }
+            event.preventDefault();
+            moveThemePredictionActive(1);
+            break;
+        case 'ArrowUp':
+            if (!open) return;
+            event.preventDefault();
+            moveThemePredictionActive(-1);
+            break;
+        case 'Enter':
+            if (open && themePredictionActiveIndex >= 0 && themePredictionItems[themePredictionActiveIndex]) {
+                event.preventDefault();
+                selectThemePrediction(themePredictionItems[themePredictionActiveIndex].labelId);
+            }
+            break;
+        case 'Escape':
+            if (open) { event.preventDefault(); hideThemePredictions(); }
+            break;
+    }
+}
+
 const SCOPE_LABELS = {
     surah: 'This surah',
     juz: 'This juz',
@@ -2008,46 +2641,88 @@ const SCOPE_LABELS = {
 
 const THEMATIC_QUERY_TEMPLATES = [
     {
-        id: 'mercy-return',
-        title: 'Mercy + return',
-        icon: 'favorite',
+        id: 'sulaiman-gratitude',
+        title: 'Sulaiman + gratitude',
+        category: 'Story',
+        description: 'A focused narrative path through kingdom, gifts, and thankfulness.',
+        logic: 'Solomon AND Gratitude',
+        icon: 'workspace_premium',
         scope: 'quran',
         groups: [
-            { op: 'or', terms: ['mercy', 'repentance'] },
-            { op: 'or', terms: ['dua-forgiveness', 'guidance'] }
+            { op: 'and', terms: ['solomon', 'gratitude'] }
         ]
     },
     {
-        id: 'prophet-stories',
-        title: 'Prophet stories',
-        icon: 'auto_stories',
+        id: 'orphan-justice',
+        title: 'Orphans + justice',
+        category: 'Ethics',
+        description: 'Social care where mercy becomes legal and moral responsibility.',
+        logic: 'Orphans AND Justice',
+        icon: 'volunteer_activism',
         scope: 'quran',
         groups: [
-            { op: 'or', terms: ['moses', 'noah', 'abraham', 'joseph'] },
-            { op: 'or', terms: ['guidance', 'disbelievers', 'pharaoh'] }
+            { op: 'and', terms: ['orphan-care', 'justice-and-witness'] }
         ]
     },
     {
-        id: 'worship-character',
-        title: 'Worship + character',
-        icon: 'self_improvement',
+        id: 'interest-hell',
+        title: 'Interest + Hell',
+        category: 'Real world',
+        description: 'A tight search on riba and the afterlife warning attached to it.',
+        logic: 'Interest AND Hell',
+        icon: 'gavel',
         scope: 'quran',
         groups: [
-            { op: 'or', terms: ['prayer', 'dua'] },
-            { op: 'or', terms: ['patience', 'justice', 'zakat-and-charity'] }
+            { op: 'and', terms: ['interest', 'hell'] }
         ]
     },
     {
-        id: 'afterlife-contrast',
-        title: 'Afterlife contrast',
-        icon: 'balance',
+        id: 'human-creation-resurrection',
+        title: 'Creation + return',
+        category: 'Creation',
+        description: 'How human origin becomes an argument for resurrection.',
+        logic: 'Human creation AND Resurrection',
+        icon: 'public',
         scope: 'quran',
         groups: [
-            { op: 'or', terms: ['paradise', 'hell'] },
-            { op: 'or', terms: ['believers', 'disbelievers', 'day-of-judgment'] }
+            { op: 'and', terms: ['human-creation', 'resurrection'] }
         ]
     }
 ];
+
+function countMatchesForThematicGroups(groups, scope = 'quran') {
+    const originalScope = thematicFilterScope;
+    thematicFilterScope = scope;
+    const scopedSections = getScopeSectionIds();
+    thematicFilterScope = originalScope;
+
+    let count = 0;
+    Object.entries(window.THEMATIC_ASSIGNMENTS || {}).forEach(([sectionId, entry]) => {
+        if (sectionId.startsWith('_') || !scopedSections.has(sectionId)) return;
+        const labels = new Set((entry && entry.labels) || []);
+        const matches = groups.every(group => {
+            const terms = Array.isArray(group.terms) ? group.terms : [];
+            if (!terms.length) return true;
+            if (group.op === 'and') return terms.every(labelId => labels.has(labelId));
+            return terms.some(labelId => labels.has(labelId));
+        });
+        if (matches) count++;
+    });
+    return count;
+}
+
+function isCurrentThematicTemplate(template) {
+    const activeGroups = getNonEmptyThematicFilterGroups();
+    const templateGroups = (template.groups || []).filter(group => group.terms?.length);
+    if (activeGroups.length !== templateGroups.length) return false;
+    return templateGroups.every((templateGroup, index) => {
+        const activeGroup = activeGroups[index];
+        if (!activeGroup || activeGroup.op !== templateGroup.op) return false;
+        const activeTerms = [...activeGroup.terms].sort().join('|');
+        const templateTerms = [...templateGroup.terms].sort().join('|');
+        return activeTerms === templateTerms;
+    });
+}
 
 function renderThematicQueryTemplates() {
     const container = document.getElementById('filterTemplateList');
@@ -2064,13 +2739,21 @@ function renderThematicQueryTemplates() {
 
         const button = document.createElement('button');
         button.type = 'button';
-        button.className = 'filter-template-btn rounded-xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.07] text-left px-3 py-2 transition';
+        button.className = 'filter-template-btn';
+        button.classList.toggle('active-template', isCurrentThematicTemplate(template));
         button.dataset.templateId = template.id;
+        const count = countMatchesForThematicGroups(template.groups, template.scope);
         button.innerHTML = `
-            <span class="flex items-center gap-2 text-[11px] font-bold text-[#F3E4CE]">
-                <span class="material-symbols-outlined text-sm text-[#56A3A6]" aria-hidden="true">${template.icon}</span>
-                <span>${template.title}</span>
+            <span class="theme-starter-kicker">
+                <span>${escapeThematicSearchHtml(template.category || 'Path')}</span>
+                <span>${count} section${count === 1 ? '' : 's'}</span>
             </span>
+            <span class="theme-starter-title">
+                <span class="material-symbols-outlined text-[#56A3A6] align-[-3px] mr-1" aria-hidden="true">${template.icon}</span>
+                ${escapeThematicSearchHtml(template.title)}
+            </span>
+            <span class="theme-starter-description">${escapeThematicSearchHtml(template.description || '')}</span>
+            <span class="theme-starter-logic">${escapeThematicSearchHtml(template.logic || '')}</span>
         `;
         button.addEventListener('click', () => applyThematicQueryTemplate(template.id));
         container.appendChild(button);
@@ -2110,6 +2793,7 @@ function setThematicFilterScope(scope) {
     syncFilterScopeButtons();
     renderThematicFilterChips();
     applyFiltersToView();
+    renderThemePredictions(); // refresh suggestions/counts for the new scope (no-op if input empty)
 }
 
 function syncFilterMatchModeButtons() {
@@ -2215,12 +2899,28 @@ function updateFilterCount() {
             ? `${rowCount} rows · ${count} themes`
             : `${count} selected`;
     }
-    if (clearBtn) clearBtn.classList.toggle('hidden', count === 0);
+    if (clearBtn) clearBtn.classList.add('hidden');
     if (copyBtn) copyBtn.classList.toggle('hidden', count === 0);
+
+    // Top-bar Theme Search button: keep it visibly labelled (not icon-only) and
+    // make the label communicate the active query. Desktop spells it out; mobile
+    // stays compact. Empty mobile label => icon-only when no query is active.
+    const hasQuery = count > 0;
+    const desktopText = hasQuery
+        ? `Edit Theme Search · ${rowCount} condition${rowCount === 1 ? '' : 's'}`
+        : 'Theme Search';
+    const mobileText = hasQuery ? `Themes · ${count}` : '';
+    const desktopLabel = document.getElementById('openFilterBtnLabel');
+    const mobileLabel = document.getElementById('openFilterBtnLabelMobile');
+    if (desktopLabel) desktopLabel.textContent = desktopText;
+    if (mobileLabel) mobileLabel.textContent = mobileText;
+
     if (openBtn) {
         openBtn.classList.toggle('ring-2', count > 0);
         openBtn.classList.toggle('ring-[#56A3A6]', count > 0);
         openBtn.classList.toggle('bg-white/20', count > 0);
+        openBtn.title = desktopText;
+        openBtn.setAttribute('aria-label', desktopText);
     }
 }
 
@@ -2404,6 +3104,11 @@ function renderFilterEmptyStateHtml(message) {
 function applyFiltersToView() {
     renderThematicFilterChips();
     syncThematicQueryToUrl();
+
+    if (isThemeSearchPageOpen()) {
+        renderThemeSearchResultsList();
+        return;
+    }
 
     // Cross-surah results view takes over when scope spans multiple surahs and
     // filters are active. Otherwise we just hide/show cards in the current view.
@@ -3354,14 +4059,17 @@ window.renderBookmarksGallery = function() {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-    const openBtn = document.getElementById('openBookmarksBtn');
-    if (openBtn) {
+    const bookmarkOpeners = [
+        document.getElementById('openBookmarksBtn'),
+        document.getElementById('settingsBookmarksBtn')
+    ].filter(Boolean);
+    bookmarkOpeners.forEach(openBtn => {
         openBtn.addEventListener('click', () => {
             if (window.renderBookmarksGallery) window.renderBookmarksGallery();
             const modal = document.getElementById('bookmarksModal');
             if (modal) modal.classList.remove('hidden');
         });
-    }
+    });
     
     const closeBtn = document.getElementById('closeBookmarksBtn');
     if (closeBtn) {
