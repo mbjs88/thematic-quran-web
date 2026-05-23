@@ -615,6 +615,48 @@ window.showToast = function (message, icon = 'info') {
     window.toastTimeout = setTimeout(() => toast.classList.remove('toast-visible'), 3000);
 };
 // --- WELCOME PAGE RENDERER ---
+const COMPACT_WELCOME_PAGE_HTML = `
+    <div id="staticWelcomeContent" class="welcome-search-page animate-fade-in">
+        <section class="welcome-search-shell" aria-label="Start searching Thematic Qur'an">
+            <p class="welcome-search-kicker">Thematic Qur'an</p>
+            <h1 class="welcome-search-title">What would you like to explore?</h1>
+
+            <div class="welcome-search-box">
+                <span class="material-symbols-outlined welcome-search-icon" aria-hidden="true">search</span>
+                <input id="heroThemeSearchInput" class="welcome-search-input" type="text" placeholder="Search themes..." autocomplete="off" aria-label="Search themes">
+                <button id="heroThemeSearchBtn" class="welcome-search-submit" type="button" aria-label="Open Theme Search">
+                    <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+                </button>
+            </div>
+
+            <div class="welcome-path-grid" aria-label="Suggested paths">
+                <button type="button" class="welcome-path-btn" data-hero-template-id="hour-cosmic-signs">
+                    <span class="material-symbols-outlined" aria-hidden="true">brightness_6</span>
+                    <span>The Hour + cosmic signs</span>
+                </button>
+                <button type="button" class="welcome-path-btn" data-hero-template-id="sulaiman-gratitude">
+                    <span class="material-symbols-outlined" aria-hidden="true">workspace_premium</span>
+                    <span>Sulaiman + gratitude</span>
+                </button>
+                <button type="button" class="welcome-path-btn" data-hero-template-id="orphan-justice">
+                    <span class="material-symbols-outlined" aria-hidden="true">volunteer_activism</span>
+                    <span>Orphans + justice</span>
+                </button>
+                <button type="button" class="welcome-path-btn" data-hero-template-id="human-creation-resurrection">
+                    <span class="material-symbols-outlined" aria-hidden="true">public</span>
+                    <span>Creation + return</span>
+                </button>
+            </div>
+
+            <div class="welcome-search-links">
+                <button id="heroAdvancedSearchBtn" type="button">Advanced search</button>
+                <span aria-hidden="true">/</span>
+                <button id="heroBrowseThemesBtn" type="button">Browse themes</button>
+            </div>
+        </section>
+    </div>
+`;
+
 // --- WELCOME PAGE RENDERER ---
 const WELCOME_PAGE_HTML = `
     <!-- STATIC WELCOME PAGE (SEO OPTIMIZED) -->
@@ -773,10 +815,7 @@ window.renderWelcomePage = function () {
         spacer.className = "w-full h-[160px] md:h-[180px] shrink-0 transition-all duration-300";
     }
 
-    // Prefer the captured HTML if valid (non-empty), otherwise use hardcoded fallback
-    let contentToRender = window.STATIC_WELCOME_HTML && window.STATIC_WELCOME_HTML.trim().length > 100
-        ? window.STATIC_WELCOME_HTML
-        : WELCOME_PAGE_HTML;
+    let contentToRender = COMPACT_WELCOME_PAGE_HTML || WELCOME_PAGE_HTML;
 
     container.innerHTML = contentToRender;
 

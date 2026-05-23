@@ -1113,9 +1113,58 @@ function wireHeroWidget() {
     const playBtn = document.getElementById('heroPlayBtn');
     const themeSelect = document.getElementById('heroThemeSelect');
     const exploreBtn = document.getElementById('heroExploreBtn');
+    const welcomeSearchInput = document.getElementById('heroThemeSearchInput');
+    const welcomeSearchBtn = document.getElementById('heroThemeSearchBtn');
+    const browseThemesBtn = document.getElementById('heroBrowseThemesBtn');
+    const advancedSearchBtn = document.getElementById('heroAdvancedSearchBtn');
+    const suggestedPathBtns = document.querySelectorAll('[data-hero-template-id]');
 
     // Welcome HTML may not be on the page (deep-link, resume, etc.).
-    if (!surahSelect && !playBtn && !themeSelect && !exploreBtn) return;
+    if (!surahSelect && !playBtn && !themeSelect && !exploreBtn && !welcomeSearchInput && !welcomeSearchBtn && !browseThemesBtn && !advancedSearchBtn && suggestedPathBtns.length === 0) return;
+
+    function openThemeSearchFromWelcome(query = '') {
+        if (typeof window.openThemeSearchSidebar !== 'function') return;
+        window.openThemeSearchSidebar();
+        const searchInput = document.getElementById('filterSearchInput');
+        if (searchInput) {
+            searchInput.value = query;
+            searchInput.focus();
+            if (query.trim() && typeof renderThemePredictions === 'function') renderThemePredictions();
+        }
+        if (typeof startThemeSearchTutorialIfFirstTime === 'function') {
+            setTimeout(() => startThemeSearchTutorialIfFirstTime(), 200);
+        }
+    }
+
+    if (welcomeSearchInput) {
+        welcomeSearchInput.addEventListener('focus', () => openThemeSearchFromWelcome(welcomeSearchInput.value));
+        welcomeSearchInput.addEventListener('input', () => openThemeSearchFromWelcome(welcomeSearchInput.value));
+        welcomeSearchInput.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                openThemeSearchFromWelcome(welcomeSearchInput.value);
+            }
+        });
+    }
+
+    if (welcomeSearchBtn) {
+        welcomeSearchBtn.addEventListener('click', () => openThemeSearchFromWelcome(welcomeSearchInput?.value || ''));
+    }
+
+    [browseThemesBtn, advancedSearchBtn].forEach(btn => {
+        if (!btn) return;
+        btn.addEventListener('click', () => openThemeSearchFromWelcome(''));
+    });
+
+    suggestedPathBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const templateId = btn.dataset.heroTemplateId;
+            openThemeSearchFromWelcome('');
+            if (templateId && typeof applyThematicQueryTemplate === 'function') {
+                applyThematicQueryTemplate(templateId);
+            }
+        });
+    });
 
     // ---- Surah dropdown (Listen) -------------------------------------
     // Mirror the surah list from the top-bar dropdown so the user gets the same
@@ -2179,6 +2228,8 @@ function setupThematicFilterUI() {
         filterSidebar.classList.remove('hidden');
         filterSidebar.scrollTop = 0;
         document.body.classList.add('theme-search-page-open');
+        const templateContainer = document.getElementById('filterTemplateContainer');
+        if (templateContainer) templateContainer.removeAttribute('open');
         syncThemeSearchLayoutOrder();
         setTimeout(() => {
             filterSidebar.classList.add('filter-sidebar-open');
@@ -2640,6 +2691,18 @@ const SCOPE_LABELS = {
 };
 
 const THEMATIC_QUERY_TEMPLATES = [
+    {
+        id: 'hour-cosmic-signs',
+        title: 'The Hour + cosmic signs',
+        category: 'Afterlife',
+        description: 'End-time imagery where the sun, moon, stars, and heavens become signs.',
+        logic: 'Signs of the Hour AND Sun, Moon, Stars',
+        icon: 'brightness_6',
+        scope: 'quran',
+        groups: [
+            { op: 'and', terms: ['signs-of-the-hour', 'cosmic-bodies'] }
+        ]
+    },
     {
         id: 'sulaiman-gratitude',
         title: 'Sulaiman + gratitude',
@@ -3391,6 +3454,7 @@ function scrollToCard(card) {
 function navigateSection(direction) {
     const currentCard = document.querySelector('.thematic-card.ring-2');
     if (!currentCard) return;
+    const inCrossSurahResults = !!document.getElementById('crossSurahResults');
 
     let targetCard = null;
     let sibling = direction === 'next' ? currentCard.nextElementSibling : currentCard.previousElementSibling;
@@ -3414,7 +3478,6 @@ function navigateSection(direction) {
         const start = parseInt(targetCard.dataset.start);
         const end = parseInt(targetCard.dataset.end);
         const prevSurah = parseInt(currentCard.dataset.surah);
-        const inCrossSurahResults = !!document.getElementById('crossSurahResults');
         const surahChanged = prevSurah !== s;
 
         setTimeout(() => {
@@ -3427,7 +3490,7 @@ function navigateSection(direction) {
             // for filtered cross-surah results.)
             if (inCrossSurahResults && surahChanged && typeof playSurahIntroThen === 'function') {
                 playSurahIntroThen(s, () => {
-                    if (typeof playSession === 'function') playSession(s, start, end);
+                    if (typeof playSession === 'function') playSession(s, start, end, null, null, { skipIntro: true });
                 });
             } else if (typeof playSession === 'function') {
                 playSession(s, start, end);
@@ -3437,6 +3500,11 @@ function navigateSection(direction) {
 
         triggerLookAheadPreload(targetCard);
     } else if (direction === 'next') {
+        if (inCrossSurahResults) {
+            if (typeof window.openThemeSearchSidebar === 'function') window.openThemeSearchSidebar();
+            if (window.showToast) window.showToast('Finished filtered sections', 'check');
+            return;
+        }
         const currentId = parseInt(document.getElementById('surahSelect').value);
         if (currentViewMode === 'juz') {
             const nextJuz = currentId + 1;

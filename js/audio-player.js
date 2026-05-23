@@ -41,15 +41,16 @@ document.addEventListener('speed-changed', (e) => {
     }
 });
 
-function playSession(surah, start, end, targetVerse = null, targetType = null) {
+function playSession(surah, start, end, targetVerse = null, targetType = null, options = {}) {
     stopAllAudio();
     window.pendingSession = { surah, start, end };
     playQueue = [];
     currentSectionScope = { surah, start, end, totalVerses: (end - start + 1) };
+    const skipIntro = !!options.skipIntro;
 
     const surahName = (typeof window.getSurahName === 'function') ? window.getSurahName(surah) : `Surah ${surah}`;
 
-    if (start === 1 && targetVerse === null) {
+    if (!skipIntro && start === 1 && targetVerse === null) {
         const sPad = String(surah).padStart(3, '0');
         playQueue.push({ url: `https://audio.thematicquran.com/intro/${sPad}.mp3`, verse: 0, type: 'intro' });
     }

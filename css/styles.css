@@ -324,6 +324,149 @@ body.theme-search-page-open {
     overflow: hidden;
 }
 
+.welcome-search-page {
+    min-height: calc(100dvh - 360px);
+    display: grid;
+    place-items: center;
+    padding: 24px 0 96px;
+}
+
+.welcome-search-shell {
+    width: min(760px, 100%);
+    margin: 0 auto;
+    text-align: center;
+}
+
+.welcome-search-kicker {
+    color: #56A3A6;
+    font-family: 'Nunito', sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.welcome-search-title {
+    color: #fff;
+    font-family: 'Forum', serif;
+    font-size: clamp(2.35rem, 6vw, 4.75rem);
+    line-height: 0.98;
+    letter-spacing: 0;
+    margin-bottom: 28px;
+}
+
+.welcome-search-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 66px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.32);
+}
+
+.welcome-search-icon {
+    flex: 0 0 auto;
+    margin-left: 22px;
+    color: rgba(30, 20, 38, 0.52);
+}
+
+.welcome-search-input {
+    min-width: 0;
+    flex: 1;
+    height: 66px;
+    border: 0;
+    background: transparent;
+    color: #1E1426;
+    font-family: 'Nunito', sans-serif;
+    font-size: 17px;
+    outline: none;
+    padding: 0 14px;
+}
+
+.welcome-search-input::placeholder {
+    color: rgba(30, 20, 38, 0.48);
+}
+
+.welcome-search-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    width: 48px;
+    height: 48px;
+    margin-right: 9px;
+    border-radius: 9999px;
+    background: #56A3A6;
+    color: #fff;
+    transition: background 0.18s ease, transform 0.18s ease;
+}
+
+.welcome-search-submit:hover {
+    background: #458a8d;
+    transform: translateY(-1px);
+}
+
+.welcome-path-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.welcome-path-btn {
+    min-height: 76px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.045);
+    color: rgba(243, 228, 206, 0.82);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 10px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 1.2;
+    transition: border-color 0.18s ease, background 0.18s ease, transform 0.18s ease;
+}
+
+.welcome-path-btn .material-symbols-outlined {
+    color: #56A3A6;
+    font-size: 22px;
+}
+
+.welcome-path-btn:hover {
+    transform: translateY(-1px);
+    border-color: rgba(86, 163, 166, 0.5);
+    background: rgba(86, 163, 166, 0.1);
+    color: #fff;
+}
+
+.welcome-search-links {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 18px;
+    color: rgba(243, 228, 206, 0.42);
+    font-family: 'Nunito', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.welcome-search-links button {
+    color: rgba(243, 228, 206, 0.68);
+    transition: color 0.18s ease;
+}
+
+.welcome-search-links button:hover {
+    color: #56A3A6;
+}
+
 .theme-search-page {
     background:
         radial-gradient(circle at 18% 6%, rgba(86, 163, 166, 0.16), transparent 32%),
@@ -726,6 +869,34 @@ body.theme-search-page-open {
 
     .theme-search-hero-title {
         font-size: 2.7rem;
+    }
+
+    .welcome-search-page {
+        min-height: calc(100dvh - 300px);
+        padding-bottom: 72px;
+    }
+
+    .welcome-search-title {
+        font-size: 2.9rem;
+    }
+
+    .welcome-search-box {
+        min-height: 58px;
+        border-radius: 22px;
+    }
+
+    .welcome-search-input {
+        height: 58px;
+        font-size: 15px;
+    }
+
+    .welcome-search-submit {
+        width: 42px;
+        height: 42px;
+    }
+
+    .welcome-path-grid {
+        grid-template-columns: 1fr 1fr;
     }
 
     .theme-search-input {
