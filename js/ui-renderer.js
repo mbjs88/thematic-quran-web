@@ -815,7 +815,12 @@ window.renderWelcomePage = function () {
         spacer.className = "w-full h-[160px] md:h-[180px] shrink-0 transition-all duration-300";
     }
 
-    let contentToRender = COMPACT_WELCOME_PAGE_HTML || WELCOME_PAGE_HTML;
+    // Prefer the captured static homepage so the public welcome page remains
+    // the full product intro from index.html. The compact search-first screen
+    // is now used inside Theme Search itself.
+    let contentToRender = window.STATIC_WELCOME_HTML && window.STATIC_WELCOME_HTML.trim().length > 100
+        ? window.STATIC_WELCOME_HTML
+        : WELCOME_PAGE_HTML;
 
     container.innerHTML = contentToRender;
 

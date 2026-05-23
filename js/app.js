@@ -627,6 +627,39 @@ function handleDeepLink() {
 }
 
 function setupGlobalEventListeners() {
+    const headerTitle = document.getElementById('headerTitleContainer');
+    function goToWelcomePage() {
+        if (typeof stopAllAudio === 'function') stopAllAudio();
+        if (typeof window.closeThemeSearchSidebar === 'function' && isThemeSearchPageOpen()) {
+            window.closeThemeSearchSidebar({ skipApply: true });
+        }
+        const settingsSidebar = document.getElementById('settingsSidebar');
+        const settingsBackdrop = document.getElementById('settingsBackdrop');
+        if (settingsSidebar) settingsSidebar.classList.add('translate-x-full');
+        if (settingsBackdrop) {
+            settingsBackdrop.classList.add('opacity-0');
+            settingsBackdrop.classList.add('hidden');
+        }
+        currentViewMode = 'surah';
+        const viewSelect = document.getElementById('viewModeSelect');
+        if (viewSelect) viewSelect.value = 'surah';
+        populateDropdown();
+        const surahSelect = document.getElementById('surahSelect');
+        if (surahSelect) surahSelect.value = "0";
+        loadContent(0);
+        sendAnalyticsEvent('ui_interaction', { action: 'header_home' });
+    }
+
+    if (headerTitle) {
+        headerTitle.addEventListener('click', goToWelcomePage);
+        headerTitle.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                goToWelcomePage();
+            }
+        });
+    }
+
     document.getElementById('surahSelect').addEventListener('change', (e) => {
         loadContent(parseInt(e.target.value));
         sendAnalyticsEvent('content_select', { type: currentViewMode, id: e.target.value });
@@ -1124,7 +1157,7 @@ function wireHeroWidget() {
 
     function openThemeSearchFromWelcome(query = '') {
         if (typeof window.openThemeSearchSidebar !== 'function') return;
-        window.openThemeSearchSidebar();
+        window.openThemeSearchSidebar({ showConsole: true });
         const searchInput = document.getElementById('filterSearchInput');
         if (searchInput) {
             searchInput.value = query;
@@ -1136,10 +1169,16 @@ function wireHeroWidget() {
         }
     }
 
+    function wireWelcomeControlOnce(element, key, handler) {
+        if (!element || element.dataset[key] === '1') return;
+        element.dataset[key] = '1';
+        element.addEventListener(key === 'heroKeydownWired' ? 'keydown' : key === 'heroInputWired' ? 'input' : key === 'heroFocusWired' ? 'focus' : 'click', handler);
+    }
+
     if (welcomeSearchInput) {
-        welcomeSearchInput.addEventListener('focus', () => openThemeSearchFromWelcome(welcomeSearchInput.value));
-        welcomeSearchInput.addEventListener('input', () => openThemeSearchFromWelcome(welcomeSearchInput.value));
-        welcomeSearchInput.addEventListener('keydown', (event) => {
+        wireWelcomeControlOnce(welcomeSearchInput, 'heroFocusWired', () => openThemeSearchFromWelcome(welcomeSearchInput.value));
+        wireWelcomeControlOnce(welcomeSearchInput, 'heroInputWired', () => openThemeSearchFromWelcome(welcomeSearchInput.value));
+        wireWelcomeControlOnce(welcomeSearchInput, 'heroKeydownWired', (event) => {
             if (event.key === 'Enter') {
                 event.preventDefault();
                 openThemeSearchFromWelcome(welcomeSearchInput.value);
@@ -1148,16 +1187,16 @@ function wireHeroWidget() {
     }
 
     if (welcomeSearchBtn) {
-        welcomeSearchBtn.addEventListener('click', () => openThemeSearchFromWelcome(welcomeSearchInput?.value || ''));
+        wireWelcomeControlOnce(welcomeSearchBtn, 'heroClickWired', () => openThemeSearchFromWelcome(welcomeSearchInput?.value || ''));
     }
 
     [browseThemesBtn, advancedSearchBtn].forEach(btn => {
         if (!btn) return;
-        btn.addEventListener('click', () => openThemeSearchFromWelcome(''));
+        wireWelcomeControlOnce(btn, 'heroClickWired', () => openThemeSearchFromWelcome(''));
     });
 
     suggestedPathBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
+        wireWelcomeControlOnce(btn, 'heroClickWired', () => {
             const templateId = btn.dataset.heroTemplateId;
             openThemeSearchFromWelcome('');
             if (templateId && typeof applyThematicQueryTemplate === 'function') {
@@ -1290,7 +1329,7 @@ function wireHeroWidget() {
             // The welcome flow is the beginner doorway into Theme Search, so open
             // the dedicated search surface with the condition the user just started.
             if (typeof window.openThemeSearchSidebar === 'function') {
-                window.openThemeSearchSidebar();
+                window.openThemeSearchSidebar({ showConsole: true });
             }
 
             // First-timers arriving from the welcome page get a short, 3-step
@@ -2084,6 +2123,17 @@ function isThemeSearchPageOpen() {
     return !!page && !page.classList.contains('hidden');
 }
 
+function setThemeSearchMode(mode = 'landing') {
+    const showConsole = mode === 'console';
+    const landing = document.getElementById('themeSearchLanding');
+    const controls = document.getElementById('themeSearchControlsPanel');
+    const workspace = document.getElementById('themeSearchGrid');
+
+    if (landing) landing.classList.toggle('hidden', showConsole);
+    if (controls) controls.classList.toggle('hidden', !showConsole);
+    if (workspace) workspace.classList.toggle('hidden', !showConsole);
+}
+
 function syncThemeSearchLayoutOrder() {
     // The redesigned page keeps one stable order across breakpoints:
     // discovery and active search first, then the theme library.
@@ -2223,11 +2273,13 @@ function setupThematicFilterUI() {
         return;
     }
 
-    function openFilters() {
+    function openFilters(options) {
+        const showConsole = !!(options && options.showConsole === true);
         filterBackdrop.classList.add('hidden');
         filterSidebar.classList.remove('hidden');
         filterSidebar.scrollTop = 0;
         document.body.classList.add('theme-search-page-open');
+        setThemeSearchMode(showConsole ? 'console' : 'landing');
         const templateContainer = document.getElementById('filterTemplateContainer');
         if (templateContainer) templateContainer.removeAttribute('open');
         syncThemeSearchLayoutOrder();
@@ -2237,13 +2289,14 @@ function setupThematicFilterUI() {
         renderThemeSearchResultsList();
         sendAnalyticsEvent('ui_interaction', { action: 'open_theme_search' });
     }
-    function closeFilters() {
+    function closeFilters(options) {
+        const skipApply = !!(options && options.skipApply === true);
         filterSidebar.classList.remove('filter-sidebar-open');
         document.body.classList.remove('theme-search-page-open');
         if (themeSearchTutorialState.active) teardownThemeSearchTutorial();
         setTimeout(() => {
             filterSidebar.classList.add('hidden');
-            if (hasActiveThematicQuery()) applyFiltersToView();
+            if (!skipApply && hasActiveThematicQuery()) applyFiltersToView();
         }, 300);
     }
 
