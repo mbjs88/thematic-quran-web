@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Feedback Admin | Thematic Qur'an</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="theme-color" content="#12101C">
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Forum&family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+    <style>
+        html, body { background: #12101C; }
+        body { overscroll-behavior-y: none; }
+        .custom-gradient { background: linear-gradient(to bottom, #12101C 0%, #221F2B 52%, #352B39 100%); }
+        .admin-field {
+            width: 100%;
+            border-radius: 0.75rem;
+            border: 1px solid rgba(255,255,255,0.12);
+            background: rgba(18,16,28,0.62);
+            color: #fff;
+            padding: 0.75rem 0.875rem;
+            outline: none;
+        }
+        .admin-field:focus { box-shadow: 0 0 0 2px #56A3A6; }
+        .status-new { color: #F3E4CE; }
+        .status-reviewed { color: #A3E4D7; }
+        .status-planned { color: #F5D67A; }
+        .status-done { color: #7DD3A8; }
+        .status-ignored { color: rgba(255,255,255,0.45); }
+        .status-scam { color: #F0A49B; }
+    </style>
+</head>
+
+<body class="custom-gradient min-h-screen text-[#F3E4CE] font-['Nunito']">
+    <main class="mx-auto max-w-7xl px-4 py-6 md:px-8 md:py-10">
+        <header class="mb-8 flex flex-col gap-5 border-b border-white/10 pb-6 md:flex-row md:items-end md:justify-between">
+            <div>
+                <a href="/" class="mb-4 inline-flex items-center gap-2 text-sm font-bold text-white/45 hover:text-[#56A3A6]">
+                    <span class="material-symbols-outlined text-lg">arrow_back</span>
+                    Back to app
+                </a>
+                <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-[#56A3A6]">Thematic Qur'an</p>
+                <h1 class="mt-1 font-['Forum'] text-4xl tracking-wide text-white md:text-5xl">Feedback Admin</h1>
+            </div>
+            <div class="grid gap-2 sm:min-w-[22rem]">
+                <label for="adminToken" class="text-[10px] font-bold uppercase tracking-wider text-white/40">Admin token</label>
+                <div class="flex gap-2">
+                    <input id="adminToken" type="password" class="admin-field" placeholder="FEEDBACK_ADMIN_TOKEN">
+                    <button id="saveTokenBtn" type="button" class="rounded-xl bg-[#56A3A6] px-4 py-2 text-sm font-bold text-white hover:bg-[#458a8d]">Save</button>
+                </div>
+            </div>
+        </header>
+
+        <section class="mb-6 grid gap-3 rounded-2xl border border-white/10 bg-white/5 p-4 md:grid-cols-[1fr,1fr,1fr,1fr,auto] md:items-end">
+            <div>
+                <label for="statusFilter" class="mb-2 block text-[10px] font-bold uppercase tracking-wider text-[#56A3A6]">Status</label>
+                <select id="statusFilter" class="admin-field">
+                    <option value="new">New only</option>
+                    <option value="reviewed">Reviewed</option>
+                    <option value="planned">Planned</option>
+                    <option value="done">Done</option>
+                    <option value="ignored">Ignored</option>
+                    <option value="scam">Scam</option>
+                    <option value="all">All statuses</option>
+                </select>
+            </div>
+            <div>
+                <label for="periodFilter" class="mb-2 block text-[10px] font-bold uppercase tracking-wider text-[#56A3A6]">Period</label>
+                <select id="periodFilter" class="admin-field">
+                    <option value="7d">Last 7 days</option>
+                    <option value="this-week">This week</option>
+                    <option value="30d">Last 30 days</option>
+                    <option value="last-month">Last month</option>
+                    <option value="all">All time</option>
+                </select>
+            </div>
+            <div>
+                <label for="typeFilter" class="mb-2 block text-[10px] font-bold uppercase tracking-wider text-[#56A3A6]">Type</label>
+                <select id="typeFilter" class="admin-field">
+                    <option value="all">All types</option>
+                    <option value="bug">Broken</option>
+                    <option value="theme-search">Theme Search</option>
+                    <option value="audio">Audio</option>
+                    <option value="account-sync">Account sync</option>
+                    <option value="content">Content</option>
+                    <option value="suggestion">Suggestion</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div>
+                <label for="queryFilter" class="mb-2 block text-[10px] font-bold uppercase tracking-wider text-[#56A3A6]">Search</label>
+                <input id="queryFilter" class="admin-field" placeholder="Message, email, theme...">
+            </div>
+            <button id="refreshBtn" type="button" class="inline-flex items-center justify-center gap-2 rounded-xl border border-[#56A3A6]/50 bg-[#56A3A6]/15 px-4 py-3 text-sm font-bold text-[#A3E4D7] hover:bg-[#56A3A6]/25">
+                <span class="material-symbols-outlined text-lg">refresh</span>
+                Refresh
+            </button>
+        </section>
+
+        <section class="mb-6 rounded-2xl border border-white/10 bg-white/5 p-4">
+            <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+                <div>
+                    <h2 class="font-['Forum'] text-2xl tracking-wide text-white">Gemini summary</h2>
+                    <p class="mt-1 text-sm text-white/50">Summarises the currently filtered set and can auto-mark scam messages.</p>
+                </div>
+                <label class="inline-flex cursor-pointer items-center gap-2 text-sm text-white/60">
+                    <input id="autoMarkScam" type="checkbox" checked class="h-4 w-4 accent-[#56A3A6]">
+                    Auto-mark scam as scam
+                </label>
+                <button id="summariseBtn" type="button" class="inline-flex items-center justify-center gap-2 rounded-xl bg-[#56A3A6] px-5 py-3 text-sm font-bold text-white hover:bg-[#458a8d]">
+                    <span class="material-symbols-outlined text-lg">auto_awesome</span>
+                    Summarise filtered feedback
+                </button>
+            </div>
+            <div id="summaryOutput" class="mt-5 hidden rounded-2xl border border-white/10 bg-[#12101C]/55 p-5"></div>
+        </section>
+
+        <section>
+            <div class="mb-4 flex items-center justify-between">
+                <p id="resultCount" class="text-sm font-bold text-white/50">No feedback loaded.</p>
+                <p id="statusMessage" class="text-sm text-white/45" aria-live="polite"></p>
+            </div>
+            <div id="feedbackList" class="grid gap-4"></div>
+        </section>
+    </main>
+
+    <template id="feedbackCardTemplate">
+        <article class="rounded-2xl border border-white/10 bg-white/5 p-4 md:p-5">
+            <div class="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
+                <div class="min-w-0">
+                    <div class="flex flex-wrap items-center gap-2 text-[11px] font-bold uppercase tracking-wider">
+                        <span data-role="type" class="rounded-full border border-[#56A3A6]/30 bg-[#56A3A6]/10 px-2.5 py-1 text-[#A3E4D7]"></span>
+                        <span data-role="status" class="rounded-full border border-white/10 bg-white/5 px-2.5 py-1"></span>
+                        <span data-role="date" class="text-white/35"></span>
+                    </div>
+                    <p data-role="message" class="mt-4 whitespace-pre-wrap text-sm leading-relaxed text-white/80"></p>
+                </div>
+                <div class="flex shrink-0 gap-2">
+                    <select data-role="statusSelect" class="admin-field min-w-[9rem] text-sm">
+                        <option value="new">New</option>
+                        <option value="reviewed">Reviewed</option>
+                        <option value="planned">Planned</option>
+                        <option value="done">Done</option>
+                        <option value="ignored">Ignored</option>
+                        <option value="scam">Scam</option>
+                    </select>
+                </div>
+            </div>
+            <details class="mt-4 rounded-xl border border-white/10 bg-[#12101C]/45 p-3">
+                <summary class="cursor-pointer text-xs font-bold uppercase tracking-wider text-white/40">Context</summary>
+                <dl data-role="context" class="mt-3 grid gap-2 text-xs md:grid-cols-2"></dl>
+            </details>
+        </article>
+    </template>
+
+    <script>
+        (function () {
+            const TOKEN_KEY = 'thematicFeedbackAdminToken';
+            const tokenInput = document.getElementById('adminToken');
+            const saveTokenBtn = document.getElementById('saveTokenBtn');
+            const statusFilter = document.getElementById('statusFilter');
+            const periodFilter = document.getElementById('periodFilter');
+            const typeFilter = document.getElementById('typeFilter');
+            const queryFilter = document.getElementById('queryFilter');
+            const refreshBtn = document.getElementById('refreshBtn');
+            const summariseBtn = document.getElementById('summariseBtn');
+            const autoMarkScam = document.getElementById('autoMarkScam');
+            const feedbackList = document.getElementById('feedbackList');
+            const resultCount = document.getElementById('resultCount');
+            const statusMessage = document.getElementById('statusMessage');
+            const summaryOutput = document.getElementById('summaryOutput');
+            const template = document.getElementById('feedbackCardTemplate');
+
+            tokenInput.value = localStorage.getItem(TOKEN_KEY) || '';
+
+            function setStatus(message, isError = false) {
+                statusMessage.textContent = message;
+                statusMessage.className = isError ? 'text-sm text-[#F0A49B]' : 'text-sm text-white/45';
+            }
+
+            function getToken() {
+                return tokenInput.value.trim();
+            }
+
+            function headers() {
+                return {
+                    'Authorization': `Bearer ${getToken()}`,
+                    'Content-Type': 'application/json'
+                };
+            }
+
+            function filters() {
+                return {
+                    status: statusFilter.value,
+                    period: periodFilter.value,
+                    type: typeFilter.value,
+                    query: queryFilter.value.trim()
+                };
+            }
+
+            function queryString() {
+                const params = new URLSearchParams(filters());
+                return params.toString();
+            }
+
+            function formatDate(value) {
+                if (!value) return 'Unknown date';
+                try {
+                    return new Intl.DateTimeFormat(undefined, { dateStyle: 'medium', timeStyle: 'short' }).format(new Date(value));
+                } catch (error) {
+                    return value;
+                }
+            }
+
+            function addContextRow(container, label, value) {
+                if (!value) return;
+                const wrap = document.createElement('div');
+                wrap.className = 'min-w-0';
+                const dt = document.createElement('dt');
+                dt.className = 'font-bold text-white/35';
+                dt.textContent = label;
+                const dd = document.createElement('dd');
+                dd.className = 'mt-0.5 break-words text-white/65';
+                dd.textContent = value;
+                wrap.appendChild(dt);
+                wrap.appendChild(dd);
+                container.appendChild(wrap);
+            }
+
+            function renderItems(items) {
+                feedbackList.innerHTML = '';
+                resultCount.textContent = `${items.length} feedback item${items.length === 1 ? '' : 's'} shown.`;
+
+                if (!items.length) {
+                    feedbackList.innerHTML = '<div class="rounded-2xl border border-white/10 bg-white/5 p-8 text-center text-white/45">No feedback matches these filters.</div>';
+                    return;
+                }
+
+                items.forEach((item) => {
+                    const node = template.content.firstElementChild.cloneNode(true);
+                    const status = item.status || 'new';
+                    node.querySelector('[data-role="type"]').textContent = item.type || 'other';
+                    const statusPill = node.querySelector('[data-role="status"]');
+                    statusPill.textContent = status;
+                    statusPill.classList.add(`status-${status}`);
+                    node.querySelector('[data-role="date"]').textContent = formatDate(item.createdAt);
+                    node.querySelector('[data-role="message"]').textContent = item.message || '';
+
+                    const select = node.querySelector('[data-role="statusSelect"]');
+                    select.value = status;
+                    select.addEventListener('change', () => updateStatus(item.key, select.value));
+
+                    const context = node.querySelector('[data-role="context"]');
+                    addContextRow(context, 'Contact', item.contact || '');
+                    addContextRow(context, 'Source', item.context?.source || '');
+                    addContextRow(context, 'Page', item.context?.pageUrl || '');
+                    addContextRow(context, 'View', item.context?.viewMode || '');
+                    addContextRow(context, 'Surah', item.context?.surah || '');
+                    addContextRow(context, 'Theme query', item.context?.themeQuery || '');
+                    addContextRow(context, 'Viewport', item.context?.viewport || '');
+                    addContextRow(context, 'Timezone', item.context?.timezone || '');
+                    if (!context.children.length) {
+                        context.innerHTML = '<div class="text-white/35">No context supplied.</div>';
+                    }
+
+                    feedbackList.appendChild(node);
+                });
+            }
+
+            async function apiFetch(url, options = {}) {
+                if (!getToken()) throw new Error('Enter the feedback admin token first.');
+                const response = await fetch(url, {
+                    ...options,
+                    credentials: 'omit',
+                    headers: {
+                        ...headers(),
+                        ...(options.headers || {})
+                    }
+                });
+                const data = await response.json().catch(() => ({}));
+                if (!response.ok || data.ok === false) throw new Error(data.error || `Request failed with ${response.status}`);
+                return data;
+            }
+
+            async function loadFeedback() {
+                setStatus('Loading...');
+                try {
+                    const data = await apiFetch(`/api/feedback/admin?${queryString()}`);
+                    renderItems(data.items || []);
+                    setStatus(`Loaded ${data.count || 0} of ${data.total || 0}.`);
+                } catch (error) {
+                    setStatus(error.message, true);
+                }
+            }
+
+            async function updateStatus(key, status) {
+                setStatus('Updating status...');
+                try {
+                    await apiFetch('/api/feedback/admin', {
+                        method: 'PATCH',
+                        body: JSON.stringify({ key, status })
+                    });
+                    setStatus('Status updated.');
+                    await loadFeedback();
+                } catch (error) {
+                    setStatus(error.message, true);
+                }
+            }
+
+            function itemList(title, items, formatter) {
+                if (!Array.isArray(items) || !items.length) return '';
+                return `<section class="mt-5"><h3 class="font-['Forum'] text-xl text-white">${title}</h3><div class="mt-3 grid gap-3">${items.map(formatter).join('')}</div></section>`;
+            }
+
+            function escapeHtml(value) {
+                return String(value || '').replace(/[&<>"']/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
+            }
+
+            function renderSummary(summary, markedScams, model) {
+                summaryOutput.classList.remove('hidden');
+                summaryOutput.innerHTML = `
+                    <div class="flex flex-col gap-2 md:flex-row md:items-start md:justify-between">
+                        <div>
+                            <p class="text-[10px] font-bold uppercase tracking-wider text-[#56A3A6]">${escapeHtml(model || 'Gemini')}</p>
+                            <h3 class="mt-1 font-['Forum'] text-2xl text-white">${escapeHtml(summary.headline || 'Feedback summary')}</h3>
+                            <p class="mt-2 text-sm text-white/55">${escapeHtml(summary.scope || '')}</p>
+                        </div>
+                        <div class="grid grid-cols-3 gap-2 text-center text-xs">
+                            <div class="rounded-xl border border-white/10 bg-white/5 p-3"><b class="block text-lg text-white">${summary.totalRecords || 0}</b><span class="text-white/45">Total</span></div>
+                            <div class="rounded-xl border border-white/10 bg-white/5 p-3"><b class="block text-lg text-white">${summary.usableRecords || 0}</b><span class="text-white/45">Usable</span></div>
+                            <div class="rounded-xl border border-white/10 bg-white/5 p-3"><b class="block text-lg text-[#F0A49B]">${summary.scamExcluded || 0}</b><span class="text-white/45">Scam</span></div>
+                        </div>
+                    </div>
+                    ${markedScams ? `<p class="mt-4 rounded-xl border border-[#F0A49B]/30 bg-[#F0A49B]/10 p-3 text-sm text-[#F0A49B]">${markedScams} scam item${markedScams === 1 ? '' : 's'} marked as scam.</p>` : ''}
+                    ${itemList('Actionable points', summary.actionablePoints, (item) => `
+                        <article class="rounded-xl border border-white/10 bg-white/5 p-4">
+                            <div class="flex items-center justify-between gap-3"><h4 class="font-bold text-white">${escapeHtml(item.title)}</h4><span class="text-xs font-bold uppercase text-[#F5D67A]">${escapeHtml(item.priority)}</span></div>
+                            <p class="mt-2 text-sm text-white/65">${escapeHtml(item.recommendation)}</p>
+                            <p class="mt-2 text-xs text-white/35">${escapeHtml((item.evidenceKeys || []).join(', '))}</p>
+                        </article>`)}
+                    ${itemList('Bugs', summary.bugs, (item) => `<article class="rounded-xl border border-white/10 bg-white/5 p-4"><h4 class="font-bold text-white">${escapeHtml(item.title)}</h4><p class="mt-2 text-sm text-white/65">${escapeHtml(item.nextStep)}</p></article>`)}
+                    ${itemList('Theme Search issues', summary.themeSearchIssues, (item) => `<article class="rounded-xl border border-white/10 bg-white/5 p-4"><h4 class="font-bold text-white">${escapeHtml(item.title)}</h4><p class="mt-2 text-sm text-white/65">${escapeHtml(item.nextStep)}</p></article>`)}
+                    ${itemList('Quick wins', summary.quickWins, (item) => `<p class="rounded-xl border border-white/10 bg-white/5 p-3 text-sm text-white/70">${escapeHtml(item)}</p>`)}
+                    ${itemList('Needs reply', summary.needsReply, (item) => `<article class="rounded-xl border border-white/10 bg-white/5 p-4"><h4 class="font-bold text-white">${escapeHtml(item.key)}</h4><p class="mt-2 text-sm text-white/65">${escapeHtml(item.reason)}</p><p class="mt-2 text-sm text-[#A3E4D7]">${escapeHtml(item.suggestedReply)}</p></article>`)}
+                    ${itemList('Patterns', summary.patterns, (item) => `<p class="rounded-xl border border-white/10 bg-white/5 p-3 text-sm text-white/70">${escapeHtml(item)}</p>`)}
+                `;
+            }
+
+            async function summariseFeedback() {
+                setStatus('Summarising with Gemini...');
+                summariseBtn.disabled = true;
+                summariseBtn.classList.add('opacity-70', 'cursor-wait');
+                try {
+                    const data = await apiFetch('/api/feedback/admin', {
+                        method: 'POST',
+                        body: JSON.stringify({ ...filters(), autoMarkScam: autoMarkScam.checked })
+                    });
+                    renderSummary(data.summary || {}, data.markedScams || 0, data.model || '');
+                    setStatus('Summary ready.');
+                    if (data.markedScams) await loadFeedback();
+                } catch (error) {
+                    setStatus(error.message, true);
+                } finally {
+                    summariseBtn.disabled = false;
+                    summariseBtn.classList.remove('opacity-70', 'cursor-wait');
+                }
+            }
+
+            saveTokenBtn.addEventListener('click', () => {
+                localStorage.setItem(TOKEN_KEY, getToken());
+                setStatus('Admin token saved locally.');
+            });
+            refreshBtn.addEventListener('click', loadFeedback);
+            summariseBtn.addEventListener('click', summariseFeedback);
+            [statusFilter, periodFilter, typeFilter].forEach((el) => el.addEventListener('change', loadFeedback));
+            queryFilter.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter') loadFeedback();
+            });
+
+            if (getToken()) loadFeedback();
+        })();
+    </script>
+</body>
+</html>

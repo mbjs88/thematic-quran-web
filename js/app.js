@@ -719,6 +719,14 @@ function setupGlobalEventListeners() {
     document.getElementById('closeSettingsBtn').addEventListener('click', closeSettings);
     backdrop.addEventListener('click', closeSettings);
 
+    const settingsFeedbackLink = document.getElementById('settingsFeedbackLink');
+    if (settingsFeedbackLink) {
+        settingsFeedbackLink.addEventListener('click', () => {
+            settingsFeedbackLink.href = buildFeedbackUrl('settings');
+            sendAnalyticsEvent('ui_interaction', { action: 'open_feedback', source: 'settings' });
+        });
+    }
+
     const audio = document.getElementById('audioElement');
     document.getElementById('globalPlayPauseBtn').addEventListener('click', () => {
         dismissQuranSyncPrompt();
@@ -3624,6 +3632,32 @@ function sendAnalyticsEvent(eventName, params = {}) {
         console.log(`[Analytics] Sent: ${eventName}`, params);
     }
 }
+
+function buildFeedbackUrl(source = 'app') {
+    const feedbackUrl = new URL('/feedback.html', window.location.origin);
+    feedbackUrl.searchParams.set('source', source);
+    feedbackUrl.searchParams.set('url', window.location.href);
+
+    const surahSelect = document.getElementById('surahSelect');
+    const surahValue = surahSelect?.value || '';
+    if (surahValue) feedbackUrl.searchParams.set('surah', surahValue);
+
+    const viewMode = currentViewMode || document.getElementById('viewModeSelect')?.value || '';
+    if (viewMode) feedbackUrl.searchParams.set('view', viewMode);
+
+    if (typeof hasActiveThematicQuery === 'function' && hasActiveThematicQuery()) {
+        const queryText = getThematicQueryText();
+        if (queryText) feedbackUrl.searchParams.set('theme', queryText);
+        if (typeof encodeThematicQueryState === 'function') {
+            const token = encodeThematicQueryState();
+            if (token) feedbackUrl.searchParams.set('tq', token);
+        }
+    }
+
+    return feedbackUrl.toString();
+}
+
+window.buildFeedbackUrl = buildFeedbackUrl;
 
 function setupAboutModal() {
     const modal = document.getElementById('aboutModal');

@@ -22,6 +22,9 @@ THEMATIC_LABELS_ROADMAP.md
 # Labeler run logs / status
 data/thematic_labels/.runs/
 
+# Local feedback submissions collected by server.py
+data/feedback/
+
 # Model-comparison snapshots (one folder per run)
 data/thematic_labels/.compare/
 

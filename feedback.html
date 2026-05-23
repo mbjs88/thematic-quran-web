@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Feedback | Thematic Qur'an</title>
+    <meta name="description" content="Send feedback about Thematic Qur'an. Report issues, suggest improvements, or flag missing theme results.">
+    <meta name="robots" content="noindex">
+    <meta name="theme-color" content="#12101C">
+
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Forum&family=Nunito:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+
+    <style>
+        html {
+            background-color: #12101C;
+        }
+
+        body {
+            background-color: #12101C;
+            overscroll-behavior-y: none;
+        }
+
+        .custom-gradient {
+            background: linear-gradient(to bottom, #12101C 0%, #221F2B 50%, #352B39 100%);
+        }
+
+        .feedback-status[data-state="success"] {
+            color: #A3E4D7;
+            border-color: rgba(86, 163, 166, 0.45);
+            background: rgba(86, 163, 166, 0.12);
+        }
+
+        .feedback-status[data-state="error"] {
+            color: #F0A49B;
+            border-color: rgba(199, 107, 95, 0.55);
+            background: rgba(199, 107, 95, 0.12);
+        }
+
+        .feedback-status[data-state="pending"] {
+            color: #F3E4CE;
+            border-color: rgba(243, 228, 206, 0.2);
+            background: rgba(255, 255, 255, 0.06);
+        }
+    </style>
+</head>
+
+<body class="custom-gradient min-h-screen text-[#F3E4CE] font-['Nunito'] flex flex-col h-[100dvh]">
+
+    <header id="mainHeader" class="w-full z-40 bg-[#12101C]/30 backdrop-blur-2xl border-b border-white/10 shadow-lg p-4 flex flex-col items-center justify-center shrink-0">
+        <a href="/" class="flex flex-col items-center justify-center space-y-1 cursor-pointer group hover:no-underline">
+            <h1 class="text-3xl md:text-5xl font-['Forum'] text-white tracking-widest text-center drop-shadow-lg group-hover:text-[#56A3A6] transition-colors duration-300">
+                THEMATIC QUR'AN</h1>
+            <h2 class="text-xs md:text-base font-['Forum'] text-white/80 tracking-[0.2em] text-center uppercase group-hover:text-white transition-colors duration-300">
+                Listen &bull; Reflect &bull; Understand</h2>
+        </a>
+    </header>
+
+    <main class="flex-grow overflow-y-auto px-5 py-10 md:px-10 md:py-14">
+        <div class="max-w-3xl mx-auto pb-24">
+
+            <div class="text-center mb-10 md:mb-14 animate-fade-in">
+                <div class="inline-flex items-center justify-center gap-2 px-3 py-1 bg-[#56A3A6]/10 border border-[#56A3A6]/30 rounded-full mb-6">
+                    <span class="material-symbols-outlined text-[#56A3A6] text-sm">rate_review</span>
+                    <span class="text-[#56A3A6] text-xs font-bold uppercase tracking-wider">First-party feedback</span>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-['Forum'] text-white tracking-widest mb-5">Send Feedback</h1>
+                <p class="text-white/65 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+                    Report something broken, flag a Theme Search result that feels off, or suggest a useful improvement.
+                </p>
+            </div>
+
+            <form id="feedbackForm" class="bg-white/5 rounded-2xl border border-white/10 p-5 md:p-8 shadow-2xl shadow-black/20" novalidate>
+                <input type="text" id="feedbackWebsite" name="website" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+                <div class="space-y-6">
+                    <div>
+                        <label for="feedbackType" class="block text-xs uppercase tracking-wider text-[#56A3A6] mb-3 font-bold">Type</label>
+                        <div class="bg-[#12101C]/50 rounded-xl border border-white/10 overflow-hidden">
+                            <select id="feedbackType" name="type"
+                                class="w-full p-4 bg-transparent text-white focus:outline-none focus:bg-white/10 font-['Nunito'] cursor-pointer"
+                                required>
+                                <option value="bug" class="text-gray-900">Something is broken</option>
+                                <option value="theme-search" class="text-gray-900">Theme Search issue</option>
+                                <option value="audio" class="text-gray-900">Audio or playback</option>
+                                <option value="account-sync" class="text-gray-900">Account sync</option>
+                                <option value="content" class="text-gray-900">Text, theme label, or passage issue</option>
+                                <option value="suggestion" class="text-gray-900">Suggestion</option>
+                                <option value="other" class="text-gray-900">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-3">
+                            <label for="feedbackMessage" class="block text-xs uppercase tracking-wider text-[#56A3A6] font-bold">Message</label>
+                            <span id="feedbackCount" class="text-[11px] text-white/35 font-bold">0/4000</span>
+                        </div>
+                        <textarea id="feedbackMessage" name="message" rows="8" maxlength="4000" minlength="10"
+                            class="w-full rounded-xl bg-[#12101C]/50 border border-white/10 p-4 text-white placeholder:text-white/35 focus:outline-none focus:ring-2 focus:ring-[#56A3A6] leading-relaxed"
+                            placeholder="What happened? What did you expect instead? If it is about a passage or theme, include the surah and ayah if you know it."
+                            required></textarea>
+                    </div>
+
+                    <div>
+                        <label for="feedbackContact" class="block text-xs uppercase tracking-wider text-[#56A3A6] mb-3 font-bold">Email address <span class="text-white/35 normal-case tracking-normal">(optional)</span></label>
+                        <input id="feedbackContact" name="contact" type="email" maxlength="200"
+                            class="w-full rounded-xl bg-[#12101C]/50 border border-white/10 p-4 text-white placeholder:text-white/35 focus:outline-none focus:ring-2 focus:ring-[#56A3A6]"
+                            placeholder="Only if you want a reply">
+                    </div>
+
+                    <div class="rounded-2xl bg-[#12101C]/45 border border-white/10 p-4 md:p-5">
+                        <label class="flex items-start gap-3 cursor-pointer">
+                            <input id="includeContext" type="checkbox" checked
+                                class="mt-1 h-4 w-4 rounded border-white/20 bg-white/10 text-[#56A3A6] focus:ring-[#56A3A6] accent-[#56A3A6]">
+                            <span>
+                                <span class="block text-sm font-bold text-white">Include page context</span>
+                                <span class="block text-xs text-white/50 leading-relaxed mt-1">
+                                    Sends the page, current view, Theme Search query if present, browser, viewport, language, and timezone. No Quran.com token is sent.
+                                </span>
+                            </span>
+                        </label>
+
+                        <div id="contextPanel" class="mt-5 border-t border-white/10 pt-4">
+                            <p class="text-[10px] text-white/40 font-bold uppercase tracking-wider mb-3">Context preview</p>
+                            <dl id="contextSummary" class="space-y-2 text-xs"></dl>
+                        </div>
+                    </div>
+
+                    <div id="feedbackStatus" class="feedback-status hidden rounded-xl border px-4 py-3 text-sm leading-relaxed" aria-live="polite"></div>
+
+                    <div class="flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between pt-2">
+                        <a href="/" class="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-white/60 hover:text-white hover:bg-white/10 transition font-bold text-sm">
+                            <span class="material-symbols-outlined text-lg">arrow_back</span>
+                            Back to app
+                        </a>
+                        <button id="feedbackSubmitBtn" type="submit"
+                            class="inline-flex items-center justify-center gap-2 bg-[#56A3A6] text-white px-6 py-3 rounded-xl font-bold hover:bg-[#458a8d] transition active:scale-95 shadow-lg shadow-[#56A3A6]/20">
+                            <span class="material-symbols-outlined">send</span>
+                            Send Feedback
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            <section class="mt-8 rounded-2xl border border-white/10 bg-white/5 p-5 md:p-6">
+                <h2 class="text-xl font-['Forum'] tracking-wide text-white mb-3">What happens next?</h2>
+                <p class="text-sm text-white/65 leading-relaxed">
+                    Submissions are handled by this site through a first-party API endpoint. If storage is not configured yet, the form will say so clearly instead of sending your message to an external form service.
+                </p>
+            </section>
+
+        </div>
+    </main>
+
+    <script>
+        (function () {
+            const form = document.getElementById('feedbackForm');
+            const typeInput = document.getElementById('feedbackType');
+            const messageInput = document.getElementById('feedbackMessage');
+            const contactInput = document.getElementById('feedbackContact');
+            const includeContextInput = document.getElementById('includeContext');
+            const contextPanel = document.getElementById('contextPanel');
+            const contextSummary = document.getElementById('contextSummary');
+            const statusEl = document.getElementById('feedbackStatus');
+            const submitBtn = document.getElementById('feedbackSubmitBtn');
+            const countEl = document.getElementById('feedbackCount');
+            const params = new URLSearchParams(window.location.search);
+            const allowedTypes = new Set(Array.from(typeInput.options).map(option => option.value));
+
+            const requestedType = params.get('type');
+            if (allowedTypes.has(requestedType)) typeInput.value = requestedType;
+
+            function getTimeZone() {
+                try {
+                    return Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+                } catch (error) {
+                    return '';
+                }
+            }
+
+            function contextFromParams() {
+                return {
+                    source: params.get('source') || 'feedback-page',
+                    pageUrl: params.get('url') || document.referrer || '',
+                    viewMode: params.get('view') || '',
+                    surah: params.get('surah') || '',
+                    themeQuery: params.get('theme') || '',
+                    thematicQueryToken: params.get('tq') || '',
+                    referrer: document.referrer || '',
+                    userAgent: navigator.userAgent || '',
+                    viewport: `${window.innerWidth}x${window.innerHeight}`,
+                    language: navigator.language || '',
+                    timezone: getTimeZone()
+                };
+            }
+
+            const feedbackContext = contextFromParams();
+
+            function displayPage(value) {
+                if (!value) return '';
+                try {
+                    const parsed = new URL(value);
+                    return `${parsed.pathname}${parsed.search}`;
+                } catch (error) {
+                    return value;
+                }
+            }
+
+            function addContextRow(label, value) {
+                if (!value) return;
+                const row = document.createElement('div');
+                row.className = 'grid grid-cols-[7rem,1fr] gap-3';
+
+                const dt = document.createElement('dt');
+                dt.className = 'text-white/35 font-bold';
+                dt.textContent = label;
+
+                const dd = document.createElement('dd');
+                dd.className = 'text-white/70 break-words';
+                dd.textContent = value;
+
+                row.appendChild(dt);
+                row.appendChild(dd);
+                contextSummary.appendChild(row);
+            }
+
+            function renderContextSummary() {
+                contextSummary.innerHTML = '';
+                addContextRow('Source', feedbackContext.source);
+                addContextRow('Page', displayPage(feedbackContext.pageUrl));
+                addContextRow('View', feedbackContext.viewMode);
+                addContextRow('Surah', feedbackContext.surah);
+                addContextRow('Theme query', feedbackContext.themeQuery);
+                addContextRow('Viewport', feedbackContext.viewport);
+                addContextRow('Language', feedbackContext.language);
+                addContextRow('Timezone', feedbackContext.timezone);
+            }
+
+            function setStatus(state, message) {
+                statusEl.dataset.state = state;
+                statusEl.textContent = message;
+                statusEl.classList.remove('hidden');
+            }
+
+            function updateCounter() {
+                countEl.textContent = `${messageInput.value.length}/4000`;
+            }
+
+            includeContextInput.addEventListener('change', () => {
+                contextPanel.classList.toggle('hidden', !includeContextInput.checked);
+            });
+
+            messageInput.addEventListener('input', updateCounter);
+
+            form.addEventListener('submit', async (event) => {
+                event.preventDefault();
+
+                if (!form.checkValidity()) {
+                    form.reportValidity();
+                    return;
+                }
+
+                submitBtn.disabled = true;
+                submitBtn.classList.add('opacity-70', 'cursor-wait');
+                setStatus('pending', 'Sending feedback...');
+
+                const context = includeContextInput.checked
+                    ? { ...feedbackContext, submittedAt: new Date().toISOString() }
+                    : {
+                        source: feedbackContext.source,
+                        pageUrl: feedbackContext.pageUrl,
+                        submittedAt: new Date().toISOString()
+                    };
+
+                const payload = {
+                    type: typeInput.value,
+                    message: messageInput.value,
+                    contact: contactInput.value,
+                    website: document.getElementById('feedbackWebsite').value,
+                    context
+                };
+
+                try {
+                    const response = await fetch('/api/feedback', {
+                        method: 'POST',
+                        credentials: 'omit',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    const data = await response.json().catch(() => ({}));
+
+                    if (!response.ok || !data.ok) {
+                        throw new Error(data.error || 'Feedback could not be sent right now.');
+                    }
+
+                    form.reset();
+                    includeContextInput.checked = true;
+                    contextPanel.classList.remove('hidden');
+                    updateCounter();
+                    setStatus('success', 'Thank you. Your feedback has been recorded.');
+                } catch (error) {
+                    setStatus('error', error.message || 'Feedback could not be sent right now.');
+                } finally {
+                    submitBtn.disabled = false;
+                    submitBtn.classList.remove('opacity-70', 'cursor-wait');
+                }
+            });
+
+            renderContextSummary();
+            updateCounter();
+        })();
+    </script>
+
+</body>
+</html>
