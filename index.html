@@ -77,7 +77,7 @@
         rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css?v=2.5.0">
+    <link rel="stylesheet" href="css/styles.css?v=2.5.4">
 
     <style>
         html {
@@ -1158,17 +1158,17 @@
             </button>
         </div>
 
-        <div class="px-6 pt-6 shrink-0">
+        <div id="settingsAuthDock" class="settings-auth-dock">
             <div id="authStateContainer"
                 class="bg-white/5 border border-white/10 rounded-2xl p-5 relative overflow-hidden group">
                 <div class="absolute -top-10 -right-10 w-24 h-24 bg-[#56A3A6]/20 rounded-full blur-2xl"></div>
 
                 <div id="loggedOutState"
                     class="relative z-10 flex flex-col items-center text-center transition-all duration-300">
-                    <span class="material-symbols-outlined text-[#56A3A6] text-4xl mb-3">account_circle</span>
-                    <h4 class="text-white font-bold font-['Forum'] tracking-wide mb-1 text-lg">Personalize Your Study
+                    <span class="settings-login-detail material-symbols-outlined text-[#56A3A6] text-4xl mb-3">account_circle</span>
+                    <h4 class="settings-login-detail text-white font-bold font-['Forum'] tracking-wide mb-1 text-lg">Personalize Your Study
                     </h4>
-                    <p class="text-xs text-white/60 mb-4 leading-relaxed font-['Nunito']">Sync history, bookmarks, and
+                    <p class="settings-login-detail text-xs text-white/60 mb-4 leading-relaxed font-['Nunito']">Sync history, bookmarks, and
                         notes securely with Quran.com.</p>
                     <button id="quranLoginBtn"
                         class="w-full flex justify-center items-center gap-2 bg-[#56A3A6] hover:bg-[#458a8d] text-white py-2.5 rounded-xl font-bold transition duration-300 shadow-lg active:scale-95 text-sm uppercase tracking-wide">
@@ -1180,13 +1180,13 @@
                 <div id="loggedInState"
                     class="relative z-10 hidden flex-col items-center text-center transition-all duration-300">
                     <div
-                        class="w-12 h-12 bg-[#56A3A6]/10 rounded-full border border-[#56A3A6]/30 flex items-center justify-center mb-3">
+                        class="settings-account-detail w-12 h-12 bg-[#56A3A6]/10 rounded-full border border-[#56A3A6]/30 flex items-center justify-center mb-3">
                         <span class="text-[#56A3A6] font-bold text-lg font-['Forum']" id="userInitial">U</span>
                     </div>
-                    <h4 class="text-white font-bold font-['Forum'] tracking-wide mb-1 text-lg" id="welcomeMessage">
+                    <h4 class="settings-account-detail text-white font-bold font-['Forum'] tracking-wide mb-1 text-lg" id="welcomeMessage">
                         Assalamu alaikum, User</h4>
                     <p
-                        class="text-[10px] text-[#56A3A6] font-bold uppercase tracking-wider mb-4 flex items-center gap-1 justify-center">
+                        class="settings-account-detail text-[10px] text-[#56A3A6] font-bold uppercase tracking-wider mb-4 flex items-center gap-1 justify-center">
                         <span class="material-symbols-outlined text-[14px]">verified</span> Account Linked
                     </p>
                     <div class="w-full flex gap-2">
@@ -1283,9 +1283,11 @@
                     </div>
                 </div>
             </div>
+        </div>
 
+        <div id="settingsScrollArea" class="p-6 space-y-8 overflow-y-auto flex-grow">
             <button id="settingsBookmarksBtn"
-                class="mt-4 w-full flex items-center justify-between gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-left text-[#F3E4CE] transition hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-[#56A3A6]">
+                class="w-full flex items-center justify-between gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-left text-[#F3E4CE] transition hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-[#56A3A6]">
                 <span class="flex items-center gap-3">
                     <span class="material-symbols-outlined text-[#56A3A6]">bookmarks</span>
                     <span>
@@ -1307,9 +1309,6 @@
                 </span>
                 <span class="material-symbols-outlined text-white/35">chevron_right</span>
             </a>
-        </div>
-
-        <div class="p-6 space-y-8 overflow-y-auto flex-grow">
 
             <div>
                 <label class="block text-xs uppercase tracking-wider text-[#56A3A6] mb-3 font-bold">View Mode</label>
@@ -1685,7 +1684,7 @@
     <script src="js/juz-data.js?v=2.3.0"></script>
     <script src="js/one-off-projects.js?v=1.0"></script>
     <script src="js/scholar.js?v=1.0.0"></script>
-    <script src="js/app.js?v=2.5.1"></script>
+    <script src="js/app.js?v=2.5.4"></script>
     <!-- Sirat-al-Mustaqim visualizer · loads AFTER app.js so its window.* fns win -->
     <script src="js/straight-path-visualizer.js?v=1.4.0"></script>
     <!-- Reading tracker · reports listening seconds to the QF API -->

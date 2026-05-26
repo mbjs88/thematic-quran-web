@@ -47,6 +47,62 @@ footer .text-white\/40,
     --tw-text-opacity: 0.6 !important;
 }
 
+#settingsSidebar {
+    overflow: hidden;
+}
+
+.settings-auth-dock {
+    flex: 0 0 auto;
+    padding: 1.5rem 1.5rem 0;
+    position: relative;
+    z-index: 2;
+    background: linear-gradient(180deg, rgba(34, 31, 43, 0.98) 0%, rgba(34, 31, 43, 0.88) 78%, rgba(34, 31, 43, 0) 100%);
+    transition: padding 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.settings-auth-dock #authStateContainer {
+    transition: padding 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, border-radius 0.25s ease;
+}
+
+.settings-auth-dock.is-compact {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 18px 30px rgba(0, 0, 0, 0.22);
+}
+
+.settings-auth-dock.is-compact #authStateContainer {
+    padding: 0.75rem;
+    border-radius: 1rem;
+    background-color: rgba(255, 255, 255, 0.07);
+}
+
+.settings-auth-dock.is-compact .settings-login-detail,
+.settings-auth-dock.is-compact .settings-account-detail {
+    display: none !important;
+}
+
+.settings-auth-dock.is-compact #quranLoginBtn {
+    padding-top: 0.625rem;
+    padding-bottom: 0.625rem;
+}
+
+.settings-auth-dock.is-compact #loggedInState {
+    align-items: stretch;
+}
+
+.settings-auth-dock.is-compact #siratContainer {
+    max-height: 0 !important;
+    opacity: 0 !important;
+    margin-top: 0 !important;
+}
+
+#settingsScrollArea {
+    min-height: 0;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+}
+
 /* Teal submit button in theme search: darken bg for white text contrast */
 .welcome-search-submit {
     background: #357073;
@@ -154,24 +210,6 @@ html {
     opacity: 0.7;
     background-color: rgba(255, 255, 255, 0.05);
 }
-
-/* Card-level "now playing" indicator — applied by JS via ring classes */
-.thematic-card.ring-2 {
-    position: relative;
-}
-
-.thematic-card.ring-2::before {
-    content: '';
-    position: absolute;
-    top: 10px;
-    left: -8px;
-    width: 3px;
-    height: calc(100% - 20px);
-    background: #56A3A6;
-    border-radius: 2px;
-    opacity: 0.6;
-}
-
 
 /* TOAST NOTIFICATION */
 .toast-notification {
@@ -1072,12 +1110,12 @@ body.theme-search-page-open {
    Dims non-active cards, hides secondary chrome, narrows column.
    ============================================================== */
 body.a11y-focus-mode #mainHeader {
-    opacity: 0.3;
-    transition: opacity 0.3s ease;
-}
-body.a11y-focus-mode #mainHeader:hover,
-body.a11y-focus-mode #mainHeader:focus-within {
     opacity: 1;
+    background-color: rgba(18, 16, 28, 0.96) !important;
+    border-bottom-color: rgba(255, 255, 255, 0.14) !important;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
 }
 
 body.a11y-focus-mode #contentArea {
@@ -1412,6 +1450,26 @@ body.a11y-assisted :focus-visible {
 
 /* Active verse highlight more pronounced */
 body.a11y-assisted .active-verse {
-    background-color: rgba(86, 163, 166, 0.18) !important;
-    box-shadow: 0 0 0 3px rgba(86, 163, 166, 0.35) !important;
+    background-color: rgba(86, 163, 166, 0.12) !important;
+    box-shadow: none !important;
+    border-radius: 4px !important;
+}
+
+body.a11y-assisted .verse-span {
+    padding-top: 0.05rem !important;
+    padding-bottom: 0.15rem !important;
+}
+
+body.a11y-assisted #contentArea {
+    --a11y-line-height: 2.15;
+}
+
+body.a11y-assisted .font-amiri,
+body.a11y-assisted .font-lateef {
+    padding-top: 4px;
+}
+
+body.a11y-assisted .font-scheherazade,
+body.a11y-assisted .font-noto {
+    padding-top: 8px;
 }

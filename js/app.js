@@ -717,7 +717,7 @@ function setupGlobalEventListeners() {
     (function initA11yControls() {
         const contentArea = document.getElementById('contentArea');
         const mainContainer = document.getElementById('mainContainer');
-        const spacingMap = { normal: '1.6', relaxed: '2.0', loose: '2.6' };
+        const spacingMap = { normal: '1.6', relaxed: '2.15', loose: '2.6' };
         const widthMap = { narrow: '36rem', 'default': '56rem', wide: '72rem' };
 
         // =====================================================
@@ -746,7 +746,11 @@ function setupGlobalEventListeners() {
                     if (el) {
                         el.checked = on;
                         localStorage.setItem(key, on);
-                        document.body.classList.toggle(cls, on);
+                        if (cls === 'a11y-focus-mode') {
+                            setFocusMode(on);
+                        } else {
+                            document.body.classList.toggle(cls, on);
+                        }
                     }
                 });
                 // Line spacing → relaxed when on, normal when off
@@ -900,25 +904,26 @@ function setupGlobalEventListeners() {
         // --- Focus Mode ---
         const focusToggle = document.getElementById('focusModeToggle');
         const focusSaved = localStorage.getItem('a11y-focus-mode') === 'true';
+        const sepiaSaved = localStorage.getItem('a11y-sepia') === 'true';
+        if (sepiaSaved) document.body.classList.add('a11y-sepia');
         focusToggle.checked = focusSaved;
-        if (focusSaved) document.body.classList.add('a11y-focus-mode');
+        setFocusMode(focusSaved);
 
         focusToggle.addEventListener('change', () => {
             const on = focusToggle.checked;
             localStorage.setItem('a11y-focus-mode', on);
-            document.body.classList.toggle('a11y-focus-mode', on);
+            setFocusMode(on);
         });
 
         // --- Sepia Tint ---
         const sepiaToggle = document.getElementById('sepiaTintToggle');
-        const sepiaSaved = localStorage.getItem('a11y-sepia') === 'true';
         sepiaToggle.checked = sepiaSaved;
-        if (sepiaSaved) document.body.classList.add('a11y-sepia');
 
         sepiaToggle.addEventListener('change', () => {
             const on = sepiaToggle.checked;
             localStorage.setItem('a11y-sepia', on);
             document.body.classList.toggle('a11y-sepia', on);
+            setFocusMode(document.body.classList.contains('a11y-focus-mode'));
         });
 
         // --- Helpers ---
@@ -930,6 +935,31 @@ function setupGlobalEventListeners() {
             if (type === 'reading-width') {
                 const mw = widthMap[val] || widthMap['default'];
                 if (contentArea) contentArea.style.maxWidth = mw;
+            }
+        }
+
+        function setFocusMode(on) {
+            document.body.classList.toggle('a11y-focus-mode', on);
+            const header = document.getElementById('mainHeader');
+            if (!header) return;
+
+            if (on) {
+                const sepiaOn = document.body.classList.contains('a11y-sepia');
+                const headerBg = sepiaOn ? 'rgba(42, 34, 24, 0.96)' : 'rgba(18, 16, 28, 0.96)';
+                const headerBorder = sepiaOn ? 'rgba(243, 228, 206, 0.16)' : 'rgba(255, 255, 255, 0.14)';
+                header.style.setProperty('opacity', '1', 'important');
+                header.style.setProperty('background-color', headerBg, 'important');
+                header.style.setProperty('border-bottom-color', headerBorder, 'important');
+                header.style.setProperty('box-shadow', '0 14px 40px rgba(0, 0, 0, 0.45)', 'important');
+                header.style.setProperty('backdrop-filter', 'blur(24px)', 'important');
+                header.style.setProperty('-webkit-backdrop-filter', 'blur(24px)', 'important');
+            } else {
+                header.style.removeProperty('opacity');
+                header.style.removeProperty('background-color');
+                header.style.removeProperty('border-bottom-color');
+                header.style.removeProperty('box-shadow');
+                header.style.removeProperty('backdrop-filter');
+                header.style.removeProperty('-webkit-backdrop-filter');
             }
         }
 
@@ -949,11 +979,24 @@ function setupGlobalEventListeners() {
 
     const sidebar = document.getElementById('settingsSidebar');
     const backdrop = document.getElementById('settingsBackdrop');
-    function openSettings() { backdrop.classList.remove('hidden'); setTimeout(() => { backdrop.classList.remove('opacity-0'); sidebar.classList.remove('translate-x-full'); }, 10); sendAnalyticsEvent('ui_interaction', { action: 'open_settings' }); }
+    const settingsAuthDock = document.getElementById('settingsAuthDock');
+    const settingsScrollArea = document.getElementById('settingsScrollArea');
+    function syncSettingsAuthDock() {
+        if (!settingsAuthDock || !settingsScrollArea) return;
+        settingsAuthDock.classList.toggle('is-compact', settingsScrollArea.scrollTop > 12);
+    }
+    function openSettings() {
+        if (settingsScrollArea) settingsScrollArea.scrollTop = 0;
+        syncSettingsAuthDock();
+        backdrop.classList.remove('hidden');
+        setTimeout(() => { backdrop.classList.remove('opacity-0'); sidebar.classList.remove('translate-x-full'); }, 10);
+        sendAnalyticsEvent('ui_interaction', { action: 'open_settings' });
+    }
     function closeSettings() { sidebar.classList.add('translate-x-full'); backdrop.classList.add('opacity-0'); setTimeout(() => { backdrop.classList.add('hidden'); }, 300); }
     document.getElementById('openSettingsBtn').addEventListener('click', openSettings);
     document.getElementById('closeSettingsBtn').addEventListener('click', closeSettings);
     backdrop.addEventListener('click', closeSettings);
+    if (settingsScrollArea) settingsScrollArea.addEventListener('scroll', syncSettingsAuthDock, { passive: true });
 
     const settingsFeedbackLink = document.getElementById('settingsFeedbackLink');
     if (settingsFeedbackLink) {
