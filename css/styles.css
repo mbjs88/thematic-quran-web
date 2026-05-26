@@ -1,5 +1,60 @@
 /* css/styles.css */
 
+/* ==============================================================
+   GLOBAL FOCUS INDICATORS (WCAG 2.4.7)
+   Strong, visible focus rings on all interactive elements.
+   Uses :focus-visible so mouse users are not affected.
+   ============================================================== */
+:focus-visible {
+    outline: 2px solid #56A3A6;
+    outline-offset: 3px;
+    border-radius: 4px;
+    box-shadow: 0 0 0 4px rgba(86, 163, 166, 0.25);
+}
+
+/* Remove conflicting default focus styles already in the codebase */
+button:focus-visible,
+a:focus-visible,
+select:focus-visible,
+input:focus-visible,
+[tabindex]:focus-visible {
+    outline: 2px solid #56A3A6;
+    outline-offset: 3px;
+    box-shadow: 0 0 0 4px rgba(86, 163, 166, 0.25);
+}
+
+/* Verse spans: softer ring so it does not fight the active-verse highlight */
+.verse-span:focus-visible {
+    outline: 2px solid rgba(86, 163, 166, 0.7);
+    outline-offset: 1px;
+    box-shadow: none;
+}
+
+/* ==============================================================
+   CONTRAST FIXES (WCAG 1.4.3)
+   Bump low-contrast text to meet 4.5:1 on their backgrounds.
+   ============================================================== */
+
+/* white/40 is 3.28:1 on #12101C — bump to ~55% for 5.45:1 */
+#settingsSidebar .text-white\/40,
+footer .text-white\/40,
+.text-white\/40 {
+    --tw-text-opacity: 0.55 !important;
+}
+
+/* white/50 on card bg (#221F2B) is 4.09:1 — bump to ~60% for 5.33:1 */
+#settingsSidebar .text-white\/50 {
+    --tw-text-opacity: 0.6 !important;
+}
+
+/* Teal submit button in theme search: darken bg for white text contrast */
+.welcome-search-submit {
+    background: #357073;
+}
+.welcome-search-submit:hover {
+    background: #2d6366;
+}
+
 /* --- GLOBAL SCROLL OFFSET FIX --- */
 html,
 body,
@@ -75,22 +130,46 @@ html {
     scrollbar-width: none;
 }
 
-/* Active Verse Highlight */
+/* ==============================================================
+   SYNCHRONIZED READ-ALONG TRANSCRIPT (Phase 2.1)
+   Prominent verse highlight for the active read-along position.
+   Clicking any verse-span already seeks audio there (built-in).
+   ============================================================== */
 .active-verse {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(86, 163, 166, 0.18);
     border-radius: 6px;
-    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1);
-    transition: background-color 0.3s ease;
+    box-shadow: 0 0 0 3px rgba(86, 163, 166, 0.15);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
 }
 
 .verse-span {
     cursor: pointer;
-    transition: opacity 0.2s;
+    padding-inline: 0;
+    transition: opacity 0.2s, background-color 0.2s;
+    border-radius: 4px;
 }
 
 .verse-span:hover {
     opacity: 0.7;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Card-level "now playing" indicator — applied by JS via ring classes */
+.thematic-card.ring-2 {
+    position: relative;
+}
+
+.thematic-card.ring-2::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: -8px;
+    width: 3px;
+    height: calc(100% - 20px);
+    background: #56A3A6;
+    border-radius: 2px;
+    opacity: 0.6;
 }
 
 
@@ -121,6 +200,15 @@ html {
 .toast-visible {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
+}
+
+/* WCAG 1.4.1: Buffering state — pulsing ring so audio state is visible */
+@keyframes a11y-buffering-pulse {
+    0%, 100% { box-shadow: 0 0 0 3px rgba(86, 163, 166, 0.3); }
+    50%      { box-shadow: 0 0 0 6px rgba(86, 163, 166, 0.6); }
+}
+.a11y-buffering {
+    animation: a11y-buffering-pulse 1.2s ease-in-out infinite !important;
 }
 
 /* Play Button Glow Animation */
@@ -975,6 +1063,125 @@ body.theme-search-page-open {
     transform: rotate(18deg);
 }
 
+/* ==============================================================
+   PREFERS-REDUCED-MOTION (WCAG 2.3.3)
+   Gate all animations and transitions for users who prefer less motion.
+   ============================================================== */
+/* ==============================================================
+   FOCUS MODE (Phase 2.3 — Distraction-free reading)
+   Dims non-active cards, hides secondary chrome, narrows column.
+   ============================================================== */
+body.a11y-focus-mode #mainHeader {
+    opacity: 0.3;
+    transition: opacity 0.3s ease;
+}
+body.a11y-focus-mode #mainHeader:hover,
+body.a11y-focus-mode #mainHeader:focus-within {
+    opacity: 1;
+}
+
+body.a11y-focus-mode #contentArea {
+    max-width: 42rem;
+}
+
+body.a11y-focus-mode .thematic-card {
+    opacity: 0.3;
+    transition: opacity 0.4s ease;
+}
+
+body.a11y-focus-mode .thematic-card.ring-2,
+body.a11y-focus-mode .thematic-card:hover,
+body.a11y-focus-mode .thematic-card:focus-within {
+    opacity: 1;
+}
+
+/* Sepia tint overlay */
+body.a11y-sepia {
+    background: #2a2218 !important;
+}
+body.a11y-sepia .custom-gradient {
+    background: linear-gradient(to bottom, #2a2218 0%, #332b1f 50%, #3d3425 100%) !important;
+}
+body.a11y-sepia #mainHeader {
+    background: rgba(42, 34, 24, 0.3) !important;
+}
+body.a11y-sepia #playerBar {
+    background: #2a2218 !important;
+}
+
+/* Manual reduce-motion class (mirrors the media query for the settings toggle) */
+body.a11y-reduce-motion *,
+body.a11y-reduce-motion *::before,
+body.a11y-reduce-motion *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+}
+
+/* Dyslexia-friendly font: applies OpenDyslexic to translation/UI text */
+@font-face {
+    font-family: 'OpenDyslexic';
+    src: url('https://cdn.jsdelivr.net/npm/open-dyslexic@1.0.3/woff/OpenDyslexic-Regular.woff') format('woff');
+    font-weight: 400;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'OpenDyslexic';
+    src: url('https://cdn.jsdelivr.net/npm/open-dyslexic@1.0.3/woff/OpenDyslexic-Bold.woff') format('woff');
+    font-weight: 700;
+    font-display: swap;
+}
+
+body.a11y-dyslexia,
+body.a11y-dyslexia .font-\\[\\\'Nunito\\\'\\],
+body.a11y-dyslexia [class*="font-['Nunito']"] {
+    font-family: 'OpenDyslexic', 'Nunito', sans-serif !important;
+}
+
+/* Line-height driven by custom property from JS (Phase 2.2) */
+#contentArea {
+    --a11y-line-height: 1.6;
+}
+#contentArea .verse-span,
+#contentArea .text-white\/80,
+#contentArea .text-white\/90 {
+    line-height: var(--a11y-line-height);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .animate-glow,
+    .animate-pulse,
+    .animate-spin,
+    .animate-fade-in {
+        animation: none !important;
+    }
+
+    .sirat-day-dot.born,
+    #siratOrb.born,
+    #siratGhostPath.show,
+    #siratCenterLineBar.is-on-path {
+        animation: none !important;
+    }
+
+    .verse-span,
+    .active-verse,
+    .filter-chip,
+    .toast-notification,
+    .header-hidden {
+        transition: none !important;
+    }
+}
+
 .thematic-chip {
     cursor: pointer;
     transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
@@ -1159,4 +1366,52 @@ body.is-logged-in #bottomQuranLoginIcon {
     border-radius: 14px;
     box-shadow: 0 0 0 2px #56A3A6, 0 0 0 7px rgba(86, 163, 166, 0.28);
     transition: box-shadow 0.2s ease;
+}
+
+/* ==============================================================
+   ASSISTED READING MODE
+   Umbrella a11y mode — high-contrast text, larger touch targets,
+   and enhanced visual cues. Activated via Settings toggle,
+   Alt+A shortcut, or ?assisted=1 URL param.
+   ============================================================== */
+
+/* High-contrast text: push all semi-transparent text towards full opacity */
+body.a11y-assisted .text-white\/40 { color: rgba(255, 255, 255, 0.85) !important; }
+body.a11y-assisted .text-white\/50 { color: rgba(255, 255, 255, 0.88) !important; }
+body.a11y-assisted .text-white\/55 { color: rgba(255, 255, 255, 0.90) !important; }
+body.a11y-assisted .text-white\/60 { color: rgba(255, 255, 255, 0.92) !important; }
+body.a11y-assisted .text-white\/70 { color: rgba(255, 255, 255, 0.95) !important; }
+body.a11y-assisted .text-white\/80 { color: rgba(255, 255, 255, 0.97) !important; }
+
+/* Card borders more visible */
+body.a11y-assisted .thematic-card,
+body.a11y-assisted .bg-white\/5 {
+    border-color: rgba(255, 255, 255, 0.22) !important;
+    border-width: 2px;
+}
+
+/* Ensure minimum 44×44px touch targets (WCAG 2.5.5) */
+body.a11y-assisted button,
+body.a11y-assisted a[role="button"],
+body.a11y-assisted select,
+body.a11y-assisted .filter-chip,
+body.a11y-assisted .thematic-chip,
+body.a11y-assisted .speed-btn,
+body.a11y-assisted .a11y-spacing-btn,
+body.a11y-assisted .a11y-width-btn {
+    min-height: 44px;
+    min-width: 44px;
+}
+
+/* Stronger focus ring in assisted mode */
+body.a11y-assisted :focus-visible {
+    outline-width: 3px !important;
+    outline-offset: 4px !important;
+    box-shadow: 0 0 0 6px rgba(86, 163, 166, 0.35) !important;
+}
+
+/* Active verse highlight more pronounced */
+body.a11y-assisted .active-verse {
+    background-color: rgba(86, 163, 166, 0.18) !important;
+    box-shadow: 0 0 0 3px rgba(86, 163, 166, 0.35) !important;
 }

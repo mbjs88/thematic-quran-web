@@ -391,6 +391,7 @@ function createCard(surahNum, start, end, data) {
     const arabicDiv = document.createElement('div');
     // CRITICAL FIX: setAttribute('dir', 'rtl') forces the browser to treat this as RTL
     arabicDiv.setAttribute('dir', 'rtl');
+    arabicDiv.setAttribute('lang', 'ar'); // WCAG 3.1.2: screen readers switch to Arabic voice
     arabicDiv.className = `${currentFontClass} text-right text-[#F3E4CE] mb-8`;
     arabicDiv.style.fontSize = `calc(1.875rem * ${scale})`;
 
@@ -433,6 +434,7 @@ function createCard(surahNum, start, end, data) {
 
     const transDiv = document.createElement('div');
     if (isUrdu) transDiv.setAttribute('dir', 'rtl'); // Ensure Urdu is also RTL
+    transDiv.setAttribute('lang', isUrdu ? 'ur' : 'en'); // WCAG 3.1.2: correct language for screen readers
     transDiv.className = isUrdu
         ? "font-urdu text-right leading-[2.2] text-white/90"
         : "font-['Nunito'] text-left leading-relaxed text-white/80 tracking-normal";
@@ -567,6 +569,21 @@ window.highlightActiveVerseUI = function (surah, verse, type) {
     const prefix = (type === 'arabic') ? 'ayah-ar' : 'ayah-en';
     const id = `${prefix}-${surah}-${verse}`;
     const el = document.getElementById(id);
+
+    // WCAG: update an ARIA live region so screen readers announce progress
+    let liveRegion = document.getElementById('a11y-verse-announce');
+    if (!liveRegion) {
+        liveRegion = document.createElement('div');
+        liveRegion.id = 'a11y-verse-announce';
+        liveRegion.setAttribute('role', 'status');
+        liveRegion.setAttribute('aria-live', 'polite');
+        liveRegion.setAttribute('aria-atomic', 'true');
+        liveRegion.className = 'sr-only';
+        liveRegion.style.cssText = 'position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;';
+        document.body.appendChild(liveRegion);
+    }
+    const langLabel = (type === 'arabic') ? 'Arabic' : 'Translation';
+    liveRegion.textContent = `Now reading: Surah ${surah}, Verse ${verse}, ${langLabel}`;
 
     if (el) {
         el.classList.add('active-verse');

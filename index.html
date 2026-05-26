@@ -64,7 +64,8 @@
         "Paragraph-by-paragraph audio playback with Arabic recitation and English translation",
         "Theme-based filtering across the whole Qur'an (people, prayers, divine attributes, and more)",
         "Bookmarks and resume-where-you-left-off",
-        "Optional Quran.com account sync"
+        "Optional Quran.com account sync",
+        "Assisted Reading mode with high-contrast text, dyslexia-friendly font, and screen reader support"
       ]
     }
     </script>
@@ -107,8 +108,8 @@
 
         /* --- VERSE HIGHLIGHTING --- */
         .verse-span {
-            padding: 0.15rem 0.2rem;
-            border: 1px solid transparent;
+            padding: 0.15rem 0;
+            border: 0;
             border-radius: 0.5rem;
             display: inline;
             line-height: 2.2;
@@ -304,6 +305,12 @@
 
 <body class="custom-gradient min-h-screen text-[#F3E4CE] font-['Nunito'] flex flex-col h-[100dvh] overflow-hidden">
 
+    <!-- Skip-to-content link (WCAG 2.4.1) -->
+    <a href="#mainContainer" id="skipToContent"
+       class="fixed top-0 left-1/2 -translate-x-1/2 -translate-y-full z-[200] bg-[#56A3A6] text-white px-6 py-3 rounded-b-xl font-bold font-['Nunito'] text-sm uppercase tracking-wider shadow-xl transition-transform duration-200 focus:translate-y-0 focus:outline-none">
+       Skip to content
+    </a>
+
     <header id="mainHeader"
         class="fixed top-0 left-0 w-full z-40 bg-[#12101C]/30 backdrop-blur-2xl border-b border-white/10 shadow-lg p-4 flex flex-col items-center justify-center space-y-4 transition-all duration-500 ease-in-out">
         <div class="flex flex-col items-center justify-center space-y-1 cursor-pointer group" id="headerTitleContainer" role="button" tabindex="0" aria-label="Return to welcome page">
@@ -428,7 +435,7 @@
                 <!-- TRUST LINE -->
                 <div class="text-center mb-20">
                     <p class="text-xs text-white/50 font-bold uppercase tracking-widest font-['Nunito']">
-                        Free · No account · No ads
+                        Free · No account · No ads · Accessible
                     </p>
                 </div>
 
@@ -445,7 +452,7 @@
                         <span class="material-symbols-outlined text-[#56A3A6] text-3xl mb-3" aria-hidden="true">sell</span>
                         <h2 class="text-xl font-bold text-white mb-3 font-['Forum'] tracking-wide">By theme</h2>
                         <p class="text-sm text-white/70 leading-relaxed font-['Nunito']">
-                            Pick a theme and the site shows every paragraph that touches on it, across the whole Qur’an. Each paragraph carries around a dozen themes drawn from a library of roughly 130, covering people, the qualities of God, prayers, daily life, and the afterlife.
+                            Pick a theme and the site shows every paragraph that touches on it, across the whole Qur’an. Each paragraph carries about seven themes on average, drawn from a library of 141 labels covering people, the qualities of God, prayers, daily life, and the afterlife.
                         </p>
                     </article>
                     <article class="bg-white/5 border border-white/10 rounded-2xl p-6">
@@ -474,7 +481,7 @@
                             <strong class="text-white">Paragraph boundaries.</strong> Structural work draws on the translations of <strong>M.A.S. Abdel Haleem</strong> and <strong>The Clear Quran</strong> by Dr. Mustafa Khattab, then adjusted manually where needed.
                         </p>
                         <p>
-                            <strong class="text-white">Thematic labels.</strong> A taxonomy of roughly 130 themes across 9 facets, applied at the paragraph level. No new exegesis is invented. Labels classify content already present in the translation.
+                            <strong class="text-white">Thematic labels.</strong> A taxonomy of 141 labels across 9 facets, applied at the paragraph level. No new exegesis is invented. Labels classify content already present in the translation.
                         </p>
                     </div>
                 </section>
@@ -484,6 +491,70 @@
                     <h2 class="text-2xl md:text-3xl font-['Forum'] text-white mb-6 tracking-wide">About</h2>
                     <p class="text-[#F3E4CE]/85 font-['Nunito'] leading-relaxed text-base md:text-lg">
                         A personal, not-for-profit project. Built to make listening to the Qur’an feel like a continuous experience, and to make it easy to explore passages by common themes.
+                    </p>
+                </section>
+
+                <!-- ACCESSIBLE BY DESIGN -->
+                <section aria-label="Accessibility" class="max-w-3xl mx-auto border-t border-white/10 pt-16 mb-20">
+                    <div class="text-center mb-10">
+                        <span class="material-symbols-outlined text-[#56A3A6] text-4xl mb-3" aria-hidden="true">accessibility_new</span>
+                        <h2 class="text-2xl md:text-3xl font-['Forum'] text-white mb-4 tracking-wide">Built for everyone</h2>
+                        <p class="text-[#F3E4CE]/85 font-['Nunito'] text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
+                            The Qur’an is for every person, and this site should be too. Whether you use a screen reader, prefer larger text, need reduced motion, or simply find reading easier with a calmer layout, there are options here for you.
+                        </p>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 gap-5 md:gap-6 mb-8">
+                        <article class="bg-white/5 border border-white/10 rounded-2xl p-6">
+                            <span class="material-symbols-outlined text-[#56A3A6] text-3xl mb-3" aria-hidden="true">tune</span>
+                            <h3 class="text-xl font-bold text-white mb-3 font-['Forum'] tracking-wide">Assisted Reading</h3>
+                            <p class="text-sm text-white/70 leading-relaxed font-['Nunito']">One toggle in Settings activates a calmer, higher-contrast layout with a dyslexia-friendly font, wider spacing, and gentle focus cues. You can also press <kbd class="px-1 py-0.5 bg-white/10 rounded text-[10px]">Alt+A</kbd> or <kbd class="px-1 py-0.5 bg-white/10 rounded text-[10px]">Option+A</kbd> on Mac from anywhere on the page.</p>
+                        </article>
+                        <article class="bg-white/5 border border-white/10 rounded-2xl p-6">
+                            <span class="material-symbols-outlined text-[#56A3A6] text-3xl mb-3" aria-hidden="true">visibility</span>
+                            <h3 class="text-xl font-bold text-white mb-3 font-['Forum'] tracking-wide">Your reading, your way</h3>
+                            <p class="text-sm text-white/70 leading-relaxed font-['Nunito']">Adjust text size, line spacing, reading width, and colour warmth independently. Choose the Arabic script that feels most familiar, and set your own listening speed for both Arabic and English.</p>
+                        </article>
+                        <article class="bg-white/5 border border-white/10 rounded-2xl p-6">
+                            <span class="material-symbols-outlined text-[#56A3A6] text-3xl mb-3" aria-hidden="true">record_voice_over</span>
+                            <h3 class="text-xl font-bold text-white mb-3 font-['Forum'] tracking-wide">Screen reader friendly</h3>
+                            <p class="text-sm text-white/70 leading-relaxed font-['Nunito']">Proper language tags on Arabic and English text, keyboard navigation throughout, live announcements when verses change, and skip links so you can get straight to the content.</p>
+                        </article>
+                        <article class="bg-white/5 border border-white/10 rounded-2xl p-6">
+                            <span class="material-symbols-outlined text-[#56A3A6] text-3xl mb-3" aria-hidden="true">spa</span>
+                            <h3 class="text-xl font-bold text-white mb-3 font-['Forum'] tracking-wide">Gentle on the senses</h3>
+                            <p class="text-sm text-white/70 leading-relaxed font-['Nunito']">Reduce motion to quiet animations. Turn on focus mode to dim everything except what you are reading. A warm sepia tint is there if bright screens are uncomfortable.</p>
+                        </article>
+                    </div>
+
+                    <div class="mb-8">
+                        <h3 class="text-center text-xs font-bold uppercase tracking-widest text-white/50 font-['Nunito'] mb-5">Accessibility standards we design against</h3>
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <article class="bg-white/5 border border-white/10 rounded-2xl p-5">
+                                <span class="material-symbols-outlined text-[#56A3A6] text-2xl mb-2" aria-hidden="true">dashboard_customize</span>
+                                <h4 class="text-base font-bold text-white mb-2 font-['Forum'] tracking-wide">POUR principles</h4>
+                                <p class="text-sm text-white/70 leading-relaxed font-['Nunito']">The experience is shaped around content that can be perceived, operated, understood, and interpreted reliably by assistive technologies.</p>
+                            </article>
+                            <article class="bg-white/5 border border-white/10 rounded-2xl p-5">
+                                <span class="material-symbols-outlined text-[#56A3A6] text-2xl mb-2" aria-hidden="true">verified</span>
+                                <h4 class="text-base font-bold text-white mb-2 font-['Forum'] tracking-wide">WCAG 2.2 AA direction</h4>
+                                <p class="text-sm text-white/70 leading-relaxed font-['Nunito']">Contrast, focus visibility, reduced motion, keyboard access, touch targets, and language tags are checked against practical WCAG AA expectations.</p>
+                            </article>
+                            <article class="bg-white/5 border border-white/10 rounded-2xl p-5">
+                                <span class="material-symbols-outlined text-[#56A3A6] text-2xl mb-2" aria-hidden="true">account_tree</span>
+                                <h4 class="text-base font-bold text-white mb-2 font-['Forum'] tracking-wide">Semantic HTML first</h4>
+                                <p class="text-sm text-white/70 leading-relaxed font-['Nunito']">Headings, sections, buttons, forms, labels, and links carry as much meaning as possible before any extra ARIA is added.</p>
+                            </article>
+                            <article class="bg-white/5 border border-white/10 rounded-2xl p-5">
+                                <span class="material-symbols-outlined text-[#56A3A6] text-2xl mb-2" aria-hidden="true">record_voice_over</span>
+                                <h4 class="text-base font-bold text-white mb-2 font-['Forum'] tracking-wide">Careful WAI-ARIA</h4>
+                                <p class="text-sm text-white/70 leading-relaxed font-['Nunito']">Dynamic areas use clear names, roles, states, live announcements, and dialog patterns where native HTML needs support.</p>
+                            </article>
+                        </div>
+                    </div>
+
+                    <p class="text-center text-sm text-white/50 font-['Nunito'] leading-relaxed max-w-xl mx-auto">
+                        Accessibility is not a feature we added. It is part of how this project thinks about its readers, and it is always being improved.
                     </p>
                 </section>
 
@@ -652,7 +723,7 @@
                                 <span class="material-symbols-outlined text-[#56A3A6] transform group-open:rotate-180 transition-transform" aria-hidden="true">expand_more</span>
                             </summary>
                             <div class="px-6 pb-6 text-white/70 leading-relaxed text-sm font-['Nunito']">
-                                A curated library of roughly 130 themes across nine groups: people, the qualities of God, prayers, daily life, virtues, things to avoid, the afterlife, creation, and revelation. Each paragraph is reviewed and tagged against this library. No new exegesis is invented. Labels only classify what the translation already says.
+                                A curated library of 141 labels across nine groups: people, the qualities of God, prayers, daily life, virtues, things to avoid, the afterlife, creation, and revelation. Each paragraph is reviewed and tagged against this library. No new exegesis is invented. Labels only classify what the translation already says.
                             </div>
                         </details>
 
@@ -1393,6 +1464,126 @@
                         class="p-2 text-white/70 hover:text-white hover:bg-white/10 rounded-lg transition">
                         <span class="material-symbols-outlined">add</span>
                     </button>
+                </div>
+            </div>
+
+            <!-- ============================================================
+                 DISPLAY & ACCESSIBILITY (Phase 2.2)
+                 ============================================================ -->
+            <div>
+                <label class="block text-xs uppercase tracking-wider text-[#56A3A6] mb-3 font-bold">Display &amp; Accessibility</label>
+
+                <!-- Assisted Reading — umbrella toggle -->
+                <div class="bg-[#56A3A6]/5 rounded-xl border border-[#56A3A6]/20 p-4 mb-4">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-[#56A3A6] text-xl" aria-hidden="true">accessibility_new</span>
+                            <div>
+                                <span class="text-white text-sm font-bold">Assisted Reading</span>
+                                <p class="text-[10px] text-white/50 mt-0.5">Optimises layout, contrast, and feedback for easier reading</p>
+                            </div>
+                        </div>
+                        <div class="relative inline-block w-10 align-middle select-none transition duration-200 ease-in">
+                            <input type="checkbox" id="assistedReadingToggle"
+                                class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"
+                                aria-label="Enable Assisted Reading mode" />
+                            <label for="assistedReadingToggle"
+                                class="toggle-label block overflow-hidden h-6 rounded-full cursor-pointer"></label>
+                        </div>
+                    </div>
+                    <p id="assistedReadingHint" class="text-[10px] text-white/35 mt-2 hidden">Press <kbd class="px-1 py-0.5 bg-white/10 rounded text-[9px]">Alt+A</kbd> or <kbd class="px-1 py-0.5 bg-white/10 rounded text-[9px]">Option+A</kbd> on Mac from anywhere to toggle</p>
+                </div>
+
+                <div class="bg-white/5 rounded-xl border border-white/10 p-4 space-y-5">
+
+                    <!-- Line Spacing -->
+                    <div>
+                        <div class="flex justify-between text-xs text-white/70 mb-2">
+                            <span class="font-bold">Line Spacing</span>
+                            <span id="lineSpacingValue" class="text-[#56A3A6] font-bold">Normal</span>
+                        </div>
+                        <div class="grid grid-cols-3 gap-2" id="lineSpacingControls">
+                            <button data-spacing="normal"
+                                class="a11y-spacing-btn py-1.5 rounded bg-[#56A3A6] text-white text-xs font-bold transition border border-[#56A3A6] shadow-lg">Normal</button>
+                            <button data-spacing="relaxed"
+                                class="a11y-spacing-btn py-1.5 rounded bg-white/5 hover:bg-white/10 text-white/60 text-xs font-bold transition border border-white/5">Relaxed</button>
+                            <button data-spacing="loose"
+                                class="a11y-spacing-btn py-1.5 rounded bg-white/5 hover:bg-white/10 text-white/60 text-xs font-bold transition border border-white/5">Loose</button>
+                        </div>
+                    </div>
+
+                    <!-- Reading Width -->
+                    <div>
+                        <div class="flex justify-between text-xs text-white/70 mb-2">
+                            <span class="font-bold">Reading Width</span>
+                            <span id="readingWidthValue" class="text-[#56A3A6] font-bold">Default</span>
+                        </div>
+                        <div class="grid grid-cols-3 gap-2" id="readingWidthControls">
+                            <button data-width="narrow"
+                                class="a11y-width-btn py-1.5 rounded bg-white/5 hover:bg-white/10 text-white/60 text-xs font-bold transition border border-white/5">Narrow</button>
+                            <button data-width="default"
+                                class="a11y-width-btn py-1.5 rounded bg-[#56A3A6] text-white text-xs font-bold transition border border-[#56A3A6] shadow-lg">Default</button>
+                            <button data-width="wide"
+                                class="a11y-width-btn py-1.5 rounded bg-white/5 hover:bg-white/10 text-white/60 text-xs font-bold transition border border-white/5">Wide</button>
+                        </div>
+                    </div>
+
+                    <!-- Dyslexia-Friendly Font -->
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-white text-sm font-bold">Dyslexia-Friendly Font</span>
+                            <p class="text-[10px] text-white/50 mt-0.5">Uses OpenDyslexic for translation text</p>
+                        </div>
+                        <div class="relative inline-block w-10 align-middle select-none transition duration-200 ease-in">
+                            <input type="checkbox" id="dyslexiaFontToggle"
+                                class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" />
+                            <label for="dyslexiaFontToggle"
+                                class="toggle-label block overflow-hidden h-6 rounded-full cursor-pointer"></label>
+                        </div>
+                    </div>
+
+                    <!-- Focus Mode -->
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-white text-sm font-bold">Focus Mode</span>
+                            <p class="text-[10px] text-white/50 mt-0.5">Dim surrounding sections, calm layout</p>
+                        </div>
+                        <div class="relative inline-block w-10 align-middle select-none transition duration-200 ease-in">
+                            <input type="checkbox" id="focusModeToggle"
+                                class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" />
+                            <label for="focusModeToggle"
+                                class="toggle-label block overflow-hidden h-6 rounded-full cursor-pointer"></label>
+                        </div>
+                    </div>
+
+                    <!-- Sepia Tint -->
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-white text-sm font-bold">Sepia Tint</span>
+                            <p class="text-[10px] text-white/50 mt-0.5">Warm tone, easier on eyes</p>
+                        </div>
+                        <div class="relative inline-block w-10 align-middle select-none transition duration-200 ease-in">
+                            <input type="checkbox" id="sepiaTintToggle"
+                                class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" />
+                            <label for="sepiaTintToggle"
+                                class="toggle-label block overflow-hidden h-6 rounded-full cursor-pointer"></label>
+                        </div>
+                    </div>
+
+                    <!-- Reduce Motion -->
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-white text-sm font-bold">Reduce Motion</span>
+                            <p class="text-[10px] text-white/50 mt-0.5">Minimise animations and transitions</p>
+                        </div>
+                        <div class="relative inline-block w-10 align-middle select-none transition duration-200 ease-in">
+                            <input type="checkbox" id="reduceMotionToggle"
+                                class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" />
+                            <label for="reduceMotionToggle"
+                                class="toggle-label block overflow-hidden h-6 rounded-full cursor-pointer"></label>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 

@@ -23,6 +23,13 @@ playerB.preload = 'auto';
     // Ensure wake lock is handled
     p.addEventListener('play', () => toggleWakeLock(true));
     p.addEventListener('pause', () => toggleWakeLock(false));
+    // WCAG 1.4.1: visual feedback for buffering state (not audio-only)
+    p.addEventListener('waiting', () => {
+        if (p === currentPlayer && isAudioPlaying) updateAudioStateUI('buffering');
+    });
+    p.addEventListener('playing', () => {
+        if (p === currentPlayer && isAudioPlaying) updateAudioStateUI('playing');
+    });
 });
 
 document.addEventListener('speed-changed', (e) => {
@@ -127,6 +134,7 @@ function stopAllAudio() {
     playQueue = [];
     queueIndex = 0;
     updateControlsUI(false);
+    updateAudioStateUI('ended');
 }
 
 function getTranslationUrl(surah, verse, langValue) {
@@ -258,10 +266,39 @@ function updateControlsUI(isPlaying) {
         icon.textContent = 'pause';
         status.textContent = 'Playing';
         btn.classList.remove('animate-glow');
+        updateAudioStateUI('playing');
     } else {
         icon.textContent = 'play_arrow';
         status.textContent = 'Paused';
         btn.classList.add('animate-glow');
+        updateAudioStateUI('paused');
+    }
+}
+
+// WCAG 1.4.1: visible audio state so deaf/HoH users know what the player is doing.
+// States: 'playing', 'paused', 'buffering', 'ended'
+function updateAudioStateUI(state) {
+    const status = document.getElementById('playerStatus');
+    const btn = document.getElementById('globalPlayPauseBtn');
+    if (!status || !btn) return;
+
+    // Remove any prior state classes
+    btn.classList.remove('a11y-buffering');
+
+    switch (state) {
+        case 'buffering':
+            status.textContent = 'Buffering…';
+            btn.classList.add('a11y-buffering');
+            break;
+        case 'playing':
+            status.textContent = 'Playing';
+            break;
+        case 'paused':
+            status.textContent = 'Paused';
+            break;
+        case 'ended':
+            status.textContent = 'Ready to Play';
+            break;
     }
 }
 

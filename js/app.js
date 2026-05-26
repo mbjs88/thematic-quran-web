@@ -711,6 +711,242 @@ function setupGlobalEventListeners() {
 
     document.getElementById('restoreDefaultsBtn').addEventListener('click', restoreDefaults);
 
+    // ============================================================
+    // DISPLAY & ACCESSIBILITY CONTROLS (Phase 2.2)
+    // ============================================================
+    (function initA11yControls() {
+        const contentArea = document.getElementById('contentArea');
+        const mainContainer = document.getElementById('mainContainer');
+        const spacingMap = { normal: '1.6', relaxed: '2.0', loose: '2.6' };
+        const widthMap = { narrow: '36rem', 'default': '56rem', wide: '72rem' };
+
+        // =====================================================
+        // ASSISTED READING — umbrella toggle
+        // =====================================================
+        const assistedToggle = document.getElementById('assistedReadingToggle');
+        const assistedHint = document.getElementById('assistedReadingHint');
+        const ASSISTED_KEY = 'a11y-assisted';
+
+        function setAssistedReading(on, { announce = true, syncSubs = true } = {}) {
+            document.body.classList.toggle('a11y-assisted', on);
+            localStorage.setItem(ASSISTED_KEY, on);
+            if (assistedToggle) assistedToggle.checked = on;
+            if (assistedHint) assistedHint.classList.toggle('hidden', !on);
+
+            if (syncSubs) {
+                // Activate / deactivate sub-features
+                const subs = [
+                    { id: 'dyslexiaFontToggle',  key: 'a11y-dyslexia-font',  cls: 'a11y-dyslexia' },
+                    { id: 'reduceMotionToggle',   key: 'a11y-reduce-motion',  cls: 'a11y-reduce-motion' },
+                    { id: 'focusModeToggle',      key: 'a11y-focus-mode',     cls: 'a11y-focus-mode' },
+                    { id: 'sepiaTintToggle',      key: 'a11y-sepia',          cls: 'a11y-sepia' },
+                ];
+                subs.forEach(({ id, key, cls }) => {
+                    const el = document.getElementById(id);
+                    if (el) {
+                        el.checked = on;
+                        localStorage.setItem(key, on);
+                        document.body.classList.toggle(cls, on);
+                    }
+                });
+                // Line spacing → relaxed when on, normal when off
+                const spacingVal = on ? 'relaxed' : 'normal';
+                localStorage.setItem('a11y-line-spacing', spacingVal);
+                applyLineSetting('line-spacing', spacingVal);
+                syncA11yBtnGroup('.a11y-spacing-btn', 'spacing', spacingVal);
+                const spacingLabel = document.querySelector(`.a11y-spacing-btn[data-spacing="${spacingVal}"]`);
+                if (spacingLabel) document.getElementById('lineSpacingValue').textContent = spacingLabel.textContent;
+
+                // Reading width → narrow when on, default when off
+                const widthVal = on ? 'narrow' : 'default';
+                localStorage.setItem('a11y-reading-width', widthVal);
+                applyLineSetting('reading-width', widthVal);
+                syncA11yBtnGroup('.a11y-width-btn', 'width', widthVal);
+                const widthLabel = document.querySelector(`.a11y-width-btn[data-width="${widthVal}"]`);
+                if (widthLabel) document.getElementById('readingWidthValue').textContent = widthLabel.textContent;
+            }
+
+            // ARIA announcement
+            if (announce) {
+                let liveRegion = document.getElementById('a11y-verse-announce');
+                if (!liveRegion) {
+                    liveRegion = document.createElement('div');
+                    liveRegion.id = 'a11y-verse-announce';
+                    liveRegion.setAttribute('role', 'status');
+                    liveRegion.setAttribute('aria-live', 'polite');
+                    liveRegion.setAttribute('aria-atomic', 'true');
+                    liveRegion.className = 'sr-only';
+                    liveRegion.style.cssText = 'position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;';
+                    document.body.appendChild(liveRegion);
+                }
+                liveRegion.textContent = on
+                    ? 'Assisted Reading enabled. Layout optimised for accessibility.'
+                    : 'Assisted Reading disabled. Default layout restored.';
+            }
+        }
+
+        // Restore on load
+        const assistedSaved = localStorage.getItem(ASSISTED_KEY) === 'true';
+        if (assistedSaved) setAssistedReading(true, { announce: false });
+
+        // Toggle listener
+        if (assistedToggle) {
+            assistedToggle.addEventListener('change', () => {
+                setAssistedReading(assistedToggle.checked);
+            });
+        }
+
+        // Keyboard shortcut: Alt+A / Option+A from anywhere.
+        // On macOS, Option can change event.key to a special character, while
+        // event.code still reports the physical A key.
+        document.addEventListener('keydown', (e) => {
+            if (e.altKey && e.code === 'KeyA' && !e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                e.preventDefault();
+                setAssistedReading(localStorage.getItem(ASSISTED_KEY) !== 'true');
+            }
+        });
+
+        // URL parameter: ?assisted=1
+        try {
+            const params = new URLSearchParams(window.location.search);
+            if (params.get('assisted') === '1' && !assistedSaved) {
+                setAssistedReading(true);
+            }
+        } catch (_) { /* URL parsing unsupported */ }
+
+        // prefers-contrast: more — one-time prompt
+        try {
+            if (window.matchMedia('(prefers-contrast: more)').matches && !localStorage.getItem(ASSISTED_KEY)) {
+                let liveRegion = document.getElementById('a11y-verse-announce');
+                if (!liveRegion) {
+                    liveRegion = document.createElement('div');
+                    liveRegion.id = 'a11y-verse-announce';
+                    liveRegion.setAttribute('role', 'status');
+                    liveRegion.setAttribute('aria-live', 'polite');
+                    liveRegion.setAttribute('aria-atomic', 'true');
+                    liveRegion.className = 'sr-only';
+                    liveRegion.style.cssText = 'position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;';
+                    document.body.appendChild(liveRegion);
+                }
+                liveRegion.textContent = 'This site supports Assisted Reading for enhanced accessibility. Press Alt+A, Option+A on Mac, or open Settings to enable.';
+            }
+        } catch (_) { /* matchMedia unsupported */ }
+
+        // Verse-change vibration (only when Assisted Reading is on)
+        document.addEventListener('verse-changed', () => {
+            if (document.body.classList.contains('a11y-assisted') && navigator.vibrate) {
+                navigator.vibrate(50);
+            }
+        });
+
+        // --- Line Spacing ---
+        const savedSpacing = localStorage.getItem('a11y-line-spacing') || 'normal';
+        applyLineSetting('line-spacing', savedSpacing);
+
+        document.querySelectorAll('.a11y-spacing-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const val = btn.dataset.spacing;
+                localStorage.setItem('a11y-line-spacing', val);
+                applyLineSetting('line-spacing', val);
+                syncA11yBtnGroup('.a11y-spacing-btn', 'spacing', val);
+                document.getElementById('lineSpacingValue').textContent = btn.textContent;
+            });
+        });
+        syncA11yBtnGroup('.a11y-spacing-btn', 'spacing', savedSpacing);
+        const spacingLabel = document.querySelector(`.a11y-spacing-btn[data-spacing="${savedSpacing}"]`);
+        if (spacingLabel) document.getElementById('lineSpacingValue').textContent = spacingLabel.textContent;
+
+        // --- Reading Width ---
+        const savedWidth = localStorage.getItem('a11y-reading-width') || 'default';
+        applyLineSetting('reading-width', savedWidth);
+
+        document.querySelectorAll('.a11y-width-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const val = btn.dataset.width;
+                localStorage.setItem('a11y-reading-width', val);
+                applyLineSetting('reading-width', val);
+                syncA11yBtnGroup('.a11y-width-btn', 'width', val);
+                document.getElementById('readingWidthValue').textContent = btn.textContent;
+            });
+        });
+        syncA11yBtnGroup('.a11y-width-btn', 'width', savedWidth);
+        const widthLabel = document.querySelector(`.a11y-width-btn[data-width="${savedWidth}"]`);
+        if (widthLabel) document.getElementById('readingWidthValue').textContent = widthLabel.textContent;
+
+        // --- Dyslexia Font ---
+        const dyslexiaToggle = document.getElementById('dyslexiaFontToggle');
+        const dyslexiaSaved = localStorage.getItem('a11y-dyslexia-font') === 'true';
+        dyslexiaToggle.checked = dyslexiaSaved;
+        if (dyslexiaSaved) document.body.classList.add('a11y-dyslexia');
+
+        dyslexiaToggle.addEventListener('change', () => {
+            const on = dyslexiaToggle.checked;
+            localStorage.setItem('a11y-dyslexia-font', on);
+            document.body.classList.toggle('a11y-dyslexia', on);
+        });
+
+        // --- Reduce Motion toggle ---
+        const motionToggle = document.getElementById('reduceMotionToggle');
+        const motionSaved = localStorage.getItem('a11y-reduce-motion') === 'true';
+        motionToggle.checked = motionSaved || window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (motionSaved) document.body.classList.add('a11y-reduce-motion');
+
+        motionToggle.addEventListener('change', () => {
+            const on = motionToggle.checked;
+            localStorage.setItem('a11y-reduce-motion', on);
+            document.body.classList.toggle('a11y-reduce-motion', on);
+        });
+
+        // --- Focus Mode ---
+        const focusToggle = document.getElementById('focusModeToggle');
+        const focusSaved = localStorage.getItem('a11y-focus-mode') === 'true';
+        focusToggle.checked = focusSaved;
+        if (focusSaved) document.body.classList.add('a11y-focus-mode');
+
+        focusToggle.addEventListener('change', () => {
+            const on = focusToggle.checked;
+            localStorage.setItem('a11y-focus-mode', on);
+            document.body.classList.toggle('a11y-focus-mode', on);
+        });
+
+        // --- Sepia Tint ---
+        const sepiaToggle = document.getElementById('sepiaTintToggle');
+        const sepiaSaved = localStorage.getItem('a11y-sepia') === 'true';
+        sepiaToggle.checked = sepiaSaved;
+        if (sepiaSaved) document.body.classList.add('a11y-sepia');
+
+        sepiaToggle.addEventListener('change', () => {
+            const on = sepiaToggle.checked;
+            localStorage.setItem('a11y-sepia', on);
+            document.body.classList.toggle('a11y-sepia', on);
+        });
+
+        // --- Helpers ---
+        function applyLineSetting(type, val) {
+            if (type === 'line-spacing') {
+                const lh = spacingMap[val] || spacingMap.normal;
+                if (contentArea) contentArea.style.setProperty('--a11y-line-height', lh);
+            }
+            if (type === 'reading-width') {
+                const mw = widthMap[val] || widthMap['default'];
+                if (contentArea) contentArea.style.maxWidth = mw;
+            }
+        }
+
+        function syncA11yBtnGroup(selector, dataKey, activeVal) {
+            document.querySelectorAll(selector).forEach(b => {
+                const isActive = b.dataset[dataKey] === activeVal;
+                b.classList.toggle('bg-[#56A3A6]', isActive);
+                b.classList.toggle('text-white', isActive);
+                b.classList.toggle('border-[#56A3A6]', isActive);
+                b.classList.toggle('shadow-lg', isActive);
+                b.classList.toggle('bg-white/5', !isActive);
+                b.classList.toggle('text-white/60', !isActive);
+                b.classList.toggle('border-white/5', !isActive);
+            });
+        }
+    })();
+
     const sidebar = document.getElementById('settingsSidebar');
     const backdrop = document.getElementById('settingsBackdrop');
     function openSettings() { backdrop.classList.remove('hidden'); setTimeout(() => { backdrop.classList.remove('opacity-0'); sidebar.classList.remove('translate-x-full'); }, 10); sendAnalyticsEvent('ui_interaction', { action: 'open_settings' }); }
@@ -2958,6 +3194,17 @@ function syncFilterChipStates() {
         chip.style.backgroundColor = active ? facetColor : 'transparent';
         chip.style.borderColor = active ? facetColor : facetColor + '40';
         chip.style.color = active ? '#fff' : '#F3E4CE';
+        // WCAG 1.4.1: pair color with icon so selection is not color-only
+        let checkIcon = chip.querySelector('.a11y-check-icon');
+        if (active && !checkIcon) {
+            checkIcon = document.createElement('span');
+            checkIcon.className = 'material-symbols-outlined a11y-check-icon text-[10px] ml-1 leading-none';
+            checkIcon.setAttribute('aria-hidden', 'true');
+            checkIcon.textContent = 'check';
+            chip.appendChild(checkIcon);
+        } else if (!active && checkIcon) {
+            checkIcon.remove();
+        }
     });
 }
 
