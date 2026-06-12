@@ -41,3 +41,9 @@ docs/labeling/LABELING_INSTRUCTIONS.md
 
 # Local-only admin tools
 admin/
+
+# News engine (news.thematicquran.com) — internal specs, policies, and run
+# working files stay private; only final published articles ship.
+news/*
+!news/public/
+!news/public/**
