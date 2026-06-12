@@ -42,8 +42,8 @@ docs/labeling/LABELING_INSTRUCTIONS.md
 # Local-only admin tools
 admin/
 
-# News engine (news.thematicquran.com) — internal specs, policies, and run
-# working files stay private; only final published articles ship.
-news/*
-!news/public/
-!news/public/**
+# News engine (news.thematicquran.com) — entire folder is its own private
+# git repo (thematicquran-news-private); the news site deploys from THAT
+# repo's public/ folder via a separate Cloudflare Pages project. The main
+# repo never tracks anything under news/.
+news/
