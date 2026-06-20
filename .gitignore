@@ -19,7 +19,20 @@ ACCESSIBILITY_ROADMAP.md
 
 # Secrets
 .dev.vars
+.dev.vars.*
+!.dev.vars.example
 .env
+.env.*
+!.env.example
+!.env.template
+secrets/
+credentials/
+*.pem
+*.key
+*.p12
+*.pfx
+service-account*.json
+*-credentials.json
 
 # Labeler run logs / status
 data/thematic_labels/.runs/
