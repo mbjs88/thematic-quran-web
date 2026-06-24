@@ -1026,14 +1026,34 @@
                             <button id="heroBrowseThemesBtn" type="button">Browse themes</button>
                         </div>
 
-                        <a class="tqj-release" href="https://news.thematicquran.com" target="_blank" rel="noopener" aria-label="New: visit the Thematic Qur'an Journal, a companion site reading world events through the Qur'an">
-                            <span class="tqj-release-flag">New &middot; now live</span>
-                            <span class="tqj-release-name">Thematic Qur&rsquo;an Journal<span class="tqj-release-dot">.</span></span>
-                            <span class="tqj-release-tagline">World events, read through the Qur&rsquo;an.</span>
-                            <span class="tqj-release-cta">Visit the Journal <span aria-hidden="true">&rarr;</span></span>
+                        <a id="tqjReleaseCard" class="tqj-release" href="https://news.thematicquran.com" target="_blank" rel="noopener" aria-label="Visit the Thematic Qur'an Journal — world events read through the Qur'an">
+                            <span class="tqj-release-flag" id="tqjReleaseFlag">New &middot; now live</span>
+                            <span class="tqj-release-name" id="tqjReleaseTitle">Thematic Qur&rsquo;an Journal<span class="tqj-release-dot">.</span></span>
+                            <span class="tqj-release-tagline" id="tqjReleaseMeta">World events, read through the Qur&rsquo;an.</span>
+                            <span class="tqj-release-cta">Read on the Journal <span aria-hidden="true">&rarr;</span></span>
                         </a>
                     </div>
                 </section>
+
+                <script>
+                  (function () {
+                    var card = document.getElementById('tqjReleaseCard');
+                    if (!card || !window.fetch) return;
+                    fetch('https://news.thematicquran.com/latest.json', { mode: 'cors' })
+                      .then(function (r) { return r.ok ? r.json() : null; })
+                      .then(function (d) {
+                        if (!d || !d.title) return;
+                        var flag = document.getElementById('tqjReleaseFlag');
+                        var title = document.getElementById('tqjReleaseTitle');
+                        var meta = document.getElementById('tqjReleaseMeta');
+                        if (flag) flag.textContent = 'New on the Journal';
+                        if (title) title.textContent = d.title;
+                        if (meta) meta.textContent = d.event || d.subtitle || meta.textContent;
+                        if (d.url) card.setAttribute('href', d.url);
+                      })
+                      .catch(function () {});
+                  })();
+                </script>
 
                 <section id="themeSearchControlsPanel" class="theme-search-hero">
                     <div class="theme-search-hero-copy">
