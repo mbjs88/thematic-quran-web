@@ -1473,3 +1473,59 @@ body.a11y-assisted .font-scheherazade,
 body.a11y-assisted .font-noto {
     padding-top: 8px;
 }
+
+/* ── New-release announcement: Thematic Qur'an Journal (news-site palette) ── */
+.tqj-release{
+  display:block;
+  width:min(520px,100%);
+  margin:32px auto 0;
+  padding:22px 26px 20px;
+  background:#faf6ee;
+  border:1px solid #e7e0d2;
+  border-radius:16px;
+  text-align:center;
+  text-decoration:none;
+  box-shadow:0 12px 34px rgba(0,0,0,.22);
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+.tqj-release:hover,
+.tqj-release:focus-visible{
+  transform:translateY(-2px);
+  box-shadow:0 18px 44px rgba(0,0,0,.28);
+  outline:none;
+}
+.tqj-release-flag{
+  display:block;
+  font-family:'Nunito',sans-serif;
+  font-size:11px; font-weight:700;
+  letter-spacing:.2em; text-transform:uppercase;
+  color:#95190C;
+  margin-bottom:10px;
+}
+.tqj-release-name{
+  display:block;
+  font-family:'Newsreader',Georgia,serif;
+  font-weight:500;
+  font-size:1.7rem; line-height:1.04; letter-spacing:-.02em;
+  color:#39332c;
+}
+.tqj-release-dot{
+  color:#95190C; font-weight:600;
+  font-size:1.18em; line-height:0; margin-left:.03em;
+}
+.tqj-release-tagline{
+  display:block;
+  font-family:'Newsreader',Georgia,serif;
+  font-style:italic;
+  font-size:1.02rem; color:#7c7264;
+  margin-top:9px;
+}
+.tqj-release-cta{
+  display:inline-block;
+  margin-top:16px;
+  font-family:'Nunito',sans-serif;
+  font-size:13px; font-weight:700; letter-spacing:.04em;
+  color:#95190C;
+}
+.tqj-release:hover .tqj-release-cta,
+.tqj-release:focus-visible .tqj-release-cta{ text-decoration:underline; }
