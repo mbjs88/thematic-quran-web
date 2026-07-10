@@ -14,6 +14,7 @@ async function createStitchedAudioBlob(surah, start, end, reciterSlug, langCode,
     const totalFiles = filesToFetch.length;
     const audioBuffers = [];
     const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    let skippedTranslations = 0;
 
     for (let i = 0; i < totalFiles; i++) {
         const file = filesToFetch[i];
@@ -34,11 +35,17 @@ async function createStitchedAudioBlob(surah, start, end, reciterSlug, langCode,
             }
 
         } catch (err) {
-            console.warn(`Skipping missing file: ${url}`);
+            console.warn(`Skipping missing file: ${url}`, err);
+            if (file.type === 'translation') skippedTranslations++;
         }
     }
 
     if (audioBuffers.length === 0) throw new Error("No audio data found.");
+
+    // Surface (rather than silently swallow) dropped translation audio
+    if (skippedTranslations > 0 && window.showToast) {
+        window.showToast(`${skippedTranslations} translation audio file(s) could not be fetched and were skipped.`, 'warning');
+    }
 
     if (onProgress) onProgress('stitching', 90, "Applying Stereo Pan & Stitching audio...");
 
@@ -221,9 +228,10 @@ function getAudioUrl(type, surah, verse, reciter, lang) {
         return `https://everyayah.com/data/${reciter}/${padSurah}${padVerse}.mp3`;
     } else {
         const langString = lang === 'ur' ? 'urdu' : 'english';
-        const rawUrl = `https://audio.thematicquran.com/${langString}/${padSurah}${padVerse}.mp3`;
-        // Use a CORS proxy to bypass the strict Fetch restrictions on binary downloads
-        return `https://cors.eu.org/${rawUrl}`;
+        // Fetch directly: audio.thematicquran.com serves CORS headers (bismillah.mp3 is
+        // already fetched directly elsewhere). The old cors.eu.org proxy is defunct and
+        // was silently failing, causing translation audio to be dropped from exports.
+        return `https://audio.thematicquran.com/${langString}/${padSurah}${padVerse}.mp3`;
     }
 }
 
