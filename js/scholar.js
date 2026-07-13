@@ -24,7 +24,7 @@
     // Utils
     // -----------------------------------------------------------------
     function isLoggedIn() {
-        return !!document.cookie.split(';').find(c => c.trim().startsWith('quran_access_token_'));
+        return window.isLoggedIn === true;
     }
 
     function prettySurahName(surahNum) {

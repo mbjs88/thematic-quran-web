@@ -14,6 +14,9 @@ const CONSTANTS = {
 
 let QURAN_DATA = [];
 let THEME_BREAKS = {};
+// A remembered cookie is not proof of authentication. This becomes true only
+// after the live Quran.com profile check succeeds.
+window.isLoggedIn = false;
 // Thematic labels — exposed on window so ui-renderer.js (separate script) can read them.
 window.THEMATIC_TAXONOMY = null;
 window.THEMATIC_ASSIGNMENTS = null;
@@ -1190,13 +1193,6 @@ function setupGlobalEventListeners() {
     });
 
     // --- AUTHENTICATION LOGIC ---
-    function getCookie(name) {
-        const value = `; ${document.cookie}`;
-        const parts = value.split(`; ${name}=`);
-        if (parts.length === 2) return parts.pop().split(';').shift();
-        return null;
-    }
-
     const quranLoginBtn = document.getElementById('quranLoginBtn');
     const quranLogoutBtn = document.getElementById('quranLogoutBtn');
     const loggedOutState = document.getElementById('loggedOutState');
@@ -1204,97 +1200,131 @@ function setupGlobalEventListeners() {
     const welcomeMessage = document.getElementById('welcomeMessage');
     const userInitial = document.getElementById('userInitial');
 
-    // Simple base64 URL JWT decoder
-    function decodeJWT(token) {
-        try {
-            const base64Url = token.split('.')[1];
-            if (!base64Url) return null;
-            const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-            const jsonPayload = decodeURIComponent(atob(base64).split('').map(function (c) {
-                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-            }).join(''));
-            return JSON.parse(jsonPayload);
-        } catch (e) {
-            return null;
+    const QURAN_PROFILE_URL = '/api/qf/auth/v1/users/profile';
+    const SILENT_AUTH_TIMEOUT_MS = 12000;
+    let authInitialized = false;
+
+    function hasAccessTokenCookie() {
+        return document.cookie.split(';').some(cookie => cookie.trim().startsWith('quran_access_token_'));
+    }
+
+    function showLoggedOutState() {
+        window.isLoggedIn = false;
+        loggedInState.classList.add('hidden');
+        loggedOutState.classList.remove('hidden');
+        document.body.classList.remove('is-logged-in');
+    }
+
+    function renderUserProfile(profile) {
+        const fetchedName = profile.firstName || profile.username || profile.name || profile.given_name || profile.first_name;
+        const displayName = fetchedName || 'Quran.com user';
+        const picture = profile.avatar_url || profile.picture || profile.avatar || profile.photo || profile.avatarUrl || profile.pictureUrl;
+
+        welcomeMessage.textContent = `Assalamu alaikum, ${displayName}`;
+        userInitial.replaceChildren();
+
+        if (picture) {
+            const image = document.createElement('img');
+            image.src = picture;
+            image.alt = 'Profile';
+            image.className = 'w-full h-full rounded-full object-cover';
+            userInitial.appendChild(image);
+        } else {
+            userInitial.textContent = displayName.charAt(0).toUpperCase();
         }
     }
 
-    // 1. Check for token on startup
-    const hasToken = !!document.cookie.split(';').find(c => c.trim().startsWith('quran_access_token_'));
-    
-    function initLoggedInState() {
+    async function validateCurrentSession() {
+        if (!hasAccessTokenCookie()) {
+            return { authenticated: false, reason: 'missing_token' };
+        }
+
+        try {
+            const response = await fetch(QURAN_PROFILE_URL, {
+                cache: 'no-store',
+                headers: { 'Accept': 'application/json' }
+            });
+
+            let payload = null;
+            try {
+                payload = await response.json();
+            } catch (error) {
+                return { authenticated: false, reason: 'invalid_profile_response' };
+            }
+
+            if (!response.ok || !payload || payload.error || payload.type === 'invalid_token') {
+                return {
+                    authenticated: false,
+                    reason: payload?.error || payload?.type || `profile_${response.status}`
+                };
+            }
+
+            const profile = payload.data || payload;
+            if (!profile || typeof profile !== 'object') {
+                return { authenticated: false, reason: 'missing_profile' };
+            }
+
+            return { authenticated: true, profile };
+        } catch (error) {
+            console.debug('Quran.com session validation failed:', error);
+            return { authenticated: false, reason: 'profile_unavailable' };
+        }
+    }
+
+    function attemptSilentAuthentication() {
+        return new Promise(resolve => {
+            const iframe = document.createElement('iframe');
+            iframe.style.display = 'none';
+            iframe.setAttribute('aria-hidden', 'true');
+            iframe.tabIndex = -1;
+
+            let timeoutId;
+            let settled = false;
+
+            const finish = result => {
+                if (settled) return;
+                settled = true;
+                clearTimeout(timeoutId);
+                window.removeEventListener('message', handleMessage);
+                iframe.remove();
+                resolve(result);
+            };
+
+            const handleMessage = event => {
+                if (event.origin !== window.location.origin || event.source !== iframe.contentWindow) return;
+                if (!event.data || event.data.type !== 'QURAN_SILENT_AUTH') return;
+
+                finish({
+                    success: event.data.success === true,
+                    error: event.data.error || null
+                });
+            };
+
+            window.addEventListener('message', handleMessage);
+            iframe.addEventListener('error', () => finish({ success: false, error: 'iframe_error' }));
+            timeoutId = setTimeout(
+                () => finish({ success: false, error: 'timeout' }),
+                SILENT_AUTH_TIMEOUT_MS
+            );
+
+            iframe.src = '/auth/silent-login';
+            document.body.appendChild(iframe);
+        });
+    }
+
+    function initLoggedInState(profile) {
+        if (authInitialized) return;
+        authInitialized = true;
         window.isLoggedIn = true;
         loggedOutState.classList.add('hidden');
         loggedInState.classList.remove('hidden');
         // Drives the bottom-bar person-icon styling: outline → solid teal.
         document.body.classList.add('is-logged-in');
 
-        welcomeMessage.textContent = "Loading Profile...";
-        userInitial.textContent = "?";
-
-        let tokenData = null;
-        try {
-            const currentTokenStr = document.cookie.split(';').find(c => c.trim().startsWith('quran_access_token_'));
-            const idCookie = document.cookie.split(';').find(c => c.trim().startsWith('quran_id_token_'));
-            const tokenToDecode = idCookie ? idCookie : currentTokenStr;
-            const tokenVal = tokenToDecode.split('=')[1];
-            tokenData = decodeJWT(tokenVal);
-        } catch (e) {
-            console.error("JWT Decode error", e);
-        }
-
-        if (tokenData && (tokenData.firstName || tokenData.name || tokenData.given_name || tokenData.first_name || tokenData.username)) {
-            const fetchedName = tokenData.firstName || tokenData.username || tokenData.name || tokenData.given_name || tokenData.first_name;
-            welcomeMessage.textContent = `Assalamu alaikum, ${fetchedName}`;
-            
-            const pic = tokenData.avatar_url || tokenData.picture || tokenData.avatar || tokenData.photo || tokenData.avatarUrl || tokenData.pictureUrl;
-            if (pic) {
-                userInitial.innerHTML = `<img src="${pic}" alt="Profile" class="w-full h-full rounded-full object-cover">`;
-            } else {
-                userInitial.textContent = fetchedName.charAt(0).toUpperCase();
-            }
-        } else {
-            fetch('/api/qf/auth/v1/users/profile').then(r => r.text()).then(text => {
-                if (!text || text.includes('error') || text === 'Unauthorized' || text.startsWith('<!DOCTYPE') || text.startsWith('<html')) {
-                    welcomeMessage.textContent = `User (API Error: ${text ? text.substring(0, 40) : 'empty'})`;
-                    return;
-                }
-                try {
-                    const rawJson = JSON.parse(text);
-                    
-                    if (rawJson.type === 'invalid_token' || rawJson.error === 'invalid_token') {
-                        fetch('/auth/silent-logout').catch(() => {});
-                        window.isLoggedIn = false;
-                        loggedInState.classList.add('hidden');
-                        loggedOutState.classList.remove('hidden');
-                        document.body.classList.remove('is-logged-in');
-                        return;
-                    }
-
-                    const ProfileData = rawJson.data ? rawJson.data : rawJson;
-
-                    const fetchedName = ProfileData.firstName || ProfileData.username || ProfileData.name || ProfileData.given_name;
-                    if (fetchedName) {
-                        welcomeMessage.textContent = `Assalamu alaikum, ${fetchedName}`;
-                        
-                        const pic = ProfileData.avatar_url || ProfileData.picture || ProfileData.avatar || ProfileData.photo || ProfileData.avatarUrl || ProfileData.pictureUrl;
-                        if (pic) {
-                            userInitial.innerHTML = `<img src="${pic}" alt="Profile" class="w-full h-full rounded-full object-cover">`;
-                        } else {
-                            userInitial.textContent = fetchedName.charAt(0).toUpperCase();
-                        }
-                    } else {
-                        welcomeMessage.textContent = `User (Keys: ${Object.keys(ProfileData).join(', ')})`;
-                    }
-                } catch (e) {
-                    welcomeMessage.textContent = `User (Invalid JSON: ${text.substring(0, 30)})`;
-                }
-            }).catch(e => {
-                welcomeMessage.textContent = `User (Network Drop: ${e.message})`;
-            });
-        }
-        console.log("Quran.com Access Token Detected.");
+        renderUserProfile(profile);
+        console.log('Active Quran.com session confirmed.');
         if (window.initQfCollectionsSync) window.initQfCollectionsSync();
+        if (window.initSiratMiniPreview) window.initSiratMiniPreview();
 
         // SYNC IN from Quran.com
         fetch('/api/qf/auth/v1/reading-sessions?first=5')
@@ -1302,9 +1332,6 @@ function setupGlobalEventListeners() {
             .then(text => {
                 if (!text || text.includes('error')) {
                     console.log("SYNC ERROR/EMPTY:", text);
-                    if (text && text.includes('error')) {
-                        document.getElementById('welcomeMessage').textContent = `Sync Error: ${text.substring(0, 40)}`;
-                    }
                     return;
                 }
                 const rawJson = JSON.parse(text);
@@ -1382,30 +1409,50 @@ function setupGlobalEventListeners() {
             })
             .catch(e => {
                 console.debug("Quran.com Sync In Failed", e);
-                document.getElementById('welcomeMessage').textContent = `Sync Fetch Failed: ${e.message}`;
             });
     }
 
-    if (hasToken) {
-        initLoggedInState();
-    } else {
-        // Attempt silent authentication
-        const iframe = document.createElement('iframe');
-        iframe.style.display = 'none';
-        iframe.src = '/auth/silent-login';
-        document.body.appendChild(iframe);
-        
-        window.addEventListener('message', (event) => {
-            if (event.data && event.data.type === 'QURAN_SILENT_AUTH') {
-                if (event.data.success) {
-                    console.log("Silent Auth Succeeded. Initializing logged-in state.");
-                    initLoggedInState();
-                } else {
-                    console.log("Silent Auth Failed:", event.data.error);
-                }
+    async function reconcileAuthentication() {
+        showLoggedOutState();
+        let authenticated = false;
+
+        const acceptValidSession = result => {
+            if (result.authenticated && !authenticated) {
+                authenticated = true;
+                initLoggedInState(result.profile);
             }
-        });
+            return result;
+        };
+
+        // Validate remembered credentials and attempt Quran.com SSO concurrently.
+        const rememberedSessionCheck = validateCurrentSession().then(acceptValidSession);
+        const quranSsoCheck = attemptSilentAuthentication()
+            .then(result => {
+                if (!result.success) {
+                    console.debug('Quran.com silent authentication did not find a session:', result.error);
+                    return { authenticated: false, reason: result.error || 'silent_auth_failed' };
+                }
+                return validateCurrentSession();
+            })
+            .then(acceptValidSession);
+
+        await Promise.all([rememberedSessionCheck, quranSsoCheck]);
+
+        if (!authenticated) {
+            // Both checks failed. Remove stale app credentials before remaining in generic mode.
+            try {
+                await fetch('/auth/silent-logout', { cache: 'no-store' });
+            } catch (error) {
+                console.debug('Could not clear stale Quran.com credentials:', error);
+            }
+            showLoggedOutState();
+        }
     }
+
+    reconcileAuthentication().catch(error => {
+        console.debug('Quran.com authentication reconciliation failed:', error);
+        showLoggedOutState();
+    });
 
     if (quranLoginBtn) {
         quranLoginBtn.addEventListener('click', () => {

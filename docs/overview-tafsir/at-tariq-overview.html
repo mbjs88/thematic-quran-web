@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Overview · Sūrat aṭ-Ṭāriq (86)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper: oklch(0.977 0.012 76);
+  --paper-2: oklch(0.962 0.014 72);
+  --ink: oklch(0.305 0.014 52);
+  --ink-soft: oklch(0.475 0.014 55);
+  --ink-faint: oklch(0.625 0.012 60);
+  --rule: oklch(0.905 0.012 70);
+
+  --dawn-high: oklch(0.962 0.018 78);
+  --dawn-mid:  oklch(0.945 0.034 56);
+  --dawn-glow: oklch(0.912 0.052 44);
+  --waterline: oklch(0.930 0.024 62);
+  --water-low: oklch(0.962 0.013 74);
+  --sun:       oklch(0.965 0.045 72);
+
+  --f-people:   oklch(0.52 0.095 268);
+  --f-divine:   oklch(0.605 0.090 80);
+  --f-unseen:   oklch(0.505 0.080 288);
+  --f-creation: oklch(0.530 0.072 148);
+  --f-worship:  oklch(0.520 0.068 178);
+  --f-justice:  oklch(0.520 0.105 28);
+
+  --serif: "Newsreader", Georgia, "Times New Roman", serif;
+  --arabic: "Amiri", serif;
+}
+*{ box-sizing: border-box; }
+html{ -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
+body{
+  margin:0; background: var(--paper); color: var(--ink);
+  font-family: var(--serif); font-size: 19px; line-height: 1.62;
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+}
+
+.masthead{
+  display:flex; align-items:center; justify-content:space-between; gap:1.5rem;
+  padding: 1.4rem clamp(1.25rem,5vw,3rem); border-bottom: 1px solid var(--rule);
+}
+.wordmark{ display:flex; align-items:center; gap:0.7rem; }
+.wordmark .sun{
+  width:15px; height:15px; border-radius:50%;
+  background: radial-gradient(circle at 50% 45%, var(--sun), var(--dawn-glow) 70%);
+  box-shadow: 0 0 0 1px oklch(0.86 0.04 60 / 0.5);
+}
+.wordmark .name{ font-size:1.08rem; white-space:nowrap; }
+.masthead .tag{ font-variant: small-caps; letter-spacing:0.14em; font-size:0.78rem; color: var(--ink-faint); }
+
+.hero{
+  position:relative; overflow:hidden;
+  padding: clamp(3rem,7vw,5.5rem) clamp(1.25rem,5vw,2rem) clamp(2.5rem,5vw,3.5rem);
+  text-align:center;
+  background:
+    radial-gradient(60% 60% at 50% 30%, oklch(0.97 0.04 74 / 0.7), transparent 70%),
+    linear-gradient(180deg, var(--dawn-high) 0%, var(--dawn-mid) 34%, var(--waterline) 68%, var(--paper) 100%);
+}
+.hero .kicker{ font-variant: small-caps; letter-spacing:0.16em; font-size:0.9rem; color: var(--ink-faint); margin-bottom:1.2rem; }
+.hero .ar-title{ font-family: var(--arabic); font-size: clamp(3rem,9vw,4.6rem); line-height:1; color: var(--ink); margin:0 0 0.4rem; }
+.hero h1{ font-weight:400; font-size: clamp(1.8rem,4vw,2.6rem); letter-spacing:-0.015em; margin:0.2rem 0 0.2rem; }
+.hero .translit{ font-style:italic; color: var(--ink-soft); font-size:1.05rem; margin-bottom:1.1rem; }
+.hero .meta{ display:flex; flex-wrap:wrap; gap:0.5rem; justify-content:center; color: var(--ink-faint); font-style:italic; font-size:0.92rem; }
+.hero .meta .sep{ opacity:0.45; font-style:normal; }
+
+.wrap{ max-width: 43rem; margin:0 auto; padding: clamp(2rem,5vw,3rem) clamp(1.25rem,5vw,2rem) 1rem; }
+
+.disclaimer{
+  background: var(--paper-2); border: 1px solid var(--rule); border-left: 3px solid var(--f-divine);
+  border-radius: 12px; padding: 1.1rem 1.35rem; margin: 0 auto clamp(2.5rem,5vw,3.5rem);
+  color: var(--ink-soft); font-size: 0.95rem; line-height:1.55;
+}
+.disclaimer b{ color: var(--ink); font-weight:500; }
+.disclaimer .lbl{ font-variant:small-caps; letter-spacing:0.1em; font-size:0.72rem; color: var(--ink-faint); display:block; margin-bottom:0.4rem; }
+
+.section{ margin: 0 0 clamp(3rem,6vw,4.5rem); }
+.section-head{ border-top: 1px solid var(--rule); padding-top: 1.4rem; margin-bottom: 1.4rem; }
+.section-head .kicker{
+  display:inline-flex; align-items:center; gap:0.5rem;
+  font-variant: small-caps; letter-spacing:0.12em; font-size:0.82rem; color: var(--ink-faint); margin-bottom:0.5rem;
+}
+.section-head .dot{ width:8px; height:8px; border-radius:50%; background: var(--accent); }
+.section-head h2{ font-weight:400; font-size: clamp(1.4rem,2.6vw,1.85rem); letter-spacing:-0.01em; margin:0; }
+
+.msg{
+  margin: 0 0 1.5rem; padding: 0.1rem 0 0.1rem 1.1rem; border-left: 2px solid var(--accent);
+  font-size: 1.12rem; line-height:1.5; color: var(--ink);
+}
+.msg .msg-lbl{ display:block; font-variant: small-caps; letter-spacing:0.12em; font-size:0.72rem; color: var(--accent); margin-bottom:0.35rem; }
+
+.verses{ margin: 0 0 1.6rem; border-radius:12px; overflow:hidden; border:1px solid var(--rule); }
+.verse{ display:grid; grid-template-columns: 2rem 1fr; gap: 0.35rem 1rem; padding: 0.85rem 1.1rem; background: var(--paper-2); }
+.verse + .verse{ border-top: 1px solid var(--rule); }
+.verse .num{ grid-row: 1 / span 2; font-size:0.8rem; color: var(--accent); font-variant: small-caps; padding-top:0.35rem; text-align:center; }
+.verse .ar{ font-family: var(--arabic); font-size: 1.5rem; line-height:1.95; text-align:right; direction:rtl; color: var(--ink); }
+.verse .en{ font-size: 0.98rem; color: var(--ink-soft); font-style:italic; }
+
+.essay p{ margin: 0 0 1.05rem; }
+.essay .close{ color: var(--ink); }
+
+/* modern lens panel */
+.lens{ margin:1.7rem 0 0; background:oklch(0.955 0.022 262 / 0.5); border:1px solid var(--rule); border-left:3px solid var(--f-unseen); border-radius:12px; padding:1.05rem 1.25rem; }
+.lens-hd{ display:flex; align-items:center; gap:0.6rem; margin-bottom:0.55rem; flex-wrap:wrap; }
+.lens-title{ font-variant:small-caps; letter-spacing:0.1em; font-size:0.8rem; color:var(--f-unseen); }
+.lens-strength{ font-variant:small-caps; letter-spacing:0.04em; font-size:0.68rem; padding:0.08rem 0.55rem; border-radius:20px; color:var(--ink-soft); background:oklch(0.93 0.018 265); }
+.lens-frame{ font-style:italic; font-size:0.84rem; color:var(--ink-faint); margin:0 0 0.75rem; line-height:1.5; }
+.lens p{ margin:0 0 0.7rem; }
+.lens p:last-child{ margin-bottom:0; }
+.lens-src{ font-size:0.8rem; color:var(--ink-faint); }
+.lens-src a{ color:var(--f-unseen); text-decoration:none; border-bottom:1px solid var(--rule); }
+
+.ref{ font-size: 0.66em; vertical-align: super; line-height:0; color: var(--accent); font-style:normal; font-variant-numeric: tabular-nums; letter-spacing:0.02em; padding-left:0.05em; }
+.ref a{ color: inherit; text-decoration:none; }
+
+.references{ border-top: 1px solid var(--rule); padding-top: 1.4rem; margin-top: 1rem; }
+.references h2{ font-weight:400; font-size:1.2rem; margin:0 0 0.3rem; }
+.references .sub{ color: var(--ink-faint); font-style:italic; font-size:0.9rem; margin:0 0 1rem; }
+ol.reflist{ margin:0; padding-left:1.5rem; }
+ol.reflist li{ font-size:0.9rem; color: var(--ink-soft); line-height:1.5; margin-bottom:0.45rem; }
+ol.reflist li b{ color: var(--ink); font-weight:500; }
+ol.reflist li span{ color: var(--ink-faint); }
+
+footer{ border-top:1px solid var(--rule); background: var(--paper-2); margin-top: 2rem; }
+.foot-inner{ max-width:43rem; margin:0 auto; padding: 2rem clamp(1.25rem,5vw,2rem); color: var(--ink-faint); font-size:0.86rem; line-height:1.6; }
+.foot-inner code{ font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size:0.78rem; color: var(--ink-soft); background: oklch(0.94 0.01 70); padding:0.05rem 0.35rem; border-radius:4px; }
+.foot-inner .g{ display:block; margin-top:0.6rem; font-style:italic; }
+
+@media (max-width:640px){ body{ font-size:18px; } .verse .ar{ font-size:1.35rem; } .msg{ font-size:1.06rem; } }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wordmark"><span class="sun"></span><span class="name">The Thematic Qurʾan</span></div>
+  <span class="tag">Overview · a compiled reading</span>
+</header>
+
+<section class="hero">
+  <div class="kicker">Sūrah 86 · The Overview reading</div>
+  <div class="ar-title">الطارق</div>
+  <h1>Aṭ-Ṭāriq — The Night-Comer</h1>
+  <div class="translit">Wa-s-samāʾi wa-ṭ-ṭāriq</div>
+  <div class="meta">
+    <span>Meccan</span><span class="sep">·</span>
+    <span>17 verses</span><span class="sep">·</span>
+    <span>6 sections</span><span class="sep">·</span>
+    <span>Juzʾ 30</span>
+  </div>
+</section>
+
+<div class="wrap">
+
+  <div class="disclaimer">
+    <span class="lbl">About this reading</span>
+    This overview is compiled from many classical and modern commentaries, in several languages, gathered into one plain-English reading. It reflects only what those sources say, <b>not independent opinion</b>. The small numbers, like <span class="ref">1,3</span>, point to the commentaries a statement draws on; you can find them listed at the end. Where the scholars read a verse differently, both readings are given rather than settled.
+  </div>
+
+  <!-- SECTION 1 -->
+  <article class="section" style="--accent: var(--f-unseen)">
+    <div class="section-head">
+      <span class="kicker"><span class="dot"></span>Section 1 · verses 1–3</span>
+      <h2>An oath by the night sky</h2>
+    </div>
+
+    <p class="msg"><span class="msg-lbl">In short</span> God swears by the sky and by a bright star that appears at night. The oath is building toward a promise about us, in the verse that follows: nothing we do goes unwatched.</p>
+
+    <div class="verses">
+      <div class="verse"><span class="num">1</span><span class="ar">وَالسَّمَاءِ وَالطَّارِقِ</span><span class="en">By the sky and the night-comer—</span></div>
+      <div class="verse"><span class="num">2</span><span class="ar">وَمَا أَدْرَاكَ مَا الطَّارِقُ</span><span class="en">What will explain to you what the night-comer is?</span></div>
+      <div class="verse"><span class="num">3</span><span class="ar">النَّجْمُ الثَّاقِبُ</span><span class="en">The piercing star—</span></div>
+    </div>
+
+    <div class="essay">
+      <p>The "night-comer" is a star. The word means anything that arrives by night, and a star earns the name because it shows itself only after dark.<span class="ref"><a href="#references">1,2,3,5</a></span></p>
+
+      <p>Which star? The commentators leave it open. Most take it to mean bright stars in general;<span class="ref"><a href="#references">1,3,7</a></span> some name a particular one, such as Saturn or the Pleiades.<span class="ref"><a href="#references">3,5</a></span> What they agree on is the quality the third verse adds: "the piercing star," one so bright it seems to bore through the darkness with its light.<span class="ref"><a href="#references">1,3,4,7</a></span></p>
+
+      <p>The question in between, "what will explain to you what the night-comer is?", is the Qurʾan's way of lifting up the thing it swears by, holding our attention a moment before it answers.<span class="ref"><a href="#references">3,4,6</a></span></p>
+
+      <p class="close">The sky and its brightest night-light are called as witnesses. The oath is deliberately grand, because what it is about to affirm is meant to be taken with the same weight.</p>
+
+      <div class="lens">
+        <div class="lens-hd"><span class="lens-title">A modern lens</span><span class="lens-strength">evocative resonance</span></div>
+        <p class="lens-frame">The Qurʾan is taken here as fixed, revealed truth; science is our provisional, evolving account of the observable world. What follows notes where the two meet — a contemplation, not a proof. Where the science later shifts, that reflects the limits of our knowledge, not the text.</p>
+        <p>The commentators read <em>ṭāriq</em> as a star that comes by night, and al-Qurṭubī notes its root also carries the sense of knocking or striking, the same root that gives the word for a hammer. "The piercing star" is one whose light bores through the dark. A modern ear, listening with today's astronomy, may catch pulsars in it: rotating neutron stars, first detected in 1967, that beat out radio pulses across space at astonishingly regular intervals, like a steady knocking. That hearing belongs to our moment and may well change, since pulsars are found by radio telescope, not the naked eye, and the plain meaning remains simply a bright night star. The verse stands either way. A resonance to sit with, not a claim to defend.</p>
+        <p class="lens-src">Sources: <a href="https://pressbooks.bccampus.ca/astronomy1105/chapter/23-4-pulsars-and-the-discovery-of-neutron-stars/">Pulsars and the discovery of neutron stars</a> · <a href="https://en.wikipedia.org/wiki/Pulsar">Pulsar overview</a></p>
+      </div>
+    </div>
+  </article>
+
+  <!-- SECTION 2 -->
+  <article class="section" style="--accent: var(--f-creation)">
+    <div class="section-head">
+      <span class="kicker"><span class="dot"></span>Section 2 · verses 4–7</span>
+      <h2>Someone is watching; look at where you began</h2>
+    </div>
+
+    <p class="msg"><span class="msg-lbl">In short</span> Here is what the oath was for: over every single person there is a watcher, recording what they do. Then the surah turns us to a humbling fact, our own beginning, to make a larger point believable.</p>
+
+    <div class="verses">
+      <div class="verse"><span class="num">4</span><span class="ar">إِن كُلُّ نَفْسٍ لَّمَّا عَلَيْهَا حَافِظٌ</span><span class="en">there is a watcher over every soul.</span></div>
+      <div class="verse"><span class="num">5</span><span class="ar">فَلْيَنظُرِ الْإِنسَانُ مِمَّ خُلِقَ</span><span class="en">Man should reflect on what he was created from.</span></div>
+      <div class="verse"><span class="num">6</span><span class="ar">خُلِقَ مِن مَّاءٍ دَافِقٍ</span><span class="en">He is created from spurting fluid,</span></div>
+      <div class="verse"><span class="num">7</span><span class="ar">يَخْرُجُ مِن بَيْنِ الصُّلْبِ وَالتَّرَائِبِ</span><span class="en">then he emerges from between the backbone and breastbone:</span></div>
+    </div>
+
+    <div class="essay">
+      <p>"There is a watcher over every soul." The commentators explain this as angels who record each person's deeds, good and bad, to be accounted for later;<span class="ref"><a href="#references">1,2,5</a></span> some add that they also guard a person from harm until the appointed time.<span class="ref"><a href="#references">3,5</a></span> Whether the watcher is understood as these angels or, behind them, as God Himself, the meaning holds: nothing is unseen.<span class="ref"><a href="#references">4,6</a></span> One reflective commentary reads the bright night-star of the opening as itself a reminder of this Watcher, recording what we do.<span class="ref"><a href="#references">12</a></span></p>
+
+      <p>Then comes the turn: "man should reflect on what he was created from." Sending us back to our beginning has a purpose, to make the next life believable, since the God who first shaped a person from almost nothing can certainly restore him.<span class="ref"><a href="#references">1,2,10</a></span></p>
+
+      <p>The description is deliberately humbling: created from a fluid that spurts, emerging "from between the backbone and the breastbone."<span class="ref"><a href="#references">2,8</a></span> Many read this as the man's backbone and the woman's chest;<span class="ref"><a href="#references">2,5,8,10</a></span> others take it as describing where the fluid issues from in the body.<span class="ref"><a href="#references">7</a></span> Al-Ṭabarī records a wide range of views on the exact place and settles on "the place of the necklace" on the chest.<span class="ref"><a href="#references">1</a></span> Some modern commentaries pause here to connect the verse with what is now understood about how human life begins.<span class="ref"><a href="#references">10,11</a></span></p>
+
+      <p class="close">The message underneath is simple and steadying. You are watched, and you began as something small, and the One who made you from so little is the One you will answer to.</p>
+
+      <div class="lens">
+        <div class="lens-hd"><span class="lens-title">A modern lens</span><span class="lens-strength">strong resonance</span></div>
+        <p class="lens-frame">The Qurʾan is taken here as fixed, revealed truth; science is our provisional, evolving account of the observable world. What follows notes where the two meet — a contemplation, not a proof. Where the science later shifts, that reflects the limits of our knowledge, not the text.</p>
+        <p>The verse says the reproductive fluid issues "from between the backbone and the ribs." What we can observe today is that the organs producing it, the testes, do not begin in the scrotum at all: in the embryo they form high in the abdomen, alongside the kidneys, in the region between the spine and the lower ribs, and only later descend. A lasting trace of that origin stays for life, as their blood vessels and nerves still reach down from that high, mid-back level. The words were settled fourteen centuries ago; our anatomy is the latecomer arriving at the same place. Several commentators already reached toward this (al-Bayḍāwī, cited in Maʿārif; Ibn ʿĀshūr and Sayyid Quṭb, in al-Wasīṭ). Held as wonder, beside the plain meaning, not in place of it.</p>
+        <p class="lens-src">Sources: <a href="https://en.wikipedia.org/wiki/Development_of_the_gonads">Development of the gonads</a> · <a href="https://www.ncbi.nlm.nih.gov/books/NBK557763/">Embryology, Testicle (StatPearls)</a></p>
+      </div>
+    </div>
+  </article>
+
+  <!-- SECTION 3 -->
+  <article class="section" style="--accent: var(--f-divine)">
+    <div class="section-head">
+      <span class="kicker"><span class="dot"></span>Section 3 · verses 8–10</span>
+      <h2>He can bring you back</h2>
+    </div>
+
+    <p class="msg"><span class="msg-lbl">In short</span> The God who made you can remake you. On the Day your hidden self is laid bare, nothing in you or around you will be able to shield you.</p>
+
+    <div class="verses">
+      <div class="verse"><span class="num">8</span><span class="ar">إِنَّهُ عَلَىٰ رَجْعِهِ لَقَادِرٌ</span><span class="en">God is certainly able to bring him back to life.</span></div>
+      <div class="verse"><span class="num">9</span><span class="ar">يَوْمَ تُبْلَى السَّرَائِرُ</span><span class="en">On the Day when secrets are laid bare</span></div>
+      <div class="verse"><span class="num">10</span><span class="ar">فَمَا لَهُ مِن قُوَّةٍ وَلَا نَاصِرٍ</span><span class="en">he will have no power and no one to help him.</span></div>
+    </div>
+
+    <div class="essay">
+      <p>"God is certainly able to bring him back to life." Having pointed to how a person begins, the surah draws the natural conclusion: the same power can return him after death.<span class="ref"><a href="#references">1,2,7</a></span> A few commentators read "bring him back" in other senses, such as returning a person from old age toward youth, but the reading most take, and which al-Ṭabarī and others prefer, is resurrection, because the next verse speaks of the Day of Judgement.<span class="ref"><a href="#references">1,3,5,7</a></span></p>
+
+      <p>"On the Day when secrets are laid bare" — everything a person kept hidden, their beliefs, their intentions, and the deeds they did in private, is brought into the open and tested.<span class="ref"><a href="#references">1,7,9</a></span> Some commentators note that the acts most easily hidden, like prayer, fasting, and washing, are exactly the "secrets" that will be examined, since a person could always have claimed to do them.<span class="ref"><a href="#references">1,3,5</a></span></p>
+
+      <p>And on that Day, "he will have no power and no one to help him." No strength of his own, and no ally or supporter, can shield him.<span class="ref"><a href="#references">1,2,3</a></span> In this life a person leans on family and allies; there, that support is gone.<span class="ref"><a href="#references">1,3</a></span></p>
+
+      <p class="close">The passage closes the circle it opened. The One who watches you and made you will raise you, on a day when the inside of every life is turned out, and nothing stands between a person and their account.</p>
+    </div>
+  </article>
+
+  <!-- SECTION 4 -->
+  <article class="section" style="--accent: var(--f-worship)">
+    <div class="section-head">
+      <span class="kicker"><span class="dot"></span>Section 4 · verses 11–14</span>
+      <h2>A word to be taken seriously</h2>
+    </div>
+
+    <p class="msg"><span class="msg-lbl">In short</span> God swears again, this time by the returning rain and the splitting earth, to affirm one thing: the Qurʾan is a decisive word that sorts truth from falsehood. It is not a joke.</p>
+
+    <div class="verses">
+      <div class="verse"><span class="num">11</span><span class="ar">وَالسَّمَاءِ ذَاتِ الرَّجْعِ</span><span class="en">By the sky and its recurring rain,</span></div>
+      <div class="verse"><span class="num">12</span><span class="ar">وَالْأَرْضِ ذَاتِ الصَّدْعِ</span><span class="en">by the earth that cracks open!</span></div>
+      <div class="verse"><span class="num">13</span><span class="ar">إِنَّهُ لَقَوْلٌ فَصْلٌ</span><span class="en">This is truly a decisive statement;</span></div>
+      <div class="verse"><span class="num">14</span><span class="ar">وَمَا هُوَ بِالْهَزْلِ</span><span class="en">it is not something to be taken lightly.</span></div>
+    </div>
+
+    <div class="essay">
+      <p>The surah swears by "the sky and its recurring rain" and "the earth that cracks open." The rain returns year after year;<span class="ref"><a href="#references">1,5,9</a></span> the earth splits to let plants push through.<span class="ref"><a href="#references">1,2,5</a></span> Between them they carry the whole cycle of life, and, the commentators note, they quietly echo the surah's theme: the God who revives the dead earth with rain can revive the dead.<span class="ref"><a href="#references">7,10</a></span></p>
+
+      <p>What the oath affirms is the Qurʾan: "this is truly a decisive statement." It separates truth from falsehood and settles what people dispute.<span class="ref"><a href="#references">1,3,7,8</a></span> Early commentators gloss "decisive" as true, or as a binding judgement.<span class="ref"><a href="#references">1,2,3</a></span></p>
+
+      <p>"It is not something to be taken lightly." It is serious through and through, not play or idle talk.<span class="ref"><a href="#references">1,5,7</a></span> One commentary draws out what that should mean for the reader: a word God Himself calls decisive deserves to be met with weight and awe, not treated casually.<span class="ref"><a href="#references">4</a></span></p>
+
+      <p class="close">Rain and greening earth stand as witnesses, and the point they underwrite is plain: this is a word that decides, and it asks to be taken seriously.</p>
+
+      <div class="lens">
+        <div class="lens-hd"><span class="lens-title">A modern lens</span><span class="lens-strength">light resonance</span></div>
+        <p class="lens-frame">The Qurʾan is taken here as fixed, revealed truth; science is our provisional, evolving account of the observable world. What follows notes where the two meet — a contemplation, not a proof. Where the science later shifts, that reflects the limits of our knowledge, not the text.</p>
+        <p>Here the classical reading already is, in effect, the science: the rain that returns season after season, and the earth that cracks open for growing plants. A modern eye simply recognises the water cycle and seed germination in the same words. This verse hides no fact so much as point steadily at a cycle we now describe in finer detail, and the point it was making, that the God who returns rain to dead ground can return the dead to life, is untouched by any of that detail.</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- SECTION 5 -->
+  <article class="section" style="--accent: var(--f-justice)">
+    <div class="section-head">
+      <span class="kicker"><span class="dot"></span>Section 5 · verses 15–16</span>
+      <h2>They scheme, and God answers</h2>
+    </div>
+
+    <p class="msg"><span class="msg-lbl">In short</span> The deniers work quietly against the truth. God, in answer, has a plan of His own, and theirs cannot outmatch it.</p>
+
+    <div class="verses">
+      <div class="verse"><span class="num">15</span><span class="ar">إِنَّهُمْ يَكِيدُونَ كَيْدًا</span><span class="en">They plot and scheme,</span></div>
+      <div class="verse"><span class="num">16</span><span class="ar">وَأَكِيدُ كَيْدًا</span><span class="en">but so do I:</span></div>
+    </div>
+
+    <div class="essay">
+      <p>"They plot and scheme." The Meccan opponents worked in secret against the Prophet and his message, trying to defeat the truth and prop up falsehood.<span class="ref"><a href="#references">1,5,7,9</a></span></p>
+
+      <p>"But so do I." The commentators describe God's answer not as trickery but as a wise, measured response: letting the deniers run on gradually, from where they do not expect it, until He takes them at the time He chooses.<span class="ref"><a href="#references">3,4,5</a></span> Saʿdī adds the reassurance underneath it: a human being is far too weak to out-plan the All-Powerful, the All-Knowing.<span class="ref"><a href="#references">7</a></span></p>
+
+      <p class="close">The scene is set as a contest that is no contest. Their scheming is real, but it runs up against a plan it cannot see and cannot beat.</p>
+    </div>
+  </article>
+
+  <!-- SECTION 6 -->
+  <article class="section" style="--accent: var(--f-people)">
+    <div class="section-head">
+      <span class="kicker"><span class="dot"></span>Section 6 · verse 17</span>
+      <h2>Give them a little time</h2>
+    </div>
+
+    <p class="msg"><span class="msg-lbl">In short</span> The surah ends by calming the Prophet: do not rush for their punishment. Leave them be, just for a little while.</p>
+
+    <div class="verses">
+      <div class="verse"><span class="num">17</span><span class="ar">فَمَهِّلِ الْكَافِرِينَ أَمْهِلْهُمْ رُوَيْدًا</span><span class="en">[Prophet], let the disbelievers be, let them be for a while.</span></div>
+    </div>
+
+    <div class="essay">
+      <p>"Let the disbelievers be, let them be for a while." The Prophet is told not to hasten their downfall, but to give them a short respite.<span class="ref"><a href="#references">1,3,8</a></span> "A while" is glossed as a little, a short time.<span class="ref"><a href="#references">1,3,7</a></span> The gentle repetition, "let them be… let them be," deepens the call to be patient.<span class="ref"><a href="#references">4,8</a></span></p>
+
+      <p>Classical commentators note that this instruction to hold back was later followed, once permission to respond had come, by the command to fight, and they point to what befell the Meccan leaders soon afterwards.<span class="ref"><a href="#references">3,5,8</a></span></p>
+
+      <p class="close">The ending is quietly confident. The outcome is settled; only the timing is left open, and the Prophet is asked simply to wait.</p>
+    </div>
+  </article>
+
+  <!-- REFERENCES -->
+  <section class="references" id="references">
+    <h2>The commentaries</h2>
+    <p class="sub">The numbers above point to these sources. Each has its own strength, which is why they are read together.</p>
+    <ol class="reflist">
+      <li><b>al-Ṭabarī</b>, <i>Jāmiʿ al-Bayān</i> <span>— the foundational early commentary; gathers the range of early opinion.</span></li>
+      <li><b>Ibn Kathīr</b> <span>— explains verses through the Qurʾan and prophetic reports.</span></li>
+      <li><b>al-Qurṭubī</b>, <i>al-Jāmiʿ li-Aḥkām al-Qurʾan</i> <span>— strong on legal points, context, and language.</span></li>
+      <li><b>al-Zamakhsharī</b>, <i>al-Kashshāf</i> <span>— close attention to the language and rhetoric.</span></li>
+      <li><b>al-Baghawī</b>, <i>Maʿālim al-Tanzīl</i> <span>— careful early reports and consensus readings.</span></li>
+      <li><b>al-Biqāʿī</b>, <i>Naẓm al-Durar</i> <span>— how each verse fits the surah's overall purpose.</span></li>
+      <li><b>al-Saʿdī</b>, <i>Taysīr al-Karīm al-Raḥmān</i> <span>— the practical lesson to take from each passage.</span></li>
+      <li><b>al-Jalālayn</b> <span>— a short, word-by-word explanation.</span></li>
+      <li><b>al-Muyassar</b> <span>— a plain, mainstream summary meaning.</span></li>
+      <li><b>al-Wasīṭ</b>, Muḥammad Sayyid Ṭanṭāwī <span>— a modern reading connected to everyday life.</span></li>
+      <li><b>Maʿārif al-Qurʾan</b>, Muḥammad Shafīʿ <span>— a modern, English-available commentary with practical notes.</span></li>
+      <li><b>Tazkīr al-Qurʾan</b>, Wahiduddin Khan <span>— modern, reflective commentary.</span></li>
+    </ol>
+  </section>
+
+</div>
+
+<footer>
+  <div class="foot-inner">
+    <b>Overview</b> is a compiled, section-level reading. Every point above is grounded in commentary fetched from the canonical Quran Foundation sources for Sūrat aṭ-Ṭāriq; non-English commentary has been rendered into English faithfully as what each source says. Where the sources disagree, both readings are given rather than settled.
+    <span class="g">Grounded with quran.ai — <code>fetch_quran(86:1-17)</code>, <code>fetch_tafsir(86:1-17)</code> across the twelve commentaries listed above. Compiled 2026-07-11.</span>
+  </div>
+</footer>
+
+</body>
+</html>

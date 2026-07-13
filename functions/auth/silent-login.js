@@ -18,6 +18,7 @@ export async function onRequest(context) {
         
         const headers = new Headers();
         headers.append("Location", url);
+        headers.append("Cache-Control", "no-store");
         
         // Persist PKCE and CSRF state using the SILENT prefix
         headers.append("Set-Cookie", `qf_silent_auth_state${config.cookieSuffix}=${state}; Path=/; Secure; HttpOnly; SameSite=Lax; Max-Age=300`);

@@ -3,6 +3,7 @@ import { getQfOAuthConfig } from "../_shared/qfOAuthConfig.js";
 
 function buildResponse(success, errorMsg = "", headers = new Headers()) {
     headers.append("Content-Type", "text/html;charset=UTF-8");
+    headers.append("Cache-Control", "no-store");
     const html = `
 <!DOCTYPE html>
 <html>
@@ -12,8 +13,8 @@ function buildResponse(success, errorMsg = "", headers = new Headers()) {
     window.parent.postMessage({
         type: 'QURAN_SILENT_AUTH',
         success: ${success},
-        error: ${errorMsg ? `'${errorMsg}'` : 'null'}
-    }, '*');
+        error: ${errorMsg ? JSON.stringify(errorMsg) : 'null'}
+    }, window.location.origin);
 </script>
 </body>
 </html>`;

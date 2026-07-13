@@ -18,7 +18,7 @@
  *      manual stop. Flush =
  *        POST /v1/activity-days  { type:'QURAN', seconds, ranges, mushafId, date? }
  *        POST /v1/reading-sessions { chapterNumber, verseNumber }  (last verse only)
- *    · Skips if the user is not signed in (no QF cookie).
+ *    · Skips if the live QF session has not been confirmed.
  *
  *  API references (from api-docs.quran.foundation):
  *    Add/update activity day  -> body: type, seconds (>=1), ranges,
@@ -64,9 +64,7 @@
     // Helpers
     // ---------------------------------------------------------
     function isLoggedIn() {
-        // Cookie name is environment-suffixed (`_prelive` or `_production`),
-        // so a substring check is the simplest way to detect either.
-        return /(?:^|; )quran_access_token_/.test(document.cookie);
+        return window.isLoggedIn === true;
     }
 
     function nowMs() { return Date.now(); }

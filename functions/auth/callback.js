@@ -72,6 +72,7 @@ export async function onRequest(context) {
     function respond(isSuccess, payload, headers = new Headers()) {
         if (isSilent) {
             headers.append("Content-Type", "text/html;charset=UTF-8");
+            headers.append("Cache-Control", "no-store");
             const html = `
 <!DOCTYPE html>
 <html><head><title>Silent Auth</title></head><body>
@@ -80,7 +81,7 @@ export async function onRequest(context) {
         type: 'QURAN_SILENT_AUTH',
         success: ${isSuccess},
         error: ${!isSuccess ? JSON.stringify(payload) : 'null'}
-    }, '*');
+    }, window.location.origin);
 </script>
 </body></html>`;
             return new Response(html, { status: 200, headers });

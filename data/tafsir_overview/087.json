@@ -1,0 +1,66 @@
+{
+  "surah": 87,
+  "name": "Al-Aʿlā",
+  "commentators_studied": 12,
+  "compiled_at": "2026-07-11",
+  "disclaimer": "Compiled from many classical and modern commentaries, in several languages, gathered into one plain-English reading. It reflects only what those sources say, not independent opinion. The small numbers point to the commentaries a statement draws on. Where the scholars read a verse differently, both readings are given rather than settled.",
+  "references": [
+    { "n": 1, "edition": "ar-tabari", "label": "al-Ṭabarī, Jāmiʿ al-Bayān", "note": "foundational early commentary; the range of early opinion" },
+    { "n": 2, "edition": "en-ibn-kathir", "label": "Ibn Kathīr", "note": "explains verses through the Qurʾan and prophetic reports" },
+    { "n": 3, "edition": "ar-qurtubi", "label": "al-Qurṭubī, al-Jāmiʿ li-Aḥkām al-Qurʾan", "note": "strong on legal points, context, and language" },
+    { "n": 4, "edition": "ar-kashaf", "label": "al-Zamakhsharī, al-Kashshāf", "note": "close attention to language and rhetoric" },
+    { "n": 5, "edition": "ar-baghawi", "label": "al-Baghawī, Maʿālim al-Tanzīl", "note": "careful early reports and consensus readings" },
+    { "n": 6, "edition": "ar-nathm-aldurar", "label": "al-Biqāʿī, Naẓm al-Durar", "note": "how each verse fits the surah's overall purpose" },
+    { "n": 7, "edition": "ar-saadi", "label": "al-Saʿdī, Taysīr al-Karīm al-Raḥmān", "note": "the practical lesson to take from each passage" },
+    { "n": 8, "edition": "ar-jalalayn", "label": "al-Jalālayn", "note": "a short, word-by-word explanation" },
+    { "n": 9, "edition": "ar-muyassar", "label": "al-Muyassar", "note": "a plain, mainstream summary meaning" },
+    { "n": 10, "edition": "ar-al-wasit", "label": "al-Wasīṭ (Muḥammad Sayyid Ṭanṭāwī)", "note": "a modern reading connected to everyday life" },
+    { "n": 11, "edition": "en-maarif-ul-quran", "label": "Maʿārif al-Qurʾan (Muḥammad Shafīʿ)", "note": "modern, English-available commentary with practical notes" },
+    { "n": 12, "edition": "en-tazkirul-quran", "label": "Tazkīr al-Qurʾan (Wahiduddin Khan)", "note": "modern, reflective commentary" }
+  ],
+  "modern_lens_framing": "The Qurʾan is taken here as fixed, revealed truth; science is our provisional, evolving account of the observable world. What follows notes where the two meet — a contemplation, not a proof. Where the science later shifts, that reflects the limits of our knowledge, not the text.",
+  "sections": {
+    "87:1": {
+      "verse_range": "1-5",
+      "title": "Glorify the Most High",
+      "in_short": "Praise God, and keep His name high above anything unworthy of it. The reason is all around you: He made everything, shaped it with care, guided each thing to its purpose, and holds it from life to death.",
+      "sources_used": [1, 2, 3, 4, 5, 6, 7, 10, 11, 12],
+      "essay_html": "<p>To \"glorify\" here means more than saying words of praise. It means keeping God's name clear of any misuse, and never speaking it carelessly.<sup class=\"ref\">1,3,5</sup> The early Muslims showed what that looks like: whenever they read this verse, they would answer, \"Glory to my Lord, the Most High,\" and the Prophet taught them to say the same words when they bowed low in prayer.<sup class=\"ref\">1,2,3,11</sup> The title \"the Most High\" points to God's greatness in rank and power, not to a place or a height.<sup class=\"ref\">4,10</sup></p><p>The praise then rests on four simple things God does. He made everything and set it in balance, with nothing out of place.<sup class=\"ref\">1,4,10</sup> He measured out each thing and guided it to what it is for.<sup class=\"ref\">1,7,12</sup> The commentators picture this with everyday examples: a person shown the difference between right and wrong, an animal that finds its own pasture, each creature drawn to what keeps it alive.<sup class=\"ref\">1,2,3,5</sup> One modern commentary hears in it the instinct God settles in living things, and even the knowledge He gives people as a gift.<sup class=\"ref\">11</sup></p><p>The last example is the most ordinary. God brings green pasture out of the ground, then lets it dry and darken until it blows away.<sup class=\"ref\">1,5</sup> The point is quiet but large: the One who can turn a living field to dust, and green it again each year, is the One who can raise people after death.<sup class=\"ref\">6,10</sup> It is also a mirror held up to us, that our own health and strength are a gift with a time limit.<sup class=\"ref\">11</sup></p><p class=\"close\">So the passage asks for praise, then points to the reasons laid all around us: a world made in balance, guided with care, and held from life to death by the same hand.</p>",
+      "modern_lens": {
+        "strength": "light",
+        "html": "<p>Two small touchpoints. \"He measured out each thing and guided it\" meant, to the commentators, the innate guidance settled in every creature; a modern reader sees the instinct and inherited programming that steer an animal to its life without a teacher. And \"green pasture… then dark debris\" plainly describes vegetation living and withering as a sign of resurrection, while a reader today may also notice that blackened, buried plant matter is, over ages, exactly what becomes coal, the dark residue of ancient pastures. Both are quiet echoes, secondary to the verse's own point, offered as contemplation rather than decoding.</p>",
+        "sources": [
+          { "label": "Origin of coal (Encyclopædia Britannica)", "url": "https://www.britannica.com/science/coal-fossil-fuel/Origin-of-coal" }
+        ]
+      }
+    },
+    "87:6": {
+      "verse_range": "6-9",
+      "title": "The word you will not lose",
+      "in_short": "God reassures the Prophet and then gives him his task. The Qurʾan he is receiving will stay with him, he will not lose it, and the path he carries is made easy. His job is simple: keep reminding people.",
+      "sources_used": [1, 2, 3, 4, 5, 6, 7, 8, 10, 11],
+      "essay_html": "<p>God promises to teach the Prophet the Qurʾan so that he will not forget it.<sup class=\"ref\">2,3,7</sup> This was a remarkable thing to promise a man who could not read or write, and to promise it so early: that he would carry the whole of it, and that a prediction made at the very start would come true.<sup class=\"ref\">10</sup></p><p>One phrase has long puzzled readers: \"unless God wishes.\" The commentators read it three ways, and each is worth knowing. Most take it to mean the few verses God later chose to withdraw, which He allowed to be forgotten.<sup class=\"ref\">1,2,4,5</sup> Some read it as the rare moment of forgetting followed by remembering, as happened once when the Prophet accidentally left out a verse in prayer.<sup class=\"ref\">3,11</sup> Others say it is simply a way of speaking that means \"you will not forget at all,\" with no real exception intended.<sup class=\"ref\">1,2</sup></p><p>God then makes two things easy for the Prophet: the faith itself, described as a simple and forgiving path, and the good he is called to do.<sup class=\"ref\">3,5,6,8</sup> And the task lands plainly: remind people.<sup class=\"ref\">1,2</sup> The words \"if it helps\" are not a loophole, since reminding is always worth doing.<sup class=\"ref\">5,10,11</sup> The deeper note is that a reminder reaches the one whose heart is open, so the Prophet is told not to wear himself down over those who refuse.<sup class=\"ref\">2,4,7</sup></p><p class=\"close\">The passage steadies the Prophet and points him outward: what you carry is safe, your path is light, so keep reminding, and leave the results to God.</p>"
+    },
+    "87:10": {
+      "verse_range": "10-13",
+      "title": "Two responses, two ends",
+      "in_short": "The same reminder divides the people who hear it. One takes it to heart; another shuts it out. This passage shows both, and where each road leads.",
+      "sources_used": [1, 2, 3, 4, 5, 7, 8],
+      "essay_html": "<p>The one who quietly stands in awe of God, who senses he will answer to Him, is the one the reminder reaches.<sup class=\"ref\">1,3</sup> The verse names awe rather than hope because awe moves a person to listen more closely.<sup class=\"ref\">3</sup></p><p>Set against him is \"the most wretched,\" who turns away. This is not one particular villain; it describes anyone who hardens himself against the truth.<sup class=\"ref\">5,8</sup></p><p>Where does that road end? In \"the Great Fire.\" The commentators describe it either as the fire of the next life, set against the smaller fire of this world, or as the deepest and fiercest part of Hell.<sup class=\"ref\">1,3,4,5,8</sup> There, the verse says, a person neither dies to find rest nor lives any life worth the name.<sup class=\"ref\">1,2,7</sup> One report holds a mercy inside this: believers who fall into the Fire are eventually taken out and revived, and it is those who remain who neither die nor live.<sup class=\"ref\">2</sup></p><p class=\"close\">Two hearts, two directions. One carries a seed of awe and lets the reminder in; the other closes against it. The passage does not stop at the difference, it shows where each one leads.</p>"
+    },
+    "87:14": {
+      "verse_range": "14-18",
+      "title": "What succeeds, and what pulls us away",
+      "in_short": "This is the heart of the surah. Real success belongs to the person who purifies himself, keeps God in mind, and prays. What gets in the way is our habit of choosing the world we can see now over the one that lasts.",
+      "sources_used": [1, 2, 3, 5, 7, 11],
+      "essay_html": "<p>\"Successful is the one who purifies himself.\" Most read this as cleaning the heart of idol-worship, sin, and bad character, and turning to God alone.<sup class=\"ref\">1,2,5,7</sup> Some read it more narrowly as giving charity and then going out to pray.<sup class=\"ref\">2,3,5</sup></p><p>That narrower reading raises a fair question: this surah came down in Mecca, before the festival charity it seems to describe even existed.<sup class=\"ref\">3,5</sup> The answer offered is that a verse can arrive before the practice it later fits, praising in advance those who would one day do it.<sup class=\"ref\">3,5</sup> A balanced view keeps both: the charity is one example of the verse, but its real meaning is the wider cleansing of the soul and the prayer that flows from remembering God.<sup class=\"ref\">7</sup></p><p>\"Remembers the name of his Lord and prays\" is read as the daily prayers, as prayer of every kind, and by some as the festival prayer.<sup class=\"ref\">1,3,11</sup> The plain sense the sources settle on is broad: he remembered God, held to His oneness, and prayed.<sup class=\"ref\">1</sup></p><p>Then the surah names what holds us back: \"you prefer the life of this world.\" The most quoted explanation is disarmingly honest. We choose this world because it is here now, its comforts in front of us, while the next life is unseen and still to come, so we grab the near and let go of the far.<sup class=\"ref\">1,3,5</sup> But this world is passing and the next life lasts; set against what endures, the trade makes no sense.<sup class=\"ref\">3,7</sup></p><p>The passage closes by saying this teaching is nothing new: it stands in the earliest scriptures.<sup class=\"ref\">1,2</sup> Readers differ on whether \"this\" means the last few verses or the whole message, but they agree the core, that purity brings success and the next life is better, is an old and often-repeated truth.<sup class=\"ref\">1,2,5</sup></p><p class=\"close\">The surah gathers its counsel into one line, to purify yourself, remember God, and pray, then names the pull that works against it: a near world we can see, over a lasting one we cannot see yet. And it reminds us this was always the message.</p>"
+    },
+    "87:19": {
+      "verse_range": "19",
+      "title": "The scriptures of Abraham and Moses",
+      "in_short": "This last verse names those \"earlier scriptures\": the pages given to Abraham and Moses. The surah's message is old, carried in the very first revelations.",
+      "sources_used": [3, 4, 7, 8, 11],
+      "essay_html": "<p>The verse points back to the scriptures of Ibrāhīm (Abraham) and Mūsā (Moses).<sup class=\"ref\">8</sup> It does not claim these exact words appear there; it means the same teaching was found in them.<sup class=\"ref\">3</sup> A well-known report describes what those pages held: wisdom given to Abraham, such as the counsel to divide your day into three, a part to call on your Lord, a part to take honest account of yourself, and a part for your lawful needs; and for Moses, sayings of wonder, like being amazed at someone who is certain of death yet still lives heedlessly.<sup class=\"ref\">3,4,11</sup> These, one commentary notes, are lessons every revealed faith carries, because they serve what is good in this life and the next.<sup class=\"ref\">7</sup></p><p class=\"close\">Naming Abraham and Moses sets the whole surah in a long line. Its call to hold God above all, and to choose what lasts, is the same word passed down from the first scriptures to the last.</p>"
+    }
+  }
+}

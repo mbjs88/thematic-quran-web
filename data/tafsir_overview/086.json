@@ -1,0 +1,87 @@
+{
+  "surah": 86,
+  "name": "Aṭ-Ṭāriq",
+  "commentators_studied": 12,
+  "compiled_at": "2026-07-11",
+  "disclaimer": "Compiled from many classical and modern commentaries, in several languages, gathered into one plain-English reading. It reflects only what those sources say, not independent opinion. The small numbers point to the commentaries a statement draws on. Where the scholars read a verse differently, both readings are given rather than settled.",
+  "references": [
+    { "n": 1, "edition": "ar-tabari", "label": "al-Ṭabarī, Jāmiʿ al-Bayān", "note": "foundational early commentary; the range of early opinion" },
+    { "n": 2, "edition": "en-ibn-kathir", "label": "Ibn Kathīr", "note": "explains verses through the Qurʾan and prophetic reports" },
+    { "n": 3, "edition": "ar-qurtubi", "label": "al-Qurṭubī, al-Jāmiʿ li-Aḥkām al-Qurʾan", "note": "strong on legal points, context, and language" },
+    { "n": 4, "edition": "ar-kashaf", "label": "al-Zamakhsharī, al-Kashshāf", "note": "close attention to language and rhetoric" },
+    { "n": 5, "edition": "ar-baghawi", "label": "al-Baghawī, Maʿālim al-Tanzīl", "note": "careful early reports and consensus readings" },
+    { "n": 6, "edition": "ar-nathm-aldurar", "label": "al-Biqāʿī, Naẓm al-Durar", "note": "how each verse fits the surah's overall purpose" },
+    { "n": 7, "edition": "ar-saadi", "label": "al-Saʿdī, Taysīr al-Karīm al-Raḥmān", "note": "the practical lesson to take from each passage" },
+    { "n": 8, "edition": "ar-jalalayn", "label": "al-Jalālayn", "note": "a short, word-by-word explanation" },
+    { "n": 9, "edition": "ar-muyassar", "label": "al-Muyassar", "note": "a plain, mainstream summary meaning" },
+    { "n": 10, "edition": "ar-al-wasit", "label": "al-Wasīṭ (Muḥammad Sayyid Ṭanṭāwī)", "note": "a modern reading connected to everyday life" },
+    { "n": 11, "edition": "en-maarif-ul-quran", "label": "Maʿārif al-Qurʾan (Muḥammad Shafīʿ)", "note": "modern, English-available commentary with practical notes" },
+    { "n": 12, "edition": "en-tazkirul-quran", "label": "Tazkīr al-Qurʾan (Wahiduddin Khan)", "note": "modern, reflective commentary" }
+  ],
+  "modern_lens_framing": "The Qurʾan is taken here as fixed, revealed truth; science is our provisional, evolving account of the observable world. What follows notes where the two meet — a contemplation, not a proof. Where the science later shifts, that reflects the limits of our knowledge, not the text.",
+  "sections": {
+    "86:1": {
+      "verse_range": "1-3",
+      "title": "An oath by the night sky",
+      "in_short": "God swears by the sky and by a bright star that appears at night. The oath is building toward a promise about us, in the verse that follows: nothing we do goes unwatched.",
+      "sources_used": [1, 2, 3, 4, 5, 6, 7],
+      "essay_html": "<p>The \"night-comer\" is a star. The word means anything that arrives by night, and a star earns the name because it shows itself only after dark.<sup class=\"ref\">1,2,3,5</sup></p><p>Which star? The commentators leave it open. Most take it to mean bright stars in general;<sup class=\"ref\">1,3,7</sup> some name a particular one, such as Saturn or the Pleiades.<sup class=\"ref\">3,5</sup> What they agree on is the quality the third verse adds: \"the piercing star,\" one so bright it seems to bore through the darkness with its light.<sup class=\"ref\">1,3,4,7</sup></p><p>The question in between, \"what will explain to you what the night-comer is?\", is the Qurʾan's way of lifting up the thing it swears by, holding our attention a moment before it answers.<sup class=\"ref\">3,4,6</sup></p><p class=\"close\">The sky and its brightest night-light are called as witnesses. The oath is deliberately grand, because what it is about to affirm is meant to be taken with the same weight.</p>",
+      "modern_lens": {
+        "strength": "evocative",
+        "html": "<p>The commentators read <em>ṭāriq</em> as a star that comes by night, and al-Qurṭubī notes its root also carries the sense of knocking or striking, the same root that gives the word for a hammer. \"The piercing star\" is one whose light bores through the dark. A modern ear, listening with today's astronomy, may catch pulsars in it: rotating neutron stars, first detected in 1967, that beat out radio pulses across space at astonishingly regular intervals, like a steady knocking. That hearing belongs to our moment and may well change, since pulsars are found by radio telescope, not the naked eye, and the plain meaning remains simply a bright night star. The verse stands either way. A resonance to sit with, not a claim to defend.</p>",
+        "sources": [
+          { "label": "Pulsars and the discovery of neutron stars", "url": "https://pressbooks.bccampus.ca/astronomy1105/chapter/23-4-pulsars-and-the-discovery-of-neutron-stars/" },
+          { "label": "Pulsar (overview)", "url": "https://en.wikipedia.org/wiki/Pulsar" }
+        ]
+      }
+    },
+    "86:4": {
+      "verse_range": "4-7",
+      "title": "Someone is watching; look at where you began",
+      "in_short": "Here is what the oath was for: over every single person there is a watcher, recording what they do. Then the surah turns us to a humbling fact, our own beginning, to make a larger point believable.",
+      "sources_used": [1, 2, 4, 5, 6, 7, 8, 10, 11, 12],
+      "essay_html": "<p>\"There is a watcher over every soul.\" The commentators explain this as angels who record each person's deeds, good and bad, to be accounted for later;<sup class=\"ref\">1,2,5</sup> some add that they also guard a person from harm until the appointed time.<sup class=\"ref\">3,5</sup> Whether the watcher is understood as these angels or, behind them, as God Himself, the meaning holds: nothing is unseen.<sup class=\"ref\">4,6</sup> One reflective commentary reads the bright night-star of the opening as itself a reminder of this Watcher, recording what we do.<sup class=\"ref\">12</sup></p><p>Then comes the turn: \"man should reflect on what he was created from.\" Sending us back to our beginning has a purpose, to make the next life believable, since the God who first shaped a person from almost nothing can certainly restore him.<sup class=\"ref\">1,2,10</sup></p><p>The description is deliberately humbling: created from a fluid that spurts, emerging \"from between the backbone and the breastbone.\"<sup class=\"ref\">2,8</sup> Many read this as the man's backbone and the woman's chest;<sup class=\"ref\">2,5,8,10</sup> others take it as describing where the fluid issues from in the body.<sup class=\"ref\">7</sup> Al-Ṭabarī records a wide range of views on the exact place and settles on \"the place of the necklace\" on the chest.<sup class=\"ref\">1</sup> Some modern commentaries pause here to connect the verse with what is now understood about how human life begins.<sup class=\"ref\">10,11</sup></p><p class=\"close\">The message underneath is simple and steadying. You are watched, and you began as something small, and the One who made you from so little is the One you will answer to.</p>",
+      "modern_lens": {
+        "strength": "strong",
+        "html": "<p>The verse says the reproductive fluid issues \"from between the backbone and the ribs.\" What we can observe today is that the organs producing it, the testes, do not begin in the scrotum at all: in the embryo they form high in the abdomen, alongside the kidneys, in the region between the spine and the lower ribs, and only later descend. A lasting trace of that origin stays for life, as their blood vessels and nerves still reach down from that high, mid-back level. The words were settled fourteen centuries ago; our anatomy is the latecomer arriving at the same place. Several commentators already reached toward this (al-Bayḍāwī, cited in Maʿārif; Ibn ʿĀshūr and Sayyid Quṭb, in al-Wasīṭ). Held as wonder, beside the plain meaning, not in place of it.</p>",
+        "sources": [
+          { "label": "Development of the gonads", "url": "https://en.wikipedia.org/wiki/Development_of_the_gonads" },
+          { "label": "Embryology, Testicle (StatPearls, NCBI)", "url": "https://www.ncbi.nlm.nih.gov/books/NBK557763/" }
+        ]
+      }
+    },
+    "86:8": {
+      "verse_range": "8-10",
+      "title": "He can bring you back",
+      "in_short": "The God who made you can remake you. On the Day your hidden self is laid bare, nothing in you or around you will be able to shield you.",
+      "sources_used": [1, 2, 3, 5, 7, 9],
+      "essay_html": "<p>\"God is certainly able to bring him back to life.\" Having pointed to how a person begins, the surah draws the natural conclusion: the same power can return him after death.<sup class=\"ref\">1,2,7</sup> A few commentators read \"bring him back\" in other senses, such as returning a person from old age toward youth, but the reading most take, and which al-Ṭabarī and others prefer, is resurrection, because the next verse speaks of the Day of Judgement.<sup class=\"ref\">1,3,5,7</sup></p><p>\"On the Day when secrets are laid bare\" — everything a person kept hidden, their beliefs, their intentions, and the deeds they did in private, is brought into the open and tested.<sup class=\"ref\">1,7,9</sup> Some commentators note that the acts most easily hidden, like prayer, fasting, and washing, are exactly the \"secrets\" that will be examined, since a person could always have claimed to do them.<sup class=\"ref\">1,3,5</sup></p><p>And on that Day, \"he will have no power and no one to help him.\" No strength of his own, and no ally or supporter, can shield him.<sup class=\"ref\">1,2,3</sup> In this life a person leans on family and allies; there, that support is gone.<sup class=\"ref\">1,3</sup></p><p class=\"close\">The passage closes the circle it opened. The One who watches you and made you will raise you, on a day when the inside of every life is turned out, and nothing stands between a person and their account.</p>"
+    },
+    "86:11": {
+      "verse_range": "11-14",
+      "title": "A word to be taken seriously",
+      "in_short": "God swears again, this time by the returning rain and the splitting earth, to affirm one thing: the Qurʾan is a decisive word that sorts truth from falsehood. It is not a joke.",
+      "sources_used": [1, 2, 3, 4, 5, 7, 8, 9, 10],
+      "essay_html": "<p>The surah swears by \"the sky and its recurring rain\" and \"the earth that cracks open.\" The rain returns year after year;<sup class=\"ref\">1,5,9</sup> the earth splits to let plants push through.<sup class=\"ref\">1,2,5</sup> Between them they carry the whole cycle of life, and, the commentators note, they quietly echo the surah's theme: the God who revives the dead earth with rain can revive the dead.<sup class=\"ref\">7,10</sup></p><p>What the oath affirms is the Qurʾan: \"this is truly a decisive statement.\" It separates truth from falsehood and settles what people dispute.<sup class=\"ref\">1,3,7,8</sup> Early commentators gloss \"decisive\" as true, or as a binding judgement.<sup class=\"ref\">1,2,3</sup></p><p>\"It is not something to be taken lightly.\" It is serious through and through, not play or idle talk.<sup class=\"ref\">1,5,7</sup> One commentary draws out what that should mean for the reader: a word God Himself calls decisive deserves to be met with weight and awe, not treated casually.<sup class=\"ref\">4</sup></p><p class=\"close\">Rain and greening earth stand as witnesses, and the point they underwrite is plain: this is a word that decides, and it asks to be taken seriously.</p>",
+      "modern_lens": {
+        "strength": "light",
+        "html": "<p>Here the classical reading already is, in effect, the science: the rain that returns season after season, and the earth that cracks open for growing plants. A modern eye simply recognises the water cycle and seed germination in the same words. This verse hides no fact so much as point steadily at a cycle we now describe in finer detail, and the point it was making, that the God who returns rain to dead ground can return the dead to life, is untouched by any of that detail.</p>",
+        "sources": []
+      }
+    },
+    "86:15": {
+      "verse_range": "15-16",
+      "title": "They scheme, and God answers",
+      "in_short": "The deniers work quietly against the truth. God, in answer, has a plan of His own, and theirs cannot outmatch it.",
+      "sources_used": [1, 3, 4, 5, 7, 9],
+      "essay_html": "<p>\"They plot and scheme.\" The Meccan opponents worked in secret against the Prophet and his message, trying to defeat the truth and prop up falsehood.<sup class=\"ref\">1,5,7,9</sup></p><p>\"But so do I.\" The commentators describe God's answer not as trickery but as a wise, measured response: letting the deniers run on gradually, from where they do not expect it, until He takes them at the time He chooses.<sup class=\"ref\">3,4,5</sup> Saʿdī adds the reassurance underneath it: a human being is far too weak to out-plan the All-Powerful, the All-Knowing.<sup class=\"ref\">7</sup></p><p class=\"close\">The scene is set as a contest that is no contest. Their scheming is real, but it runs up against a plan it cannot see and cannot beat.</p>"
+    },
+    "86:17": {
+      "verse_range": "17",
+      "title": "Give them a little time",
+      "in_short": "The surah ends by calming the Prophet: do not rush for their punishment. Leave them be, just for a little while.",
+      "sources_used": [1, 3, 4, 5, 7, 8],
+      "essay_html": "<p>\"Let the disbelievers be, let them be for a while.\" The Prophet is told not to hasten their downfall, but to give them a short respite.<sup class=\"ref\">1,3,8</sup> \"A while\" is glossed as a little, a short time.<sup class=\"ref\">1,3,7</sup> The gentle repetition, \"let them be… let them be,\" deepens the call to be patient.<sup class=\"ref\">4,8</sup></p><p>Classical commentators note that this instruction to hold back was later followed, once permission to respond had come, by the command to fight, and they point to what befell the Meccan leaders soon afterwards.<sup class=\"ref\">3,5,8</sup></p><p class=\"close\">The ending is quietly confident. The outcome is settled; only the timing is left open, and the Prophet is asked simply to wait.</p>"
+    }
+  }
+}

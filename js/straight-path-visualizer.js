@@ -71,6 +71,7 @@
     const PAD_BOT          = 340; // y-coordinate of OLDEST observable day
     const TOTAL_DAYS       = 28;
     const Y_STEP           = (PAD_BOT - PAD_TOP) / (TOTAL_DAYS - 1);
+    let miniPreviewStarted = false;
 
     // Path smoothing tension (Francois Romain method)
     //   0    -> straight polyline
@@ -940,7 +941,8 @@
     //     reflects their current state without requiring a click.
     // ---------------------------------------------------------
     async function initMiniPreview() {
-        if (!isUserLoggedIn()) return;
+        if (!isUserLoggedIn() || miniPreviewStarted) return;
+        miniPreviewStarted = true;
         try {
             const apiMap = await fetchActivityDays(TOTAL_DAYS);
             const full = [];
@@ -954,12 +956,13 @@
             const trajectory = activeDays.length ? calculateTrajectory(activeDays) : null;
             renderMiniPreview(activeDays, trajectory);
         } catch (e) {
+            miniPreviewStarted = false;
             console.warn('[Sirat] mini-preview init failed', e);
         }
     }
 
     function isUserLoggedIn() {
-        return /(?:^|; )quran_access_token_/.test(document.cookie);
+        return window.isLoggedIn === true;
     }
 
     // ---------------------------------------------------------
@@ -977,8 +980,7 @@
     // 11. Autonomous boot
     //     The mini-preview should reflect the user's state without
     //     requiring them to open the panel first. We try a few times
-    //     because the QF cookie is set asynchronously by the OAuth
-    //     return flow, so it may not be ready at DOMContentLoaded.
+    //     because live authentication is confirmed asynchronously.
     // ---------------------------------------------------------
     function bootMiniPreview() {
         let attempts = 0;
