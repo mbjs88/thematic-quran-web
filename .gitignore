@@ -1,30 +1,31 @@
 # keep audio out of Git (it lives in R2)
-data/audio/
-audio/
-assets/icons.pptx
-assets/icons_2.pptx
-assets/icons/
-js/generate-video.js
-js/output
-js/one-off-projects.js
-ABOUT_ME/
-HACKATHON_SUBMISSION.md
-THEMATIC_LABELS_ROADMAP.md
-Accessible_design_summary.md
-ACCESSIBILITY_ROADMAP.md
+quran/data/audio/
+quran/audio/
+quran/assets/icons.pptx
+quran/assets/icons_2.pptx
+quran/assets/icons/
+quran/js/generate-video.js
+quran/js/output
+quran/js/one-off-projects.js
+quran/ABOUT_ME/
+quran/HACKATHON_SUBMISSION.md
+quran/THEMATIC_LABELS_ROADMAP.md
+quran/Accessible_design_summary.md
+quran/ACCESSIBILITY_ROADMAP.md
 
 # optional OS/editor noise
 .DS_Store
 .vscode/
 
 # Secrets
-.dev.vars
-.dev.vars.*
-!.dev.vars.example
-.env
-.env.*
-!.env.example
-!.env.template
+quran/.dev.vars
+quran/.dev.vars.*
+!quran/.dev.vars.example
+quran/.env
+quran/.env.*
+!quran/.env.example
+!quran/.env.template
+
 secrets/
 credentials/
 *.pem
@@ -35,25 +36,25 @@ service-account*.json
 *-credentials.json
 
 # Labeler run logs / status
-data/thematic_labels/.runs/
+quran/data/thematic_labels/.runs/
 
 # Local feedback submissions collected by server.py
-data/feedback/
+quran/data/feedback/
 
 # Model-comparison snapshots (one folder per run)
-data/thematic_labels/.compare/
+quran/data/thematic_labels/.compare/
 
 # Local MAS index extraction/review files, not public website data
-data/thematic_labels/MAS_index.md
-data/thematic_labels/index.md
-data/thematic_labels/uncategorized_index_items.md
-data/thematic_labels/theme_methodology_manuscript.md
+quran/data/thematic_labels/MAS_index.md
+quran/data/thematic_labels/index.md
+quran/data/thematic_labels/uncategorized_index_items.md
+quran/data/thematic_labels/theme_methodology_manuscript.md
 
 # Internal labeling methodology — keep private
-docs/labeling/LABELING_INSTRUCTIONS.md
+quran/docs/labeling/LABELING_INSTRUCTIONS.md
 
 # Local-only admin tools
-admin/
+quran/admin/
 
 # News engine (news.thematicquran.com) — entire folder is its own private
 # git repo (thematicquran-news-private); the news site deploys from THAT
