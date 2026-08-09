@@ -1,0 +1,1552 @@
+{
+  "surah": 113,
+  "name": "",
+  "coverage": {
+    "editions_present": [
+      "ar-tafsir-al-tabari",
+      "ar-tafsir-al-baghawi",
+      "ar-tafseer-al-qurtubi",
+      "en-tafisr-ibn-kathir",
+      "ar-tafseer-al-saddi",
+      "tafsir-fe-zalul-quran-syed-qatab",
+      "en-tafsir-maarif-ul-quran",
+      "tafsir-bayan-ul-quran",
+      "ar-tafsir-al-wasit",
+      "tazkirul-quran-en",
+      "bn-tafsir-abu-bakr-zakaria",
+      "bn-tafsir-ahsanul-bayaan",
+      "ar-tafsir-muyassar",
+      "kurd-tafsir-rebar"
+    ],
+    "editions_absent": [],
+    "independent_works": 14,
+    "languages_present": [
+      "ar",
+      "bn",
+      "en",
+      "ku",
+      "ur"
+    ],
+    "languages_absent": []
+  },
+  "pipeline_provenance": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "overview-v2.3",
+    "theme_breaks_version": "sha256:99880ec7b10b53313690f91df9ee8d065519ee698df34b35a3336b5705218f90",
+    "compiled_at": "2026-08-02"
+  },
+  "modern_lens_framing": "The Qurʾan is taken here as fixed, revealed truth; science is our provisional, evolving account of the observable world. What follows notes where the two meet — a contemplation, not a proof. Where the science later shifts, that reflects the limits of our knowledge, not the text.",
+  "references": [
+    {
+      "n": 1,
+      "work_id": "al-tabari",
+      "label": "Jāmiʿ al-Bayān",
+      "author_id": "al-tabari",
+      "author": "Abū Jaʿfar Muḥammad ibn Jarīr al-Ṭabarī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 2,
+      "work_id": "al-baghawi",
+      "label": "Maʿālim al-Tanzīl",
+      "author_id": "al-baghawi",
+      "author": "Abū Muḥammad al-Ḥusayn ibn Masʿūd al-Baghawī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 3,
+      "work_id": "al-qurtubi",
+      "label": "al-Jāmiʿ li-Aḥkām al-Qurʾān",
+      "author_id": "al-qurtubi",
+      "author": "Abū ʿAbd Allāh Muḥammad ibn Aḥmad al-Qurṭubī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 4,
+      "work_id": "ibn-kathir",
+      "label": "Tafsīr Ibn Kathīr",
+      "author_id": "ibn-kathir",
+      "author": "Ismāʿīl ibn ʿUmar ibn Kathīr",
+      "source_language": "ar",
+      "note": "One independent voice. The ar/ur/bn editions are the SAME work — never count as separate corroboration."
+    },
+    {
+      "n": 5,
+      "work_id": "al-saadi",
+      "label": "Taysīr al-Karīm al-Raḥmān",
+      "author_id": "al-saadi",
+      "author": "ʿAbd al-Raḥmān ibn Nāṣir al-Saʿdī",
+      "source_language": "ar",
+      "note": "Russian edition (170) is the SAME work — translate from the Arabic original, and do not count Russian as an independent voice."
+    },
+    {
+      "n": 6,
+      "work_id": "fi-zilal",
+      "label": "Fī Ẓilāl al-Qurʾān",
+      "author_id": "sayyid-qutb",
+      "author": "Sayyid Quṭb Ibrāhīm Ḥusayn",
+      "source_language": "ar",
+      "note": "Original is Arabic, but the API here carries only an URDU edition — translating from Urdu is one step removed from the original. Prefer the Arabic original if the QF Content API offers it."
+    },
+    {
+      "n": 7,
+      "work_id": "maarif",
+      "label": "Maʿārif al-Qurʾān",
+      "author_id": "muhammad-shafi-usmani",
+      "author": "Muftī Muḥammad Shafīʿ ʿUthmānī",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 8,
+      "work_id": "bayan-ul-quran",
+      "label": "Bayān al-Qurʾān",
+      "author_id": "israr-ahmad",
+      "author": "Isrār Aḥmad",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 9,
+      "work_id": "wasit",
+      "label": "al-Tafsīr al-Wasīṭ",
+      "author_id": "tantawi",
+      "author": "Muḥammad Sayyid Ṭanṭāwī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 10,
+      "work_id": "tazkirul",
+      "label": "Tazkīr al-Qurʾān",
+      "author_id": "wahiduddin-khan",
+      "author": "Wahiduddin Khan",
+      "source_language": "ur",
+      "note": "en and ur editions are the same work."
+    },
+    {
+      "n": 11,
+      "work_id": "abu-bakr-zakaria",
+      "label": "Tafsir Abu Bakr Zakaria",
+      "author_id": "abu-bakr-zakaria",
+      "author": "Abū Bakr Muḥammad Zakariyyā",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 12,
+      "work_id": "ahsanul-bayaan",
+      "label": "Ahsanul Bayaan",
+      "author_id": "bayaan-foundation",
+      "author": "Ahsanul Bayaan (Bayaan Foundation)",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 13,
+      "work_id": "muyassar",
+      "label": "al-Tafsīr al-Muyassar",
+      "author_id": "committee-muyassar",
+      "author": "al-Tafsīr al-Muyassar (committee)",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 14,
+      "work_id": "rebar-kurdish",
+      "label": "Rebar Kurdish Tafsir",
+      "author_id": "rebar",
+      "author": "Rebar Kurdish Tafsir",
+      "source_language": "ku",
+      "note": ""
+    }
+  ],
+  "sections": {
+    "113:3": {
+      "verse_range": "3-4",
+      "title": "Refuge from Darkness and Sorcery",
+      "in_short": "These two verses ask for protection from the evil that comes with deep darkness, whatever exactly casts it, and from the evil of those who practise sorcery by blowing spells onto knotted cords.",
+      "claims": [
+        {
+          "id": "113:3#c1",
+          "section_ref": "113:3",
+          "attaches_to": "113:3",
+          "text": "Ghāsiq most commonly means the night, and waqaba means the darkness fully entering and spreading. This is the view attributed to Ibn ʿAbbās, al-Ḥasan, Mujāhid, Qatādah, al-Ḍaḥḥāk and others, and is followed by the later commentators.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "هو الليل إذا أظلم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "الليل إذا أقبل بظلمته من المشرق ودخل في كل شيء وأظلم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "هو الليل ... والغسق: أول ظلمة الليل",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "Ghasiq is the night",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "original_excerpt": "the word ghasiq stands for 'night'",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "والغاسق: الليل عندما يشتد ظلامه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "ومن شر ليل شديد الظلمة إذا دخل وتغلغل",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "low"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "غاسق (ghāsiq)",
+              "gloss": "the dark, or that which brings darkness"
+            },
+            {
+              "term": "وقب (waqaba)",
+              "gloss": "to enter fully, for darkness to spread and cover"
+            }
+          ]
+        },
+        {
+          "id": "113:3#c2",
+          "section_ref": "113:3",
+          "attaches_to": "113:3",
+          "text": "A hadith reports that the Prophet ﷺ pointed to the rising moon and told ʿĀ'ishah رضي الله عنها to seek refuge from 'this ghāsiq when it waqab' — taken by some as meaning the ghāsiq is the moon, particularly the moon when it darkens or is eclipsed.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "يا عَائِشَةُ تَعَوَّذِي باللهِ مِنْ شَرِّ غَاسِقٍ إذَا وَقَب، وَهَذَا غاسِقٌ إذَا وَقَبَ",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "فعل هذا: المراد به: القمر إذا خسف واسود",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "قال أبو عيسى: هذا حديث حسن صحيح",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "تَعَوَّذِي بِاللهِ مِنْ شَرِّ هَذَا الْغَاسِقِ إِذَا وَقَبَ",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "hasan",
+            "graded_by": "al-Tirmidhī, as cited by al-Qurṭubī"
+          }
+        },
+        {
+          "id": "113:3#c3",
+          "section_ref": "113:3",
+          "attaches_to": "113:3",
+          "text": "Other early commentators said ghāsiq refers to a star, specifically the Pleiades (al-Thurayyā); this is attributed to Ibn Zayd, who noted the Arabs used to say sickness and plague increased when it set and lifted when it rose.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "الغاسق: سقوط الثريا، وكانت الأسقام والطواعين تكثر عند وقوعها وترتفع عند طلوعها",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "يعني الثريا إذا سقطت",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "الغاسق: الثريا؛ وذلك أنها إذا سقطت كثرت الأسقام والطواعين",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "Al-Ghasiq is the declination... of Pleiades",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "113:3#c4",
+          "section_ref": "113:3",
+          "attaches_to": "113:3",
+          "text": "Others said ghāsiq is the sun when it sets, a view attributed to al-Zuhrī and to Muḥammad ibn Kaʿb al-Quraẕī.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "هو غروب الشمس إذا جاء الليل، إذا وقب",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "هو الشمس إذا غربت؛ قاله ابن شهاب",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "Az-Zuhri said... This means the sun when it sets",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "113:3#c5",
+          "section_ref": "113:3",
+          "attaches_to": "113:3",
+          "text": "Al-Qurṭubī records two further minor readings: that ghāsiq could mean a snake when it bites (its venom 'flows' like the darkness the word implies), and, more broadly, any harmful onslaught whatsoever.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وقيل: الغاسق: الحية إذا لدغت... وقيل: الغاسق: كل هاجم يضر، كائنا ما كان",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "113:3#c6",
+          "section_ref": "113:3",
+          "attaches_to": "113:3",
+          "text": "Al-Ṭabarī's own conclusion is that the term is not restricted to one referent; the Prophet ﷺ was commanded to seek refuge from every 'ghāsiq' — night entering its darkness, a star when it sets, the moon when it darkens — the word applies generally to all of these.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "ولم يخصص بعض ذلك بل عمّ الأمر بذلك، فكلّ غاسق، فإنه صلى الله عليه وسلم كان يُؤمر بالاستعاذة من شره إذا وقب",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "113:3#c7",
+          "section_ref": "113:3",
+          "attaches_to": "113:3",
+          "text": "Commentators explain that night is singled out because it is the time jinn, devils, harmful insects, snakes and predatory animals become active, and when thieves, robbers and enemies strike, and when sorcery is at its most potent.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "من شر ما يكون في الليل، حين يغشى الناس، وتنتشر فيه كثير من الأرواح الشريرة، والحيوانات المؤذية",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "original_excerpt": "this is the time when Jinn, Shaitans, harmful insects, animals and reptiles appear",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "أن يكون مخيفا مرعبا، لأن الإنسان لا يتبين ما استتر تحته من أعداء",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "low"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "113:3#c8",
+          "section_ref": "113:3",
+          "attaches_to": "113:3",
+          "text": "Sayyid Quṭb notes that ghāsiq linguistically relates to something 'leaping forth' and waqaba to a mountain hole from which water gushes; he reads the phrase as night bursting forth to cover the earth, its fear compounded because every hidden threat — a wild beast, a thief, a deceiving enemy, a poisonous bite — can strike, and because at night suppressed worries, memories of pain, and desires press upon a person while satanic promptings are unchecked.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "غاسق کے لغوی معنی کودنے والے کے ہوتے ہیں اور وقب پہاڑ کے اس سوراخ کو کہتے ہیں جس سے پانی نکلتا ہے",
+              "translation_confidence": "low"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "113:3#c9",
+          "section_ref": "113:3",
+          "attaches_to": "113:3",
+          "text": "Al-Ṭanṭāwī links ghāsiq al-layl (darkness of night) here to the same phrase used elsewhere in the Qur'an for prayer times, meaning the deepening darkness of night.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "ومنه قوله: أَقِمِ الصلاة لِدُلُوكِ الشمس إلى غَسَقِ الليل",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "113:3#c10",
+          "section_ref": "113:3",
+          "attaches_to": "113:4",
+          "text": "Al-naffāthāt fī al-ʿuqad are understood to mean female sorceresses who blow onto knots tied in thread while reciting spells over them.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "ومن شرّ السواحر الّلاتي ينفُثن في عُقَد الخيط، حين يَرْقِين عليها",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "يعني السواحر اللاتي ينفثن في عقد الخيط",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "يعني الساحرات اللائي ينفثن في عقد الخيط حين يرقين عليها",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "This means the witches... when they perform their spells and blow into the knots",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "ومن شر السواحر، اللاتي يستعن على سحرهن بالنفث في العقد",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "المراد بالنفاثات فى العقد: النساء السواحر",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "ومن شر الساحرات اللاتي ينفخن فيما يعقدن من عُقَد بقصد السحر",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "low"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "النفاثات (al-naffāthāt)",
+              "gloss": "the [female] blowers"
+            },
+            {
+              "term": "العُقَد (al-ʿuqad)",
+              "gloss": "the knots"
+            }
+          ]
+        },
+        {
+          "id": "113:3#c11",
+          "section_ref": "113:3",
+          "attaches_to": "113:4",
+          "text": "Some report this refers specifically to the daughters of Labīd ibn al-Aʿṣam, whose sorcery is linked to the occasion for the revelation of this sūrah; Ibn Zayd said the sorceresses in question were Jewish women.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "قال أبو عبيدة: هن بنات لبيد بن الأعصم سحرن النبي صلى الله عليه وسلم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وقيل: هن بنات لبيد بن الأعصم... قال ابن زيد: كن من اليهود",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "original_excerpt": "Labid Ibn A'sam... got this most heinous act done by his daughters",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "low"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "113:3#c12",
+          "section_ref": "113:3",
+          "attaches_to": "113:4",
+          "text": "There is a grammatical discussion of what noun the feminine form naffāthāt actually describes: some hold the implied noun is 'nufūs' (souls), which would broaden the meaning beyond women to include any person, male or female, who practises this evil; others hold women are specifically meant, perhaps because sorcery was thought a female disposition.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "original_excerpt": "It is possible that the pre-adjectival noun of the adjective naffathat be nufus [souls]",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "ويصح أن يكون النفاثات صفة للنفوس التى تفعل ذلك، فيكون هذا اللفظ شاملا للذكور والإناث",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "original_excerpt": "النَّفَّاثَات শব্দটি হল স্ত্রীলিঙ্গ, যা النُّفُوس উহ্য বিশেষ্যর বিশেষণ",
+              "translation_confidence": "low"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "113:3#c13",
+          "section_ref": "113:3",
+          "attaches_to": "113:4",
+          "text": "Al-Ṭanṭāwī also mentions an alternative reading in which al-naffāthāt refers not to sorceresses at all but to gossipers and talebearers who sow discord, the intensive form here functioning like 'ʿallāmah' or 'fahhāmah' rather than marking the feminine.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "وقيل المراد بالنفاثات فى العقد: النمامون الذين يسعون بين الناس والفساد",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "113:3#c14",
+          "section_ref": "113:3",
+          "attaches_to": "113:4",
+          "text": "Al-Qurṭubī cites a hadith transmitted by al-Nasā'ī from Abū Hurayrah: whoever ties a knot and blows into it has practised magic, and whoever practises magic has committed shirk.",
+          "claim_type": "legal",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "من عقد عقدة ثم نفث فيها، فقد سحر، ومن سحر فقد أشرك",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Qurṭubī (no grading supplied)"
+          }
+        },
+        {
+          "id": "113:3#c15",
+          "section_ref": "113:3",
+          "attaches_to": "113:4",
+          "text": "Early authorities differed on whether blowing (nafth) while performing ruqyah (recitation for healing) is itself objectionable: ʿIkrimah and Ibrāhīm's circle disliked it, while other reports show the Prophet ﷺ and ʿĀ'ishah رضي الله عنها themselves practised nafth during ruqyah; al-Qurṭubī concludes the nafth condemned in this verse is that mixed with harmful sorcery, not the nafth used for healing, since what harms cannot be measured by what benefits.",
+          "claim_type": "legal",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "لأن النفث في العقد إنما أريد به السحر المضر بالأرواح، وهذا النفث لاستصلاح الأبدان، فلا يقاس ما ينفع بما يضر",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "113:3#c16",
+          "section_ref": "113:3",
+          "attaches_to": "113:4",
+          "text": "Al-Qurṭubī notes some reciters read the word as al-nāfithāt (on the pattern fāʿilāt) rather than the more common al-naffāthāt.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وقرأ عبد الله بن عمرو وعبد الرحمن بن سابط وعيسى بن عمر ورويس عن يعقوب (من شر النافثات) في وزن (فاعلات)",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "113:3#c17",
+          "section_ref": "113:3",
+          "attaches_to": "113:4",
+          "text": "Ibn Kathīr relates, on Sahih al-Bukhārī's authority from ʿĀ'ishah رضي الله عنها, the account of the Prophet ﷺ being bewitched by Labīd ibn al-Aʿṣam using a comb and hair hidden in the well of Dharwān, and of his recovery once it was removed.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "لَبِيدُ بْنُ أَعْصَمَ... فِي جُفِّ طَلْعَةٍ ذَكَرٍ، تَحْتَ رَاعُوفَةٍ فِي بِئْرِ ذَرْوَانَ",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "low"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "al-Bukhārī, as cited by Ibn Kathīr"
+          }
+        },
+        {
+          "id": "113:3#c18",
+          "section_ref": "113:3",
+          "attaches_to": "113:4",
+          "text": "Sayyid Quṭb affirms that magic is a real effect on perception, illustrated by the account of Mūsā عليه السلام and the magicians in Sūrat Ṭā Hā, but he questions the reliability of the report that the Prophet ﷺ was so affected as to imagine actions he had not done, arguing this conflicts with the doctrine of prophetic infallibility in conveying the message, that such reports are single-chain (āḥād) rather than well-attested (mutawātir) and so cannot settle a matter of belief, and that the Qur'an itself refutes the disbelievers' charge that the Prophet ﷺ was bewitched.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "refute",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "یہ روایات عصمت انبیاء کے بنیادی عقیدے کے خلاف ہیں... خبر واحد کے ساتھ عقائد کو ثابت نہیں کیا جاسکتا",
+              "translation_confidence": "low"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "113:3#c19",
+          "section_ref": "113:3",
+          "attaches_to": "113:4",
+          "text": "Isrār Aḥmad broadens the reference to cover all charms, amulets, and occult practices intended to harm; he distinguishes a thing's existing as a real phenomenon (magic is real) from its being lawful (magic is nonetheless disbelief), and holds that none of it can affect anyone without Allah's permission, so refuge is sought in Allah alone.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "کسی چیز کا بالفعل موجود ہونا اور بات ہے اور اس چیز کا حلال حرام ہونا الگ بات ہے۔ مثلاً جادو ایک حقیقت ہے لیکن کفر ہے",
+              "translation_confidence": "low"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        }
+      ],
+      "essay_html": "<p>The Prophet ﷺ is told to seek refuge from ghāsiq idhā waqaba, and most commentators take ghāsiq simply as the night, and waqaba as its darkness closing in fully. Ibn ʿAbbās, al-Ḥasan, Mujāhid, Qatādah and others held this, and later commentators follow them.<sup class=\"ref\">1,2,3,4,7,9,10,11,12,13,14</sup></p><p>Other readings were also transmitted. A hadith has the Prophet ﷺ pointing to the rising moon and telling ʿĀ'ishah رضي الله عنها, 'seek refuge from this ghāsiq when it waqab', which some took to mean the moon, especially when it darkens or is eclipsed. Al-Tirmidhī graded this hadith ḥasan.<sup class=\"ref\">1,2,3,4,11</sup> Others said ghāsiq is a star, namely the Pleiades (al-Thurayyā), whose setting the Arabs associated with rising sickness and plague, and whose rising they linked to its lifting.<sup class=\"ref\">1,2,3,4</sup> Still others took it as the setting sun, a view credited to al-Zuhrī.<sup class=\"ref\">1,2,3,4</sup> Al-Qurṭubī records two further minor readings — a snake when it bites, and, more broadly, any harmful onslaught whatsoever, whatever its form.<sup class=\"ref\">3</sup> Al-Ṭabarī's own conclusion sets these readings side by side rather than choosing between them: the word is not restricted to one referent, so refuge is sought from every ghāsiq, whether night, a setting star, or the darkening moon.<sup class=\"ref\">1</sup></p><p>Whichever referent is meant, commentators explain why the night especially deserves this prayer. It is when jinn, devils, snakes, and predatory animals emerge, when thieves and enemies strike, and when sorcery is thought most potent.<sup class=\"ref\">5,7,8,9,10,11,12,14</sup> Sayyid Quṭb (d. 1966) reads ghāsiq as something 'bursting forth' and waqaba as a mountain-hole through which water gushes, picturing night as darkness bursting out to cover the earth; he adds that its fear is compounded because every hidden threat can strike unseen, and because at night suppressed worries, old griefs and desires press upon a person while satanic promptings go unchecked.<sup class=\"ref\">6</sup> Al-Ṭanṭāwī links the phrase to the Qur'an's own use of ghasaq al-layl for the deepening dark that marks a prayer time.<sup class=\"ref\">9</sup></p><p>The second evil named is al-naffāthāt fī al-ʿuqad, understood by nearly all the commentators as female sorceresses who blow onto knots tied in thread while reciting spells over them.<sup class=\"ref\">1,2,3,4,5,7,8,9,11,12,13,14</sup> Some reports tie this specifically to the daughters of Labīd ibn al-Aʿṣam, behind the occasion for this sūrah's revelation, though Ibn Zayd said the sorceresses meant were Jewish women.<sup class=\"ref\">2,3,7,14</sup></p><p>A grammatical question runs alongside the historical one: does the feminine form mean women specifically, or does it describe an implied 'nufūs' (souls), broadening the evil to any person, male or female, who does this? Several commentators hold the second reading is possible.<sup class=\"ref\">7,9,11,12</sup> Al-Ṭanṭāwī even records a further possibility, that the word describes gossipers who sow discord rather than sorceresses at all, the intensive form working like ʿallāmah rather than marking gender.<sup class=\"ref\">9</sup></p><p>Al-Qurṭubī brings a legal dimension to the verse. He cites a hadith from Abū Hurayrah, transmitted by al-Nasā'ī and left ungraded in his own text, that tying a knot and blowing into it is sorcery, and sorcery is shirk.<sup class=\"ref\">3</sup> He also notes that early authorities disagreed on whether nafth (blowing) during ruqyah, recitation for healing, was itself disliked; ʿIkrimah thought so, but other reports show the Prophet ﷺ and ʿĀ'ishah رضي الله عنها practising it themselves. His resolution is that the nafth condemned here is that bound up with harmful sorcery, not the nafth used for healing, since what harms and what heals cannot be measured by the same rule.<sup class=\"ref\">3</sup></p><p>Ibn Kathīr (d. 1373) relates, on the authority of Sahih al-Bukhārī through ʿĀ'ishah رضي الله عنها, the well-known account of Labīd ibn al-Aʿṣam's sorcery against the Prophet ﷺ, worked through a comb and hair hidden in the well of Dharwān, and his recovery once it was found and removed.<sup class=\"ref\">4,14</sup> Sayyid Quṭb, while affirming that magic genuinely affects perception (citing Mūsā عليه السلام before the magicians in Sūrat Ṭā Hā), questions whether the Prophet ﷺ was affected as this account suggests, holding that such single-chain reports cannot settle a matter of belief, that the claim conflicts with the Prophet's infallibility in conveying the message, and that the Qur'an itself answers the disbelievers' own charge that he had been bewitched.<sup class=\"ref\">6</sup></p><p>Isrār Aḥmad (d. 2010) widens the verse's reach to cover every charm, amulet and occult practice meant to harm, while insisting on a distinction: that magic is a real phenomenon does not make it lawful, for it remains disbelief, and none of it can touch anyone without Allah's leave.<sup class=\"ref\">8</sup></p><p class=\"close\">Across every reading of ghāsiq and every account of the knot-blowers, the commentators return to one point: whatever hidden evil takes shape in darkness or in a spell, no protection against it lies anywhere but in seeking refuge with Allah.<sup class=\"ref\">5,7,8,9,10</sup></p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:f3f4429638fd2368921a1d1287637e278cf93889f33aaa53d97fa78af82dec15",
+        "2": "sha256:b3a97932f8619cd5aa8a853bdb5cbc21e60c541a5880bea5d308fe5321ee051c",
+        "3": "sha256:bdba1899aa12cf2b3e850ee586ebb379b25a86412ff4c24ca6d1fa65c5e6761b",
+        "4": "sha256:9b39e85cbc37c34600e955e722dc13253cb0e49a40ebbb84d2d9350288b0263a",
+        "5": "sha256:0e81e929c923dd4f9ff1dadcfae06c13e6a9ef8d4ae3875800c6676ff23f108c",
+        "6": "sha256:9c5737df88d35b49f908c578483c2b8a33c57da817a742a4f95db841f0241cf6",
+        "7": "sha256:c268a38ad14904d68afab634e1d6bf98db0f0dc10e4b4ba0f33e996a9308aa48",
+        "8": "sha256:12582b674da4d2bc7cc60c2e9d86fa230ecb8f8da502b7ea7705fb40b9bf4396",
+        "9": "sha256:1d99309bc4d90e75c8504e934dd8ead591135d02e89f4af9ec73ef92dbad9d20",
+        "10": "sha256:408f01dc45754c2289fa1563299f264705296d269f24aad6bcb1d9440780fe44",
+        "11": "sha256:fb368016b6dedfff2be00f1814fc880b4c700ae7a9eb48c705db4ce0bdc9817a",
+        "12": "sha256:44cb8aa6e209f70ea7c6e1140f327fe7ed97d806651f065b0f83443344fd4100",
+        "13": "sha256:b9c9e79ef171d04f52706bfc625fc60d7f3c3fb4aa47faa1d7a64f07b11a99a1",
+        "14": "sha256:bb11a104bbf1f98128d9f52d0591fafcd6002a858c49d952c389922d65890002"
+      },
+      "flags": {
+        "creedal_stakes": "true",
+        "legal_content": "true",
+        "sensitive_content": "true"
+      },
+      "compiled_at": "2026-08-02"
+    },
+    "113:5": {
+      "verse_range": "5-5",
+      "title": "Refuge from the Envier's Harm",
+      "in_short": "The sūra closes by asking refuge from the harm of the envier, the person who cannot bear to see someone else's blessing and wishes it taken away, but the commentators stress this harm is feared only once envy is acted upon.",
+      "claims": [
+        {
+          "id": "113:5#c1",
+          "section_ref": "113:5",
+          "attaches_to": "113:5",
+          "text": "Ḥasad (envy) means wishing that a blessing be removed from the person who has it. This is different from ghibṭah/munāfasah (wishing the same blessing for oneself without wanting it taken from the other), which is permitted.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "الحسد تمني زوال نعمة المحسود وإن لم يصر للحاسد مثلها. والمنافسة هي تمني مثلها وإن لم تزل",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "والحاسد، هو الذي يحب زوال النعمة عن المحسود",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "حاسد مبغض للناس إذا حسدهم على ما وهبهم الله من نعم، وأراد زوالها عنهم",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "حَسَد",
+              "gloss": "envy: wishing a blessing be taken away from another"
+            },
+            {
+              "term": "غِبْطَة / منافسة",
+              "gloss": "wishing the same blessing for oneself, without wishing it removed from the other — permitted"
+            }
+          ]
+        },
+        {
+          "id": "113:5#c2",
+          "section_ref": "113:5",
+          "attaches_to": "113:5",
+          "text": "The commentators differ on who 'the envier' refers to. Some hold it is general, covering every envier who might harm the Prophet ﷺ through the evil eye or otherwise. Others hold it refers specifically to the Jews, whose envy kept them from believing in him.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "اختلف أهل التأويل في الحاسد... فقال بعضهم: ذلك كلّ حاسد... وقال آخرون: بل أمر النبيّ أن يستعيذ من شرّ اليهود",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "يعني اليهود فإنهم كانوا يحسدون النبي صلى الله عليه وسلم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "113:5#c3",
+          "section_ref": "113:5",
+          "attaches_to": "113:5",
+          "text": "Al-Ṭabarī (d. 923) prefers the general reading, that the Prophet ﷺ was told to seek refuge from every envier's harm, on the ground that the verse names no particular envier and so its command is unrestricted.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "لأن الله عزّ وجلّ لم يخصص من قوله (ومن شر حاسد إذا حسد) حاسدا دون حاسد، بل عمّ أمره",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "113:5#c4",
+          "section_ref": "113:5",
+          "attaches_to": "113:5",
+          "text": "The evil eye (al-ʿayn) is folded into the meaning of 'envier', since the evil eye is held to come only from an envious, ill-natured soul. A hadith is cited that 'the evil eye is real,' and another has the Prophet ﷺ described as seeking protection from the evil of every envious person and every evil eye before these two sūras were revealed.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "العَينُ حَقٌّ",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "يدخل في الحاسد العاين، لأنه لا تصدر العين إلا من حاسد شرير الطبع",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "relay",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "اَلْعَیْنُ حَقٌّ",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "من كل داء يؤذيك ومن شر كل نفس أو عين حاسد",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not specified in the supplied sources"
+          }
+        },
+        {
+          "id": "113:5#c5",
+          "section_ref": "113:5",
+          "attaches_to": "113:5",
+          "text": "The phrase 'when he envies' is a restriction: the envier's inner feeling is a fault in himself, but it only becomes a harm to be feared once he acts on it — in word, deed, or spell — against the one he envies. Until acted upon, envy hurts only the envier.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "الحاسد لا يضر إلا إذا ظهر حسده بفعل أو قول",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "إذا ظهر ما فى نفسه من الحسد وعمل بمقتضاه بترتيب مقدمات الشر",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "113:5#c6",
+          "section_ref": "113:5",
+          "attaches_to": "113:5",
+          "text": "Envy is remembered as the first sin committed in heaven and the first sin committed on earth: Iblīs envied Adam عليه السلام, and Qābīl (Cain) envied his brother Hābīl (Abel).",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "والحسد أول ذنب عصي الله به في السماء، وأول ذنب عصي به في الأرض، فحسد إبليس آدم، وحسد قابيل هابيل",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "113:5#c7",
+          "section_ref": "113:5",
+          "attaches_to": "113:5",
+          "text": "Al-Qurṭubī (d. 1273) relays that some scholars described the envier as opposing his Lord in five ways: hating any blessing that appears on someone else, being displeased at God's allotment as if questioning it, working against God's bestowal by begrudging it, seeking to bring down God's friends, and aiding his enemy Iblīs. He is said to gain from his envy only regret in gatherings, curse among the angels, distress in solitude, and sorrow in the Hereafter.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "بارز الحاسد ربه من خمسة أوجه... الحاسد لا ينال في المجالس إلا ندامة",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "113:5#c8",
+          "section_ref": "113:5",
+          "attaches_to": "113:5",
+          "text": "A report is relayed that the Prophet ﷺ said three people's prayers are not answered: the one who eats what is forbidden, the one who gossips excessively, and the one who carries rancour or envy against Muslims in his heart.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "ثلاثة لا يستجاب دعاؤهم: آكل الحرام، ومكثر الغيبة، ومن كان في قلبه غل أو حسد للمسلمين",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Qurṭubī does not grade it in the supplied excerpt"
+          }
+        },
+        {
+          "id": "113:5#c9",
+          "section_ref": "113:5",
+          "attaches_to": "113:5",
+          "text": "A hadith found in the two most authoritative collections (al-Ṣaḥīḥayn) states 'there is no envy except in two matters,' meaning that lawful ghibṭah (wishing for oneself what another has, in specific good things) is not the forbidden ḥasad.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "لا حسد إلا في اثنتين يريد لا غبطة",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "found in al-Ṣaḥīḥayn, as noted by al-Qurṭubī"
+          }
+        },
+        {
+          "id": "113:5#c10",
+          "section_ref": "113:5",
+          "attaches_to": "113:5",
+          "text": "Al-Qurṭubī observes that this sūra shows God is the creator of every kind of harm and that the Prophet ﷺ was commanded to seek refuge from all of it; envy is placed last, which he takes as pointing to its seriousness and the extent of the harm it causes.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وجعل خاتمة ذلك الحسد، تنبيها على عظمه، وكثرة ضرره",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric"
+        },
+        {
+          "id": "113:5#c11",
+          "section_ref": "113:5",
+          "attaches_to": "113:5",
+          "text": "The historical background given for singling out the envier is that the Jews and the hypocrites could not bear the Prophet's ﷺ success and, unable to defeat him openly, turned to envy and sorcery (linked to Labīd ibn al-Aʿṣam) against him; there were said to be countless envious people opposed to him.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "113:5#c12",
+          "section_ref": "113:5",
+          "attaches_to": "113:5",
+          "text": "Muftī Muḥammad Shafīʿ (d. 1976) notes that of the three specific evils named in the sūra (darkness, knot-blowers, envier), the darkness and the envier are each restricted by a condition ('when it penetrates', 'when he envies'), because their harm depends on the condition being actualised, whereas sorcery is left unrestricted because its harm is general.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "113:5#c13",
+          "section_ref": "113:5",
+          "attaches_to": "113:5",
+          "text": "Sayyid Quṭb (d. 1966) reflects that some effects of envy, and of the human soul more broadly, remain scientifically unexplained (he mentions phenomena like telepathy and hypnotism as comparisons) and suggests this is a reason not to hastily deny that an envier's inner state might transmit harm, even without a known mechanism.",
+          "claim_type": "other",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "relay",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "113:5#c14",
+          "section_ref": "113:5",
+          "attaches_to": "113:5",
+          "text": "Envy is described in a general, everyday sense as jealousy that arises when a person sees another prospering, and this is placed within the wider point of the sūra that the world was made as a test containing both good and evil, from which one seeks refuge in God.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "unspecified"
+        },
+        {
+          "id": "113:5#c15",
+          "section_ref": "113:5",
+          "attaches_to": "113:5",
+          "text": "Rebar's tafsīr adds that seeking refuge in anyone other than God for this protection would amount to associating a partner with Him (shirk); refuge is sought in God alone from the envier's harm.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        }
+      ],
+      "essay_html": "<p>The sūra ends on the harm of the envier (ḥāsid) when he envies. Several commentators define ḥasad precisely: it is wishing that another person lose a blessing they have. This is set apart from ghibṭah, wishing for the same good fortune oneself without wanting it taken from the other, which is permitted.<sup class=\"ref\">3,5,7,11,12,13</sup></p>\n<p>Who is 'the envier'? Al-Ṭabārī (d. 923) records two readings among the early exegetes: some took it as every envier without exception, others as the Jews specifically, whose envy is said to have kept them from believing in the Prophet ﷺ.<sup class=\"ref\">1,2,7,11</sup> Al-Ṭabarī himself preferred the general reading, reasoning that God named no particular envier, so the command to seek refuge covers every envier who envies.<sup class=\"ref\">1</sup> Some add that the evil eye belongs under this same heading, since the evil eye is held to come only from an envious, ill-natured soul, citing the report that 'the evil eye is real.'<sup class=\"ref\">1,4,5,8</sup></p>\n<p>The condition 'when he envies' matters. Several commentators stress that the inner feeling of envy is itself a fault in the envier, but it only becomes a harm to fear once acted upon, in word, deed, or spell, against the one envied.<sup class=\"ref\">3,7,9,11</sup> Muftī Muḥammad Shafīʿ (d. 1976) notes this parallels the earlier condition on the darkness ('when it penetrates'), both evils being restricted because their harm depends on the condition being realised, unlike sorcery, whose harm is left unrestricted because it is general.<sup class=\"ref\">7</sup></p>\n<p>Envy carries a long history in the tradition. It is remembered as the first sin in heaven, Iblīs envying Adam عليه السلام, and the first sin on earth, Qābīl envying his brother Hābīl.<sup class=\"ref\">3,7,11</sup> Al-Qurṭubī (d. 1273) relays a description of the envier as opposing his Lord in five ways, hating another's blessing, resenting God's allotment, begrudging God's bestowal, working against God's friends, and aiding his enemy Iblīs, and as gaining nothing from it but regret, curse, and sorrow.<sup class=\"ref\">3</sup> He also relays a report that the prayer of one who harbours envy toward Muslims goes unanswered,<sup class=\"ref\">3</sup> and notes the hadith found in al-Ṣaḥīḥayn distinguishing forbidden ḥasad from permitted ghibṭah, 'there is no envy except in two matters.'<sup class=\"ref\">3</sup></p>\n<p>Some commentators connect the verse to the historical setting: the Jews and hypocrites, unable to overcome the Prophet ﷺ openly, are said to have turned to envy and sorcery against him.<sup class=\"ref\">7,11</sup> Al-Qurṭubī observes that placing envy last in the sūra points to its seriousness and the breadth of harm it causes.<sup class=\"ref\">3</sup> Sayyid Quṭb (d. 1966) adds a more speculative reflection, that unexplained phenomena in the human soul, such as telepathy or hypnotism, might caution against denying that envy transmits harm even where the mechanism is unknown.<sup class=\"ref\">6</sup> One reading places the whole matter within the sūra's larger frame, that the world is made as a test of good and evil, and refuge from every form of that evil, including the envier's, is sought in God alone.<sup class=\"ref\">10,14</sup></p>\n<p class=\"close\">The sūra closes not with the sorcerer's knot but with envy, the fault that began in heaven with Iblīs and on earth with Qābīl, and whose harm, the commentators agree, is feared only once it moves from the heart into word or deed.<sup class=\"ref\">3,7,9,11</sup></p>",
+      "sources_used": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "source_hashes": {
+        "1": "sha256:4c4b64275c719415f6786567e27b55126ed122a67f1ded8a5767f0f2f330ffb5",
+        "2": "sha256:0e2326e4456b08d9860ad9d04f8a8dda72ab5301ef09c1c03fe76ea056262670",
+        "3": "sha256:cc68cf7d8f5385a8faae76ff238f06f676826b0ffca90983bde8e8050fa85660",
+        "4": "sha256:c12d71ee0fe07d104560cb10670eecbdb56fe00f935f5ace73725fe8ac068330",
+        "5": "sha256:9e8970e758a2bb2f0543b14af7981833592c2aee2cd827d7f3db5e373836ff94",
+        "6": "sha256:0f449082a72caa7d032726d3809d6dddafbc02a58dc3ebf4c3a8d2f88ec34539",
+        "7": "sha256:6392cbd5ef178b5378d6da24aa3b656861488d88699e5c4bbd846787944a5daa",
+        "8": "sha256:608c54d648ce81bbada0ede607f456e2b2a840ac456a870908dd3bc4fd1da63d",
+        "9": "sha256:05c807467bac78cd2dae2be1f1e3c015f7966d1d7ab2fbdf564ad8bd9a29f297",
+        "10": "sha256:340d219b2e0ee66944f61d7de7de6e4e912d3a833eea4fea1038648469111a6b",
+        "11": "sha256:e6586bda1b6ad4ec369c528bd84017584663e90b48207b9d8b46dfa94bf90081",
+        "12": "sha256:2f947e3dfef98b576541941b0cfe11c504b0d458e544dd0b2b3a9aaa8e383a77",
+        "13": "sha256:46e8712a0de18a895be4ef62d0a245b6a0884a5b44a8bd580250b674e7882648",
+        "14": "sha256:0b66151aeb87d5221d893878878fdf020337bc51b0b047c77763744b033af2b8"
+      },
+      "flags": {
+        "creedal_stakes": true,
+        "legal_content": false,
+        "sensitive_content": false
+      },
+      "compiled_at": "2026-08-02"
+    }
+  }
+}

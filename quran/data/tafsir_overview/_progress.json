@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-07-11",
+  "generated_at": "2026-08-02",
   "totals": {
     "surahs": 114,
-    "surahs_complete": 2,
-    "surahs_partial": 0,
+    "surahs_complete": 23,
+    "surahs_partial": 14,
     "sections_total": 1228,
-    "sections_done": 11,
-    "pct_sections": 0.9,
-    "pct_surahs": 1.8,
-    "avg_commentators": 12.0
+    "sections_done": 137,
+    "pct_sections": 11.2,
+    "pct_surahs": 20.2,
+    "avg_commentators": 14.0
   },
   "surahs": [
     {
@@ -941,10 +941,10 @@
       "type": "makki",
       "verses": 40,
       "sections_total": 7,
-      "sections_done": 0,
-      "status": "none",
-      "commentators": null,
-      "compiled_at": null,
+      "sections_done": 6,
+      "status": "partial",
+      "commentators": 14,
+      "compiled_at": "2026-08-02",
       "reading": null
     },
     {
@@ -953,10 +953,10 @@
       "type": "makki",
       "verses": 46,
       "sections_total": 7,
-      "sections_done": 0,
-      "status": "none",
-      "commentators": null,
-      "compiled_at": null,
+      "sections_done": 6,
+      "status": "partial",
+      "commentators": 14,
+      "compiled_at": "2026-08-02",
       "reading": null
     },
     {
@@ -965,10 +965,10 @@
       "type": "makki",
       "verses": 42,
       "sections_total": 6,
-      "sections_done": 0,
-      "status": "none",
-      "commentators": null,
-      "compiled_at": null,
+      "sections_done": 6,
+      "status": "complete",
+      "commentators": 14,
+      "compiled_at": "2026-08-02",
       "reading": null
     },
     {
@@ -977,10 +977,10 @@
       "type": "makki",
       "verses": 29,
       "sections_total": 4,
-      "sections_done": 0,
-      "status": "none",
-      "commentators": null,
-      "compiled_at": null,
+      "sections_done": 2,
+      "status": "partial",
+      "commentators": 14,
+      "compiled_at": "2026-08-02",
       "reading": null
     },
     {
@@ -989,10 +989,10 @@
       "type": "makki",
       "verses": 19,
       "sections_total": 6,
-      "sections_done": 0,
-      "status": "none",
-      "commentators": null,
-      "compiled_at": null,
+      "sections_done": 5,
+      "status": "partial",
+      "commentators": 14,
+      "compiled_at": "2026-08-02",
       "reading": null
     },
     {
@@ -1001,10 +1001,10 @@
       "type": "makki",
       "verses": 36,
       "sections_total": 5,
-      "sections_done": 0,
-      "status": "none",
-      "commentators": null,
-      "compiled_at": null,
+      "sections_done": 5,
+      "status": "complete",
+      "commentators": 14,
+      "compiled_at": "2026-08-02",
       "reading": null
     },
     {
@@ -1013,10 +1013,10 @@
       "type": "makki",
       "verses": 25,
       "sections_total": 5,
-      "sections_done": 0,
-      "status": "none",
-      "commentators": null,
-      "compiled_at": null,
+      "sections_done": 5,
+      "status": "complete",
+      "commentators": 14,
+      "compiled_at": "2026-08-02",
       "reading": null
     },
     {
@@ -1025,10 +1025,10 @@
       "type": "makki",
       "verses": 22,
       "sections_total": 4,
-      "sections_done": 0,
-      "status": "none",
-      "commentators": null,
-      "compiled_at": null,
+      "sections_done": 3,
+      "status": "partial",
+      "commentators": 14,
+      "compiled_at": "2026-08-02",
       "reading": null
     },
     {
@@ -1039,9 +1039,9 @@
       "sections_total": 6,
       "sections_done": 6,
       "status": "complete",
-      "commentators": 12,
-      "compiled_at": "2026-07-11",
-      "reading": "at-tariq-overview.html"
+      "commentators": 14,
+      "compiled_at": "2026-08-02",
+      "reading": null
     },
     {
       "num": 87,
@@ -1051,9 +1051,9 @@
       "sections_total": 5,
       "sections_done": 5,
       "status": "complete",
-      "commentators": 12,
-      "compiled_at": "2026-07-11",
-      "reading": "al-ala-overview.html"
+      "commentators": 14,
+      "compiled_at": "2026-08-02",
+      "reading": null
     },
     {
       "num": 88,
@@ -1061,10 +1061,10 @@
       "type": "makki",
       "verses": 26,
       "sections_total": 5,
-      "sections_done": 0,
-      "status": "none",
-      "commentators": null,
-      "compiled_at": null,
+      "sections_done": 4,
+      "status": "partial",
+      "commentators": 14,
+      "compiled_at": "2026-08-02",
       "reading": null
     },
     {
@@ -1073,10 +1073,10 @@
       "type": "makki",
       "verses": 30,
       "sections_total": 6,
-      "sections_done": 0,
-      "status": "none",
-      "commentators": null,
-      "compiled_at": null,
+      "sections_done": 5,
+      "status": "partial",
+      "commentators": 14,
+      "compiled_at": "2026-08-02",
       "reading": null
     },
     {
@@ -1085,10 +1085,10 @@
       "type": "makki",
       "verses": 20,
       "sections_total": 4,
-      "sections_done": 0,
-      "status": "none",
-      "commentators": null,
-      "compiled_at": null,
+      "sections_done": 3,
+      "status": "partial",
+      "commentators": 14,
+      "compiled_at": "2026-08-02",
       "reading": null
     },
     {
@@ -1097,10 +1097,10 @@
       "type": "makki",
       "verses": 15,
       "sections_total": 3,
-      "sections_done": 0,
-      "status": "none",
-      "commentators": null,
-      "compiled_at": null,
+      "sections_done": 2,
+      "status": "partial",
+      "commentators": 14,
+      "compiled_at": "2026-08-02",
       "reading": null
     },
     {
@@ -1109,10 +1109,10 @@
       "type": "makki",
       "verses": 21,
       "sections_total": 4,
-      "sections_done": 0,
-      "status": "none",
-      "commentators": null,
-      "compiled_at": null,
+      "sections_done": 2,
+      "status": "partial",
+      "commentators": 14,
+      "compiled_at": "2026-08-02",
       "reading": null
     },
     {
@@ -1121,10 +1121,10 @@
       "type": "makki",
       "verses": 11,
       "sections_total": 4,
-      "sections_done": 0,
-      "status": "none",
-      "commentators": null,
-      "compiled_at": null,
+      "sections_done": 4,
+      "status": "complete",
+      "commentators": 14,
+      "compiled_at": "2026-08-02",
       "reading": null
     },
     {
@@ -1133,10 +1133,10 @@
       "type": "makki",
       "verses": 8,
       "sections_total": 3,
-      "sections_done": 0,
-      "status": "none",
-      "commentators": null,
-      "compiled_at": null,
+      "sections_done": 3,
+      "status": "complete",
+      "commentators": 14,
+      "compiled_at": "2026-08-02",
       "reading": null
     },
     {
@@ -1145,10 +1145,10 @@
       "type": "makki",
       "verses": 8,
       "sections_total": 4,
-      "sections_done": 0,
-      "status": "none",
-      "commentators": null,
-      "compiled_at": null,
+      "sections_done": 3,
+      "status": "partial",
+      "commentators": 14,
+      "compiled_at": "2026-08-02",
       "reading": null
     },
     {
@@ -1157,10 +1157,10 @@
       "type": "makki",
       "verses": 19,
       "sections_total": 5,
-      "sections_done": 0,
-      "status": "none",
-      "commentators": null,
-      "compiled_at": null,
+      "sections_done": 4,
+      "status": "partial",
+      "commentators": 14,
+      "compiled_at": "2026-08-02",
       "reading": null
     },
     {
@@ -1169,10 +1169,10 @@
       "type": "makki",
       "verses": 5,
       "sections_total": 3,
-      "sections_done": 0,
-      "status": "none",
-      "commentators": null,
-      "compiled_at": null,
+      "sections_done": 3,
+      "status": "complete",
+      "commentators": 14,
+      "compiled_at": "2026-08-02",
       "reading": null
     },
     {
@@ -1181,10 +1181,10 @@
       "type": "madani",
       "verses": 8,
       "sections_total": 5,
-      "sections_done": 0,
-      "status": "none",
-      "commentators": null,
-      "compiled_at": null,
+      "sections_done": 5,
+      "status": "complete",
+      "commentators": 14,
+      "compiled_at": "2026-08-02",
       "reading": null
     },
     {
@@ -1193,10 +1193,10 @@
       "type": "madani",
       "verses": 8,
       "sections_total": 3,
-      "sections_done": 0,
-      "status": "none",
-      "commentators": null,
-      "compiled_at": null,
+      "sections_done": 3,
+      "status": "complete",
+      "commentators": 14,
+      "compiled_at": "2026-08-02",
       "reading": null
     },
     {
@@ -1205,10 +1205,10 @@
       "type": "makki",
       "verses": 11,
       "sections_total": 4,
-      "sections_done": 0,
-      "status": "none",
-      "commentators": null,
-      "compiled_at": null,
+      "sections_done": 4,
+      "status": "complete",
+      "commentators": 14,
+      "compiled_at": "2026-08-02",
       "reading": null
     },
     {
@@ -1217,10 +1217,10 @@
       "type": "makki",
       "verses": 11,
       "sections_total": 4,
-      "sections_done": 0,
-      "status": "none",
-      "commentators": null,
-      "compiled_at": null,
+      "sections_done": 4,
+      "status": "complete",
+      "commentators": 14,
+      "compiled_at": "2026-08-02",
       "reading": null
     },
     {
@@ -1229,10 +1229,10 @@
       "type": "makki",
       "verses": 8,
       "sections_total": 3,
-      "sections_done": 0,
-      "status": "none",
-      "commentators": null,
-      "compiled_at": null,
+      "sections_done": 3,
+      "status": "complete",
+      "commentators": 14,
+      "compiled_at": "2026-08-02",
       "reading": null
     },
     {
@@ -1241,10 +1241,10 @@
       "type": "makki",
       "verses": 3,
       "sections_total": 3,
-      "sections_done": 0,
-      "status": "none",
-      "commentators": null,
-      "compiled_at": null,
+      "sections_done": 3,
+      "status": "complete",
+      "commentators": 14,
+      "compiled_at": "2026-08-02",
       "reading": null
     },
     {
@@ -1253,10 +1253,10 @@
       "type": "makki",
       "verses": 9,
       "sections_total": 4,
-      "sections_done": 0,
-      "status": "none",
-      "commentators": null,
-      "compiled_at": null,
+      "sections_done": 4,
+      "status": "complete",
+      "commentators": 14,
+      "compiled_at": "2026-08-02",
       "reading": null
     },
     {
@@ -1265,10 +1265,10 @@
       "type": "makki",
       "verses": 5,
       "sections_total": 3,
-      "sections_done": 0,
-      "status": "none",
-      "commentators": null,
-      "compiled_at": null,
+      "sections_done": 3,
+      "status": "complete",
+      "commentators": 14,
+      "compiled_at": "2026-08-02",
       "reading": null
     },
     {
@@ -1277,10 +1277,10 @@
       "type": "makki",
       "verses": 4,
       "sections_total": 3,
-      "sections_done": 0,
-      "status": "none",
-      "commentators": null,
-      "compiled_at": null,
+      "sections_done": 3,
+      "status": "complete",
+      "commentators": 14,
+      "compiled_at": "2026-08-02",
       "reading": null
     },
     {
@@ -1289,10 +1289,10 @@
       "type": "makki",
       "verses": 7,
       "sections_total": 3,
-      "sections_done": 0,
-      "status": "none",
-      "commentators": null,
-      "compiled_at": null,
+      "sections_done": 3,
+      "status": "complete",
+      "commentators": 14,
+      "compiled_at": "2026-08-02",
       "reading": null
     },
     {
@@ -1301,10 +1301,10 @@
       "type": "makki",
       "verses": 3,
       "sections_total": 3,
-      "sections_done": 0,
-      "status": "none",
-      "commentators": null,
-      "compiled_at": null,
+      "sections_done": 3,
+      "status": "complete",
+      "commentators": 14,
+      "compiled_at": "2026-08-02",
       "reading": null
     },
     {
@@ -1313,10 +1313,10 @@
       "type": "makki",
       "verses": 6,
       "sections_total": 4,
-      "sections_done": 0,
-      "status": "none",
-      "commentators": null,
-      "compiled_at": null,
+      "sections_done": 3,
+      "status": "partial",
+      "commentators": 14,
+      "compiled_at": "2026-08-02",
       "reading": null
     },
     {
@@ -1325,10 +1325,10 @@
       "type": "madani",
       "verses": 3,
       "sections_total": 3,
-      "sections_done": 0,
-      "status": "none",
-      "commentators": null,
-      "compiled_at": null,
+      "sections_done": 3,
+      "status": "complete",
+      "commentators": 14,
+      "compiled_at": "2026-08-02",
       "reading": null
     },
     {
@@ -1337,10 +1337,10 @@
       "type": "makki",
       "verses": 5,
       "sections_total": 3,
-      "sections_done": 0,
-      "status": "none",
-      "commentators": null,
-      "compiled_at": null,
+      "sections_done": 3,
+      "status": "complete",
+      "commentators": 14,
+      "compiled_at": "2026-08-02",
       "reading": null
     },
     {
@@ -1349,10 +1349,10 @@
       "type": "makki",
       "verses": 4,
       "sections_total": 3,
-      "sections_done": 0,
-      "status": "none",
-      "commentators": null,
-      "compiled_at": null,
+      "sections_done": 3,
+      "status": "complete",
+      "commentators": 14,
+      "compiled_at": "2026-08-02",
       "reading": null
     },
     {
@@ -1361,10 +1361,10 @@
       "type": "makki",
       "verses": 5,
       "sections_total": 3,
-      "sections_done": 0,
-      "status": "none",
-      "commentators": null,
-      "compiled_at": null,
+      "sections_done": 2,
+      "status": "partial",
+      "commentators": 14,
+      "compiled_at": "2026-08-02",
       "reading": null
     },
     {
@@ -1373,10 +1373,10 @@
       "type": "makki",
       "verses": 6,
       "sections_total": 3,
-      "sections_done": 0,
-      "status": "none",
-      "commentators": null,
-      "compiled_at": null,
+      "sections_done": 3,
+      "status": "complete",
+      "commentators": 14,
+      "compiled_at": "2026-08-02",
       "reading": null
     }
   ]

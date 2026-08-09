@@ -1,0 +1,2516 @@
+{
+  "surah": 111,
+  "name": "",
+  "coverage": {
+    "editions_present": [
+      "ar-tafsir-al-tabari",
+      "ar-tafsir-al-baghawi",
+      "ar-tafseer-al-qurtubi",
+      "en-tafisr-ibn-kathir",
+      "ar-tafseer-al-saddi",
+      "tafsir-fe-zalul-quran-syed-qatab",
+      "en-tafsir-maarif-ul-quran",
+      "tafsir-bayan-ul-quran",
+      "ar-tafsir-al-wasit",
+      "tazkirul-quran-en",
+      "bn-tafsir-abu-bakr-zakaria",
+      "bn-tafsir-ahsanul-bayaan",
+      "ar-tafsir-muyassar",
+      "kurd-tafsir-rebar"
+    ],
+    "editions_absent": [],
+    "independent_works": 14,
+    "languages_present": [
+      "ar",
+      "bn",
+      "en",
+      "ku",
+      "ur"
+    ],
+    "languages_absent": []
+  },
+  "pipeline_provenance": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "overview-v2.3",
+    "theme_breaks_version": "sha256:99880ec7b10b53313690f91df9ee8d065519ee698df34b35a3336b5705218f90",
+    "compiled_at": "2026-08-02"
+  },
+  "modern_lens_framing": "The Qurʾan is taken here as fixed, revealed truth; science is our provisional, evolving account of the observable world. What follows notes where the two meet — a contemplation, not a proof. Where the science later shifts, that reflects the limits of our knowledge, not the text.",
+  "references": [
+    {
+      "n": 1,
+      "work_id": "al-tabari",
+      "label": "Jāmiʿ al-Bayān",
+      "author_id": "al-tabari",
+      "author": "Abū Jaʿfar Muḥammad ibn Jarīr al-Ṭabarī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 2,
+      "work_id": "al-baghawi",
+      "label": "Maʿālim al-Tanzīl",
+      "author_id": "al-baghawi",
+      "author": "Abū Muḥammad al-Ḥusayn ibn Masʿūd al-Baghawī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 3,
+      "work_id": "al-qurtubi",
+      "label": "al-Jāmiʿ li-Aḥkām al-Qurʾān",
+      "author_id": "al-qurtubi",
+      "author": "Abū ʿAbd Allāh Muḥammad ibn Aḥmad al-Qurṭubī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 4,
+      "work_id": "ibn-kathir",
+      "label": "Tafsīr Ibn Kathīr",
+      "author_id": "ibn-kathir",
+      "author": "Ismāʿīl ibn ʿUmar ibn Kathīr",
+      "source_language": "ar",
+      "note": "One independent voice. The ar/ur/bn editions are the SAME work — never count as separate corroboration."
+    },
+    {
+      "n": 5,
+      "work_id": "al-saadi",
+      "label": "Taysīr al-Karīm al-Raḥmān",
+      "author_id": "al-saadi",
+      "author": "ʿAbd al-Raḥmān ibn Nāṣir al-Saʿdī",
+      "source_language": "ar",
+      "note": "Russian edition (170) is the SAME work — translate from the Arabic original, and do not count Russian as an independent voice."
+    },
+    {
+      "n": 6,
+      "work_id": "fi-zilal",
+      "label": "Fī Ẓilāl al-Qurʾān",
+      "author_id": "sayyid-qutb",
+      "author": "Sayyid Quṭb Ibrāhīm Ḥusayn",
+      "source_language": "ar",
+      "note": "Original is Arabic, but the API here carries only an URDU edition — translating from Urdu is one step removed from the original. Prefer the Arabic original if the QF Content API offers it."
+    },
+    {
+      "n": 7,
+      "work_id": "maarif",
+      "label": "Maʿārif al-Qurʾān",
+      "author_id": "muhammad-shafi-usmani",
+      "author": "Muftī Muḥammad Shafīʿ ʿUthmānī",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 8,
+      "work_id": "bayan-ul-quran",
+      "label": "Bayān al-Qurʾān",
+      "author_id": "israr-ahmad",
+      "author": "Isrār Aḥmad",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 9,
+      "work_id": "wasit",
+      "label": "al-Tafsīr al-Wasīṭ",
+      "author_id": "tantawi",
+      "author": "Muḥammad Sayyid Ṭanṭāwī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 10,
+      "work_id": "tazkirul",
+      "label": "Tazkīr al-Qurʾān",
+      "author_id": "wahiduddin-khan",
+      "author": "Wahiduddin Khan",
+      "source_language": "ur",
+      "note": "en and ur editions are the same work."
+    },
+    {
+      "n": 11,
+      "work_id": "abu-bakr-zakaria",
+      "label": "Tafsir Abu Bakr Zakaria",
+      "author_id": "abu-bakr-zakaria",
+      "author": "Abū Bakr Muḥammad Zakariyyā",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 12,
+      "work_id": "ahsanul-bayaan",
+      "label": "Ahsanul Bayaan",
+      "author_id": "bayaan-foundation",
+      "author": "Ahsanul Bayaan (Bayaan Foundation)",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 13,
+      "work_id": "muyassar",
+      "label": "al-Tafsīr al-Muyassar",
+      "author_id": "committee-muyassar",
+      "author": "al-Tafsīr al-Muyassar (committee)",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 14,
+      "work_id": "rebar-kurdish",
+      "label": "Rebar Kurdish Tafsir",
+      "author_id": "rebar",
+      "author": "Rebar Kurdish Tafsir",
+      "source_language": "ku",
+      "note": ""
+    }
+  ],
+  "sections": {
+    "111:1": {
+      "verse_range": "1-3",
+      "title": "The Ruin of Abū Lahab",
+      "in_short": "This opening of Sūrat al-Masad announces that Abū Lahab, an uncle of the Prophet ﷺ who mocked and opposed him, is ruined, and that neither his wealth nor his children will save him from the blazing Fire he is destined to enter.",
+      "claims": [
+        {
+          "id": "111:1#c1",
+          "section_ref": "111:1",
+          "attaches_to": "111:1",
+          "text": "\"Tabbat\" means lost, ruined, or perished. Commentators gloss it as khasira (lost), khāba (failed) or halaka (perished).",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "خسرت يدا أبي لهب, وخسر هو",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "أي : خابت وخسرت يدا أبي لهب",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "ومعنى تبت : خسرت ؛ قال قتادة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "أي: خسرت يداه، وشقى",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "معنى ( تَبَّتْ ) هلكت وخسرت",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "خسرت يدا أبي لهب",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "تبّت",
+              "gloss": "was lost / ruined / perished"
+            }
+          ]
+        },
+        {
+          "id": "111:1#c2",
+          "section_ref": "111:1",
+          "attaches_to": "111:1",
+          "text": "The sūrah is tied to an event on Mount Ṣafā: the Prophet ﷺ gathered the Quraysh and warned them of a severe punishment. Abū Lahab retorted, \"Ruin seize you, is this why you gathered us?\" and the sūrah was revealed in reply.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "في الصحيحين وغيرهما ( واللفظ لمسلم ) عن ابن عباس",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "recorded by al-Bukhārī and Muslim, as noted by Ibn Kathīr and al-Qurṭubī"
+          }
+        },
+        {
+          "id": "111:1#c3",
+          "section_ref": "111:1",
+          "attaches_to": "111:1",
+          "text": "Other narrations are also given for what provoked the sūrah: Abū Lahab objecting to being treated as equal to ordinary believers if he accepted Islam, his habit of telling visiting delegations that the Prophet ﷺ was a liar, or his attempt to throw a stone at him.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not specified by the sources"
+          }
+        },
+        {
+          "id": "111:1#c4",
+          "section_ref": "111:1",
+          "attaches_to": "111:1",
+          "text": "Grammatically the verse has two parts: \"tabbat\" (first clause) is a curse invoked against him, while \"wa tabba\" (second clause) is a plain statement reporting that the curse came true. This distinction is attributed to al-Farrā'.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "قوله: ( تَبَّتْ يَدَا أَبِي لَهَبٍ ) : دعاء عليه من الله. وأما قوله: ( وَتَبَّ ) فإنه خبر",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "قال الفراء : الأول دعاء ، والثاني خبر",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "قال الفراء : التب الأول : دعاء والثاني خبر",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "فالجملة الأولى دعاء عليك بالهلاك والخسران، والجملة الثانية : إخبار",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "111:1#c5",
+          "section_ref": "111:1",
+          "attaches_to": "111:1",
+          "text": "A variant recitation reads \"wa qad tabba\" (attributed to the reading of Ibn Mas'ūd, 'Abdullāh). The presence of \"qad\" supports reading the second clause as a statement of fact rather than a further curse.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "يُذكر أن ذلك في قراءة عبد الله: \" تَبَّتْ يَدَا أبِي لَهَبٍ وَقَدْ تَبَّ\"",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "وقرأ عبد الله : وقد تب",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وفي قراءة عبد الله وأبي وقد تب",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "111:1#c6",
+          "section_ref": "111:1",
+          "attaches_to": "111:1",
+          "text": "\"Yadā\" (his two hands) stands for the whole person, not merely his limbs. Hands do most of a person's work, so the Arabic idiom uses the hand to refer to the self, as in \"for what your hands have sent ahead\" elsewhere in the Qur'an.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "أخبر عن يديه ، والمراد به نفسه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وخص اليدين بالتباب ، لأن العمل أكثر ما يكون بهما",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "والمراد باليدين هنا : ذاته ونفسه، من باب إطلاق الجزء وإرادة الكل",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar",
+          "original_terms": [
+            {
+              "term": "يَدَا",
+              "gloss": "his two hands, used for his whole person"
+            }
+          ]
+        },
+        {
+          "id": "111:1#c7",
+          "section_ref": "111:1",
+          "attaches_to": "111:1",
+          "text": "Some also read \"hands\" literally: it is reported that Abū Lahab pointed to his own hands and said, \"Perish you both, I see nothing in you of what Muḥammad promised,\" mocking claims about the afterlife.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "original_excerpt": "تَبّاً لکما ما اریٰ فیکما شیٔاً ممّا قال محمد",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "Bayhaqī, as cited by Muftī Shafīʿ"
+          }
+        },
+        {
+          "id": "111:1#c8",
+          "section_ref": "111:1",
+          "attaches_to": "111:1",
+          "text": "Abū Lahab's real name was 'Abd al-'Uzzā, a son of 'Abd al-Muṭṭalib, and a paternal uncle of the Prophet ﷺ.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "relay",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "111:1#c9",
+          "section_ref": "111:1",
+          "attaches_to": "111:1",
+          "text": "He was nicknamed \"Abū Lahab\" (Father of Flame) because of the brightness or ruddiness of his face.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "قال مقاتل : كني بأبي لهب لحسنه وإشراق وجهه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "relay",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "أبو لهب",
+              "gloss": "Father of Flame, his by-name"
+            }
+          ]
+        },
+        {
+          "id": "111:1#c10",
+          "section_ref": "111:1",
+          "attaches_to": "111:1",
+          "text": "The Qur'an omits his real name 'Abd al-'Uzzā, which invokes the idol al-'Uzzā, since God does not attribute servanthood ('abd) to an idol in His Book. Al-Qurṭubī adds three further reasons: he was already better known by the kunya than the name, the ism (proper name) ranks above the kunya so this was itself a demotion, and the kunya \"Abū Lahab\" providentially matched his destined fate, making him truly \"father\" of the Flame.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "كناه الله بأبي لهب - عند العلماء - لمعان أربعة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "111:1#c11",
+          "section_ref": "111:1",
+          "attaches_to": "111:1",
+          "text": "This is the only place in the Qur'an where an opponent of the Prophet ﷺ is denounced by name, despite there being many other enemies among the Quraysh and other tribes.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "111:1#c12",
+          "section_ref": "111:1",
+          "attaches_to": "111:1",
+          "text": "Though tied to one historical incident, the passage is read as carrying a general lesson: cruelty and arrogance recoil on the one who practises them. Abū Lahab has become a symbol of the sort of hostile opponent later callers to truth may also face.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "111:1#c13",
+          "section_ref": "111:1",
+          "attaches_to": "111:1",
+          "text": "It is reported that Ibn 'Abbās said this verse was already recorded when God created the Pen and commanded it to write what is to come; al-Ḥasan al-Baṣrī affirmed that Abū Lahab could not have avoided burning, since it was written in God's Book before he or his parents were created, illustrated by the report of Adam's argument with Mūsā عليه السلام.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "والله ما كان يستطيع ألا يصلاها ، وإنها لفي كتاب الله من قبل أن يخلق أبو لهب وأبواه",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not specified by al-Qurṭubī"
+          }
+        },
+        {
+          "id": "111:1#c14",
+          "section_ref": "111:1",
+          "attaches_to": "111:1",
+          "text": "Sayyid Quṭb reads the sūrah as God Himself taking up the battle Abū Lahab and his wife had waged against the Prophet ﷺ. He notes that the harsh, clipped sound of \"tabbat ... wa tabba\" matches the sūrah's imagery of ropes and bundles of wood throughout.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric"
+        },
+        {
+          "id": "111:1#c15",
+          "section_ref": "111:1",
+          "attaches_to": "111:2",
+          "text": "\"Mā kasab\" (what he earned) is understood by many early commentators to mean his children, since a person's offspring are also counted as part of his \"earning.\" This is supported by a hadith that the best thing a man eats is from his own earning, and his child is part of that earning.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "قال: ما كسب ولده",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "قيل : يعني ولده",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "إن أطيب ما أكل الرجل من كسبه ، وإن ولده من كسبه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "كسب",
+              "gloss": "earning; here taken to include one's children"
+            }
+          ],
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not specified by the sources"
+          }
+        },
+        {
+          "id": "111:1#c16",
+          "section_ref": "111:1",
+          "attaches_to": "111:2",
+          "text": "An anecdote is related that Ibn 'Abbās, when Abū Lahab's sons were quarrelling in front of him, pushed them apart and said, \"Take this evil earning away from me,\" applying \"kasab\" to them directly.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "أخرجوا عني الكسب الخبيث",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "أخرجوا عني الكسب الخبيث",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "111:1#c17",
+          "section_ref": "111:1",
+          "attaches_to": "111:2",
+          "text": "It is reported that when the Prophet ﷺ warned his kinsmen of the punishment, Abū Lahab said, \"Even if what my nephew says is true, I will ransom myself with my wealth and my children,\" and this verse was revealed declaring that neither would help him.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "relay",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "111:1#c18",
+          "section_ref": "111:1",
+          "attaches_to": "111:2",
+          "text": "An alternative reading takes \"mā kasab\" to mean the profit or wealth he acquired through trade and other means, not only his children.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "111:1#c19",
+          "section_ref": "111:1",
+          "attaches_to": "111:2",
+          "text": "Grammatically, the first \"mā\" in \"mā aghnā\" may be read as a plain negation (\"nothing availed him\") or as a rhetorical question (\"what did his wealth avail him?\"). The second \"mā\" in \"mā kasab\" may be a relative pronoun (\"that which he earned\") or a verbal noun (\"his earning\").",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "والراجح أن \" ما \" الأولى نافية ، والثانية موصولة",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "111:1#c20",
+          "section_ref": "111:1",
+          "attaches_to": "111:3",
+          "text": "\"Dhāt lahab\" (possessing flame) is read as deliberate wordplay matching his name/kunya Abū Lahab, tightening the correspondence between who he was called and the fire he is destined for.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "original_excerpt": "There is a rhetorical relationship between Abu Lahab and dhata lahab",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "لزيادة تقرير المناسبة بين اسمه وكفره",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric",
+          "original_terms": [
+            {
+              "term": "ذات لهب",
+              "gloss": "possessing flame; the fire he will enter"
+            }
+          ]
+        },
+        {
+          "id": "111:1#c21",
+          "section_ref": "111:1",
+          "attaches_to": "111:3",
+          "text": "The fire is said to surround him from every side.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "أي: ستحيط به النار من كل جانب",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "111:1#c22",
+          "section_ref": "111:1",
+          "attaches_to": "111:3",
+          "text": "On the recitation of \"sayaṣlā,\" most readers recite it active (\"he will burn\"), while some readers (Abū Rajā', al-A'mash and others) read it passive (\"he will be made to burn\"). The majority reading is preferred because of scholarly agreement on it.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وقراءة العامة : سيصلى بفتح الياء",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "111:1#c23",
+          "section_ref": "111:1",
+          "attaches_to": "111:3",
+          "text": "It is reported that Abū Lahab fell ill with a plague-like disease about a week after the Battle of Badr, that people avoided him for fear of contagion, and that his body lay unburied for three days until his sons, taunted over the stench, hired labourers to push it into a pit with a stick and cover it with stones. One account frames his death as brought on by grief at seeing the Quraysh leaders killed at Badr.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "relay",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not specified by the sources"
+          }
+        },
+        {
+          "id": "111:1#c24",
+          "section_ref": "111:1",
+          "attaches_to": "111:3",
+          "text": "Muftī Shafīʿ notes that \"he will burn\" could refer either to punishment on the Day of Judgement or, immediately after death, to punishment in the grave.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        }
+      ],
+      "essay_html": "<p>The sūrah opens with a verdict against one man: \"tabbat\" means lost, ruined, failed.<sup class=\"ref\">1,2,3,5,9,13</sup> The commentators tie this directly to an event on Mount Ṣafā. The Prophet ﷺ gathered the Quraysh and warned them of a coming punishment. Abū Lahab shot back, \"Ruin seize you, is this why you gathered us?\" The sūrah answered him, recorded in al-Bukhārī and Muslim.<sup class=\"ref\">1,2,3,4,7,11</sup> Other reports add further sparks for his hostility: his objection to being treated as an equal to ordinary believers, his habit of denouncing the Prophet ﷺ to visiting tribes, and an attempt to throw a stone at him.<sup class=\"ref\">1,3,7</sup></p>\n<p>The Arabic carries a fine distinction. \"Tabbat\" (the first clause) is a curse invoked against him; \"wa tabba\" (the second) is a plain report that the curse has already landed. This reading is traced to al-Farrā'.<sup class=\"ref\">1,2,3,4,7,9</sup> A variant recitation, \"wa qad tabba,\" attributed to the reading of Ibn Mas'ūd, is cited in support, since the word \"qad\" marks a statement of fact rather than a further plea.<sup class=\"ref\">1,2,3</sup></p>\n<p>\"His two hands\" (yadā) is read as standing for his whole person, since hands carry out most of a person's deeds, the same idiom used elsewhere in the Qur'an for \"what your hands have sent ahead.\"<sup class=\"ref\">1,2,3,7,9,11,12</sup> Some also keep the literal sense: it is reported that Abū Lahab once mocked his own hands, saying he saw nothing in them of what Muḥammad ﷺ had promised about the next life.<sup class=\"ref\">7,9</sup></p>\n<p>Abū Lahab's real name was 'Abd al-'Uzzā, son of 'Abd al-Muṭṭalib and an uncle of the Prophet ﷺ.<sup class=\"ref\">2,3,4,7,10,11,14</sup> He was known as \"Abū Lahab,\" Father of Flame, because of the brightness of his face.<sup class=\"ref\">2,3,7,8,11</sup> Al-Qurṭubī (d. 1273 CE) explains why the Qur'an uses this by-name rather than his real name: 'Abd al-'Uzzā names an idol, and God does not attach the word \"servant\" to an idol in His own Book. He adds that Abū Lahab was already better known by the kunya, that using a kunya instead of the nobler ism was itself a demotion, and that the name \"Father of Flame\" providentially matched the fate awaiting him.<sup class=\"ref\">3,7</sup> Commentators note that this is the only place in the Qur'an where an opponent of the Prophet ﷺ is denounced by name, though he had no shortage of rivals.<sup class=\"ref\">8,10</sup> Wahiduddin Khan (d. 2021 CE) reads the episode as carrying a wider lesson beyond the single incident: cruelty and arrogance recoil on those who practise them, and Abū Lahab has come to stand for a type of opponent later callers to truth may also meet.<sup class=\"ref\">10</sup> Al-Qurṭubī also relates that Ibn 'Abbās رضي الله عنهما said this verse was already written when God commanded the Pen to record what would come, and that al-Ḥasan al-Baṣrī رحمه الله affirmed Abū Lahab could not have escaped this end, since it stood written before he or his parents were created.<sup class=\"ref\">3</sup> Sayyid Quṭb (d. 1966 CE) reads the opening line as God Himself taking up the fight Abū Lahab and his wife had launched against the Prophet ﷺ, and hears in the hard sound of \"tabbat ... wa tabba\" an echo of the sūrah's later imagery of rope and bound wood.<sup class=\"ref\">6</sup></p>\n<p>The second verse turns to what could not save him. \"Mā kasab,\" what he earned, is read by many early commentators as his children, since a man's offspring count among his earnings, a reading supported by a hadith that the purest food a man eats is his own earning, and his child is part of that earning.<sup class=\"ref\">1,2,3,4,7,11</sup> A story is told of Ibn 'Abbās رضي الله عنهما pushing apart Abū Lahab's quarrelling sons and calling them \"this evil earning.\"<sup class=\"ref\">1,3</sup> It is also reported that Abū Lahab boasted he would ransom himself from any punishment with his wealth and children, prompting the reply that neither would help him.<sup class=\"ref\">2,3,4,7,13</sup> Others take \"mā kasab\" more broadly, as the profit and wealth he built through trade.<sup class=\"ref\">9,11</sup> Grammarians note two readings of the verse's structure: \"mā\" as plain negation or as a rhetorical question, and the second \"mā\" as \"that which\" or as a verbal noun meaning his earning itself.<sup class=\"ref\">3,9</sup></p>\n<p>The third verse names his destination: a fire \"dhāt lahab,\" possessing flame. Commentators hear here a deliberate echo of his own name, tightening the link between what he was called and what awaits him.<sup class=\"ref\">2,3,7,8,9,11</sup> Al-Saʿdī (d. 1957 CE) adds that this fire will surround him from every side.<sup class=\"ref\">5</sup> Readers of the Qur'an differ on the verb's voice, most reciting \"he will burn,\" a minority \"he will be made to burn,\" with the majority reading preferred by scholarly agreement.<sup class=\"ref\">3</sup> Historical reports add that Abū Lahab died about a week after the Battle of Badr, some saying from a plague-like illness that made people avoid his body for three days, others linking his death to grief over the Quraysh leaders killed at Badr.<sup class=\"ref\">7,10,12</sup> Muftī Shafīʿ (d. 1976 CE) notes that the burning spoken of here could mean the Day of Judgement or, immediately, punishment in the grave.<sup class=\"ref\">7</sup></p>\n<p class=\"close\">A short curse, an unmet ransom, and a fire that carries his own name: three verses, and the commentators find in each word a further layer confirming that neither pride of face, nor wealth, nor sons could stand between Abū Lahab and what he was told was coming.</p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:2f91582a70023694c583520ba60800066b65839dc6b4174d416e8af0a8b2dffc",
+        "2": "sha256:a78e73a8737b12c3157bb4fe33dad5ab2f4a1474315c86087c4ad1a11c1baeca",
+        "3": "sha256:001ba6f97d6e9c5a772fde8fdd5f9cb3d7eb0449dc22ea7d038ab8d37c029b60",
+        "4": "sha256:ad51d93ffda69cb930346a326c6e5ee97582a54879ecced7c02e56f4686049d5",
+        "5": "sha256:21270a4fd15707dbd4e5fef792db1220433b72ef8ae93c3e4eb53a04ef0c59e1",
+        "6": "sha256:e51d0b09eed814dd6e3dbeee13769ac71463b7548452334f42c3bba4f20433a3",
+        "7": "sha256:530568b52c71472ab15329be7acfce0d7f907f70436e9a31c827bdf318818c31",
+        "8": "sha256:1398aecc670bc96b9edc1a79f3bc94feb3744d7252dabb0fa569344f064aef55",
+        "9": "sha256:1dc2949901cf785e09b1811e7c1cb541c3141db8602aa5880f92bd4369ac88e9",
+        "10": "sha256:6888458eada7a57882d340474d0878d01898d0327aeeca858eba9f0b581ec2c0",
+        "11": "sha256:8763af5b99a3c99c3faa6b8645f6061daa4863241ff7b65261a039eb7c7ce1ea",
+        "12": "sha256:a7abd2e999df1fa3e538a636bb9853d6710b8604ee3ddbfba4b46094efa03d8e",
+        "13": "sha256:f47833db9c9c5a6a1b43253f9edb15c00ccf60aa5c4f055ab14a2d1d3fa05c01",
+        "14": "sha256:7994c0da7a4717133868c7c03a4e4d18b6322039cfd890f2fe33b9a7ce53e8ee"
+      },
+      "flags": {
+        "creedal_stakes": true,
+        "legal_content": false,
+        "sensitive_content": true
+      },
+      "compiled_at": "2026-08-02"
+    },
+    "111:4": {
+      "verse_range": "4-4",
+      "title": "His Wife, the Firewood-Carrier",
+      "in_short": "The verse turns to Abu Lahab's wife, called \"the carrier of firewood\": commentators read this as literal thorns she scattered in the Prophet's path, or as a figure for her gossip and slander, and describe her sharing her husband's punishment in Hell.",
+      "claims": [
+        {
+          "id": "111:4#c1",
+          "section_ref": "111:4",
+          "attaches_to": "111:4",
+          "text": "Abu Lahab's wife was Umm Jamil, whose real name was Arwā (or ʿArwā) bint Ḥarb, sister of Abū Sufyān. She backed her husband fully in his disbelief and his hostility to the Prophet ﷺ.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "أم جميل بنت حرب بن أمية أخت أبي سفيان",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وامرأته أم جميل",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "Her name was `Arwah bint Harb bin Umayyah and she was the sister of Abu Sufyan",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "111:4#c2",
+          "section_ref": "111:4",
+          "attaches_to": "111:4",
+          "text": "Reciters differ over the vowelling of \"ḥammālata\": the majority read it with the raise-ending (rafʿ), taking it as a description of the wife; ʿĀṣim is reported to read it with the drop-ending (naṣb), which functions as an expression of blame, as in the Qur'anic word \"malʿūnīn\" (cursed).",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "والصواب من القراءة في ذلك عندنا: الرفع",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "قرأ عاصم حمالة بالنصب على الذم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وقرأ عاصم حمالة الحطب بالنصب على الذم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "وانتصاب لفظ حمالةَ على الذم بفعل مضمر",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar",
+          "original_terms": [
+            {
+              "term": "ḥammālata al-ḥaṭab",
+              "gloss": "the (woman) carrying firewood"
+            }
+          ]
+        },
+        {
+          "id": "111:4#c3",
+          "section_ref": "111:4",
+          "attaches_to": "111:4",
+          "text": "Read literally, she used to gather thorny branches and scatter them at night on the path the Prophet ﷺ walked, to injure his feet and those of his companions. This is reported from Ibn ʿAbbās, ʿAṭiyyah al-Jadalī, al-Ḍaḥḥāk and Ibn Zayd. Al-Ṭabarī states this is the more apparent meaning of the two readings and is his preferred view; al-Ṭanṭāwī notes this preference explicitly.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "كانت تحمل الشوك, فتطرحه على طريق النبي صلى الله عليه وسلم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "كانت تحمل الشوك والعضاة فتطرحه في طريق رسول الله",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "كانت تحمل العضاه والشوك، فتطرحه بالليل على طريق النبي",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "وقد رجح الإمام ابن جرير القول الأول",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "relay",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "كانت تحمل الشوك، فتطرحه في طريق النبي",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Ṭabarī and later commentators, transmitted without grading the chain"
+          }
+        },
+        {
+          "id": "111:4#c4",
+          "section_ref": "111:4",
+          "attaches_to": "111:4",
+          "text": "Read figuratively, \"carrier of firewood\" means a tale-bearer: someone who carries gossip between people and kindles enmity, just as firewood is gathered to feed a fire. This is attributed to Ibn ʿAbbās (in another route), Mujāhid, Qatādah, al-Suddī and ʿIkrimah, and is called the majority reading by some later commentators.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "كانت تحطب الكلام, وتمشي بالنميمة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "كانت تمشي بالنميمة وتنقل الحديث",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "كانت تمشي بالنميمة بين الناس",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "يصح أن يكون المراد بهذه الجملة الكناية عن مشيها بين الناس بالنميمة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "111:4#c5",
+          "section_ref": "111:4",
+          "attaches_to": "111:4",
+          "text": "A third reading, from Saʿīd ibn Jubayr, takes \"carrier of firewood\" as \"carrier of sins,\" comparing it to the Qur'anic image of wrongdoers carrying their burdens on their backs (as in 6:31).",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "حمالة الخطايا",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "حمالة الخطايا والذنوب",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "111:4#c6",
+          "section_ref": "111:4",
+          "attaches_to": "111:4",
+          "text": "Qatādah adds a further nuance: she used to mock the Prophet ﷺ for poverty, yet despite her own wealth she was so miserly that she carried firewood herself; the title \"firewood-carrier\" was itself a jibe at her stinginess.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "كانت تعير رسول الله بالفقر، ثم كانت مع كثرة مالها تحمل الحطب على ظهرها لشدة بخلها",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "111:4#c7",
+          "section_ref": "111:4",
+          "attaches_to": "111:4",
+          "text": "Isrār Aḥmad reads the literal image as implausible: Umm Jamil was one of Quraysh's leading women, married to a wealthy, high-status man (Abū Lahab reportedly managed the Kaʿbah's treasury). It is unfitting, in his reading, to picture such a woman gathering firewood from the forest. He takes the phrase instead as a figure for her stoking mischief and hellfire through her deeds.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "یہ بات خلافِ عقل و قیاس ہے۔ ابولہب نہ صرف بہت مال دار تھا بلکہ معاشرتی لحاظ سے وہ اپنے زمانے کا بہت بڑا منصب دار بھی تھا",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "111:4#c8",
+          "section_ref": "111:4",
+          "attaches_to": "111:4",
+          "text": "In the Hereafter she will carry fuel and throw it upon her husband in Hell, adding to his torment, just as she assisted his disbelief and hostility in this world.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "she will carry the firewood and throw it upon her husband to increase that which he is in",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "relay",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "تتعاون هي وزوجها على الإثم والعدوان",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "relay",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "111:4#c9",
+          "section_ref": "111:4",
+          "attaches_to": "111:4",
+          "text": "Sayyid Quṭb reads the verse for its sound and imagery: the harsh consonants of the surah's language match the harshness of binding and hauling wood, so that the punishment described mirrors, in its very texture, the crime it answers.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric"
+        },
+        {
+          "id": "111:4#c10",
+          "section_ref": "111:4",
+          "attaches_to": "111:4",
+          "text": "A report states that when this sūrah was revealed, Umm Jamil came out in anger carrying a stone, intending to confront the Prophet ﷺ, who was sitting with Abū Bakr رضي الله عنه near the Kaʿbah. A veil was placed over her sight so she could not see the Prophet ﷺ, only Abū Bakr; she accused him of having composed satire against her, which Abū Bakr denied, and she then left.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "relay",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "Ibn Kathīr transmits the chain without stating its grade"
+          }
+        },
+        {
+          "id": "111:4#c11",
+          "section_ref": "111:4",
+          "attaches_to": "111:4",
+          "text": "On the figurative reading of \"firewood-carrier\" as tale-bearing, commentators note hadiths that a tale-bearer will not enter Paradise, recorded in the two Ṣaḥīḥs, and cite sayings such as Fuḍayl ibn ʿIyāḍ's that backbiting, tale-bearing and lying destroy good deeds, to underline how grave the sin is that the wife is being described by.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "لا يدخل الجنة نمام",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "recorded in the two Ṣaḥīḥs, as noted by Muftī Muḥammad Shafīʿ"
+          }
+        }
+      ],
+      "essay_html": "<p>The verse turns from Abū Lahab to his wife, calling her “the firewood-carrier” (ḥammālat al-ḥaṭab). She was Umm Jamīl, whose real name was Arwā bint Ḥarb, sister of Abū Sufyān. Commentators agree she backed her husband fully in his disbelief and in his hostility to the Prophet ﷺ.<sup class=\"ref\">2,3,4,7,11,14</sup></p>\n<p>Reciters differ on how the phrase is voweled. Most read it as a description of the wife; ʿĀṣim is reported to read it in a form that expresses blame, the way the Qur'an elsewhere calls the damned “cursed”.<sup class=\"ref\">1,2,3,9</sup></p>\n<p>Two readings of the phrase itself run through the commentary. Taken literally, she used to gather thorny branches and scatter them at night on the Prophet's ﷺ path, to hurt his feet and his companions'. This is reported through Ibn ʿAbbās, ʿAṭiyyah al-Jadalī, al-Ḍaḥḥāk and Ibn Zayd, and al-Ṭabarī (d. 923 CE) judged it the clearer of the two meanings, a preference al-Ṭanṭāwī later notes.<sup class=\"ref\">1,2,3,4,7,9,11,12,13,14</sup> Taken figuratively, “firewood-carrier” means a tale-bearer, someone who gathers gossip between people the way one gathers firewood, and so kindles enmity. This is attributed to Ibn ʿAbbās (in another route), Mujāhid, Qatādah, al-Suddī and ʿIkrimah.<sup class=\"ref\">1,2,3,7,9,11,12</sup></p>\n<p>A third reading, from Saʿīd ibn Jubayr, takes the phrase as “carrier of sins,” likened to the Qur'anic image of wrongdoers bearing their burdens on their backs.<sup class=\"ref\">2,3,11</sup> Qatādah adds a further note: she taunted the Prophet ﷺ with poverty, yet despite her own wealth was so miserly she carried firewood herself, and the title mocked that stinginess.<sup class=\"ref\">3</sup></p>\n<p>Isrār Aḥmad (d. 2010) reads the literal picture as implausible. Umm Jamīl was one of Quraysh's leading women, married to a wealthy, high-standing man. It does not fit, he argues, to picture such a woman gathering firewood from the forest. He takes the phrase instead as a figure for how her deeds stoked mischief and, ultimately, hellfire.<sup class=\"ref\">8</sup></p>\n<p>Several commentators carry the image into the Hereafter. There, she will carry fuel and cast it on her husband in Hell, adding to his torment, just as she helped his disbelief and his hostility in this world.<sup class=\"ref\">4,5,7,8,9,12,14</sup> Sayyid Quṭb (d. 1966) reads the verse also for its sound: the harshness of the words matches the harshness of binding and hauling wood, so the punishment described mirrors, in its very texture, the crime it answers.<sup class=\"ref\">6</sup></p>\n<p>A further report describes Umm Jamīl coming out in anger with a stone in her hand after the sūrah's revelation, meaning to confront the Prophet ﷺ, who sat with Abū Bakr رضي الله عنه near the Kaʿbah. A veil was placed over her sight so that she saw only Abū Bakr, whom she accused of composing satire against her; he denied it, and she left.<sup class=\"ref\">4,6,11</sup></p>\n<p>Where the figurative reading of tale-bearing is taken, commentators note that a tale-bearer is barred from Paradise according to a hadith recorded in the two Ṣaḥīḥs, and cite sayings such as Fuḍayl ibn ʿIyāḍ's that backbiting, tale-bearing and lying undo good deeds, to show how grave a description this is.<sup class=\"ref\">3,7</sup></p>\n<p class=\"close\">Whichever reading is taken, the commentary holds one woman up as her husband's partner in enmity, and pictures her, by the sources' own account, sharing his fire as she once shared his hostility.</p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:8ebbabdd09717c1597344759a84bc98fa1fcd61b76d3f3bcb084c8ae9e916d61",
+        "2": "sha256:c1ab399f0a3e8a50dd3e70c4bc374f01e55b13a4230ec84855e2230e22a4323e",
+        "3": "sha256:cff4c3b9abe6f5c135b84109da9dfd01001782f27b44c4d3db6ac230f5b97d81",
+        "4": "sha256:87c568595d15410b01a19c2e9b015fcc1d5689b4c62afb26ed39a4acf8e748bf",
+        "5": "sha256:8cd6e9a3e293aafc87662330e4069a61d1b3ada7b612362017057f14d8843fc7",
+        "6": "sha256:a115798f9f039d5fd2c62c5c32eecf230295b5bc8c48b89ab3a4f5794a4aa5a8",
+        "7": "sha256:08d94a975d54bdcc4fd833957bae354d12fec2674fbd5547acb81cf2ae0cc406",
+        "8": "sha256:8ac3d60181c27752dec8979d3495f1c58586b18393e72bfe1e960cff88488608",
+        "9": "sha256:493965110810410aed77cedef7b74817c08510119948290bbcfc77291da37c62",
+        "10": "sha256:937dcb9b60e36648eef8c59426d047da6730b1a5bac2bba0f562a6e0e24aa92a",
+        "11": "sha256:d9d825453f83ffef894ab5c216efa7d04db7cd2976e4142348b62cf996bd92b8",
+        "12": "sha256:e37130f8ca92b9d57bf5eb396a9e667d8eb8ae23f059488eea41a4ab78852cdd",
+        "13": "sha256:b171c78aae4426b721827095c2d6838993e4054a8322685f65b0a543b5f7a097",
+        "14": "sha256:ed43ecea0a713850c7a14997fb27b473f0d0bc66ff280c9c08b1ca4e04c480e7"
+      },
+      "flags": {
+        "creedal_stakes": "true",
+        "legal_content": "false",
+        "sensitive_content": "true"
+      },
+      "compiled_at": "2026-08-02"
+    },
+    "111:5": {
+      "verse_range": "5-5",
+      "title": "The Rope Round Her Neck",
+      "in_short": "The last line of the sūrah describes Abū Lahab's wife with a twisted rope round her neck; the commentators debate what the rope is made of, tell stories behind the image, and read it as part of a fulfilled prophecy against her and her husband.",
+      "claims": [
+        {
+          "id": "111:5#c1",
+          "section_ref": "111:5",
+          "attaches_to": "111:5",
+          "text": "Jīd simply means the neck or throat; it is the ordinary Arabic word for that part of the body.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "jīd",
+              "gloss": "the neck/throat"
+            }
+          ]
+        },
+        {
+          "id": "111:5#c2",
+          "section_ref": "111:5",
+          "attaches_to": "111:5",
+          "text": "Zakariyyā notes that jīd is specifically the word used for an adorned, jewellery-worthy neck. The choice is ironic: the very neck she decked out for pride will instead carry a rope.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "111:5#c3",
+          "section_ref": "111:5",
+          "attaches_to": "111:5",
+          "text": "Masad, at root, means to twist something tightly. As a general term it can describe any strongly twisted cord, whatever it is made from.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "masad",
+              "gloss": "a tightly twisted rope or cord"
+            }
+          ]
+        },
+        {
+          "id": "111:5#c4",
+          "section_ref": "111:5",
+          "attaches_to": "111:5",
+          "text": "One identification: the rope is made of palm-fibre or plant fibre (līf), matching common Arab usage of the word.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "111:5#c5",
+          "section_ref": "111:5",
+          "attaches_to": "111:5",
+          "text": "Another identification: an iron chain, seventy cubits long, that enters her mouth and comes out from behind, the rest wound round her neck, meant to torment her in Hell. Some also note the Arabs used masad for the iron rod turning a well's pulley, as linguistic support for reading it as iron.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded by the sources cited; attributed to Ibn ʿAbbās رضي الله عنه, ʿUrwah, and Mujāhid as tafsīr sayings"
+          }
+        },
+        {
+          "id": "111:5#c6",
+          "section_ref": "111:5",
+          "attaches_to": "111:5",
+          "text": "Muftī Muḥammad Shafīʿ states that most commentators prefer the iron-chain-in-Hell reading over the mundane firewood story, since such menial conduct seems hard to picture for a woman of Umm Jamīl's wealth and standing.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "111:5#c7",
+          "section_ref": "111:5",
+          "attaches_to": "111:5",
+          "text": "Another identification: the rope comes from a particular tree that grows in Yemen, itself called masad.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "111:5#c8",
+          "section_ref": "111:5",
+          "attaches_to": "111:5",
+          "text": "Another identification: a necklace of cowrie shells or beads worn round her neck.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "111:5#c9",
+          "section_ref": "111:5",
+          "attaches_to": "111:5",
+          "text": "Another identification: a rope of fire round her neck in the Hereafter, distinct from any worldly rope. al-Ḍaḥḥāk's version distinguishes the two: in this world it was fibre, in the Hereafter it becomes fire.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "111:5#c10",
+          "section_ref": "111:5",
+          "attaches_to": "111:5",
+          "text": "al-Ṭabarī's own conclusion, weighing the disagreement he collects: the rope is woven from a mixture of materials twisted together, which he supports from Arabic poetry where masad is used of composite twisted ropes.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "111:5#c11",
+          "section_ref": "111:5",
+          "attaches_to": "111:5",
+          "text": "A narrative reported: she used to gather firewood, tying the bundle with a rope she wore round her neck. One day, exhausted, she sat on a rock to rest, and was strangled by that same rope and died.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded by the sources cited"
+          }
+        },
+        {
+          "id": "111:5#c12",
+          "section_ref": "111:5",
+          "attaches_to": "111:5",
+          "text": "Saʿīd ibn al-Musayyib reported that she owned a precious necklace and swore by al-Lāt and al-ʿUzzā that she would spend its worth fighting Muhammad ﷺ. The rope of Hell is presented as what she is given in its place.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded by the sources cited"
+          }
+        },
+        {
+          "id": "111:5#c13",
+          "section_ref": "111:5",
+          "attaches_to": "111:5",
+          "text": "Ibn Kathīr relays an alternative account, from Ibn ʿAbbās, ʿAṭiyyah al-Jadalī, al-Ḍaḥḥāk and Ibn Zayd, that she used to place thorns in the path of the Prophet ﷺ, which some link to the verse's imagery.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "Ibn Kathīr relays without grading"
+          }
+        },
+        {
+          "id": "111:5#c14",
+          "section_ref": "111:5",
+          "attaches_to": "111:5",
+          "text": "al-Qurṭubī raises an objection: if this is her literal worldly rope of fibre, how can it persist eternally in the Fire without burning away? The answer given is that Allah is able to renew it each time it burns.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "111:5#c15",
+          "section_ref": "111:5",
+          "attaches_to": "111:5",
+          "text": "al-Qurṭubī also relays a figurative reading: the rope signifies her being cut off from faith (khidhlān), as though bound and prevented from believing because of the wretchedness already decreed for her, like someone bound by a rope round the neck.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "111:5#c16",
+          "section_ref": "111:5",
+          "attaches_to": "111:5",
+          "text": "al-Saʿdī offers two possible senses: she carries her sins the way a person gathers firewood, with the rope already prepared for her neck; or she will carry firewood in the Fire onto her husband, wearing the rope round her neck as she does so.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "111:5#c17",
+          "section_ref": "111:5",
+          "attaches_to": "111:5",
+          "text": "Several commentators hold that this sūrah's fulfilled prophecy is itself a manifest sign of the Prophet's truthfulness ﷺ: Allah declared, while Abū Lahab and his wife were still alive, that they would burn in the Fire, meaning neither would ever accept faith, and indeed both died as disbelievers exactly as foretold.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "111:5#c18",
+          "section_ref": "111:5",
+          "attaches_to": "111:5",
+          "text": "Sayyid Qutb reads the verse literarily: the rope ties into the sūrah's firewood-carrying image and its harsh, knot-like sound pattern. Taken literally, she carries a bundle of wood or thorns into Hell; taken figuratively, she stokes the fire of strife and mischief in this world.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric"
+        },
+        {
+          "id": "111:5#c19",
+          "section_ref": "111:5",
+          "attaches_to": "111:5",
+          "text": "Isrār Aḥmad contrasts the fine necklace she wears boastfully in this life with the rough twisted rope, like that of a firewood-gathering slave-woman, that will replace it in the Hereafter. He cites Shabbīr Aḥmad ʿUsmānī's suggestion that she may be made to carry thorny branches from the Hellish trees Zaqqūm and Ḍarīʿ, further inflaming her husband's torment.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "relay",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "111:5#c20",
+          "section_ref": "111:5",
+          "attaches_to": "111:5",
+          "text": "al-Muyassar describes the rope as a firmly twisted cord of harsh, rough fibre, by which she is hoisted up within the Fire and then cast down again to its depths.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        }
+      ],
+      "essay_html": "<p>The verse pictures Abū Lahab's wife with a rope round her neck. The commentators read every word of that image closely, and disagree, sometimes sharply, on what the rope actually is.</p><p>Jīd is simply the neck.<sup class=\"ref\">1,2,3,7</sup> Zakariyyā adds a pointed observation: this word is used for a neck worth adorning, so the choice is ironic. The neck she decked with jewellery will instead carry a rope.<sup class=\"ref\">11</sup> The word for the rope, masad, comes from a root meaning to twist tightly. In its plain sense it can describe any strongly twisted cord, whatever it is made of.<sup class=\"ref\">1,3,7,11,12</sup></p><p>From there the commentators diverge on the material. Some hold it is palm-fibre or plant fibre, in line with everyday Arab usage of the word.<sup class=\"ref\">2,3,7,12,13</sup> Others hold it is an iron chain seventy cubits long, entering her mouth and coming out from behind, the rest wound about her neck, a torment fashioned for her in the Fire. In support, some note the Arabs also used masad for the iron rod that turns a well's pulley.<sup class=\"ref\">1,2,3,4,7,11</sup> Muftī Muḥammad Shafīʿ notes that most commentators favour this iron reading over the everyday firewood story, since such menial conduct is hard to picture for a woman of her wealth and standing.<sup class=\"ref\">7</sup> Still other reports describe it as rope from a particular tree grown in Yemen, itself called masad,<sup class=\"ref\">1,2,3</sup> or as a necklace of cowrie shells or beads,<sup class=\"ref\">1,2,3</sup> or as a rope of fire distinct from any worldly rope, with al-Ḍaḥḥāk distinguishing: fibre in this world, fire in the Hereafter.<sup class=\"ref\">1,2,3</sup> Weighing all this, al-Ṭabarī rahimahu Allāh concludes the rope is woven from a mixture of materials twisted together, a reading he supports from Arabic poetry where masad describes just such a composite rope.<sup class=\"ref\">1</sup></p><p>Alongside the linguistic debate sit stories about her. One account has her gathering firewood with a rope round her neck, growing exhausted, sitting to rest on a rock, and being strangled by that very rope.<sup class=\"ref\">2,3</sup> Saʿīd ibn al-Musayyib reported that she owned a precious necklace and swore by al-Lāt and al-ʿUzzā to spend its worth fighting Muhammad ﷺ; several commentators present the rope of Hell as what replaces it.<sup class=\"ref\">2,3,9,11,14</sup> Ibn Kathīr rahimahu Allāh relays a further account, that she used to scatter thorns in the Prophet's ﷺ path.<sup class=\"ref\">4</sup> None of these narrations carry a strong chain, and the sources themselves leave them ungraded.</p><p>al-Qurṭubī rahimahu Allāh raises a question: if this is her literal worldly rope, how does it survive forever in the Fire without burning away? He answers that Allah is able to renew it each time it burns.<sup class=\"ref\">3</sup> He also relays a figurative reading, that the rope stands for her being shut out from faith, as though bound by the wretchedness already decreed for her.<sup class=\"ref\">3</sup> al-Saʿdī rahimahu Allāh offers two senses of his own: she carries her sins the way a person carries firewood, the rope already prepared for her neck, or she carries firewood in the Fire onto her husband, the rope round her neck as she does it.<sup class=\"ref\">5</sup></p><p>Several commentators draw out a wider point: the sūrah was revealed announcing this fate while the couple were still alive, and neither one of them ever believed before dying. That, for them, is itself a sign confirming the Prophet's truthfulness ﷺ.<sup class=\"ref\">3,5,9,14</sup> Sayyid Qutb rahimahu Allāh reads the verse for its craft: the rope ties to the sūrah's firewood image and its harsh, knotted sound. Taken literally she carries a bundle of wood into Hell; taken figuratively she stokes the fire of strife in this world.<sup class=\"ref\">6</sup> Isrār Aḥmad rahimahu Allāh sets her fine necklace of this life against the rough rope of the next, citing Shabbīr Aḥmad ʿUsmānī's suggestion that she may carry thorny branches of Zaqqūm and Ḍarīʿ to further inflame her husband's torment.<sup class=\"ref\">8</sup> al-Muyassar simply states that the rope, firmly twisted from harsh fibre, hoists her up in the Fire and casts her down again.<sup class=\"ref\">13</sup></p><p class=\"close\">Whatever the rope is made of, iron, fibre, or fire, the commentators agree that it turns her own pride, and her own hostility, into the very instrument of her disgrace.</p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:f51efcb051eb8ee1e5d85ec807426d0362379988978af690f31f0f4012f824d8",
+        "2": "sha256:86ee03f4f458f57d1084ad4c1881ccb781198d897cc840968fcb5508b32c0550",
+        "3": "sha256:804295a36391b2e5cfc6183b24029dee851fa6328e15835225a802a3f0f5d8ee",
+        "4": "sha256:3002807d8de4f9eb173e973830a578543ed6d7224fce97eed5c83262ef3e8e87",
+        "5": "sha256:c85539b2f0b7f03648cd30e4b291341f318a71e0fd0372eb077737dfbb2cf812",
+        "6": "sha256:3620608c283f87ef65a92178b24dfb8c07c0c9061794ff128adc33611fd493a9",
+        "7": "sha256:c3c5d322f42fd9b62ec29ebb792c0a4bdeb222fbea0abe140524e3b4c7a514e8",
+        "8": "sha256:e20385f81feddf0594152de2fb926c96e2393116ba8020b09cbdb1397ea9c4b0",
+        "9": "sha256:ab45e91551f7d659a360105cb59486eb69e0732e1752c19b7d0fa52cb1be9e96",
+        "10": "sha256:f86639f40c2c0d8c5158983a142bbaa64c8d351cf261b0d4f3a029fd8ee5bee5",
+        "11": "sha256:23c343270467068eb14e25767a1b1f38d592641c17dca4d5e03b32956914e038",
+        "12": "sha256:7bc00ad2dffdc0d2864c4f94ae42e6f9b7e2054d3801ce89c8cf935bc5692d82",
+        "13": "sha256:f73df3dff624f4f786f1837eae5871646b3f38eb97301a3d28f01c6e33172a2b",
+        "14": "sha256:dc4ca90da3e53ff00b4a1ac986d99683796498d71c3006c854bd28aabeeaa9cc"
+      },
+      "flags": {
+        "creedal_stakes": true,
+        "legal_content": false,
+        "sensitive_content": true
+      },
+      "compiled_at": "2026-08-02"
+    }
+  }
+}

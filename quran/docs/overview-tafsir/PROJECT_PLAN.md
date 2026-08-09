@@ -6,7 +6,7 @@ The goal is one compiled English **Overview** for every thematic section of the 
 
 ## Where we are
 
-At the last scan: **11 / 1,228 sections (0.9%)**, 2 surahs complete (Al-Aʿlā, aṭ-Ṭāriq), 12 commentators studied each. The store lives in `data/tafsir_overview/NNN.json`; the scanner counts what is there.
+**0 / 1,228 sections (grounded rebuild, 2026-07-27).** The earlier pilot (Al-Aʿlā, aṭ-Ṭāriq — 11 sections) was **cleared** as exploratory: its source list included editions the Quran Foundation API does not serve (memory-sourced), so the analysis could not be trusted. The store `data/tafsir_overview/NNN.json` is empty and ready for grounded output. What carries forward is stronger than what was cleared: a real API-grounded edition catalogue with author chronology and an English-vs-translate plan (`data/commentators.json`), a structured claim schema (`data/schemas/extracted_claim.schema.json`), and the 20-discipline panel's improvement plan (`docs/overview-tafsir/PANEL_REVIEW_ACTIONS.md`). See the updated `OVERVIEW_TAFSIR_SPEC.md` for the grounded pipeline.
 
 ## Why this needs a budget
 
@@ -81,4 +81,5 @@ Fill this in as real sessions complete, to replace the estimates above with meas
 
 | Date | Surahs done | Sections | Notes |
 |------|-------------|---------:|-------|
-| 2026-07-11 | 86, 87 | 11 | pilot + methodology + tracker built |
+| 2026-07-11 | 86, 87 | 11 | pilot + methodology + tracker built — **superseded; cleared 2026-07-27 (memory-sourced editions)** |
+| 2026-07-27 | — | 0 | grounded rebuild: real API catalogue, claim schema, panel review; store reset to zero |

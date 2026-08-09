@@ -1,0 +1,2209 @@
+{
+  "surah": 112,
+  "name": "",
+  "coverage": {
+    "editions_present": [
+      "ar-tafsir-al-tabari",
+      "ar-tafsir-al-baghawi",
+      "ar-tafseer-al-qurtubi",
+      "en-tafisr-ibn-kathir",
+      "ar-tafseer-al-saddi",
+      "tafsir-fe-zalul-quran-syed-qatab",
+      "en-tafsir-maarif-ul-quran",
+      "tafsir-bayan-ul-quran",
+      "ar-tafsir-al-wasit",
+      "tazkirul-quran-en",
+      "bn-tafsir-abu-bakr-zakaria",
+      "bn-tafsir-ahsanul-bayaan",
+      "ar-tafsir-muyassar",
+      "kurd-tafsir-rebar"
+    ],
+    "editions_absent": [],
+    "independent_works": 14,
+    "languages_present": [
+      "ar",
+      "bn",
+      "en",
+      "ku",
+      "ur"
+    ],
+    "languages_absent": []
+  },
+  "pipeline_provenance": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "overview-v2.3",
+    "theme_breaks_version": "sha256:99880ec7b10b53313690f91df9ee8d065519ee698df34b35a3336b5705218f90",
+    "compiled_at": "2026-08-02"
+  },
+  "modern_lens_framing": "The Qurʾan is taken here as fixed, revealed truth; science is our provisional, evolving account of the observable world. What follows notes where the two meet — a contemplation, not a proof. Where the science later shifts, that reflects the limits of our knowledge, not the text.",
+  "references": [
+    {
+      "n": 1,
+      "work_id": "al-tabari",
+      "label": "Jāmiʿ al-Bayān",
+      "author_id": "al-tabari",
+      "author": "Abū Jaʿfar Muḥammad ibn Jarīr al-Ṭabarī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 2,
+      "work_id": "al-baghawi",
+      "label": "Maʿālim al-Tanzīl",
+      "author_id": "al-baghawi",
+      "author": "Abū Muḥammad al-Ḥusayn ibn Masʿūd al-Baghawī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 3,
+      "work_id": "al-qurtubi",
+      "label": "al-Jāmiʿ li-Aḥkām al-Qurʾān",
+      "author_id": "al-qurtubi",
+      "author": "Abū ʿAbd Allāh Muḥammad ibn Aḥmad al-Qurṭubī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 4,
+      "work_id": "ibn-kathir",
+      "label": "Tafsīr Ibn Kathīr",
+      "author_id": "ibn-kathir",
+      "author": "Ismāʿīl ibn ʿUmar ibn Kathīr",
+      "source_language": "ar",
+      "note": "One independent voice. The ar/ur/bn editions are the SAME work — never count as separate corroboration."
+    },
+    {
+      "n": 5,
+      "work_id": "al-saadi",
+      "label": "Taysīr al-Karīm al-Raḥmān",
+      "author_id": "al-saadi",
+      "author": "ʿAbd al-Raḥmān ibn Nāṣir al-Saʿdī",
+      "source_language": "ar",
+      "note": "Russian edition (170) is the SAME work — translate from the Arabic original, and do not count Russian as an independent voice."
+    },
+    {
+      "n": 6,
+      "work_id": "fi-zilal",
+      "label": "Fī Ẓilāl al-Qurʾān",
+      "author_id": "sayyid-qutb",
+      "author": "Sayyid Quṭb Ibrāhīm Ḥusayn",
+      "source_language": "ar",
+      "note": "Original is Arabic, but the API here carries only an URDU edition — translating from Urdu is one step removed from the original. Prefer the Arabic original if the QF Content API offers it."
+    },
+    {
+      "n": 7,
+      "work_id": "maarif",
+      "label": "Maʿārif al-Qurʾān",
+      "author_id": "muhammad-shafi-usmani",
+      "author": "Muftī Muḥammad Shafīʿ ʿUthmānī",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 8,
+      "work_id": "bayan-ul-quran",
+      "label": "Bayān al-Qurʾān",
+      "author_id": "israr-ahmad",
+      "author": "Isrār Aḥmad",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 9,
+      "work_id": "wasit",
+      "label": "al-Tafsīr al-Wasīṭ",
+      "author_id": "tantawi",
+      "author": "Muḥammad Sayyid Ṭanṭāwī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 10,
+      "work_id": "tazkirul",
+      "label": "Tazkīr al-Qurʾān",
+      "author_id": "wahiduddin-khan",
+      "author": "Wahiduddin Khan",
+      "source_language": "ur",
+      "note": "en and ur editions are the same work."
+    },
+    {
+      "n": 11,
+      "work_id": "abu-bakr-zakaria",
+      "label": "Tafsir Abu Bakr Zakaria",
+      "author_id": "abu-bakr-zakaria",
+      "author": "Abū Bakr Muḥammad Zakariyyā",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 12,
+      "work_id": "ahsanul-bayaan",
+      "label": "Ahsanul Bayaan",
+      "author_id": "bayaan-foundation",
+      "author": "Ahsanul Bayaan (Bayaan Foundation)",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 13,
+      "work_id": "muyassar",
+      "label": "al-Tafsīr al-Muyassar",
+      "author_id": "committee-muyassar",
+      "author": "al-Tafsīr al-Muyassar (committee)",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 14,
+      "work_id": "rebar-kurdish",
+      "label": "Rebar Kurdish Tafsir",
+      "author_id": "rebar",
+      "author": "Rebar Kurdish Tafsir",
+      "source_language": "ku",
+      "note": ""
+    }
+  ],
+  "sections": {
+    "112:4": {
+      "verse_range": "4-4",
+      "title": "None Is Comparable to Him",
+      "in_short": "The final verse of the surah declares that absolutely nothing is comparable to Allah, in His essence, His names, His attributes, or His actions, closing the surah's rejection of every claim of offspring, partners, or equals.",
+      "claims": [
+        {
+          "id": "112:4#c1",
+          "section_ref": "112:4",
+          "attaches_to": "112:4",
+          "text": "The word 'kufuwan' means an equal, a match, a peer, one of the same rank. The verse means no one in existence resembles Allah in His essence, His attributes, or His actions.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "والكُفُؤُ والكُفَى والكِفَاء في كلام العرب واحد, وهو المِثْل والشِّبْه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "[ ومعناه ] المثل",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "أي لم يكن له مثلا أحد",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "This means that there is none similar to Him, none equal to Him and there is nothing at all like Him.",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "لا في أسمائه ولا في أوصافه، ولا في أفعاله",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "کُفْو کے معنی ہم سر کے ہیں",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "لم يكن أحد من خلقه مكافئاً ولا مشاكلا ولا مناظرا له",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "ولم يكن له مماثلا ولا مشابهًا أحد من خلقه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "كُفُوًا (kufuwan)",
+              "gloss": "an equal, a match, a peer"
+            }
+          ]
+        },
+        {
+          "id": "112:4#c2",
+          "section_ref": "112:4",
+          "attaches_to": "112:4",
+          "text": "The word is read in more than one way among the reciters: with a vowel throughout (kufuwan) or with a resting letter and a glottal stop (kufʾan). All the readings are recognised, correct forms of Arabic.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "فقرأ ذلك عامة قرّاء البصرة: (كُفُوا) بضم الكاف والفاء. وقرأه بعض قرّاء الكوفة بتسكين الفاء وهمزها",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "قرأ حمزة وإسماعيل : كفؤا ساكنة الفاء مهموزا ، وقرأ حفص عن عاصم بضم الفاء من غير همز",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وقرئ كفوا بضم الفاء وسكونها",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "112:4#c3",
+          "section_ref": "112:4",
+          "attaches_to": "112:4",
+          "text": "The natural word order would put 'aḥad' before 'kufuwan', but the sentence inverts it, bringing the predicate forward, so that this verse's ending matches the rhyme of the rest of the surah.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "وقيل : هو التقديم والتأخير ، مجازه : ولم يكن له أحد كفوا",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وفيه تقديم وتأخير ؛ تقديره : ولم يكن له كفوا أحد ؛ فقدم خبر كان على اسمها ، لينساق أواخر الآي على نظم واحد",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "112:4#c4",
+          "section_ref": "112:4",
+          "attaches_to": "112:4",
+          "text": "Early commentators differ on exactly what is being negated. Most (Abū al-ʿĀliyah, Kaʿb, Ibn ʿAbbās, Ibn Jurayj) take it as a general denial of any likeness or match whatsoever. Mujāhid reads it more specifically as a denial that Allah has a consort, linking it to the Qur'anic argument that He cannot have a child since He has no spouse.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "معنى ذلك: ولم يكن له شبيه ولا مِثْل ... وقال آخرون: معنى ذلك, أنه لم يكن له صاحبة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "Mujahid said, 'This means He does not have a spouse.' This is as Allah says ... (6:101)",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "112:4#c5",
+          "section_ref": "112:4",
+          "attaches_to": "112:4",
+          "text": "Kaʿb reported that Allah founded the seven heavens and the seven earths upon this surah, and that none of His creation matches Him.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "إن الله تعالى ذكره أسس السموات السبع, والأرضين السبع, على هذه السورة ... وإن الله لم يكافئه أحد من خلقه",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Ṭabarī (relays without grading; report from Kaʿb via Qatādah)"
+          }
+        },
+        {
+          "id": "112:4#c6",
+          "section_ref": "112:4",
+          "attaches_to": "112:4",
+          "text": "The verse closes the surah's rejection of every group that gave Allah rivals or offspring: the Jews who said ʿUzayr was God's son, the Christians who said the Messiah was God's son, the Zoroastrians who worshipped the sun and moon, the idolaters who worshipped idols, and those who made the angels God's daughters. The surah was itself prompted by idolaters asking the Prophet ﷺ to describe his Lord's lineage.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "the idolators said to the Prophet, 'O Muhammad! Tell us the lineage of your Lord.' ... 'Ikrimah said, 'When the Jews said, We worship Uzayr, the son of Allah...'",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "original_excerpt": "جووله‌كه‌ ئه‌یانووت: عوزێر كوڕی خوایه‌، گاوره‌كان ئه‌یانووت: عیسا كوڕی خوایه‌",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "112:4#c7",
+          "section_ref": "112:4",
+          "attaches_to": "112:4",
+          "text": "The negation covers all three domains: no equal in His names, no equal in His attributes, no equal in His actions. This makes the closing verse, together with the surah as a whole, an affirmation of the oneness of Allah's names and attributes (tawḥīd al-asmāʾ wa al-ṣifāt).",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "لا في أسمائه ولا في أوصافه، ولا في أفعاله ... فهذه السورة مشتملة على توحيد الأسماء والصفات",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "فى ذاته ، أو صفاته ، أو أفعاله",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "لا في أسمائه ولا في صفاته، ولا في أفعاله",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "112:4#c8",
+          "section_ref": "112:4",
+          "attaches_to": "112:4",
+          "text": "Sayyid Quṭb (d. 1966) reads 'aḥad' (in verse 1) as already meaning that only Allah's reality truly exists and only His will truly acts; nothing else has independent existence or independent agency. On this reading, verse 4's denial of any 'kufuw' simply spells out what 'aḥad' already contained: no partner in existence, no partner in agency, no partner in any attribute.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "نہ اسکا کوئی مماثل ہے اور نہ برابر ہے۔ نہ وجود کی حقیقت کے اعتبار سے ، نہ فاعلیت کے اعتبار سے",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "112:4#c9",
+          "section_ref": "112:4",
+          "attaches_to": "112:4",
+          "text": "Quṭb adds that this closing negation also rebuts the dualist Zoroastrian creed, which held that there are two gods, one of good and one of evil, a belief he says was also found among some in south Arabia under Persian influence.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "relay",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "یہ عقیدہ اس زرتشتی عقیدے کی تردید کرتا ہے کہ اللہ خیر کا الٰہ ہے اور شر کا الٰہ کوئی اور ہے",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "112:4#c10",
+          "section_ref": "112:4",
+          "attaches_to": "112:4",
+          "text": "Zakariyyā and Ahsanul Bayān cite other Qur'anic verses making the same point elsewhere (e.g. 42:11, 'nothing is like Him'; 4:171; 37:151-152; 6:100-101; 10:68; 17:111), treating them as parallel confirmations of this verse's denial of any equal or offspring for Allah.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "original_excerpt": "তাঁর মত কোন কিছুই নেই (সূরা শুরা ৪২:১১)",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "112:4#c11",
+          "section_ref": "112:4",
+          "attaches_to": "112:4",
+          "text": "A hadith recorded in Bukhari has Allah saying that the son of Adam curses Him by claiming He has taken a child, though the son of Adam had no right to say so, 'for I am al-Aḥad, al-Ṣamad, who did not beget and was not begotten, and none is comparable to Me.'",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "وأما شتمه إياي فقوله : اتخذ الله ولدا ، وأنا الأحد الصمد الذي لم ألد ولم أولد ولم يكن لي كفوا أحد",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "فَأَمَّا تَكْذِيبُهُ إِيَّايَ ... وَأَنَا الْأَحَدُ الصَّمَدُ، لَمْ أَلِدْ وَلَمْ أُولَدْ، وَلَمْ يَكُنْ لِي كُفُوًا أَحَد",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "original_excerpt": "আমি কাউকে না জন্ম দিয়েছি; না কারো হতে জন্ম নিয়েছি। আর না কেউ আমার সমতুল্য আছে",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "Bukhārī, as recorded by the sources"
+          }
+        },
+        {
+          "id": "112:4#c12",
+          "section_ref": "112:4",
+          "attaches_to": "112:4",
+          "text": "A separate hadith in Bukhari states that no one is more patient with hearing something offensive than Allah: people ascribe a child to Him, while He still provides for them and heals them.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "لَا أَحَدَ أَصْبَرُ عَلَى أَذًى سَمِعَهُ مِنَ اللهِ، يَجْعَلُونَ لَهُ وَلَدًا، وَهُوَ يَرْزُقُهُمْ وَيُعَافِيهِم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "Bukhārī, as cited by the sources"
+          }
+        },
+        {
+          "id": "112:4#c13",
+          "section_ref": "112:4",
+          "attaches_to": "112:4",
+          "text": "The surah, ending with this verse, is described in multiple hadiths as equivalent to a third of the Qur'an, because it gathers the names and attributes of Allah as one of the Qur'an's three great subjects.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "إنها لتعدل ثلث القرآن",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "الله الواحد الصمد ثلث القرآن",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "By He in Whose Hand is my soul, verily it is equivalent to a third of the Qur'an.",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "relay",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "original_excerpt": "'equivalent to one-third of the whole of the Quran'",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "Bukhārī and Muslim, as cited by the sources"
+          }
+        },
+        {
+          "id": "112:4#c14",
+          "section_ref": "112:4",
+          "attaches_to": "112:4",
+          "text": "Hadiths report that loving this surah, or reciting it in devotion to Allah's description as al-Raḥmān, secures the reciter's admission to Paradise, with the Prophet ﷺ telling one companion 'wajabat' (Paradise has become due) upon hearing him recite it.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "حبك إياها أدخلك الجنة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "فقال رسول الله : وجبت . فسألته : ماذا يا رسول الله ؟ فقال : الجنة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "«وَجَبَت» (It is obligatory.) I asked, 'What is obligatory' He replied, «الْجَنَّة» (Paradise.)",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "hasan",
+            "graded_by": "al-Tirmidhī, as cited by al-Qurṭubī and Ibn Kathīr (\"Hasan Sahih Gharib\")"
+          }
+        },
+        {
+          "id": "112:4#c15",
+          "section_ref": "112:4",
+          "attaches_to": "112:4",
+          "text": "Al-Qurṭubī catalogues many further reports promising specific rewards for repeated recitation of this surah, such as palaces built in Paradise or decades of sins forgiven. He himself notes that several of these chains are gharīb (unusual, thinly transmitted), so they should be weighed with caution.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "قال : هذا حديث غريب من حديث ثابت عن أنس",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "daif",
+            "graded_by": "al-Tirmidhī (gharīb), as noted by al-Qurṭubī himself"
+          }
+        },
+        {
+          "id": "112:4#c16",
+          "section_ref": "112:4",
+          "attaches_to": "112:4",
+          "text": "A hadith reports a man supplicating with words including 'al-Aḥad, al-Ṣamad ... and none is comparable to Him', after which the Prophet ﷺ said he had called upon Allah by His greatest name, the name by which, if asked, Allah gives, and by which, if invoked, He answers.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "original_excerpt": "যার হাতে আমার প্রাণ তার শপথ করে বলছি, এ লোকটি আল্লাহ্‌কে তাঁর এমন মহান নামে ডাকল",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not explicitly graded in the cited sources (referenced to Abū Dāwūd, al-Tirmidhī, Ibn Mājah, Musnad Aḥmad)"
+          }
+        }
+      ],
+      "essay_html": "<p>The surah ends by ruling out any equal to Allah altogether. The word used, kufuwan (كُفُوًا), means an equal, a match, a peer, someone of the same rank. Nearly every commentator takes the verse the same way: nothing resembles Allah, not in His essence, not in His attributes, not in His actions.<sup class=\"ref\">1,2,3,4,5,7,8,9,11,12,13,14</sup></p><p>Two small technical points sit inside the wording. The word is read two ways among the reciters, once fully vowelled and once with a resting letter and a glottal stop, and both are recognised, correct Arabic.<sup class=\"ref\">1,2,3</sup> The sentence also reverses its natural word order, putting the predicate 'kufuwan' before its subject 'aḥad', so that this closing line rhymes with the rest of the surah.<sup class=\"ref\">2,3</sup></p><p>Early commentators read the negation two ways. Most, including Abū al-ʿĀliyah, Kaʿb, Ibn ʿAbbās and Ibn Jurayj, take it as a plain denial of any likeness whatsoever.<sup class=\"ref\">1</sup> Mujāhid reads it more narrowly: Allah has no consort. Ibn Kathīr (d. 1373 CE) connects this to the Qur'an's own argument elsewhere, that Allah cannot have a child because He has no spouse.<sup class=\"ref\">1,4</sup></p><p>Al-Saʿdī (d. 1957 CE) and al-Muyassar note that the denial covers three domains together: no equal in His names, none in His attributes, none in His actions, making this verse, and the surah as a whole, an affirmation of the oneness of His names and attributes.<sup class=\"ref\">5,9,13</sup> Sayyid Quṭb (d. 1966 CE) reads it alongside 'aḥad' in the opening verse: if only Allah truly exists and only His will truly acts, then this verse simply spells that out, no partner in existence, no partner in agency, no partner in any attribute. He adds that the same negation rebuts the old Zoroastrian belief in two gods, one of good and one of evil, a creed he says had also spread into parts of south Arabia.<sup class=\"ref\">6</sup></p><p>The verse closes the surah's answer to everyone who gave Allah a rival or a child: Jews who called ʿUzayr God's son, Christians who called the Messiah God's son, Zoroastrians who worshipped sun and moon, idolaters who worshipped idols or made the angels His daughters. Ibn Kathīr records that the surah itself was prompted by idolaters asking the Prophet ﷺ to describe his Lord's lineage.<sup class=\"ref\">4,14</sup> Zakariyyā and Ahsanul Bayān point to the same theme repeated elsewhere in the Qur'an, such as 'nothing is like Him' (42:11).<sup class=\"ref\">11,12</sup> Al-Ṭabarī also relays a report from Kaʿb that Allah founded the seven heavens and seven earths upon this surah, and that none of His creation matches Him, a report left without further grading.<sup class=\"ref\">1</sup></p><p>Several hadiths sit around this final verse. One, in Bukhari, has Allah say that the son of Adam curses Him by claiming He has taken a child, 'while I am al-Aḥad, al-Ṣamad, who did not beget and was not begotten, and none is comparable to Me.'<sup class=\"ref\">2,4,12,14</sup> Another, also in Bukhari, says no one is more patient with hearing something offensive than Allah, since people ascribe a child to Him while He still provides for them and heals them.<sup class=\"ref\">4,14</sup> The surah as a whole, closing on this verse, is called by the Prophet ﷺ the equal of a third of the Qur'an.<sup class=\"ref\">2,3,4,10</sup> Further hadiths report that loving the surah, or reciting it, brings Paradise, with the Prophet ﷺ telling one companion 'wajabat' on hearing him recite it.<sup class=\"ref\">2,3,4</sup> Al-Qurṭubī (d. 1273 CE) gathers still more promises attached to repeated recitation, but flags several of these chains himself as gharīb, unusual and thinly transmitted, so they carry less weight than the well-established reports.<sup class=\"ref\">3</sup> One further report has the Prophet ﷺ telling a man who prayed using these very words, al-Aḥad, al-Ṣamad, wa lam yakun lahu kufuwan aḥad, that he had called upon Allah's greatest name.<sup class=\"ref\">4,11</sup></p><p class=\"close\">The surah's last word leaves nothing standing beside Allah, not in being, not in name, not in attribute, not in act, and the commentators read every verse of it as building toward that single, unshared claim.</p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:54325190ced3911a3a2f9b764fe64c58f653157a33d8761a4f1634ebb9186c77",
+        "2": "sha256:54b5d1253c874e858c42584922de264f61f91085010df15da37e5adb90d855ba",
+        "3": "sha256:e5380f8ccd261362ba68838efd71fecb164b35686fe23aadd688736a9189c712",
+        "4": "sha256:40c9ebea384245724f8a3d553a7854119b481d552610413f8180dbd8ed57d9d8",
+        "5": "sha256:d8e7818dadc1e3afd4f78ceeea757d3e92bc024897f899a13bcf188b05dcc583",
+        "6": "sha256:d90301827bf5b1c4631e5d94040358f73a6db1b26fc1eaef6fc40156098200fa",
+        "7": "sha256:5f70d5c872457dce6e2442c2433006e08b59b93985f49f583816bf6be0dc72f2",
+        "8": "sha256:1ae2e5dc07fcd319161a9b6cbd7965ed747d5d781abef94d9f1f8848cbc31ba1",
+        "9": "sha256:bb04d23541cd6be6bbfecbd9e806db3ae0c3ee3c2048f7724e9ae88af1238d66",
+        "10": "sha256:44b1d2421c6e3ea5ae5eeb19c0c8e9a30d43bacc5f815859ebb2f199e31c52d3",
+        "11": "sha256:ed188a924dc9ff463882eedbdd0814fb4de7cc841a7079be60599b6ec5c04c57",
+        "12": "sha256:77d358904d1ba4378b370a34a04a75582addcac853208c8e8e7e69a37c60883e",
+        "13": "sha256:9121fa4b5292acb4f51cd5abb3dd911713989b8646ebe9e0a268e9748bd089e4",
+        "14": "sha256:a7a46f6c0a439c78d142069bed8c96df21bd3ed96f380e3408b4e2766ebd4fda"
+      },
+      "flags": {
+        "creedal_stakes": true,
+        "legal_content": false,
+        "sensitive_content": false
+      },
+      "compiled_at": "2026-08-02"
+    },
+    "112:3": {
+      "verse_range": "3-3",
+      "title": "No Child, No Parent",
+      "in_short": "This verse says Allah has no child and is no one's child, closing off every claim, Jewish, Christian, Zoroastrian, or pagan, that gives Him a lineage.",
+      "claims": [
+        {
+          "id": "112:3#c1",
+          "section_ref": "112:3",
+          "attaches_to": "112:3",
+          "text": "Idolaters asked the Prophet ﷺ to state the lineage of his Lord, and this surah was revealed in answer. Attached to this report is an explanation that al-Ṣamad (the Self-Sufficient Master all creation depends on) is the one who neither begets nor is begotten, because whatever is born will die, and whatever dies leaves behind an inheritance, while Allah neither dies nor leaves an inheritance. Rebar reasons to the same conclusion independently: whoever is born will die and is succeeded by an heir, but death does not touch Allah and no one takes His place.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "لأنه ليس شيء يولد إلا سيموت، وليس شيء يموت إلا سيورث",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "original_excerpt": "هه‌ر كه‌سێك له‌ دایك بێ ئیلا ئه‌مرێ",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "original_terms": [
+            {
+              "term": "al-Ṣamad",
+              "gloss": "the Self-Sufficient Master upon whom all creation depends"
+            }
+          ],
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "reports differ: al-Qurṭubī attributes a sound (ṣaḥīḥ) verdict to al-Tirmidhī on one route, while Ibn Kathīr reports al-Tirmidhī called another route mursal (missing a link) and 'most correct' in that form"
+          }
+        },
+        {
+          "id": "112:3#c2",
+          "section_ref": "112:3",
+          "attaches_to": "112:3",
+          "text": "Ibn Kathīr relays from ʿIkrimah that this surah answers four rival claims current at the time: the Jews said ʿUzayr was Allah's son, the Christians said the Messiah was Allah's son, the Zoroastrians worshipped the sun and moon, and the idolaters worshipped idols.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "112:3#c3",
+          "section_ref": "112:3",
+          "attaches_to": "112:3",
+          "text": "Al-Qurṭubī relays from Ibn ʿAbbās a reading tied to the words themselves: 'He did not beget' as Mary brought forth a child, and 'He was not begotten' as Jesus and ʿUzayr were born. This is read as a direct rebuttal of the Christians and of anyone who called ʿUzayr the son of Allah.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "لم يلد كما ولدت مريم، ولم يولد كما ولد عيسى وعزير",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "112:3#c4",
+          "section_ref": "112:3",
+          "attaches_to": "112:3",
+          "text": "Al-Ṭabarī reads the two negations as statements about permanence: 'He did not beget' means He is not perishable (fānī), since everything that gives birth is itself something that will perish; 'nor was He begotten' means He is not something brought into being (muḥdath), since everything born comes to exist after not existing. Allah, by contrast, is eternal (qadīm), everlasting, and neither ceases nor perishes.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "ولكنه تعالى ذكره قديم لم يزل، ودائم لم يبد",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "fānī",
+              "gloss": "perishable"
+            },
+            {
+              "term": "muḥdath",
+              "gloss": "originated, brought into being after not existing"
+            },
+            {
+              "term": "qadīm",
+              "gloss": "eternal, without beginning"
+            }
+          ]
+        },
+        {
+          "id": "112:3#c5",
+          "section_ref": "112:3",
+          "attaches_to": "112:3",
+          "text": "Sayyid Quṭb explains why birth is impossible for Allah: birth means splitting, growth, moving from non-existence into existence or from deficiency toward perfection, and Allah's being is already complete in every state, free of any such change. Birth also requires a mate of the same kind (jins) as the one who begets, which is likewise impossible for Allah. Being described as al-Aḥad already contains within it that He is neither anyone's father nor anyone's son.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "ولادت کا عمل سب کو معلوم ہے کہ پھٹنے اور بڑھنے سے عبارت ہے",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning",
+          "original_terms": [
+            {
+              "term": "jins",
+              "gloss": "kind or genus"
+            }
+          ]
+        },
+        {
+          "id": "112:3#c6",
+          "section_ref": "112:3",
+          "attaches_to": "112:3",
+          "text": "Ṭanṭāwī explains: to beget requires matter to separate from oneself, and this means composition (tarkīb), which contradicts both Allah's Oneness (aḥadiyyah) and His Self-Sufficiency (ṣamadiyyah); a child also shares the same kind as its parent, impossible for Allah. To be begotten carries the same problem of composition, or else implies prior non-existence or a shared kind, none of which can be true of the One who is al-Awwal (the First) and al-Ākhir (the Last).",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "لأن الولادة تقتضى انفصال مادة منه، وذلك يقتضى التركيب المنافى للأحدية والصمدية",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning",
+          "original_terms": [
+            {
+              "term": "tarkīb",
+              "gloss": "composition, being made of parts"
+            },
+            {
+              "term": "aḥadiyyah",
+              "gloss": "Oneness"
+            },
+            {
+              "term": "ṣamadiyyah",
+              "gloss": "Self-Sufficiency"
+            }
+          ]
+        },
+        {
+          "id": "112:3#c7",
+          "section_ref": "112:3",
+          "attaches_to": "112:3",
+          "text": "Al-Saʿdī ties the point to al-Ṣamad directly: not begetting and not being begotten belong to Allah's perfection, flowing from His complete self-sufficiency.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "ومن كماله أنه لم يلد ولم يولد لكمال غناه",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "112:3#c8",
+          "section_ref": "112:3",
+          "attaches_to": "112:3",
+          "text": "Several commentators state the point plainly: begetting is a trait of created beings, not of the Creator, so Allah has no analogy with His creation, has no child, and is no one's child.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "original_excerpt": "সন্তান প্ৰজনন সৃষ্টির বৈশিষ্ট্য-স্রষ্টার নয়",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "original_excerpt": "তাঁর থেকে কিছু উদ্ভূত নয় এবং তিনিও কিছু থেকে উদ্ভূত নন",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "ليس له ولد ولا والد ولا صاحبة",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "112:3#c9",
+          "section_ref": "112:3",
+          "attaches_to": "112:3",
+          "text": "Wahiduddin Khan adds that having no offspring and no parent makes Allah eternal, without beginning or end, and therefore a unique Being with no equal.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "112:3#c10",
+          "section_ref": "112:3",
+          "attaches_to": "112:3",
+          "text": "Isrār Aḥmad reads the verse as negating that Allah has offspring or is offspring of anyone, cross-referencing Surah al-Jinn's statement that Allah 'has not taken for Himself a consort or a child.' He applies this against the Christian belief that Jesus (عليه السلام) is Allah's son, some Jewish sects' belief that ʿUzayr (عليه السلام) is Allah's son, and the Arab polytheists' claim that the angels are Allah's daughters.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "مشرکین عرب فرشتوں کو اللہ تعالیٰ کی بیٹیاں بتاتے تھے",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "112:3#c11",
+          "section_ref": "112:3",
+          "attaches_to": "112:3",
+          "text": "Ibn Kathīr draws together that 'He did not beget, nor was He begotten' means Allah has no child, no parent, and no spouse, linking this to Mujāhid's note that having no equal (in the next verse) also means having no spouse, since begetting needs a mate. He supports the point with further Qurʾanic verses that call it unfitting for al-Raḥmān to have taken a son.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning",
+          "original_terms": [
+            {
+              "term": "kufuwan",
+              "gloss": "comparable, an equal or match"
+            }
+          ]
+        },
+        {
+          "id": "112:3#c12",
+          "section_ref": "112:3",
+          "attaches_to": "112:3",
+          "text": "A hadith in Ṣaḥīḥ al-Bukhārī has Allah describe a man's saying 'Allah has taken a son' as a curse against Him that the man has no right to utter, and answers it in His own words: 'I am al-Aḥad, al-Ṣamad. I have not begotten, and I was not begotten, and there is none comparable to Me.'",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "original_excerpt": "অথচ আমি একক, সামাদ, জন্মগ্রহণ করিনি এবং কাউকে জন্মও দেইনি",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "al-Bukhārī, as cited by Ibn Kathīr and Abū Bakr Zakariyyā"
+          }
+        }
+      ],
+      "essay_html": "<p>This verse settles two questions at once. Allah has no offspring, and Allah has no parent.<sup class=\"ref\">1,7,9,11,12,13</sup> The commentators trace this to a question once put to the Prophet ﷺ.</p><p>Idolaters are reported to have asked him, 'Give us the lineage of your Lord', and this surah came down in reply.<sup class=\"ref\">3,4</sup> Tied to that report is an explanation of al-Ṣamad, the Self-Sufficient Master all creation depends on: He neither begets nor is begotten, because whatever is born will die, and whatever dies leaves behind an inheritance, while Allah neither dies nor leaves an inheritance.<sup class=\"ref\">3,4</sup> Reports of al-Tirmidhī's own verdict on this chain differ between the sources: one calls it sound, another says he judged one route to be missing a link yet still the most correct form of it.<sup class=\"ref\">3,4</sup> Rebar reaches the same conclusion by the same logic, without citing the report: whoever is born will die and is succeeded by an heir, but death does not touch Allah and no one takes His place.<sup class=\"ref\">14</sup></p><p>Ibn Kathīr (d. 1373) relays from ʿIkrimah that the whole surah answers four rival claims of the time: the Jews who said ʿUzayr was Allah's son, the Christians who said the Messiah was Allah's son, the Zoroastrians who worshipped the sun and moon, and the idolaters who worshipped idols.<sup class=\"ref\">4</sup> Al-Qurṭubī (d. 1273) relays from Ibn ʿAbbās a reading fixed on the wording itself: 'He did not beget' as Mary brought forth a child, and 'He was not begotten' as Jesus and ʿUzayr were born, read as a direct answer to the Christians and to anyone who called ʿUzayr the son of Allah.<sup class=\"ref\">3</sup> Isrār Aḥmad (d. 2010) draws the same line, adding the Arab polytheists who called the angels Allah's daughters, and pointing to Surah al-Jinn's confirmation that Allah 'has not taken for Himself a consort or a child'.<sup class=\"ref\">8</sup></p><p>Al-Ṭabarī (d. 923) reads the two negations as statements about permanence rather than lineage as such. 'He did not beget' means He is not perishable (fānī), since everything that gives birth is itself something that will perish. 'Nor was He begotten' means He is not something brought into being (muḥdath), since everything born comes to exist after not existing. Allah, by contrast, is eternal (qadīm), everlasting, and neither ceases nor perishes.<sup class=\"ref\">1</sup></p><p>Sayyid Quṭb (d. 1966) and Ṭanṭāwī (d. 2010) press the reasoning further. Quṭb notes that birth means splitting, growth, a movement from non-existence into existence or from deficiency toward perfection, and Allah's being is complete in every state, free of all such change.<sup class=\"ref\">6</sup> Birth also needs a mate of the same kind (jins) as the one who begets, which is likewise impossible for Him. Being al-Aḥad already contains within it that He is neither father nor son to anyone.<sup class=\"ref\">6</sup> Ṭanṭāwī makes a related point: to beget requires matter to separate off from oneself, and that means composition (tarkīb), which contradicts both His Oneness (aḥadiyyah) and His Self-Sufficiency (ṣamadiyyah).<sup class=\"ref\">9</sup> To be begotten carries the same problem, or else implies He once did not exist, or that He shares a kind with something else, none of which can be true of the One who is al-Awwal, the First, and al-Ākhir, the Last.<sup class=\"ref\">9</sup></p><p>Al-Saʿdī (d. 1957) ties the same conclusion to al-Ṣamad: not begetting and not being begotten belong to Allah's perfection, flowing from His complete self-sufficiency.<sup class=\"ref\">5</sup> Several later commentators restate the point in plain terms, that begetting is a trait of created things, not of the Creator, so Allah has no child and is no one's child.<sup class=\"ref\">7,11,12,13</sup> Wahiduddin Khan (d. 2021) adds that this makes Him eternal, without beginning or end, and so a unique Being with no equal.<sup class=\"ref\">10</sup></p><p>Ibn Kathīr draws in further Qurʾanic support, verses elsewhere that call it unfitting for al-Raḥmān to have taken a son, and recalls Mujāhid's note that having no equal also means having no spouse, since begetting needs one.<sup class=\"ref\">4</sup> He and Abū Bakr Zakariyyā both carry a hadith in Ṣaḥīḥ al-Bukhārī in which Allah answers the words 'Allah has taken a son' as a curse spoken against Him without right, replying in His own words: 'I am al-Aḥad, al-Ṣamad. I have not begotten, and I was not begotten, and there is none comparable to Me.'<sup class=\"ref\">4,11</sup></p><p class=\"close\">Across every voice the line holds the same shape: whatever is born perishes and whatever begets is itself made of parts, and Allah is neither, but eternal, complete, and answerable to no lineage at all.<sup class=\"ref\">1,5,6,9</sup></p>",
+      "sources_used": [
+        "1",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:7242b837acd8afd79a3a349e7f0e0e84dc669d2daac939df988d5640ba900d99",
+        "2": "sha256:c15e785b2b9a9cc5b370d460bd60795a4bd6c03191d1ef1ca272a8247b64a054",
+        "3": "sha256:947fcc29b953de9e09a76c671794c2a2193311c3d53e748e197edb428f9eab11",
+        "4": "sha256:98e74d5c2579a32c225fa97289ab92783c11948d5ed94cf1461fa2cae35f07da",
+        "5": "sha256:e3aa46166e70ae183bf800bb77626e78cdfb8a67cd9d2141ba2ed91b6515881c",
+        "6": "sha256:fd4dd8e140d29059df8d78abe2e8d423c7ffc27115773709e3d80410ff72500c",
+        "7": "sha256:76ae3d55ba8b220dc56c5d3c18bc6e55ee4bda9279269d452173257eb44484b2",
+        "8": "sha256:42c48579044d2e40d1519b76c7a243d6e15a26b78c86da9eaaf50a989318c8e3",
+        "9": "sha256:2faf3a5cdaf9b24f532e29170fcb7b0996525ebb013602486736caa061694e65",
+        "10": "sha256:a29698eaf5082d27697155f3cbe0bd21e6e9d80ac0f96e18f176b1d2b539f8f0",
+        "11": "sha256:c74553305e16f7bf73d2b7ef381944f6ce4f07671f447dcfb524a400f225aa74",
+        "12": "sha256:827b59f6896577748129b54b46b296f0d1e46b273069d588d4f9544cccafbc11",
+        "13": "sha256:512089a4d2418e60a86973cde6ec5d364259ddad45fd2ebeca7e0f65d0ddda8f",
+        "14": "sha256:a38aac7392cbcbb755e839fe738641350fc37ad4a73e3ac9e97f9801feda80ee"
+      },
+      "flags": {
+        "creedal_stakes": true,
+        "legal_content": false,
+        "sensitive_content": false
+      },
+      "compiled_at": "2026-08-02"
+    },
+    "112:1": {
+      "verse_range": "1-2",
+      "title": "Allah: al-Aḥad and al-Ṣamad",
+      "in_short": "This opens Surah al-Ikhlas: the Prophet ﷺ is told to answer questions about God's nature by declaring Allah al-Aḥad (utterly One) and al-Ṣamad (the One all creation depends on, who depends on none).",
+      "claims": [
+        {
+          "id": "112:1#c1",
+          "section_ref": "112:1",
+          "attaches_to": "112:1",
+          "text": "The surah was revealed when the polytheists (or, in another version, a group of Jewish questioners, sometimes named as ʿĀmir ibn al-Ṭufayl and Arbad ibn Rabīʿah) asked the Prophet ﷺ to describe or give the lineage of his Lord, and some reports add they asked whether He was made of gold, silver, or some other material.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "reports vary; Ibn Kathīr notes Aḥmad, al-Tirmidhī and Ibn Jarīr recorded a version, with Ibn Abī Ḥātim's chain, and al-Tirmidhī termed it mursal, saying it is 'the most correct'"
+          }
+        },
+        {
+          "id": "112:1#c2",
+          "section_ref": "112:1",
+          "attaches_to": "112:1",
+          "text": "Because the reports disagree on whether the questioners were Meccan polytheists or Jews of Medina, commentators differ on whether this surah is Makkan or Madinan.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "112:1#c3",
+          "section_ref": "112:1",
+          "attaches_to": "112:1",
+          "text": "Aḥad carries a fuller sense than Wāḥid: it excludes any composition, resemblance, partner, or helper, and (as one reading develops it) denies that anything besides Allah possesses independent reality of its own - everything else draws its being from Him. The word can truthfully be applied to no one but Allah, since only He is perfect in every attribute and act.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning",
+          "original_terms": [
+            {
+              "term": "أحد (Aḥad)",
+              "gloss": "the One - absolute, uncompounded oneness"
+            },
+            {
+              "term": "واحد (Wāḥid)",
+              "gloss": "one - ordinary numerical oneness"
+            }
+          ]
+        },
+        {
+          "id": "112:1#c4",
+          "section_ref": "112:1",
+          "attaches_to": "112:1",
+          "text": "Against this, al-Baghawī holds there is no real difference between Wāḥid and Aḥad, and cites Ibn Masʿūd's variant recitation reading 'al-Wāḥid' in this place.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "112:1#c5",
+          "section_ref": "112:1",
+          "attaches_to": "112:1",
+          "text": "Lexically, Aḥad derives from the root of Waḥd, with the wāw changed to a hamza.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "112:1#c6",
+          "section_ref": "112:1",
+          "attaches_to": "112:1",
+          "text": "Grammarians disputed the syntax of 'Aḥad' - whether 'Allah' functions as a supporting pronoun before it, or the clause is a fresh independent statement; after surveying the views, al-Ṭabarī prefers reading Aḥad simply as 'One,' in line with ordinary Arabic usage.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "112:1#c7",
+          "section_ref": "112:1",
+          "attaches_to": "112:1",
+          "text": "A minority recitation drops the tanwīn ('Aḥadu Allah') for phonetic ease before a following alif-lām; al-Ṭabarī holds the standard reading with tanwīn to be the more correct, on grounds of eloquence and the agreement of the leading reciters of the main cities.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "112:1#c8",
+          "section_ref": "112:1",
+          "attaches_to": "112:1",
+          "text": "The imperative 'Say' (Qul) commands the Prophet ﷺ directly to give this answer to those who questioned him, marking his role as Messenger; after him, the same words are carried by every believer who recites the surah.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric"
+        },
+        {
+          "id": "112:1#c9",
+          "section_ref": "112:1",
+          "attaches_to": "112:1",
+          "text": "The pronoun 'Huwa' (He) functions as a pronoun of the affair - it introduces something momentous while still undefined, creating suspense that is then resolved and given weight by what follows.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "112:1#c10",
+          "section_ref": "112:1",
+          "attaches_to": "112:1",
+          "text": "A report through ʿIkrimah holds that the verse answers every group that had ascribed a child to God - Jews who called ʿUzayr a son of God, Christians who called the Messiah a son of God, Zoroastrians who worshipped sun and moon, and idolaters who worshipped idols - declaring Allah singular, without peer, helper, rival, or equal.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "Ibn Kathīr, relaying from ʿIkrimah"
+          }
+        },
+        {
+          "id": "112:1#c11",
+          "section_ref": "112:1",
+          "attaches_to": "112:1",
+          "text": "Numerous hadiths attest to the surah's virtues: it is likened to a third of the Qur'an, loving it is said to bring its reciter into Paradise, the Prophet ﷺ recited it nightly with al-Falaq and al-Nās while blowing on his cupped hands and wiping his body, and reciting it morning and evening is described as sufficing against harm.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "relay",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "as cited by Ibn Kathīr from al-Bukhārī and Muslim, with some items marked ḥasan ṣaḥīḥ gharīb by al-Tirmidhī"
+          }
+        },
+        {
+          "id": "112:1#c12",
+          "section_ref": "112:1",
+          "attaches_to": "112:1",
+          "text": "The subject of the opening is God's pure oneness, presented stripped of every corrupting association that people across the ages have attached to the concept of God.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "112:1#c13",
+          "section_ref": "112:1",
+          "attaches_to": "112:1",
+          "text": "Several commentators unpack Aḥad as exclusive possession of every divine perfection: alone in lordship and godship, sole creator and controller of the universe; oneness confined exclusively to Him, complete in every beautiful name and attribute without peer; possessing divinity, lordship, names, and attributes with none sharing in them.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "112:1#c14",
+          "section_ref": "112:1",
+          "attaches_to": "112:2",
+          "text": "The most repeated explanation of al-Ṣamad is: the One to whom all creation turns for its needs, while He needs no one at all - everyone depends on Him, He depends on none.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning",
+          "original_terms": [
+            {
+              "term": "الصمد (al-Ṣamad)",
+              "gloss": "the One all creation turns to and depends on, who depends on none"
+            }
+          ]
+        },
+        {
+          "id": "112:1#c15",
+          "section_ref": "112:1",
+          "attaches_to": "112:2",
+          "text": "Early exegetes (Ibn ʿAbbās, Mujāhid, al-Ḥasan, Saʿīd ibn Jubayr, al-Shaʿbī, al-Ḍaḥḥāk) explained al-Ṣamad literally: the One with no hollow or cavity, who does not eat or drink; a related report from ʿIkrimah held that nothing emerges from Him.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "112:1#c16",
+          "section_ref": "112:1",
+          "attaches_to": "112:2",
+          "text": "A report from Abū al-ʿĀliyah via Ubayy ibn Kaʿb ties the meaning of al-Ṣamad to the next verse: He neither begets nor is begotten, because whatever begets will die and be inherited from, whereas Allah does not die and leaves no inheritance.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "112:1#c17",
+          "section_ref": "112:1",
+          "attaches_to": "112:2",
+          "text": "Another line of explanation (Abū Wāʾil Shaqīq ibn Salama; ʿAlī and Ibn ʿAbbās via ʿAlī ibn Abī Ṭalḥa) holds that al-Ṣamad is the Chief (al-Sayyid) whose mastery, nobility, forbearance, knowledge, and wisdom have reached complete perfection in every kind of nobility and authority.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "112:1#c18",
+          "section_ref": "112:1",
+          "attaches_to": "112:2",
+          "text": "Qatādah and al-Ḥasan explained al-Ṣamad as the Everlasting who remains after His creation perishes.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "112:1#c19",
+          "section_ref": "112:1",
+          "attaches_to": "112:2",
+          "text": "Muqātil and al-Rabīʿ explained al-Ṣamad as the One free of every defect, untouched by any affliction.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "112:1#c20",
+          "section_ref": "112:1",
+          "attaches_to": "112:2",
+          "text": "Lexically the Arabs called a chief 'Ṣamad' because people 'turn to him' (ṣamada ilayhi) in their needs; pre-Islamic verses use 'sayyid ṣamad' for such a chief people rely upon.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "112:1#c21",
+          "section_ref": "112:1",
+          "attaches_to": "112:2",
+          "text": "Al-Ṭabarī judges the meaning known from the Arabs' own speech - the chief to whom people turn - to be the most fitting by default, though he notes that if a report attributed to the Prophet ﷺ (via Ibn Buraydah) giving the meaning 'one with no hollow' is sound, it would take precedence, since the Prophet ﷺ knew best what Allah meant by His revelation.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Ṭabarī, stated conditionally ('if authentic')"
+          }
+        },
+        {
+          "id": "112:1#c22",
+          "section_ref": "112:1",
+          "attaches_to": "112:2",
+          "text": "Muftī Muḥammad Shafīʿ, citing al-Ṭabarānī and Ibn Kathīr, holds that all the reported meanings of al-Ṣamad are authentic and together comprehend the full range of attributes carried by the name, though its original sense is the chief who has no superior, to whom people turn to have their needs met - all depend on him, he depends on none.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "112:1#c23",
+          "section_ref": "112:1",
+          "attaches_to": "112:2",
+          "text": "Al-Qurṭubī, citing al-Khaṭṭābī, prefers the reading supported by derivation - namely 'the One with no hollow' - as the correct meaning among those transmitted; he also notes with disapproval a case of someone reciting the surah in prayer with alterations, calling this a corruption that empties the verse of its meaning as a reply to those who questioned the Prophet ﷺ about his Lord.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "112:1#c24",
+          "section_ref": "112:1",
+          "attaches_to": "112:2",
+          "text": "Isrār Aḥmad traces Ṣamad to a firm rock a warrior places at his back in battle so no attack can come from behind; the word later extended to great chiefs who give refuge and to whom people bring their problems. Applied to Allah, al-Ṣamad means He is the firm support and reference point of all creation - self-subsisting and needing no support Himself, while every creature's existence depends on His support.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "112:1#c25",
+          "section_ref": "112:1",
+          "attaches_to": "112:2",
+          "text": "Ṭanṭāwī explains Ṣamad as a fāʿil-form word carrying a passive sense (the One turned-to), from 'ṣamada ilayhi' - he turned to him seeking aid; the definite article marks exclusivity, so that all creation's turning to Him, whether by free choice or by its very nature, is directed to Him alone, willingly or unwillingly.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "112:1#c26",
+          "section_ref": "112:1",
+          "attaches_to": "112:2",
+          "text": "Sayyid Quṭb reads Ṣamad as denoting one whose command cannot be overridden: Allah is the Chief above whom there is no other chief, all creation are His servants, and He alone settles every matter without any partner sharing in the decision.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        }
+      ],
+      "essay_html": "<p>Commentators trace this surah's revelation to a demand put to the Prophet ﷺ: describe your Lord, tell us His lineage. Some reports place the questioners among the Meccan polytheists, others among Jewish questioners, with one account naming ʿĀmir ibn al-Ṭufayl and Arbad ibn Rabīʿah and some versions adding that they asked whether God was made of gold or silver.<sup class=\"ref\">1,2,3,4,7,11,14</sup> Because these reports disagree on who asked, commentators differ on whether the surah belongs to the Makkan or Madinan period.<sup class=\"ref\">3,7</sup></p><p>The answer opens with Aḥad, One. Several commentators say the word carries more than plain arithmetic oneness: it rules out any composition, any resemblance, any partner or helper, and, as one reading puts it, denies that anything besides Allah has genuine independent reality of its own, since everything else draws its being from Him. The word, on this reading, fits only Allah, who alone is perfect in every attribute and act.<sup class=\"ref\">4,6,7,9,10</sup> Against this, al-Baghawī (d. 1122 CE) holds there is no real difference between Wāḥid and Aḥad, pointing to Ibn Masʿūd's variant recitation reading 'al-Wāḥid' in this place.<sup class=\"ref\">2</sup> Grammarians also disputed the exact syntax of the phrase, and disagreed over a minority recitation that drops the tanwīn; al-Ṭabarī (d. 923 CE) sides with the majority reading and the ordinary sense of Aḥad as One.<sup class=\"ref\">1</sup> The imperative 'Say' commands the Prophet ﷺ to give this answer directly, marking his role as Messenger, a charge later carried by every reciter of the surah; the pronoun 'He' that follows is read by one commentator as building suspense before the description resolves it.<sup class=\"ref\">7,9,11</sup></p><p>One report, through ʿIkrimah, reads the verse as answering every community that had attached a child to God: Jews naming ʿUzayr, Christians naming the Messiah, Zoroastrians worshipping sun and moon, idolaters worshipping idols. Against all of them Allah is declared singular, without peer, helper, rival, or equal.<sup class=\"ref\">4</sup> Hadiths gathered by the commentators describe the surah's weight: it is likened to a third of the Qur'an, loving it is said to lead to Paradise, and the Prophet ﷺ recited it nightly with al-Falaq and al-Nās while blowing on his cupped hands and wiping his body.<sup class=\"ref\">4,7,10,11,14</sup></p><p>The second name, al-Ṣamad, draws the largest cluster of explanations. Most commentators converge on one core sense: He is the One to whom all creation turns for its needs, while He needs nothing and no one - everyone depends on Him, He depends on none.<sup class=\"ref\">3,4,5,7,8,9,10,11,12,13,14</sup> Earlier exegetes offered other, more literal readings transmitted from Ibn ʿAbbās, Mujāhid, al-Ḥasan, Saʿīd ibn Jubayr, al-Shaʿbī and al-Ḍaḥḥāk: the One with no hollow, who does not eat or drink, from whom nothing emerges.<sup class=\"ref\">1,2,3</sup> A report from Abū al-ʿĀliyah via Ubayy ibn Kaʿb links the name to the following verse: He neither begets nor is begotten, since whatever begets will die and be inherited from, and Allah does neither.<sup class=\"ref\">1,2,3,4</sup> Others explained it as the Chief whose mastery and nobility have reached utter completeness,<sup class=\"ref\">1,2,3,4</sup> or as the Everlasting who remains after His creation perishes,<sup class=\"ref\">1,2,3</sup> or as the One free of every defect and affliction.<sup class=\"ref\">2,3</sup></p><p>The word's root explains the spread of readings. Arabs called a chief 'Ṣamad' because people turn to him (ṣamada ilayhi) in their needs, as old poetry attests.<sup class=\"ref\">1,2,3,9</sup> Al-Ṭabarī judges this everyday Arabic sense - the chief people turn to - the most fitting by default, though he adds that if a report tracing the meaning 'no hollow' back to the Prophet ﷺ himself is sound, it should take precedence, since he knew best what Allah meant.<sup class=\"ref\">1</sup> Muftī Muḥammad Shafīʿ (d. 1976 CE), citing al-Ṭabarānī, holds that all the transmitted meanings are authentic and together capture the full range the name carries, while its root sense remains the chief with no superior, whom all need and who needs none.<sup class=\"ref\">7</sup> Al-Qurṭubī (d. 1273 CE), following al-Khaṭṭābī, prefers the derivation-supported reading 'no hollow' as correct, and separately condemns a case of someone reciting the surah in prayer with alterations, calling it a corruption of the verse's very purpose as an answer to those who questioned the Prophet ﷺ about his Lord.<sup class=\"ref\">3</sup> Isrār Aḥmad (d. 2010 CE) traces the word further back, to the firm rock a warrior places at his back in battle so no blow can land from behind, later applied to chiefs who give refuge; applied to Allah it makes Him the firm support of all creation, self-subsisting while everything else depends on His support to exist at all.<sup class=\"ref\">8</sup> Sayyid Quṭb (d. 1966 CE) reads the same word as denoting the Chief above whom there is no other chief, whose decision on any matter admits no partner.<sup class=\"ref\">6</sup></p><p class=\"close\">Across these readings the two names hold together: Aḥad rules out any partner in Allah's being, and al-Ṣamad rules out any need in Him, so that every existing thing, in its need, points back to the One who needs nothing at all.<sup class=\"ref\">1,3,4,7,9</sup></p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:5424c9e5e6824cb4b0e8b720480a3a443baa70a034028760f3809ba4c69c6959",
+        "2": "sha256:f16dc42e9c441784c68abae734f2447ea9d085848a1362b7d662ba495c551063",
+        "3": "sha256:716b1310193019712840c4e4dc905d5499d42ca8fb154bf6486b05ac66ad47b9",
+        "4": "sha256:19f9d38b61e159c6cf7eed467f6eb7286540946d7b9e09379a1a2bec0dbc4dfe",
+        "5": "sha256:9cfb703191fb710ca34763daf4be0f6de4de3be80a3bf14782b8f6e3d740183a",
+        "6": "sha256:ef105122e287f65c38795e0f818afc9282c8c7bf02afec5350656312936ac794",
+        "7": "sha256:fdf53f4a87d30080671064b97483e9678989bb406302dbfc8e33878606f8d2d0",
+        "8": "sha256:434de3c6d166ac6a999546758802078c233c1ff8d9774f7543a735a7fdddc743",
+        "9": "sha256:d01e36fd9e29ef1751f786ce196f9694b5f1eaff5845399ffc901b5874ceb6f4",
+        "10": "sha256:e7c1decc0006e30377917c629cb566a150c0fe4e2a1ac46ed6c1c921f7d1a13d",
+        "11": "sha256:b645c56373a6870585d932d5d2911b228c2189b96b56d10adeb64fd624022609",
+        "12": "sha256:5ef95e54dca677f59f754d376d4b9d5de8ee66bb4cadec4a273a0075f01a6312",
+        "13": "sha256:4667ddcb0966790ca7af5ec6d6831d0a923e2515b81c6b66d56188a524bf5df9",
+        "14": "sha256:dda9bae548df3a8657659df3ef24ef1c202a43a0eecb3a4f10f34bc626eb916a"
+      },
+      "flags": {
+        "creedal_stakes": "true",
+        "legal_content": "false",
+        "sensitive_content": "false"
+      },
+      "compiled_at": "2026-08-02"
+    }
+  }
+}

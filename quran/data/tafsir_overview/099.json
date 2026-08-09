@@ -1,0 +1,2944 @@
+{
+  "surah": 99,
+  "name": "",
+  "coverage": {
+    "editions_present": [
+      "ar-tafsir-al-tabari",
+      "ar-tafsir-al-baghawi",
+      "ar-tafseer-al-qurtubi",
+      "en-tafisr-ibn-kathir",
+      "ar-tafseer-al-saddi",
+      "tafsir-fe-zalul-quran-syed-qatab",
+      "en-tafsir-maarif-ul-quran",
+      "tafsir-bayan-ul-quran",
+      "ar-tafsir-al-wasit",
+      "tazkirul-quran-en",
+      "bn-tafsir-abu-bakr-zakaria",
+      "bn-tafsir-ahsanul-bayaan",
+      "ar-tafsir-muyassar",
+      "kurd-tafsir-rebar"
+    ],
+    "editions_absent": [],
+    "independent_works": 14,
+    "languages_present": [
+      "ar",
+      "bn",
+      "en",
+      "ku",
+      "ur"
+    ],
+    "languages_absent": []
+  },
+  "pipeline_provenance": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "overview-v2.3",
+    "theme_breaks_version": "sha256:99880ec7b10b53313690f91df9ee8d065519ee698df34b35a3336b5705218f90",
+    "compiled_at": "2026-08-02"
+  },
+  "modern_lens_framing": "The Qurʾan is taken here as fixed, revealed truth; science is our provisional, evolving account of the observable world. What follows notes where the two meet — a contemplation, not a proof. Where the science later shifts, that reflects the limits of our knowledge, not the text.",
+  "references": [
+    {
+      "n": 1,
+      "work_id": "al-tabari",
+      "label": "Jāmiʿ al-Bayān",
+      "author_id": "al-tabari",
+      "author": "Abū Jaʿfar Muḥammad ibn Jarīr al-Ṭabarī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 2,
+      "work_id": "al-baghawi",
+      "label": "Maʿālim al-Tanzīl",
+      "author_id": "al-baghawi",
+      "author": "Abū Muḥammad al-Ḥusayn ibn Masʿūd al-Baghawī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 3,
+      "work_id": "al-qurtubi",
+      "label": "al-Jāmiʿ li-Aḥkām al-Qurʾān",
+      "author_id": "al-qurtubi",
+      "author": "Abū ʿAbd Allāh Muḥammad ibn Aḥmad al-Qurṭubī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 4,
+      "work_id": "ibn-kathir",
+      "label": "Tafsīr Ibn Kathīr",
+      "author_id": "ibn-kathir",
+      "author": "Ismāʿīl ibn ʿUmar ibn Kathīr",
+      "source_language": "ar",
+      "note": "One independent voice. The ar/ur/bn editions are the SAME work — never count as separate corroboration."
+    },
+    {
+      "n": 5,
+      "work_id": "al-saadi",
+      "label": "Taysīr al-Karīm al-Raḥmān",
+      "author_id": "al-saadi",
+      "author": "ʿAbd al-Raḥmān ibn Nāṣir al-Saʿdī",
+      "source_language": "ar",
+      "note": "Russian edition (170) is the SAME work — translate from the Arabic original, and do not count Russian as an independent voice."
+    },
+    {
+      "n": 6,
+      "work_id": "fi-zilal",
+      "label": "Fī Ẓilāl al-Qurʾān",
+      "author_id": "sayyid-qutb",
+      "author": "Sayyid Quṭb Ibrāhīm Ḥusayn",
+      "source_language": "ar",
+      "note": "Original is Arabic, but the API here carries only an URDU edition — translating from Urdu is one step removed from the original. Prefer the Arabic original if the QF Content API offers it."
+    },
+    {
+      "n": 7,
+      "work_id": "maarif",
+      "label": "Maʿārif al-Qurʾān",
+      "author_id": "muhammad-shafi-usmani",
+      "author": "Muftī Muḥammad Shafīʿ ʿUthmānī",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 8,
+      "work_id": "bayan-ul-quran",
+      "label": "Bayān al-Qurʾān",
+      "author_id": "israr-ahmad",
+      "author": "Isrār Aḥmad",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 9,
+      "work_id": "wasit",
+      "label": "al-Tafsīr al-Wasīṭ",
+      "author_id": "tantawi",
+      "author": "Muḥammad Sayyid Ṭanṭāwī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 10,
+      "work_id": "tazkirul",
+      "label": "Tazkīr al-Qurʾān",
+      "author_id": "wahiduddin-khan",
+      "author": "Wahiduddin Khan",
+      "source_language": "ur",
+      "note": "en and ur editions are the same work."
+    },
+    {
+      "n": 11,
+      "work_id": "abu-bakr-zakaria",
+      "label": "Tafsir Abu Bakr Zakaria",
+      "author_id": "abu-bakr-zakaria",
+      "author": "Abū Bakr Muḥammad Zakariyyā",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 12,
+      "work_id": "ahsanul-bayaan",
+      "label": "Ahsanul Bayaan",
+      "author_id": "bayaan-foundation",
+      "author": "Ahsanul Bayaan (Bayaan Foundation)",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 13,
+      "work_id": "muyassar",
+      "label": "al-Tafsīr al-Muyassar",
+      "author_id": "committee-muyassar",
+      "author": "al-Tafsīr al-Muyassar (committee)",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 14,
+      "work_id": "rebar-kurdish",
+      "label": "Rebar Kurdish Tafsir",
+      "author_id": "rebar",
+      "author": "Rebar Kurdish Tafsir",
+      "source_language": "ku",
+      "note": ""
+    }
+  ],
+  "sections": {
+    "99:8": {
+      "verse_range": "8-8",
+      "title": "The Weight of a Speck of Evil",
+      "in_short": "Whoever does even the tiniest amount of evil, weighing no more than a speck (dharrah), will see it or its consequence. The commentators treat this half-verse, paired with its twin about good, as one of the most sweeping statements in the Qur'an, and gather around it stories, sayings and warnings about how nothing, however small, is overlooked.",
+      "claims": [
+        {
+          "id": "99:8#c1",
+          "section_ref": "99:8",
+          "attaches_to": "99:8",
+          "text": "Whoever does an atom's/speck's weight (mithqāl dharrah) of evil will see it, or see its consequence, on the Day of Judgement. This is the plain, shared reading of the verse across the commentators.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "unspecified"
+        },
+        {
+          "id": "99:8#c2",
+          "section_ref": "99:8",
+          "attaches_to": "99:8",
+          "text": "One report, attributed to Ibn ʿAbbās, holds that every person, believer or disbeliever, is shown all their deeds, good and evil, on the Day of Judgement. For the believer, God then forgives the sins that are shown. For the disbeliever, the good deeds are set aside as worthless and he is punished for the evil.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "ليس مؤمن ولا كافر عمِل خيرا ولا شرا في الدنيا, إلا آتاه الله إياه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded in the source text"
+          }
+        },
+        {
+          "id": "99:8#c3",
+          "section_ref": "99:8",
+          "attaches_to": "99:8",
+          "text": "A second view, from Muḥammad b. Kaʿb al-Quraẕī, reverses the timing: the believer's punishment for his evil deeds is delivered in this world, through hardship in his own person, family, wealth and children, so that he leaves this life with nothing outstanding. The disbeliever's reward for his good deeds is likewise given in this world, so he arrives in the Hereafter with no credit left.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "من مؤمن ير عقوبته في الدنيا في نفسه وأهله وماله وولده, حتى يخرج من الدنيا وليس عنده شيء",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "99:8#c4",
+          "section_ref": "99:8",
+          "attaches_to": "99:8",
+          "text": "A report says that when this verse was revealed while Abū Bakr رضي الله عنه was eating with the Prophet ﷺ, he withdrew his hand, alarmed that he would be recompensed for every particle of evil he had done. The Prophet ﷺ reassured him: whatever he dislikes and suffers in this world is already the settling of those particles of evil, while the reward for his good is being stored up for him until he receives it in full on the Day of Judgement.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "ما رأيْتَ في الدنْيا ممَّا تكره فمثَاقيلُ ذَرّ الشَّرّ, وَيَدَّخِرُ لَكَ اللهُ مثَاقِيلَ الخير",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded in the source text"
+          }
+        },
+        {
+          "id": "99:8#c5",
+          "section_ref": "99:8",
+          "attaches_to": "99:8",
+          "text": "Two further reports illustrate the same idea from the other direction: ʿĀʾisha رضي الله عنها asked whether ʿAbdullāh b. Judʿān's generosity (feeding the poor, hospitality, freeing captives) would benefit him though he died before Islam; the Prophet ﷺ said no, because he never once asked, 'Lord, forgive me my sin on the Day of Judgement.' A similar exchange concerns a man's mother who died in pre-Islamic times after a life of hospitality and kindness to kin: the Prophet ﷺ again said it would not benefit her.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "لا إنه لم يقل يوما: رب اغفر لي خطيئتي يوم الدين",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded in the source text"
+          }
+        },
+        {
+          "id": "99:8#c6",
+          "section_ref": "99:8",
+          "attaches_to": "99:8",
+          "text": "A related report concerns Salmān b. ʿĀmir, whose father had kept family ties, honoured pledges and hosted guests but died before Islam. The Prophet ﷺ first said this would not benefit him, then, calling the man back, added that though it will not benefit the father himself, it continues in his descendants, who will never be disgraced, humiliated, or made poor.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "إنَّها لَنْ تَنْفَعَهُ, وَلَكِنَّهَا تَكُونُ فِي عَقِبِهِ",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded in the source text"
+          }
+        },
+        {
+          "id": "99:8#c7",
+          "section_ref": "99:8",
+          "attaches_to": "99:8",
+          "text": "A further hadith states that God does not wrong a believer of a good deed: he is repaid with provision in this world and further recompense in the Hereafter. The disbeliever, by contrast, is given his reward fully in this world, so that on the Day of Judgement he has no good deed left to his name.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "إِنَّ اللهَ لا يَظْلِمُ المُؤْمِنُ حَسَنَةً يُثابُ عَلَيْها الرّزْقَ فِي الدنْيا",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded in the source text"
+          }
+        },
+        {
+          "id": "99:8#c8",
+          "section_ref": "99:8",
+          "attaches_to": "99:8",
+          "text": "Ibn Masʿūd رضي الله عنه said this verse (with its twin about good) is the most precise and comprehensive verse (aḥkam āyah) in the Qur'an.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "أحكم آية في القرآن",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "unspecified"
+        },
+        {
+          "id": "99:8#c9",
+          "section_ref": "99:8",
+          "attaches_to": "99:8",
+          "text": "The Prophet ﷺ called this verse (with 99:7) 'the unique, comprehensive verse' (al-jāmiʿa al-fādhdha) when asked about the zakat due on donkeys, since no specific ruling on donkeys had been revealed except this general verse, which covers every deed regardless of category.",
+          "claim_type": "legal",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "ما أَنْزَلَ اللهُ فِيهَا شَيْئًا إِلَّا هَذِهِ الْايَةَ الْفَاذَّةَ الْجَامِعَةَ",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "original_terms": [
+            {
+              "term": "al-jāmiʿa al-fādhdha",
+              "gloss": "the singular, all-encompassing verse"
+            }
+          ],
+          "report": {
+            "grade": "sahih",
+            "graded_by": "recorded in al-Bukhārī and Muslim, per Ibn Kathīr [4]"
+          }
+        },
+        {
+          "id": "99:8#c10",
+          "section_ref": "99:8",
+          "attaches_to": "99:8",
+          "text": "Kaʿb al-Aḥbār is reported to have said that God sent down to Muḥammad ﷺ two verses (99:7-8) that sum up everything contained in the Torah, the Gospel, the Psalms and the earlier Scrolls.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "لقد أنزل الله على محمد آيتين أحصتا ما في التوراة والإنجيل والزبور والصحف",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded in the source text"
+          }
+        },
+        {
+          "id": "99:8#c11",
+          "section_ref": "99:8",
+          "attaches_to": "99:8",
+          "text": "Muqātil relates that the verse was revealed about two men. One hesitated to give even a small charity, a date, a crust, a walnut, thinking it worthless. The other took small sins lightly, a lie, backbiting, a glance, believing that only major sins bring punishment. The verse was sent to encourage giving even a little good, since it will grow, and to warn against even a little sin, since it too will grow. On the Day of Judgement a small sin will appear to its doer greater than mountains, while all his good deeds will look smaller than anything in his own eyes.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "كان أحدهما يأتيه السائل فيستقل أن يعطيه التمرة والكسرة والجوزة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "99:8#c12",
+          "section_ref": "99:8",
+          "attaches_to": "99:8",
+          "text": "Companions are reported to have acted deliberately on this verse: ʿUmar b. al-Khaṭṭāb and ʿĀʾisha رضي الله عنهما each gave a single grape in charity, saying it contained many atoms' weight. Saʿd b. Abī Waqqāṣ رضي الله عنه gave two dates to a beggar who recoiled at the smallness, telling him God accepts the weight of atoms, and there are many atoms' weight in two dates.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "كم ترى في هذه الحبة من مثقال ذرة",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded in the source text"
+          }
+        },
+        {
+          "id": "99:8#c13",
+          "section_ref": "99:8",
+          "attaches_to": "99:8",
+          "text": "A Bedouin, on hearing the Prophet ﷺ recite this verse, asked in astonishment, 'An atom's weight?' The Prophet ﷺ said, 'Yes.' The Bedouin cried out in dismay repeatedly as he left, and the Prophet ﷺ remarked that faith had entered the Bedouin's heart.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "واسوأتاه! لقد دخل قلب الأعرابي الإيمان",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded in the source text"
+          }
+        },
+        {
+          "id": "99:8#c14",
+          "section_ref": "99:8",
+          "attaches_to": "99:8",
+          "text": "Ṣaʿṣaʿa b. Nājiya, grandfather of the poet al-Farazdaq, is reported to have said, on hearing this verse recited to him, 'Enough for me, enough, the exhortation is complete,' content that this verse alone settled the matter without needing to hear more of the Qur'an.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "حسبي قد انتهت الموعظة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded in the source text"
+          }
+        },
+        {
+          "id": "99:8#c15",
+          "section_ref": "99:8",
+          "attaches_to": "99:8",
+          "text": "The commentators give varying lexical definitions for 'dharrah' (the tiny particle at issue): the smallest kind of ant, a red worm too light to have any weight, the dust that clings to a hand pressed into the ground and lifted, or motes of dust seen drifting in a shaft of sunlight through a crack. One gloss defines it as the hatchling that emerges from an ant's egg, meaning something extremely small. Al-Shawkānī is reported to have preferred the 'smallest ant' meaning.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "إن الذَّرَّة دُودة حمراء ليس لها وزن",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "إذا وضعت يدك على الأرض ورفعتها, فكل واحد مما لزق به من التراب ذرة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "relay",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "relay",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "dharrah",
+              "gloss": "an atom, speck, or the tiniest conceivable particle"
+            }
+          ]
+        },
+        {
+          "id": "99:8#c16",
+          "section_ref": "99:8",
+          "attaches_to": "99:8",
+          "text": "Sayyid Quṭb notes that older commentators explained 'dharrah' as something like a flying mote seen in sunlight, the smallest thing they could picture. He observes that in the modern age we know the atom itself is far smaller than that visible speck of dust: it is a definite body known through reason and instruments, its effects visible to the eye though it itself is seen only under a microscope. Whatever the exact referent, the point of the verse stands: even the smallest measure of evil brings its recompense.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "پرانے مفسرین ذرے کی تفسیر مچھر کے برابر کرتے تھے... آج کے جدید زمانے میں ہم جانتے ہیں کہ ذرہ کیا ہے",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "99:8#c17",
+          "section_ref": "99:8",
+          "attaches_to": "99:8",
+          "text": "The common reading is 'yarahu' (with fatḥa, 'he will see it'). Some reciters, al-Jaḥdarī, al-Sulamī, ʿĪsā b. ʿUmar and Abān from ʿĀṣim, read 'yurahu' (with ḍamma, 'he will be shown it', i.e. Allah shows it to him). Al-Qurṭubī states the first reading is to be preferred, citing the parallel expression in the Qur'an about every soul finding what it did set out before it.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "قراءة العامة يره بفتح الياء فيهما... والأولى الاختيار",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "99:8#c18",
+          "section_ref": "99:8",
+          "attaches_to": "99:8",
+          "text": "One reading offered for 'yarahu' is that it means 'he will see its recompense', not the deed itself literally, since the deed, once done, has passed away and no longer exists to be seen directly; a supporting verse of poetry is cited for this reading.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "يره أي يرى جزاءه; لأن ما عمله قد مضى وعدم فلا يرى",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "99:8#c19",
+          "section_ref": "99:8",
+          "attaches_to": "99:8",
+          "text": "Al-Qurṭubī notes that scholars, whether or not they generally hold that Qur'anic wording carries full universal scope elsewhere, agree that this particular verse is universal (ʿumūm), covering every deed without exception.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وقد اتفق العلماء على عموم هذه الآية",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "99:8#c20",
+          "section_ref": "99:8",
+          "attaches_to": "99:8",
+          "text": "Al-Saʿdī argues the verse is comprehensive of all good and evil by a fortiori reasoning: if even the weight of a dharrah, the most insignificant thing imaginable, is repaid, then anything greater than it is repaid all the more certainly. He calls the verse the height of encouragement to do good however small, and the height of warning against evil however trivial.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "غاية الترغيب في فعل الخير ولو قليلًا, والترهيب من فعل الشر ولو حقيرًا",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "99:8#c21",
+          "section_ref": "99:8",
+          "attaches_to": "99:8",
+          "text": "Several hadith reports warn against treating small sins as insignificant: the Prophet ﷺ told ʿĀʾisha to beware of sins that are belittled, for God will still call them to account; elsewhere he warned that such sins gather on a person until they destroy him, comparing it to a group in barren land who each bring one stick until, together, they have gathered enough to light a fire that consumes everything.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "إِيَّاكُمْ وَمُحَقَّرَاتِ الذُّنُوبِ، فَإِنَّهُنَّ يَجْتَمِعْنَ عَلَى الرَّجُلِ حَتْى يُهْلِكْنَه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "an-Nasāʾī and Ibn Mājah cited as collectors; not further graded in the source text"
+          }
+        },
+        {
+          "id": "99:8#c22",
+          "section_ref": "99:8",
+          "attaches_to": "99:8",
+          "text": "Muftī Muḥammad Shafīʿ clarifies that the 'evil' spoken of here is evil for which the wrongdoer never repented. The Qur'an and Sunnah affirm that Allah accepts sincere repentance fully, but unrepented sin, however trivial it appears, will still bring its consequence.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "original_excerpt": "By 'evil' here is meant the evil for which the evil-doer has not repented.",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "99:8#c23",
+          "section_ref": "99:8",
+          "attaches_to": "99:8",
+          "text": "Both Isrār Aḥmad and Rebar draw the practical lesson that no small good deed should be dismissed as too trivial to matter, and no small sin should be treated as harmless enough to commit boldly, since nothing stays small once it accumulates.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "کسی نیکی کو چھوٹا سمجھ کر اسے چھوڑنا نہیں چاہیے اور کسی گناہ کو چھوٹا سمجھ کر اس پر جری نہیں ہونا چاہیے",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "original_excerpt": "نابێ مرۆڤی موسڵمان تاوانی بچووكیشی پێ كه‌م بێ",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "99:8#c24",
+          "section_ref": "99:8",
+          "attaches_to": "99:8",
+          "text": "A report attributed to Ibn ʿAbbās, relayed by al-Baghawī, states that the Prophet ﷺ said 'When the earth quakes' (this Sūrah) is equal in weight to half the Qur'an, as 'Say He is God, One' equals a third and 'Say, O disbelievers' equals a quarter.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "إذا زلزلت الأرض تعدل نصف القرآن",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded in the source text"
+          }
+        }
+      ],
+      "essay_html": "<p>The verse is short and total: whoever does even an atom's weight of evil will see it, or see its consequence, on the Day of Judgement.<sup class=\"ref\">1,2,3,4,5,7,8,9,11,12,13,14</sup> The commentators spend most of their effort not on doubting this but on working out exactly how and when it happens, and on driving home just how far the word 'atom' (dharrah) is meant to reach.</p><p>Two readings exist for the timing. One, traced to Ibn ʿAbbās, says every person, believer or disbeliever, is shown all their deeds on Judgement Day; the believer's sins are then forgiven, while the disbeliever's good deeds are discarded and he is punished for the evil.<sup class=\"ref\">1,2,3</sup> A second reading, from Muḥammad b. Kaʿb al-Quraẕī, reverses the clock: the believer's punishment for evil is already delivered in this world, through hardship in his own life, family and wealth, so nothing is left owing; the disbeliever's reward for good is likewise paid out in this world, so nothing is left to collect in the next.<sup class=\"ref\">1,2,3</sup></p><p>A well-known report has Abū Bakr رضي الله عنه, on hearing this verse while eating with the Prophet ﷺ, pull back his hand in alarm, afraid he would be repaid for every particle of wrong he had done. The Prophet ﷺ told him that whatever he suffers and dislikes in this world is already the settling of those particles of evil, while his reward for good is being kept for him in full until the Day of Judgement.<sup class=\"ref\">1,3</sup> Other reports carry the same idea from the other side: ʿAbdullāh b. Judʿān's generosity, and a mother's kindness to kin, are both said to have brought no benefit in the Hereafter, because neither ever asked God's forgiveness.<sup class=\"ref\">1</sup> One further case, Salmān b. ʿĀmir's father, adds a nuance: his good deeds do not benefit him personally, since he died before Islam, but their effect carries on in his descendants, who are promised they will never be disgraced or left poor.<sup class=\"ref\">1</sup> A separate hadith puts the general rule plainly: God rewards a believer's good deed both in this world and the next, but gives the disbeliever his reward in full in this world alone.<sup class=\"ref\">1</sup></p><p>Several sayings stress just how comprehensive this half-verse (with its twin about good) is held to be. Ibn Masʿūd رضي الله عنه called it the most precise verse in the Qur'an.<sup class=\"ref\">2,3,7</sup> The Prophet ﷺ, when asked about the zakat due on donkeys, for which no specific ruling exists, called it 'the unique, comprehensive verse' (al-jāmiʿa al-fādhdha), since it covers every deed without needing a separate ruling for each case.<sup class=\"ref\">2,3,4,7,9</sup> Kaʿb al-Aḥbār is reported to have said these two verses sum up everything found in the Torah, the Gospel, the Psalms and the earlier Scrolls.<sup class=\"ref\">3,9</sup></p><p>Muqātil traces the occasion of revelation to two men: one hesitated to give even a small charity, a date, a crust, a walnut, thinking it worthless; the other took small sins lightly, a lie, some backbiting, a glance, on the assumption that only major sins bring punishment. The verse answers both, and the point is sharpened with an image: on the Day of Judgement a small sin will look to its doer bigger than mountains, while his good deeds will look smaller than anything in his own eyes.<sup class=\"ref\">2,3,12</sup> Companions are said to have taken the lesson literally: ʿUmar and ʿĀʾisha رضي الله عنهما each gave a single grape in charity, noting how many atoms' weight it held, and Saʿd b. Abī Waqqāṣ رضي الله عنه did the same with two dates for a beggar who scorned the amount.<sup class=\"ref\">3</sup> A Bedouin, startled to hear 'an atom's weight?' confirmed by the Prophet ﷺ, cried out in dismay and was told that faith had entered his heart.<sup class=\"ref\">3</sup> And Ṣaʿṣaʿa b. Nājiya, grandfather of the poet al-Farazdaq, is said to have declared, on first hearing the verse, that it was enough for him, that the exhortation was complete.<sup class=\"ref\">2,3</sup></p><p>The word for the tiny thing at stake, dharrah, is itself explained differently: the smallest kind of ant, a weightless red worm, the dust left clinging to a hand pressed into the ground, or motes drifting visibly in a shaft of sunlight, with al-Shawkānī said to prefer the 'smallest ant' reading.<sup class=\"ref\">1,3,8,12,13,14</sup> Sayyid Quṭb notes that older commentators pictured a visible mote of dust, but says the actual atom of modern science is smaller still, a definite body known through reason and instruments though only its effects are seen by the eye. Either way, he holds, the point of the verse is untouched: the smallest measure of evil still brings its account.<sup class=\"ref\">6</sup> On the wording itself, al-Qurṭubī notes the common reading is 'yarahu', 'he will see it', though some reciters read 'yurahu', 'he will be shown it'; he prefers the first, and also records a reading of 'yarahu' as 'he will see its recompense', since the deed itself has already passed away.<sup class=\"ref\">3</sup> He adds that scholars, even those cautious about universal wording elsewhere in the Qur'an, agree this verse is genuinely universal, leaving nothing out.<sup class=\"ref\">3</sup></p><p>Al-Saʿdī draws the reasoning out: if even the weight of a dharrah, the smallest thing conceivable, is repaid, then anything greater is repaid all the more certainly. He calls the verse the height of encouragement to do good however small, and the height of warning against evil however trivial.<sup class=\"ref\">5</sup> That warning is carried further in hadith reports urging believers to beware of sins that seem too small to matter, since they will still be called to account, and since such sins, left unchecked, gather on a person the way sticks gathered one by one can build a fire large enough to consume him.<sup class=\"ref\">4,7,11</sup> Muftī Muḥammad Shafīʿ adds a qualifier: the 'evil' in view is evil left unrepented, since sincere repentance is accepted in full, but whatever is not repented, however small, still brings its consequence.<sup class=\"ref\">7</sup> Isrār Aḥmad and Rebar draw the same lesson in practice: no good deed is too small to matter, and no sin is too small to take seriously, since nothing small stays small forever.<sup class=\"ref\">8,14</sup></p><p class=\"close\">On this single half-verse the commentators return again and again to the same weight, that nothing done, however slight, is lost from account, and that this, more than anything else in the Qur'an, is what some of its earliest readers called sufficient on its own.<sup class=\"ref\">2,3</sup></p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:7e795575ba7d4ce50c0d8d51f141f003f97d60540f564e4e3be6db1915dd3290",
+        "2": "sha256:ef9aea6a73d26852fa2b1c94e99643072d0368922e93c612e752c8ea85e2f457",
+        "3": "sha256:f955e22e64360b1af4cf3fb94d56fbe9c2f20014f1efa44cc56ae1bdf38fae12",
+        "4": "sha256:822e15bfa968db02602bcf40638ab3a5157fbd504a0b20fdc9fc4e9a70fb33db",
+        "5": "sha256:10f2c3e01e78f32edcb5d4aaaed276f1deecb08caf69ec9534e18c530ad6884f",
+        "6": "sha256:46c0d1b3d7d26c7851f2d0b96ed91b63ba48a76fefeecbf9a44103ab417be796",
+        "7": "sha256:b2509a6d2f83b333f24a77a3a449ff38ea72fa6c8fa37cfce7e5ef0c876bd5ed",
+        "8": "sha256:e00b6e944a09cca92105939d59e57872afd865da0dd0d8a2c19ed816a0e5d1f6",
+        "9": "sha256:3ba05e90ab1bf6320bd74aa141e5e6709d98ccf8ed68497847d0f43884902ebe",
+        "10": "sha256:cef81db2682d5641ad5ee7a4dfafbab5a8ae912f157eb86330596cd98a783451",
+        "11": "sha256:9b19ede1c34303ad0a11048421f673c9dea37c672abe9e8b8cc3ffd0aae7495d",
+        "12": "sha256:7f207fa0ebab9b7916f7860548a73dee06a8a84fa1014feaf9b223f7ec6db896",
+        "13": "sha256:7222e2b169654c25c1077e3aeb7d3b679e4c2e126a05717b70bf0bd70e58a9ee",
+        "14": "sha256:aa8a9282d3c712e9c62546fb69d56022b5fc54cab47106d82f534e8c6abe8b26"
+      },
+      "flags": {
+        "creedal_stakes": true,
+        "legal_content": true,
+        "sensitive_content": true
+      },
+      "compiled_at": "2026-08-02"
+    },
+    "99:1": {
+      "verse_range": "1-5",
+      "title": "The Earth Shakes and Speaks",
+      "in_short": "This opening scene of Sūrat al-Zalzalah pictures the earthquake of the Last Hour: the earth shakes violently, throws out everything buried within it, and then, by God's command, speaks and tells what was done on it.",
+      "claims": [
+        {
+          "id": "99:1#c1",
+          "section_ref": "99:1",
+          "attaches_to": "99:1",
+          "text": "The violent shaking described here is the earthquake of the Hour, the upheaval that precedes or accompanies the Resurrection.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "unspecified"
+        },
+        {
+          "id": "99:1#c2",
+          "section_ref": "99:1",
+          "attaches_to": "99:1",
+          "text": "Grammatically, zilzāl is a verbal noun; adding 'its quaking' (zilzālahā) to 'the earth' intensifies the sense, on the pattern of Arabic phrases like 'I will surely honour you with your due honour'. This wording also matches the rhyme of the verses that follow.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar",
+          "original_terms": [
+            {
+              "term": "زِلْزَالَهَا (zilzālahā)",
+              "gloss": "its [own] quaking — an intensifying construction"
+            }
+          ]
+        },
+        {
+          "id": "99:1#c3",
+          "section_ref": "99:1",
+          "attaches_to": "99:1",
+          "text": "Commentators differ on when exactly this quake occurs: some (Ibn 'Abbas, Mujahid, as relayed by al-Qurṭubī) place it at the first trumpet-blast, followed by a second quake that casts out the dead; Mazharī, cited by Muftī Muḥammad Shafīʿ, leans toward this being the quake after the second trumpet-blast, at the actual raising of the dead, since the Surah's later verses describe reckoning and recompense — though he adds 'Allah knows best'.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "99:1#c4",
+          "section_ref": "99:1",
+          "attaches_to": "99:1",
+          "text": "The place of revelation of this Surah is disputed: Ibn 'Abbas and Qatādah held it Madinan, while Ibn Mas'ūd, 'Aṭā' and Jābir held it Makkan.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "99:1#c5",
+          "section_ref": "99:1",
+          "attaches_to": "99:1",
+          "text": "Reports circulate on the merit of reciting this Surah: one, via al-Tirmidhī, that reciting it equals half the Qur'an (paired with reports that al-Ikhlāṣ equals a third and al-Kāfirūn a quarter); another, from 'Alī, that reciting it four times is like reciting the whole Qur'an. Al-Qurṭubī notes al-Tirmidhī himself called the first report 'gharīb' (unusual/rare in transmission), and Rebar's tafsīr states plainly that all such virtue-hadiths for this Surah are weak, none of them authentic.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "refute",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "daif",
+            "graded_by": "al-Tirmidhī notes it as gharīb (per al-Qurṭubī); Rebar's tafsīr grades all such reports weak"
+          }
+        },
+        {
+          "id": "99:1#c6",
+          "section_ref": "99:1",
+          "attaches_to": "99:1",
+          "text": "A narrative is related that a man asked the Prophet ﷺ for something comprehensive to recite; the Prophet ﷺ eventually gave him this Surah, and after the man vowed never to add to it, the Prophet ﷺ remarked that 'the little man has succeeded'.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "Ibn Kathīr (records the chain via Aḥmad, Abū Dāwūd, al-Nasā'ī, without stating a grade)"
+          }
+        },
+        {
+          "id": "99:1#c7",
+          "section_ref": "99:1",
+          "attaches_to": "99:1",
+          "text": "It is related that when this Surah was revealed, Abū Bakr (رضي الله عنه) wept; the Prophet ﷺ told him that if people did not sin and were not forgiven, Allah would create another people who sin and are forgiven, for He is the Forgiving, the Merciful.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Qurṭubī (unstated)"
+          }
+        },
+        {
+          "id": "99:1#c8",
+          "section_ref": "99:1",
+          "attaches_to": "99:2",
+          "text": "'Its burdens' (athqālahā) are explained as the dead buried within the earth, which it will cast out.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "أَثْقَالَهَا (athqālahā)",
+              "gloss": "its burdens/its heavy loads"
+            }
+          ]
+        },
+        {
+          "id": "99:1#c9",
+          "section_ref": "99:1",
+          "attaches_to": "99:2",
+          "text": "A further reading takes 'burdens' to include, or instead mean, buried treasures (kunūz) hidden within the earth, which will likewise be flung out.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "99:1#c10",
+          "section_ref": "99:1",
+          "attaches_to": "99:2",
+          "text": "A hadith recorded in Ṣaḥīḥ Muslim, from Abū Hurayrah, describes the earth vomiting up great columns of gold and silver; the murderer, the one who severed family ties, and the thief each recognise it as the very wealth for which they sinned, remark on it, and are then left with nothing of it.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "recorded by Muslim, from Abū Hurayrah"
+          }
+        },
+        {
+          "id": "99:1#c11",
+          "section_ref": "99:1",
+          "attaches_to": "99:2",
+          "text": "Grammarians Abū 'Ubaydah and al-Akhfash explain: a dead person inside the earth is a 'burden for it', while the same person alive on its surface is 'a burden upon it'; this is also cited as the reason humankind and the jinn together are called 'al-thaqalān', the two weighty ones.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar",
+          "original_terms": [
+            {
+              "term": "الثَّقَلَان (al-thaqalān)",
+              "gloss": "the two weighty/burdened ones — humankind and the jinn"
+            }
+          ]
+        },
+        {
+          "id": "99:1#c12",
+          "section_ref": "99:1",
+          "attaches_to": "99:2",
+          "text": "Isrār Aḥmad adds that even bodies destroyed otherwise, drowned at sea or burned, will still be reassembled and brought forth from the earth, since man was created from the earth, returned to it, and will be brought out from it once more, citing the parallel wording of 20:55.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "99:1#c13",
+          "section_ref": "99:1",
+          "attaches_to": "99:3",
+          "text": "'Man' in this verse is read two ways: as every human being generically, believer and disbeliever alike, astonished together at the scene (supporting the view that this quake is a sign preceding the Hour, when people question one another about it); or as the disbeliever specifically, since the believer already affirms the earthquake of the Resurrection and has no need to ask, while the denier is confronted with what he denied. Ibn 'Abbās, in one report, is said to have named a specific disbeliever intended here, al-Aswad ibn 'Abd al-Asad.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "99:1#c14",
+          "section_ref": "99:1",
+          "attaches_to": "99:3",
+          "text": "The cry 'mā lahā' ('what is happening to it?') expresses bewilderment: man, faced with an unprecedented upheaval of what had always been fixed and stable beneath him, cannot make sense of it. Sayyid Quṭb elaborates that this convulsion outstrips any earthquake or volcanic eruption known in this world; there is no precedent for it and no cause the mind can grasp.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "99:1#c15",
+          "section_ref": "99:1",
+          "attaches_to": "99:3",
+          "text": "Al-Baghawī notes a suggested reading with inversion in the sequence of these verses: logically the earth's 'telling its news' (v.4) comes first and prompts man's question 'what is happening to it?' (v.3), even though the question is stated first in the text.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric"
+        },
+        {
+          "id": "99:1#c16",
+          "section_ref": "99:1",
+          "attaches_to": "99:4",
+          "text": "A hadith from Abū Hurayrah reports that the Prophet ﷺ recited this verse, asked his companions whether they knew what the earth's news would be, then explained: it will testify against every male and female servant regarding what they did on it, naming the deed and the day it was done.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "hasan",
+            "graded_by": "al-Tirmidhī, cited as ḥasan ṣaḥīḥ by al-Qurṭubī and as ṣaḥīḥ gharīb by Ibn Kathīr"
+          }
+        },
+        {
+          "id": "99:1#c17",
+          "section_ref": "99:1",
+          "attaches_to": "99:4",
+          "text": "Early exegetes differed on exactly what the earth's 'news' consists of: that it testifies to deeds, good and bad, done upon it (Ibn Zayd, Sufyān, Mujāhid, per al-Ṭabarī); that it announces the coming of the Hour itself, that worldly affairs have ended (attributed to Ibn Mas'ūd, who reportedly recited the word as 'tunabbi'u' rather than 'tuḥaddith'; Saʿīd ibn Jubayr recited it both ways); or that it 'tells' its news simply by casting out what it held, so that the shaking and disgorging is itself the telling. Al-Ṭabarī judged this last reading, as clarified by Saʿīd ibn Jubayr, to be sound.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "99:1#c18",
+          "section_ref": "99:1",
+          "attaches_to": "99:4",
+          "text": "Al-Māwardī, as relayed by al-Qurṭubī, discusses how the earth could 'speak': either Allah transforms it into a speaking, living being; or Allah creates speech within it; or what occurs is a clear demonstrative sign that stands in place of speech.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "99:1#c19",
+          "section_ref": "99:1",
+          "attaches_to": "99:4",
+          "text": "Isrār Aḥmad likens the earth's coming testimony to the testimony of human limbs and skin against a person, citing 41:21, where the skin says that Allah, who gives speech to everything, has given it speech too.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "99:1#c20",
+          "section_ref": "99:1",
+          "attaches_to": "99:4",
+          "text": "Wahiduddin Khan compares the earth's coming testimony to recording technology: just as audio and video recordings reproduce what happened in a studio, so the whole of creation, silent today, will 'speak' on that day, since everything a person does, says, or even thinks is being recorded at every moment.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "99:1#c21",
+          "section_ref": "99:1",
+          "attaches_to": "99:4",
+          "text": "An athar relates that when the earth trembled in 'Abdullāh ibn Mas'ūd's time, he said to it, 'What is the matter with you? Were it to speak, the Hour would already have come.'",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Ṭabarī (chain given, no grade stated)"
+          }
+        },
+        {
+          "id": "99:1#c22",
+          "section_ref": "99:1",
+          "attaches_to": "99:5",
+          "text": "'Your Lord inspired/commanded it' (awḥā lahā) is read by several early authorities as 'awḥā ilayhā' — He revealed/communicated to it — the particle 'lām' here standing in for 'ilā', a usage attested elsewhere in Arabic (al-Qurṭubī cites a line of poetry by al-'Ajjāj as evidence, and al-Ṭanṭāwī compares it to the sense of 'qāla lahā', 'He said to it', as in 41:11).",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar",
+          "original_terms": [
+            {
+              "term": "أَوْحَىٰ لَهَا (awḥā lahā)",
+              "gloss": "He inspired/commanded/communicated to it"
+            }
+          ]
+        },
+        {
+          "id": "99:1#c23",
+          "section_ref": "99:1",
+          "attaches_to": "99:5",
+          "text": "Other glosses on 'awḥā': Mujāhid said it means 'He commanded it'; al-Suddī said 'He said to it' or 'He subjected it'; al-Qurazī said He commanded it to part/separate from those upon it.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "99:1#c24",
+          "section_ref": "99:1",
+          "attaches_to": "99:5",
+          "text": "Ibn 'Abbās (via 'Ikrima and Shabīb) reported that on that day the Lord will say to the earth, 'Speak', and it will speak.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "Ibn Kathīr (unstated)"
+          }
+        },
+        {
+          "id": "99:1#c25",
+          "section_ref": "99:1",
+          "attaches_to": "99:5",
+          "text": "Al-Sa'dī: the earth is commanded by its Lord to report what was done upon it, and it does not disobey His command.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "99:1#c26",
+          "section_ref": "99:1",
+          "attaches_to": "99:5",
+          "text": "Sayyid Quṭb reads the earth's shaking, casting-out, and speaking together as an image of total obedience to its Lord's command, a scene that sets up the gathering, reckoning, and weighing of deeds described later in the Surah.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        }
+      ],
+      "essay_html": "<p>This opening scene of Sūrat al-Zalzalah pictures the earthquake of the Last Hour, when the earth shakes with a violence that has no precedent, throws out everything buried within it, and then, by God's command, tells what happened on it.<sup class=\"ref\">1,2,3,4,5,9,11,12,13,14</sup> Al-Ṭabarī and al-Qurṭubī note that the phrase 'its quaking' repeats the root for emphasis, a pattern found elsewhere in Arabic, and that this wording also matches the rhyme of the verses that follow.<sup class=\"ref\">1,3</sup> Commentators differ on the precise timing: some place the quake at the first trumpet-blast, as a portent while the world still stands, followed by a second quake that casts out the dead; Mazharī, cited by Muftī Muḥammad Shafīʿ, leans toward reading it as the quake of the Resurrection itself, since the Surah goes on to describe reckoning and recompense, though he adds that Allah knows best.<sup class=\"ref\">3,7</sup></p>\n<p>'Its burdens' (أَثْقَالَهَا) are explained, first and most widely, as the dead buried within the earth, which it will cast to its surface.<sup class=\"ref\">1,2,3,4,5,8,9,11,12,13,14</sup> A further reading takes the same word to include, or instead mean, the treasures hidden inside it, which will likewise be flung out.<sup class=\"ref\">2,3,4,5,7,9,11,12,13,14</sup> A hadith in Ṣaḥīḥ Muslim pictures this vividly: the earth vomits up columns of gold and silver, and the murderer, the one who cut off his kin, and the thief each recognise the very wealth for which they sinned, before being left with none of it.<sup class=\"ref\">2,3,4,7,9,14</sup> Grammarians Abū 'Ubaydah and al-Akhfash explain the underlying idea: a dead body inside the earth is 'a burden for it', while the same body alive on its surface is 'a burden upon it' — which is also said to be why humankind and the jinn together are called 'the two weighty ones' (al-thaqalān).<sup class=\"ref\">1,3,9</sup> Isrār Aḥmad adds that even bodies scattered by drowning or burning will still be reassembled from the earth, since man was made from it, returns to it, and will be brought out from it again.<sup class=\"ref\">8</sup></p>\n<p>Man's reaction, 'what is happening to it?', is read two ways: as the cry of everyone, believer and disbeliever alike, bewildered by an unprecedented event; or as the cry of the disbeliever specifically, since the believer already affirms this earthquake while the denier now meets what he denied. One report names the disbeliever intended, al-Aswad ibn 'Abd al-Asad.<sup class=\"ref\">3,9,11</sup> The bewilderment itself is the point: what had always been fixed and stable beneath man's feet is suddenly overturned, and Sayyid Quṭb stresses that nothing in this world, no earthquake or eruption man has known, resembles it.<sup class=\"ref\">1,4,5,6,9,12,13</sup> Al-Baghawī notes that, logically, the earth's telling of its news comes first and prompts the question, even though the question is stated first in the text.<sup class=\"ref\">2</sup></p>\n<p>What the earth 'tells' is likewise a subject of discussion. A hadith from Abū Hurayrah has the Prophet ﷺ explain that its news is its testimony against every servant concerning what they did on it, naming the deed and the day.<sup class=\"ref\">2,3,4,9,11,12</sup> Al-Ṭabarī records other early views: that the earth reports the deeds done upon it; that, per a reading attributed to Ibn Mas'ūd, it simply announces that the Hour has arrived and worldly affairs are over; or that its very shaking and disgorging is itself the 'telling', a reading al-Ṭabarī judges sound.<sup class=\"ref\">1,3,11</sup> Al-Māwardī, via al-Qurṭubī, considers three ways the earth might 'speak': as a living creature given speech, as matter in which Allah creates speech, or as a clear sign standing in place of speech.<sup class=\"ref\">3</sup> Isrār Aḥmad compares this to the testimony of a person's own skin, which in Sūrat Fuṣṣilat says that Allah, who gives speech to everything, has given it speech too.<sup class=\"ref\">8</sup> Wahiduddin Khan draws a modern comparison: as recordings reproduce a studio performance, so the whole of creation, silent now, will one day speak, since every deed, word and thought is being recorded.<sup class=\"ref\">10</sup> An earlier report has Ibn Mas'ūd, feeling a tremor in his own time, remark to the earth that were it to speak, the Hour would already have come.<sup class=\"ref\">1</sup></p>\n<p>The earth's telling comes 'because your Lord inspired it' (أَوْحَىٰ لَهَا). Several early authorities read this as 'revealed to it', the particle lām standing for ilā, a usage al-Qurṭubī supports with a line of pre-Islamic poetry.<sup class=\"ref\">1,2,3,9</sup> Others gloss awḥā more specifically: Mujāhid as 'He commanded it', al-Suddī as 'He said to it' or 'He subjected it', al-Qurazī as commanding it to part from what lay upon it.<sup class=\"ref\">1,3,4</sup> Ibn 'Abbās reports, more directly, that the Lord will say to the earth 'Speak', and it will speak.<sup class=\"ref\">4</sup> Al-Sa'dī sums up the point plainly: the earth reports what was done on it because it is commanded to, and it does not disobey.<sup class=\"ref\">5</sup> Sayyid Quṭb reads the whole scene, the shaking, the casting-out, the speech, as one picture of total obedience to God's command, opening onto the gathering and the weighing of deeds that the Surah goes on to describe.<sup class=\"ref\">6</sup></p>\n<p class=\"close\">Nothing here is left to chance: the ground that men once stood on as something fixed and silent is shown, in the sources' reading, waiting only for its Lord's word to move, to empty itself, and to speak.</p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:ecc5780e53ba72a4d885e9a201c62444d776ce9cddadbcd08c3c2f98a5b11992",
+        "2": "sha256:1b012bf4b45090d459768c0f0609163d41854f7499294a2a67350bb0527502ab",
+        "3": "sha256:80763ac512b80ff5b344b2fa2591d20a9bcab82affdb75278e6b0e690a6b5865",
+        "4": "sha256:0b6e659aafe9f7c54da6895a63a2857dcdd4e487f49a1706288ec6c9359f343e",
+        "5": "sha256:ea5c8847660028655cf977661352b94c9bd4f72f3ac39351d710ac530369bc05",
+        "6": "sha256:584caefc47d4f36c36c6f7eea16dda318919674ea19469cfcb9d828f9d9a5132",
+        "7": "sha256:908a6fe17d160da8e35bd07f986fd9ae00773604ab52bc5d1ae224ff61e5f1c8",
+        "8": "sha256:917cedb1312eb065a186fdf8b8464a46d66f9e5a8c445e0fde9d974fadda9c9c",
+        "9": "sha256:b52310da721a6233ee5706b46327e20fa7f86b77f14c5c13326514ae10567f00",
+        "10": "sha256:5a6572e25eefb0e194ad4c6d40721fc8a918e34b20c59e57a7c568c8255e07cd",
+        "11": "sha256:3ce1cede2b16e480cfe4cf9a05d0928e82c0bd8afa7ef6df744cca43d12989f0",
+        "12": "sha256:5afaafd7f351fb2767aae4fd3134a8384065666b50f3ff0454c8399677ee21ee",
+        "13": "sha256:99a53e65d8494d5e354b3a924bb9447e5a335ffb46b876dd10adcd9659ef1871",
+        "14": "sha256:8fc7cda994ece692907fac37943bbf7c990d84a4ecde45fabbe2596fb8cad6c1"
+      },
+      "flags": {
+        "creedal_stakes": true,
+        "legal_content": false,
+        "sensitive_content": true
+      },
+      "compiled_at": "2026-08-02"
+    },
+    "99:6": {
+      "verse_range": "6-7",
+      "title": "Every Atom Weighed and Shown",
+      "in_short": "On the Day of Judgement, people leave the place of reckoning split into separate groups, each shown the deeds they did in life. Whoever did even an atom's weight of good will see it, a promise the commentators treat as covering every deed, however small.",
+      "claims": [
+        {
+          "id": "99:6#c1",
+          "section_ref": "99:6",
+          "attaches_to": "99:6",
+          "text": "\"Yaṣduru\" means people departing or returning from the place of judgement, after the reckoning is finished.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "yaṣduru",
+              "gloss": "departs / turns back from"
+            }
+          ]
+        },
+        {
+          "id": "99:6#c2",
+          "section_ref": "99:6",
+          "attaches_to": "99:6",
+          "text": "\"Ashtātan\" (scattered) means people leave the reckoning divided into groups according to their fate: one group taken to the right toward Paradise, another to the left toward the Fire, as in similar verses about people being split apart on that Day.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "ashtāt",
+              "gloss": "scattered, separate groups"
+            }
+          ]
+        },
+        {
+          "id": "99:6#c3",
+          "section_ref": "99:6",
+          "attaches_to": "99:6",
+          "text": "A second reading of \"ashtātan\": people rise from their graves scattered, coming from wherever across the earth and across history they died, before being brought to the place of reckoning.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "99:6#c4",
+          "section_ref": "99:6",
+          "attaches_to": "99:6",
+          "text": "Ibn ʿAbbās held that the scattering is by faith and by deed: the people of one faith gathered together, each community kept apart from the others.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "99:6#c5",
+          "section_ref": "99:6",
+          "attaches_to": "99:6",
+          "text": "\"Li-yuraw aʿmālahum\" is read by Ibn ʿAbbās as meaning they are shown not merely their deeds but the reward of their deeds.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "99:6#c6",
+          "section_ref": "99:6",
+          "attaches_to": "99:6",
+          "text": "A grammatical variant is noted in the word for \"shown\": most read it as passive with a vowel meaning Allah shows them their deeds, while some early reciters read it with a different vowel meaning they themselves see their deeds.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "99:6#c7",
+          "section_ref": "99:6",
+          "attaches_to": "99:6",
+          "text": "Some scholars held there is a deliberate inversion of word order in the passage: this clause about people scattering to be shown their deeds properly belongs with the earlier statement that the earth will speak, with the words about the earth's inspiration inserted as a kind of parenthesis.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "99:6#c8",
+          "section_ref": "99:6",
+          "attaches_to": "99:6",
+          "text": "Sayyid Quṭb describes the scene as one no human being has ever witnessed before: people rising like scattered locusts, unable to look right or left, each absorbed only in himself. He calls facing one's own deeds openly, before the Overwhelming and Proud Sovereign, itself a fearsome punishment.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "99:6#c9",
+          "section_ref": "99:6",
+          "attaches_to": "99:6",
+          "text": "Isrār Aḥmad offers a modern illustration: a vast \"computer\" set up at the gathering holding the full record of every individual's deeds, so that the moment a person is brought forward, his entire life plays back like an audio-video film.",
+          "claim_type": "other",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "99:6#c10",
+          "section_ref": "99:6",
+          "attaches_to": "99:6",
+          "text": "The groups are further pictured as differing visibly: some secure, some afraid; some with bright faces (the people of Paradise), some with dark faces (the people of the Fire); some turned to the right, some to the left, corresponding to their religion and their deeds.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "99:6#c11",
+          "section_ref": "99:6",
+          "attaches_to": "99:6",
+          "text": "The world today is silent, but on that Day everything will speak, like a great recording studio in which every word, deed, and even thought has been continuously recorded, to be replayed in full.",
+          "claim_type": "other",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "99:6#c12",
+          "section_ref": "99:6",
+          "attaches_to": "99:7",
+          "text": "\"Dharra\" (atom) is glossed lexically as the weight of the smallest ant, or as the fine dust that clings to the hand when placed on the ground, or the specks that fly up from dust when blown.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "dharra",
+              "gloss": "an atom / a speck, the tiniest measurable thing"
+            },
+            {
+              "term": "mithqāl",
+              "gloss": "weight, that which can be weighed"
+            }
+          ]
+        },
+        {
+          "id": "99:6#c13",
+          "section_ref": "99:6",
+          "attaches_to": "99:7",
+          "text": "The verse is comprehensive: since it promises that even the weight of an atom, the most insignificant thing conceivable, will be shown and repaid, anything greater is repaid all the more certainly. This makes the verse the utmost encouragement to do even a little good, and the utmost warning against even a little evil.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "99:6#c14",
+          "section_ref": "99:6",
+          "attaches_to": "99:7",
+          "text": "The Prophet ﷺ, when asked about donkeys after describing the reward attached to horses kept in Allah's cause, said Allah had revealed nothing about donkeys except this \"singular, comprehensive verse\" (al-āya al-fādha al-jāmiʿa), meaning it covers every such case.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "original_terms": [
+            {
+              "term": "al-āya al-fādha al-jāmiʿa",
+              "gloss": "the singular, all-encompassing verse"
+            }
+          ],
+          "report": {
+            "grade": "sahih",
+            "graded_by": "Ibn Kathīr, citing al-Bukhārī and Muslim"
+          }
+        },
+        {
+          "id": "99:6#c15",
+          "section_ref": "99:6",
+          "attaches_to": "99:7",
+          "text": "It is reported that when this verse was revealed, Abū Bakr رضي الله عنه, eating with the Prophet ﷺ, withdrew his hand in alarm, fearing he would be recompensed for an atom's weight of evil. The Prophet ﷺ told him that whatever he disliked in this world was already the settling of his small evils, while Allah stores up the weight of his good deeds for the Day of Judgement.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not stated by the source"
+          }
+        },
+        {
+          "id": "99:6#c16",
+          "section_ref": "99:6",
+          "attaches_to": "99:7",
+          "text": "Some early exegetes held that the believer's small evils are punished (or settled) in this world so that reward is deferred entirely to the Hereafter, while the disbeliever's good is rewarded in this world so that punishment for evil is deferred to the Hereafter, supported by a hadith that Allah does not wrong a believer of a good deed. Ibn ʿAbbās gave a related but distinct account: for the believer both good and evil are shown but the sins are forgiven; for the disbeliever the good is rejected in the Hereafter and the evil is punished together with the punishment of associating partners with Allah.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not stated by the source"
+          }
+        },
+        {
+          "id": "99:6#c17",
+          "section_ref": "99:6",
+          "attaches_to": "99:7",
+          "text": "Several reports state that good deeds done before Islam, without faith, do not benefit the doer in the Hereafter: ʿĀ'isha رضي الله عنها asked about ʿAbdullāh ibn Judʿān, who had kept ties of kinship and fed the poor in the pre-Islamic era (al-Jāhiliyya); the Prophet ﷺ said it would not help him, because he never once said \"my Lord, forgive my sin on the Day of Judgement.\" Similar answers were given about a woman's mother and a companion's father who had done good before embracing Islam.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not stated by the source"
+          }
+        },
+        {
+          "id": "99:6#c18",
+          "section_ref": "99:6",
+          "attaches_to": "99:7",
+          "text": "The \"good\" (khayr) named in the verse means good as defined by the Sharīʿah: a deed recognised by Allah only when done alongside faith. A good deed done in disbelief may be rewarded in this world but is not recognised in the Hereafter. On this basis it is argued that anyone who carries even an atom's weight of faith must eventually be taken out of Hell, since faith itself counts as a righteous deed that must be repaid; conversely, a disbeliever's abundant good deeds, lacking faith, are voided in the Hereafter though rewarded here.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "99:6#c19",
+          "section_ref": "99:6",
+          "attaches_to": "99:7",
+          "text": "Ibn Masʿūd رضي الله عنه called this the most decisive, comprehensive verse (aḥkam āya) in the Qurʾān.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "99:6#c20",
+          "section_ref": "99:6",
+          "attaches_to": "99:7",
+          "text": "Kaʿb al-Aḥbār said that Allah revealed to Muḥammad ﷺ two verses (this one and the next) that together sum up everything contained in the Torah, the Gospel, the Psalms, and the earlier Scriptures.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "99:6#c21",
+          "section_ref": "99:6",
+          "attaches_to": "99:7",
+          "text": "Reports describe companions taking the verse to heart in practice: ʿĀ'isha رضي الله عنها gave a beggar a single grape, remarking on how many atoms it contained; Saʿd ibn Abī Waqqāṣ رضي الله عنه gave two dates in charity when a beggar drew back his hand, saying that Allah accepts even the weight of atoms. Ṣaʿṣaʿa (grandfather of al-Farazdaq) and a Bedouin, on first hearing the verse, were each struck by it, one saying \"enough for me,\" the other crying out in alarm, after which the Prophet ﷺ remarked that faith had entered the Bedouin's heart.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not stated by the source"
+          }
+        },
+        {
+          "id": "99:6#c22",
+          "section_ref": "99:6",
+          "attaches_to": "99:7",
+          "text": "The Prophet ﷺ extended the principle in other sayings: ward off the Fire even with half a date given in charity or a single good word, and do not belittle any good act, even offering water from one's bucket or meeting a brother with a cheerful face.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "recorded in al-Bukhārī, per Ibn Kathīr"
+          }
+        },
+        {
+          "id": "99:6#c23",
+          "section_ref": "99:6",
+          "attaches_to": "99:7",
+          "text": "The Prophet ﷺ also warned against \"belittled sins\" (muḥaqqarāt al-dhunūb), small wrongs a person takes lightly, saying they gather on a man like a group of travellers each bringing back one stick until they have enough to light a fire that consumes him.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "original_terms": [
+            {
+              "term": "muḥaqqarāt al-dhunūb",
+              "gloss": "sins regarded as too small to matter"
+            }
+          ],
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "recorded by al-Nasāʾī and Ibn Mājah, per Ibn Kathīr, without an explicit grading given"
+          }
+        }
+      ],
+      "essay_html": "<p>On that Day, people leave the place of judgement moving apart, not together. The word for \"depart\" (yaṣduru) pictures a return, as from a watering-place once the business there is done.<sup class=\"ref\">1,2,3,9,13</sup> They are described as scattered (ashtātan): most commentators take this as division by fate, one group turned toward Paradise, another toward the Fire.<sup class=\"ref\">1,2,3,4,9</sup> A second reading takes the scattering more literally, as people rising from wherever on earth they died before being brought to account.<sup class=\"ref\">3,11</sup> Ibn ʿAbbās read it as division by faith, each community kept apart from the others.<sup class=\"ref\">3</sup></p>\n<p>They are scattered \"so that they may be shown their deeds.\" Ibn ʿAbbās took this to mean they are shown not the bare deeds but their reward.<sup class=\"ref\">2,3</sup> A variant reading of the verb shifts this from Allah showing them to their seeing for themselves,<sup class=\"ref\">3</sup> and some grammarians thought the clause about the earth's inspiration earlier in the surah is a kind of insertion, so that this verse in sense continues directly from the earth's speaking.<sup class=\"ref\">1,3</sup></p>\n<p>Sayyid Quṭb (d. 1966 CE) pictures the scene itself as something no human being has ever witnessed: people rising like scattered locusts, each absorbed only in himself, unable to look left or right. He calls simply being made to face one's own deeds, openly, before the Overwhelming Sovereign, a fearsome punishment in itself.<sup class=\"ref\">6</sup> Isrār Aḥmad (d. 2010 CE) renders the same moment for a modern reader: a vast record, like a computer, holding every person's full history, replayed the instant he is brought forward.<sup class=\"ref\">8</sup> Others describe the groups as visibly distinct, some secure and some afraid, some bright-faced and some dark-faced, corresponding to their religion and their deeds.<sup class=\"ref\">12,14</sup> Wahīduddīn Khān (d. 2021 CE) adds that a world silent today will that Day speak in full, like a recording kept running since the beginning.<sup class=\"ref\">10</sup></p>\n<p>Then comes the measure: whoever does even an atom's weight (dharra) of good will see it. The commentators gloss dharra as the smallest ant, or the fine dust that clings to a hand pressed into the ground.<sup class=\"ref\">1,2,3,9,13</sup> Al-Saʿdī (d. 1957 CE) draws out the logic: if even the most insignificant deed conceivable is repaid, everything greater is repaid all the more certainly. The verse is at once the fullest encouragement to do a little good and the fullest warning against a little evil.<sup class=\"ref\">5,9</sup></p>\n<p>The Prophet ﷺ himself called it the singular, comprehensive verse (al-āya al-fādha al-jāmiʿa): asked about donkeys after describing the reward tied to horses, he said Allah had sent down nothing about them except this one verse, because it already covers every case.<sup class=\"ref\">3,4,9</sup> Ibn Masʿūd رضي الله عنه called it the most decisive verse in the Qurʾān,<sup class=\"ref\">3</sup> and Kaʿb al-Aḥbār said these two verses together sum up what is in the Torah, the Gospel, the Psalms, and the earlier Scriptures.<sup class=\"ref\">3,9</sup></p>\n<p>A report says Abū Bakr رضي الله عنه, eating beside the Prophet ﷺ when this verse came down, drew back his hand in alarm at the thought of being repaid for an atom's weight of evil. He was told that whatever hardship he already disliked in this world was the settling of his small evils, while his good deeds are kept in store for the Day of Judgement.<sup class=\"ref\">1,3</sup> Building on this, some early exegetes held that a believer's small evils are dealt with in this life so reward is saved for the Hereafter, while a disbeliever's good is rewarded here so that punishment is deferred; Ibn ʿAbbās gave a related but different account, that the believer's sins are shown yet forgiven, while the disbeliever's good is voided in the Hereafter and his evil punished together with the punishment for associating partners with Allah.<sup class=\"ref\">1,3</sup></p>\n<p>Several reports draw the line at faith. ʿĀ'isha رضي الله عنها once asked whether ʿAbdullāh ibn Judʿān's generosity in the pre-Islamic era (al-Jāhiliyya) would help him; the Prophet ﷺ said no, because he never once asked his Lord's forgiveness for the Day of Judgement.<sup class=\"ref\">1</sup> Muftī Muḥammad Shafīʿ (d. 1976 CE) reads \"good\" in the verse as good defined by the Sharīʿah, recognised only when joined to faith; a disbeliever's good deeds are rewarded in this life but voided in the Hereafter, while anyone carrying even an atom's weight of faith is held, on this reading, to be taken out of Hell eventually, since faith itself is a deed that must be repaid.<sup class=\"ref\">7,11</sup></p>\n<p>The tradition preserves how seriously people took the promise. ʿĀ'isha رضي الله عنها gave away a single grape, wondering aloud how many atoms it held. Saʿd ibn Abī Waqqāṣ رضي الله عنه insisted on giving two dates rather than none. A man on first hearing the verse was so struck that he said, \"enough for me,\" and another cried out in alarm until the Prophet ﷺ remarked that faith had entered his heart.<sup class=\"ref\">3,4</sup> The same principle is carried further in other sayings: ward off the Fire even with half a date or a kind word, do not think any good act too small, and beware of \"belittled sins,\" small wrongs a person shrugs off, which gather like a bundle of sticks until they are enough to burn him.<sup class=\"ref\">4,9</sup></p>\n<p class=\"close\">Nothing, on this reckoning, is too small to be seen: not the least good, and not the least evil, each weighed to the last atom.</p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:66c04a4c0f55b3235ea5bdcc2af6af22748a5f9b45c64ea2d88907f43bc4d5a3",
+        "2": "sha256:118844501e4759941152b63a6f16707d7ae1000a24ed7bca87b4871534483f45",
+        "3": "sha256:ddfe41eaf1dbbf7d5c9b79bd88a66351f975b9ca484b5ac45ea10978837d8496",
+        "4": "sha256:02f0058dcdff2a6589912789f939a9f717331b0ca48b539066a91287fe0ad482",
+        "5": "sha256:7372d5225aaf4b3be8141db6445b9db5d8f5306d4663fd677dcf3caeafb70e10",
+        "6": "sha256:22563293af7f26026830a63834f1c9b748e39ad3b2fc305ad926ce23ea497f41",
+        "7": "sha256:31056999ff0027bbf2d4fd57a2a8001bf1be478a6d1b62aaf5202272b13cdf03",
+        "8": "sha256:3f6361484ec40ad31cf1fa7c58d5c53256d8565600273be7c34e94fb51846437",
+        "9": "sha256:43ff1cc2ece6e10080c01189c5444f6a17d18f82b121fd1b6e10fb1d8b926db0",
+        "10": "sha256:fcd054dfb585adad6e7fb3c7f9c749c140746981acbbffdf1eb747134550fb81",
+        "11": "sha256:2c1b85f8bd94d769fe66d4dcd26d18daebf0096330eaa85f1938349f6e692fcc",
+        "12": "sha256:5a8f0614bac2d8e4ebc1dd6ed1024734e013cdd89328fef21a71b6153f1f9a25",
+        "13": "sha256:eb1d9c4471d17fb018234eec6cd0656947962df8c88b304c3a0cdefa233377f1",
+        "14": "sha256:d28165676c49b6a0ecad51ecf61803f5b057726e43912952d75c6013459364f4"
+      },
+      "flags": {
+        "creedal_stakes": true,
+        "legal_content": false,
+        "sensitive_content": true
+      },
+      "compiled_at": "2026-08-02"
+    }
+  }
+}

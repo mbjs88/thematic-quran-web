@@ -14,21 +14,48 @@ ROOT = Path(__file__).resolve().parents[2]
 DATA = ROOT / "data"
 THEME_BREAKS = DATA / "theme_breaks.json"
 STORE_DIR = DATA / "tafsir_overview"                 # NNN.json outputs live here
+CATALOGUE = DATA / "commentators.json"               # grounded edition/works catalogue
+CLAIM_SCHEMA = DATA / "schemas" / "extracted_claim.schema.json"
 WORK = ROOT / "scripts" / "overview_pipeline" / "_work"   # batch inputs/outputs, gitignored
 WORK.mkdir(parents=True, exist_ok=True)
 
 # ---- model -------------------------------------------------------------------
-# Opus 4.8 for the whole run, as chosen. Override with OVERVIEW_MODEL if needed.
-MODEL = os.environ.get("OVERVIEW_MODEL", "claude-opus-4-8")
-MAX_TOKENS = int(os.environ.get("OVERVIEW_MAX_TOKENS", "4000"))   # per section output
+# Sonnet is the chosen model for the full run — good enough for this compilation
+# task and far cheaper than Opus. Override with OVERVIEW_MODEL if needed.
+MODEL = os.environ.get("OVERVIEW_MODEL", "claude-sonnet-5")
+# Output cap = 64k (Sonnet's max). Dense sections legitimately produce ~25-40k
+# output tokens (full claims + essay). A LOW cap truncates the JSON → the whole
+# section is lost AND its output tokens are billed anyway (100% wasted). A HIGH cap
+# lets the section COMPLETE — usable, paid once, no re-run. So 64k is the
+# money-SAVING choice here, not the expensive one. (If the model's real max is
+# lower, the API says so at submit; drop to 32000 then.)
+MAX_TOKENS = int(os.environ.get("OVERVIEW_MAX_TOKENS", "64000"))
+
+# ---- per-section input budget (anti-context-overflow) ------------------------
+# Long legal surahs (2-9) can return enormous tafsir per verse; 14 voices at once
+# could exceed the model's context window and fail the request. gather_section
+# trims to these caps (truncating the longest texts with a disclosed marker and
+# recording which editions were trimmed) so no section ever blows the window.
+PER_EDITION_CHAR_CAP = int(os.environ.get("OVERVIEW_PER_EDITION_CHARS", "60000"))   # ~15k tok
+SECTION_CHAR_BUDGET = int(os.environ.get("OVERVIEW_SECTION_CHARS", "480000"))       # ~120k tok
 
 # Pricing per million tokens (standard). Batch applies 50%.
 PRICE = {
     "claude-opus-4-8":        {"in": 5.0,  "out": 25.0},
-    "claude-sonnet-5":        {"in": 3.0,  "out": 15.0},   # $2/$10 intro to 2026-08-31
+    # Sonnet is on its intro rate until 2026-08-31 (reverts to 3.0/15.0 after).
+    # This is what the API actually bills now, so estimates match the invoice.
+    "claude-sonnet-5":        {"in": 2.0,  "out": 10.0},
     "claude-haiku-4-5":       {"in": 1.0,  "out": 5.0},
 }
 BATCH_DISCOUNT = 0.5
+
+# Estimator tuning. Input is counted for real (see batch._estimate_cost). Output
+# is estimated as a FRACTION OF INPUT — observed ~0.40 across real runs (full-claims
+# output scales with how much source text a section carries), which auto-adjusts for
+# short vs dense sections far better than a flat per-section guess. The fallback char
+# ratio is calibrated to this Arabic/Urdu/Bengali/Kurdish corpus (~1.8 chars/token).
+OUTPUT_INPUT_RATIO = float(os.environ.get("OVERVIEW_OUTPUT_RATIO", "0.40"))
+CHARS_PER_TOKEN = float(os.environ.get("OVERVIEW_CHARS_PER_TOKEN", "1.8"))
 
 # ---- Quran Foundation content API -------------------------------------------
 # The site already proxies this at /api/qf-public/api/v4 using QF_CLIENT_ID/SECRET.
@@ -44,27 +71,24 @@ QF_CLIENT_SECRET = os.environ.get("QF_CLIENT_SECRET", "")
 QURAN_EDITION = "quran-simple-clean"          # Arabic
 TRANSLATION_EDITION_ID = 85                    # Abdel Haleem (resolve at runtime if needed)
 
-# ---- the commentary set (the 12 studied in the pilots) -----------------------
-# `id` is the QF/quran.com tafsir id observed in the pilot citation URLs where known;
-# `match` keywords let qf_client resolve the id from /resources/tafsirs at runtime,
-# which is the robust path (ids can differ between environments). ref `n` must stay
-# stable — it is what the reader-facing `^[n]` markers point to.
-EDITIONS = [
-    {"n": 1,  "key": "ar-tabari",        "id": 15,   "label": "al-Ṭabarī, Jāmiʿ al-Bayān",              "match": ["tabari", "jami al-bayan"],        "lang": "ar", "note": "foundational; range of early opinion"},
-    {"n": 2,  "key": "en-ibn-kathir",    "id": 169,  "label": "Ibn Kathīr",                              "match": ["ibn kathir"],                     "lang": "en", "note": "Qurʾan + prophetic reports"},
-    {"n": 3,  "key": "ar-qurtubi",       "id": 90,   "label": "al-Qurṭubī, al-Jāmiʿ li-Aḥkām al-Qurʾan",  "match": ["qurtubi"],                        "lang": "ar", "note": "legal, context, language"},
-    {"n": 4,  "key": "ar-kashaf",        "id": None, "label": "al-Zamakhsharī, al-Kashshāf",             "match": ["kashshaf", "kashaf", "zamakhshari"], "lang": "ar", "note": "language and rhetoric"},
-    {"n": 5,  "key": "ar-baghawi",       "id": 94,   "label": "al-Baghawī, Maʿālim al-Tanzīl",           "match": ["baghawi", "maalim"],              "lang": "ar", "note": "early reports, consensus"},
-    {"n": 6,  "key": "ar-nathm-aldurar", "id": None, "label": "al-Biqāʿī, Naẓm al-Durar",                "match": ["biqai", "nazm al-durar", "nathm"], "lang": "ar", "note": "purpose / structure of the surah"},
-    {"n": 7,  "key": "ar-saadi",         "id": 91,   "label": "al-Saʿdī, Taysīr al-Karīm al-Raḥmān",     "match": ["saadi", "sadi", "taysir"],        "lang": "ar", "note": "practical lesson"},
-    {"n": 8,  "key": "ar-jalalayn",      "id": 926,  "label": "al-Jalālayn",                             "match": ["jalalayn"],                       "lang": "ar", "note": "short word-by-word gloss"},
-    {"n": 9,  "key": "ar-muyassar",      "id": 16,   "label": "al-Muyassar",                             "match": ["muyassar"],                       "lang": "ar", "note": "plain mainstream meaning"},
-    {"n": 10, "key": "ar-al-wasit",      "id": 93,   "label": "al-Wasīṭ (Ṭanṭāwī)",                      "match": ["wasit", "tantawi"],               "lang": "ar", "note": "modern, everyday life"},
-    {"n": 11, "key": "en-maarif",        "id": 168,  "label": "Maʿārif al-Qurʾan (Muḥammad Shafīʿ)",     "match": ["maarif"],                         "lang": "en", "note": "modern, practical, English"},
-    {"n": 12, "key": "en-tazkir",        "id": 817,  "label": "Tazkīr al-Qurʾan (Wahiduddin Khan)",      "match": ["tazkir", "tazkirul", "wahiduddin"], "lang": "en", "note": "modern, reflective"},
-]
-# Editions QF does not serve numerically may resolve to None; the run records the
-# real count actually fetched as `commentators_studied` per surah — never fake it.
+# ---- the commentary set ------------------------------------------------------
+# The commentary set is NOT hand-written here any more (that is how phantom
+# editions once crept in from memory). It is loaded from the grounded catalogue
+# `data/commentators.json` via the catalogue module, then narrowed at run time to
+# what the live API actually serves (qf_client.reconcile). Each entry is a *work*
+# (one scholarly voice); its stable `n` is what the reader-facing `^[n]` markers
+# point to. Fatḥ al-Majīd is excluded by default (not a Qurʾān tafsir).
+from . import catalogue                       # noqa: E402  (after paths/env above)
+
+INCLUDE_EXCLUDED = os.environ.get("OVERVIEW_INCLUDE_EXCLUDED", "0") == "1"
+
+def works():
+    """The active list of works (voices) for this run."""
+    return catalogue.works(include_excluded=INCLUDE_EXCLUDED)
+
+def fetch_plan():
+    """Per-work fetch/translate plan for this run."""
+    return catalogue.fetch_plan(include_excluded=INCLUDE_EXCLUDED)
 
 # ---- modern-lens policy ------------------------------------------------------
 # Batch requests cannot browse to verify scientific claims, so by default the

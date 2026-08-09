@@ -9,14 +9,33 @@ Model is **Opus 4.8** (`claude-opus-4-8`) by default — set in `config.py` / `O
 
 ```
 scripts/overview_pipeline/
-  config.py        model, edition set + ids, pricing, paths, ayah counts
-  prompt.py        the shared system prompt + strict JSON output contract
-  qf_client.py     Quran Foundation content API (OAuth) — fetches the raw tafsir
-  store.py         theme_breaks → sections; idempotent merge into NNN.json
+  catalogue.py     grounded edition/works loader (data/commentators.json) — the
+                   single source of which commentaries exist + the English plan
+  config.py        model, paths, pricing, ayah counts; commentary set via catalogue
+  prompt.py        shared system prompt → claims + essay (strict JSON contract)
+  qf_client.py     Quran Foundation content API (OAuth); reconcile() narrows the
+                   catalogue to what the API actually serves; source hashing
+  corpus.py        raw tafsir cache (data/tafsir_raw/) — fetch once, compile many;
+                   the durable source layer + the `fetch` phase
+  store.py         sections; claim enrichment + schema validation; fidelity gate;
+                   idempotent v2 merge into NNN.json (coverage, provenance, claims)
+  _jsonschema.py   tiny self-contained validator for extracted_claim.schema.json
   batch.py         Batch-API path:  build → submit → collect
-  subscription.py  Claude Code path (agentic, verified) — bills the Max plan
+  subscription.py  Claude Code path (billed to Max) — same grounded flow
   status.py        monitor: store progress + batch status
 ```
+
+### Grounding (v2 rebuild)
+
+Nothing may be cited that was not fetched. The commentary set comes from
+`data/commentators.json` (not a hand-written list — that is how phantom editions
+once entered from memory), and `qf_client.reconcile()` further drops anything the
+live API does not serve. Each section stores a structured **claim layer**
+(`extracted_claim.schema.json`) that the essay is built from, and every section
+passes a **fidelity gate** (`store.check_section`) before it is written: a claim
+or essay that cites a source not fetched is rejected, not saved. Same-work
+editions across languages (Ibn Kathīr in ar/en/ur/bn) are one voice; works with
+an English edition are used directly, the rest are translated early (spec §4).
 
 ## 0. Prerequisites
 
@@ -35,9 +54,10 @@ Set secrets in the repo `.env` (see `.env.example`) and export them, or put them
 
 > The QF endpoint paths and auth headers in `qf_client.py` follow the Quran Foundation API;
 > confirm them against your account docs and adjust `QF_API_BASE` / `QF_AUTH_URL` if needed.
-> Two editions (al-Kashshāf, Naẓm al-Durar) may not be served by QF numerically — the client
-> resolves ids from the live `/resources/tafsirs` list and records the real count actually
-> fetched as each surah's `commentators_studied` (it never fakes the number).
+> The edition set is whatever `data/commentators.json` lists AND the live
+> `/resources/tafsirs` serves; `reconcile()` intersects the two and reports the coverage
+> (languages present/absent). A surah's `coverage.independent_works` is the real number of
+> voices fetched — never faked, never a static list. **See `DEPLOYMENT.md` for the runbook.**
 
 ## A. Batch API path (cheapest — 50% off, ~$240 for the whole Qurʾan on Opus)
 

@@ -1,0 +1,3370 @@
+{
+  "surah": 88,
+  "name": "",
+  "coverage": {
+    "editions_present": [
+      "ar-tafsir-al-tabari",
+      "ar-tafsir-al-baghawi",
+      "ar-tafseer-al-qurtubi",
+      "en-tafisr-ibn-kathir",
+      "ar-tafseer-al-saddi",
+      "tafsir-fe-zalul-quran-syed-qatab",
+      "en-tafsir-maarif-ul-quran",
+      "tafsir-bayan-ul-quran",
+      "ar-tafsir-al-wasit",
+      "tazkirul-quran-en",
+      "bn-tafsir-abu-bakr-zakaria",
+      "bn-tafsir-ahsanul-bayaan",
+      "ar-tafsir-muyassar",
+      "kurd-tafsir-rebar"
+    ],
+    "editions_absent": [],
+    "independent_works": 14,
+    "languages_present": [
+      "ar",
+      "bn",
+      "en",
+      "ku",
+      "ur"
+    ],
+    "languages_absent": []
+  },
+  "pipeline_provenance": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "overview-v2.3",
+    "theme_breaks_version": "sha256:99880ec7b10b53313690f91df9ee8d065519ee698df34b35a3336b5705218f90",
+    "compiled_at": "2026-08-02"
+  },
+  "modern_lens_framing": "The Qurʾan is taken here as fixed, revealed truth; science is our provisional, evolving account of the observable world. What follows notes where the two meet — a contemplation, not a proof. Where the science later shifts, that reflects the limits of our knowledge, not the text.",
+  "references": [
+    {
+      "n": 1,
+      "work_id": "al-tabari",
+      "label": "Jāmiʿ al-Bayān",
+      "author_id": "al-tabari",
+      "author": "Abū Jaʿfar Muḥammad ibn Jarīr al-Ṭabarī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 2,
+      "work_id": "al-baghawi",
+      "label": "Maʿālim al-Tanzīl",
+      "author_id": "al-baghawi",
+      "author": "Abū Muḥammad al-Ḥusayn ibn Masʿūd al-Baghawī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 3,
+      "work_id": "al-qurtubi",
+      "label": "al-Jāmiʿ li-Aḥkām al-Qurʾān",
+      "author_id": "al-qurtubi",
+      "author": "Abū ʿAbd Allāh Muḥammad ibn Aḥmad al-Qurṭubī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 4,
+      "work_id": "ibn-kathir",
+      "label": "Tafsīr Ibn Kathīr",
+      "author_id": "ibn-kathir",
+      "author": "Ismāʿīl ibn ʿUmar ibn Kathīr",
+      "source_language": "ar",
+      "note": "One independent voice. The ar/ur/bn editions are the SAME work — never count as separate corroboration."
+    },
+    {
+      "n": 5,
+      "work_id": "al-saadi",
+      "label": "Taysīr al-Karīm al-Raḥmān",
+      "author_id": "al-saadi",
+      "author": "ʿAbd al-Raḥmān ibn Nāṣir al-Saʿdī",
+      "source_language": "ar",
+      "note": "Russian edition (170) is the SAME work — translate from the Arabic original, and do not count Russian as an independent voice."
+    },
+    {
+      "n": 6,
+      "work_id": "fi-zilal",
+      "label": "Fī Ẓilāl al-Qurʾān",
+      "author_id": "sayyid-qutb",
+      "author": "Sayyid Quṭb Ibrāhīm Ḥusayn",
+      "source_language": "ar",
+      "note": "Original is Arabic, but the API here carries only an URDU edition — translating from Urdu is one step removed from the original. Prefer the Arabic original if the QF Content API offers it."
+    },
+    {
+      "n": 7,
+      "work_id": "maarif",
+      "label": "Maʿārif al-Qurʾān",
+      "author_id": "muhammad-shafi-usmani",
+      "author": "Muftī Muḥammad Shafīʿ ʿUthmānī",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 8,
+      "work_id": "bayan-ul-quran",
+      "label": "Bayān al-Qurʾān",
+      "author_id": "israr-ahmad",
+      "author": "Isrār Aḥmad",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 9,
+      "work_id": "wasit",
+      "label": "al-Tafsīr al-Wasīṭ",
+      "author_id": "tantawi",
+      "author": "Muḥammad Sayyid Ṭanṭāwī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 10,
+      "work_id": "tazkirul",
+      "label": "Tazkīr al-Qurʾān",
+      "author_id": "wahiduddin-khan",
+      "author": "Wahiduddin Khan",
+      "source_language": "ur",
+      "note": "en and ur editions are the same work."
+    },
+    {
+      "n": 11,
+      "work_id": "abu-bakr-zakaria",
+      "label": "Tafsir Abu Bakr Zakaria",
+      "author_id": "abu-bakr-zakaria",
+      "author": "Abū Bakr Muḥammad Zakariyyā",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 12,
+      "work_id": "ahsanul-bayaan",
+      "label": "Ahsanul Bayaan",
+      "author_id": "bayaan-foundation",
+      "author": "Ahsanul Bayaan (Bayaan Foundation)",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 13,
+      "work_id": "muyassar",
+      "label": "al-Tafsīr al-Muyassar",
+      "author_id": "committee-muyassar",
+      "author": "al-Tafsīr al-Muyassar (committee)",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 14,
+      "work_id": "rebar-kurdish",
+      "label": "Rebar Kurdish Tafsir",
+      "author_id": "rebar",
+      "author": "Rebar Kurdish Tafsir",
+      "source_language": "ku",
+      "note": ""
+    }
+  ],
+  "sections": {
+    "88:17": {
+      "verse_range": "17-20",
+      "title": "Four Signs Before Their Eyes",
+      "in_short": "Facing deniers who mocked what the Qur'an said awaited them unseen, Allah points them to four things they can see with their own eyes: the camel, the sky, the mountains, and the earth, each shaped in a way that testifies to a Maker.",
+      "claims": [
+        {
+          "id": "88:17#c1",
+          "section_ref": "88:17",
+          "attaches_to": "88:17",
+          "text": "Several commentators report that when Allah described the wonders of Paradise, the disbelievers mocked and denied it, so Allah reminded them of the camel: it kneels to receive a heavy load and then rises with it, just as they doubted how the raised furnishings of Paradise could ever be reached.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "لما نعت الله ما في الجنة، عجب من ذلك أهل الضلالة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "ذكر الله تعالى ارتفاع سرر الجنة وفرشها، فقالوا: كيف نصعدها",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "لما ذكر السرر المرفوعة قالوا: كيف نصعدها",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not specified in the sources"
+          }
+        },
+        {
+          "id": "88:17#c2",
+          "section_ref": "88:17",
+          "attaches_to": "88:17",
+          "text": "The camel is named rather than a larger animal like the elephant because the camel was universally known and owned among the Arabs, while the elephant was something they rarely, if ever, encountered.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "العرب بعيدة العهد بها",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "العرب بعيدة العهد بالفيل",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "88:17#c3",
+          "section_ref": "88:17",
+          "attaches_to": "88:17",
+          "text": "The camel is singled out because, uniquely among animals, it kneels down to be loaded and then rises up carrying the weight, a distinctive feature not shared by other beasts of burden.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "لأنها تنهض بحملها وهي باركة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "88:17#c4",
+          "section_ref": "88:17",
+          "attaches_to": "88:17",
+          "text": "The camel combines all four benefits an animal can offer, milk, riding, meat, and load-carrying, more completely than any other animal, making it the fullest single sign among livestock.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "الإبل تجمع هذه الخلال الأربع فكانت النعمة بها أعم",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "88:17#c5",
+          "section_ref": "88:17",
+          "attaches_to": "88:17",
+          "text": "Despite its size and strength, the camel is gentle and obedient, letting itself be led even by a weak rider or a small child.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "88:17#c6",
+          "section_ref": "88:17",
+          "attaches_to": "88:17",
+          "text": "Shurayh al-Qadi, a judge, used to say: 'Come out with us so that we may look at the camel, how it was created', treating the animal as a standing invitation to reflection.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "اخرجوا بنا ننظر إلى الإبل كيف خُلقت",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not specified"
+          }
+        },
+        {
+          "id": "88:17#c7",
+          "section_ref": "88:17",
+          "attaches_to": "88:17",
+          "text": "The camel is desert-built: it can go without water for many days by storing it internally, it can travel by night to avoid the scorching sun, and its legs are jointed for easy kneeling and rising, so a rider needs no ladder to mount it.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "ریگستان کی گرمی میں یہ کئی کئی دن کھائے پئے بغیر چلتا رہتا ہے",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "88:17#c8",
+          "section_ref": "88:17",
+          "attaches_to": "88:17",
+          "text": "Some grammarians read 'al-ibil' with a doubled letter to mean heavy rain-bearing clouds rather than camels; al-Thaʿlabī said he found no basis for this reading in the books of the leading scholars, and al-Māwardī judged the reading 'camels' to be the clearer and better-known of the two views.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وقيل: الإبل هنا القطع العظيمة من السحاب قاله المبرد",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar",
+          "original_terms": [
+            {
+              "term": "الإبل",
+              "gloss": "camels; on one minority reading, heavy rain-clouds"
+            }
+          ]
+        },
+        {
+          "id": "88:17#c9",
+          "section_ref": "88:17",
+          "attaches_to": "88:17",
+          "text": "The four signs appear in the exact order a desert-travelling Arab actually meets them: his mount beneath and around him, the sky above, mountains ahead or behind, the earth under his feet, so the sequence follows lived experience rather than abstract logic.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "كانوا يسيرون على الإبل منفردين مستوحشين عن الناس",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "88:17#c10",
+          "section_ref": "88:17",
+          "attaches_to": "88:17",
+          "text": "Al-Qushayrī held that no particular wisdom needs to be sought for why the camel is named first among the four signs; others simply note it was nearest to daily Arab experience, since camels were everywhere among them.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "قال القشيري: وليس هذا مما يطلب فيه نوع حكمة",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "88:17#c11",
+          "section_ref": "88:17",
+          "attaches_to": "88:17",
+          "text": "The question presses the deniers of resurrection: if they will not accept what is described of the unseen, let them look at what stands plainly before them, the camel's own strange and orderly creation, and reason from what is seen to what is not.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "relay",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "88:17#c12",
+          "section_ref": "88:17",
+          "attaches_to": "88:17",
+          "text": "Sayyid Quṭb reads the four signs as together painting the whole visual world of the first Arab audience: the living beauty of the camel set against the cosmic scenery of sky, mountain and earth, with a compositional balance between the horizontal lines of the spread-out sky and earth and the single vertical line of the standing mountains, likened to how a camel's hump breaks an otherwise flat outline.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "اس منظر میں دو افقی خط ہیں اور دوراسی خط ہیں۔ لیکن باہم متناسب ہیں",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric"
+        },
+        {
+          "id": "88:17#c13",
+          "section_ref": "88:17",
+          "attaches_to": "88:18",
+          "text": "The sky is raised high above the earth without any visible pillars holding it up.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "عن الأرض حتى لا ينالها شيء بغير عمد",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "88:17#c14",
+          "section_ref": "88:17",
+          "attaches_to": "88:18",
+          "text": "Isrār Aḥmad reads this verse as an open invitation for astronomers to search out the secrets of the stars and galaxies through research.",
+          "claim_type": "other",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "یہ ماہرین فلکیات کے لیے صلائے عام ہے",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "88:17#c15",
+          "section_ref": "88:17",
+          "attaches_to": "88:18",
+          "text": "Quṭb describes the desert-dweller's close, almost affectionate relationship with the night sky, its stars and its changing hours, calling it a sign that needs only insight, not deep learning, to be read.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "یہ مشاہدہ ایسا ہے اور یہ غور وفکر ایسا ہے جس کے لئے کسی وسیع اور گہرے علم کی ضرورت نہیں ہے۔ صرف ایک بصیرت والی نظر کی ضرورت ہے",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "88:17#c16",
+          "section_ref": "88:17",
+          "attaches_to": "88:19",
+          "text": "The mountains are firmly fixed into the earth so that it does not sway or shift with the people living on it.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "على وجه الأرض مرساة لا تزول",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "أن الأرض لما دحيت مادت، فأرساها بالجبال",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "88:17#c17",
+          "section_ref": "88:17",
+          "attaches_to": "88:19",
+          "text": "The mountains also hold benefits and mineral resources placed within them.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "88:17#c18",
+          "section_ref": "88:17",
+          "attaches_to": "88:19",
+          "text": "Qatāda described climbing a hard mountain the whole day, only to find at its summit flowing springs and hanging fruit that no human hand had planted or tended, calling this a favour and provision from Allah.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "أفضيت إلى عيون متفجرة، وثمار متهدلة ثم لم تحرثه الأيدي ولم تعمله، نعمة من الله",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not specified"
+          }
+        },
+        {
+          "id": "88:17#c19",
+          "section_ref": "88:17",
+          "attaches_to": "88:19",
+          "text": "Quṭb reads the mountains as carrying psychological and spiritual weight for the Arab: a refuge in hardship, a felt companionship, and a sense of nearness to God, noting that the Prophet ﷺ withdrew to the cave of Hira before his prophethood.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "نبوت سے قبل حضور اکرم ﷺ جبل ثور کے غار حرا میں علیحدگی اختیار فرماتے تھے",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "88:17#c20",
+          "section_ref": "88:17",
+          "attaches_to": "88:19",
+          "text": "Isrār Aḥmad notes that researching the structure of mountains and their effect on the earth's crust is the proper work of geologists.",
+          "claim_type": "other",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "88:17#c21",
+          "section_ref": "88:17",
+          "attaches_to": "88:19",
+          "text": "Ibn Kathīr relates the hadith of Ḍimām ibn Thaʿlaba, who came questioning the Prophet ﷺ and swore by the One who created the heavens, the earth, and erected the mountains, asking whether Allah had truly sent him; the Prophet ﷺ answered yes to each question, and Ḍimām accepted the pillars taught to him without adding or subtracting, after which the Prophet ﷺ said that if he spoke truly he would enter Paradise.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "recorded by al-Bukhari, Muslim, Abu Dawud, al-Tirmidhi, al-Nasa'i and Ibn Majah, per Ibn Kathir"
+          }
+        },
+        {
+          "id": "88:17#c22",
+          "section_ref": "88:17",
+          "attaches_to": "88:20",
+          "text": "The earth is spread out, levelled and smoothed, so that people can settle on it, farm it, build on it, and travel across it.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "88:17#c23",
+          "section_ref": "88:17",
+          "attaches_to": "88:20",
+          "text": "A report attributed to Ibn ʿAbbās (via ʿAṭāʾ) has him say: 'Can anyone create like the camel, raise like the sky, fix like the mountains, or spread like the earth, other than Me?', reading all four verses as Allah's own challenge.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "هل يقدر أحد أن يخلق مثل الإبل، أو يرفع مثل السماء، أو ينصب مثل الجبال، أو يسطح مثل الأرض غيري",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not specified"
+          }
+        },
+        {
+          "id": "88:17#c24",
+          "section_ref": "88:17",
+          "attaches_to": "88:20",
+          "text": "Being described as 'spread out' does not contradict the earth being a sphere: al-Saʿdī explains that flatness only contradicts roundness in a very small body, whereas a body as vast as the earth can be spherical while still appearing flat and level to those standing on it, a fact he says is confirmed by transmitted text, reason, and direct observation, 'especially in this age', when people have travelled to most of its regions. Ṭanṭāwī makes the same point, that a sufficiently large sphere's surface can serve as a flat, usable plane.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "واعلم أن تسطيحها لا ينافي أنها كرة مستديرة",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "وهذا لا ينافى كونها كروية",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "88:17#c25",
+          "section_ref": "88:17",
+          "attaches_to": "88:20",
+          "text": "Al-Qurṭubī records that some reciters, attributed to ʿAlī رضي الله عنه and others such as Muḥammad ibn al-Sumayqiʿ and Abū al-ʿĀliyah, read the four verbs of this passage with a change of vowel that attaches the hidden action directly to Allah with an implied object ('He created it, He raised it'), against the more common reading that reads them as simple passives.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "فقرأ كيف خلقت ورفعت ونصبت وسطحت، بضم التاءات أضاف الضمير إلى الله تعالى",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "88:17#c26",
+          "section_ref": "88:17",
+          "attaches_to": "88:20",
+          "text": "Wahiduddin Khan reads the camel, sky and earth as all disposed to serve man without effort on his part, taking this as a reminder pointing toward God and the Hereafter; those who draw remembrance from this arrangement secure God's lasting bounty, while those who remain heedless of it show they deserve to be deprived of it.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        }
+      ],
+      "essay_html": "<p>The passage turns from what the deniers refused to believe about the unseen to what stands plainly in front of them. Several commentators trace this to a moment when the disbelievers mocked the Qur'an's description of Paradise's raised furnishings, so Allah pointed them to the camel, an animal that kneels under a heavy load and then rises with it, a small everyday picture of the very thing they found unbelievable.<sup class=\"ref\">1,2,3</sup></p>\n<p>The camel is named rather than a bigger animal like the elephant, because the elephant was barely known to the Arabs while the camel was everywhere among them.<sup class=\"ref\">2,3,4,7</sup> It is singled out for a feature no other beast shares: it kneels to be loaded and rises with the weight on its back.<sup class=\"ref\">1,2,3,9</sup> It also gathers, in one animal, every benefit a creature can give, milk, meat, riding and carrying, more completely than any other beast.<sup class=\"ref\">3,4,7</sup> Despite its size and power it stays gentle, led by a weak rider or even a child.<sup class=\"ref\">2,3,4,7,9</sup> Shurayḥ al-Qāḍī used to tell people plainly, \"Come out with us and look at the camel, how it was created.\"<sup class=\"ref\">1,2,3,4</sup> Muftī Muḥammad Shafīʿ (d. 1976) and Isrār Aḥmad (d. 2010) add that the camel is built for the desert itself: it can go without water for days, travels by night to escape the heat, and its legs are jointed so a rider needs no ladder to mount it.<sup class=\"ref\">7,8</sup> A minority grammatical reading takes \"al-ibil\" as heavy rain-clouds rather than camels, though al-Qurṭubī (d. 1273) notes that one scholar found no basis for this reading and another judged the camel-reading clearer and better known.<sup class=\"ref\">3</sup> The four signs, camel, sky, mountain, earth, follow the exact order a travelling Arab meets them: mount beneath him, sky above, mountains around, earth underfoot.<sup class=\"ref\">3,4,7,8,11</sup> Sayyid Quṭb (d. 1966) reads the whole scene as a single composition, the living camel set against sky, mountain and earth, with the flat lines of sky and earth balanced by the one upright line of the mountains, much as a camel's hump breaks its own flat outline.<sup class=\"ref\">6</sup></p>\n<p>The sky, next, is raised high with no pillars holding it up.<sup class=\"ref\">2,3,4,9,11,12,14</sup> Isrār Aḥmad takes the verse as an open door for astronomers to study the stars and galaxies further.<sup class=\"ref\">8</sup> Quṭb dwells on how close the desert-dweller lives with the night sky, its stars and its changing hours, a sign, he says, that asks only for insight, not learning.<sup class=\"ref\">6</sup></p>\n<p>The mountains are fixed into the earth so it does not sway with those who live on it, and they hold benefits and minerals besides.<sup class=\"ref\">1,2,3,4,5,9,12,14</sup> Qatāda described climbing a hard mountain all day only to find springs and hanging fruit at the top that no hand had planted, calling it a favour from Allah.<sup class=\"ref\">1</sup> Quṭb reads mountains as a place of refuge and felt nearness to God for the Arab, recalling that the Prophet ﷺ withdrew to the cave of Ḥirāʾ before his mission began.<sup class=\"ref\">6</sup> Ibn Kathīr (d. 1373) relates that Ḍimām ibn Thaʿlaba once swore by the One who made the heavens, the earth, and the mountains and asked the Prophet ﷺ directly whether Allah had sent him; on hearing \"yes\" to each question he accepted Islam's pillars without adding or subtracting, a hadith recorded, Ibn Kathīr notes, in both Ṣaḥīḥs.<sup class=\"ref\">4</sup></p>\n<p>Finally the earth is spread out, levelled for settling, farming, building and travel.<sup class=\"ref\">1,2,3,4,5,9,12</sup> A report from Ibn ʿAbbās has him read all four verses as Allah's own challenge: \"Can anyone create like the camel, raise like the sky, fix like the mountains, or spread like the earth, other than Me?\"<sup class=\"ref\">2</sup> Al-Saʿdī (d. 1957) and Ṭanṭāwī (d. 2010) both note that being \"spread out\" does not contradict the earth being a sphere, since only a very small body loses its roundness by being flattened, while a body as vast as the earth can be round and still appear level underfoot, a matter al-Saʿdī says text, reason and direct observation all confirm, \"especially in this age.\"<sup class=\"ref\">5,9</sup> Al-Qurṭubī also records a variant recitation, attributed to ʿAlī رضي الله عنه among others, that reads the four verbs as acts directly attached to Allah rather than as simple passives.<sup class=\"ref\">3</sup></p>\n<p class=\"close\">Wahiduddin Khan (d. 2021) sums up the pull of these four signs: the camel obedient, the sky well-disposed, the earth subservient, all without effort on man's part, a standing reminder of God and the Hereafter, so that whoever draws remembrance from them has earned God's bounty, and whoever stays heedless of them has shown what he deserves to lose.<sup class=\"ref\">10</sup></p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:cfad056c84dd4891d5571b9bb96598964c704229169ce3c6e4138a261209f9d9",
+        "2": "sha256:9969952377e2ead8c7dad1ac6b57cf2e04fe9e7b79a4a80acb183192834638b3",
+        "3": "sha256:a0965d6d512a845b7bff3cddeba2f2f4aaab22dee4e2a4a5ed99e4e4ffaf12f8",
+        "4": "sha256:5b83a006f57394d1bfcfdfefc70d87c69986f7308fd49be99541db57f7d94498",
+        "5": "sha256:5571c2b8cec3e3a82fabede4c5ffb2f03b7dc62eb80986af34d808a624b9faca",
+        "6": "sha256:be1ed9bdb84f2ad054bfd8dd63839b3768f220ca6fcc7600f2bf0ed543c82f58",
+        "7": "sha256:5ed63a84c5422c5ae28603979b36df83e56930e917a121b23c1c576f29c441e6",
+        "8": "sha256:85191489da2147826378e2762e688557aa34e7bba6e1095c95671326cd294840",
+        "9": "sha256:85e7829dcc6c63263090e60d4c718b4c2671a424defc4d9a39723811b1d46335",
+        "10": "sha256:8d9fef9ce1618b4736733f38b3ae8e1eaa5baf16c922c176343e918d49c0382e",
+        "11": "sha256:817993b97346de6a0aabf897b8c28a6c8e479924663e6af5ff30a49c93f76bf0",
+        "12": "sha256:09eec608e3e7c3d174d8179e6bac481ad5b22d017efea86886f2fb7ddc85addf",
+        "13": "sha256:d76663c778b0f070836db5d39f5bc46006831760fa62a759bb620a5f7d3d32f2",
+        "14": "sha256:a90bb317f5d058b6e729959fc94ce13696760fa3b8176c3cb234daca3c279153"
+      },
+      "flags": {
+        "creedal_stakes": "false",
+        "legal_content": "false",
+        "sensitive_content": "false"
+      },
+      "compiled_at": "2026-08-02"
+    },
+    "88:21": {
+      "verse_range": "21-23",
+      "title": "Reminder, Not Controller",
+      "in_short": "Allah tells the Prophet ﷺ that his whole task is to remind people of the truth; he has no power to force belief into anyone's heart. Whoever still turns away and disbelieves will answer for it, but that reckoning belongs to Allah, not to him.",
+      "claims": [
+        {
+          "id": "88:21#c1",
+          "section_ref": "88:21",
+          "attaches_to": "88:21",
+          "text": "\"Fa-dhakkir\" (so remind) means to admonish or preach — the same sense as \"exhort\" (waʿẐ).",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "فذكر عبادي بآياتي، وعظهم بحججي",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "أي: عظ يا محمد",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "أي فعظهم يا محمد وخوفهم",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "مذكر (mudhakkir)",
+              "gloss": "one who reminds / admonishes"
+            }
+          ]
+        },
+        {
+          "id": "88:21#c2",
+          "section_ref": "88:21",
+          "attaches_to": "88:21",
+          "text": "The Prophet's entire function is to remind and warn people; he is not charged with making them believe, and this is offered as a consolation to him — his duty ends at conveying the message, and delivery through peaceful exhortation is the whole of it.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "88:21#c3",
+          "section_ref": "88:21",
+          "attaches_to": "88:22",
+          "text": "\"Musayyiṭir/muṣayṭir\" means one who has total dominance over others and forces them to comply — a tyrant (jabbār). Qurṭubī adds a note on its root: from \"saṭr\" (a line/register), the sense being one who oversees and controls a matter down to the letter.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "لست عليهم بمسلَّط، ولا أنت بجبار",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "بمسلط فتقتلهم وتكرههم على الإيمان",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "المسيطر والمصيطر: المسلط على الشيء",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "مصيطر (muṣayṭir)",
+              "gloss": "one who dominates/forces compliance; a controller or tyrant"
+            }
+          ]
+        },
+        {
+          "id": "88:21#c4",
+          "section_ref": "88:21",
+          "attaches_to": "88:22",
+          "text": "This means the Prophet cannot create faith in people's hearts or compel belief; turning a heart to faith belongs to Allah alone.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "آپ ان پر کوئی داروغہ نہیں ہیں",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning",
+          "theological_school": "Atharī"
+        },
+        {
+          "id": "88:21#c5",
+          "section_ref": "88:21",
+          "attaches_to": "88:22",
+          "text": "A reading variant is noted on this word: the majority read it with ṣād (\"muṣayṭir\"), while Ibn ʿĀmir read it with sīn (\"musayyiṭir\"); Qurṭubī also records that Hārūn al-Aʿwar read it with a fatḥa on the ṭāʾ.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وقرأ هارون الأعور (بمسيطر) (بفتح الطاء)",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "قرأ الجمهور هذا اللفظ بالصاد، وقرأ ابن عامر بالسين",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "88:21#c6",
+          "section_ref": "88:21",
+          "attaches_to": "88:22",
+          "text": "Some commentators hold that this denial of any compulsion was later abrogated (naskh) by the verses commanding fighting (āyat al-qitāl / āyat al-sayf).",
+          "claim_type": "legal",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "فنسخت (لست عليهم بمسيطر)",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "نسختها آية القتال",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "ثم نسختها آية السيف",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "88:21#c7",
+          "section_ref": "88:21",
+          "attaches_to": "88:22",
+          "text": "A report from Jābir b. ʿAbdillāh has the Prophet ﷺ say: \"I have been commanded to fight the people until they say lā ilāha illallāh; once they say it, they have safeguarded their blood and wealth from me except by right, and their reckoning is with Allah\" — and he then recited this verse, showing that the reminding itself was never abrogated even where fighting was later commanded for other reasons.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "Ibn Kathīr, who notes it is recorded in both Ṣaḥīḥs (also by Muslim, al-Tirmidhī, al-Nasāʾī)"
+          }
+        },
+        {
+          "id": "88:21#c8",
+          "section_ref": "88:21",
+          "attaches_to": "88:22",
+          "text": "Sayyid Quṭb addresses an objection: if the Prophet's task was only to deliver the message, why was jihad then commanded? He answers that jihad was not meant to force faith into hearts but to clear away the political obstacles blocking the message, and to stop those who accepted Islam from being persecuted for it.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "جہاڈ اس لئے نہیں فرض ہوا کہ لوگوں کو مومن بنایا جائے بلکہ اس لئے کہ تبلیغ کے راستے میں رکاوٹیں دور کی جائیں",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "88:21#c9",
+          "section_ref": "88:21",
+          "attaches_to": "88:22",
+          "text": "Saʿdī ties this verse to another (50:45): once the Prophet has discharged his duty of reminding, no further blame falls upon him for what people choose.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "فإذا قمت بما عليك، فلا عليك بعد ذلك لوم",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "88:21#c10",
+          "section_ref": "88:21",
+          "attaches_to": "88:23",
+          "text": "\"Except those who turn away and disbelieve\" is read as a discontinuous exception (istithnāʼ munqaṭiʿ): \"illā\" here functions like \"lākin\" (but), so the sense is \"but whoever turns away and disbelieves...\" rather than a true exception carved out of an earlier group.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "استثناء منقطع عما قبله، معناه: لكن من تولى وكفر",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "استثناء منقطع، أي لكن من تولى",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "والاستثناء فيه استثناء منقطع، و \"إلا\" بمعنى لكن",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "أي: لكن من تولى عن الطاعة وكفر بالله",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar",
+          "original_terms": [
+            {
+              "term": "استثناء منقطع (istithnāʼ munqaṭiʿ)",
+              "gloss": "a \"discontinuous exception\" — where \"except\" really means \"but\""
+            }
+          ]
+        },
+        {
+          "id": "88:21#c11",
+          "section_ref": "88:21",
+          "attaches_to": "88:23",
+          "text": "Al-Ṭabarī lays out two possible readings of the exception: either (a) it is a genuine exception referring back to those being addressed — remind your people, except those among them who already turned away from you — or (b) it is a discontinuous exception meaning \"but whoever turns away and disbelieves, Allah will punish him.\" He gives a grammatical test — whether inserting \"inna\" (indeed) still reads well — to tell the two apart.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "والاستثناء المنقطع يمتحن بأن يحسن معه إنّ",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "88:21#c12",
+          "section_ref": "88:21",
+          "attaches_to": "88:23",
+          "text": "\"Turning away and disbelieving\" is explained as turning away from acting on Islam's obligations while denying the truth with the heart and the tongue, comparable to another Qur'anic description of one who \"neither believed nor prayed, but denied and turned away\" (75:31–32).",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        }
+      ],
+      "essay_html": "<p>The chapter closes by turning to the Prophet ﷺ himself. \"So remind them\" (fadhakkir) is a call to admonish and exhort, the same sense the commentators give it as \"preach\" or \"warn\"<sup class=\"ref\">1,2,3</sup>. What follows explains the shape of that task: \"you are only a reminder.\" His whole function, several commentators say, is delivery and exhortation through peaceful persuasion — nothing more is asked of him, and nothing more falls on him<sup class=\"ref\">1,4,5,7,9,10,11,12,13,14</sup>.</p>\n<p>\"You are not a muṣayṭir over them\" is the reassurance that follows. A muṣayṭir is someone who dominates others and forces their compliance, a tyrant (jabbār) in the commentators' word<sup class=\"ref\">1,2,3,4</sup>. Qurṭubī traces the word to \"saṭr\", a line or register, the sense of one who oversees a matter down to the letter and controls it<sup class=\"ref\">3</sup>. The point drawn from this is that the Prophet cannot put faith into a heart by force; turning a heart towards belief belongs to Allah alone<sup class=\"ref\">4,6,8</sup>. Sayyid Quṭb (d. 1966) puts it plainly: hearts are between Allah's fingers, and no amount of pressure from a caller can move them<sup class=\"ref\">6</sup>. A minor reading variant is recorded on the word itself, most reading it with ṣād and Ibn ʿĀmir with sīn<sup class=\"ref\">3,9</sup>.</p>\n<p>Some commentators say this denial of compulsion was later abrogated by the verses commanding fighting<sup class=\"ref\">1,2,3,12</sup>. A report from Jābir b. ʿAbdillāh رضي الله عنه has the Prophet ﷺ say he was commanded to fight people until they testify there is no god but Allah, after which their lives and property are safeguarded and their reckoning left to Allah — and he recited this very verse after saying it, recorded, Ibn Kathīr (d. 1373) notes, in both Ṣaḥīḥs<sup class=\"ref\">1,4,12</sup>. Sayyid Quṭb takes up a related question directly: if the Prophet's task was only to deliver the message, why was jihad then prescribed at all? His answer is that jihad was never meant to force faith into anyone; it was meant to clear away the political obstacles standing in the way of the message, and to protect those who accepted it from being punished for doing so<sup class=\"ref\">6</sup>. Saʿdī (d. 1957) ties the whole matter to another verse (50:45): once the Prophet has done his part in reminding, no blame attaches to him for what people then choose<sup class=\"ref\">5</sup>.</p>\n<p>The final phrase, \"except those who turn away and disbelieve,\" is read by several commentators as what grammarians call a discontinuous exception: \"illā\" here works like \"but\", not like a true carve-out from an earlier group<sup class=\"ref\">2,3,5,9</sup>. Al-Ṭabarī (d. 923) lays out both readings that were current: either it is a genuine exception, meaning remind your people except those already lost to you, or it is discontinuous, meaning simply \"but whoever turns away and disbelieves...\"; he offers a grammatical test, inserting \"indeed\", to tell the two apart<sup class=\"ref\">1</sup>. Ibn Kathīr explains \"turning away and disbelief\" as abandoning Islam's obligations in practice while denying the truth in heart and tongue together, likening it to another verse describing one who \"neither believed nor prayed, but denied and turned away\"<sup class=\"ref\">4</sup>.</p>\n<p class=\"close\">The Prophet's charge, as the commentators read it, stops at reminding; what a heart then does with the reminder is a matter the Qur'an leaves between that heart and its Maker.</p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:177a42b974b9de2c29812e6bdc98f9a82e84ad18b0860ffe386d5be610268e04",
+        "2": "sha256:522751eea4b608c2eb35093ab1842e3e2b6fdfc8062c42c28521b43a7092525a",
+        "3": "sha256:18a5f5ccd4eac797476b0abd781681b62cd8d370363f20ee722347862e976a03",
+        "4": "sha256:54f87d190af68734192b2dd076eafdac32e93b03ed2b855f7fdd8259efe4c149",
+        "5": "sha256:443447cc6868353528b397bfbbd6975171a0831e492fb9f0cb1caec146781b6f",
+        "6": "sha256:d3faf2f894d0498483ad3e6f9d329d912be0a992bc7a794fe0d89e713ff85c8e",
+        "7": "sha256:77e6fed6246ef62a61e09f72ec72fc185629b037828c36592635036b8b8459cc",
+        "8": "sha256:d5e3744f9011503c68d0da78d78dfee4c2d3115dbbba4489847fba083ffd4422",
+        "9": "sha256:a73c80480726c0283ad1b67f2fda1672ea15d71f7ef3872ed5a94eb1f7786279",
+        "10": "sha256:c7079fbd0ae5e3e8d309c21e765b694d8658071c84c905de35da2daf0febf0fc",
+        "11": "sha256:60a053e92c3f5c36b11ef4ad19bc23289054f83dab415a6a2720f4734189099f",
+        "12": "sha256:16ce1b99c72b1e8e04d4673bd8c6d70d766578d569c689155a98ad3a4cfab45f",
+        "13": "sha256:64465fc4dac1a3b5c36986741ebf789573c156bae835e87d992f31f9fb3fdc8d",
+        "14": "sha256:d73f4df8c97bc365c194e71d7ddd43750ac7fa40fee3a8cf896ad1b7b4863ed7"
+      },
+      "flags": {
+        "creedal_stakes": "true",
+        "legal_content": "true",
+        "sensitive_content": "true"
+      },
+      "compiled_at": "2026-08-02"
+    },
+    "88:24": {
+      "verse_range": "24-26",
+      "title": "The Return and the Reckoning",
+      "in_short": "Whoever turns away from the reminder and disbelieves faces God's greatest punishment. Everyone returns to God after death, and the reckoning belongs to Him alone, not to the Prophet ﷺ or any caller after him.",
+      "claims": [
+        {
+          "id": "88:24#c1",
+          "section_ref": "88:24",
+          "attaches_to": "88:24",
+          "text": "'The greatest punishment' (al-'adhāb al-akbar) is understood as the punishment of Hellfire, an everlasting torment in the next life.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "هو عذاب جهنم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "وهو أن يدخله النار",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وهي جهنم الدائم عذابها",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "أي: الشديد الدائم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "فيعذبه الله العذاب الشديد في النار",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "original_excerpt": "سزای ئاگری دۆزه‌خ",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "العذاب الأكبر",
+              "gloss": "the greatest / greater punishment"
+            }
+          ]
+        },
+        {
+          "id": "88:24#c2",
+          "section_ref": "88:24",
+          "attaches_to": "88:24",
+          "text": "The punishment is called 'greatest' in contrast to a lesser punishment: these people had already been struck in this world with hunger, famine, killing and captivity, so the punishment of the next life exceeds it.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "عذبوا في الدنيا بالجوع والقحط والقتل والأسر",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "عذبوا في الدنيا بالجوع والقحط والأسر والقتل",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "88:24#c3",
+          "section_ref": "88:24",
+          "attaches_to": "88:24",
+          "text": "Grammatically, the clause 'except one who turns away and disbelieves' is read as a parenthetical remark inserted before the closing verses, and the exception is taken as discontinuous: 'illā' here functions like 'but' rather than truly excepting something from what preceded.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "كلام معترض بين قوله... والاستثناء فيه استثناء منقطع",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "88:24#c4",
+          "section_ref": "88:24",
+          "attaches_to": "88:24",
+          "text": "Other readings of the clause are noted: Ibn Mas'ūd's text adds 'fa-innahu' after it, and Ibn 'Abbās and Qatāda read the opening word as an attention-calling particle ('alā), as used in pre-Islamic poetry, rather than as an exception ('illā).",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وقرأ ابن عباس وقتادة ألا على الاستفتاح والتنبيه",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "88:24#c5",
+          "section_ref": "88:24",
+          "attaches_to": "88:24",
+          "text": "A report states that 'Alī رضي الله عنه had a man who had apostatised brought to him, gave him three days to return to Islam, and had him executed when he did not, reciting this verse as he did so.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وروي أن عليا أتي برجل ارتد، فاستتابه ثلاثة أيام، فلم يعاود الإسلام، فضرب عنقه",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded by al-Qurṭubī"
+          }
+        },
+        {
+          "id": "88:24#c6",
+          "section_ref": "88:24",
+          "attaches_to": "88:24",
+          "text": "A hadith is cited that everyone will enter Paradise except one who flees like a fleeing camel from its owner, invoked here in connection with the one who 'turns away'.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "original_excerpt": "তোমাদের সবাই জান্নাতে প্ৰবেশ করবে, তবে ঐ ব্যক্তি ব্যতীত যে মালিক থেকে পলায়ণপর উটের মত পালিয়ে বেড়ায়",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "Abū Bakr Zakariyyā cites it from Musnad Aḥmad and Mustadrak al-Ḥākim without assigning a grade"
+          }
+        },
+        {
+          "id": "88:24#c7",
+          "section_ref": "88:24",
+          "attaches_to": "88:24",
+          "text": "Since the Prophet ﷺ had already delivered God's message clearly, matched by his own flawless conduct, anyone who still turns away afterwards shows that no good remains in him, and so deserves the severest punishment.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "بلاشبہ اللہ کے رسول ﷺ نے اللہ تعالیٰ کا کلام اور پیغام اپنی بےداغ اور مثالی سیرت کی گواہی کے ساتھ امت تک اس انداز میں پہنچا دیا ہے",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "88:24#c8",
+          "section_ref": "88:24",
+          "attaches_to": "88:25",
+          "text": "'Iyābahum' (their return) comes from a root meaning simply 'to come back' ('āba - ya'ūbu'); here it refers to the return of all people to God after death.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "إن إلينا رجوع من كفر ومعادهم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "رجوعهم بعد الموت، يقال آب يئوب أوبا وإيابا",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "أي رجوعهم بعد الموت. يقال: آب يئوب أي رجع",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "أي: رجوع الخليقة وجمعهم في يوم القيامة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "إنَّ إلينا مرجعهم بعد الموت",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "إيابهم",
+              "gloss": "their return (from a root meaning 'to come back')"
+            }
+          ]
+        },
+        {
+          "id": "88:24#c9",
+          "section_ref": "88:24",
+          "attaches_to": "88:25",
+          "text": "A rare (shādhdh) reading by Abū Ja'far doubles a letter in the word ('iyyābahum'). Grammarians disagreed over whether the form is valid: Abū Ḥātim rejected it, while al-Zajjāj defended it as a legitimate verbal-noun pattern.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "وقرأ أبوجعفر: إيابهم بتشديد الياء، وهو شاذ لم يجزه أحد غير الزجاج",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "قال أبو حاتم: لا يجوز التشديد",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "88:24#c10",
+          "section_ref": "88:24",
+          "attaches_to": "88:25",
+          "text": "This verse closes the surah by fixing the Prophet's ﷺ role: keep reminding people, without forcing or dominating them, then leave the rest, because their return is to God alone, to no one else.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "داوم - أيها الرسول الكريم - على تذكير الناس بدعوة الحق، بدون إجبار لهم، أو تسلط عليهم",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "88:24#c11",
+          "section_ref": "88:24",
+          "attaches_to": "88:25",
+          "text": "Their 'return' is glossed as the return and gathering of all creation on the Day of Judgement.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "أي: رجوع الخليقة وجمعهم في يوم القيامة",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "88:24#c12",
+          "section_ref": "88:24",
+          "attaches_to": "88:26",
+          "text": "The reckoning (ḥisāb) belongs to God alone: He will call them to account and requite them for what they did of disobedience. This tells the Prophet ﷺ that punishing and reckoning with them is God's affair, not his; his task is only to remind and to deliver the message.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "إن إلى الله الإياب وعليه الحساب",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "يعني جزاءهم بعد المرجع إلى الله عز وجل",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "original_excerpt": "It is for Allah to call the unbelievers to Him to render account of their deeds and actions, and punish them accordingly.",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "ان کی جوابدہی اور حساب کا معاملہ آپ ہم پر چھوڑ دیں",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Ṭabarī relays this via Qatāda's tafsīr statement, without a hadith grading"
+          }
+        },
+        {
+          "id": "88:24#c13",
+          "section_ref": "88:24",
+          "attaches_to": "88:26",
+          "text": "Ibn Kathīr links this verse to God's words elsewhere, 'your duty is only to convey the message, and on Us is the reckoning' (13:40), and to a hadith in which the Prophet ﷺ said that once people testify the shahāda, their blood and property are protected, 'and their reckoning is with Allah, the Mighty and Majestic.' The reckoning means requital: good repaid with good, evil with evil.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "Ibn Kathīr, who notes the hadith is recorded in both Ṣaḥīḥ collections (also by al-Tirmidhī and al-Nasāʾī)"
+          }
+        },
+        {
+          "id": "88:24#c14",
+          "section_ref": "88:24",
+          "attaches_to": "88:26",
+          "text": "Grammatically, both closing verses open with the emphatic particle 'inna', and the second is joined to the first by 'thumma' (then), marking a further step. In each clause the predicate is placed before the subject, a structure carrying threat and warning, stressing that the return to God and the reckoning are beyond doubt. The reckoning that Day will be a hard one, because it comes from the One from whom nothing on earth or in heaven is hidden.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "وصدر - سبحانه - الآيتين بحرف التأكيد إن... لإفادة التهديد والوعيد",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "88:24#c15",
+          "section_ref": "88:24",
+          "attaches_to": "88:26",
+          "text": "This closing statement sets a lasting boundary for the caller to Islam: not only the Prophet ﷺ but every caller after him is bound only to deliver the message, while the reckoning stays with God. No one can flee from God or escape His accounting.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "اور آپ کے بعد بھی ہر داعی پر صرف دعوت دینا فرض ہے",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "88:24#c16",
+          "section_ref": "88:24",
+          "attaches_to": "88:26",
+          "text": "Alongside that boundary, callers still carry the separate duty of removing obstacles placed in the path of the message reaching people freely. This is carried out through the obligation of jihad, rightly understood as neither exceeding it (forcing faith at the sword where preaching is open) nor falling short of it (leaving obstacles unremoved).",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "لہٰذا اسلام کے نظریہ جہاد کو کسی کمی اور بیشی کے سوا سمجھنا چاہیے",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "88:24#c17",
+          "section_ref": "88:24",
+          "attaches_to": "88:26",
+          "text": "A supplication is traditionally recited on finishing this surah: 'O God, reckon us with an easy reckoning' (Allāhumma ḥāsibnā ḥisāban yasīrā). One source notes this exact practice is not established from the Prophet ﷺ for this surah, though a similar recitation is documented in connection with Sūrat al-Inshiqāq.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "relay",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "اَللّٰھُمَّ حَاسِبْنَا حِسَابًا یَّسِیْرًا۔ آمین یاربّ العالمین",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "original_excerpt": "কিন্তু এই সূরাটির (শেষ আয়াতের) জওয়াবে এই দু'আটি পড়ার কথা নবী (সাঃ) থেকে প্রমাণিত নয়",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "Ahsanul Bayaan notes this specific application to this surah is not established from the Prophet ﷺ, though the practice is documented for Sūrat al-Inshiqāq"
+          }
+        },
+        {
+          "id": "88:24#c18",
+          "section_ref": "88:24",
+          "attaches_to": "88:26",
+          "text": "The reckoning is read as covering what these people failed to do in this world: they did not answer the prophets, did not believe, and did no good.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "original_excerpt": "له‌ دونیادا وه‌ڵامی پێغه‌مبه‌رانیان نه‌داوه‌ته‌وه‌و ئیمانیان نه‌هێناوه‌و كرده‌وه‌ی چاكیان نه‌كردووه‌",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        }
+      ],
+      "essay_html": "<p>The closing lines of the surah turn to the person who turns away from the reminder and refuses to believe. The commentators agree that 'the greatest punishment' (al-'adhāb al-akbar) means Hell, an everlasting torment in the next life.<sup class=\"ref\">1,2,3,5,13,14</sup> It is called 'greatest' against a smaller one: these people had already suffered in this world through hunger, famine, killing and captivity, so the fire of the next life outweighs anything they knew on earth.<sup class=\"ref\">2,3</sup> Isrār Aḥmad (d. 2010) adds why the punishment is deserved: the Prophet ﷺ had already delivered God's message clearly, matched by his own flawless conduct, so anyone who still turns away afterwards shows that no good remains in him at all.<sup class=\"ref\">8</sup></p><p>Grammatically, al-Ṭanṭāwī (d. 2010) reads the clause 'except one who turns away and disbelieves' as a parenthetical remark, and treats the exception as discontinuous: 'illā' works here like 'but', rather than truly carving an exception out of what came before.<sup class=\"ref\">9</sup> Al-Qurṭubī (d. 1273) records other readings of the same clause: Ibn Masʿūd's text adds 'fa-innahu' after it, and Ibn ʿAbbās and Qatāda read the opening word as an attention-calling particle rather than 'except'.<sup class=\"ref\">3</sup> He also relays a report that ʿAlī رضي الله عنه, faced with a man who had apostatised, gave him three days to return to Islam and had him executed when he did not, reciting this verse as he did so.<sup class=\"ref\">3</sup> Separately, a hadith is cited that everyone will enter Paradise except one who flees like a fleeing camel from its owner, linked here to the image of turning away.<sup class=\"ref\">11</sup></p><p>The next verse turns from punishment to a plain fact: everyone returns to God. 'Their return' (iyābahum) comes from a root meaning simply 'to come back', and refers to the return of all people to God after death.<sup class=\"ref\">1,2,3,5,13</sup> Al-Saʿdī (d. 1957) glosses it as the gathering of all creation on the Day of Judgement.<sup class=\"ref\">5</sup> A rare reading by Abū Jaʿfar doubles a letter in the word; grammarians disagreed over whether the form is valid, Abū Ḥātim rejecting it and al-Zajjāj defending it.<sup class=\"ref\">2,3</sup> Al-Ṭanṭāwī reads this verse as closing the surah by fixing the Prophet's ﷺ role: keep reminding people, without forcing or dominating them, then leave the rest, because their return is to God alone.<sup class=\"ref\">9</sup></p><p>The final verse then assigns the reckoning itself to God. Following on from the return, the commentators read this as telling the Prophet ﷺ that calling people to account and punishing them is God's affair, not his; his task is only to remind and deliver the message.<sup class=\"ref\">1,2,7,8</sup> Ibn Kathīr (d. 1373) links the verse to God's words elsewhere, 'your duty is only to convey the message, and on Us is the reckoning' (13:40), and to a hadith in which the Prophet ﷺ said that once people testify the shahāda, their blood and property are protected, 'and their reckoning is with Allah' — a hadith he notes is found in both Ṣaḥīḥ collections.<sup class=\"ref\">4</sup> On this reading the reckoning means requital, good repaid with good, evil with evil.<sup class=\"ref\">1,2,4,5</sup> Al-Ṭanṭāwī points out how the sentence is built: both verses open with the emphatic 'inna', joined by 'then' (thumma) to mark a further step, and in each the predicate is placed before the subject, a structure that carries threat and stresses that the return and the reckoning are beyond doubt. He adds that the reckoning that Day will be a hard one, coming from the One from whom nothing on earth or in heaven is hidden.<sup class=\"ref\">9</sup> Sayyid Quṭb (d. 1966) reads the verse as setting a lasting boundary: not only the Prophet ﷺ, but every caller to Islam after him, is bound only to deliver the message, while the reckoning stays with God, and no one can flee from Him or escape His accounting. Alongside that boundary he notes that callers still carry the separate duty of removing obstacles that block the message from reaching people freely, a duty carried out through jihad, rightly understood as neither forcing faith at the sword where preaching is open, nor leaving obstacles unremoved.<sup class=\"ref\">6</sup> One source notes a supplication traditionally said on finishing this surah, 'O God, reckon us with an easy reckoning', though it adds that this exact practice for this surah is not established from the Prophet ﷺ, unlike a similar recitation connected to Sūrat al-Inshiqāq.<sup class=\"ref\">8,12</sup> A further reading takes the reckoning to cover what these people failed to do in life: they did not answer the prophets, did not believe, and did no good.<sup class=\"ref\">14</sup></p><p class=\"close\">The surah closes where its warnings began, with a return to God that none can avoid and a reckoning that belongs to Him alone, leaving the Prophet ﷺ, and every voice raised after him, with nothing asked of him beyond the reminder itself.<sup class=\"ref\">1,2,7,8,9</sup></p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:c58c062a9f1f07b3a4ea257bad0ab228477685080c3b6acdaa227bb074299014",
+        "2": "sha256:ec1459112c2e5f4406e0fc3198f54850b0cc7c18fde9471e1bba1fb52cbf3390",
+        "3": "sha256:f9629174932a2efd76c702c4c1d0df4eff1562253269aa677fb067e3f63d936f",
+        "4": "sha256:d7e6eec85cb30a9c1c94a26addbe19fce0c687554e9e3d1e302443095a0c5ebc",
+        "5": "sha256:12b74b69cc36c73a1e97ac00831be8089f325ae36bc26667eaaa725f49883918",
+        "6": "sha256:697608e2ac77585f8e1a49ab8bd96df7e5278c621ec0e1f99b999c25f222269f",
+        "7": "sha256:959c816bf9b6f512dbebc7652dc7fc1038028e84995a83267fb97ff011dec60e",
+        "8": "sha256:bc87c807e6b6da065364387e18fa6ee94994daca9e6c8a580babaedcd812c739",
+        "9": "sha256:aea536b2d9afcf33202a988eee1994aba61cc346a76107fe5ef05a4ddb6e76e7",
+        "10": "sha256:17840fc16f099b46d4df584e002620beccce9154864d6dc4cc4371440647df0a",
+        "11": "sha256:8f3fa388143a8095fb7ff48558175d129d44f6900c41da43861d3d79c8d0ca4d",
+        "12": "sha256:0d7d3d4efdfbb510f3bd916d21c9f45f63332a53d1ddfdd7bd57c9cc10614426",
+        "13": "sha256:1b2f4980e06531e96b882cb3b3c389cb770d00aa3a027cb9628e542c1818c082",
+        "14": "sha256:d4c09a288e7633312f97ac222cba02c3bfe45c3bd38165a2eb6c548c839c295f"
+      },
+      "flags": {
+        "creedal_stakes": "true",
+        "legal_content": "true",
+        "sensitive_content": "true"
+      },
+      "compiled_at": "2026-08-02"
+    },
+    "88:8": {
+      "verse_range": "8-16",
+      "title": "The Radiant Faces of Paradise",
+      "in_short": "This passage turns from the wretched faces of the doomed to the radiant faces of the people of Paradise: pleased with their past labour, in a lofty Garden free of all idle talk, with flowing springs, raised couches, ready cups, ranked cushions and spread carpets.",
+      "claims": [
+        {
+          "id": "88:8#c1",
+          "section_ref": "88:8",
+          "attaches_to": "88:8",
+          "text": "On that Day these faces will be joyful and radiant, glowing with the bliss Allah has given their owners in the Gardens. The passage turns immediately from describing the wretched faces of the doomed to describing the faces of the believers.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "في نعمة وكرامة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "قد جرت عليهم نضرة النعيم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "unspecified"
+        },
+        {
+          "id": "88:8#c2",
+          "section_ref": "88:8",
+          "attaches_to": "88:8",
+          "text": "There is no connecting 'and' joining this sentence to the description of the wretched that came before it, which signals a complete break between the two fates. Mentioning the ruin of the people of Hell first, before turning to the beauty of Paradise, sharpens both the horror of the one scene and the beauty of the other.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "لم تعطف هذه الجملة على تلك الجملة، إيذانا بكمال التباين بين مضمونهما",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric"
+        },
+        {
+          "id": "88:8#c3",
+          "section_ref": "88:8",
+          "attaches_to": "88:9",
+          "text": "These faces are pleased with the labour they carried out in this world, now that they see its outcome in the Hereafter. Their good deeds and obedience are the ground of their contentment.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "unspecified"
+        },
+        {
+          "id": "88:8#c4",
+          "section_ref": "88:8",
+          "attaches_to": "88:9",
+          "text": "A second shade of the same phrase: they are pleased specifically because they found the reward for that labour stored up in the Hereafter, greater than they had hoped or expected.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "وجدت ثوابه مدخرًا مضاعفًا، فحمدت عقباه",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "unspecified"
+        },
+        {
+          "id": "88:8#c5",
+          "section_ref": "88:8",
+          "attaches_to": "88:9",
+          "text": "Isrār Aḥmad connects this to another verse, 17:19, where whoever seeks the Hereafter and strives for it as a believer will have his striving appreciated by Allah.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "relay",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "88:8#c6",
+          "section_ref": "88:8",
+          "attaches_to": "88:10",
+          "text": "The Garden is called lofty in a physical sense, literally raised above the heavens.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "unspecified"
+        },
+        {
+          "id": "88:8#c7",
+          "section_ref": "88:8",
+          "attaches_to": "88:10",
+          "text": "It is also called lofty in rank and standing, because it contains everything the soul desires and everything the eye delights in.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "unspecified"
+        },
+        {
+          "id": "88:8#c8",
+          "section_ref": "88:8",
+          "attaches_to": "88:10",
+          "text": "Sayyid Quṭb reads the loftiness as total: the Garden is high in itself, high in honour, high in its dwellings and its stations, so that a sense of elevation covers the very feelings of its people.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "88:8#c9",
+          "section_ref": "88:8",
+          "attaches_to": "88:10",
+          "text": "al-Saʿdī describes this loftiness as the highest station, 'illiyyīn, with chambers above chambers, from which the people of Paradise look out on the honour Allah has prepared for them.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "فمحلها في أعلى عليين، ومنازلها مساكن عالية، لها غرف ومن فوق الغرف غرف",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "unspecified"
+        },
+        {
+          "id": "88:8#c10",
+          "section_ref": "88:8",
+          "attaches_to": "88:11",
+          "text": "Laghiyah is a noun formed on the pattern of an active participle to mean 'a word of lagw', vain and futile speech, the same way 'dāri‘' means a person wearing armour. The reciters differed on whether to read the verb actively (addressed to the faces, or to the Prophet ﷺ) or passively (agreeing with the feminine noun laghiyah); both readings were held to be sound.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "يعني باللاغية: كلمة لغو واللَّغو: الباطل",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "أي لا تسمع فيها كلمة لغو",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "لاغية (lāghiyah)",
+              "gloss": "a word of vain, futile talk"
+            }
+          ]
+        },
+        {
+          "id": "88:8#c11",
+          "section_ref": "88:8",
+          "attaches_to": "88:11",
+          "text": "Early exegetes differed on exactly what kind of speech is meant: falsehood, slander and denial of Allah (Ibn ʿAbbās رضي الله عنه); no harm and no falsehood, another wording from Ibn ʿAbbās; abuse and cursing (Mujāhid); no falsehood nor sin (Qatādah); disobedience (al-Ḥasan); no one swearing a false oath (al-Farrāʾ); no oath at all, true or false, will be heard there (al-Kalbī). Al-Farrāʾ also gave a more comprehensive view: no vain word at all, because the people of Paradise speak only wisdom and praise of Allah. Al-Qurṭubī judged this last reading the best, since it covers all the others.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "88:8#c12",
+          "section_ref": "88:8",
+          "attaches_to": "88:11",
+          "text": "Laghiyah covers disbelieving words, futile or idle talk, obscene language, calumny and false accusation, and any talk that hurts people's feelings. Allah counts its absence as a blessing to the people of Paradise, since it keeps their hearts from being polluted.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "88:8#c13",
+          "section_ref": "88:8",
+          "attaches_to": "88:11",
+          "text": "The promise is echoed elsewhere in the Qur'an, where the people of Paradise are told they will hear no vain talk, only peace, or no vain talk and no talk that leads to sin.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "unspecified"
+        },
+        {
+          "id": "88:8#c14",
+          "section_ref": "88:8",
+          "attaches_to": "88:11",
+          "text": "Instead of vain speech, their talk will be good speech: remembrance of Allah, mention of His continuous favours upon them, and the courteous manners between companions that gladden the heart and open the chest.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "كلامهم كلام حسن مشتمل على ذكر الله تعالى",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "88:8#c15",
+          "section_ref": "88:8",
+          "attaches_to": "88:11",
+          "text": "Sayyid Quṭb reads this phrase as opening a whole world of meaning: rest, calm, security, love, contentment, gatherings of friends and family, purity, freedom from every vain word. He contrasts it with the strife of this world's speech, its quarrels and slander and lies, and says that believers' lives now, especially those working for the cause of Islam, who keep away from vain and foul talk, are already a foretaste of this state of Paradise.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "88:8#c16",
+          "section_ref": "88:8",
+          "attaches_to": "88:11",
+          "text": "Plainly stated: nothing futile or wrong will reach their ears there to trouble them.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "unspecified"
+        },
+        {
+          "id": "88:8#c17",
+          "section_ref": "88:8",
+          "attaches_to": "88:12",
+          "text": "The singular word 'spring' ('ayn) is used here in a generic, collective sense, meaning many flowing springs rather than a single one.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "88:8#c18",
+          "section_ref": "88:8",
+          "attaches_to": "88:12",
+          "text": "This spring flows freely without any channel or ditch cut for it.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "عين جارية في غير أخدود",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "88:8#c19",
+          "section_ref": "88:8",
+          "attaches_to": "88:12",
+          "text": "A report from Abū Hurayrah رضي الله عنه has the Prophet ﷺ saying that the rivers of Paradise spring forth from beneath hills, or mountains, of musk.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded in the source provided"
+          }
+        },
+        {
+          "id": "88:8#c20",
+          "section_ref": "88:8",
+          "attaches_to": "88:13",
+          "text": "The couches are raised so that the believer, once seated, can see the full extent of the bounty and dominion his Lord has granted him, his sight reaching every part of it. It was also said that 'raised' here means 'closely woven' or 'interlaced', comparing it to other places where 'ranked couches' describes one couch set above another.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "مرفوعة ليرى المؤمن إذا جلس عليها جميع ما خوّله ربه",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "88:8#c21",
+          "section_ref": "88:8",
+          "attaches_to": "88:13",
+          "text": "Ibn ʿAbbās رضي الله عنه described these couches as having boards of gold, inlaid with chrysolite, pearl and ruby, raised up and out of reach until their owner comes. When he wishes to sit, the couch lowers itself for him, and once he is seated it rises back to its place.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded in the sources provided"
+          }
+        },
+        {
+          "id": "88:8#c22",
+          "section_ref": "88:8",
+          "attaches_to": "88:13",
+          "text": "It is also reported that the height of these couches was as great as the distance between heaven and earth, so that the friend of Allah could see his whole dominion around him.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded in the source provided"
+          }
+        },
+        {
+          "id": "88:8#c23",
+          "section_ref": "88:8",
+          "attaches_to": "88:13",
+          "text": "Sayyid Quṭb reads the height of the couches as pointing to both cleanliness and elevation together.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "88:8#c24",
+          "section_ref": "88:8",
+          "attaches_to": "88:14",
+          "text": "The cups (akwāb) are drinking vessels without a handle, placed ready near the flowing spring, so that whenever the people of Paradise wish to drink they find them already full, without any trouble of getting them.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "relay",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "88:8#c25",
+          "section_ref": "88:8",
+          "attaches_to": "88:14",
+          "text": "From the word 'well-placed' (mawḍūʿah), a general lesson is drawn about household order: drinking vessels ought to be kept near the water in their proper place, so that other members of a household are not left searching for them, and other items of daily use should likewise be returned to their designated place after use.",
+          "claim_type": "other",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "88:8#c26",
+          "section_ref": "88:8",
+          "attaches_to": "88:15",
+          "text": "The namāriq are cushions or pillows, described by some as armrests and by others as the seating-places themselves, set in rows side by side, ready and arranged without the people of Paradise having to place or arrange them.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "قد أريحوا عن أن يضعوها، ويصفوها بأنفسهم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "88:8#c27",
+          "section_ref": "88:8",
+          "attaches_to": "88:16",
+          "text": "The zarābī are fine carpets or rugs with a soft nap or pile. On the meaning of 'mabthūthah', reports differ: simply spread out (Qatādah); some laid one on top of another (ʿIkrimah); many and abundant (al-Farrāʾ); or scattered here and there across the different sitting-places (al-Qutabī). al-Qurṭubī judged the last reading the most accurate, since these carpets are both plentiful and dispersed through the gatherings.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "relay",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "relay",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "relay",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "88:8#c28",
+          "section_ref": "88:8",
+          "attaches_to": "88:16",
+          "text": "Isrār Aḥmad, invoking a remark of Iqbal, reads these descriptions of Paradise's furnishings as an instance of the Qur'an's encouragement of conscious observation, urging people to look at things, reflect on them, and draw conclusions using reason, and links this to another verse warning that hearing, sight and heart will all be called to account.",
+          "claim_type": "other",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        }
+      ],
+      "essay_html": "<p>After the harsh scene of the doomed, the surah turns to faces glowing with bliss. There is no 'and' joining the two descriptions, which marks a complete break between the two fates, and putting the ruin of the wretched first sharpens both scenes by contrast.<sup class=\"ref\">1,2,3,4,5,6,8,9,11,12,13,14</sup></p><p>These faces are pleased with their own labour, the deeds they carried out in the world, now that they see its outcome. Some commentators take this as contentment with the deed itself, others as contentment with the reward found waiting, greater than hoped for.<sup class=\"ref\">1,2,3,4,9,11</sup> al-Saʿdī (d. 1957) adds that they found their reward stored up and multiplied.<sup class=\"ref\">5</sup> Isrār Aḥmad (d. 2010) ties this to a promise elsewhere that whoever seeks the Hereafter and strives for it as a believer will have that striving appreciated.<sup class=\"ref\">8</sup></p><p>The Garden is called lofty both in place, literally raised above the heavens, and in rank, since it holds everything the soul desires and the eye delights in.<sup class=\"ref\">3,9</sup> Sayyid Quṭb (d. 1966) reads the loftiness as total, covering the Garden itself, its honour, its dwellings, its stations, so that a sense of elevation settles over the very feelings of its people.<sup class=\"ref\">6</sup> al-Saʿdī describes it as the highest station, ʿIlliyyīn, chambers above chambers looking out on the honour prepared for them.<sup class=\"ref\">5</sup></p><p>No idle word will be heard there. Laghiyah is simply a word of lagw, vain and empty talk, on the model of dāriʿ for someone wearing armour.<sup class=\"ref\">1,3</sup> The reciters differed on whether the verb is active or passive, both readings held sound.<sup class=\"ref\">1,2,3</sup> Early exegetes differed further on exactly what is excluded: falsehood and denial of Allah, said Ibn ʿAbbās رضي الله عنه; abuse, said Mujāhid; sin, said Qatādah; disobedience, said al-Ḥasan; a false oath, said al-Farrāʾ; any oath at all, true or false, said al-Kalbī. al-Farrāʾ also gave a wider view, that no vain word of any kind will be heard, because the people of Paradise speak only wisdom and praise of Allah, and al-Qurṭubī (d. 1273) judged this the best reading, since it covers the rest.<sup class=\"ref\">1,3</sup> Muftī Muḥammad Shafīʿ (d. 1976) draws the net wide: disbelieving words, idle talk, obscenity, false accusation, anything that hurts feelings, and calls its absence a mercy that keeps the heart from being polluted.<sup class=\"ref\">7</sup> The same promise is echoed in other verses, where the people of Paradise hear only peace, or no vain and sinful talk at all.<sup class=\"ref\">4,7,11</sup> Instead of vanity, al-Saʿdī says their speech will be remembrance of Allah, gratitude for His favours, and the courteous manners that gladden the heart.<sup class=\"ref\">5</sup> Quṭb reads the phrase as opening onto rest, security, love and contentment, set against the quarrels and lies of this world's speech, and suggests that believers who keep away from vain and foul talk now, especially those labouring for the cause of Islam, already taste something of this state.<sup class=\"ref\">6</sup></p><p>The 'spring' named in the singular stands for many springs flowing there, not one.<sup class=\"ref\">3,9,5,4</sup> One report has it flowing without any channel cut for it.<sup class=\"ref\">1</sup> A narration from Abū Hurayrah رضي الله عنه has the Prophet ﷺ saying that the rivers of Paradise spring forth from beneath hills of musk, a report left ungraded in the source.<sup class=\"ref\">4</sup></p><p>The raised couches let the believer, once seated, see the whole of what his Lord has granted him.<sup class=\"ref\">1</sup> Ibn ʿAbbās described their boards as gold inlaid with gems, raised out of reach until their owner comes, lowering for him to sit and rising again once he is seated.<sup class=\"ref\">2,4,11</sup> Another report puts their height at the distance between heaven and earth, so the friend of Allah can see his whole dominion around him.<sup class=\"ref\">3</sup> Quṭb reads the height as a sign of both purity and elevation together.<sup class=\"ref\">6</sup></p><p>The cups have no handle and stand ready by the spring, always full, sparing the people of Paradise any trouble in reaching for them.<sup class=\"ref\">1,2,3,9,5,4,13,14</sup> Muftī Muḥammad Shafīʿ draws a lesson in household order from the word 'well-placed': things kept in their proper spot spare others the trouble of searching for them.<sup class=\"ref\">7</sup></p><p>Cushions are ranked side by side, already arranged, so the people of Paradise need not set them out themselves.<sup class=\"ref\">1,2,3,4,5,9,14</sup> Fine carpets, soft of pile, are spread through their gatherings, described variously as simply laid out, or layered, or abundant, or scattered here and there through the sitting-places, a reading al-Qurṭubī preferred as covering both their abundance and their spread.<sup class=\"ref\">1,2,3,4,5,9,6,11,12,13,14</sup> Isrār Aḥmad, citing Iqbal, takes these very descriptions of Paradise's furnishings as an example of the Qur'an inviting people to observe, reflect and reason, tying it to the warning that hearing, sight and heart will all be called to account.<sup class=\"ref\">8</sup></p><p class=\"close\">Having drawn out this description, one commentator closes simply with a prayer: 'We ask Allah to make us all among its people.'<sup class=\"ref\">9</sup></p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:73ba48bbff4e9446257ab304ec199b6f55507cb05c0c10ee43a8f95cf433df49",
+        "2": "sha256:28e90f673ba0150a2cdfdad3709bf8ffc618de4e5b58703738e4c3fdb36d1a1f",
+        "3": "sha256:6e74d1674ce538de09f2c0cf545c9de3d124c0874d5480e752738855259472af",
+        "4": "sha256:014cb48119e956d6ea689871a3ea1b16d060b90c4ca55e829840e47cfc9ea20e",
+        "5": "sha256:370974ee19a7eccb6a6ee273bb4a92a5f421e791bdf097a856be5be2bdd9955b",
+        "6": "sha256:e9e9d5bb7e096bb6efd6c1bb415a6038f372cc6ff94c0d40e4ea97194d99ddfb",
+        "7": "sha256:35f2500c6bda1dec56380d0e7a052ea9dabf9b21566b110d8077d550affb39e4",
+        "8": "sha256:d151cc6a23fe90edf281a5d184a57f9cc44d9c89e8e4324bb8ec67ee463aea13",
+        "9": "sha256:38af0bd93e133ba56aeca49791d3fcb3364656d66b7e3aed53dc73bc2791b519",
+        "10": "sha256:0d95d2d47a36f926047c195997b9948398768ca124b9de08f9b17ca43173532f",
+        "11": "sha256:639ac9aaa1e12dbc8c5b50b8d68d09fecc261a2f09598368474ce37cc65e7ebe",
+        "12": "sha256:4fcc90af851616ab1d531b6d862f08644a0097494644a6082529dbfdc1c1d1ff",
+        "13": "sha256:9c690e0d96026e312f5bef0b882cfb6d8ed78384f8a341a0ed7322071a406dad",
+        "14": "sha256:243291accd0b2b888fdfb61343ce5764fe0309969c0f1310993be3322e5bb505"
+      },
+      "flags": {
+        "creedal_stakes": "true",
+        "legal_content": "false",
+        "sensitive_content": "false"
+      },
+      "compiled_at": "2026-08-02"
+    }
+  }
+}

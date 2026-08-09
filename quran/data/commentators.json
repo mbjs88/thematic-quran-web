@@ -1,0 +1,773 @@
+{
+  "schema_version": "2.1",
+  "purpose": "Chronology of tafsir authors + the Quran Foundation edition catalogue, so the system can (a) tell independent scholarly convergence apart from later dependence, and (b) know, per work, whether to use an existing English edition or translate. Dates are AH (Hijri) and CE.",
+  "last_updated": "2026-07-26",
+  "catalogue_source": {
+    "note": "Corpus is LIMITED to tafsirs confirmed available from the Quran Foundation API (fetched from the public api.quran.com/v4/resources/tafsirs, 2026-07-26). Four classical works listed in the original OVERVIEW_TAFSIR_SPEC §7 — al-Kashshaf (al-Zamakhshari), al-Jalalayn (al-Mahalli/al-Suyuti), Nazm al-Durar (al-Biqai), and al-Tahrir wa-l-Tanwir (Ibn Ashur) — are NOT in the API and were REMOVED; they appear to have entered the spec from memory rather than from a real fetch. See removed_unavailable below. If your credentialed QF Content API's list_editions actually returns any of them, they can be re-added.",
+    "public_list_url": "https://api.quran.com/api/v4/resources/tafsirs",
+    "fetched": "2026-07-26"
+  },
+  "authors": [
+    {
+      "id": "al-tabari",
+      "name_translit": "Abū Jaʿfar Muḥammad ibn Jarīr al-Ṭabarī",
+      "name_ar": "الطبري",
+      "birth_ah": 224,
+      "death_ah": 310,
+      "birth_ce": 839,
+      "death_ce": 923,
+      "region": "Baghdad",
+      "tradition": "Sunnī, independent mujtahid",
+      "verified": true,
+      "sources": [
+        "https://en.wikipedia.org/wiki/Al-Tabari",
+        "https://www.britannica.com/summary/al-Tabari"
+      ],
+      "short": "al-Ṭabarī"
+    },
+    {
+      "id": "al-baghawi",
+      "name_translit": "Abū Muḥammad al-Ḥusayn ibn Masʿūd al-Baghawī",
+      "name_ar": "البغوي",
+      "birth_ah": 433,
+      "death_ah": 516,
+      "birth_ce": 1041,
+      "death_ce": 1122,
+      "region": "Khurāsān",
+      "tradition": "Sunnī, Shāfiʿī",
+      "note": "Birth also reported as 436 AH.",
+      "verified": true,
+      "sources": [
+        "https://en.wikipedia.org/wiki/Al-Baghawi"
+      ],
+      "short": "al-Baghawī"
+    },
+    {
+      "id": "al-qurtubi",
+      "name_translit": "Abū ʿAbd Allāh Muḥammad ibn Aḥmad al-Qurṭubī",
+      "name_ar": "القرطبي",
+      "birth_ah": 610,
+      "death_ah": 671,
+      "birth_ce": 1214,
+      "death_ce": 1273,
+      "region": "Córdoba / Egypt",
+      "tradition": "Sunnī, Mālikī",
+      "note": "Birth approximate (c. 610 AH / 1214 CE).",
+      "verified": true,
+      "sources": [
+        "https://en.wikipedia.org/wiki/Al-Qurtubi"
+      ],
+      "short": "al-Qurṭubī"
+    },
+    {
+      "id": "ibn-kathir",
+      "name_translit": "Ismāʿīl ibn ʿUmar ibn Kathīr",
+      "name_ar": "ابن كثير",
+      "birth_ah": 701,
+      "death_ah": 774,
+      "birth_ce": 1300,
+      "death_ce": 1373,
+      "region": "Damascus",
+      "tradition": "Sunnī, Shāfiʿī; tafsīr bi-l-ma'thūr",
+      "note": "Birth c. 701 AH / 1300 CE; died 27 Feb 1373.",
+      "verified": true,
+      "sources": [
+        "https://en.wikipedia.org/wiki/Ibn_Kathir"
+      ],
+      "short": "Ibn Kathīr"
+    },
+    {
+      "id": "al-saadi",
+      "name_translit": "ʿAbd al-Raḥmān ibn Nāṣir al-Saʿdī",
+      "name_ar": "السعدي",
+      "birth_ah": 1307,
+      "death_ah": 1376,
+      "birth_ce": 1889,
+      "death_ce": 1957,
+      "region": "Najd",
+      "tradition": "Sunnī, Ḥanbalī/Salafī",
+      "verified": true,
+      "sources": [
+        "https://en.wikipedia.org/wiki/Abdul-Rahman_al-Sa%27di"
+      ],
+      "short": "al-Saʿdī"
+    },
+    {
+      "id": "tantawi",
+      "name_translit": "Muḥammad Sayyid Ṭanṭāwī",
+      "name_ar": "طنطاوي",
+      "birth_ah": 1347,
+      "death_ah": 1431,
+      "birth_ce": 1928,
+      "death_ce": 2010,
+      "region": "Egypt",
+      "tradition": "Sunnī; Grand Imam of al-Azhar",
+      "note": "al-Tafsīr al-Wasīṭ.",
+      "verified": true,
+      "sources": [
+        "https://en.wikipedia.org/wiki/Muhammad_Sayyid_Tantawi"
+      ],
+      "short": "Ṭanṭāwī"
+    },
+    {
+      "id": "muhammad-shafi-usmani",
+      "name_translit": "Muftī Muḥammad Shafīʿ ʿUthmānī",
+      "name_ar": "محمد شفيع العثماني",
+      "birth_ah": 1314,
+      "death_ah": 1396,
+      "birth_ce": 1897,
+      "death_ce": 1976,
+      "region": "India / Pakistan",
+      "tradition": "Sunnī, Ḥanafī/Deobandī",
+      "note": "Maʿārif al-Qurʾān — Urdu original.",
+      "verified": true,
+      "sources": [
+        "https://simple.wikipedia.org/wiki/Muhammad_Shafi_Deobandi"
+      ],
+      "short": "Muftī Muḥammad Shafīʿ"
+    },
+    {
+      "id": "wahiduddin-khan",
+      "name_translit": "Wahiduddin Khan",
+      "name_ar": "وحيد الدين خان",
+      "birth_ah": 1343,
+      "death_ah": 1442,
+      "birth_ce": 1925,
+      "death_ce": 2021,
+      "region": "India",
+      "tradition": "Sunnī",
+      "note": "Tazkīr al-Qurʾān — Urdu original.",
+      "verified": true,
+      "sources": [
+        "https://en.wikipedia.org/wiki/Wahiduddin_Khan"
+      ],
+      "short": "Wahiduddin Khan"
+    },
+    {
+      "id": "sayyid-qutb",
+      "name_translit": "Sayyid Quṭb Ibrāhīm Ḥusayn",
+      "name_ar": "سيد قطب",
+      "birth_ah": 1324,
+      "death_ah": 1386,
+      "birth_ce": 1906,
+      "death_ce": 1966,
+      "region": "Egypt",
+      "tradition": "Sunnī",
+      "note": "Fī Ẓilāl al-Qurʾān — written in Arabic (1951–1965); the API here carries only an Urdu edition. Executed 1966.",
+      "verified": true,
+      "sources": [
+        "https://en.wikipedia.org/wiki/Fi_Zilal_al-Quran",
+        "https://www.newworldencyclopedia.org/entry/Sayyid_Qutb"
+      ],
+      "short": "Sayyid Quṭb"
+    },
+    {
+      "id": "israr-ahmad",
+      "name_translit": "Isrār Aḥmad",
+      "name_ar": "إسرار أحمد",
+      "birth_ah": 1350,
+      "death_ah": 1431,
+      "birth_ce": 1932,
+      "death_ce": 2010,
+      "region": "Pakistan",
+      "tradition": "Sunnī",
+      "note": "Bayān al-Qurʾān — Urdu. Born 26 Apr 1932, died 14 Apr 2010.",
+      "verified": true,
+      "sources": [
+        "https://en.wikipedia.org/wiki/Israr_Ahmed"
+      ],
+      "short": "Isrār Aḥmad"
+    },
+    {
+      "id": "abdulrahman-al-alshaikh",
+      "name_translit": "ʿAbd al-Raḥmān ibn Ḥasan Āl al-Shaykh",
+      "name_ar": "عبد الرحمن بن حسن آل الشيخ",
+      "birth_ah": 1193,
+      "death_ah": 1285,
+      "birth_ce": 1779,
+      "death_ce": 1869,
+      "region": "Najd",
+      "tradition": "Sunnī, Ḥanbalī",
+      "note": "EXCLUDE-RECOMMENDED: Fatḥ al-Majīd is a commentary on Kitāb al-Tawḥīd, NOT a Qurʾān tafsir — it likely does not belong in a Qurʾān-commentary corpus. Kept in the data pending your decision.",
+      "verified": true,
+      "sources": [
+        "https://www.wikidata.org/wiki/Q12222746"
+      ],
+      "short": "ʿAbd al-Raḥmān Āl al-Shaykh"
+    },
+    {
+      "id": "abu-bakr-zakaria",
+      "name_translit": "Abū Bakr Muḥammad Zakariyyā",
+      "name_ar": "أبو بكر محمد زكريا",
+      "birth_ah": 1389,
+      "death_ah": null,
+      "birth_ce": 1969,
+      "death_ce": null,
+      "region": "Bangladesh",
+      "tradition": "Sunnī; contemporary",
+      "note": "Bengali tafsir published by the King Fahd Complex. Living (b. 1969).",
+      "verified": true,
+      "sources": [
+        "https://simple.wikipedia.org/wiki/Abubakar_Muhammad_Zakaria"
+      ],
+      "short": "Abū Bakr Zakariyyā"
+    },
+    {
+      "id": "bayaan-foundation",
+      "name_translit": "Ahsanul Bayaan (Bayaan Foundation)",
+      "name_ar": "أحسن البيان",
+      "birth_ah": null,
+      "death_ah": null,
+      "birth_ce": null,
+      "death_ce": null,
+      "region": "Bangladesh",
+      "tradition": "Institutional (publisher)",
+      "note": "Bengali edition; institutional, no single-author life dates to verify.",
+      "verified": false,
+      "sources": [],
+      "short": "Ahsanul Bayaan"
+    },
+    {
+      "id": "rebar",
+      "name_translit": "Rebar Kurdish Tafsir",
+      "name_ar": "تەفسیری ڕەبەر",
+      "birth_ah": null,
+      "death_ah": null,
+      "birth_ce": null,
+      "death_ce": null,
+      "region": "Kurdistan",
+      "tradition": "Contemporary Kurdish",
+      "note": "Kurdish tafsir; author/institution and dates not established.",
+      "verified": false,
+      "sources": [],
+      "short": "Rebar"
+    },
+    {
+      "id": "committee-muyassar",
+      "name_translit": "al-Tafsīr al-Muyassar (committee)",
+      "name_ar": "التفسير الميسّر",
+      "birth_ah": null,
+      "death_ah": null,
+      "birth_ce": null,
+      "death_ce": null,
+      "region": "Saudi Arabia",
+      "tradition": "Committee work",
+      "institution": "King Fahd Complex for the Printing of the Holy Qurʾān",
+      "compiled_ce": 2007,
+      "note": "Institutional, not a single author — no life-dates.",
+      "verified": false,
+      "sources": [],
+      "short": "al-Muyassar"
+    }
+  ],
+  "editions": [
+    {
+      "edition_id": 16,
+      "slug": "ar-tafsir-muyassar",
+      "work_id": "muyassar",
+      "author_ids": [
+        "committee-muyassar"
+      ],
+      "edition_language": "ar",
+      "original_language": "ar"
+    },
+    {
+      "edition_id": 14,
+      "slug": "ar-tafsir-ibn-kathir",
+      "work_id": "ibn-kathir",
+      "author_ids": [
+        "ibn-kathir"
+      ],
+      "edition_language": "ar",
+      "original_language": "ar"
+    },
+    {
+      "edition_id": 15,
+      "slug": "ar-tafsir-al-tabari",
+      "work_id": "al-tabari",
+      "author_ids": [
+        "al-tabari"
+      ],
+      "edition_language": "ar",
+      "original_language": "ar"
+    },
+    {
+      "edition_id": 90,
+      "slug": "ar-tafseer-al-qurtubi",
+      "work_id": "al-qurtubi",
+      "author_ids": [
+        "al-qurtubi"
+      ],
+      "edition_language": "ar",
+      "original_language": "ar"
+    },
+    {
+      "edition_id": 91,
+      "slug": "ar-tafseer-al-saddi",
+      "work_id": "al-saadi",
+      "author_ids": [
+        "al-saadi"
+      ],
+      "edition_language": "ar",
+      "original_language": "ar"
+    },
+    {
+      "edition_id": 93,
+      "slug": "ar-tafsir-al-wasit",
+      "work_id": "wasit",
+      "author_ids": [
+        "tantawi"
+      ],
+      "edition_language": "ar",
+      "original_language": "ar"
+    },
+    {
+      "edition_id": 94,
+      "slug": "ar-tafsir-al-baghawi",
+      "work_id": "al-baghawi",
+      "author_ids": [
+        "al-baghawi"
+      ],
+      "edition_language": "ar",
+      "original_language": "ar"
+    },
+    {
+      "edition_id": 169,
+      "slug": "en-tafisr-ibn-kathir",
+      "work_id": "ibn-kathir",
+      "author_ids": [
+        "ibn-kathir"
+      ],
+      "edition_language": "en",
+      "original_language": "ar"
+    },
+    {
+      "edition_id": 168,
+      "slug": "en-tafsir-maarif-ul-quran",
+      "work_id": "maarif",
+      "author_ids": [
+        "muhammad-shafi-usmani"
+      ],
+      "edition_language": "en",
+      "original_language": "ur"
+    },
+    {
+      "edition_id": 817,
+      "slug": "tazkirul-quran-en",
+      "work_id": "tazkirul",
+      "author_ids": [
+        "wahiduddin-khan"
+      ],
+      "edition_language": "en",
+      "original_language": "ur"
+    },
+    {
+      "edition_id": 157,
+      "slug": "tafsir-fe-zalul-quran-syed-qatab",
+      "work_id": "fi-zilal",
+      "author_ids": [
+        "sayyid-qutb"
+      ],
+      "edition_language": "ur",
+      "original_language": "ar"
+    },
+    {
+      "edition_id": 160,
+      "slug": "tafseer-ibn-e-kaseer-urdu",
+      "work_id": "ibn-kathir",
+      "author_ids": [
+        "ibn-kathir"
+      ],
+      "edition_language": "ur",
+      "original_language": "ar"
+    },
+    {
+      "edition_id": 818,
+      "slug": "tazkiru-quran-ur",
+      "work_id": "tazkirul",
+      "author_ids": [
+        "wahiduddin-khan"
+      ],
+      "edition_language": "ur",
+      "original_language": "ur"
+    },
+    {
+      "edition_id": 159,
+      "slug": "tafsir-bayan-ul-quran",
+      "work_id": "bayan-ul-quran",
+      "author_ids": [
+        "israr-ahmad"
+      ],
+      "edition_language": "ur",
+      "original_language": "ur"
+    },
+    {
+      "edition_id": 381,
+      "slug": "tafisr-fathul-majid-bn",
+      "work_id": "fathul-majid",
+      "author_ids": [
+        "abdulrahman-al-alshaikh"
+      ],
+      "edition_language": "bn",
+      "original_language": "ar"
+    },
+    {
+      "edition_id": 165,
+      "slug": "bn-tafsir-ahsanul-bayaan",
+      "work_id": "ahsanul-bayaan",
+      "author_ids": [
+        "bayaan-foundation"
+      ],
+      "edition_language": "bn",
+      "original_language": "bn"
+    },
+    {
+      "edition_id": 166,
+      "slug": "bn-tafsir-abu-bakr-zakaria",
+      "work_id": "abu-bakr-zakaria",
+      "author_ids": [
+        "abu-bakr-zakaria"
+      ],
+      "edition_language": "bn",
+      "original_language": "bn"
+    },
+    {
+      "edition_id": 164,
+      "slug": "bn-tafseer-ibn-e-kaseer",
+      "work_id": "ibn-kathir",
+      "author_ids": [
+        "ibn-kathir"
+      ],
+      "edition_language": "bn",
+      "original_language": "ar"
+    },
+    {
+      "edition_id": 170,
+      "slug": "ru-tafseer-al-saddi",
+      "work_id": "al-saadi",
+      "author_ids": [
+        "al-saadi"
+      ],
+      "edition_language": "ru",
+      "original_language": "ar"
+    },
+    {
+      "edition_id": 804,
+      "slug": "kurd-tafsir-rebar",
+      "work_id": "rebar-kurdish",
+      "author_ids": [
+        "rebar"
+      ],
+      "edition_language": "ku",
+      "original_language": "ku"
+    }
+  ],
+  "works": [
+    {
+      "work_id": "ibn-kathir",
+      "title": "Tafsīr Ibn Kathīr",
+      "author_ids": [
+        "ibn-kathir"
+      ],
+      "original_language": "ar",
+      "editions": [
+        14,
+        169,
+        160,
+        164
+      ],
+      "english_source": {
+        "strategy": "use_english_edition",
+        "edition_id": 169,
+        "edition_slug": "en-tafisr-ibn-kathir",
+        "from_language": "en",
+        "translate": false
+      },
+      "note": "One independent voice. The ar/ur/bn editions are the SAME work — never count as separate corroboration."
+    },
+    {
+      "work_id": "maarif",
+      "title": "Maʿārif al-Qurʾān",
+      "author_ids": [
+        "muhammad-shafi-usmani"
+      ],
+      "original_language": "ur",
+      "editions": [
+        168
+      ],
+      "english_source": {
+        "strategy": "use_english_edition",
+        "edition_id": 168,
+        "edition_slug": "en-tafsir-maarif-ul-quran",
+        "from_language": "en",
+        "translate": false
+      }
+    },
+    {
+      "work_id": "tazkirul",
+      "title": "Tazkīr al-Qurʾān",
+      "author_ids": [
+        "wahiduddin-khan"
+      ],
+      "original_language": "ur",
+      "editions": [
+        817,
+        818
+      ],
+      "english_source": {
+        "strategy": "use_english_edition",
+        "edition_id": 817,
+        "edition_slug": "tazkirul-quran-en",
+        "from_language": "en",
+        "translate": false
+      },
+      "note": "en and ur editions are the same work."
+    },
+    {
+      "work_id": "al-tabari",
+      "title": "Jāmiʿ al-Bayān",
+      "author_ids": [
+        "al-tabari"
+      ],
+      "original_language": "ar",
+      "editions": [
+        15
+      ],
+      "english_source": {
+        "strategy": "translate",
+        "edition_id": 15,
+        "edition_slug": "ar-tafsir-al-tabari",
+        "from_language": "ar",
+        "translate": true
+      }
+    },
+    {
+      "work_id": "al-qurtubi",
+      "title": "al-Jāmiʿ li-Aḥkām al-Qurʾān",
+      "author_ids": [
+        "al-qurtubi"
+      ],
+      "original_language": "ar",
+      "editions": [
+        90
+      ],
+      "english_source": {
+        "strategy": "translate",
+        "edition_id": 90,
+        "edition_slug": "ar-tafseer-al-qurtubi",
+        "from_language": "ar",
+        "translate": true
+      }
+    },
+    {
+      "work_id": "al-saadi",
+      "title": "Taysīr al-Karīm al-Raḥmān",
+      "author_ids": [
+        "al-saadi"
+      ],
+      "original_language": "ar",
+      "editions": [
+        91,
+        170
+      ],
+      "english_source": {
+        "strategy": "translate",
+        "edition_id": 91,
+        "edition_slug": "ar-tafseer-al-saddi",
+        "from_language": "ar",
+        "translate": true
+      },
+      "note": "Russian edition (170) is the SAME work — translate from the Arabic original, and do not count Russian as an independent voice."
+    },
+    {
+      "work_id": "wasit",
+      "title": "al-Tafsīr al-Wasīṭ",
+      "author_ids": [
+        "tantawi"
+      ],
+      "original_language": "ar",
+      "editions": [
+        93
+      ],
+      "english_source": {
+        "strategy": "translate",
+        "edition_id": 93,
+        "edition_slug": "ar-tafsir-al-wasit",
+        "from_language": "ar",
+        "translate": true
+      }
+    },
+    {
+      "work_id": "al-baghawi",
+      "title": "Maʿālim al-Tanzīl",
+      "author_ids": [
+        "al-baghawi"
+      ],
+      "original_language": "ar",
+      "editions": [
+        94
+      ],
+      "english_source": {
+        "strategy": "translate",
+        "edition_id": 94,
+        "edition_slug": "ar-tafsir-al-baghawi",
+        "from_language": "ar",
+        "translate": true
+      }
+    },
+    {
+      "work_id": "muyassar",
+      "title": "al-Tafsīr al-Muyassar",
+      "author_ids": [
+        "committee-muyassar"
+      ],
+      "original_language": "ar",
+      "editions": [
+        16
+      ],
+      "english_source": {
+        "strategy": "translate",
+        "edition_id": 16,
+        "edition_slug": "ar-tafsir-muyassar",
+        "from_language": "ar",
+        "translate": true
+      }
+    },
+    {
+      "work_id": "fi-zilal",
+      "title": "Fī Ẓilāl al-Qurʾān",
+      "author_ids": [
+        "sayyid-qutb"
+      ],
+      "original_language": "ar",
+      "editions": [
+        157
+      ],
+      "english_source": {
+        "strategy": "translate",
+        "edition_id": 157,
+        "edition_slug": "tafsir-fe-zalul-quran-syed-qatab",
+        "from_language": "ur",
+        "translate": true
+      },
+      "note": "Original is Arabic, but the API here carries only an URDU edition — translating from Urdu is one step removed from the original. Prefer the Arabic original if the QF Content API offers it."
+    },
+    {
+      "work_id": "bayan-ul-quran",
+      "title": "Bayān al-Qurʾān",
+      "author_ids": [
+        "israr-ahmad"
+      ],
+      "original_language": "ur",
+      "editions": [
+        159
+      ],
+      "english_source": {
+        "strategy": "translate",
+        "edition_id": 159,
+        "edition_slug": "tafsir-bayan-ul-quran",
+        "from_language": "ur",
+        "translate": true
+      }
+    },
+    {
+      "work_id": "ahsanul-bayaan",
+      "title": "Ahsanul Bayaan",
+      "author_ids": [
+        "bayaan-foundation"
+      ],
+      "original_language": "bn",
+      "editions": [
+        165
+      ],
+      "english_source": {
+        "strategy": "translate",
+        "edition_id": 165,
+        "edition_slug": "bn-tafsir-ahsanul-bayaan",
+        "from_language": "bn",
+        "translate": true
+      }
+    },
+    {
+      "work_id": "abu-bakr-zakaria",
+      "title": "Tafsir Abu Bakr Zakaria",
+      "author_ids": [
+        "abu-bakr-zakaria"
+      ],
+      "original_language": "bn",
+      "editions": [
+        166
+      ],
+      "english_source": {
+        "strategy": "translate",
+        "edition_id": 166,
+        "edition_slug": "bn-tafsir-abu-bakr-zakaria",
+        "from_language": "bn",
+        "translate": true
+      }
+    },
+    {
+      "work_id": "fathul-majid",
+      "title": "Fatḥ al-Majīd",
+      "author_ids": [
+        "abdulrahman-al-alshaikh"
+      ],
+      "original_language": "ar",
+      "editions": [
+        381
+      ],
+      "english_source": {
+        "strategy": "translate",
+        "edition_id": 381,
+        "edition_slug": "tafisr-fathul-majid-bn",
+        "from_language": "bn",
+        "translate": true
+      },
+      "exclude_recommended": true,
+      "note": "Fatḥ al-Majīd is a commentary on Kitāb al-Tawḥīd, not a Qurʾān tafsir — recommend excluding from this corpus. Kept pending your decision."
+    },
+    {
+      "work_id": "rebar-kurdish",
+      "title": "Rebar Kurdish Tafsir",
+      "author_ids": [
+        "rebar"
+      ],
+      "original_language": "ku",
+      "editions": [
+        804
+      ],
+      "english_source": {
+        "strategy": "translate",
+        "edition_id": 804,
+        "edition_slug": "kurd-tafsir-rebar",
+        "from_language": "ku",
+        "translate": true
+      }
+    }
+  ],
+  "removed_unavailable": {
+    "note": "These were listed in the original OVERVIEW_TAFSIR_SPEC §7 but are NOT in the Quran Foundation public catalogue, and were removed to keep the corpus grounded in what the API actually serves. They appear to have been written from memory. Re-add only if a credentialed list_editions call returns them.",
+    "works": [
+      {
+        "work": "al-Kashshāf",
+        "author": "al-Zamakhshari (d. 538 AH)",
+        "spec_slug": "ar-kashaf"
+      },
+      {
+        "work": "Tafsīr al-Jalālayn",
+        "author": "al-Maḥallī (d. 864 AH) & al-Suyūṭī (d. 911 AH)",
+        "spec_slug": "ar-jalalayn"
+      },
+      {
+        "work": "Naẓm al-Durar",
+        "author": "al-Biqāʿī (d. 885 AH)",
+        "spec_slug": "ar-nathm-aldurar"
+      },
+      {
+        "work": "al-Taḥrīr wa-l-Tanwīr",
+        "author": "Ibn ʿĀshūr (d. 1393 AH)",
+        "spec_slug": "ar-tahrir-wa-tanwir"
+      }
+    ]
+  }
+}

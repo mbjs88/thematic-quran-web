@@ -61,3 +61,17 @@ quran/admin/
 # repo's public/ folder via a separate Cloudflare Pages project. The main
 # repo never tracks anything under news/.
 news/
+
+# Thematic Qur'an Expert Council — internal design/advisory tooling and its
+# simulated-panel run outputs (panel_runs/). Keep private; this is not part of
+# the public site and must never be pushed to the public repo. The skill that
+# drives it is ignored too, since it exposes the council's existence and usage.
+thematic-quran-expert-council/
+.claude/skills/advisory-panel/
+
+# Raw tafsir corpus (large, regenerable from the QF API; provenance is in each
+# compiled section's source_hashes). Back up to R2 if you want it preserved.
+quran/data/tafsir_raw/
+
+# Graphify code knowledge graph output (generated; regenerate with: graphify update .)
+graphify-out/

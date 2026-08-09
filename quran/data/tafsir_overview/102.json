@@ -1,0 +1,2600 @@
+{
+  "surah": 102,
+  "name": "",
+  "coverage": {
+    "editions_present": [
+      "ar-tafsir-al-tabari",
+      "ar-tafsir-al-baghawi",
+      "ar-tafseer-al-qurtubi",
+      "en-tafisr-ibn-kathir",
+      "ar-tafseer-al-saddi",
+      "tafsir-fe-zalul-quran-syed-qatab",
+      "en-tafsir-maarif-ul-quran",
+      "tafsir-bayan-ul-quran",
+      "ar-tafsir-al-wasit",
+      "tazkirul-quran-en",
+      "bn-tafsir-abu-bakr-zakaria",
+      "bn-tafsir-ahsanul-bayaan",
+      "ar-tafsir-muyassar",
+      "kurd-tafsir-rebar"
+    ],
+    "editions_absent": [],
+    "independent_works": 14,
+    "languages_present": [
+      "ar",
+      "bn",
+      "en",
+      "ku",
+      "ur"
+    ],
+    "languages_absent": []
+  },
+  "pipeline_provenance": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "overview-v2.3",
+    "theme_breaks_version": "sha256:99880ec7b10b53313690f91df9ee8d065519ee698df34b35a3336b5705218f90",
+    "compiled_at": "2026-08-02"
+  },
+  "modern_lens_framing": "The Qurʾan is taken here as fixed, revealed truth; science is our provisional, evolving account of the observable world. What follows notes where the two meet — a contemplation, not a proof. Where the science later shifts, that reflects the limits of our knowledge, not the text.",
+  "references": [
+    {
+      "n": 1,
+      "work_id": "al-tabari",
+      "label": "Jāmiʿ al-Bayān",
+      "author_id": "al-tabari",
+      "author": "Abū Jaʿfar Muḥammad ibn Jarīr al-Ṭabarī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 2,
+      "work_id": "al-baghawi",
+      "label": "Maʿālim al-Tanzīl",
+      "author_id": "al-baghawi",
+      "author": "Abū Muḥammad al-Ḥusayn ibn Masʿūd al-Baghawī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 3,
+      "work_id": "al-qurtubi",
+      "label": "al-Jāmiʿ li-Aḥkām al-Qurʾān",
+      "author_id": "al-qurtubi",
+      "author": "Abū ʿAbd Allāh Muḥammad ibn Aḥmad al-Qurṭubī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 4,
+      "work_id": "ibn-kathir",
+      "label": "Tafsīr Ibn Kathīr",
+      "author_id": "ibn-kathir",
+      "author": "Ismāʿīl ibn ʿUmar ibn Kathīr",
+      "source_language": "ar",
+      "note": "One independent voice. The ar/ur/bn editions are the SAME work — never count as separate corroboration."
+    },
+    {
+      "n": 5,
+      "work_id": "al-saadi",
+      "label": "Taysīr al-Karīm al-Raḥmān",
+      "author_id": "al-saadi",
+      "author": "ʿAbd al-Raḥmān ibn Nāṣir al-Saʿdī",
+      "source_language": "ar",
+      "note": "Russian edition (170) is the SAME work — translate from the Arabic original, and do not count Russian as an independent voice."
+    },
+    {
+      "n": 6,
+      "work_id": "fi-zilal",
+      "label": "Fī Ẓilāl al-Qurʾān",
+      "author_id": "sayyid-qutb",
+      "author": "Sayyid Quṭb Ibrāhīm Ḥusayn",
+      "source_language": "ar",
+      "note": "Original is Arabic, but the API here carries only an URDU edition — translating from Urdu is one step removed from the original. Prefer the Arabic original if the QF Content API offers it."
+    },
+    {
+      "n": 7,
+      "work_id": "maarif",
+      "label": "Maʿārif al-Qurʾān",
+      "author_id": "muhammad-shafi-usmani",
+      "author": "Muftī Muḥammad Shafīʿ ʿUthmānī",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 8,
+      "work_id": "bayan-ul-quran",
+      "label": "Bayān al-Qurʾān",
+      "author_id": "israr-ahmad",
+      "author": "Isrār Aḥmad",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 9,
+      "work_id": "wasit",
+      "label": "al-Tafsīr al-Wasīṭ",
+      "author_id": "tantawi",
+      "author": "Muḥammad Sayyid Ṭanṭāwī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 10,
+      "work_id": "tazkirul",
+      "label": "Tazkīr al-Qurʾān",
+      "author_id": "wahiduddin-khan",
+      "author": "Wahiduddin Khan",
+      "source_language": "ur",
+      "note": "en and ur editions are the same work."
+    },
+    {
+      "n": 11,
+      "work_id": "abu-bakr-zakaria",
+      "label": "Tafsir Abu Bakr Zakaria",
+      "author_id": "abu-bakr-zakaria",
+      "author": "Abū Bakr Muḥammad Zakariyyā",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 12,
+      "work_id": "ahsanul-bayaan",
+      "label": "Ahsanul Bayaan",
+      "author_id": "bayaan-foundation",
+      "author": "Ahsanul Bayaan (Bayaan Foundation)",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 13,
+      "work_id": "muyassar",
+      "label": "al-Tafsīr al-Muyassar",
+      "author_id": "committee-muyassar",
+      "author": "al-Tafsīr al-Muyassar (committee)",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 14,
+      "work_id": "rebar-kurdish",
+      "label": "Rebar Kurdish Tafsir",
+      "author_id": "rebar",
+      "author": "Rebar Kurdish Tafsir",
+      "source_language": "ku",
+      "note": ""
+    }
+  ],
+  "sections": {
+    "102:5": {
+      "verse_range": "5-7",
+      "title": "Seeing Hell With Certain Eyes",
+      "in_short": "The surah warns that if people truly grasped the coming reckoning with certainty, mere rivalry in wealth would never have distracted them. They will surely see Hellfire, and then see it again with the certainty that only direct sight gives.",
+      "claims": [
+        {
+          "id": "102:5#c1",
+          "section_ref": "102:5",
+          "attaches_to": "102:5",
+          "text": "\"Kallā\" (No indeed!) is a strong rebuke and check, repeated through the surah, each time followed by a further warning, as if saying: do not do this, for you will regret it.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "ما هكذا ينبغي أن تفعلوا",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "أعاد كلا وهو زجر وتنبيه",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric"
+        },
+        {
+          "id": "102:5#c2",
+          "section_ref": "102:5",
+          "attaches_to": "102:5",
+          "text": "The response to \"if\" (law) is left unstated; the sense understood is: if you knew with certainty, you would not have been distracted by rivalry in wealth, and you would have hastened instead to good deeds.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "وجواب \"لو\" محذوف",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وجواب لو محذوف",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "وجواب \"لو\" محذوف لقصد التهويل",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "102:5#c3",
+          "section_ref": "102:5",
+          "attaches_to": "102:5",
+          "text": "Qatāda explained \"certain knowledge\" here as knowing for certain that Allah will raise a person up after death.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "كنا نحدَّث أن علم اليقين: أن يعلم أنَّ الله باعثه بعد الموت",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "قال قتادة: كنا نتحدث أن علم اليقين...",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not specified by al-Ṭabarī or al-Baghawī"
+          }
+        },
+        {
+          "id": "102:5#c4",
+          "section_ref": "102:5",
+          "attaches_to": "102:5",
+          "text": "Other reports attribute to Qatāda that \"al-yaqīn\" here means death itself, or, on another telling, the resurrection - since once it comes, doubt disappears.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وقيل: اليقين هاهنا: الموت؛ قاله قتادة",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "102:5#c5",
+          "section_ref": "102:5",
+          "attaches_to": "102:5",
+          "text": "Grammatically, \"knowledge\" is added to \"certainty\" (\"'ilm al-yaqīn\") much as the Qur'an elsewhere says \"the truth of certainty\" (ḥaqq al-yaqīn) - a construct joining a described thing to its quality, or a general term to a specific one.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "فأضاف العلم إلى اليقين كقوله: لهو حق اليقين",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وإضافة العلم إلى اليقين كقوله تعالى: إن هذا لهو حق اليقين",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "والإضافة فيه من إضافة الموصوف إلى الصفة",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "102:5#c6",
+          "section_ref": "102:5",
+          "attaches_to": "102:5",
+          "text": "Certainty is described as having three rising degrees: 'ilm al-yaqīn (certainty from knowledge or reasoning, as when one sees smoke and infers fire), 'ayn al-yaqīn (certainty from actually seeing the thing with one's own eyes), and ḥaqq al-yaqīn (certainty from direct contact or experience of the thing itself, as when one touches the fire or enters it).",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "علم الیقین وہ یقین ہے جو انسان کو علم، معلومات یا استدلال کی بنیاد پر حاصل ہو",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "علم اليقين وهو ما كان ناتجا عن الأدلة والبراهين... وحق اليقين: وهو ما كان عن ملابسة ومخالطة",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning",
+          "original_terms": [
+            {
+              "term": "علم اليقين",
+              "gloss": "certainty gained through knowledge or inference"
+            },
+            {
+              "term": "عين اليقين",
+              "gloss": "certainty gained by direct sight"
+            },
+            {
+              "term": "حق اليقين",
+              "gloss": "certainty gained by direct experience or contact"
+            }
+          ]
+        },
+        {
+          "id": "102:5#c7",
+          "section_ref": "102:5",
+          "attaches_to": "102:5",
+          "text": "The repetition of frightening words, each followed by a weightier statement, deepens the warning. But the heedless do not grasp its reality, since they are lost in intoxication and are busy day and night gathering wealth.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "ان خوفناک الفاظ کو مکرر کہا جاتا ہے",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric"
+        },
+        {
+          "id": "102:5#c8",
+          "section_ref": "102:5",
+          "attaches_to": "102:5",
+          "text": "Love of the world and its adornments distracts a person from seeking the Hereafter, right up until death; the true benefit of one's wealth is only what is eaten, worn, or given away, everything else passes to others, while accountability for what was possessed only grows.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "Bukhari and Muslim (as compiled by Ibn Kathīr)"
+          }
+        },
+        {
+          "id": "102:5#c9",
+          "section_ref": "102:5",
+          "attaches_to": "102:5",
+          "text": "If people truly knew, they would restrain themselves and hasten to save themselves from ruin.",
+          "claim_type": "other",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "لو تعلمون حق العلم لانزجرتم، ولبادرتم إلى إنقاذ أنفسكم من الهلاك",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "unspecified"
+        },
+        {
+          "id": "102:5#c10",
+          "section_ref": "102:5",
+          "attaches_to": "102:6",
+          "text": "Reciters differ on the verb form: the majority read \"la-tarawunna\" (you will surely see) with a fatḥa on the tā', while al-Kisā'ī and Ibn 'Āmir read it with a ḍamma (\"la-turawunna\", you will surely be shown/made to see); al-Ṭabarī holds the majority's fatḥa reading correct on grounds of scholarly consensus.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "والصواب عندنا في ذلك الفتح فيهما كليهما، لإجماع الحجة عليه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "قرأ ابن عامر والكسائي: لترون بضم التاء",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وقرأ الكسائي وابن عامر (لترون) بضم التاء",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "102:5#c11",
+          "section_ref": "102:5",
+          "attaches_to": "102:6",
+          "text": "The statement is the answer to an implied oath: \"by Allah, you will surely see the Hellfire\" in the Hereafter.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "هذا وعيد آخر. وهو على إضمار القسم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "جواب قسم مقدر",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "original_excerpt": "এই আয়াতটি উহ্য কসমের জওয়াব",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "102:5#c12",
+          "section_ref": "102:5",
+          "attaches_to": "102:6",
+          "text": "The address is directed to the disbelievers, for whom the Fire is due; Ibn 'Abbās said this verse concerns the people of shirk (polytheism).",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "يعني: أهل الشرك",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "والخطاب للكفار الذين وجبت لهم النار",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "102:5#c13",
+          "section_ref": "102:5",
+          "attaches_to": "102:6",
+          "text": "An alternative view holds the address is general, since all people will pass by or over Hell, as in the verse \"there is not one of you who will not come to it\"; a related hadith describes people crossing over it, some like lightning, some like the wind, some like birds.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وقيل: هو عام؛ كما قال: وإن منكم إلا واردها",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Qurṭubī notes it without grading"
+          }
+        },
+        {
+          "id": "102:5#c14",
+          "section_ref": "102:5",
+          "attaches_to": "102:6",
+          "text": "The seeing described in this verse is with one's own eyes though still from a distance, at this stage.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "أي: ترونها بأبصاركم عن بعيد",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "أي لترون الجحيم بأبصاركم على البعد",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "102:5#c15",
+          "section_ref": "102:5",
+          "attaches_to": "102:7",
+          "text": "\"'Ayn al-yaqīn\" (the eye of certainty) means direct, unmistakable eyewitness observation, the highest degree of certainty, attained by physical sight rather than report or inference.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "مشاهدة، عين اليقين",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "أي مشاهدة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "أي: رؤية بصرية",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "أى: ثم لترون الجحيم رؤية هى ذات اليقين ونفسه وعينه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "عين اليقين",
+              "gloss": "certainty from direct eyewitness sight"
+            }
+          ]
+        },
+        {
+          "id": "102:5#c16",
+          "section_ref": "102:5",
+          "attaches_to": "102:7",
+          "text": "Ibn 'Abbās related that the Prophet ﷺ said a report is never like eyewitnessing: when Mūsā عليه السلام was on the mountain and Allah told him his people had taken to worshipping the calf, it did not affect him as it did when he returned and saw it with his own eyes, at which point he threw down the Tablets in anger, and they broke.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "Aḥmad and al-Ṭabarānī with an authentic chain, as cited by al-Mazharī (per Muftī Muḥammad Shafīʿ)"
+          }
+        },
+        {
+          "id": "102:5#c17",
+          "section_ref": "102:5",
+          "attaches_to": "102:7",
+          "text": "One further reading offered is that the verse describes the permanence of the disbelievers' presence in the Fire, a continuous, unbroken seeing rather than a passing glimpse.",
+          "claim_type": "other",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "هو إخبار عن دوام مقامهم في النار؛ أي هي رؤية دائمة متصلة",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "102:5#c18",
+          "section_ref": "102:5",
+          "attaches_to": "102:7",
+          "text": "Another reading treats verse 5 as pointing to seeing Hellfire now, in this world, with the eye of the heart through certain knowledge, imagining the stages of the Resurrection, while verse 7 then points to seeing it later with the physical eye in the Hereafter, with no possibility of it being hidden from view.",
+          "claim_type": "other",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "فإن علم اليقين يريك الجحيم بعين فؤادك",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "102:5#c19",
+          "section_ref": "102:5",
+          "attaches_to": "102:7",
+          "text": "After this seeing without any doubt, people will be questioned about every kind of blessing they enjoyed.",
+          "claim_type": "other",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "ثم لتسألُنَّ يوم القيامة عن كل أنواع النعيم",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "unspecified"
+        },
+        {
+          "id": "102:5#c20",
+          "section_ref": "102:5",
+          "attaches_to": "102:7",
+          "text": "The first sighting of Hell (verse 6) will be from a distance, while this second sighting, the \"eye of certainty\" (verse 7), will be from close up.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "original_excerpt": "জাহান্নামের প্রথম দর্শন হবে দূর থেকে। আর এ চাক্ষুষ দর্শন হবে নিকট থেকে",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        }
+      ],
+      "essay_html": "<p>\"No indeed!\" says the verse, a sharp check on what has just been said about rivalry in wealth. The commentators read this as a rebuke, repeated through the surah, each occurrence followed by a further warning, as though saying: do not carry on like this, for you will regret it.<sup class=\"ref\">1,3</sup></p><p>The sentence \"if only you knew for certain\" leaves its main clause unstated. The sense understood by the commentators is plain: if people truly knew with certainty, they would never have been distracted by competing over wealth, and would instead have hastened to good deeds.<sup class=\"ref\">1,2,3,7,9,11,12,14</sup> Qatāda explained this certain knowledge as knowing for sure that Allah will raise everyone up after death.<sup class=\"ref\">1,2</sup> Other reports attribute to him that \"certainty\" here means death itself, or else the resurrection, since once it arrives all doubt disappears.<sup class=\"ref\">3</sup> Grammatically, the phrase joins \"knowledge\" to \"certainty\", much as the Qur'an elsewhere speaks of \"the truth of certainty\".<sup class=\"ref\">2,3,9</sup></p><p>Some commentators set out three rising degrees of certainty behind this word. \"'Ilm al-yaqīn\" is certainty gained through knowledge or reasoning, as when one sees smoke from afar and infers a fire. \"'Ayn al-yaqīn\" is certainty gained by actually seeing the thing with one's own eyes. \"Ḥaqq al-yaqīn\" is certainty gained through direct contact, as when one touches the fire or enters it.<sup class=\"ref\">8,9</sup> Sayyid Qutb (d. 1966) notes that the repetition of such frightening words, each followed by something weightier, deepens the warning, though the heedless miss its force because they are lost in intoxication, busy day and night gathering wealth.<sup class=\"ref\">6</sup> Behind this stands a wider theme drawn from hadith: love of the world distracts a person until death, yet the true benefit of wealth is only what is eaten, worn, or given away, everything else passes on while the reckoning for it only grows.<sup class=\"ref\">4,10</sup> Had people truly known this, they would have restrained themselves and hurried to save themselves from ruin.<sup class=\"ref\">13</sup></p><p>\"You will most definitely see Hellfire\" is read two ways by the reciters. Most read it as \"you will surely see\", while al-Kisā'ī and Ibn 'Āmir read it as \"you will surely be shown\"; al-Ṭabarī (d. 923) held the majority reading correct on grounds of scholarly agreement.<sup class=\"ref\">1,2,3</sup> The statement answers an implied oath: \"by Allah, you will surely see the Fire\" in the Hereafter.<sup class=\"ref\">3,9,12</sup> The address is understood by some to fall on the disbelievers specifically, those for whom the Fire is due, and Ibn 'Abbās (d. 687) is reported to have said this verse concerns the people of shirk.<sup class=\"ref\">1,3</sup> Others hold the address is general, since \"there is not one of you who will not come to it\", recalling a hadith describing people crossing over Hell, some like lightning, some like wind, some like birds.<sup class=\"ref\">3</sup> At this stage the seeing is still with the eyes from a distance.<sup class=\"ref\">2,3</sup></p><p>Then comes the second sighting: \"you will see it with the eye of certainty.\" This phrase means direct, unmistakable eyewitness observation, the highest degree of certainty, since it comes from actually seeing rather than from report or inference.<sup class=\"ref\">2,3,5,7,9,12</sup> Muftī Muḥammad Shafīʿ (d. 1976) and Abū Bakr Zakariyyā relate a report from Ibn 'Abbās that news is never like eyewitnessing: when Mūsā عليه السلام was on the mountain and told that his people had taken to worshipping the calf, it did not shake him as it did when he returned and saw it himself, so much that the Tablets fell from his hands and broke.<sup class=\"ref\">7,11</sup> Al-Qurṭubī (d. 1273) records further readings: that this describes the permanence of the disbelievers' presence in the Fire, an unbroken seeing rather than a glimpse, or that certain knowledge in this world lets a person see Hellfire already with the eye of the heart, before the physical eye confirms it beyond doubt in the Hereafter.<sup class=\"ref\">3</sup> One source adds that the first sighting was from a distance, while this second sighting comes from close up.<sup class=\"ref\">12</sup> After this comes, in what follows, a question about every blessing enjoyed.<sup class=\"ref\">13</sup></p><p class=\"close\">What is presented first as a claim to be reasoned about becomes, in the end, a thing to be seen with one's own eyes, and the commentators read the surah's rising language, knowledge, then a first sight, then a certain sight, as tracing exactly that movement from hearing to witnessing.<sup class=\"ref\">1,2,3,5,7,8,9</sup></p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:7162e24eaec85d9ec102a37a02cfe7d7c9ae589210c3e8a747d1cd14eae56898",
+        "2": "sha256:d9d59d27bd9a7b04d57565e0a0f53e8fd985e9f3bf5de2090e4b34aa58aa352f",
+        "3": "sha256:5aaf7dde1afba006cfd1841c4d261895280fab4774edda98a278ac1dd7ce5f48",
+        "4": "sha256:3d65847bbae3385742f752ef5378c41a297064962fc29c702b6892c382eeac95",
+        "5": "sha256:0f78f0cd93d605c1254648e8fe7f0d7b5def8b57820ffacf10f0c9a47c3f13d6",
+        "6": "sha256:af7c31d40075dbc9270dd90aa3049ec2311c52538e4fc74cec4a1def06482532",
+        "7": "sha256:03fb9467d351a834c17dfc7d275b0c17b28e16f8b081951c21dacee4f4c87776",
+        "8": "sha256:b94da9702597498d860bf978dae351d7f5c843024283d892c72e9ca6fdfe5239",
+        "9": "sha256:b8412556d41c34bc3963f13985573a004011e46fffee64d966988bac282db4ed",
+        "10": "sha256:dd82e7ed688a52a5b28db76d3c500eed30e02be758218cff84d75fceda95e4d1",
+        "11": "sha256:fb7dde14653d63a8d05b7b636c27c488ebb6fff3acf5e68de473f3106cc50051",
+        "12": "sha256:a0331ab5d55bb7dd537f0c3d63b6fc8de9672faa6ff685c6a18a2787b724b0b1",
+        "13": "sha256:57ecc32163c6b36b45c5c8195c7449225c84bc6a068c940d74c15351604a8c66",
+        "14": "sha256:50bd1039fab494d3a5ce311935411c0f9e058904f4f8f2e793ac31a2ff309b27"
+      },
+      "flags": {
+        "creedal_stakes": true,
+        "legal_content": false,
+        "sensitive_content": true
+      },
+      "compiled_at": "2026-08-02"
+    },
+    "102:1": {
+      "verse_range": "1-4",
+      "title": "The Race for More",
+      "in_short": "The surah warns that the human race for 'more' — wealth, children, numbers, status — blinds people until death itself catches them, and it tells them twice over that they will come to know the truth of what occupied them.",
+      "claims": [
+        {
+          "id": "102:1#c1",
+          "section_ref": "102:1",
+          "attaches_to": "102:1",
+          "text": "Alhākum comes from lahw, meaning to be diverted or made heedless; the verse says rivalry in increase has diverted people from what matters.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "ألهاكم شغلكم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "ألهاكم شغلكم المباهاة بكثرة المال والعدد",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "من اللهو وهو الغفلة عن مواطن الخير",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "أَلْهَاكُمُ",
+              "gloss": "has diverted/distracted you (from lahw, heedlessness)"
+            }
+          ]
+        },
+        {
+          "id": "102:1#c2",
+          "section_ref": "102:1",
+          "attaches_to": "102:1",
+          "text": "The object of the rivalry (al-Takāthur) is left unnamed on purpose, so that it covers everything people compete over: wealth, children, supporters, armies, servants, status.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "ولم يذكر المتكاثر به، ليشمل ذلك كل ما يتكاثر به المتكاثرون",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "102:1#c3",
+          "section_ref": "102:1",
+          "attaches_to": "102:1",
+          "text": "Exegetes differ on what exactly is meant by al-Takathur: Ibn Abbas and al-Hasan take it as wealth and children; Qatadah takes it as pride over tribes and clans; al-Dahhak takes it as preoccupation with livelihood and trade.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "التكاثر أي من الأموال والأولاد، قاله ابن عباس والحسن",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "102:1#c4",
+          "section_ref": "102:1",
+          "attaches_to": "102:1",
+          "text": "One report on the occasion of revelation: a group boasted 'we are more numerous than such-and-such tribe', repeating this while they died off one by one, until all of them had become people of the graves.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "كانوا يقولون: نحن أكثر من بني فلان",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "نزلت في اليهود",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "102:1#c5",
+          "section_ref": "102:1",
+          "attaches_to": "102:2",
+          "text": "Another report: two clans of Quraysh, Banu Abd Manaf and Banu Sahm, competed over which had more living nobles, then went out to the graves and named their dead one by one; Banu Sahm won by naming three more graves.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "فتعاد السادة والأشراف أيهم أكثر عددا",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "102:1#c6",
+          "section_ref": "102:1",
+          "attaches_to": "102:1",
+          "text": "Further reports on the occasion of revelation exist: Ibn Zayd said it concerned a branch of the Ansar; Amr b. Dinar swore it was about merchants; another route from Qatadah said it was about the People of the Book. Al-Qurtubi says the verse is general enough to cover all of this and more.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "قلت: الآية تعم جميع ما ذكر وغيره",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "102:1#c7",
+          "section_ref": "102:1",
+          "attaches_to": "102:1",
+          "text": "The Prophet ﷺ is reported to have recited this verse and then explained it: the son of Adam says 'my wealth, my wealth', but he owns nothing of it except what he ate and used up, wore and wore out, or gave away in charity and sent ahead of himself; everything else passes to other people.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "recorded in Sahih Muslim, per the sources' citation"
+          }
+        },
+        {
+          "id": "102:1#c8",
+          "section_ref": "102:1",
+          "attaches_to": "102:1",
+          "text": "Ubayy b. Ka'b said the companions had thought a hadith was part of the Qur'an - that if the son of Adam had a valley of gold he would want a second, and that nothing but grave-dust fills his mouth - until this surah was revealed with the same meaning.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "recorded in Sahih al-Bukhari, per the sources' citation"
+          }
+        },
+        {
+          "id": "102:1#c9",
+          "section_ref": "102:1",
+          "attaches_to": "102:2",
+          "text": "A hadith states that three things follow the deceased - his family, his wealth, and his deeds - and two of them, family and wealth, turn back, while only his deeds remain with him.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "recorded in al-Bukhari and Muslim, per the sources' citation"
+          }
+        },
+        {
+          "id": "102:1#c10",
+          "section_ref": "102:1",
+          "attaches_to": "102:1",
+          "text": "A further hadith is cited: the Prophet ﷺ said he did not fear poverty for his community but feared abundance for them, just as he feared not error but deliberate wrongdoing.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "cited from Musnad Ahmad without grading in the source"
+          }
+        },
+        {
+          "id": "102:1#c11",
+          "section_ref": "102:1",
+          "attaches_to": "102:1",
+          "text": "A report holds that this surah carries the weight of a thousand verses, as the Prophet ﷺ once asked whether anyone could recite that many daily and then pointed to this short surah.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "attributed by al-Mazhari to al-Hakim and al-Bayhaqi, ungraded in the source"
+          }
+        },
+        {
+          "id": "102:1#c12",
+          "section_ref": "102:1",
+          "attaches_to": "102:1",
+          "text": "Man is preoccupied from the very purpose of his creation: worship of God alone, knowledge of Him, turning to Him, and putting love of Him above all else.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "اشتغالهم عما خلقوا له من عبادته وحده لا شريك له",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "102:1#c13",
+          "section_ref": "102:1",
+          "attaches_to": "102:2",
+          "text": "The human urge to accumulate is never satisfied; a person spends his whole life chasing more and the pursuit does not let up until death takes him.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "انسان کی حرص و ہوس کے پیمانے کو صرف قبر کی مٹی ہی بھر سکتی ہے",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "102:1#c14",
+          "section_ref": "102:1",
+          "attaches_to": "102:1",
+          "text": "This verse is linked to Surah al-Hadid 57:20, where the final stage described of human life is precisely competition in wealth and children, a greed that grows rather than lessens with old age.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "102:1#c15",
+          "section_ref": "102:1",
+          "attaches_to": "102:2",
+          "text": "The verb chosen is 'you visited' the graves, not 'you settled' there; several commentators draw out that a visitor eventually leaves, meaning the grave is a temporary stop and not the final residence.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "أي حتى أتاكم الموت، فصرتم في المقابر زوارا",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "أن الله سماهم زائرين، ولم يسمهم مقيمين",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "لأن الميت يأتى إلى القبر كالزائر له",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "102:1#c16",
+          "section_ref": "102:1",
+          "attaches_to": "102:2",
+          "text": "Al-Qurtubi notes that the word for graves, al-maqabir, occurs in the Qur'an only in this surah, and discusses at length hadiths recommending the visiting of graves as a reminder of death and the Hereafter.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "لم يأت في التنزيل ذكر المقابر إلا في هذه السورة",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "102:1#c17",
+          "section_ref": "102:1",
+          "attaches_to": "102:2",
+          "text": "Ali (RA), as reported through Zirr b. Hubaysh, said: 'we used to doubt the punishment of the grave, until this surah was revealed.'",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "كنا نشكّ في عذاب القبر، حتى نـزلت هذه الآية",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded by the sources citing it"
+          }
+        },
+        {
+          "id": "102:1#c18",
+          "section_ref": "102:1",
+          "attaches_to": "102:3",
+          "text": "'Kalla' (No indeed) is a rebuke: the rivalry is not how one ought to have lived, an interruption before the warning that follows.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "كلا ما هكذا ينبغي أن تفعلوا",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "ليس الأمر على ما أنتم عليه من التفاخر والتكاثر",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "relay",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning",
+          "original_terms": [
+            {
+              "term": "كَلَّا",
+              "gloss": "No indeed / that is not how it should be"
+            }
+          ]
+        },
+        {
+          "id": "102:1#c19",
+          "section_ref": "102:1",
+          "attaches_to": "102:4",
+          "text": "The warning 'you will come to know' is repeated twice; the commentators explain this doubling as the Arabic style of sharpening a threat by repeating it, warning upon warning.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "لأن العرب إذا أرادت التغليظ في التخويف والتهديد كرّروا الكلمة مرتين",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وعيد بعد وعيد؛ قاله مجاهد",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "لتأكيد هذا الزجر والردع",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric"
+        },
+        {
+          "id": "102:1#c20",
+          "section_ref": "102:1",
+          "attaches_to": "102:4",
+          "text": "Exegetes differ on what the two moments of 'knowing' refer to: Ibn Abbas said the first is the punishment of the grave and the second the punishment of the Hereafter; Mujahid read it simply as threat upon threat without assigning two distinct moments.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "قال ابن عباس: كلا سوف تعلمون ما ينزل بكم من العذاب في القبر",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "102:1#c21",
+          "section_ref": "102:1",
+          "attaches_to": "102:4",
+          "text": "Al-Dahhak read the two warnings as addressed to two different groups, the first to the disbelievers and the second to the believers, and he recited the two verbs with different grammatical forms accordingly.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "كلا سوف تعلمون قال: الكفار... ثم كلا سوف تعلمون قال: المؤمنون",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "وكان يقرأ الأولى بالياء والثانية بالتاء",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "الأولى بالتاء والثانية بالياء",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "102:1#c22",
+          "section_ref": "102:1",
+          "attaches_to": "102:3",
+          "text": "Al-Muyassar renders the two warnings as: you will come to realise the Hereafter is better than what distracted you, then take heed of the ill consequence of that neglect.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "relay",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "سوف تتبيَّنون أن الدار الآخرة خير لكم",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        }
+      ],
+      "essay_html": "<p>The surah opens on a single human failing: chasing 'more' (al-Takāthur, rivalry in increase) diverts people from what actually matters. The word for 'distracts' comes from lahw, meaning to be made heedless.<sup class=\"ref\">1,3,9,11,12</sup> One commentator notes that the object of the rivalry is left unnamed on purpose, so the verse can cover whatever people compete over: wealth, children, supporters, armies, servants, status.<sup class=\"ref\">5,11</sup> The exegetes record different readings of exactly what is meant: Ibn Abbas and al-Hasan take it as wealth and children, Qatadah as pride in tribe and clan numbers, al-Dahhak as preoccupation with livelihood and trade.<sup class=\"ref\">1,3,7</sup></p><p>Several reports describe the occasion behind the verse. One says it concerned a group who kept boasting 'we outnumber such-and-such tribe' while dying off one by one, until they had all become people of the graves themselves.<sup class=\"ref\">1,2,3</sup> Another names two clans of Quraysh, Banu Abd Manaf and Banu Sahm, who competed first over their living nobles, then went out to the graves and counted their dead by name, Banu Sahm winning by three graves.<sup class=\"ref\">2,3</sup> Other reports point to a branch of the Ansar, to merchants, or to the People of the Book. Al-Qurţubī (d. 1273) says the verse is broad enough to hold all of these readings and more.<sup class=\"ref\">3</sup></p><p>A group of reports carry the Prophet's ţ's own explanation. He is reported to have recited the verse and said that the son of Adam claims 'my wealth, my wealth', yet truly owns nothing of it except what he ate and finished, wore and wore out, or gave away and sent ahead of himself; everything else passes to other people.<sup class=\"ref\">1,2,3,4,7,9,11</sup> Ubayy b. Ka'b said the companions once thought a related saying, that a person given a valley of gold would still want a second and that nothing but grave-dust fills his mouth, was itself part of the Qur'an, until this surah was revealed with the same meaning.<sup class=\"ref\">1,3,4,7</sup> Another hadith says three things follow the dead, his family, his wealth, and his deeds; the first two turn back, and only his deeds remain with him.<sup class=\"ref\">2,4</sup> One report even has the Prophet ţ saying he feared abundance for his people more than he feared poverty.<sup class=\"ref\">11</sup> A further report gives this short surah the weight of a thousand verses.<sup class=\"ref\">7</sup></p><p>Behind all this, al-Sa'dī (d. 1957) reads the distraction as being from the very purpose of creation: worship of God alone, knowledge of Him, and turning to Him in love above everything else.<sup class=\"ref\">5</sup> Later commentators put it in plainer terms: the appetite for more is never satisfied, and the chase does not stop until death itself intervenes.<sup class=\"ref\">6,8,10</sup> One draws a line to Surah al-Ḥadīd 57:20, where the last stage of human life described there is precisely this competition in wealth and children, a greed that grows rather than fades with age.<sup class=\"ref\">8</sup></p><p>The verse says 'until you visited the graves', not 'until you settled there'. Several commentators draw out that a visitor eventually leaves, so the grave is read as a temporary stop, not the final residence.<sup class=\"ref\">3,5,9,11</sup> Al-Qurţubī adds that the word for graves appears in the Qur'an only in this surah, and goes on to discuss hadiths that recommend visiting graves as a reminder of death.<sup class=\"ref\">3</sup> Some take the verse further, as a pointer to the punishment of the grave: Ali (رضي الله عنه) is reported to have said, 'we used to doubt the punishment of the grave, until this surah was revealed.'<sup class=\"ref\">1,3</sup></p><p>'Kalla' (No indeed) then interrupts, a rebuke: this rivalry is not how one ought to have lived.<sup class=\"ref\">1,3,9,13</sup> The warning that follows, 'you will come to know', is said twice. The commentators explain the repetition as the ordinary Arabic way of sharpening a threat, warning laid upon warning.<sup class=\"ref\">1,3,9,12,14</sup> They differ over what the two moments of knowing point to. Ibn Abbas took the first as the punishment of the grave and the second as that of the Hereafter, while Mujahid read it simply as one threat doubled rather than two separate events.<sup class=\"ref\">3</sup> Al-Dahhak had his own distinctive reading, taking the first warning as addressed to the disbelievers and the second to the believers, and reciting the two verbs with different grammatical forms to match.<sup class=\"ref\">1,2,3</sup> Al-Muyassar paraphrases the pair as: you will come to see that the Hereafter is better than what distracted you, so beware the outcome of that neglect.<sup class=\"ref\">13</sup></p><p class=\"close\">Across these readings the same picture returns: a life spent competing over 'more', that ends, as the Prophet ţ is reported to have said, with a person owning nothing of his wealth beyond what he ate, wore, or gave away.<sup class=\"ref\">1,2,3,4,7,9,11</sup></p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:3586029cb00f335cb2e6fc0a396395048445a86de4e006f46fe6e6e01965dacf",
+        "2": "sha256:0d498904f121b7ee3739ee034aca20c5d5e3b172c0d017f52616c78babc0383f",
+        "3": "sha256:fe5b558cde2dc09bb13ecd9a2eac28df34c68f256adb32b73eeb6c0f4909fef0",
+        "4": "sha256:ceae63e13956d8babead6663048d6d45f7362a5d244c1472a7bbbfd32147116f",
+        "5": "sha256:6d1d820fef85a488104f97ded997658b8585b113b70384feaff9a2b24af3c0f2",
+        "6": "sha256:3b2275fc5bac704d39b86b36e1f627c2dbcdb5b1ecdf4ccc46d8e42f7e566f4a",
+        "7": "sha256:88537fdc83b2c7bd6b1057d7cbe2fafa3c4e14d0662b905478864a800b8b2de3",
+        "8": "sha256:022c0ed1c2556569eeda4e763fa19ca6dab044c247bbe01ba1867d1c6a241f1e",
+        "9": "sha256:e2ac6230f80d529883164821d5cb16c3b16c274e5a90f9cdb4ca02cadb151437",
+        "10": "sha256:31dc4d603266e9722d4c23ad41c701c94d54b1bce295573a5ab9ae46e9b96566",
+        "11": "sha256:edb26f8060c0088dbe18e277a41ba192f34f4b68940470aff3fde80e7ffeeb1a",
+        "12": "sha256:56f8f713ed3d15d9bed69b0ef88cba14e33b561316506776e3f3f28dfa1ab2e2",
+        "13": "sha256:4e9e815af3f85ec2d67412993a7fe2c5f462cc1b931405f70faf40454cf46380",
+        "14": "sha256:44c45a1d85598f6a5e3c252e44471e0f246daa2d94b971c3c76571ed6d39640c"
+      },
+      "flags": {
+        "creedal_stakes": true,
+        "legal_content": false,
+        "sensitive_content": true
+      },
+      "compiled_at": "2026-08-02"
+    },
+    "102:8": {
+      "verse_range": "8-8",
+      "title": "Questioned About Every Pleasure",
+      "in_short": "The sūra ends with the announcement that on the Day of Judgment every person will be questioned about the pleasures and favours (al-Naʿīm) enjoyed in this life, how they were earned, used, and whether thanks was given for them.",
+      "claims": [
+        {
+          "id": "102:8#c1",
+          "section_ref": "102:8",
+          "attaches_to": "102:8",
+          "text": "The verse means that on the Day of Judgment God will question people about the favours and pleasures they had in this world: how they obtained them, what they did with them, and whether they gave thanks for them.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning",
+          "original_terms": [
+            {
+              "term": "al-Naʿīm",
+              "gloss": "the pleasures / favours a person enjoyed in worldly life"
+            }
+          ]
+        },
+        {
+          "id": "102:8#c2",
+          "section_ref": "102:8",
+          "attaches_to": "102:8",
+          "text": "Early commentators differed over exactly what 'the pleasures' refers to. Some said it means security and bodily health.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "102:8#c3",
+          "section_ref": "102:8",
+          "attaches_to": "102:8",
+          "text": "Others said it means the faculties of hearing, sight and the soundness of the body which God granted, linking it to the verse that the ear, the eye and the heart will each be questioned.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "102:8#c4",
+          "section_ref": "102:8",
+          "attaches_to": "102:8",
+          "text": "Others said it is well-being (al-ʿāfiya), or health together with free time (al-farāgh), or health, free time and wealth together.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "original_terms": [
+            {
+              "term": "al-ʿāfiya",
+              "gloss": "well-being, soundness of body"
+            }
+          ]
+        },
+        {
+          "id": "102:8#c5",
+          "section_ref": "102:8",
+          "attaches_to": "102:8",
+          "text": "Others took it as food and drink specifically enjoyed, illustrated by reports of the Prophet ﷺ pointing to particular meals as instances of the naʿīm that will be questioned.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "102:8#c6",
+          "section_ref": "102:8",
+          "attaches_to": "102:8",
+          "text": "Others said it covers everything a person delighted in during worldly life without restriction — food, clothing, house, spouse, children, rule, or honour, as Mujāhid held.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "102:8#c7",
+          "section_ref": "102:8",
+          "attaches_to": "102:8",
+          "text": "Still others read it as Islam and the Sunna, the lightening of the Sharia and the ease of the Qurʾān, or specifically the favour of Muḥammad ﷺ having been sent as a messenger.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "102:8#c8",
+          "section_ref": "102:8",
+          "attaches_to": "102:8",
+          "text": "A hadith cited by al-Qurṭubī also counts one's worldly standing or rank (jāh) among what will be asked about, since God questions a servant about his rank just as He questions him about his wealth.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "original_terms": [
+            {
+              "term": "jāh",
+              "gloss": "worldly standing or rank"
+            }
+          ],
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Qurṭubī, no explicit grading given"
+          }
+        },
+        {
+          "id": "102:8#c9",
+          "section_ref": "102:8",
+          "attaches_to": "102:8",
+          "text": "Al-Ṭabarī, after listing these views, states the soundest reading is that the wording is unrestricted: God said He would question them about the naʿīm without limiting it to one kind, so the questioning covers every sort of favour, not some at the expense of others. Al-Qurṭubī likewise calls the comprehensive reading the best, since the wording is general, and Muftī Shafīʿ cites both in agreement.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "102:8#c10",
+          "section_ref": "102:8",
+          "attaches_to": "102:8",
+          "text": "Some held that this questioning is directed only at disbelievers, since al-Ḥasan said only the people of the Fire are asked about the naʿīm, and a report has Abū Bakr رضي الله عنه worry about a meal he shared with the Prophet ﷺ, to which the Prophet ﷺ replied that this reckoning belongs to the disbelievers, then recited the verse about the disbelievers never being repaid except with their disbelief.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "reported via al-Qushayrī, cited by al-Qurṭubī without a formal grading"
+          }
+        },
+        {
+          "id": "102:8#c11",
+          "section_ref": "102:8",
+          "attaches_to": "102:8",
+          "text": "Others reconciled the reports: everyone, believer and disbeliever, will be asked, but the disbeliever's questioning is a rebuke for having failed to give thanks, while the believer's questioning is an honouring, since he did give thanks. This reconciliation, attributed to al-Qushayrī and approved by al-Qurṭubī, is also cited approvingly by al-Ṭanṭāwī, and the same two positions (only disbelievers vs. everyone) are set out by Ahsanul Bayaan, which notes that being questioned does not by itself mean punishment: a person who used the favours as God commanded will be kept safe from punishment despite being asked.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "102:8#c12",
+          "section_ref": "102:8",
+          "attaches_to": "102:8",
+          "text": "A minority view held that this specific questioning was directed at the disbelievers of Mecca, who lived in worldly wealth and comfort but did not thank the Giver of that favour, since they worshipped others besides Him, and will be punished for withholding that gratitude. This was said to be al-Ḥasan's position as reported through Muqātil.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "102:8#c13",
+          "section_ref": "102:8",
+          "attaches_to": "102:8",
+          "text": "Al-Ḥasan and Qatāda held that three basic necessities are excluded from this questioning: a garment to cover one's nakedness, a piece of bread that staves off hunger, and shelter that gives cover. A hadith likewise lists these as exceptions to what a servant will be asked about.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "narrated through multiple chains in al-Ṭabarī and al-Qurṭubī without an explicit grading"
+          }
+        },
+        {
+          "id": "102:8#c14",
+          "section_ref": "102:8",
+          "attaches_to": "102:8",
+          "text": "Sufyān ibn ʿUyayna argued that whatever merely staves off hunger and covers nakedness in coarse food and clothing is not questioned, drawing on the fact that God settled Adam عليه السلام in Paradise promising he would not hunger, go naked, thirst, or suffer heat there — meaning these four basic needs were unconditionally granted to Adam and are therefore not reckoned.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "102:8#c15",
+          "section_ref": "102:8",
+          "attaches_to": "102:8",
+          "text": "A widely reported narrative recounts the Prophet ﷺ, Abū Bakr and ʿUmar رضي الله عنهما leaving their houses out of hunger and being fed dates, meat, and cool water at the home of a companion (named as Abū al-Haytham ibn al-Tayyihān, whose given name was Mālik). The Prophet ﷺ told them afterward that this very meal, its cool shade, ripe dates, and cool water, was itself among the naʿīm they would be asked about on the Day of Judgment.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "recorded in Ṣaḥīḥ Muslim, per al-Qurṭubī's citation"
+          }
+        },
+        {
+          "id": "102:8#c16",
+          "section_ref": "102:8",
+          "attaches_to": "102:8",
+          "text": "Another report says that when this verse was revealed, some of the Companions (or 'the people') asked the Prophet ﷺ which naʿīm they would be questioned about, since they had only dates and water, swords on their shoulders, and the enemy before them. The Prophet ﷺ replied that this questioning would indeed come to pass.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "cited via al-Tirmidhī by al-Qurṭubī and others without a stated grading"
+          }
+        },
+        {
+          "id": "102:8#c17",
+          "section_ref": "102:8",
+          "attaches_to": "102:8",
+          "text": "A hadith states that the first thing a servant will be asked about among the favours on Judgment Day is: 'Did We not restore your body to health, and did We not give you cool water to drink?'",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "al-Tirmidhī and Ibn Ḥibbān, as cited by Ibn Kathīr and relayed by Muftī Shafīʿ"
+          }
+        },
+        {
+          "id": "102:8#c18",
+          "section_ref": "102:8",
+          "attaches_to": "102:8",
+          "text": "A further hadith, reported from Bukhari, states that no person will be able to move from his place on Judgment Day until he answers five things: how he spent his life, how he spent his youth, how he earned his wealth, how he spent it, and whether he acted on the knowledge God gave him.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "al-Bukhārī, as cited by Muftī Shafīʿ"
+          }
+        },
+        {
+          "id": "102:8#c19",
+          "section_ref": "102:8",
+          "attaches_to": "102:8",
+          "text": "Al-Saʿdī and al-Ṭanṭāwī explain that the substance of the questioning is whether a person gave thanks for the favour, fulfilled God's right in it, and refrained from using it to disobey Him, in which case he is given a still higher favour, or whether he was deceived by it, failed to give thanks, and perhaps even used it to disobey God, in which case he is punished, as in the verse describing disbelievers shown the Fire and told: 'you enjoyed your good things in worldly life, so today you are repaid with a degrading punishment.'",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "102:8#c20",
+          "section_ref": "102:8",
+          "attaches_to": "102:8",
+          "text": "Sayyid Quṭb describes the questioning in fuller detail: where the wealth or favour came from, how it was spent, whether it was earned and used in obedience or disobedience to God, through lawful or unlawful means, whether its due of gratitude was fulfilled, whether it was shared with others or hoarded selfishly, and how it was gathered and boasted over. He stresses that these pleasures look light and trivial to the heedless, yet carry behind them a heavy responsibility and a harsh reckoning.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "102:8#c21",
+          "section_ref": "102:8",
+          "attaches_to": "102:8",
+          "text": "Ibn Kathīr connects the sūra's closing warning to a set of related hadiths on the nature of wealth: a servant truly benefits from only three things out of his wealth, what he ate and consumed, what he wore until worn out, and what he gave in charity; everything else passes on to others after him. Likewise, three things follow the deceased to the grave, his family, his wealth and his deeds, but only his deeds remain with him. And even as a person grows old, two things stay with him: greed and hope for more.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "102:8#c22",
+          "section_ref": "102:8",
+          "attaches_to": "102:8",
+          "text": "Wahīduddīn Khān observes that man remains absorbed in accumulating more and more, mistaking this increase for success, until death. Only after death does he realise that what deserved to be treasured was something else, but by then the realisation comes too late to be of any use.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        }
+      ],
+      "essay_html": "<p>The sūra closes with a single reckoning: every person will be questioned about the pleasures they enjoyed in this world, how those pleasures were earned, how they were spent, and whether thanks was given for them.<sup class=\"ref\">1,5,6,7,8,9,11,12,13,14</sup></p><p>Commentators differed on exactly what 'the pleasures' (al-Naʿīm) means. Some said security and bodily health.<sup class=\"ref\">1,2,3</sup> Others pointed to hearing, sight and the soundness of the body, tying it to the verse that the ear, the eye and the heart will each be questioned.<sup class=\"ref\">1,2,3,7,11</sup> Others named well-being, or health together with free time, or health, free time and wealth combined.<sup class=\"ref\">1,2,3</sup> Some read it as the food and drink one enjoyed, others as Islam, the Sunna, the ease of the Sharīʿa, or the very favour of Muḥammad ﷺ being sent.<sup class=\"ref\">1,2,3</sup> One report even counts a person's worldly rank (jāh) among what is asked about.<sup class=\"ref\">3</sup> Mujāhid took it further still: every worldly delight without exception, food, clothing, house, spouse, children, rule, honour.<sup class=\"ref\">1,3,7</sup></p><p>Al-Ṭabarī, after setting out these views, judged that the soundest reading is the widest one: the wording is unrestricted, so the questioning covers every kind of favour, not one type at the expense of another. Al-Qurṭubī reaches the same conclusion, and Muftī Muḥammad Shafīʿ relays both in agreement.<sup class=\"ref\">1,3,7</sup></p><p>A separate question occupied the commentators: is this reckoning for disbelievers alone, or for everyone? Al-Ḥasan held that only the people of the Fire are asked about the naʿīm, and a report has Abū Bakr رضي الله عنه worried about a shared meal, to which the Prophet ﷺ answered that this reckoning belongs to the disbelievers.<sup class=\"ref\">3,12</sup> Others reconciled the two positions: everyone is asked, but for the disbeliever it is a rebuke, since he withheld thanks, while for the believer it is an honouring, since he gave thanks. Al-Qurṭubī favours this reconciliation, al-Ṭanṭāwī repeats it approvingly, and the point that being questioned does not itself mean punishment is echoed elsewhere.<sup class=\"ref\">3,9,12</sup> Al-Baghawī records a further reading, that the verse addresses the disbelievers of Mecca specifically, who had worldly comfort but did not thank its true Giver.<sup class=\"ref\">2</sup></p><p>Some necessities were said to fall outside this reckoning altogether. Al-Ḥasan and Qatāda named three: a garment for covering nakedness, a piece of bread that staves off hunger, and shelter. A hadith lists the same exceptions.<sup class=\"ref\">1,3</sup> Sufyān ibn ʿUyayna grounded the exemption in the story of Adam عليه السلام, who was promised in Paradise that he would not hunger, thirst, go naked, or suffer heat, these four needs being freely given rather than reckoned.<sup class=\"ref\">3</sup></p><p>A well-known narrative brings the point home. The Prophet ﷺ, Abū Bakr and ʿUmar رضي الله عنهما left their houses out of hunger and were fed dates, meat and cool water at a companion's home. The Prophet ﷺ told them afterward that this very meal, its shade, its ripe dates, its cool water, was itself part of the naʿīm they would be asked about.<sup class=\"ref\">1,2,3,11,14</sup> Another report has the Companions protest, when the verse was revealed, that they possessed only dates and water, with swords on their shoulders and the enemy before them, asking which naʿīm could this concern. The Prophet ﷺ answered that the questioning would indeed come to pass.<sup class=\"ref\">1,3,11,14</sup> A further hadith names the very first question put to a servant: 'Did We not restore your body to health, and give you cool water to drink?'<sup class=\"ref\">1,2,3,7,11,14</sup> and Muftī Shafīʿ relays from Bukhārī that no one moves from his place until he answers how he spent his life, his youth, his wealth and its earning, and what he did with knowledge.<sup class=\"ref\">7</sup></p><p>Al-Saʿdī and al-Ṭanṭāwī describe the substance of the questioning: did the person thank God for the favour and fulfil His right in it, or was he deceived by it, ungrateful, perhaps even using it to disobey, a path that ends as in the verse describing disbelievers told 'you enjoyed your good things in worldly life, so today you are repaid with a degrading punishment.'<sup class=\"ref\">5,9</sup> Sayyid Quṭb widens this into a full audit: where the wealth came from, how it was spent, lawful or unlawful, obedient or defiant, shared or hoarded, gathered honestly or boasted over, favours that look light and trivial to the heedless but carry, he says, a heavy responsibility and a harsh reckoning.<sup class=\"ref\">6</sup></p><p>Ibn Kathīr closes the theme with related hadiths on wealth itself: a person truly keeps only three things from his wealth, what he ate, what he wore out, and what he gave in charity, everything else passing to others; three things follow the dead to the grave, family, wealth and deeds, but only deeds remain with him; and even in old age, greed and hope for more stay behind when everything else fades.<sup class=\"ref\">4</sup> Wahīduddīn Khān adds that man spends his life chasing accumulation, mistaking it for success, and only realises after death what was truly worth keeping, a realisation that by then can do him no good.<sup class=\"ref\">10</sup></p><p class=\"close\">The sūra that opened with the distraction of counting more ends with a single account to be settled: every pleasure, however small, will be named and asked about.</p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:eb4914a8a647d0604d04e79ebee4edc50b2621bd932db1464e67d6e22962c3c4",
+        "2": "sha256:f578da6045ea18418e2fe55ddc4dcc9761f53bca1e88fc742023043593c2a6fc",
+        "3": "sha256:e9fd22974e3e81a4af26f42ad84903f9748a4e3e5144879bf811a49b3162f771",
+        "4": "sha256:b1305630c8a4882b950a89c87c5d0ce17959f5848fb115ab7759712190ae0645",
+        "5": "sha256:64aff7876e540822c253fa21cbee449f34d30619970c99d0b007b76cdf29e63c",
+        "6": "sha256:6aca5fe06d4e3d502728cd0a8f661f15e90e984c91fa7171112a1a068ec4262c",
+        "7": "sha256:aa9f18d9a335c1a2c6051c38b2b47bb77ac34ac9f4c5f0ac1ac8fa69043ca95a",
+        "8": "sha256:1fda20718cf14ff4ae78a4c632b2f17660d550ce4d98965071e9ab99e837e1d0",
+        "9": "sha256:7a7d84acab302c92ec563718f8c16913cd6c1717db513f4572b08fc7c312a5cf",
+        "10": "sha256:b0bdf1cc15c8aec907431a34bd4004087270f39093c6451610fa9a246ee38e18",
+        "11": "sha256:a3878143b486a9029a3de2f4c8a2d0a5bd00be3a05554e036f6efd530bf69bfe",
+        "12": "sha256:54b11e2f5a7f362956b0a1b9619c4b040f00174226cddb2ba902a906cc1e7c64",
+        "13": "sha256:75d876fd3030be1babbf1dcd1be57e25f99f529e60bd3a4312d31796fac5bbd0",
+        "14": "sha256:febfe9c833eeff80a71eb0cc24dbe54f89e93d6be5495c9381cb624b229f45bb"
+      },
+      "flags": {
+        "creedal_stakes": "true",
+        "legal_content": "false",
+        "sensitive_content": "true"
+      },
+      "compiled_at": "2026-08-02"
+    }
+  }
+}

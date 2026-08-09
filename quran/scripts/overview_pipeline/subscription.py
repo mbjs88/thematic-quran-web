@@ -4,73 +4,23 @@ instead of the API.
 
   python -m scripts.overview_pipeline.subscription run [--surahs 78-114] [--limit N]
 
-For each pending section it shells out to `claude -p` (non-interactive). Unlike
-the batch path, this runs agentically: the model fetches its own tafsir through
-the quran MCP and web-searches to verify any modern-lens science, so it produces
-the fully verified reading in one pass. Requires:
-  - Claude Code installed and signed in to a Pro/Max plan (`claude` on PATH)
-  - the quran MCP + web search available to Claude Code (see README)
+Same grounded flow as the batch path: the pipeline fetches the tafsir (qf_client),
+narrowed to what the API serves, and hands the model exactly those sources. The
+only difference is the model call — `claude -p` (billed to Pro/Max) instead of the
+Anthropic API. Each section goes through the same fidelity + schema gate before it
+is written, so both paths produce identical, grounded output.
 
-One section per invocation keeps context small and the job fully resumable —
-already-compiled sections are skipped on the next run.
+Requires Claude Code installed and signed in (`claude` on PATH), plus QF creds to
+fetch tafsir. One section per invocation keeps it fully resumable.
 """
 
 import argparse
 import datetime
 import json
-import re
 import subprocess
-import sys
 
-from . import config, prompt, store
+from . import config, prompt, qf_client, store, corpus
 from .batch import _parse_surahs, _refresh_dashboard
-
-
-def section_prompt(surah, start, end):
-    lens = ("Include a verified modern_lens ONLY where a real touchpoint exists: "
-            "web-search to confirm the science and include real source URLs, set "
-            "\"verified\": true. Most sections get none."
-            if config.MODERN_LENS != "manual" else
-            "Do not include modern_lens in this pass.")
-    refs = "\n".join(f'  [{e["n"]}] {e["label"]}' for e in config.EDITIONS)
-    return f"""{prompt.SYSTEM}
-
-TASK: Compile the Overview for surah {surah}, section {surah}:{start} (verses {start}-{end}).
-Fetch the canonical Arabic, a translation, and the tafsir for these verses across the
-edition set below using the quran MCP tools (fetch_grounding_rules first). Use ONLY the
-fetched tafsir — nothing from memory. {lens}
-
-Edition reference numbers for the <sup class="ref"> markers:
-{refs}
-
-Return ONLY the JSON object for this one section."""
-
-
-def run_one(surah, start, end):
-    p = section_prompt(surah, start, end)
-    cmd = [
-        "claude", "-p", p,
-        "--model", config.MODEL,
-        "--output-format", "json",
-        "--allowedTools", "mcp__quran,WebSearch,Read",
-        "--permission-mode", "acceptEdits",
-    ]
-    res = subprocess.run(cmd, capture_output=True, text=True, timeout=1800)
-    if res.returncode != 0:
-        print(f"  [err] {surah}:{start} claude exited {res.returncode}\n{res.stderr[:400]}")
-        return False
-    try:
-        payload = json.loads(res.stdout)
-        text = payload.get("result", res.stdout)
-    except json.JSONDecodeError:
-        text = res.stdout
-    obj = _json_only(text)
-    if obj is None:
-        print(f"  [parse-err] {surah}:{start}")
-        return False
-    store.write_section(surah, start, obj)
-    print(f"  [saved] {surah}:{start}")
-    return True
 
 
 def _json_only(text):
@@ -83,15 +33,58 @@ def _json_only(text):
         return None
 
 
+def run_one(surah, start, end, served_plan, coverage):
+    verses, sources = corpus.gather_section(surah, start, end, served_plan)
+    if not sources:
+        print(f"  [skip] {surah}:{start} — no tafsir fetched")
+        return False
+
+    full_prompt = prompt.SYSTEM + "\n\n" + prompt.build_user_message(
+        surah, start, end, verses, sources)
+    cmd = ["claude", "-p", full_prompt, "--model", config.MODEL, "--output-format", "json"]
+    res = subprocess.run(cmd, capture_output=True, text=True, timeout=1800)
+    if res.returncode != 0:
+        print(f"  [err] {surah}:{start} claude exited {res.returncode}\n{res.stderr[:300]}")
+        return False
+    try:
+        text = json.loads(res.stdout).get("result", res.stdout)
+    except json.JSONDecodeError:
+        text = res.stdout
+    obj = _json_only(text)
+    if obj is None:
+        print(f"  [parse-err] {surah}:{start}")
+        return False
+
+    check = store.check_section(obj, sources)
+    if check["errors"]:
+        print(f"  [FIDELITY-FAIL] {surah}:{start}: {check['errors']} — not saved")
+        return False
+    for w in check["warnings"]:
+        print(f"     [warn] {surah}:{start}: {w}")
+    enriched = store.enrich_claims(obj.get("claims", []), surah, start, sources,
+                                   config.MODEL, prompt.PROMPT_VERSION)
+    schema_errs = store.validate_claims(enriched)
+    if schema_errs:
+        print(f"  [SCHEMA-FAIL] {surah}:{start}: {schema_errs[:3]} — not saved")
+        return False
+    store.write_section(surah, start, end, obj, enriched, sources, coverage,
+                        config.MODEL, prompt.PROMPT_VERSION)
+    print(f"  [saved] {surah}:{start} ({len(enriched)} claims)")
+    return True
+
+
 def cmd_run(args):
     config.TODAY = config.TODAY or datetime.date.today().isoformat()
+    served_plan, coverage = qf_client.reconcile(config.fetch_plan())
+    print(f"  catalogue → {coverage['independent_works']} works served; "
+          f"languages present {coverage['languages_present']}, absent {coverage['languages_absent']}")
     pending = store.pending_sections(_parse_surahs(args.surahs))
     if args.limit:
         pending = pending[: args.limit]
     print(f"{len(pending)} sections to compile via subscription ({config.MODEL}).")
     done = 0
     for surah, start, end in pending:
-        if run_one(surah, start, end):
+        if run_one(surah, start, end, served_plan, coverage):
             done += 1
     print(f"\nCompiled {done}/{len(pending)} sections.")
     _refresh_dashboard()

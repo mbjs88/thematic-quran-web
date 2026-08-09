@@ -1,0 +1,2678 @@
+{
+  "surah": 94,
+  "name": "",
+  "coverage": {
+    "editions_present": [
+      "ar-tafsir-al-tabari",
+      "ar-tafsir-al-baghawi",
+      "ar-tafseer-al-qurtubi",
+      "en-tafisr-ibn-kathir",
+      "ar-tafseer-al-saddi",
+      "tafsir-fe-zalul-quran-syed-qatab",
+      "en-tafsir-maarif-ul-quran",
+      "tafsir-bayan-ul-quran",
+      "ar-tafsir-al-wasit",
+      "tazkirul-quran-en",
+      "bn-tafsir-abu-bakr-zakaria",
+      "bn-tafsir-ahsanul-bayaan",
+      "ar-tafsir-muyassar",
+      "kurd-tafsir-rebar"
+    ],
+    "editions_absent": [],
+    "independent_works": 14,
+    "languages_present": [
+      "ar",
+      "bn",
+      "en",
+      "ku",
+      "ur"
+    ],
+    "languages_absent": []
+  },
+  "pipeline_provenance": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "overview-v2.3",
+    "theme_breaks_version": "sha256:99880ec7b10b53313690f91df9ee8d065519ee698df34b35a3336b5705218f90",
+    "compiled_at": "2026-08-02"
+  },
+  "modern_lens_framing": "The Qurʾan is taken here as fixed, revealed truth; science is our provisional, evolving account of the observable world. What follows notes where the two meet — a contemplation, not a proof. Where the science later shifts, that reflects the limits of our knowledge, not the text.",
+  "references": [
+    {
+      "n": 1,
+      "work_id": "al-tabari",
+      "label": "Jāmiʿ al-Bayān",
+      "author_id": "al-tabari",
+      "author": "Abū Jaʿfar Muḥammad ibn Jarīr al-Ṭabarī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 2,
+      "work_id": "al-baghawi",
+      "label": "Maʿālim al-Tanzīl",
+      "author_id": "al-baghawi",
+      "author": "Abū Muḥammad al-Ḥusayn ibn Masʿūd al-Baghawī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 3,
+      "work_id": "al-qurtubi",
+      "label": "al-Jāmiʿ li-Aḥkām al-Qurʾān",
+      "author_id": "al-qurtubi",
+      "author": "Abū ʿAbd Allāh Muḥammad ibn Aḥmad al-Qurṭubī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 4,
+      "work_id": "ibn-kathir",
+      "label": "Tafsīr Ibn Kathīr",
+      "author_id": "ibn-kathir",
+      "author": "Ismāʿīl ibn ʿUmar ibn Kathīr",
+      "source_language": "ar",
+      "note": "One independent voice. The ar/ur/bn editions are the SAME work — never count as separate corroboration."
+    },
+    {
+      "n": 5,
+      "work_id": "al-saadi",
+      "label": "Taysīr al-Karīm al-Raḥmān",
+      "author_id": "al-saadi",
+      "author": "ʿAbd al-Raḥmān ibn Nāṣir al-Saʿdī",
+      "source_language": "ar",
+      "note": "Russian edition (170) is the SAME work — translate from the Arabic original, and do not count Russian as an independent voice."
+    },
+    {
+      "n": 6,
+      "work_id": "fi-zilal",
+      "label": "Fī Ẓilāl al-Qurʾān",
+      "author_id": "sayyid-qutb",
+      "author": "Sayyid Quṭb Ibrāhīm Ḥusayn",
+      "source_language": "ar",
+      "note": "Original is Arabic, but the API here carries only an URDU edition — translating from Urdu is one step removed from the original. Prefer the Arabic original if the QF Content API offers it."
+    },
+    {
+      "n": 7,
+      "work_id": "maarif",
+      "label": "Maʿārif al-Qurʾān",
+      "author_id": "muhammad-shafi-usmani",
+      "author": "Muftī Muḥammad Shafīʿ ʿUthmānī",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 8,
+      "work_id": "bayan-ul-quran",
+      "label": "Bayān al-Qurʾān",
+      "author_id": "israr-ahmad",
+      "author": "Isrār Aḥmad",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 9,
+      "work_id": "wasit",
+      "label": "al-Tafsīr al-Wasīṭ",
+      "author_id": "tantawi",
+      "author": "Muḥammad Sayyid Ṭanṭāwī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 10,
+      "work_id": "tazkirul",
+      "label": "Tazkīr al-Qurʾān",
+      "author_id": "wahiduddin-khan",
+      "author": "Wahiduddin Khan",
+      "source_language": "ur",
+      "note": "en and ur editions are the same work."
+    },
+    {
+      "n": 11,
+      "work_id": "abu-bakr-zakaria",
+      "label": "Tafsir Abu Bakr Zakaria",
+      "author_id": "abu-bakr-zakaria",
+      "author": "Abū Bakr Muḥammad Zakariyyā",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 12,
+      "work_id": "ahsanul-bayaan",
+      "label": "Ahsanul Bayaan",
+      "author_id": "bayaan-foundation",
+      "author": "Ahsanul Bayaan (Bayaan Foundation)",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 13,
+      "work_id": "muyassar",
+      "label": "al-Tafsīr al-Muyassar",
+      "author_id": "committee-muyassar",
+      "author": "al-Tafsīr al-Muyassar (committee)",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 14,
+      "work_id": "rebar-kurdish",
+      "label": "Rebar Kurdish Tafsir",
+      "author_id": "rebar",
+      "author": "Rebar Kurdish Tafsir",
+      "source_language": "ku",
+      "note": ""
+    }
+  ],
+  "sections": {
+    "94:8": {
+      "verse_range": "8-8",
+      "title": "Turn to Your Lord Alone",
+      "in_short": "The surah closes by telling the Prophet ﷺ to direct all his desire, hope, and need towards his Lord alone, especially once he is free from the tasks of this world.",
+      "claims": [
+        {
+          "id": "94:8#c1",
+          "section_ref": "94:8",
+          "attaches_to": "94:8",
+          "text": "The core meaning of the verse is: direct your desire and longing (raghba) to your Lord alone, not to anyone or anything else among His creation.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "اجعل رغبتك ونيتك إلى ربك",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "اجعل رغبتك إلى الله وحده",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "وإلى ربك وحده فارغب",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "واجعل رغبتك فى جميع أعمالك وعباداتك، من أجل إرضاء ربك",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "وإلى ربك وحده فارغب فيما عنده",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "low"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "raghba",
+              "gloss": "desire, longing, the pull of the heart toward something"
+            }
+          ]
+        },
+        {
+          "id": "94:8#c2",
+          "section_ref": "94:8",
+          "attaches_to": "94:8",
+          "text": "Mujahid specifically ties the phrase to the moment of standing for prayer: when you stand to pray, let your desire and intention be for your Lord.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "إذا قمت إلى الصلاة",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "94:8#c3",
+          "section_ref": "94:8",
+          "attaches_to": "94:8",
+          "text": "ʿAṭāʾ glossed the verse as: humble yourself before Him, fearing the Fire and hoping for Paradise.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "تضرع إليه راهبا من النار راغبا في الجنة",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "94:8#c4",
+          "section_ref": "94:8",
+          "attaches_to": "94:8",
+          "text": "An alternative recitation, farghib (without the alif), has been reported, giving the sense: so make people desirous of what is with Him.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وقرئ (فرغب) أي فرغب الناس إلى ما عنده",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar",
+          "original_terms": [
+            {
+              "term": "farghib",
+              "gloss": "a variant reading meaning to make others desirous, rather than to be desirous oneself"
+            }
+          ]
+        },
+        {
+          "id": "94:8#c5",
+          "section_ref": "94:8",
+          "attaches_to": "94:8",
+          "text": "Read together with the preceding verse (\"when you are free, then strive\"), the command is: once free from worldly tasks and their concerns, turn wholly and with full effort to worship of your Lord.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "فإذا فرغت... من عمل من الأعمال، فاجتهد فى مزاولة عمل آخر من الأعمال التى تقربك من الله",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "94:8#c6",
+          "section_ref": "94:8",
+          "attaches_to": "94:8",
+          "text": "Mujahid's comment on the paired phrase: when free from worldly affairs and having stood for prayer, then stand up wholly for your Lord.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "When you are free from the worldly affairs, and you have stood to pray, then stand up for your Lord.",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "94:8#c7",
+          "section_ref": "94:8",
+          "attaches_to": "94:8",
+          "text": "Some take the sense to be: when you finish and complete the prayer, exert yourself in supplication (duʿāʾ), turning your desire toward your Lord in asking for your needs. This has been used as evidence for the permissibility of duʿāʾ and remembrance (dhikr) directly after the obligatory prayers.",
+          "claim_type": "legal",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "relay",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "استدل من قال بهذا القول، على مشروعية الدعاء والذكر عقب الصلوات المكتوبات",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "94:8#c8",
+          "section_ref": "94:8",
+          "attaches_to": "94:8",
+          "text": "Muftī Muḥammad Shafīʿ رحمه الله distinguishes two kinds of worship in the Prophet's ﷺ life: his work of teaching and reforming people was 'indirect worship', but this verse commands 'direct worship' — prayer, remembrance, supplication, seeking forgiveness — which, unlike the indirect kind, can never be set aside; a person must spend his whole life and energy on it.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "94:8#c9",
+          "section_ref": "94:8",
+          "attaches_to": "94:8",
+          "text": "Linguistically, fa-nṣab (in the preceding verse, read together with this one) comes from naṣab, meaning tiredness; the implication is that one should tire oneself in acts of worship rather than perform them only when convenient. A regular devotional practice (waẕīfah), however small, is itself a form of exertion.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "naṣab",
+              "gloss": "tiredness, exertion"
+            }
+          ]
+        },
+        {
+          "id": "94:8#c10",
+          "section_ref": "94:8",
+          "attaches_to": "94:8",
+          "text": "Several views exist on what exactly the turning refers to — supplication after prayer, voluntary (nafl) worship after the obligatory, or more generally turning to the work of the Hereafter once free from worldly work — and all are held to be acceptable readings; the underlying point is that a believer's life leaves no room for idleness: he is either occupied with worldly work or with work for the Hereafter.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "original_excerpt": "এ আয়াতে মুমিনদের জীবনে বেকারত্বের কোন স্থান দেওয়া হয় নি",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "94:8#c11",
+          "section_ref": "94:8",
+          "attaches_to": "94:8",
+          "text": "Sayyid Quṭb رحمه الله reads the verse as a call to total devotion: leave all worldly matters, even the activity of calling others to the faith (daʿwah), and turn wholly to the Lord; this complete turning is described as the traveller's provision (zād) for the road, and the outcome is that hardship gives way to ease.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "پھر آپ صرف رب کی طرف راغب ہوجائیں، تمام دنیاوی امور چھوڑدیں",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "94:8#c12",
+          "section_ref": "94:8",
+          "attaches_to": "94:8",
+          "text": "Wahiduddin Khan reads the verse in the context of the Prophet's ﷺ perseverance through opposition in Makkah: this is God's pattern in the world, that hardship in the beginning becomes, with patience, a stepping stone to ease; a person should therefore always look towards God and keep struggling within his capacity.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "94:8#c13",
+          "section_ref": "94:8",
+          "attaches_to": "94:8",
+          "text": "The phrase is glossed as: hope for Paradise from Him alone, ask your needs of Him, and rely and place trust in Him in all matters.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "94:8#c14",
+          "section_ref": "94:8",
+          "attaches_to": "94:8",
+          "text": "Isrār Aḥmad رحمه الله connects this closing command to the ending of Sūrat al-Naṣr, reading both as addressed to the Prophet ﷺ at the point his mission was complete: once the task is finished, turn wholly to Allah. He relates this to reports of the Prophet's ﷺ final illness, when he was given the choice between worldly abundance and what is with Allah and chose the latter, at which Abū Bakr رضي الله عنه wept.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "relay",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not stated by the source"
+          }
+        },
+        {
+          "id": "94:8#c15",
+          "section_ref": "94:8",
+          "attaches_to": "94:8",
+          "text": "Al-Qurṭubī records that Shurayḥ disapproved of people he saw playing games on a feast day, saying that is not what the Lawgiver commanded. Al-Qurṭubī, citing Ibn al-ʿArabī, questions this by noting reports that the Ethiopians played with shields and spears in the mosque on a feast day while the Prophet ﷺ watched, and that Abū Bakr رضي الله عنه once objected to two girls singing in ʿĀʾishah's رضي الله عنها room, to which the Prophet ﷺ replied, 'Leave them, Abū Bakr, for it is a feast day.' The conclusion drawn is that constant toil is not required, and it would in fact be disliked to impose it on people.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "مر بقوم يلعبون يوم عيد، فقال ما بهذا أمر الشارع",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not stated by al-Qurṭubī"
+          }
+        }
+      ],
+      "essay_html": "<p>The surah ends with a single short command: let your desire be turned to your Lord alone. The commentators agree that raghba here means the pull of the heart, and the verse says that pull should have only one direction, God, not any of His creation.<sup class=\"ref\">1,2,4,5,9,12,13,14</sup></p><p>Mujahid tied the phrase specifically to the act of standing for prayer: when you rise to pray, let your intention and desire be for your Lord.<sup class=\"ref\">1</sup> ʿAṭāʾ read it more broadly, as humbling oneself before Him out of fear of the Fire and hope for Paradise.<sup class=\"ref\">2</sup> Al-Qurṭubī notes an alternative recitation, farghib, without the alif, which shifts the sense slightly: make people desirous of what is with Him, rather than being desirous oneself.<sup class=\"ref\">3</sup></p><p>Read together with the line before it, \"when you are free, then strive\", most commentators take the pair as one instruction: once free from the tasks of this world, turn wholly and with full effort to the worship of your Lord.<sup class=\"ref\">4,6,7,8,9,11</sup> Mujahid's own gloss makes this explicit: when free from worldly affairs and having stood for prayer, stand up wholly for your Lord.<sup class=\"ref\">4</sup> Some read it further, as an instruction to exert oneself in supplication once the prayer is finished, and this has been used as grounds for the permissibility of duʿāʾ and remembrance directly after the prescribed prayers.<sup class=\"ref\">5</sup></p><p>Muftī Muḥammad Shafīʿ رحمه الله draws out a distinction here. The Prophet's ﷺ work of teaching and reforming people was, in his reading, a form of \"indirect worship\", carried out through effort and planning. This verse, he says, points to something that indirect worship cannot replace: \"direct worship\", prayer, remembrance, supplication, seeking forgiveness, which a person can never set fully aside, however busy the outward mission becomes.<sup class=\"ref\">7</sup> He also notes that the word for exertion, naṣab, means tiredness, so the instruction implies tiring oneself in worship rather than performing it only when convenient.<sup class=\"ref\">7</sup></p><p>Abū Bakr Zakariyyā gathers the range of readings, whether the turning means duʿāʾ after prayer, voluntary worship after the obligatory, or simply the work of the Hereafter once worldly work is done, and notes that all are held valid. The point underneath them is one: a believer's life has no room for idleness. He is always occupied, either with the world's work or the Hereafter's.<sup class=\"ref\">11</sup></p><p>Sayyid Quṭb رحمه الله reads the verse as calling for complete devotion, setting aside every worldly concern, even the work of calling others to the faith, and turning wholly to the Lord. He calls this turning the traveller's provision (zād) for the road ahead, the very thing that turns hardship into ease.<sup class=\"ref\">6</sup> Wahiduddin Khan places the verse against the Prophet's ﷺ life in Makkah, where opposition itself became, through patience, the path to ease, God's pattern for anyone who perseveres and keeps his face turned toward Him.<sup class=\"ref\">10</sup></p><p>Isrār Aḥmad رحمه الله connects the verse to the close of Sūrat al-Naṣr, reading both as words for the moment a mission is complete, when the servant is asked to turn fully towards his Lord. He relates this to reports of the Prophet's ﷺ final illness, when he was given a choice between the world's abundance and what is with Allah, and chose the latter, at which Abū Bakr رضي الله عنه wept.<sup class=\"ref\">8</sup></p><p>Al-Qurṭubī brings a different kind of note, a discussion of whether this call to constant striving rules out ordinary leisure. He records Shurayḥ's disapproval of people playing on a feast day, then sets against it reports that the Prophet ﷺ once watched Ethiopians playing with shields in the mosque on a feast day, and told Abū Bakr رضي الله عنه to leave two girls singing in ʿĀʾishah's رضي الله عنها room, since it was a feast day. The conclusion he draws is that unbroken toil is not what is asked of a person, and to demand it would itself be disliked.<sup class=\"ref\">3</sup></p><p class=\"close\">Every reading gathered here comes back to the same single point: whatever a person's hands are occupied with, worldly labour, worship, or the call to faith, the heart's desire has one destination, the Lord alone.<sup class=\"ref\">1,2,4,5,6,7,9,12,13,14</sup></p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:971f454b5228bd24802449ab102234e5bba9555611571b2cac65271495dc7db0",
+        "2": "sha256:9a187310461e1d1b680a6162fa43f986fcbe74740d3ae578f9eb81095cc41ae9",
+        "3": "sha256:f3d4968dfdb0d740f74785b43b1bbc9b7d35c2dab967cba96fff8c076c027ed4",
+        "4": "sha256:83c13a558f296fadc5ff01d893cb9bc86194a4e93dd5ae152c0ffa53254e5d19",
+        "5": "sha256:dd5325660a479ae123eeee596472a0ef0f9fb55f25e66ffa72e5bf68976d1855",
+        "6": "sha256:976d0c23da97536e22876fce545582a769b8686d0ac8668010ca5391e6465faf",
+        "7": "sha256:c3feec9fc808997e28f636c64b4a00bd05e092605524ba6ee45ca517d5ed4e9c",
+        "8": "sha256:6eb424f19bb1777897a7c48f62c2b484a1f1db781193c30315dab3c1d77a61ab",
+        "9": "sha256:2c523d1fc8d94a5f64e4a4eb0881ae790192a70da6b8afeafaaac4ed2675f059",
+        "10": "sha256:5641f169fd24e8cbb71f1b32ea9b9aa055c5f7a25ebb3788873a0962031757c4",
+        "11": "sha256:ffe7b4c4186cb657a68df4d9bfafd5192731f7d1b22004c3d5318fd68d44cc2d",
+        "12": "sha256:5704e01094d4c735dc87d8255d6272d6185a5780f03ed43fcf99d7b0f1ba9cb0",
+        "13": "sha256:f8568fb64b58907d20171665d049b58302234d1e459ba861320c34c7d6133883",
+        "14": "sha256:6af731a5fe830dd7c77a77a19dceb8631902a09d10bfc3443da9fc19959b766c"
+      },
+      "flags": {
+        "creedal_stakes": false,
+        "legal_content": true,
+        "sensitive_content": true
+      },
+      "compiled_at": "2026-08-02"
+    },
+    "94:1": {
+      "verse_range": "1-4",
+      "title": "Three Favours to the Prophet",
+      "in_short": "Allah reminds the Prophet ﷺ of three favours: his heart was opened and widened, the crushing burden that weighed on him was lifted, and his name and reputation were raised high forever.",
+      "claims": [
+        {
+          "id": "94:1#c1",
+          "section_ref": "94:1",
+          "attaches_to": "94:1",
+          "text": "Sharḥ al-ṣadr (opening the breast) means Allah widened, illuminated and made spacious the Prophet's heart so it could hold faith, guidance, knowledge, wisdom and the laws of religion, no longer narrow or constricted.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "فنلين لك قلبك، ونجعله وعاء للحكمة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "ألم نفتح ونوسع ونلين لك قلبك بالإيمان والنبوة والعلم والحكمة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "نوسعه لشرائع الدين والدعوة إلى الله",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "توسعته وفتحه، لقبول كل ما هو من الفضائل والكمالات النفسية",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "ألم نوسع لك صدرك لشرائع الدين",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "شرح الصدر (sharḥ al-ṣadr)",
+              "gloss": "opening / widening of the breast"
+            }
+          ]
+        },
+        {
+          "id": "94:1#c2",
+          "section_ref": "94:1",
+          "attaches_to": "94:1",
+          "text": "Some commentators, drawing on hadith reports, take the 'opening of the breast' to also refer to a literal, physical splitting of the Prophet's chest by angels, who cleansed his heart and filled it with faith and wisdom — reported for both a childhood incident and the Night Journey.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "فشرح صدري إلى كذا وكذا... فاستخرج قلبي، فغسل قلبي بماء زمزم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "cited without a stated grade by the commentators relaying it"
+          }
+        },
+        {
+          "id": "94:1#c3",
+          "section_ref": "94:1",
+          "attaches_to": "94:1",
+          "text": "The negative question 'Did We not...?' is read as a rhetorical device: the negation inside a question turns into an emphatic affirmation, so the sense is 'We have indeed opened' — confirmed grammatically by the following verb being in the past tense, joined by 'and'.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "و(لم) جحد، وفي الاستفهام طرف من الجحد، وإذا وقع جحد رجع إلى التحقيق",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "الاستفهام...للتقرير لأنه إذا دخل على النفى قرره",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "94:1#c4",
+          "section_ref": "94:1",
+          "attaches_to": "94:1",
+          "text": "Relaying al-Rāzī, Ṭanṭāwī notes the verse names the 'breast' rather than the 'heart' because whispering (waswasa) has its seat in the breast; removing that whispering and replacing it with good is precisely the 'opening' spoken of.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "محل الوسوسة هو الصدر...فإزالة تلك الوسوسة وإبدالها بدواعى الخير هى الشرح",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "94:1#c5",
+          "section_ref": "94:1",
+          "attaches_to": "94:1",
+          "text": "Isrār Aḥmad reads the opening of the breast as a lessening of the Prophet's inner turmoil, giving his heart stillness and calm, citing Shabbīr Aḥmad ʿUthmānī's remark that oceans of knowledge were poured into it and vast capacity given to bear the burdens of prophethood.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "اضطراب کم کر کے آپ ﷺ کے دل کو ایک ٹھہرائو اور سکون عطا فرما دیا",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "94:1#c6",
+          "section_ref": "94:1",
+          "attaches_to": "94:1",
+          "text": "Sayyid Quṭb reads the opening as easing of a genuine inner constriction the Prophet had felt over the weight of conspiracies against him and the heaviness of the call, describing the whole passage as an intimate address full of divine tenderness.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "آپ پریشان تھے کیونکہ آپ کے خلاف سازشیں ہورہی تھیں",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "94:1#c7",
+          "section_ref": "94:1",
+          "attaches_to": "94:1",
+          "text": "Wahīduddīn Khān links the opening of the heart to the Prophet's persistent seeking after knowledge of Reality, which Allah rewarded with deep realisation (maʿrifah), before he began preaching against stiff opposition — an instance, he says, of Allah's general law that hardship precedes fame.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "94:1#c8",
+          "section_ref": "94:1",
+          "attaches_to": "94:2",
+          "text": "Wizr (the burden) is understood by many early exegetes — Mujāhid, Qatāda, al-Ḥasan, al-Ḍaḥḥāk, Ibn Zayd — as the Prophet's pre-prophetic sins from the age of ignorance (jāhiliyya), paralleled to 48:2 'that Allah may forgive you your sins, past and future.'",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "غفرنا لك ما سلف من ذنوبك، وحططنا عنك ثقل أيام الجاهلية",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "وحططنا عنك الذي سلف منك في الجاهلية",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "كانت للنبي صلى الله عليه وسلم ذنوب أثقلته فغفرها الله له",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "relay",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "أي: ذنبك",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "original_terms": [
+            {
+              "term": "وزر (wizr)",
+              "gloss": "burden, weighty load"
+            }
+          ]
+        },
+        {
+          "id": "94:1#c9",
+          "section_ref": "94:1",
+          "attaches_to": "94:2",
+          "text": "al-Ḍaḥḥāk specifically glossed the burden as the shirk (associating partners with Allah) the Prophet had been surrounded by before revelation.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "يعني: الشرك الذي كان فيه",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "94:1#c10",
+          "section_ref": "94:1",
+          "attaches_to": "94:2",
+          "text": "Others (al-Ḥusayn b. al-Faḍl) took the burden as unintentional error or forgetfulness (khaṭaʾ wa sahw), not deliberate sin.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "يعني الخطأ والسهو",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "94:1#c11",
+          "section_ref": "94:1",
+          "attaches_to": "94:2",
+          "text": "Some said the burden was the sins of the Prophet's community, attributed to him because his heart was preoccupied with concern for them.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "ذنوب أمتك، أضافها إليه لاشتغال قلبه بهم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "94:1#c12",
+          "section_ref": "94:1",
+          "attaches_to": "94:2",
+          "text": "Abū ʿUbayda and ʿAbd al-ʿAzīz b. Yaḥyā read the burden as the heavy responsibilities of prophethood itself, which Allah lightened for him.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "خففنا عنك أعباء النبوة والقيام بها",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "94:1#c13",
+          "section_ref": "94:1",
+          "attaches_to": "94:2",
+          "text": "al-Muḥāsibī explained that although a prophet's minor lapses are forgiven, scripture still describes them as a crushing weight, because of the intensity of the prophets' own concern, regret, and grief over them.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "لشدة اهتمامهم بها، وندمهم منها، وتحسرهم عليها",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "94:1#c14",
+          "section_ref": "94:1",
+          "attaches_to": "94:2",
+          "text": "A variant reading (qirāʾa), attributed to ʿAbdullāh b. Masʿūd, has 'wa ḥalalnā ʿanka wiqrak' (We released from you your load) instead of 'waḍaʿnā ... wizrak', preserving the same sense of a heavy load being lifted.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "وحللنا عنك وقرك الذي أنقض ظهرك",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وقرأ ابن مسعود: وحللنا عنك وقرك",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "94:1#c15",
+          "section_ref": "94:1",
+          "attaches_to": "94:2",
+          "text": "Muftī Shafīʿ relays that some understand the burden as ordinary permissible deeds the Prophet later judged, in his heightened self-scrutiny, to be less than ideal — and separately, the exhausting weight of the mission of reform itself, reportedly linked by the Prophet to the command 'stand firm as you have been commanded' (11:112), which he said had aged him.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "reported without a stated grade by Muftī Shafīʿ"
+          }
+        },
+        {
+          "id": "94:1#c16",
+          "section_ref": "94:1",
+          "attaches_to": "94:2",
+          "text": "Ahsanul Bayaan reads the burden as belonging to the forty years before prophethood: though Allah preserved the Prophet from major sin (he never bowed to an idol nor drank wine), he did not yet know or perform the specific worship Allah would later prescribe, and this absence weighed on him as a burden even though it was not truly a sin.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "original_excerpt": "কোন মূর্তির সামনে মাথা ঝুঁকাননি, কখনো মদ্য পান করেননি",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "94:1#c17",
+          "section_ref": "94:1",
+          "attaches_to": "94:2",
+          "text": "Sayyid Quṭb reads the burden as the sheer weight of the call to Islam itself, which had grown so heavy it seemed near to breaking his back, until the opening of the breast eased it and revelation began flowing to lighten the task.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "دعوت اسلامی کا بوجھ اس قدر بھاری ہوگیا کہ قریب تھا کہ آپ کی کمر ہی توڑ دے",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "94:1#c18",
+          "section_ref": "94:1",
+          "attaches_to": "94:2",
+          "text": "Ṭanṭāwī states his own preference for reading the burden as the perplexity (ḥayra) the Prophet felt before revelation over how to worship the Creator he had already reasoned must exist, and the grief of his people's rejection afterward — not a sin at all — arguing this fits the passage's context of favours, not confessions, better than the sin-reading many commentators give.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "ويبدو لنا أن هذا القول الثانى هو الأقرب إلى الصواب",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "94:1#c19",
+          "section_ref": "94:1",
+          "attaches_to": "94:3",
+          "text": "Anqaḍa ẓahrak (weighed heavily on your back) draws on the image of a camel whose load is so heavy it makes the animal's back creak or crack (naqīḍ, the sound of a load's strain) — the burden was that crushing.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "هو من قولهم للبعير إذا كان رجيع سفر قد أوهنه السفر",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "أثقل ظهرك فأوهنه حتى سمع له نقيض، أي صوت",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "إذا سمعت له صريرا من شدة الحمل",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "حتى سمع له نقيض، وهو الصوت الخفى الذى يسمع من الرَّحْل",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "original_excerpt": "الإِنْقَاظ واته‌: ده‌نگ ده‌رچوون",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "أنقض ظهرك (anqaḍa ẓahrak)",
+              "gloss": "made your back creak/crack under weight"
+            }
+          ]
+        },
+        {
+          "id": "94:1#c20",
+          "section_ref": "94:1",
+          "attaches_to": "94:4",
+          "text": "The 'raising of your dhikr' is explained as pairing the Prophet's name with Allah's own in the declaration of faith, the call to prayer (adhān), its repetition (iqāma), the testimony (tashahhud), and sermons — so that no worship or profession of faith is complete without mentioning him.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "فلا أُذْكَرُ إلا ذُكِرْتَ معي",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "the commentators relay the report without stating a grade"
+          }
+        },
+        {
+          "id": "94:1#c21",
+          "section_ref": "94:1",
+          "attaches_to": "94:4",
+          "text": "A hadith reports that the Prophet asked Gabriel عليه السلام about this verse, and was told that Allah said 'when I am mentioned, you are mentioned with Me' (idhā dhukirtu dhukirta maʿī).",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "إذَا ذُكِرْتُ ذُكِرْتَ مَعِي",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "إذا ذكرت ذكرت معي",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "إذا ذُكِرتُ ذُكِرتَ معى",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "reported by al-Ṭabarī, al-Baghawī and Ṭanṭāwī without a stated grade"
+          }
+        },
+        {
+          "id": "94:1#c22",
+          "section_ref": "94:1",
+          "attaches_to": "94:4",
+          "text": "Mujāhid specifically identified the raised mention with the call to prayer (adhān), where the Prophet's name is proclaimed alongside Allah's.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "يعني بالتأذين",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "94:1#c23",
+          "section_ref": "94:1",
+          "attaches_to": "94:4",
+          "text": "Via al-Ḍaḥḥāk from Ibn ʿAbbās, the mention is said to be raised across many further occasions: Friday sermons, ʿEid al-Fiṭr and al-Aḍḥā, the days of Tashrīq, ʿArafah, stoning the pillars at the pilgrimage, on al-Ṣafā and al-Marwa, in marriage sermons, and everywhere on earth; and it is said that no one benefits from worship, however sincere, without also testifying that Muhammad ﷺ is the Messenger of Allah.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "ولو أن رجلا عبد الله جل ثناؤه...ولم يشهد أن محمدا رسول الله لم ينتفع بشيء وكان كافرا",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "94:1#c24",
+          "section_ref": "94:1",
+          "attaches_to": "94:4",
+          "text": "Ḥassān b. Thābit's رضي الله عنه verse is cited as poetic testimony: Allah joined the Prophet's name to His own so that at every call to the five daily prayers the muezzin proclaims 'I bear witness' after mentioning Allah.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "وضم الإله اسم النبي مع اسمه إذا قال في الخمس المؤذن أشهد",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "94:1#c25",
+          "section_ref": "94:1",
+          "attaches_to": "94:4",
+          "text": "al-Qurṭubī records further readings of the raised mention: that Allah took a covenant from the earlier prophets binding them to believe in Muhammad ﷺ; that his mention was raised in the scriptures sent to earlier prophets who were commanded to give glad tidings of him; and that his mention is raised among the angels in heaven, among believers on earth, and in the Hereafter through the Praised Station and honoured ranks.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "رفع الله ذكره بأخذ ميثاقه على النبيين",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "94:1#c26",
+          "section_ref": "94:1",
+          "attaches_to": "94:4",
+          "text": "al-Saʿdī says this elevation of mention and station is unmatched by any created being, and the Prophet holds a place of love, awe and reverence in his community's hearts second only to Allah, a reward given to no other prophet on behalf of his community.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "وله في قلوب أمته من المحبة والإجلال والتعظيم ما ليس لأحد غيره",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "94:1#c27",
+          "section_ref": "94:1",
+          "attaches_to": "94:4",
+          "text": "Sayyid Quṭb elaborates that the Prophet's mention was raised in the exalted realm, across the whole earth, joined forever to Allah's name in the declaration of faith, so that through the ages countless lips will continue to utter his name in love, blessing and reverence, a rank granted to no one else.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "ہم نے آپ کا ذکر لوح محفوظ میں کردیا کہ زمانے گزر جائیں گے",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "94:1#c28",
+          "section_ref": "94:1",
+          "attaches_to": "94:4",
+          "text": "Wahīduddīn Khān frames the raised name as the natural fruit of the opposition the Prophet faced while preaching in Makkah — the same hardship that made him known throughout the land — presenting it as an instance of the general rule that hardship becomes a stepping stone to ease and standing.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "94:1#c29",
+          "section_ref": "94:1",
+          "attaches_to": "94:4",
+          "text": "Muftī Shafīʿ notes a structural pattern across the three favours named in these verses: each is expressed as a verb plus its object with an intervening prepositional phrase ('opened ... breast ... for you', 'removed ... burden ... from you', 'raised ... mention ... for you'), showing that all three are done specifically for the Prophet's honour.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        }
+      ],
+      "essay_html": "<p>The passage opens with three favours Allah reminds His Messenger ﷺ of, each phrased as a question that carries its own answer.</p><p>The first is the opening of the breast. The commentators take this mainly to mean that his heart was widened and lit up to hold faith, guidance, wisdom, and the laws of religion, so that nothing in him remained narrow or resistant to good.<sup class=\"ref\">1,2,4,5,7,9,11,12,13,14</sup> Alongside this, several sources relay hadith reports of a literal splitting of his chest by angels, who cleansed his heart and filled it with faith and wisdom, once in childhood and once on the Night Journey.<sup class=\"ref\">3,9,11,12,14</sup> Grammatically, al-Qurṭubī (d. 1273) and al-Ṭanṭāwī (d. 2010) note that the negative question here works as an emphatic statement: 'Did We not open' really means 'We have indeed opened.'<sup class=\"ref\">3,9</sup> Al-Ṭanṭāwī also relays al-Rāzī's observation that the verse names the breast rather than the heart, because whispering has its seat there, and removing that whispering is exactly what 'opening' means.<sup class=\"ref\">9</sup> Isrār Aḥmad (d. 2010) reads it as a lessening of inner turmoil, giving the heart calm,<sup class=\"ref\">8</sup> and Sayyid Quṭb (d. 1966) reads the whole opening address as easing a real constriction the Prophet had felt under the weight of plots against him, delivered with evident tenderness.<sup class=\"ref\">6</sup></p><p>The second favour is the lifting of a crushing burden (wizr) that had made his back creak, like an overloaded camel groaning under its pack.<sup class=\"ref\">1,2,3,4,9,11,14</sup> The commentators differ over what this burden was. Many of the early exegetes — Mujāhid, Qatāda, al-Ḥasan, al-Ḍaḥḥāk, Ibn Zayd — took it as sin from before prophethood, paralleled to the Qurʾan's later words about forgiveness of past and future sin.<sup class=\"ref\">1,2,3,4,5,9,12</sup> Al-Ḍaḥḥāk specified this as the shirk surrounding him before revelation.<sup class=\"ref\">1</sup> Others took it more gently, as unintentional lapses rather than sin,<sup class=\"ref\">2,3</sup> or even as his community's sins, attributed to him out of the weight of his concern for them.<sup class=\"ref\">2,3</sup> Others again read the burden as the sheer responsibility of prophethood itself, which Allah made lighter for him.<sup class=\"ref\">2,3,7</sup> Al-Muḥāsibī explained that scripture can call even forgiven lapses a crushing weight, because prophets feel such intense regret over them.<sup class=\"ref\">3</sup> Muftī Shafīʿ (d. 1976) relays that some understood it as ordinary permissible acts the Prophet later judged imperfect in his heightened self-scrutiny, and separately as the exhausting task of reform, reportedly linked by him to the command 'stand firm as you have been commanded,' which he said had aged him.<sup class=\"ref\">7</sup> Ahsanul Bayaan reads it as the forty years before prophethood, in which Allah kept him from major sin, yet he had not known the specific worship later prescribed, a burden of absence rather than of sin.<sup class=\"ref\">12</sup> Sayyid Quṭb reads it simply as the weight of the call to Islam, nearly breaking his back until revelation began easing the task.<sup class=\"ref\">6</sup> Al-Ṭanṭāwī states his own preference for reading the burden as perplexity felt before revelation over how to worship the Creator he had already reasoned must exist, and grief at his people's rejection, arguing this suits a passage about favours rather than confessions.<sup class=\"ref\">9</sup> A variant reading, traced to Ibn Masʿūd, has 'We released your load' in place of 'We removed your burden,' keeping the same sense.<sup class=\"ref\">1,3</sup></p><p>The third favour is the raising of his mention (dhikr). The commentators take this to mean that his name is joined to Allah's own in the declaration of faith, the call to prayer, its repetition, the testimony, and the sermon, so that no profession of faith is complete without him.<sup class=\"ref\">1,2,3,4,5,7,9,11,12,14</sup> A hadith relayed by several of them has the Prophet asking Gabriel عليه السلام about this verse and being told that Allah said, 'when I am mentioned, you are mentioned with Me.'<sup class=\"ref\">1,2,9</sup> Mujāhid tied this specifically to the call to prayer,<sup class=\"ref\">2,3</sup> and a further report from Ibn ʿAbbās lists many more occasions, from Friday sermons to the pilgrimage rites, adding that no worship benefits anyone who does not also testify to his messengership.<sup class=\"ref\">2,3</sup> Ḥassān b. Thābit's رضي الله عنه verse is quoted as poetic witness to the same pairing of names at every call to prayer.<sup class=\"ref\">2,3</sup> Al-Qurṭubī also records readings that his mention was raised through a covenant taken from earlier prophets, through mention of him in earlier scriptures, and among the angels in heaven, believers on earth, and in the Praised Station of the Hereafter.<sup class=\"ref\">3</sup> Al-Saʿdī (d. 1957) calls this elevation unmatched by any created being, and describes the Prophet's place in his community's hearts as second only to Allah's.<sup class=\"ref\">5</sup> Sayyid Quṭb pictures his name carried through the ages by countless lips in blessing and reverence.<sup class=\"ref\">6</sup> Wahīduddīn Khān (d. 2021) treats this as the natural outcome of the opposition the Prophet endured, an instance of hardship becoming a stepping stone to standing.<sup class=\"ref\">10</sup></p><p>Muftī Shafīʿ points out that all three favours share one grammatical shape, verb, object, and a phrase turned toward the Prophet, showing that each was done specifically for his honour.<sup class=\"ref\">7</sup></p><p class=\"close\">Three plain gifts are set side by side here: a heart made spacious, a load lifted from a bent back, and a name raised so high it is spoken beside Allah's own at every call to prayer.</p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:6dd47c0695c5961c8eceaa605bf9fe4f89f9f27efa86bd384be8f895fc3083f2",
+        "2": "sha256:4961164085e33a248415ba8b4c2ecf2dc6a5014be12f3fd66859245c255a9233",
+        "3": "sha256:d9f30719f6dd1d159898ffe41cb58b76f12c786a5b685755fd83003618661c8a",
+        "4": "sha256:115822e019bfa9876b0cf32ee97d5cd10cbe8d6cce23c509efca5cf5603abda5",
+        "5": "sha256:39aa1b9c6295ec54cecb12155e71e8c2890e96092a26bdfc303c0d69bb138aad",
+        "6": "sha256:84e1a3a39ea4fb2eeecf8f396958bb7eeded262dacd7f461bdb49e3627349a03",
+        "7": "sha256:2f735854114e5968f4dd376d7f596bd96946ca0ab1bff522dd1d2353deac9893",
+        "8": "sha256:5155c692e9be0b8d79ac674470332b70f18ba3f34a14ddaa874ed1c3b66d5cc3",
+        "9": "sha256:8f534b5529eb893826c76d14be9b4f60095ce62d7a6eb762ba80fface5335e52",
+        "10": "sha256:9543a97148deffe3b422cbd4cec86ef0b9d6882d54c8f7aac3d265f23f2091c2",
+        "11": "sha256:bde1512a6573062022729c3a4ed22cf1be7d44f63d8c9391ca1f8216681b55d0",
+        "12": "sha256:0815cc716a7ad562ba914383b9abe38387f3f3246fc0a48d2a7b1cd1a5af4e90",
+        "13": "sha256:2e7dfd0e603bd11a0b2bb336ff9f2b03ced95568cb57d5c63cea307ddd883e29",
+        "14": "sha256:35968815abaa5e3f7aeed6efd14b930b72372db6e72b0b920822f84ca649dba1"
+      },
+      "flags": {
+        "creedal_stakes": "true",
+        "legal_content": "false",
+        "sensitive_content": "true"
+      },
+      "compiled_at": "2026-08-02"
+    },
+    "94:5": {
+      "verse_range": "5-7",
+      "title": "Ease With Every Hardship",
+      "in_short": "These verses give a double promise that ease sits with every hardship, then command the Prophet ﷺ to turn wholly to worship the moment he is free from one task.",
+      "claims": [
+        {
+          "id": "94:5#c1",
+          "section_ref": "94:5",
+          "attaches_to": "94:5",
+          "text": "With every hardship there is ease: this is stated as a settled promise, meaning that no difficulty, distress, or grief lasts without relief following it.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "unspecified",
+          "original_terms": [
+            {
+              "term": "al-ʿusr",
+              "gloss": "hardship, difficulty"
+            },
+            {
+              "term": "yusr",
+              "gloss": "ease, relief"
+            }
+          ]
+        },
+        {
+          "id": "94:5#c2",
+          "section_ref": "94:5",
+          "attaches_to": "94:6",
+          "text": "Grammatically, 'the hardship' (al-ʿusr) is repeated with the definite article both times, so it names one and the same hardship. 'Ease' (yusr) appears without the article each time, so the two mentions of ease point to two separate things. Hence the maxim: one hardship will never overcome two eases.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar",
+          "original_terms": [
+            {
+              "term": "al- (alif-lam)",
+              "gloss": "the Arabic definite article; repeating a defined noun refers back to the same thing, repeating an undefined noun gives a new instance"
+            }
+          ]
+        },
+        {
+          "id": "94:5#c3",
+          "section_ref": "94:5",
+          "attaches_to": "94:6",
+          "text": "This grammatical argument was challenged: al-Jurjani called it flawed, since saying 'with the horseman is a sword, with the horseman is a sword' would not force one to conclude there is one horseman but two swords. He offered instead a historical reading: the verse answers Quraysh mocking the Prophet's poverty, promising him worldly ease (fulfilled before his death in wealth and conquest) and, in the unconnected second verse, a further and lasting ease in the Hereafter.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "94:5#c4",
+          "section_ref": "94:5",
+          "attaches_to": "94:6",
+          "text": "A report traced through al-Hasan al-Basri states that when this verse was revealed, the Prophet ﷺ came out cheerful and told his companions: 'Rejoice, ease has come to you; one hardship will never overcome two eases.'",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded in the provided sources; the chain runs through al-Hasan al-Basri without naming a Companion"
+          }
+        },
+        {
+          "id": "94:5#c5",
+          "section_ref": "94:5",
+          "attaches_to": "94:6",
+          "text": "Ibn Masʿūd رضي الله عنه said: if hardship went into a hole, ease would come and enter after it until it drew it out; hardship will never overcome two eases.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "relay",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded in the provided sources"
+          }
+        },
+        {
+          "id": "94:5#c6",
+          "section_ref": "94:5",
+          "attaches_to": "94:6",
+          "text": "A separate report has the Prophet ﷺ sitting facing a rock and saying that if hardship entered that very rock, ease would come and enter it too, until it brought hardship out.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "cited by al-Ṭanṭāwī from Ibn Abī Ḥātim via ʿĀʾidh b. Shurayḥ, no grading given"
+          }
+        },
+        {
+          "id": "94:5#c7",
+          "section_ref": "94:5",
+          "attaches_to": "94:6",
+          "text": "ʿUmar b. al-Khaṭṭāb رضي الله عنه wrote to Abū ʿUbaydah, who feared the massing Byzantine forces, invoking this principle that hardship never overcomes two eases, alongside the Qur'anic command to have patience and fear Allah.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Qurṭubī, no grading given"
+          }
+        },
+        {
+          "id": "94:5#c8",
+          "section_ref": "94:5",
+          "attaches_to": "94:6",
+          "text": "Ibn ʿAbbās رضي الله عنهما said, in Allah's voice: 'I created one hardship and I created two eases; one hardship will never overcome two eases.'",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Qurṭubī, no grading given"
+          }
+        },
+        {
+          "id": "94:5#c9",
+          "section_ref": "94:5",
+          "attaches_to": "94:6",
+          "text": "Mujāhid read the verse more simply: ease follows hardship, without pressing the doubling argument.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "94:5#c10",
+          "section_ref": "94:5",
+          "attaches_to": "94:6",
+          "text": "An alternative historical reading takes the hardship as the Prophet's expulsion from Makkah, and the ease as his return in triumph on the day of the conquest of Makkah, entering with ten thousand men in honour and strength.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "94:5#c11",
+          "section_ref": "94:5",
+          "attaches_to": "94:5",
+          "text": "Sayyid Quṭb (d. 1966) reads the repetition as showing this is a fixed, unshakeable rule, tied to the earlier promise of the opened chest and the lightened burden: at the very moment the Prophet ﷺ was in real hardship, Allah restated that ease was already bound to it, to reassure him that better days were coming.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "94:5#c12",
+          "section_ref": "94:5",
+          "attaches_to": "94:5",
+          "text": "Wahīduddīn Khān reads the verse as a general law of God in the world: a person faces hardship first, and if he perseveres, that very hardship becomes the means to new and easier circumstances, as happened when opposition in Makkah made the Prophet ﷺ known everywhere.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "94:5#c13",
+          "section_ref": "94:5",
+          "attaches_to": "94:5",
+          "text": "Al-Ṭanṭāwī describes the verse as stating an unvarying pattern (sunna) of Allah: no hardship without ease following, no distress without relief coming after it, for whoever holds to beautiful patience and reliance on Allah.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "94:5#c14",
+          "section_ref": "94:5",
+          "attaches_to": "94:7",
+          "text": "One reading of 'when you are freed, work on' (fa-idhā faraghta fanṣab) takes it as: when you finish the prescribed prayer, exert yourself in supplication (duʿāʾ) and ask Allah for your needs. Attributed to Ibn ʿAbbās, Qatādah, al-Ḍaḥḥāk, Muqātil and al-Kalbī.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "94:5#c15",
+          "section_ref": "94:5",
+          "attaches_to": "94:7",
+          "text": "A second reading takes it as: when you finish fighting your enemy (jihād), exert yourself in the worship of your Lord. Attributed to al-Ḥasan al-Baṣrī and Ibn Zayd, and also to Zayd b. Aslam.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "94:5#c16",
+          "section_ref": "94:5",
+          "attaches_to": "94:7",
+          "text": "A third reading takes it as: when you finish the affairs of this world, exert yourself in prayer. Attributed to Mujāhid.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "94:5#c17",
+          "section_ref": "94:5",
+          "attaches_to": "94:7",
+          "text": "Ibn Masʿūd read it as: when you finish the obligatory prayers, exert yourself in the night vigil (qiyām al-layl).",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "94:5#c18",
+          "section_ref": "94:5",
+          "attaches_to": "94:7",
+          "text": "Al-Shaʿbī read it as: when you finish the tashahhud, make supplication for this world and the next.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "94:5#c19",
+          "section_ref": "94:5",
+          "attaches_to": "94:7",
+          "text": "Al-Kalbī read it as: when you finish conveying the message, exert yourself, meaning seek forgiveness for yourself and for the believers.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "94:5#c20",
+          "section_ref": "94:5",
+          "attaches_to": "94:7",
+          "text": "Al-Ṭabarī judged that the most correct view is that Allah did not tie the command to one particular occasion: whenever the Prophet ﷺ is free of anything that occupied him, in this world or the next, whether prayer, fighting, or worldly business, he is to exert himself in worship and ask his Lord for his needs, since the wording of the verse is unrestricted.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "94:5#c21",
+          "section_ref": "94:5",
+          "attaches_to": "94:7",
+          "text": "Ibn Kathīr, al-Ṭanṭāwī, and Muftī Shafīʿ read it broadly: once the Prophet ﷺ, and by extension anyone occupied with teaching and reform, has completed worldly tasks and the work of guiding people, he should turn to direct worship of Allah with zeal and complete devotion. Muftī Shafīʿ adds that indirect worship, done through teaching and reform, is not sufficient by itself and must be joined to direct worship such as prayer and remembrance.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "94:5#c22",
+          "section_ref": "94:5",
+          "attaches_to": "94:7",
+          "text": "Ibn Kathīr cites an agreed-upon hadith that there is no prayer when food has been served, nor when a person is pressed by the call of nature, and another instructing that if both prayer and dinner are ready, one should begin with dinner, as an illustration of finishing one matter properly before turning to the next.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "Ibn Kathīr, who describes it as agreed-upon (muttafaq ʿalayh)"
+          }
+        },
+        {
+          "id": "94:5#c23",
+          "section_ref": "94:5",
+          "attaches_to": "94:7",
+          "text": "Al-Saʿdī reads the command as directed to the Messenger ﷺ first, and to believers after him: once free from other occupations, with nothing left in the heart to hinder it, one should strive in worship and supplication as the due of gratitude for Allah's favours.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "94:5#c24",
+          "section_ref": "94:5",
+          "attaches_to": "94:7",
+          "text": "Sayyid Quṭb reads the verse as: once free of worldly matters, and even free of the activities of the call to Islam itself, one should turn wholly to the Lord. This turning is described as the 'provision' needed for the long and difficult journey of daʿwah.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "94:5#c25",
+          "section_ref": "94:5",
+          "attaches_to": "94:7",
+          "text": "Isrār Aḥmad links this verse to Sūrat al-Naṣr: once the Prophet ﷺ had finished the duties of his prophetic mission and the religion had prevailed, he was to turn single-mindedly to Allah. He connects this to reports of the Prophet's final illness, where he was given a choice between more of this world's adornment and what is with Allah, and chose what is with Allah, at which Abū Bakr رضي الله عنه wept.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "relay",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "Isrār Aḥmad, no grading given for the final-illness report"
+          }
+        },
+        {
+          "id": "94:5#c26",
+          "section_ref": "94:5",
+          "attaches_to": "94:7",
+          "text": "The word rendered 'work on' (fa-nṣab) comes from nasab, meaning fatigue or toil, so the command is to exert and tire oneself in worship, not to perform it only when convenient; even a small, fixed devotional practice requires real effort.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "naṣab",
+              "gloss": "fatigue, exertion, toil"
+            }
+          ]
+        },
+        {
+          "id": "94:5#c27",
+          "section_ref": "94:5",
+          "attaches_to": "94:7",
+          "text": "Ibn al-ʿArabī, cited by al-Qurṭubī, rejects two irregular readings of this verse as baseless: one that reads it with a different vowelling to mean 'appoint your successor' (false, since the Prophet ﷺ did not appoint a successor), and another, attributed to some unlearned reciters, taken to mean 'hasten your return home' (invalid as a reading for breaking with the agreed text, though the underlying idea of hurrying home from travel is supported elsewhere by an authentic hadith calling travel 'a portion of hardship').",
+          "claim_type": "legal",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "refute",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "Ibn al-ʿArabī rejects the readings themselves; the supporting hadith on travel is called ṣaḥīḥ by him without further detail given here"
+          }
+        }
+      ],
+      "essay_html": "<p>The passage opens with a promise repeated word for word: with hardship comes ease. Commentators take this as a settled rule, not a hope: no distress lasts without relief following it, no difficulty without an opening after it.<sup class=\"ref\">1,2,3,4,5,9,11,12,13,14</sup></p><p>Much attention goes to why the sentence is said twice. Several commentators note a feature of Arabic grammar: 'the hardship' (al-ʿusr) carries the definite article both times, so it names one and the same hardship. 'Ease' (yusr) has no article either time, so its two mentions point to two separate things. From this comes the saying: one hardship will never overcome two eases.<sup class=\"ref\">2,3,5,7,11,14</sup> A hadith traced through al-Ḥasan al-Baṣrī has the Prophet ﷺ coming out cheerful on the day this verse was revealed and giving his companions this very good news, though the report has no named Companion in its chain.<sup class=\"ref\">1,2,7,9</sup> Ibn Masʿūd رضي الله عنه put the same idea in an image: if hardship went into a hole, ease would follow it in and draw it out.<sup class=\"ref\">1,2,3,5</sup> A related report has the Prophet ﷺ saying the same of a rock in front of him.<sup class=\"ref\">9</sup> ʿUmar رضي الله عنه once wrote this very maxim to Abū ʿUbaydah when he feared the massing of Byzantine forces,<sup class=\"ref\">3</sup> and Ibn ʿAbbās رضي الله عنهما is reported to have voiced it in Allah's own words: one hardship, two eases.<sup class=\"ref\">3</sup> Mujāhid took the phrase more simply, as ease simply following hardship, without pressing the doubling.<sup class=\"ref\">1</sup></p><p>The grammatical argument was not left unchallenged. Al-Jurjānī called it flawed: saying 'with the horseman is a sword' twice would not force anyone to conclude there is one horseman and two swords. He offered instead a historical reading: Quraysh had mocked the Prophet's ﷺ poverty, and the verse promises him worldly ease, later fulfilled in wealth and conquest, followed by a second and lasting ease in the Hereafter, the second verse standing on its own without a connecting word.<sup class=\"ref\">2,3</sup> A further reading takes the hardship as the Prophet's ﷺ expulsion from Makkah and the ease as his triumphant return at the conquest.<sup class=\"ref\">3</sup> Sayyid Quṭb (d. 1966) reads the repetition as underlining that this was already at work in the Prophet's actual hardship at the time of revelation, tying it to the earlier promise of the opened chest.<sup class=\"ref\">6</sup> Wahīduddīn Khān reads it as a general law: hardship endured with patience becomes the very means to ease, as Makkah's opposition eventually spread the Prophet's ﷺ name everywhere.<sup class=\"ref\">10</sup> Al-Ṭanṭāwī calls it an unvarying pattern of Allah, for anyone who holds to patience and reliance.<sup class=\"ref\">9</sup></p><p>The next command, 'when you are freed, work on' (fa-idhā faraghta fanṣab), draws several readings of what 'freed' means. Some read it as: when you finish the prescribed prayer, press on into supplication and ask Allah for your needs.<sup class=\"ref\">1,2,3</sup> Others read it as: when you finish fighting your enemy, press on into worship.<sup class=\"ref\">1,2,3,14</sup> Others: when you finish the affairs of this world, press on into prayer.<sup class=\"ref\">1,2,3,14</sup> Ibn Masʿūd read it as finishing the obligatory prayers and then rising for the night vigil,<sup class=\"ref\">2,3,14</sup> al-Shaʿbī as finishing the tashahhud and then supplicating for both worlds,<sup class=\"ref\">2</sup> and al-Kalbī as finishing the delivery of the message and then seeking forgiveness for oneself and the believers.<sup class=\"ref\">2,3</sup> Al-Ṭabarī weighed these and judged that the verse is not tied to any one occasion: whenever the Prophet ﷺ is freed of anything occupying him, worldly or otherwise, he is to exert himself in worship and ask his Lord for his needs, since the wording carries no restriction.<sup class=\"ref\">1</sup></p><p>Other commentators read the verse broadly along similar lines: once free from worldly and teaching duties, one should turn to direct worship with full devotion, and, as Muftī Shafīʿ (d. 1976) stresses, the indirect worship of reform work is not enough on its own.<sup class=\"ref\">4,7,9</sup> Ibn Kathīr (d. 1373) adds an agreed-upon hadith that there is no prayer when food is served or when nature calls, as an illustration of finishing one matter before turning to the next.<sup class=\"ref\">4</sup> Al-Saʿdī (d. 1957) reads the command as gratitude owed for Allah's favours, to be paid once the heart is free of distraction.<sup class=\"ref\">5</sup> Sayyid Quṭb reads it as turning wholly to the Lord even once free of daʿwah activity itself, calling this the 'provision' for a hard road.<sup class=\"ref\">6</sup> Isrār Aḥmad (d. 2010) ties it to Sūrat al-Naṣr and to reports of the Prophet's final illness, where he chose what is with Allah over more of this world.<sup class=\"ref\">8</sup> Lexically, the word for 'work on' comes from fatigue and toil, meaning the command is to exert oneself genuinely in worship, not only when convenient.<sup class=\"ref\">2,7</sup> Ibn al-ʿArabī, cited by al-Qurṭubī, rejects two irregular readings of the verse, one taken to mean appointing a successor and another taken to mean hurrying home, as baseless both in recitation and in meaning.<sup class=\"ref\">3</sup></p><p class=\"close\">Across all these readings the constant is the same: whatever the hardship, and whatever the moment of being freed, ease is bound to come, and the freed moment belongs to God.</p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "11",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:7a07a2a1f2283156f175bfdb8c2ec76cee3b073ddf4ccdd805dc52c70ebfe582",
+        "2": "sha256:88dab1d3eb035783872c0afb906b777503a9ba9d9804ae7b8168f4d3e38ee1d5",
+        "3": "sha256:3dc8a2432d062cc5e2ded6ab3460e9b17b61c2f49fd5caef0c2dc131987d6e04",
+        "4": "sha256:f22a0ec386a150301b2ceccc71d7b19b5a95468b0d2854f294a03de38801e1fe",
+        "5": "sha256:e156523fd4d01409d35d4baf26d6de63d9d4ec16fc1984cc92355ed7523bbfd8",
+        "6": "sha256:3623aef39aa5cfc20069b6c674482dc9217f593755a8a890c175f3c1f067fb37",
+        "7": "sha256:582b68189d69ec3190f1acfaa140e5f5d42d54ebd8fa36533c608ca987d81e43",
+        "8": "sha256:4d9b77cf2682bb6f10b7a652e7fa29f9970420ddc7a3ebb2491a126f65afe9eb",
+        "9": "sha256:0caa9887358263265c15fc5f2415ba01e9d0d555a40a730a392c0631c9dd69db",
+        "10": "sha256:28f588614a90d64d7a926dfa44fecea3aa1750595b162a6bf77ab1c637c26e4e",
+        "11": "sha256:5082eb1149d884d9247a90a0034f87e11408c3d36480f6311815ad6bea3d5036",
+        "12": "sha256:04a60faf60e80f832c4c15555c61fb7b05c9299a285115972545cbc4edee92f0",
+        "13": "sha256:1622dd3590257c58e5fbd5458b56287fc7bd61db726b3b32d5f5e229890b180e",
+        "14": "sha256:2967d4f3da1d919545587a3f8f46fd16813c31e2608bb222cba0f7c61817ff17"
+      },
+      "flags": {
+        "creedal_stakes": "false",
+        "legal_content": "false",
+        "sensitive_content": "false"
+      },
+      "compiled_at": "2026-08-02"
+    }
+  }
+}

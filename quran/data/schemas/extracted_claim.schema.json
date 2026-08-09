@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thematicquran.com/schemas/extracted_claim.schema.json",
+  "title": "Extracted Claim",
+  "description": "One reusable building block of the tafsir knowledge layer: a single claim or observation drawn from fetched commentary, kept in a consistent, source-traceable shape so it can power the Overview essay today and future projects (audio, comparison, research export) later. Distinct from the final rendered essay.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "section_ref", "attaches_to", "text", "claim_type", "sources", "provenance"],
+  "properties": {
+    "id": { "type": "string", "description": "Stable unique id, e.g. '87:1#c3'." },
+    "section_ref": { "type": "string", "description": "Thematic section start key, e.g. '87:1'." },
+    "attaches_to": {
+      "type": "string",
+      "description": "Verse or verse:word the claim is about, e.g. '87:3' or '87:3:2'. Preserves sub-section attachment."
+    },
+    "text": { "type": "string", "description": "The claim, in English, as what the source says — not independent interpretation." },
+    "claim_type": {
+      "enum": ["linguistic", "rhetorical", "legal", "theological", "historical", "spiritual", "narrative", "lexical", "other"]
+    },
+    "basis": {
+      "description": "How the claim is derived — lets rhetoric-argued readings stay distinct from report-based ones.",
+      "enum": ["grammar", "rhetoric", "narration", "reasoning", "lexicon", "unspecified"]
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "description": "The fetched commentary/commentaries behind this claim. More than one source is NOT independent corroboration unless the authors are chronologically/traditionally independent (see commentators.json).",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["edition_id", "stance"],
+        "properties": {
+          "edition_id": { "type": "string", "description": "Matches an edition_id in commentators.json." },
+          "author_id": { "type": "string", "description": "Matches an author id in commentators.json (for chronology / dependency checks)." },
+          "stance": {
+            "description": "Whether the citing commentator endorses, neutrally relays, or refutes the point.",
+            "enum": ["endorse", "relay", "refute"]
+          },
+          "source_language": { "type": "string", "description": "Language of the underlying work (ISO code), e.g. 'ar', 'ur', 'bn'." },
+          "original_excerpt": { "type": "string", "description": "Optional verbatim source text in its own language." },
+          "english_rendering": { "type": "string", "description": "Optional model translation into English (rendering, not a verbatim quote)." },
+          "translation_confidence": { "enum": ["high", "medium", "low", "not_applicable"] }
+        }
+      }
+    },
+    "original_terms": {
+      "type": "array",
+      "description": "Technical terms preserved with a plain gloss, so the original is always recoverable.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["term", "gloss"],
+        "properties": {
+          "term": { "type": "string" },
+          "gloss": { "type": "string" },
+          "language": { "type": "string" }
+        }
+      }
+    },
+    "report": {
+      "type": "object",
+      "description": "Present only when the claim rests on a narration (hadith/athar).",
+      "additionalProperties": false,
+      "required": ["grade"],
+      "properties": {
+        "grade": { "enum": ["sahih", "hasan", "daif", "mawdu", "ungraded"] },
+        "graded_by": { "type": "string", "description": "Who assigns the grade, or the source that leaves it ungraded." }
+      }
+    },
+    "theological_school": { "type": "string", "description": "e.g. 'Ashʿarī', 'Māturīdī', 'Atharī', 'Muʿtazilī' — set when the reading is creedally committed." },
+    "madhhab": { "type": "string", "description": "e.g. 'Ḥanafī', 'Mālikī', 'Shāfiʿī', 'Ḥanbalī' — set for legal-derivation claims." },
+    "provenance": {
+      "type": "object",
+      "description": "How this claim was produced — needed for reproducibility and drift-auditing.",
+      "additionalProperties": false,
+      "required": ["model", "extracted_at"],
+      "properties": {
+        "model": { "type": "string" },
+        "prompt_version": { "type": "string" },
+        "extracted_at": { "type": "string", "description": "ISO-8601 date/time." },
+        "source_hash": { "type": "string", "description": "Hash of the raw fetched text this claim was extracted from." }
+      }
+    }
+  }
+}

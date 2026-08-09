@@ -1,0 +1,1118 @@
+{
+  "surah": 81,
+  "name": "",
+  "coverage": {
+    "editions_present": [
+      "ar-tafsir-al-tabari",
+      "ar-tafsir-al-baghawi",
+      "ar-tafseer-al-qurtubi",
+      "en-tafisr-ibn-kathir",
+      "ar-tafseer-al-saddi",
+      "tafsir-fe-zalul-quran-syed-qatab",
+      "en-tafsir-maarif-ul-quran",
+      "tafsir-bayan-ul-quran",
+      "ar-tafsir-al-wasit",
+      "tazkirul-quran-en",
+      "bn-tafsir-abu-bakr-zakaria",
+      "bn-tafsir-ahsanul-bayaan",
+      "ar-tafsir-muyassar",
+      "kurd-tafsir-rebar"
+    ],
+    "editions_absent": [],
+    "independent_works": 14,
+    "languages_present": [
+      "ar",
+      "bn",
+      "en",
+      "ku",
+      "ur"
+    ],
+    "languages_absent": []
+  },
+  "pipeline_provenance": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "overview-v2.3",
+    "theme_breaks_version": "sha256:99880ec7b10b53313690f91df9ee8d065519ee698df34b35a3336b5705218f90",
+    "compiled_at": "2026-08-02"
+  },
+  "modern_lens_framing": "The Qurʾan is taken here as fixed, revealed truth; science is our provisional, evolving account of the observable world. What follows notes where the two meet — a contemplation, not a proof. Where the science later shifts, that reflects the limits of our knowledge, not the text.",
+  "references": [
+    {
+      "n": 1,
+      "work_id": "al-tabari",
+      "label": "Jāmiʿ al-Bayān",
+      "author_id": "al-tabari",
+      "author": "Abū Jaʿfar Muḥammad ibn Jarīr al-Ṭabarī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 2,
+      "work_id": "al-baghawi",
+      "label": "Maʿālim al-Tanzīl",
+      "author_id": "al-baghawi",
+      "author": "Abū Muḥammad al-Ḥusayn ibn Masʿūd al-Baghawī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 3,
+      "work_id": "al-qurtubi",
+      "label": "al-Jāmiʿ li-Aḥkām al-Qurʾān",
+      "author_id": "al-qurtubi",
+      "author": "Abū ʿAbd Allāh Muḥammad ibn Aḥmad al-Qurṭubī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 4,
+      "work_id": "ibn-kathir",
+      "label": "Tafsīr Ibn Kathīr",
+      "author_id": "ibn-kathir",
+      "author": "Ismāʿīl ibn ʿUmar ibn Kathīr",
+      "source_language": "ar",
+      "note": "One independent voice. The ar/ur/bn editions are the SAME work — never count as separate corroboration."
+    },
+    {
+      "n": 5,
+      "work_id": "al-saadi",
+      "label": "Taysīr al-Karīm al-Raḥmān",
+      "author_id": "al-saadi",
+      "author": "ʿAbd al-Raḥmān ibn Nāṣir al-Saʿdī",
+      "source_language": "ar",
+      "note": "Russian edition (170) is the SAME work — translate from the Arabic original, and do not count Russian as an independent voice."
+    },
+    {
+      "n": 6,
+      "work_id": "fi-zilal",
+      "label": "Fī Ẓilāl al-Qurʾān",
+      "author_id": "sayyid-qutb",
+      "author": "Sayyid Quṭb Ibrāhīm Ḥusayn",
+      "source_language": "ar",
+      "note": "Original is Arabic, but the API here carries only an URDU edition — translating from Urdu is one step removed from the original. Prefer the Arabic original if the QF Content API offers it."
+    },
+    {
+      "n": 7,
+      "work_id": "maarif",
+      "label": "Maʿārif al-Qurʾān",
+      "author_id": "muhammad-shafi-usmani",
+      "author": "Muftī Muḥammad Shafīʿ ʿUthmānī",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 8,
+      "work_id": "bayan-ul-quran",
+      "label": "Bayān al-Qurʾān",
+      "author_id": "israr-ahmad",
+      "author": "Isrār Aḥmad",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 9,
+      "work_id": "wasit",
+      "label": "al-Tafsīr al-Wasīṭ",
+      "author_id": "tantawi",
+      "author": "Muḥammad Sayyid Ṭanṭāwī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 10,
+      "work_id": "tazkirul",
+      "label": "Tazkīr al-Qurʾān",
+      "author_id": "wahiduddin-khan",
+      "author": "Wahiduddin Khan",
+      "source_language": "ur",
+      "note": "en and ur editions are the same work."
+    },
+    {
+      "n": 11,
+      "work_id": "abu-bakr-zakaria",
+      "label": "Tafsir Abu Bakr Zakaria",
+      "author_id": "abu-bakr-zakaria",
+      "author": "Abū Bakr Muḥammad Zakariyyā",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 12,
+      "work_id": "ahsanul-bayaan",
+      "label": "Ahsanul Bayaan",
+      "author_id": "bayaan-foundation",
+      "author": "Ahsanul Bayaan (Bayaan Foundation)",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 13,
+      "work_id": "muyassar",
+      "label": "al-Tafsīr al-Muyassar",
+      "author_id": "committee-muyassar",
+      "author": "al-Tafsīr al-Muyassar (committee)",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 14,
+      "work_id": "rebar-kurdish",
+      "label": "Rebar Kurdish Tafsir",
+      "author_id": "rebar",
+      "author": "Rebar Kurdish Tafsir",
+      "source_language": "ku",
+      "note": ""
+    }
+  ],
+  "sections": {
+    "81:29": {
+      "verse_range": "29-29",
+      "title": "Human Will Within God's Will",
+      "in_short": "The surah closes by saying that human beings cannot even wish for guidance unless Allah, Lord of all the worlds, wills it first. Whatever people choose only happens inside the wider scope of God's will.",
+      "claims": [
+        {
+          "id": "81:29#c1",
+          "section_ref": "81:29",
+          "attaches_to": "81:29",
+          "text": "The verse means that no one's wish or will comes to anything except within the will of Allah, Lord of all the worlds. Human will carries no independent weight; it is only effective when Allah's will authorises it. Al-Ṭanṭāwī notes that the surah is deliberately closed on this statement, so that God's will (which is truly effective, nāfidha) has the final word over any human will.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "وما تشاءون أيها الناس الاستقامة على الحقّ، إلا أن يشاء الله ذلك",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "أعلمهم أن المشيئة في التوفيق إليه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "the will is not left to you all... rather, all of this is according to the will of Allah",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "فمشيئته نافذة، لا يمكن أن تعارض أو تمانع",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "مشيئة الله - تعالى - هى النافذة، أما مشيئتكم فلا وزن لها إلا إذا أذنت بها مشيئته",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "وما تشاؤون الاستقامة، ولا تقدرون على ذلك، إلا بمشيئة الله رب الخلائق أجمعين",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning",
+          "original_terms": [
+            {
+              "term": "مشيئة (mashī'ah)",
+              "gloss": "will, wish, choosing"
+            }
+          ]
+        },
+        {
+          "id": "81:29#c2",
+          "section_ref": "81:29",
+          "attaches_to": "81:29",
+          "text": "The verse establishes that no servant does good except by Allah's enabling (tawfīq), and no one does evil except through Allah's abandonment (khidhlān) of them.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "لا يعمل خيراً إلا بتوفيق الله ولا شراً إلا بخذلانه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "لا يعمل العبد خيرا إلا بتوفيق الله، ولا شرا إلا بخذلانه",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning",
+          "original_terms": [
+            {
+              "term": "توفيق (tawfīq)",
+              "gloss": "divine enabling towards good"
+            },
+            {
+              "term": "خذلان (khidhlān)",
+              "gloss": "divine abandonment, withholding of help"
+            }
+          ]
+        },
+        {
+          "id": "81:29#c3",
+          "section_ref": "81:29",
+          "attaches_to": "81:29",
+          "text": "A report on the occasion of the verse: when the previous verse said 'for whoever among you wills to walk straight,' Abū Jahl said the matter was up to himself and his people, that they would go straight if they wished and not if they did not wish. This verse was then revealed to correct that claim, making clear that their wishing depends on Allah's wishing.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "قال أبو جهل ذلك إلينا، إن شئنا استقمنا",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "Abu Jahl said, \"The matter is up to us. If we wish, we will stand straight\"",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Ṭabarī (via Sulaymān b. Mūsā, without full verification given)"
+          }
+        },
+        {
+          "id": "81:29#c4",
+          "section_ref": "81:29",
+          "attaches_to": "81:29",
+          "text": "Al-Ḥasan al-Baṣrī said: by Allah, the Arabs did not will Islam until Allah willed it for them.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "والله ما شاءت العرب الإسلام حتى شاءه الله لها",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "81:29#c5",
+          "section_ref": "81:29",
+          "attaches_to": "81:29",
+          "text": "Wahb ibn Munabbih is reported to have said: I read in eighty-seven books that Allah sent down to the prophets that whoever assigns to himself any share of the divine will has disbelieved.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "من جعل إلى نفسه شيئا من المشيئة فقد كفر",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Qurṭubī (no chain given)"
+          }
+        },
+        {
+          "id": "81:29#c6",
+          "section_ref": "81:29",
+          "attaches_to": "81:29",
+          "text": "Al-Qurṭubī supports the point of the verse by citing other Qur'anic statements on the same theme: that even if angels descended and the dead spoke, people would still not believe except that Allah wills it; that no soul believes except by Allah's permission; and that the Prophet ﷺ does not guide whomever he loves, but Allah guides whom He wills.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "original_excerpt": "إنك لا تهدي من أحببت",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "81:29#c7",
+          "section_ref": "81:29",
+          "attaches_to": "81:29",
+          "text": "Al-Saʿdī reads this verse, and others like it, as a refutation of two opposing extremes on the question of divine decree (qadar): the Qadariyyah who deny qadar and give humans full independent will, and the compulsionist Qadariyyah (al-mujbirah) who deny human agency altogether.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "رد على فرقتي القدرية النفاة، والقدرية المجبرة",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning",
+          "theological_school": "Atharī"
+        },
+        {
+          "id": "81:29#c8",
+          "section_ref": "81:29",
+          "attaches_to": "81:29",
+          "text": "Sayyid Quṭb reads the verse as a corrective: people should not imagine that their own will stands independent of, or separate from, Allah's wider will, to which all matters return. Even the freedom and capacity Allah grants people to choose guidance sits inside His greater encompassing will, in the same way that Allah has enabled and permitted angels to obey His commands. Believers should hold this in their creed, rely on Allah, and seek His enabling whichever path they take.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "81:29#c9",
+          "section_ref": "81:29",
+          "attaches_to": "81:29",
+          "text": "Isrār Aḥmad reads the verse as teaching that guidance requires two things together: the human being's own desire and effort towards it, and Allah's willing to grant guidance. He notes Allah does not force guidance on anyone; if guidance depended on Allah's will alone with no place for human desire, the entire basis of reward and punishment would collapse.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "اللہ تعالیٰ زبردستی کسی پر ہدایت مسلط نہیں کرتا",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "81:29#c10",
+          "section_ref": "81:29",
+          "attaches_to": "81:29",
+          "text": "Abū Bakr Zakariyyā's note distinguishes two kinds of divine will invoked in discussions of this verse: Allah's legislative will (irādah sharʿiyyah), covering what pleases Him, and Allah's natural/creative will (irādah kawniyyah), by which things occur even when they do not please Him, such as evil deeds. He states that failing to distinguish between the two has given rise to many sects, past and present, citing Ibn Taymiyyah's al-Istiqāmah and Minhāj al-Sunnah.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        }
+      ],
+      "essay_html": "<p>This closing verse of the surah answers the one before it. Verse 28 had said the Qur'an is a reminder \"for whoever among you wills to walk straight.\" Verse 29 immediately adds the check: no one wills anything except that Allah, Lord of all the worlds, wills it too.<sup class=\"ref\">1,2,3,4,5,6,9,11,12,13,14</sup> Human will carries no independent weight of its own. Al-Ṭanṭāwī (d. 2010) points out that the surah is deliberately ended on this note, so that God's will has the final say over any wish of ours.<sup class=\"ref\">9</sup></p>\n<p>Several sources report why this verse came down. When the previous verse mentioned \"whoever among you wills to walk straight,\" Abū Jahl reportedly said the matter was entirely up to himself and his people: they would go straight if they chose to, and not if they did not. This verse, on that account, was sent to correct him, making his very wishing subject to Allah's wishing.<sup class=\"ref\">1,4,14</sup> The report travels through Sulaymān ibn Mūsā without a stated full chain of verification.</p>\n<p>Al-Baghawī (d. 1122) and al-Qurṭubī (d. 1273) draw out the same implication: no servant does good except through Allah's enabling (<em>tawfīq</em>), and none does evil except through Allah's abandonment (<em>khidhlān</em>) of them.<sup class=\"ref\">2,3</sup> Al-Qurṭubī adds al-Ḥasan al-Baṣrī's saying that the Arabs did not will Islam until Allah willed it for them, and a report from Wahb ibn Munabbih, without a stated chain, that whoever claims any share of the divine will for himself has disbelieved.<sup class=\"ref\">3</sup> He backs the point with other Qur'anic statements: that even seeing angels or hearing the dead speak would not make people believe unless Allah willed it, that no soul believes except by His permission, and that the Prophet ﷺ does not guide whomever he loves, but Allah guides whom He wills.<sup class=\"ref\">3,12</sup></p>\n<p>Al-Saʿdī (d. 1957) reads this verse as striking down two opposite errors about divine decree (<em>qadar</em>): those who deny qadar altogether and hand people full independent will, and the compulsionists who deny human agency completely.<sup class=\"ref\">5</sup> Sayyid Quṭb (d. 1966) frames it as a correction of a different sort: people should not imagine their will stands apart from Allah's wider will, to which everything returns. Even the freedom Allah gives someone to choose guidance sits inside that larger will, just as He has enabled angels to obey Him.<sup class=\"ref\">6</sup></p>\n<p>Isrār Aḥmad (d. 2010) reads the verse as holding two things together: a person's own desire for guidance, and Allah's willing to grant it. He notes Allah does not force guidance on anyone, since without a place for human desire the whole basis of reward and punishment would fall apart.<sup class=\"ref\">8</sup> Abū Bakr Zakariyyā's note distinguishes Allah's legislative will, covering what pleases Him, from His natural or creative will, by which even displeasing things occur. Blurring the two, he says, has given rise to many sects, citing Ibn Taymiyyah.<sup class=\"ref\">11</sup></p>\n<p class=\"close\">Whichever angle the commentators take, they converge on the same ground: whatever a person wishes for, that wishing itself only stands within the will of Allah, the Lord of all the worlds.<sup class=\"ref\">1,2,3,4,5,6,9,11,12,13,14</sup></p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "8",
+        "9",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:97fb527e8f8962f44ac00457ee6a96d33357d2b6df46bbe202004fcae979a3ca",
+        "2": "sha256:f1899b239ed4cb2b869a68fcb49a4ee284650f011a159bd6feaf74a2c048ff75",
+        "3": "sha256:b35c3a240884cdf0cf7da8a6168d8c71ec8dfa46fbc4b986ccf173c7d8197fb0",
+        "4": "sha256:7d8faf72fa2c067c334b89dbc4172efcf22c8f89bdd6156288048e74d6964b8c",
+        "5": "sha256:3db0b95828a163ef0e8c87974c084f3d055deb66eea5a5c404cc36615d5253f1",
+        "6": "sha256:0581e1630d0da68051d088e5dedacb8a17804c4f76ca9d5a1932daeb4586a65b",
+        "7": "sha256:afa88aa37d98354df252b47d3fdc077b7f4a60c052d23b2b2946b794ba4be5c3",
+        "8": "sha256:bc8fdf8bbd8d6e578c5d90087e0d07722f92d18d907aff4d0963faf359196e81",
+        "9": "sha256:3d812cd4ed06673f653d3f96313bc85c6830d639243d6197efc75e7c47f149f4",
+        "10": "sha256:3b6852d84820f3d31e72caa9222a73142a291f10a0137777e80e7cd039bfe454",
+        "11": "sha256:1509d8dd39a65daab55ed8d11317423fc7e3fc1b12ca36db1d645b82da669ad0",
+        "12": "sha256:554c752826b3d18f9e25ae8b2ef2e82dc9befbe5cc06391f87a56be597a66267",
+        "13": "sha256:8f38c4886def542f045f709d99e9a3945e4fa4b347a93e588a0988b85e8bf955",
+        "14": "sha256:f443a8f9d673f6b00cf30f4a28cc22512b008e03c2cd632c8dd214cc8097108d"
+      },
+      "flags": {
+        "creedal_stakes": true,
+        "legal_content": false,
+        "sensitive_content": false
+      },
+      "compiled_at": "2026-08-02"
+    },
+    "81:27": {
+      "verse_range": "27-28",
+      "title": "A Reminder for Whoever Wills",
+      "in_short": "The Qur'an is described as a reminder for everyone in creation, but its benefit reaches only those who themselves choose to walk the straight path.",
+      "claims": [
+        {
+          "id": "81:27#c1",
+          "section_ref": "81:27",
+          "attaches_to": "81:27",
+          "text": "\"It\" (huwa) in \"it is only a reminder\" refers to the Qur'an.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "إِنْ هذا القرآن، وقوله: هُوَ من ذكر القرآن",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "أي ما القرآن",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "إن هو يعني القرآن",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "أى : ما هذا القرآن الكريم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "81:27#c2",
+          "section_ref": "81:27",
+          "attaches_to": "81:27",
+          "text": "An alternative reading takes \"it\" to refer to Muhammad ﷺ himself, so the sense would be \"Muhammad is only a reminder.\"",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وقيل : ما محمد إلا ذكر",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "81:27#c3",
+          "section_ref": "81:27",
+          "attaches_to": "81:27",
+          "text": "The Qur'an is a reminder and admonition (dhikr) for all the worlds, meaning all mankind (Ṭabarī specifies mankind and jinn).",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "إلا تذكرة وعظة للعالمين من الجنّ والإنس",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "موعظة للخلق أجمعين",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "this Qur'an is a reminder for all of mankind",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "إلا تذكير وإرشاد وهدايات للبشر جميعا",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "ما هو إلا موعظة من الله لجميع الناس",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "original_excerpt": "یادخستنه‌وه‌و په‌ندو ئامۆژگارییه‌ بۆ تێكڕای خه‌ڵكی",
+              "translation_confidence": "low"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "ذِكْر (dhikr)",
+              "gloss": "reminder or admonition"
+            }
+          ]
+        },
+        {
+          "id": "81:27#c4",
+          "section_ref": "81:27",
+          "attaches_to": "81:27",
+          "text": "Through this reminder, people call to mind their Lord and His attributes of perfection, His freedom from every defect, His commands and prohibitions and the wisdom behind them, and the rulings of decree, law, and requital. In short, they call to mind the welfare of both this world and the next, and by acting on it they attain happiness in both.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "يتذكرون به ربهم، وما له من صفات الكمال، وما ينزه عنه من النقائص والرذائل",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "81:27#c5",
+          "section_ref": "81:27",
+          "attaches_to": "81:27",
+          "text": "The reminder tells people the reality of their existence, the purpose of their creation, and the purpose of the universe around them. This verse is itself evidence that the Islamic call was, from its very beginning, a universal call, even though at the time it was surrounded by enemies.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "یہ آیت اس بات پر شہادت ہے کہ دعوت اسلامی اپنے آغاز ہی سے ایک عالمی دعوت تھی",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "81:27#c6",
+          "section_ref": "81:27",
+          "attaches_to": "81:27",
+          "text": "The Qur'an as \"dhikr\" works by reviving truths that are already present, dormant, in human nature (fiṭrah), truths which get covered over by heedlessness, in the way people forget Allah and are thereby made to forget themselves, as mentioned elsewhere in the Qur'an.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "قرآنی تعلیمات انسانی فطرت میں موجود ان تمام حقائق کو خفتہ حالت سے نکال کر پھر سے فعال کرنے میں اس کی مدد کرتی ہیں",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning",
+          "original_terms": [
+            {
+              "term": "فطرت (fiṭrah)",
+              "gloss": "the innate God-conscious nature every human is born with"
+            }
+          ]
+        },
+        {
+          "id": "81:27#c7",
+          "section_ref": "81:27",
+          "attaches_to": "81:27",
+          "text": "This verse continues a rhetorical rebuke aimed at those who reject the Qur'an: after such decisive proofs, no clearer path exists than the one they have been shown, so their rejection has no excuse.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "أى : إذا كان الأمر كما ذكرنا لكم ، فأى طريق تسلكون أوضح وأبين من هذا الطريق",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "81:27#c8",
+          "section_ref": "81:27",
+          "attaches_to": "81:28",
+          "text": "\"Whoever among you wills to be upright\" means whoever wills to follow the truth and remain steadfast upon it.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "يتبع الحقّ",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "أي يتبع الحق ويقيم عليه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "أي يتبع الحق ويقيم عليه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "low"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "يَسْتَقِيمَ (yastaqīm)",
+              "gloss": "to be upright, to keep to the straight path"
+            }
+          ]
+        },
+        {
+          "id": "81:27#c9",
+          "section_ref": "81:27",
+          "attaches_to": "81:28",
+          "text": "Whoever seeks guidance must hold fast to the Qur'an, for it is his means of salvation and guidance; there is no guidance outside it.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "meaning, whoever seeks guidance, then he must adhere to this Qur'an, for verily it is his salvation and guidance",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "81:27#c10",
+          "section_ref": "81:27",
+          "attaches_to": "81:28",
+          "text": "Grammatically, the \"for\" (lām) in \"for whoever wills among you\" stands in place of the \"for\" in \"for all the worlds.\" So the sense is: it is a reminder specifically for whoever among the worlds wills to be upright and follow it, rather than the text saying it is a reminder that benefits every single one of them equally.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "فاللام في قوله: لِمَنْ شَاءَ مِنْكُمْ إبدال من اللام في للعالمين",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "81:27#c11",
+          "section_ref": "81:27",
+          "attaches_to": "81:28",
+          "text": "It is reported that when this verse was revealed, Abu Jahl said, \"The matter is up to us; if we wish, we will be upright, and if we wish, we will not.\" This was taken as a denial of divine decree (qadar), and identified as the root of the Qadariyya position; a following verse (affirming that human willing only occurs by Allah's will) is said to have been revealed in response.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "قال أبو جهل : الأمر إلينا ، إن شئنا استقمنا ، وإن شئنا لم نستقم - وهذا هو القدر ; وهو رأس القدرية",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "Abu Jahl said, \"The matter is up to us. If we wish, we will stand straight, and we do not wish, we will not stand straight.\"",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not specified by the sources"
+          }
+        },
+        {
+          "id": "81:27#c12",
+          "section_ref": "81:27",
+          "attaches_to": "81:28",
+          "text": "The willing to be upright comes after the right course has become distinct from the wrong one, and guidance from misguidance.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "بعدما تبين الرشد من الغي، والهدى من الضلال",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "81:27#c13",
+          "section_ref": "81:27",
+          "attaches_to": "81:28",
+          "text": "After such clear speech, no excuse remains, because it makes the straight path evident to any sound heart. Yet even one who wills to walk straight cannot do so without Allah's enabling grace (tawfīq); the will alone is not sufficient.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "اگر وہ چاہیں بھی تو ، توفیق الٰہی کے بغیر راہ راست پر نہیں آسکتے",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "81:27#c14",
+          "section_ref": "81:27",
+          "attaches_to": "81:28",
+          "text": "The clause is a substitution highlighting that those who responded to the Qur'an's guidance had themselves willed guidance and uprightness; the sentence serves to praise them and note their high standing.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "للإِشعار بأن الذين استجابوا لهدى القرآن قد شاءوا لأنفسهم الهداية والاستقامة",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "81:27#c15",
+          "section_ref": "81:27",
+          "attaches_to": "81:28",
+          "text": "Though the reminder is meant for all mankind, only one who himself wants to follow the straight, true path can actually benefit from it. Being a truth-seeker and a lover of truth is the first condition for gaining anything from this reminder.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        }
+      ],
+      "essay_html": "<p>These two verses close the sura's long defence of the Qur'an with a plain summary: it is a reminder for everyone, and it reaches whoever chooses to be reached.<sup class=\"ref\">1,2,4,9,13</sup></p><p>\"It\" refers to the Qur'an itself.<sup class=\"ref\">1,2,3,9,13</sup> Al-Qurṭubī (d. 1273) notes that some readers took the word to point instead at the Prophet ﷺ, so that the phrase would mean \"Muhammad is only a reminder.\"<sup class=\"ref\">3</sup> On the main reading, the reminder (in Arabic, dhikr) is for all the worlds, meaning all mankind, and Ṭabarī (d. 923) adds jinn as well.<sup class=\"ref\">1,2,4,9,13,11,12,14</sup></p><p>Al-Saʿdī (d. 1957) spells out what this reminder covers: people are reminded of their Lord and His attributes of perfection, of His freedom from every defect, of His commands and prohibitions and the wisdom in them, and of the rulings of decree, law and requital. In short, they are reminded of the welfare of both worlds, and by acting on it they attain happiness in both.<sup class=\"ref\">5</sup> Sayyid Quṭb (d. 1966) reads the verse as telling people the truth of their own existence, the purpose of their creation, and the purpose of the universe around them, and takes the verse as evidence that the Islamic call was a universal one from its very beginning, even while surrounded by enemies.<sup class=\"ref\">6</sup> Isrār Aḥmad (d. 2010) describes the Qur'an's work as reviving truths already lodged, dormant, in human nature, truths that heedlessness had covered over.<sup class=\"ref\">8</sup> Ṭanṭāwī (d. 2010) reads the verse as continuing a rebuke to those who reject the Qur'an: after such clear proofs, no path is plainer than the one they have been shown.<sup class=\"ref\">9</sup></p><p>The second verse narrows the reach of that reminder: it is for whoever among you wills to be upright, meaning whoever wills to follow the truth and hold to it.<sup class=\"ref\">1,2,3,8,11,12,14</sup> Ibn Kathīr (d. 1373) puts it directly: whoever seeks guidance must hold to the Qur'an, for it is his means of salvation, and there is no guidance outside it.<sup class=\"ref\">4</sup></p><p>Ṭabarī draws out a grammatical point: the \"for\" in \"for whoever wills\" stands in the place of the \"for\" in \"for all the worlds.\" The reminder, in other words, is specifically for whoever among the worlds wills to be upright, not something automatically profiting everyone alike.<sup class=\"ref\">1</sup></p><p>Al-Qurṭubī and Ibn Kathīr both relay a report that when this verse came down, Abū Jahl said: \"The matter is up to us. If we wish, we will be upright, and if we wish, we will not.\" They identify this as a denial of divine decree (qadar), and as the origin of the Qadariyya position, and say a following verse affirming that human willing occurs only by Allah's will was revealed in answer.<sup class=\"ref\">3,4</sup></p><p>Al-Saʿdī notes that the willing to be upright comes after the right path has become distinct from the wrong one.<sup class=\"ref\">5</sup> Sayyid Quṭb adds that after such clear speech no excuse is left, since it makes the straight path plain to any sound heart, yet even the one who wills to walk it cannot do so without Allah's enabling grace (tawfīq).<sup class=\"ref\">6</sup> Ṭanṭāwī reads the clause as a mark of praise: those who responded to the Qur'an's guidance are shown to have willed that guidance for themselves.<sup class=\"ref\">9</sup> Abū Bakr Zakariyyā observes that though the reminder is meant for all mankind, only the one who himself wants the straight path can draw anything from it, being a seeker of truth is the first condition.<sup class=\"ref\">11</sup></p><p class=\"close\">The reminder is offered to everyone; what it becomes for each person turns on whether that person wills to be upright.<sup class=\"ref\">1,4,5,6,11</sup></p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "8",
+        "9",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:87710ce2687ed895216679b73ebdef7a4ac3fc10634c46964ee83a0d8b7488cd",
+        "2": "sha256:ec3b93df34a84455c8a7b3dc836a570f88749fc4886c9581a6a04288073e8af8",
+        "3": "sha256:e583ec25e4e6c9f51d95f59fca204cf8ce5d36fdbdba54ade7f52e0f632df217",
+        "4": "sha256:6e541d81847b2e2c4fbcdc15b0b5388b0ac9682105fb8a9d40c788a66dbcdcd8",
+        "5": "sha256:e26a353057f7bd9eeee9eca08fda5416bdc5f875e8cd190b682daf2afeba03f3",
+        "6": "sha256:33946e8b4acbf1cec582f8bf7ba001efce82e5608d0711dfdd2fcd1f2c5e632b",
+        "7": "sha256:37c5922adb120cce9243aac12d6119c1e167403ffdffb1056a981c74f7fdfd15",
+        "8": "sha256:c0b44fba71a5d57ec62e014f72fbe4df0bbbffbe09ed23b18584ba5ba423e573",
+        "9": "sha256:baa2f98f451ca6bf1958e5f77bdc27af746adba9870e6fa6409172b85b41c11a",
+        "10": "sha256:879cf04337ba11ad69a1a12a4e901da6b3152702bf2cd2025b9f7a1dab076873",
+        "11": "sha256:006d2e1ecc8b8eb2a06501828639344fe244020f60adb3d485601a017b41c988",
+        "12": "sha256:b7a7db725d966409eae712e82eab4cdcb4236e9b99be93036a8e4d764b6ef280",
+        "13": "sha256:5be5180ab6c0931aec9bd5ffd1b32013dbde89b5981966f3e1ff36908f2f315a",
+        "14": "sha256:336fa61a84f5fdeb406ebab63318506cc00108bcf63b007f7eb60b02bae2655f"
+      },
+      "flags": {
+        "creedal_stakes": true,
+        "legal_content": false,
+        "sensitive_content": false
+      },
+      "compiled_at": "2026-08-02"
+    }
+  }
+}

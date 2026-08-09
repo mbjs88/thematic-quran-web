@@ -1,0 +1,2220 @@
+{
+  "surah": 114,
+  "name": "",
+  "coverage": {
+    "editions_present": [
+      "ar-tafsir-al-tabari",
+      "ar-tafsir-al-baghawi",
+      "ar-tafseer-al-qurtubi",
+      "en-tafisr-ibn-kathir",
+      "ar-tafseer-al-saddi",
+      "tafsir-fe-zalul-quran-syed-qatab",
+      "en-tafsir-maarif-ul-quran",
+      "tafsir-bayan-ul-quran",
+      "ar-tafsir-al-wasit",
+      "tazkirul-quran-en",
+      "bn-tafsir-abu-bakr-zakaria",
+      "bn-tafsir-ahsanul-bayaan",
+      "ar-tafsir-muyassar",
+      "kurd-tafsir-rebar"
+    ],
+    "editions_absent": [],
+    "independent_works": 14,
+    "languages_present": [
+      "ar",
+      "bn",
+      "en",
+      "ku",
+      "ur"
+    ],
+    "languages_absent": []
+  },
+  "pipeline_provenance": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "overview-v2.3",
+    "theme_breaks_version": "sha256:99880ec7b10b53313690f91df9ee8d065519ee698df34b35a3336b5705218f90",
+    "compiled_at": "2026-08-02"
+  },
+  "modern_lens_framing": "The Qurʾan is taken here as fixed, revealed truth; science is our provisional, evolving account of the observable world. What follows notes where the two meet — a contemplation, not a proof. Where the science later shifts, that reflects the limits of our knowledge, not the text.",
+  "references": [
+    {
+      "n": 1,
+      "work_id": "al-tabari",
+      "label": "Jāmiʿ al-Bayān",
+      "author_id": "al-tabari",
+      "author": "Abū Jaʿfar Muḥammad ibn Jarīr al-Ṭabarī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 2,
+      "work_id": "al-baghawi",
+      "label": "Maʿālim al-Tanzīl",
+      "author_id": "al-baghawi",
+      "author": "Abū Muḥammad al-Ḥusayn ibn Masʿūd al-Baghawī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 3,
+      "work_id": "al-qurtubi",
+      "label": "al-Jāmiʿ li-Aḥkām al-Qurʾān",
+      "author_id": "al-qurtubi",
+      "author": "Abū ʿAbd Allāh Muḥammad ibn Aḥmad al-Qurṭubī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 4,
+      "work_id": "ibn-kathir",
+      "label": "Tafsīr Ibn Kathīr",
+      "author_id": "ibn-kathir",
+      "author": "Ismāʿīl ibn ʿUmar ibn Kathīr",
+      "source_language": "ar",
+      "note": "One independent voice. The ar/ur/bn editions are the SAME work — never count as separate corroboration."
+    },
+    {
+      "n": 5,
+      "work_id": "al-saadi",
+      "label": "Taysīr al-Karīm al-Raḥmān",
+      "author_id": "al-saadi",
+      "author": "ʿAbd al-Raḥmān ibn Nāṣir al-Saʿdī",
+      "source_language": "ar",
+      "note": "Russian edition (170) is the SAME work — translate from the Arabic original, and do not count Russian as an independent voice."
+    },
+    {
+      "n": 6,
+      "work_id": "fi-zilal",
+      "label": "Fī Ẓilāl al-Qurʾān",
+      "author_id": "sayyid-qutb",
+      "author": "Sayyid Quṭb Ibrāhīm Ḥusayn",
+      "source_language": "ar",
+      "note": "Original is Arabic, but the API here carries only an URDU edition — translating from Urdu is one step removed from the original. Prefer the Arabic original if the QF Content API offers it."
+    },
+    {
+      "n": 7,
+      "work_id": "maarif",
+      "label": "Maʿārif al-Qurʾān",
+      "author_id": "muhammad-shafi-usmani",
+      "author": "Muftī Muḥammad Shafīʿ ʿUthmānī",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 8,
+      "work_id": "bayan-ul-quran",
+      "label": "Bayān al-Qurʾān",
+      "author_id": "israr-ahmad",
+      "author": "Isrār Aḥmad",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 9,
+      "work_id": "wasit",
+      "label": "al-Tafsīr al-Wasīṭ",
+      "author_id": "tantawi",
+      "author": "Muḥammad Sayyid Ṭanṭāwī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 10,
+      "work_id": "tazkirul",
+      "label": "Tazkīr al-Qurʾān",
+      "author_id": "wahiduddin-khan",
+      "author": "Wahiduddin Khan",
+      "source_language": "ur",
+      "note": "en and ur editions are the same work."
+    },
+    {
+      "n": 11,
+      "work_id": "abu-bakr-zakaria",
+      "label": "Tafsir Abu Bakr Zakaria",
+      "author_id": "abu-bakr-zakaria",
+      "author": "Abū Bakr Muḥammad Zakariyyā",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 12,
+      "work_id": "ahsanul-bayaan",
+      "label": "Ahsanul Bayaan",
+      "author_id": "bayaan-foundation",
+      "author": "Ahsanul Bayaan (Bayaan Foundation)",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 13,
+      "work_id": "muyassar",
+      "label": "al-Tafsīr al-Muyassar",
+      "author_id": "committee-muyassar",
+      "author": "al-Tafsīr al-Muyassar (committee)",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 14,
+      "work_id": "rebar-kurdish",
+      "label": "Rebar Kurdish Tafsir",
+      "author_id": "rebar",
+      "author": "Rebar Kurdish Tafsir",
+      "source_language": "ku",
+      "note": ""
+    }
+  ],
+  "sections": {
+    "114:1": {
+      "verse_range": "1-3",
+      "title": "Three Names, One Refuge",
+      "in_short": "The Prophet ﷺ is told to say that he takes refuge in Allah under three names — the Lord, the King, and the God of mankind — each name adding a further reason why refuge in Him, and only Him, is complete protection.",
+      "claims": [
+        {
+          "id": "114:1#c1",
+          "section_ref": "114:1",
+          "attaches_to": "114:1",
+          "text": "Rabb (Lord) means the one who nurtures and sustains, who manages and puts right the affairs of His creation, taking care of everything in every circumstance.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "أستجير برب الناس",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "بمربيهم ومصلح أمورهم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "Rabb",
+              "gloss": "Lord, the one who nurtures and sustains"
+            }
+          ]
+        },
+        {
+          "id": "114:1#c2",
+          "section_ref": "114:1",
+          "attaches_to": "114:1",
+          "text": "Allah is Lord of all creation, yet He is named here specifically 'Lord of mankind' rather than 'Lord of everything'. Two reasons are given: mankind is held in high regard, so naming them shows He is Lord even over those they exalt and revere; and, since the refuge sought in the surah is from a harm that specifically touches people's hearts (the whisperer), it fits that He is named in relation to those He is protecting.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "إعلاما منه بذلك من كان يعظم الناس تعظيم المؤمنين ربهم أنه ملك من يعظمه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "لأن الناس معظمون؛ فأعلم بذكرهم أنه رب لهم وإن عظموا",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "أعوذ من شر الموسوس إلى الناس بربهم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "114:1#c3",
+          "section_ref": "114:1",
+          "attaches_to": "114:1",
+          "text": "Comparing the two closing surahs: in Surah al-Falaq refuge was sought as 'Lord of the daybreak' from bodily, worldly hardships that affect creatures generally; here refuge is sought as 'Lord of mankind' because the harm in view, Satanic instigation, is peculiar to man (with the jinn attached to him), unlike bodily harm which also touches animals.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "114:1#c4",
+          "section_ref": "114:1",
+          "attaches_to": "114:1",
+          "text": "The two Mu'awwadhatayn are paired: al-Falaq addresses protection from external threats, while al-Nas addresses protection from internal ones, the evil inclinations within man's own self.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "114:1#c5",
+          "section_ref": "114:1",
+          "attaches_to": "114:1",
+          "text": "A hadith reports that the Prophet ﷺ said Allah revealed to him verses like none seen before, and recited this surah and Surah al-Falaq to their end as examples.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "لقد أنزل الله علي آيات لم ير مثلهن",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "hasan",
+            "graded_by": "al-Tirmidhī (per al-Qurṭubī); also related by Muslim"
+          }
+        },
+        {
+          "id": "114:1#c6",
+          "section_ref": "114:1",
+          "attaches_to": "114:1",
+          "text": "A hadith from ʿĀʾishah رضي الله عنها reports that the Prophet ﷺ, before sleeping, would join his palms, recite Surah al-Ikhlāṣ, al-Falaq and al-Nās into them, blow, then wipe them over as much of his body as he could reach, beginning with his head and face, repeating this three times.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "relay",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "reported in Bukhārī, and by the compilers of the Sunan, as cited by Sayyid Quṭb"
+          }
+        },
+        {
+          "id": "114:1#c7",
+          "section_ref": "114:1",
+          "attaches_to": "114:1",
+          "text": "Satan is the root and substance of all evils; his whispering into people's chests beautifies wrongdoing and shows it in an attractive form, energising the will towards it, while making good look repugnant and holding people back from it. He remains in this state constantly, withdrawing only when the servant remembers his Lord and seeks help to repel him.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "يوسوس في صدور الناس، فيحسن لهم الشر",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "114:1#c8",
+          "section_ref": "114:1",
+          "attaches_to": "114:1",
+          "text": "One should seek help and shelter in Allah's lordship over all mankind, since every creature is under His dominion, held by its forelock, and in His divinity for which they were created, which cannot be fulfilled except by repelling the enemy who wishes to cut them off from it and draw them into his own party; the whispering comes from both jinn and mankind alike.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "فكل دابة هو آخذ بناصيتها",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "114:1#c9",
+          "section_ref": "114:1",
+          "attaches_to": "114:1",
+          "text": "The commentators differ on whether the surah is Meccan or Medinan: al-Baghawī states it is Medinan, while Ibn Kathīr and the Kurdish tafsīr of Rebar state it was revealed in Makkah.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "مدنية",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "original_excerpt": "سووره‌تی مه‌ككى",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "114:1#c10",
+          "section_ref": "114:1",
+          "attaches_to": "114:2",
+          "text": "Malik (King/Sovereign) means the one who fully owns and manages mankind's affairs, in complete control of their matters and independent of them.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "المالك لأمرهم ملكا تاما",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "المتصرف في كل شؤونهم، الغني عنهم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "Malik",
+              "gloss": "King, the one who fully owns and controls"
+            }
+          ]
+        },
+        {
+          "id": "114:1#c11",
+          "section_ref": "114:1",
+          "attaches_to": "114:2",
+          "text": "Rabb on its own can be used of a non-divine master (a landlord, an owner of wealth), so Malik is added to establish that this Lord is specifically a King, not merely an ordinary master.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "original_excerpt": "rabb-ud-dar [land-lord] or rabb-ul-mal",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "114:1#c12",
+          "section_ref": "114:1",
+          "attaches_to": "114:2",
+          "text": "Al-Qurṭubī explains that Malik is mentioned because among mankind there are kings, so naming Allah 'King of mankind' shows He is King even over their kings, whom people otherwise revere.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "لأن في الناس ملوكا يذكر أنه ملكهم",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "114:1#c13",
+          "section_ref": "114:1",
+          "attaches_to": "114:2",
+          "text": "Grammatically, 'King of mankind' and 'God of mankind' function as clarifying appositions (ʿaṭf bayān) to 'Lord of mankind', each adding further explanation, comparable to saying 'the biography of Abū Ḥafṣ, ʿUmar al-Fārūq'; the word 'mankind' is repeated explicitly rather than replaced by a pronoun because this kind of clarifying apposition calls for explicit repetition, not a pronoun.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "هما عطفا بيان",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "114:1#c14",
+          "section_ref": "114:1",
+          "attaches_to": "114:3",
+          "text": "Ilah (God) means the one who is worshipped, to whom worship is due exclusively, with no other deserving it.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "معبود الناس، الذي له العبادة دون كل شيء سواه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "الذي لا معبود بحق سواه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "Ilah",
+              "gloss": "God, the sole rightful object of worship"
+            }
+          ]
+        },
+        {
+          "id": "114:1#c15",
+          "section_ref": "114:1",
+          "attaches_to": "114:3",
+          "text": "Not every king deserves worship, so the third attribute, Ilah, is added after Malik to establish that this particular King is also the one true object of worship.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "114:1#c16",
+          "section_ref": "114:1",
+          "attaches_to": "114:3",
+          "text": "Al-Qurṭubī explains that Ilah is mentioned because among mankind some worship something other than Allah, so naming Him 'God of mankind' establishes that He alone is their true object of worship, and it is to Him alone, not to kings or the great ones, that refuge and reliance are due.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وأنه الذي يجب أن يستعاذ به ويلجأ إليه، دون الملوك والعظماء",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "114:1#c17",
+          "section_ref": "114:1",
+          "attaches_to": "114:3",
+          "text": "The three names together, Lord, King, God, stand for three distinct divine attributes: lordship, sovereignty, and divinity. Everything is created by Him, owned by Him, and subject to Him, and only Allah unites all three attributes at once.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning",
+          "theological_school": "Atharī"
+        },
+        {
+          "id": "114:1#c18",
+          "section_ref": "114:1",
+          "attaches_to": "114:3",
+          "text": "Muftī Muḥammad Shafīʿ explains the wisdom of combining all three names: each motivates protection differently, since a master cares for his servants, a king looks after his subjects, and one who is worshipped can be expected to protect his worshipper even more. Only Allah possesses all three attributes at once, so invoking Him through these three names together is the greatest possible form of protection, and the most readily accepted.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "114:1#c19",
+          "section_ref": "114:1",
+          "attaches_to": "114:3",
+          "text": "Muftī Muḥammad Shafīʿ notes the word 'mankind' is repeated in full across all three verses, rather than replaced by a pronoun ('their King', 'their God'); this repetition is deliberate, since the passage is a supplication, and repetition here adds force and clarity through natural rhyme and rhythm.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric"
+        },
+        {
+          "id": "114:1#c20",
+          "section_ref": "114:1",
+          "attaches_to": "114:3",
+          "text": "Some scholars, as related by Muftī Muḥammad Shafīʿ, read the fivefold repetition of the word 'mankind' across the surah as pointing to five different groups: the first occurrence, with Lord, to children, who need nurturing most; the second, with King, to youth, fitting kingship's political sense; the third, with God, to old age, when people devote themselves wholly to worship; the fourth, with 'whisperer', to the righteous, whom Satan targets; and the fifth to the mischief-makers, from whose harm refuge is sought.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "114:1#c21",
+          "section_ref": "114:1",
+          "attaches_to": "114:3",
+          "text": "Ṭanṭāwī, citing al-Jamal, observes that the order Lord, King, God reflects the most complete sequence, pointing to Allah's oneness: a person first perceives the blessings, outward and inward, upon him and knows he has a Nurturer; as understanding grows he realises Allah is self-sufficient and all things return to Him, so he knows Him as King; then, through Allah's exclusive management of creation after bringing it into being, he knows He alone deserves worship, without partner.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "وقد وقع ترتيب هذه الإضافات على الوجه الأكمل، الدال على الوحدانية",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        }
+      ],
+      "essay_html": "<p>The Prophet ﷺ is told to say a prayer of refuge, naming Allah by three titles that run through these three verses: Lord (Rabb), King (Malik) and God (Ilah) of mankind. Each title adds a further reason for taking shelter in Him, and Him alone.<sup class=\"ref\">4,7,9</sup></p><p>Rabb means the one who nurtures and sustains, who puts right the affairs of His creation and takes care of everything in every circumstance.<sup class=\"ref\">1,7,8,9,12</sup> Allah is Lord of everything, yet here He is named specifically Lord of mankind. Two reasons are offered. People are held in high regard by each other, so naming them shows Allah is Lord even over those they revere, and so is more deserving of reverence than anyone they exalt.<sup class=\"ref\">1,3,12</sup> And since the refuge sought in this surah is from a harm that touches people's hearts specifically, the whisperer, it fits that Allah is named in relation to those He is protecting, much as a servant in trouble calls on his own master.<sup class=\"ref\">3,9</sup> Muftī Muḥammad Shafīʿ (d. 1976) draws out the pairing with the previous surah: al-Falaq sought refuge as 'Lord of the daybreak' from bodily harms that touch all creatures, while al-Nas seeks refuge from a harm, Satanic instigation, peculiar to man.<sup class=\"ref\">7</sup> Wahiduddin Khan (d. 2021) puts the same pairing differently: al-Falaq addresses threats from outside, al-Nas the evil inclination within man's own self.<sup class=\"ref\">10</sup></p><p>Malik means the one who fully owns and manages mankind's affairs, in complete control and independent of them.<sup class=\"ref\">8,9,13,14</sup> It is added because Rabb on its own can describe an ordinary master, a landlord or an owner of wealth, so Malik specifies that this Lord is a King.<sup class=\"ref\">1,7,9</sup> Al-Qurṭubī (d. 1273) notes that among mankind there are kings, so calling Allah 'King of mankind' shows He is King even over the kings people revere.<sup class=\"ref\">3</sup></p><p>Ilah means the one worshipped, to whom worship belongs exclusively.<sup class=\"ref\">1,8,9,13,14</sup> It follows Malik because not every king deserves worship, so a third title is needed to establish that this King is also the true object of worship.<sup class=\"ref\">7</sup> Al-Qurṭubī adds that some among mankind worship things besides Allah, so naming Him 'God of mankind' fixes that He alone is their rightful object of worship and refuge, not kings or the great.<sup class=\"ref\">3</sup></p><p>Taken together, the three titles cover lordship, sovereignty and divinity. Everything is created, owned, and subject to Him, and only Allah holds all three at once.<sup class=\"ref\">4,11,13</sup> Muftī Shafīʿ explains why the combination matters: a master cares for his servants, a king for his subjects, and one who is worshipped is expected to protect his worshipper even more. Since no other being unites all three, invoking Him this way is the fullest form of protection.<sup class=\"ref\">7</sup> Ṭanṭāwī (d. 2010), citing al-Jamal, reads the order itself as a ladder towards recognising Allah's oneness: a person first knows Him as Nurturer through the blessings around him, then as King once he grasps that all things return to Him, then as God once he sees that He alone manages creation without partner.<sup class=\"ref\">9</sup> The repeated word 'mankind', rather than a pronoun, is explained two ways: as deliberate rhetorical repetition suited to supplication, giving rhyme and force,<sup class=\"ref\">7</sup> and grammatically, by al-Zamakhsharī, as a clarifying apposition that requires the noun to be spelled out each time.<sup class=\"ref\">9</sup> Some scholars, as Muftī Shafīʿ relates, even matched the surah's five mentions of 'mankind' to five stages of life, from children under the Lord's nurturing to the mischief-makers at the end.<sup class=\"ref\">7</sup></p><p>Al-Saʿdī (d. 1957) describes what this refuge is against: Satan, the root of all evils, who whispers into people's chests, dressing up wrongdoing as attractive and good as repugnant, withdrawing only when the servant remembers his Lord.<sup class=\"ref\">5</sup> He urges shelter in both Allah's lordship, since every creature is held by its forelock, and His divinity, which cannot be fulfilled except by repelling this enemy.<sup class=\"ref\">5</sup> Al-Qurṭubī records a hadith, graded ḥasan ṣaḥīḥ by al-Tirmidhī and also related by Muslim, in which the Prophet ﷺ said Allah had revealed to him verses like none before, citing this surah and al-Falaq.<sup class=\"ref\">3</sup> Sayyid Quṭb (d. 1966) relays a further report, from ʿĀʾishah رضي الله عنها in Bukhārī and the Sunan, that the Prophet ﷺ would recite al-Ikhlāṣ, al-Falaq and al-Nas into his joined palms before sleep, then wipe them over his body three times.<sup class=\"ref\">6</sup> The commentators even differ on where the surah was revealed: al-Baghawī (d. 1122) calls it Medinan, while Ibn Kathīr (d. 1373) and the Kurdish tafsīr of Rebar call it Meccan.<sup class=\"ref\">2,4,14</sup></p><p class=\"close\">Three names, one refuge: the Lord who nurtures, the King who owns, the God who alone deserves worship, and no protection is asked of anyone but Him.<sup class=\"ref\">4,7,9,13</sup></p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:07e298f45a19661f6fbf48169a59a48844e2016844356614265b6af8f6493476",
+        "2": "sha256:749b66ca46af496bc49784ef789e889a7beadac86d2979817413c00924958a15",
+        "3": "sha256:3f460ee51bd60469adc342007b5ea1c7187795c13644028aaf914ab7f1925fdb",
+        "4": "sha256:5d9af36373232a041ffa36748d3564abbcc4c05add0016bb5a024feb0687c903",
+        "5": "sha256:9b20a77c17f1216c7fbbf7f70cc867b6e32962e2b97e3335c0a1e0ddb6fb03d2",
+        "6": "sha256:ddc1e5fae08409b99b6b50b8eb17f0f93d8f891cc9aa389fae7ed384b7beed07",
+        "7": "sha256:57589c46db808aa626b1a0d3576e2f3c873c218c83b1596efbaef837125b83f8",
+        "8": "sha256:0b45cc6db079c1d0cb8fd815824ff75b120ac288ab4489a1450ccf0d830557b8",
+        "9": "sha256:04d060f8025857b193fa0cb47746287bb64cf6bd1b3eb990cb9b1d3d3ac47c40",
+        "10": "sha256:efa4680aace4b7b82525c28ffe6025621457a128e7681d34a210fb3b0628bdba",
+        "11": "sha256:fcbfc58d8db83acd6b17b9fe43a338a80a019396fa2f21144233b8271faab12d",
+        "12": "sha256:218d31003867f4e6ef9bc71b9c9545eaf08ba735e48098b46376c5d12a787dda",
+        "13": "sha256:6a04faf57b5a39bd11db0eaaa49cca05d90f0bdba5741e1f788c7b4465c25d86",
+        "14": "sha256:1d28b74660b86a4d0f7f38ea9df49bc71dd7299011bb73a6afa07c759e594166"
+      },
+      "flags": {
+        "creedal_stakes": "true",
+        "legal_content": "false",
+        "sensitive_content": "false"
+      },
+      "compiled_at": "2026-08-02"
+    },
+    "114:4": {
+      "verse_range": "4-5",
+      "title": "The Whisperer Who Withdraws",
+      "in_short": "The last two verses name what the reader is taking refuge from: a whisperer called al-Waswas al-Khannas, who plants suggestions into people's hearts, then slinks away whenever a person remembers God.",
+      "claims": [
+        {
+          "id": "114:4#c1",
+          "section_ref": "114:4",
+          "attaches_to": "114:4",
+          "text": "Al-Waswas (the whisperer) refers to Shaytan, named for the very act he specialises in.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "من شر الوسواس يعني: من شرّ الشيطان",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "يعني الشيطان",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "يعني: من شر الشيطان",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "من أذى الشيطان",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "الوَسواس",
+              "gloss": "the whisperer / whispering"
+            }
+          ]
+        },
+        {
+          "id": "114:4#c2",
+          "section_ref": "114:4",
+          "attaches_to": "114:4",
+          "text": "Grammatically, waswas can be read two ways: with a short vowel it is a verbal noun meaning 'whispering' itself; with a different vowelling it is a noun meaning 'the one who whispers'. Some say the phrase originally meant 'the one possessing whispering' (dhū al-waswās), with a word dropped.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "بفتح الواو ... بمعنى الاسم ... وبكسر الواو المصدر",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar",
+          "original_terms": [
+            {
+              "term": "وسواس / وِسواس",
+              "gloss": "the difference between the noun form and the verbal-noun form of the same root"
+            }
+          ]
+        },
+        {
+          "id": "114:4#c3",
+          "section_ref": "114:4",
+          "attaches_to": "114:4",
+          "text": "Al-Khannas means the one who withdraws, sneaks off, or hides, from the root khanasa (to slink away). Ṭanṭāwī notes the word is an intensive form, meaning he does this repeatedly and habitually.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "الرجاع",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "الخنس: الرجوع",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "صيغة مبالغة من الخنوس",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "يختفي عند ذكر الله",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "الخَنّاس",
+              "gloss": "the one who habitually withdraws/sneaks away"
+            }
+          ]
+        },
+        {
+          "id": "114:4#c4",
+          "section_ref": "114:4",
+          "attaches_to": "114:4",
+          "text": "The core picture reported from Ibn ʿAbbās, Mujāhid and Qatādah: the devil crouches perched on the heart of the son of Adam. When the person is heedless, he whispers; when the person remembers God, he withdraws.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "الشيطان جاثم على قلب ابن آدم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "The devil who is squatting (perched) upon the heart of the Son of Adam",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "relay",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "relay",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "reported as sayings of Ibn ʿAbbās, Mujāhid and Qatādah, not as a Prophetic ḥadīth"
+          }
+        },
+        {
+          "id": "114:4#c5",
+          "section_ref": "114:4",
+          "attaches_to": "114:4",
+          "text": "Qatādah's own image adds a detail: the devil has a snout like a dog's snout, placed on the human heart; when the person is heedless he whispers with it, and when the servant remembers his Lord he withdraws.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "له خرطوم كخرطوم الكلب",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "له خرطوم كخرطوم الكلب في صدر الإنسان",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "114:4#c6",
+          "section_ref": "114:4",
+          "attaches_to": "114:4",
+          "text": "Al-Ṭabarī, weighing the various reports, gives his own resolution: the whispering and withdrawing covers both directions. Sometimes Shayṭān invites toward disobedience and withdraws once he is obeyed in it; other times he calls a person away from obeying God, and withdraws when the servant remembers his Lord's command, obeys Him, and disobeys Shayṭān instead. Either way, he is a whisperer-withdrawer.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "والصواب من القول في ذلك عندي أن يقال...فهو في كلّ حالتيه وَسْواس خَناس",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "114:4#c7",
+          "section_ref": "114:4",
+          "attaches_to": "114:4",
+          "text": "It was mentioned that Shayṭān, the whisperer, blows into a person's heart both at times of sorrow and at times of joy.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "ينفث في قلب الإنسان عند الحزن وعند الفرح",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "114:4#c8",
+          "section_ref": "114:4",
+          "attaches_to": "114:4",
+          "text": "A ḥadīth reports that every person has an assigned qarīn, a devil-companion. The Prophet ﷺ himself was asked about this and said even his own companion had been overcome, having submitted, so that it only prompts him to good.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "مَا مِنْكُمْ مِنْ أَحَدٍ إِلَّا قَدْ وُكِّلَ بِهِ قَرِينُهُ",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "Ibn Kathīr, citing the Ṣaḥīḥ (Muslim)"
+          }
+        },
+        {
+          "id": "114:4#c9",
+          "section_ref": "114:4",
+          "attaches_to": "114:4",
+          "text": "Another ḥadīth reported by Muftī Shafīʿ: Allah has built two houses in man's heart, one for an angel and one for the devil; the angel urges good, the devil urges evil, and the devil withdraws whenever the person remembers Allah and returns whenever he forgets.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "Muftī Shafīʿ, transmitted from Abū Yaʿlā via al-Maẓharī, without a stated grade"
+          }
+        },
+        {
+          "id": "114:4#c10",
+          "section_ref": "114:4",
+          "attaches_to": "114:4",
+          "text": "A man told the Prophet ﷺ that he sometimes has thoughts in himself so dreadful he would rather fall from the sky than voice them. The Prophet ﷺ responded with praise to God, who reduced Shayṭān's plotting to a mere whisper, meaning it stays powerless unless acted upon.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "الْحَمْدُ للهِ الَّذِي رَدَّ كَيْدَهُ إِلَى الْوَسْوَسَةِ",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "Ibn Kathīr, citing Aḥmad, Abū Dāwūd and al-Nasāʾī without stating a grade"
+          }
+        },
+        {
+          "id": "114:4#c11",
+          "section_ref": "114:4",
+          "attaches_to": "114:4",
+          "text": "A narrative circulated (from Wahb ibn Munabbih) that Waswās al-Khannās was literally a son born to Iblīs, given to Ḥawwāʾ, repeatedly destroyed by Ādam عليه السلام yet reviving each time Iblīs called his name 'Khannās', until he finally lodged permanently inside the children of Ādam. Al-Qurṭubī records the story but voices doubt about its soundness.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "refute",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وما أظنه يصح، والله تعالى أعلم",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "daif",
+            "graded_by": "al-Qurṭubī, who says of it 'I do not think it is sound' (mā aẓunnuhu yaṣiḥḥ)"
+          }
+        },
+        {
+          "id": "114:4#c12",
+          "section_ref": "114:4",
+          "attaches_to": "114:4",
+          "text": "Ibn Jubayr transmits two glosses from Ibn ʿAbbās: al-Khannās either means the one who turns a person back from guidance through whispering, or the one who leads a person out of certainty through whispering.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "الراجع بالوسوسة عن الهدى...الخارج بالوسوسة من اليقين",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "114:4#c13",
+          "section_ref": "114:4",
+          "attaches_to": "114:4",
+          "text": "Isrār Aḥmad reads the verse as describing the devil's method: relentless, never tiring, sometimes attacking, sometimes retreating defensively, then attacking again.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "کبھی حملہ کرتا ہے، کبھی دفاعی پسپائی اختیار کرتا ہے اور پھر پلٹ کر حملہ آور ہوتا ہے",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "114:4#c14",
+          "section_ref": "114:4",
+          "attaches_to": "114:4",
+          "text": "Al-Saʿdī describes Shayṭān as the root and source of all evils: he beautifies wrongdoing so it looks attractive, energises the will to do it, makes good look ugly, and holds people back from it, showing each thing in other than its true form.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "يحسن لهم الشر، ويريهم إياه في صورة حسنة...ويقبح لهم الخير ويثبطهم عنه",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "114:4#c15",
+          "section_ref": "114:4",
+          "attaches_to": "114:4",
+          "text": "Al-Qurṭubī notes waswasa lexically means the self's inner talk (ḥadīth al-nafs); Arab poets also used the word for faint, hidden sounds, such as a hunter's rustling or the tinkle of jewellery, showing the term denotes something soft and concealed.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "الوسوسة: حديث النفس",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "114:4#c16",
+          "section_ref": "114:4",
+          "attaches_to": "114:4",
+          "text": "Al-Qurṭubī links the description khannās to the same root used elsewhere in the Qur'an for stars called al-khunnas, which withdraw or hide after appearing.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "فلا أقسم بالخنس يعني النجوم، لاختفائها بعد ظهورها",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "114:4#c17",
+          "section_ref": "114:4",
+          "attaches_to": "114:4",
+          "text": "Reading this closing sūrah beside the previous one, Wahiduddin Khan observes that Sūrat al-Falaq seeks refuge from external evils, while Sūrat al-Nās turns to the evil within man's own self and within other men's hearts. Seeking refuge is two-sided: it draws God's grace, and it also awakens a person's own awareness of the danger so he can resist it more consciously.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "114:4#c18",
+          "section_ref": "114:4",
+          "attaches_to": "114:5",
+          "text": "There are two readings of the scope of 'people' (al-nās) whose hearts are whispered into: some take it strictly of the children of Adam, since that is the apparent sense; others take it to include the jinn as well, since Arabic usage elsewhere calls jinn 'men' (rijāl min al-jinn), so calling them 'people' (nās) is not unusual.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "قد سماهم الله في هذا الموضع ناسا، كما سماهم في موضع آخر رجالا",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "There are two views concerning this",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "relay",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "والوسواس كما يكون من الجن يكون من الإنس",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "114:4#c19",
+          "section_ref": "114:4",
+          "attaches_to": "114:5",
+          "text": "A related view (noted by Ibn Kathīr) is that the following phrase 'of jinn and mankind' does not describe who receives the whisper but rather who does the whispering, meaning devils from among both jinn and humans are the ones who whisper into people's breasts.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "Is this explanatory of Allah's statement...an explanation of who it is that whispers",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "114:4#c20",
+          "section_ref": "114:4",
+          "attaches_to": "114:5",
+          "text": "Ibn Zayd (as reported by al-Ṭabarī) held that al-Khannās whispers come from tempters among both jinn and humans, and it used to be said that the human devil is more harmful to people than the jinn devil, because the jinn devil whispers unseen while the human one confronts a person openly.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "كان يقال: شيطان الإنس أشدّ على الناس من شيطان الجنّ",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "114:4#c21",
+          "section_ref": "114:4",
+          "attaches_to": "114:5",
+          "text": "The whispering is a hidden, silent form of speech: its meaning reaches the heart without any sound being heard.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "بالكلام الخفي الذي يصل مفهومه إلى القلب من غير سماع",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "بكلام خفي، يصل مفهومه إلى القلب من غير سماع صوت",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "114:4#c22",
+          "section_ref": "114:4",
+          "attaches_to": "114:5",
+          "text": "Muqātil held that Shayṭān takes a form and runs through the son of Adam as blood runs through the veins, which al-Qurṭubī says the authentic ḥadīth about Shayṭān 'running in the son of Adam like the running of blood' (told in the story of the Prophet ﷺ walking Ṣafiyyah home) supports.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "إن الشيطان يجري من ابن آدم مجرى الدم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "إِنَّ الشَّيْطَانَ يَجْرِي مِنِ ابْنِ آدَمَ مَجْرَى الدَّم",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "found in the two Ṣaḥīḥs, per Ibn Kathīr"
+          }
+        },
+        {
+          "id": "114:4#c23",
+          "section_ref": "114:4",
+          "attaches_to": "114:5",
+          "text": "A report from Abū Thaʿlaba al-Khushanī, who asked Allah to show him Shayṭān and his place in the son of Adam, describes seeing him with hands, feet and branching pathways through the body, and a snout like a dog's, withdrawing and cowering when Allah is remembered, and gripping the heart when remembrance stops.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "له خطما كخطم الكلب، فإذا ذكر الله خنس ونكس",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Qurṭubī reports it via Shahr b. Ḥawshab without stating a grade"
+          }
+        }
+      ],
+      "essay_html": "<p>These two verses name the very thing the reader is seeking refuge from: al-Waswas al-Khannas, the whisperer who withdraws. The commentators agree the word points to Shaytan himself, called this because whispering is what he does.<sup class=\"ref\">1,2,3,7,9,12,13</sup> Linguists note the word can be read as the whispering itself, or as the one who whispers, or short for 'the one possessing whispering'.<sup class=\"ref\">2,3,7,9,12</sup></p><p>Khannas means the one who slinks away, from a root meaning to withdraw or hide. Tantawi (d. 2010) reads the intensive form as meaning he does this again and again, habitually.<sup class=\"ref\">1,2,3,7,9,12,13</sup> The picture reported from Ibn Abbas, Mujahid, and Qatadah is vivid: the devil crouches perched on the heart of the son of Adam. When the person is heedless, he whispers. When the person remembers God, he withdraws.<sup class=\"ref\">1,2,3,4,5,7,13,14</sup> Qatadah adds a detail: the devil has a snout like a dog's, resting on the human heart, whispering while the person is heedless, pulling back the instant the servant remembers his Lord.<sup class=\"ref\">2,3</sup></p><p>Al-Tabari (d. 923), weighing several reports, settles on a wider reading: the whispering-and-withdrawing covers both directions. Sometimes the devil invites toward disobedience and withdraws once he is obeyed in it. Other times he calls someone away from obeying God, and withdraws only when the person remembers God's command and obeys Him instead.<sup class=\"ref\">1</sup> One report adds that he whispers both at times of sorrow and at times of joy.<sup class=\"ref\">1</sup></p><p>Several hadiths sit around this picture. One states that every person has an assigned qarin, a devil-companion, and that even the Prophet's ﷺ own companion had been overcome and now only urges good.<sup class=\"ref\">4,11</sup> Another compares the heart to two houses, one for an angel who urges good, one for a devil who urges evil, each withdrawing or advancing with remembrance.<sup class=\"ref\">7</sup> A further report has the Prophet ﷺ reassuring a man troubled by dreadful passing thoughts: such things are Shaytan's plot reduced to mere whisper, powerless unless acted upon.<sup class=\"ref\">4</sup></p><p>A narrative also circulated that Waswas al-Khannas was literally a son born to Iblis, destroyed repeatedly by Adam عليه السلام yet reviving each time, until he lodged permanently inside Adam's children. Al-Qurtubi (d. 1273) records it but says plainly he does not think it is sound.<sup class=\"ref\">3</sup> Ibn Jubayr transmits two further glosses from Ibn Abbas: al-Khannas is either the one who turns a person back from guidance, or the one who leads a person out of certainty, through whispering.<sup class=\"ref\">3</sup> Israr Ahmad (d. 2010) reads the devil's method as relentless: attack, defensive retreat, then attack again.<sup class=\"ref\">8</sup> Al-Sa'di (d. 1957) calls Shaytan the root and source of all evils, who dresses wrong in an attractive shape and good in an ugly one, showing each thing as other than it truly is.<sup class=\"ref\">5</sup></p><p>Al-Qurtubi notes that waswasa lexically means the self's inner talk, and that poets used the same word for faint, hidden sounds, a hunter's rustle, the tinkle of jewellery, showing it means something soft and concealed.<sup class=\"ref\">3</sup> He also links khannas to the Qur'anic term for stars, al-khunnas, that withdraw from view after appearing.<sup class=\"ref\">3</sup> Reading this closing surah beside the one before it, Wahiduddin Khan (d. 2021) observes that Surat al-Falaq sought refuge from evils outside a person, while this surah turns to the evil within the self and within other hearts. Seeking refuge, he adds, works two ways: it draws God's grace, and it wakens a person's own awareness of the danger.<sup class=\"ref\">10</sup></p><p>Verse five, 'who whispers in the breasts of people', raises a further question the commentators discuss: does 'people' (al-nas) here mean only the children of Adam, or does it include the jinn too, since Arabic elsewhere calls jinn 'men'?<sup class=\"ref\">1,4,5</sup> Ibn Kathir (d. 1373) notes an alternative reading, that the following phrase describes not who receives the whisper but who delivers it, devils from among both jinn and humans.<sup class=\"ref\">4</sup> Ibn Zayd, as related by al-Tabari, went further: it was said the human devil is more harmful, since the jinn devil whispers unseen while the human one confronts a person face to face.<sup class=\"ref\">1</sup> The whispering itself, several agree, is a silent form of speech, its meaning reaching the heart without any sound being heard.<sup class=\"ref\">2,3,7,9</sup> Muqatil held that Shaytan runs through the son of Adam as blood runs through the veins, a claim al-Qurtubi ties to the authentic hadith of the Prophet ﷺ using that very image while walking Safiyyah home.<sup class=\"ref\">3,4</sup> A further report, from Abu Tha'laba al-Khushani, describes a vision of Shaytan's form lodged through the body with a dog-like snout, withdrawing at the remembrance of God and gripping the heart when remembrance stops.<sup class=\"ref\">3</sup></p><p class=\"close\">Across these readings the one constant is the rhythm the sources keep returning to: whisper when forgetful, withdrawal when remembered, so that the whole surah's refuge is aimed at a struggle that plays out, quietly, inside the human breast.</p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:6719084a3c47eb15a22456ccaf99a480a7c068de6a3e141b5a8b97f038937c61",
+        "2": "sha256:147cc862af36bc17d6dfdfb240b3d18d441cc9ec1bbcbacf4f37aa17dcd13a05",
+        "3": "sha256:2959365c5230b01f9b4bfd0e6e638ad0c216bac47276e72ffb71125457d79169",
+        "4": "sha256:92f27ae365fad484a15c9c0ff4a1b27d03357eeea36b7b532acd9e4add1b4b04",
+        "5": "sha256:67a04135c1e527e61a542590aff626066c5368112bb0949531fbc34581e4ea19",
+        "6": "sha256:a0783443e17605f049de6e88f3fcb7aa3fb4e39d7a2a4554d2ff6644ef3da372",
+        "7": "sha256:97a2986ae66cc79f6480ad01453f032edc3d74f8b88d84e482d15a7979415516",
+        "8": "sha256:f5e6238f46536aac99e5cc184b67c78f9d78bceb45d2c8b679145d25c07aedd6",
+        "9": "sha256:2c03b8b003b90c4efbfdc51f0ca9d966faa3466e46c65a9d5b0bc7eb036f522c",
+        "10": "sha256:e442404b62e7bf95253fdbd29987276c5c2ae835a2601f4caa0d70339f935dfd",
+        "11": "sha256:7458c72bca51577c0761a1b296ed0b83717cf72f167949d0ca9c2f76148745bf",
+        "12": "sha256:1509083a92ad5833a3a9169afadedfc558ad8129391a35657503948939131625",
+        "13": "sha256:65c4600579429bef848bdaee9e7317de48b7b3b9f50288b38e599da6d107cd18",
+        "14": "sha256:3742cb9850bb40a12777fd8fad7a0ed9233e9da3154d1c65aa4bb33423a20484"
+      },
+      "flags": {
+        "creedal_stakes": true,
+        "legal_content": false,
+        "sensitive_content": true
+      },
+      "compiled_at": "2026-08-02"
+    },
+    "114:6": {
+      "verse_range": "6-6",
+      "title": "From Jinn or From People",
+      "in_short": "The closing words name the two sources of the whisper mentioned earlier in the surah: it can come from a jinn-devil or from a human devil, and the commentators explore what that pairing means.",
+      "claims": [
+        {
+          "id": "114:6#c1",
+          "section_ref": "114:6",
+          "attaches_to": "114:6",
+          "text": "This phrase explains the earlier word 'people' (al-nās) in verse 4, whose breasts receive the whisper: the Qur'an is here calling jinn 'people' too, just as it elsewhere calls them 'men' (rijāl) in Surah al-Jinn. An Arab was reportedly heard describing a group of jinn he met as 'nās min al-jinn' (people, from the jinn).",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "قد سماهم الله في هذا الموضع ناسا، كما سماهم في موضع آخر رجالا",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "فسمى الجن ناسا، كما سماهم رجالا",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "سموا ناسا كما سموا رجلا",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "114:6#c2",
+          "section_ref": "114:6",
+          "attaches_to": "114:6",
+          "text": "A second reading takes the phrase as naming the whisperer itself: the one who whispers can be a devil from the jinn or a devil from mankind. There are human devils as well as jinn devils, echoing the Qur'an's statement that every prophet was given enemies who were 'devils of mankind and of jinn'.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "أخبر أن الموسوس قد يكون من الناس",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "الوسوسة بالسوء تأتى من نوعين من المخلوقات",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "من شياطين الجن والإنس",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "114:6#c3",
+          "section_ref": "114:6",
+          "attaches_to": "114:6",
+          "text": "Al-Ḥasan distinguished the two kinds of devil: the jinn-devil whispers unseen and silently into the breast, while the human devil comes openly.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "هما شيطانان؛ أما شيطان الجن فيوسوس في صدور الناس، وأما شيطان الإنس فيأتي علانية",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "114:6#c4",
+          "section_ref": "114:6",
+          "attaches_to": "114:6",
+          "text": "A question follows: a jinn-devil casts a silent evil prompting, but a human devil speaks aloud and openly. How, then, can he 'whisper'? The answer given is that human beings often cast doubt into others' minds indirectly, without ever saying the doubt outright.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "114:6#c5",
+          "section_ref": "114:6",
+          "attaches_to": "114:6",
+          "text": "Qatādah, and a report about Abū Dharr, held that there are devils among the jinn and devils among mankind, so refuge must be sought from both kinds together, citing the verse that every prophet was given enemies from the devils of mankind and jinn.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "إن من الجن شياطين، وإن من الإنس شياطين",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded by the source"
+          }
+        },
+        {
+          "id": "114:6#c6",
+          "section_ref": "114:6",
+          "attaches_to": "114:6",
+          "text": "Al-Kalbī, reported by al-Baghawī, read the phrase differently again: the whisperer enters into the jinni just as it enters into the human, meaning shaytan whispers to jinn hearts exactly as he whispers to human hearts.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "يدخل في الجني كما يدخل في الإنسي، ويوسوس للجني كما يوسوس للإنسي",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "unspecified"
+        },
+        {
+          "id": "114:6#c7",
+          "section_ref": "114:6",
+          "attaches_to": "114:6",
+          "text": "Another view al-Baghawī records: the whispering aimed at a human being can itself come from another human, exactly as it can come from a devil, so that the act of whispering belongs jointly to jinn and mankind together, on the model of Q6:112.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "فجعل الوسواس من فعل الجنة والناس جميعا",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "114:6#c8",
+          "section_ref": "114:6",
+          "attaches_to": "114:6",
+          "text": "Ibn ʿAbd al-Salām, cited by Muftī Shafīʿ (d. 1976), suggested 'the whisperer from mankind' may refer to a person's own inner self (nafs) whispering evil to him, just as shaytan does, pointing to the verse 'We know what his self whispers to him' (Q50:16). The Prophet ﷺ is reported to have taught a supplication seeking refuge from the evil of one's own self, from shaytan, and from shirk.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded by the sources"
+          }
+        },
+        {
+          "id": "114:6#c9",
+          "section_ref": "114:6",
+          "attaches_to": "114:6",
+          "text": "Al-Qurṭubī (d. 1273) also read the whispering here as close to 'the self's inner talk' (ḥadīth al-nafs), noting the Prophet's ﷺ statement, related by Abū Hurayrah, that Allah forgives what a person's self says to itself so long as it is not acted upon or spoken.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "إن الله عز وجل تجاوز لأمتي عما حدثت به أنفسها ما لم تعمل أو تتكلم به",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "reported from Muslim, per al-Qurṭubī"
+          }
+        },
+        {
+          "id": "114:6#c10",
+          "section_ref": "114:6",
+          "attaches_to": "114:6",
+          "text": "Al-Ṭanṭāwī (d. 2010) noted that jinn are named before people because jinn are the root and origin of whispering: they are hidden from human sight, as the Qur'an says of Iblis and his following, 'he and his host see you from where you cannot see them' (Q7:27).",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "قدم سبحانه الجِنَّة على الناس، لأنهم هم أصل الوسواس",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "114:6#c11",
+          "section_ref": "114:6",
+          "attaches_to": "114:6",
+          "text": "Al-Saʿdī (d. 1957) summarised: whispering happens both from jinn and from mankind, which is why the verse names both.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "والوسواس كما يكون من الجن يكون من الإنس",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "114:6#c12",
+          "section_ref": "114:6",
+          "attaches_to": "114:6",
+          "text": "Isrār Aḥmad (d. 2010) linked the verse to the hadith that 'shaytan runs in man like blood in the veins' (from the account of Safiyyah رضي الله عنها), explaining that shaytan places himself upon the heart and stirs animal desire and base urges; he can only incite, never compel, and a person's own self can end up acting as shaytan's agent when it gives in.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "اِنَّ الشَّیْطَانَ یَجْرِیْ مِنَ الْاِنْسَانِ مَجْرَی الدَّمِ",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded by the source"
+          }
+        },
+        {
+          "id": "114:6#c13",
+          "section_ref": "114:6",
+          "attaches_to": "114:6",
+          "text": "Wahiduddin Khan (d. 2021) reads this surah, alongside al-Falaq, as a pair: al-Falaq addresses dangers from outside a person, while al-Nās addresses the danger from within, the evil inclinations of one's own heart and the deceit of other people, including human beings who disguise themselves and mislead others by deceitful words.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "114:6#c14",
+          "section_ref": "114:6",
+          "attaches_to": "114:6",
+          "text": "Rebar's Kurdish commentary describes the human devil as anyone who works against the Sharīʿah and tries to cast doubt among Muslims about their religion, noting this is especially common today through audio, visual, and written media that constantly sow such doubt; readers are urged to recognise such figures as students of Iblīs.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "original_excerpt": "شه‌یتانه‌ مرۆڤه‌كه‌یش هه‌موو كه‌سێكه‌ كه‌ پێچه‌وانه‌ی شه‌ریعه‌ته‌كه‌ی خوای گه‌وره‌ بێ",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "114:6#c15",
+          "section_ref": "114:6",
+          "attaches_to": "114:6",
+          "text": "Ahsanul Bayaan describes the human devil as someone who comes across as an advisor or well-wisher, appearing sympathetic, in order to lead others astray, alongside the jinn-devil who is given power by Allah to misguide and who is assigned as a companion to every person.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "114:6#c16",
+          "section_ref": "114:6",
+          "attaches_to": "114:6",
+          "text": "Ibn Kathīr (d. 1373) relates that a man came to the Prophet ﷺ and said he sometimes had thoughts in himself he would rather fall from the sky than utter aloud; the Prophet ﷺ praised Allah for having reduced shaytan's plot against him to a mere whisper. Ibn Kathīr notes this was recorded by Abū Dāwūd and al-Nasā'ī.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "اللهُ أَكْبَرُ، اللهُ أَكْبَرٌ الْحَمْدُ للهِ الَّذِي رَدَّ كَيْدَهُ إِلَى الْوَسْوَسَةِ",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded by Ibn Kathīr beyond noting Abū Dāwūd and al-Nasāʾī recorded it"
+          }
+        }
+      ],
+      "essay_html": "<p>The surah closes by naming where the whisper of verse 4 comes from: <span lang=\"ar\">min al-jinnati wa'l-nās</span>, 'whether they be jinn or people'. The commentators read this pairing in more than one way.</p><p>One reading looks back at the word 'people' (nās) used in verse 4 for whose hearts receive the whisper. Al-Ṭabarī (d. 923) argues the Qur'an is here calling jinn 'people' too, just as it elsewhere calls them 'men' (rijāl) in Surah al-Jinn. He notes an Arab was once heard describing jinn he had met as 'people, from the jinn'. Al-Baghawī and Ibn Kathīr relay the same point.<sup class=\"ref\">1,2,3,4</sup></p><p>A second reading takes the phrase as naming the whisperer itself. There are devils among the jinn and devils among mankind, and both can cast the whisper described earlier in the surah, echoing the Qur'an's statement that every prophet was given enemies who were 'devils of mankind and of jinn'. Al-Qurṭubī (d. 1273), Ibn Kathīr, Muftī Muḥammad Shafīʿ (d. 1976), al-Ṭanṭāwī (d. 2010), and others hold this reading.<sup class=\"ref\">3,4,7,9,11,12,13</sup></p><p>Al-Ḥasan drew out the difference between the two devils: the jinn-devil whispers unseen and silently into the breast, while the human devil comes out into the open.<sup class=\"ref\">3</sup> That raised a question for Muftī Shafīʿ: a human devil speaks aloud, so how can he 'whisper'? His answer is that people often plant doubt indirectly, without ever stating it outright.<sup class=\"ref\">7</sup> Qatādah, and a report about Abū Dharr, made the same point by citing the Qur'an's statement that every prophet faced enemies from the devils of both mankind and jinn.<sup class=\"ref\">3,9</sup></p><p>Al-Baghawī records two further readings from earlier scholars. Al-Kalbī held that the whisperer enters the jinni just as it enters the human, whispering to jinn hearts exactly as it whispers to human hearts.<sup class=\"ref\">2</sup> Another view he cites holds that whispering aimed at a person can itself come from another person, just as it can come from a devil, so the act belongs jointly to jinn and mankind.<sup class=\"ref\">2</sup></p><p>Some readings turn the whisperer inward. Ibn ʿAbd al-Salām, cited by Muftī Shafīʿ, suggested the 'whisperer from mankind' could be a person's own inner self (nafs), pointing to the verse 'We know what his self whispers to him' (Q50:16), alongside the Prophet's ﷺ reported supplication seeking refuge from the evil of one's own self, from shaytan, and from shirk.<sup class=\"ref\">7,11</sup> Al-Qurṭubī likewise reads the whispering as close to the self's inner talk, citing the Prophet's ﷺ statement that Allah forgives what a person's self says to itself so long as it is not acted upon or spoken, related from Abū Hurayrah in Muslim.<sup class=\"ref\">3</sup></p><p>Al-Ṭanṭāwī observes that jinn are named first because they are the root of whispering, hidden from human sight, as the Qur'an says of Iblīs and his following elsewhere: 'he and his host see you from where you cannot see them' (Q7:27).<sup class=\"ref\">9</sup> Al-Saʿdī simply notes that whispering happens from jinn as much as from mankind, which is why the verse names both.<sup class=\"ref\">5</sup></p><p>Isrār Aḥmad links the verse to the hadith that 'shaytan runs in man like blood in the veins', from the account of Ṣafiyyah رضي الله عنها, explaining that shaytan places himself upon the heart and stirs base desire, though he can only incite, never compel; a person's own self can end up acting as his agent when it gives in.<sup class=\"ref\">8</sup> Ibn Kathīr relates a related report: a man told the Prophet ﷺ he had thoughts he would rather die than utter, and the Prophet ﷺ praised Allah for reducing shaytan's plot against him to nothing more than a whisper.<sup class=\"ref\">4</sup></p><p>Wahiduddin Khan reads this surah alongside al-Falaq as a pair: al-Falaq guards against dangers from outside a person, and al-Nās against the danger from within, the inclinations of one's own heart and the deceit of others who mislead through deceitful words.<sup class=\"ref\">10</sup> In that spirit, Rebar's commentary and Ahsanul Bayaan describe the human devil in practical terms: someone who works against the Sharīʿah and sows doubt about religion, today especially through media, or someone who poses as an advisor or well-wisher while leading others astray.<sup class=\"ref\">12,14</sup></p><p class=\"close\">The surah, and with it the Qur'an, ends by naming both sources of the whisper, jinn and people, and directing the seeker of refuge to the One Lord over both.</p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:30fc4750d2ebf6da076f8fb9c8f1163f706fafa7e05b7018aae0dfd44654eeac",
+        "2": "sha256:634f69c2e6cb8aca19ccd9621c57334e5848aacf555e7ead14113a64c8847c34",
+        "3": "sha256:2ceb93c5fe0f7aa6f18932736d6e3c733c9d39ca46529f01e18ca3ac049211d4",
+        "4": "sha256:6a1122dcf7ae4f914d156484e9e042b5ae39adb9c3ccd80ca6d509c62b0887fb",
+        "5": "sha256:63d0d1264338361756da0f2091e31605e9ffaba17727844a6c2e17108a4eb4f4",
+        "6": "sha256:ee059da6b09e8f4b744523ee065f24674b982b0af37f60dbec533ec924670d20",
+        "7": "sha256:213e911d00296afcf340faeab71f8ca1560acd1fb4cce9dd12bbbc61316c9c3d",
+        "8": "sha256:82a5226bb05672c2c6086c72cb59c10d1886974785cf24253e321b06dfc97244",
+        "9": "sha256:222f9093fa38d67d1e1bad4cfe8f15b7f69094519f750bd072c142a2ad90070c",
+        "10": "sha256:cf92d3f8f956e090e7df15897861f51c6adb4020588431a2da6fb682e21de852",
+        "11": "sha256:e6a28b9db778c2e4458bd5e51cb7cbd78a234aa0065d37ea4d6518461b556123",
+        "12": "sha256:77e40e070149c213eb8b6a4aeace8ff244a0673e8e88d329fbeccff681f6a2d4",
+        "13": "sha256:e997b8683ab380805b57aa9b1fdae30aeb7c33bb50819e62e0de76408d1b6af8",
+        "14": "sha256:01afaa99ecbeebf11e2b93b6ab1e3fdff0055f33979858b065ef0945a6623cf6"
+      },
+      "flags": {
+        "creedal_stakes": "true",
+        "legal_content": "false",
+        "sensitive_content": "false"
+      },
+      "compiled_at": "2026-08-02"
+    }
+  }
+}

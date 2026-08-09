@@ -109,8 +109,12 @@ def scan():
                         compiled_keys.add(int(str(k).split(":")[1]))
                     except (IndexError, ValueError):
                         pass
-                commentators = doc.get("commentators_studied")
-                compiled_at = doc.get("compiled_at")
+                # v2 stores independent_works under coverage; fall back to the
+                # legacy commentators_studied for any pre-rebuild file.
+                commentators = (doc.get("coverage") or {}).get("independent_works") \
+                    or doc.get("commentators_studied")
+                compiled_at = (doc.get("pipeline_provenance") or {}).get("compiled_at") \
+                    or doc.get("compiled_at")
             except Exception:
                 pass
 

@@ -1,0 +1,3838 @@
+{
+  "surah": 93,
+  "name": "",
+  "coverage": {
+    "editions_present": [
+      "ar-tafsir-al-tabari",
+      "ar-tafsir-al-baghawi",
+      "ar-tafseer-al-qurtubi",
+      "en-tafisr-ibn-kathir",
+      "ar-tafseer-al-saddi",
+      "tafsir-fe-zalul-quran-syed-qatab",
+      "en-tafsir-maarif-ul-quran",
+      "tafsir-bayan-ul-quran",
+      "ar-tafsir-al-wasit",
+      "tazkirul-quran-en",
+      "bn-tafsir-abu-bakr-zakaria",
+      "bn-tafsir-ahsanul-bayaan",
+      "ar-tafsir-muyassar",
+      "kurd-tafsir-rebar"
+    ],
+    "editions_absent": [],
+    "independent_works": 14,
+    "languages_present": [
+      "ar",
+      "bn",
+      "en",
+      "ku",
+      "ur"
+    ],
+    "languages_absent": []
+  },
+  "pipeline_provenance": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "overview-v2.3",
+    "theme_breaks_version": "sha256:99880ec7b10b53313690f91df9ee8d065519ee698df34b35a3336b5705218f90",
+    "compiled_at": "2026-08-02"
+  },
+  "modern_lens_framing": "The Qurʾan is taken here as fixed, revealed truth; science is our provisional, evolving account of the observable world. What follows notes where the two meet — a contemplation, not a proof. Where the science later shifts, that reflects the limits of our knowledge, not the text.",
+  "references": [
+    {
+      "n": 1,
+      "work_id": "al-tabari",
+      "label": "Jāmiʿ al-Bayān",
+      "author_id": "al-tabari",
+      "author": "Abū Jaʿfar Muḥammad ibn Jarīr al-Ṭabarī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 2,
+      "work_id": "al-baghawi",
+      "label": "Maʿālim al-Tanzīl",
+      "author_id": "al-baghawi",
+      "author": "Abū Muḥammad al-Ḥusayn ibn Masʿūd al-Baghawī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 3,
+      "work_id": "al-qurtubi",
+      "label": "al-Jāmiʿ li-Aḥkām al-Qurʾān",
+      "author_id": "al-qurtubi",
+      "author": "Abū ʿAbd Allāh Muḥammad ibn Aḥmad al-Qurṭubī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 4,
+      "work_id": "ibn-kathir",
+      "label": "Tafsīr Ibn Kathīr",
+      "author_id": "ibn-kathir",
+      "author": "Ismāʿīl ibn ʿUmar ibn Kathīr",
+      "source_language": "ar",
+      "note": "One independent voice. The ar/ur/bn editions are the SAME work — never count as separate corroboration."
+    },
+    {
+      "n": 5,
+      "work_id": "al-saadi",
+      "label": "Taysīr al-Karīm al-Raḥmān",
+      "author_id": "al-saadi",
+      "author": "ʿAbd al-Raḥmān ibn Nāṣir al-Saʿdī",
+      "source_language": "ar",
+      "note": "Russian edition (170) is the SAME work — translate from the Arabic original, and do not count Russian as an independent voice."
+    },
+    {
+      "n": 6,
+      "work_id": "fi-zilal",
+      "label": "Fī Ẓilāl al-Qurʾān",
+      "author_id": "sayyid-qutb",
+      "author": "Sayyid Quṭb Ibrāhīm Ḥusayn",
+      "source_language": "ar",
+      "note": "Original is Arabic, but the API here carries only an URDU edition — translating from Urdu is one step removed from the original. Prefer the Arabic original if the QF Content API offers it."
+    },
+    {
+      "n": 7,
+      "work_id": "maarif",
+      "label": "Maʿārif al-Qurʾān",
+      "author_id": "muhammad-shafi-usmani",
+      "author": "Muftī Muḥammad Shafīʿ ʿUthmānī",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 8,
+      "work_id": "bayan-ul-quran",
+      "label": "Bayān al-Qurʾān",
+      "author_id": "israr-ahmad",
+      "author": "Isrār Aḥmad",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 9,
+      "work_id": "wasit",
+      "label": "al-Tafsīr al-Wasīṭ",
+      "author_id": "tantawi",
+      "author": "Muḥammad Sayyid Ṭanṭāwī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 10,
+      "work_id": "tazkirul",
+      "label": "Tazkīr al-Qurʾān",
+      "author_id": "wahiduddin-khan",
+      "author": "Wahiduddin Khan",
+      "source_language": "ur",
+      "note": "en and ur editions are the same work."
+    },
+    {
+      "n": 11,
+      "work_id": "abu-bakr-zakaria",
+      "label": "Tafsir Abu Bakr Zakaria",
+      "author_id": "abu-bakr-zakaria",
+      "author": "Abū Bakr Muḥammad Zakariyyā",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 12,
+      "work_id": "ahsanul-bayaan",
+      "label": "Ahsanul Bayaan",
+      "author_id": "bayaan-foundation",
+      "author": "Ahsanul Bayaan (Bayaan Foundation)",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 13,
+      "work_id": "muyassar",
+      "label": "al-Tafsīr al-Muyassar",
+      "author_id": "committee-muyassar",
+      "author": "al-Tafsīr al-Muyassar (committee)",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 14,
+      "work_id": "rebar-kurdish",
+      "label": "Rebar Kurdish Tafsir",
+      "author_id": "rebar",
+      "author": "Rebar Kurdish Tafsir",
+      "source_language": "ku",
+      "note": ""
+    }
+  ],
+  "sections": {
+    "93:9": {
+      "verse_range": "9-10",
+      "title": "Kindness to the Orphan and the Asker",
+      "in_short": "The Prophet ﷺ, having been an orphan sheltered by God and once lost then guided, is told: do not oppress the orphan, and do not turn away the one who asks for help.",
+      "claims": [
+        {
+          "id": "93:9#c1",
+          "section_ref": "93:9",
+          "attaches_to": "93:9",
+          "text": "The core sense of 'do not oppress/overpower him' (lā taqhar) is: do not wrong the orphan or seize his rights by exploiting his weakness.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "فلا تظلمه، فتذهب بحقه، استضعافًا منك له",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "لا تقهره على ماله فتذهب بحقه لضعفه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "أي لا تسلط عليه بالظلم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "القهر: التغلب على الغير والإِذلال له",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "فلا تُسِئْ معاملته",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "قهر (qahr)",
+              "gloss": "to overpower and treat harshly someone weaker than you"
+            }
+          ]
+        },
+        {
+          "id": "93:9#c2",
+          "section_ref": "93:9",
+          "attaches_to": "93:9",
+          "text": "Mujāhid read the same word as meaning 'do not despise/scorn him' (lā taḥqirhu), adding that the Prophet ﷺ had himself been an orphan.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "تُغْمِصْه وَتحْقِره",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "لا تحقر اليتيم فقد كنت يتيما",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وعن مجاهد فلا تقهر فلا تحتقر",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "93:9#c3",
+          "section_ref": "93:9",
+          "attaches_to": "93:9",
+          "text": "Ibn Masʿūd's codex is reported to read 'fa lā takhar' (with a kāf) rather than 'taqhar', meaning to be harsh and stern with him; al-Naḥḥās rejected treating the two letters as interchangeable here, calling it a mistake.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "وذُكر أن ذلك في مصحف عبد الله ( فَلا تَكْهَرْ )",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "النحاس: وهذا غلط، إنما يقال كهره: إذا اشتد عليه وغلظ",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar",
+          "original_terms": [
+            {
+              "term": "الكهر (kahr)",
+              "gloss": "to be stern and hard toward someone"
+            }
+          ]
+        },
+        {
+          "id": "93:9#c4",
+          "section_ref": "93:9",
+          "attaches_to": "93:9",
+          "text": "The command is anchored in the Prophet's own life: since Allah sheltered him when he was an orphan, he must not oppress the orphan now.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "واذكر يتمك",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "just as you were an orphan and Allah sheltered you, then do not oppress the orphan",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "جیسے آپ ﷺ کی یتیمی میں اللہ تعالیٰ نے آپ ﷺ کی کفالت وغیرہ کا بندوبست کیا",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "فتذكر هذه النعم، واشكر ربك عليها",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "93:9#c5",
+          "section_ref": "93:9",
+          "attaches_to": "93:9",
+          "text": "Qatādah said: 'Be to the orphan like a merciful father.'",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "كن لليتيم كالأب الرحيم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "Be like a merciful father to the orphan",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "93:9#c6",
+          "section_ref": "93:9",
+          "attaches_to": "93:9",
+          "text": "Reports urge kindness to orphans, including: 'the best house among the Muslims is one with an orphan who is treated well... I and the guardian of an orphan will be like these two [fingers] in Paradise.'",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "خير بيت في المسلمين بيت فيه يتيم يحسن إليه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "أنا وكافل اليتيم له أو لغيره كهاتين",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "cited by Baghawī, Qurṭubī, Ṭanṭāwī, Shafīʿ without a grading verdict given here"
+          }
+        },
+        {
+          "id": "93:9#c7",
+          "section_ref": "93:9",
+          "attaches_to": "93:9",
+          "text": "Further reports are cited on stroking an orphan's head to soften a hard heart, and on an orphan's weeping shaking the Throne of the Most Merciful; these are relayed without grading and should be treated with caution.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "إن اليتيم إذا بكى اهتز لبكائه عرش الرحمن",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Qurṭubī relays without a grading verdict"
+          }
+        },
+        {
+          "id": "93:9#c8",
+          "section_ref": "93:9",
+          "attaches_to": "93:9",
+          "text": "Al-Saʿdī adds: do not let your chest tighten against the orphan, honour him, give him what you easily can, and treat him as you would wish your own children treated after you are gone.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "واصنع به كما تحب أن يصنع بولدك من بعدك",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "93:9#c9",
+          "section_ref": "93:9",
+          "attaches_to": "93:10",
+          "text": "The core sense of 'do not rebuff/chide him' (lā tanhar) is: do not scold the one who asks with harsh words; either give him something or turn him away with a gentle word.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "فلا تنهره، ولكن أطعمه واقض له حاجته",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "فإما أن تطعمه وإما أن ترده ردا لينا",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "أي لا تزجره فهو نهي عن إغلاظ القول",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "لا يصدر منك إلى السائل كلام يقتضي رده عن مطلوبه، بنهر وشراسة خلق",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "وأما السائل فلا تزجره، بل أطعمه، واقض حاجته",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "نهر / انتهر (nahr)",
+              "gloss": "to rebuff someone with harsh, sharp words"
+            }
+          ]
+        },
+        {
+          "id": "93:9#c10",
+          "section_ref": "93:9",
+          "attaches_to": "93:10",
+          "text": "'The one who asks' (al-sāʾil) covers both the beggar asking for money and the seeker asking for knowledge; the instruction not to rebuff applies to both.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وقيل: المراد بالسائل هنا، الذي يسأل عن الدين",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "وهذا يدخل فيه السائل للمال، والسائل للعلم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "93:9#c11",
+          "section_ref": "93:9",
+          "attaches_to": "93:10",
+          "text": "Al-Ḥasan al-Baṣrī held a narrower view: 'the one who asks' here specifically means the seeker of knowledge (ṭālib al-ʿilm).",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "وروي عن الحسن في قوله... قال: طالب العلم",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "93:9#c12",
+          "section_ref": "93:9",
+          "attaches_to": "93:10",
+          "text": "Ibrāhīm ibn Adham said: 'What fine people are beggars, they carry our provisions to the Hereafter,' and Ibrāhīm al-Nakhaʿī said the one who asks is a courier of the Hereafter, coming to ask whether you will send anything ahead for your family there.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "نعم القوم السؤال يحملون زادنا إلى الآخرة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "السائل بريد الآخرة، يجيء إلى باب أحدكم",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "93:9#c13",
+          "section_ref": "93:9",
+          "attaches_to": "93:10",
+          "text": "A report from Abū Hurayrah urges generosity: 'let none of you refuse the one who asks, give him even if what is in his hand were two hollow vessels of gold.'",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "لا يمنعن أحدكم السائل، وأن يعطيه إذا سأل، ولو رأى في يده قلبين من ذهب",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Qurṭubī relays without a grading verdict"
+          }
+        },
+        {
+          "id": "93:9#c14",
+          "section_ref": "93:9",
+          "attaches_to": "93:10",
+          "text": "A further report advises: 'send the one who asks away with a small gift or a gracious refusal, for the one who comes to you may be neither of mankind nor of the jinn, testing how you act with what Allah has granted you.'",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "ردوا السائل ببذل يسير، أو رد جميل، فإنه يأتيكم من ليس من الإنس ولا من الجن",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Qurṭubī relays without a grading verdict; cited by al-Ṭanṭāwī"
+          }
+        },
+        {
+          "id": "93:9#c15",
+          "section_ref": "93:9",
+          "attaches_to": "93:10",
+          "text": "Ibn al-ʿArabī noted a legal implication: answering one who asks about religion is an obligation on the scholar, discharged communally (a duty of the group), just as giving to one who asks for charity.",
+          "claim_type": "legal",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "فجوابه فرض على العالم، على الكفاية كإعطاء سائل البر سواء",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "93:9#c16",
+          "section_ref": "93:9",
+          "attaches_to": "93:10",
+          "text": "The verse also mirrors the Prophet's own guidance from being astray: just as Allah found him lost and guided him, he must not scorn one who comes seeking knowledge or guidance.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "just as you were astray and Allah guided you, then do not scorn the one who asks for knowledge seeking to be guided",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "93:9#c17",
+          "section_ref": "93:9",
+          "attaches_to": "93:10",
+          "text": "Grammatically, both 'the orphan' and 'the one who asks' are placed in the accusative, governed by the verb that follows; the disjunctive 'fa' is fronted for emphasis, giving the sense 'whatever else, do not oppress the orphan, nor rebuff the one who asks.'",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "واليتيم والسائل منصوبان بالفعل الذي بعده",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "93:9#c18",
+          "section_ref": "93:9",
+          "attaches_to": "93:10",
+          "text": "If the one asking a question of knowledge is unreasonable or improper in how he asks, it is permitted to rebuke him to the degree that is necessary.",
+          "claim_type": "legal",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "93:9#c19",
+          "section_ref": "93:9",
+          "attaches_to": "93:9",
+          "text": "These commands were especially necessary in Meccan society, where the weak could not secure their rights and 'might made right'; Islamic law later reshaped that society into one that upheld the rights of the powerless.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "یہ ہدایات مکہ کی نہایت ہی منکر حق اور دولت پرست سوسائٹی میں بہت ضروری تھیں",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "93:9#c20",
+          "section_ref": "93:9",
+          "attaches_to": "93:9",
+          "text": "One should help the weak so as to be worthy of God's grace, and one's speech should itself reflect that grace, so that God may bestow His blessing.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        }
+      ],
+      "essay_html": "<p>Two short commands close this address to the Prophet ﷺ: do not be harsh with the orphan, and do not chide the one who asks for help. The commentators read both verbs, <em>qahr</em> and <em>nahr</em>, in the same plain sense: do not wrong the weaker party, do not seize his due, do not turn him away with a sharp word.<sup class=\"ref\">1,2,3,4,5,7,9,11,12,13</sup></p><p>The command about the orphan is tied back to the Prophet's own story. He had been an orphan whom Allah sheltered, so now he must not oppress the orphan in turn.<sup class=\"ref\">2,3,4,7,8,9</sup> Qatādah put it simply: be to the orphan like a merciful father.<sup class=\"ref\">2,3,4</sup> Mujāhid read the same word as meaning not to despise or belittle him, again recalling the Prophet's own orphanhood.<sup class=\"ref\">1,2,3</sup> A variant reading, attributed to Ibn Masʿūd's codex, has a different letter and a sense of being stern rather than oppressive, though al-Naḥḥās rejected treating the two letters as simply interchangeable here.<sup class=\"ref\">1,3</sup></p><p>Several reports urge tenderness toward orphans: the best household is one where an orphan is treated kindly, and the Prophet ﷺ is reported to have said that he and the guardian of an orphan will be together in Paradise like two fingers held side by side.<sup class=\"ref\">2,3,7,9</sup> Other reports, about stroking an orphan's head to soften a hard heart, and about an orphan's weeping shaking the Throne, are passed on without a grading verdict and should be held with that caution.<sup class=\"ref\">3</sup> Al-Saʿdī adds a practical measure: treat the orphan as you would wish your own children to be treated once you are gone.<sup class=\"ref\">5</sup></p><p>The command about the one who asks carries the same spirit. Do not scold him; either give what you easily can, or turn him away gently.<sup class=\"ref\">1,2,3,4,5,7,9,12,13</sup> The word for 'the one who asks' is read broadly, covering both the beggar asking for money and the seeker asking for knowledge, so the instruction protects both.<sup class=\"ref\">2,3,5,7,8,11,14</sup> Al-Ḥasan al-Baṣrī took it more narrowly, as meaning specifically the seeker of knowledge.<sup class=\"ref\">2</sup></p><p>Early ascetics spoke warmly of beggars in this light. Ibrāhīm ibn Adham called them fine people who carry provisions ahead to the Hereafter, and Ibrāhīm al-Nakhaʿī called the one who asks a courier of the Hereafter, come to see what you will send ahead for yourself there.<sup class=\"ref\">2,3</sup> Reports urge generosity toward the asker, and one counsels sending him away, if nothing can be given, with a small gift or at least a gracious word, since the one at the door may not be who he seems.<sup class=\"ref\">3,9</sup> Ibn al-ʿArabī drew out a further point: answering a question about religion is itself an obligation on scholars, owed communally, just as charity is owed to the one who asks for it.<sup class=\"ref\">3</sup> Muftī Shafīʿ noted a limit to this gentleness: if the questioner himself is unreasonable in his manner, a firm rebuke to the necessary degree is permitted.<sup class=\"ref\">7</sup> Ibn Kathīr and Isrār Aḥmad draw the same parallel here as with the orphan: just as Allah found the Prophet ﷺ astray and guided him, he must not scorn one who now comes seeking guidance.<sup class=\"ref\">4,8</sup></p><p>Sayyid Quṭb situates both commands in their setting: Mecca was a society where the powerless could not secure their rights, where strength alone decided outcomes, until Islamic law reordered it around the rights of exactly those who had none.<sup class=\"ref\">6</sup> Wahīduddīn Khān draws the wider lesson that helping the weak, and speaking in a way that reflects God's grace, is how a person becomes worthy of that grace.<sup class=\"ref\">10</sup></p><p class=\"close\">Qatādah's image holds the two commands together: be to the orphan like a merciful father, and to the one who asks, whether he asks for bread or for knowledge, give what you can and refuse, if you must, with a gentle word.<sup class=\"ref\">2,3,4</sup></p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:e616e5f44658daf12419a9064f8d55449d2e0d807f7b72f5e9179255494fddb7",
+        "2": "sha256:d575e64df222cbbe57cc22fb955e1e3e8da34a801223a6c82748fdf7e0616476",
+        "3": "sha256:cabe9705d887d1f3d296f4770fc9ae8815677f08588fbf5822e38966b1137e41",
+        "4": "sha256:440535ef12af94170d12a49ce3b066db68d9d95d9df4fefb9238bf72b3263200",
+        "5": "sha256:0abcf051bf4d228495fe6525ae17d79790e23304bef75e97206ec8d5a5e56947",
+        "6": "sha256:1eb5c105772cd0db5fc4657afe1f310288e7825693487762710591918d53d973",
+        "7": "sha256:e3baefa9843e04685ae7910b24055f5eb714b22d0158b7482905c6d223546013",
+        "8": "sha256:bc1c9d2b2e5c500667fdce38397a72b5fe61df63986d6d112000d47ca757e51e",
+        "9": "sha256:06ca1a0311f6baed392e7b34325a7b12fc84ec09fc9f21a8fa0cb6a475fe4b37",
+        "10": "sha256:54bc8d01a185d57f3b388f0dfe717514878671175f2dba6efb797555328fba6a",
+        "11": "sha256:9b662e3bbfd50abdaba6f2e4c31072520f6bda0cf7996470aff629fd235de3e1",
+        "12": "sha256:4bc803db0a284065d14d04b11f51909f0c39693cec6f205e0a6bbac24bde04ea",
+        "13": "sha256:15b8186096da4ac9bfbee3e6ed9a345f2c0f2cf0b17c8a4e27a83c16352d53fe",
+        "14": "sha256:3059bd509343acac6ab52e102d0baa2c48f9a4663b266bb2ae2921f3671e00ab"
+      },
+      "flags": {
+        "creedal_stakes": "true",
+        "legal_content": "true",
+        "sensitive_content": "false"
+      },
+      "compiled_at": "2026-08-02"
+    },
+    "93:6": {
+      "verse_range": "6-8",
+      "title": "Three Favours Before Prophethood",
+      "in_short": "God reminds the Prophet ﷺ of three personal kindnesses shown to him before revelation ever came: he was an orphan and was sheltered, he was without direction and was guided, he was poor and was made self-sufficient.",
+      "claims": [
+        {
+          "id": "93:6#c1",
+          "section_ref": "93:6",
+          "attaches_to": "93:6",
+          "text": "The Prophet ﷺ was orphaned very early: his father died before his birth (or, on another account, while his mother was still carrying him), and his mother died when he was about six. His grandfather ʿAbd al-Muṭṭalib then cared for him until his own death (when the Prophet was about eight), after which his uncle Abū Ṭālib took over his upbringing.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "relay",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "relay",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "low"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "low"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "relay",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "low"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "93:6#c2",
+          "section_ref": "93:6",
+          "attaches_to": "93:6",
+          "text": "Isrār Aḥmad notes that the Prophet's uncle Zubayr ibn ʿAbd al-Muṭṭalib also had a period of guardianship, a detail he says is often left out of the histories because retellings deliberately foreground Abū Ṭālib's role instead.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "relay",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "low"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "93:6#c3",
+          "section_ref": "93:6",
+          "attaches_to": "93:6",
+          "text": "\"Then He sheltered you\" (fa-āwā) means God arranged human protectors and a settled place for him to belong to — first his grandfather, then his uncle.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "فجعل لك مأوى تأوي إليه، ومنـزلا تنـزله",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "آوى / fa-āwā",
+              "gloss": "gave shelter, provided a place of refuge"
+            }
+          ]
+        },
+        {
+          "id": "93:6#c4",
+          "section_ref": "93:6",
+          "attaches_to": "93:6",
+          "text": "Qurṭubī relays a report where Jaʿfar al-Ṣādiq was asked why the Prophet ﷺ was made an orphan from both parents, and answered: so that no created being could hold a claim of favour over him.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "لئلا يكون لمخلوق عليه حق",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded by al-Qurṭubī"
+          }
+        },
+        {
+          "id": "93:6#c5",
+          "section_ref": "93:6",
+          "attaches_to": "93:6",
+          "text": "Mujāhid read \"yatīm\" here in the sense Arabs use for a matchless pearl (durra yatīma) — one without an equal — so the verse would mean 'did He not find you unrivalled in nobility', and the shelter given was the company God placed around him to guard and protect him.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "درة يتيمة إذا لم يكن لها مثل",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "يتيمة",
+              "gloss": "a unique, matchless pearl (used figuratively of the unrivalled)"
+            }
+          ]
+        },
+        {
+          "id": "93:6#c6",
+          "section_ref": "93:6",
+          "attaches_to": "93:6",
+          "text": "Isrār Aḥmad draws a parallel with Mūsā عليه السلام, whom God similarly protected in childhood, citing the verse (Ṭā Hā 39) where God says He cast His own love over Mūsā so that people were drawn to him and restrained from harming him.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "low"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "93:6#c7",
+          "section_ref": "93:6",
+          "attaches_to": "93:6",
+          "text": "Sayyid Quṭb reads the whole rhetorical sequence as an answer to the earlier taunt that God had abandoned the Prophet ﷺ (occasioned by a pause in revelation): his own past life, examined honestly, shows the opposite — God's favour accompanied him even before prophethood began.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "low"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "93:6#c8",
+          "section_ref": "93:6",
+          "attaches_to": "93:6",
+          "text": "Several commentators note that these three favours (sheltered, guided, enriched) are structurally answered by three instructions given a few verses later (care for the orphan, do not repel the petitioner, speak of the favour) — the earlier condition of the Prophet ﷺ becomes the ground for what he is then told to do for others.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "relay",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "low"
+            },
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "relay",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "93:6#c9",
+          "section_ref": "93:6",
+          "attaches_to": "93:7",
+          "text": "The dominant reading of \"ḍāllan\" (lost) here is not moral misguidance but simple unawareness — before revelation he did not yet know what the Book or faith was, exactly as stated elsewhere: 'you did not know what the Book was, nor what faith was' (42:52).",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "low"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "relay",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning",
+          "original_terms": [
+            {
+              "term": "ضالّ / ḍāll",
+              "gloss": "lost, astray — read here as 'unaware/heedless' rather than sinfully misguided"
+            }
+          ]
+        },
+        {
+          "id": "93:6#c10",
+          "section_ref": "93:6",
+          "attaches_to": "93:7",
+          "text": "A literal strand of reports takes 'lost' at face value: as a boy the Prophet ﷺ once lost his way in the ravines of Mecca and was found and returned to ʿAbd al-Muṭṭalib by Abū Jahl; a related account has him diverted from a caravan route by Iblīs on a dark night while travelling with Abū Ṭālib, until Jibrīl عليه السلام drove Iblīs off and set him back on the path. These are transmitted as narrations, not as graded authenticated ḥadīth.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "low"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded by the sources; presented as historical narration only"
+          }
+        },
+        {
+          "id": "93:6#c11",
+          "section_ref": "93:6",
+          "attaches_to": "93:7",
+          "text": "Al-Kalbī, al-Farrāʾ and al-Suddī read the verse as: 'He found you among a people astray, and guided them through you' — the loss belongs to the surrounding people, not to the Prophet ﷺ himself.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "93:6#c12",
+          "section_ref": "93:6",
+          "attaches_to": "93:7",
+          "text": "Al-Suddī separately notes that the Prophet ﷺ outwardly followed his people's ways for forty years before revelation came, without this implying he shared their idolatry.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "كان على أمر قومه أربعين عاما",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "93:6#c13",
+          "section_ref": "93:6",
+          "attaches_to": "93:7",
+          "text": "Al-Qurṭubī collects a long list of further readings of 'ḍāllan' (lost at the direction of prayer before it was fixed; bewildered over how to explain revelation; unrecognised among his people until made known; devoted in longing toward guidance), and states his own preference for the reading built on the Arab image of the ḍāllah — a lone tree standing in open desert by which travellers find their way. On this reading, the Prophet ﷺ stood alone with no one sharing his path, and through him God guided creation to Himself; Qurṭubī says he finds this image the most satisfying because it draws the figurative readings together.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "والقول الأخير أعجب إلي",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "ضالّة / ḍāllah",
+              "gloss": "a solitary tree in open desert used by Arabs as a landmark to find the way"
+            }
+          ]
+        },
+        {
+          "id": "93:6#c14",
+          "section_ref": "93:6",
+          "attaches_to": "93:7",
+          "text": "Relayed from Muḥammad ʿAbduh: the Prophet ﷺ grew up a monotheist, never bowed to an idol, and was known among his people for purity of conduct as 'the truthful, the trustworthy' — so the misguidance of idolatry or desire never touched him. The 'loss' meant here is instead the state of not yet knowing which path to take before guidance arrived; this is no flaw or diminishment but, as Ṭanṭāwī puts it, his glory and crown — he had no knowledge and God taught him, no access to the unseen and God informed him. Ṭanṭāwī states this reading, together with the 'lost among an astray people' reading, is the one he finds strongest.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "وليس فى وصف النبى صلى الله عليه وسلم بالضال على هذا المعنى شين له",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "93:6#c15",
+          "section_ref": "93:6",
+          "attaches_to": "93:7",
+          "text": "Muftī Muḥammad Shafīʿ notes the word 'ḍāll' can carry two senses — 'stray' or 'unaware' — and holds that the second is meant: before being commissioned, he was unaware of the divine law, and prophethood itself was his guidance to it.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "93:6#c16",
+          "section_ref": "93:6",
+          "attaches_to": "93:8",
+          "text": "The plain meaning of the verse is that he was poor and God made him self-sufficient, chiefly through the wealth of his wife Khadījah رضي الله عنها, and afterwards through trade.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "relay",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "low"
+            },
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "relay",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "low"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "93:6#c17",
+          "section_ref": "93:6",
+          "attaches_to": "93:8",
+          "text": "Lexically, 'ʿāʾil' comes from 'ʿāla – yaʿīlu – ʿaylah', meaning to become poor; the point is illustrated with a pre-Islamic line of verse: 'the poor man does not know when his riches will come, nor does the rich man know when he will become poor.'",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "فَمَا يَدْرِي الفَقِيرُ مَتَى غِنَاهُ وَمَا يَدْرِي الغَنِيُّ مَتَى يَعِيلُ",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "عائل / ʿāʾil",
+              "gloss": "poor, one who has become needy"
+            }
+          ]
+        },
+        {
+          "id": "93:6#c18",
+          "section_ref": "93:6",
+          "attaches_to": "93:8",
+          "text": "Ibn Masʿūd's private copy of the Qurʾan is reported to have read 'wajadaka ʿadīman' (found you utterly destitute) at this place, rather than 'ʿāʾilan'.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "وذُكر أنها في مصحف عبد الله ( وَوَجَدَكَ عَدِيما فآوَى )",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "93:6#c19",
+          "section_ref": "93:6",
+          "attaches_to": "93:8",
+          "text": "Some read 'aghnā' (made self-sufficient) as chiefly the richness of the soul — contentment with what God gives — rather than material abundance, citing the Prophet's own sayings that true wealth is not abundance of possessions but richness of the soul, and that success belongs to whoever is given sufficiency and made content with it.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "low"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "low"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "relay",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "original_terms": [
+            {
+              "term": "غنى النفس / ghinā al-nafs",
+              "gloss": "richness of the soul, contentment, as distinct from material wealth"
+            }
+          ],
+          "report": {
+            "grade": "sahih",
+            "graded_by": "Ibn Kathīr, noting it is recorded in the Two Ṣaḥīḥs"
+          }
+        },
+        {
+          "id": "93:6#c20",
+          "section_ref": "93:6",
+          "attaches_to": "93:8",
+          "text": "Al-Saʿdī reads the enrichment as fulfilled more fully later, through the lands God opened up for the Prophet ﷺ, whose wealth and tribute were gathered to him.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "93:6#c21",
+          "section_ref": "93:6",
+          "attaches_to": "93:8",
+          "text": "Al-Qushayrī (as noted by al-Qurṭubī) cautions against reading the enrichment as referring to later conquests and war-spoils, since this is a Meccan sūrah, and the legislation of jihād with its spoils belongs to the Medinan period.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وفي هذا نظر; لأن السورة مكية، وإنما فرض الجهاد بالمدينة",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "93:6#c22",
+          "section_ref": "93:6",
+          "attaches_to": "93:8",
+          "text": "Ibn Kathīr reads the verse as combining two ideal states in the Prophet ﷺ: the poor man who is patient, and the wealthy man who is grateful — a model that draws both conditions together; Rebar's commentary makes a matching point, that this is precisely the standard God calls a believer to hold.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "low"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "93:6#c23",
+          "section_ref": "93:6",
+          "attaches_to": "93:6",
+          "text": "Al-Baghawī relays a report (through ʿAṭāʾ b. al-Sāʾib, Saʿīd b. Jubayr, from Ibn ʿAbbās) that the Prophet ﷺ said he once asked his Lord something he wished he had not asked, comparing his portion to that given to Sulaymān b. Dāwūd عليهما السلام; God's reply recalled to him instead these very favours — sheltered as an orphan, guided from being lost, enriched from poverty — along with others (his chest opened, his burden lifted).",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded by al-Baghawī in this citation"
+          }
+        }
+      ],
+      "essay_html": "<p>The three verses form a set of quiet reminders. Each opens with the same shape: did He not find you... and then He acted. Together they retrace the Prophet's ﷺ life before revelation ever reached him.</p><p>The first favour is shelter. His father died before his birth, or while his mother still carried him, and his mother died when he was about six.<sup class=\"ref\">2,3,4,5,7,9,11,12,13,14</sup> His grandfather ʿAbd al-Muṭṭalib took him in, and after his death his uncle Abū Ṭālib carried on the care.<sup class=\"ref\">2,3,4,5,7,9,11,12,13,14</sup> Isrār Aḥmad (d. 2010) points out that another uncle, Zubayr ibn ʿAbd al-Muṭṭalib, also had a share in this guardianship, though later retellings tend to push that detail aside to make room for Abū Ṭālib's more famous role.<sup class=\"ref\">8</sup> Al-Ṭabarī (d. 923) reads 'sheltered' as simply this: God arranged a place of settlement for him, someone to turn to.<sup class=\"ref\">1,3,9</sup> Al-Qurṭubī (d. 1273) also passes on a saying attributed to Jaʿfar al-Ṣādiq: the Prophet ﷺ was made an orphan from both parents so that no created being could hold a claim of favour over him.<sup class=\"ref\">3</sup> Mujāhid offered a different angle on the word itself, reading 'yatīm' the way Arabs speak of a matchless pearl, without equal — so the verse would mean he was unrivalled in nobility, and the shelter God gave him was the companions placed around him for protection.<sup class=\"ref\">3</sup> Isrār Aḥmad draws a parallel with Mūsā عليه السلام, over whom God cast His own love so that people were drawn to protect him rather than harm him.<sup class=\"ref\">8</sup> Sayyid Quṭb (d. 1966) reads the whole question as an answer to those who mocked the Prophet ﷺ for a pause in revelation, as though God had abandoned him: his own history, looked at honestly, shows the opposite.<sup class=\"ref\">6</sup></p><p>The second favour concerns being 'lost' (ḍāllan). Most commentators take this as unawareness rather than moral straying: before revelation he simply did not yet know what the Book or faith was, just as is said elsewhere — 'you did not know what the Book was, nor what faith was' (42:52).<sup class=\"ref\">2,3,4,5,7,9,11,13</sup> Alongside this reading, some reports take the word literally: as a boy he once lost his way in the ravines of Mecca and was returned by Abū Jahl to his grandfather, and on another occasion, travelling with Abū Ṭālib, Iblīs is said to have seized the reins of his mount in the dark until Jibrīl عليه السلام drove him off. These are carried as narrations, not graded ḥadīth.<sup class=\"ref\">2,3,14</sup> Al-Kalbī, al-Farrāʾ and al-Suddī read it differently again: God found him among a people who were astray, and guided them through him — the loss belongs to those around him, not to him.<sup class=\"ref\">1,2,3,9</sup> Al-Suddī adds that he outwardly kept to his people's ways for forty years before revelation, without this meaning he shared their idolatry.<sup class=\"ref\">1</sup> Al-Qurṭubī gathers many further readings — lost in seeking the direction of prayer, bewildered over how to explain revelation, unrecognised among his people — and states his own preference for the image of the ḍāllah, the lone tree standing in open desert by which travellers find their way: the Prophet ﷺ stood alone in his conviction, and through him God guided others to Himself.<sup class=\"ref\">3</sup> Ṭanṭāwī (d. 2010), relaying Muḥammad ʿAbduh, insists the Prophet ﷺ grew up a monotheist, never bowed to an idol, and was known for the purity of his conduct; the 'loss' meant here is only the state of not yet knowing which path to take before guidance came, and this, he says, is no flaw but the Prophet's glory — without knowledge, and then taught by God.<sup class=\"ref\">9</sup> Muftī Muḥammad Shafīʿ (d. 1976) notes the word carries two possible senses, astray or unaware, and holds the second is meant here.<sup class=\"ref\">7</sup></p><p>The third favour is being made self-sufficient after poverty. Plainly, he was poor, and God enriched him, chiefly through the wealth of his wife Khadījah رضي الله عنها and later through trade.<sup class=\"ref\">2,3,4,7,8,10,14</sup> Al-Ṭabarī notes the word 'ʿāʾil' comes from a root meaning to become poor, and cites an old line of verse: the poor man does not know when riches will come, nor the rich man when he will become poor.<sup class=\"ref\">1,3</sup> He also records that Ibn Masʿūd's private copy read this word differently, as 'utterly destitute'.<sup class=\"ref\">1</sup> A separate strand reads the enrichment as chiefly of the soul: true wealth, the Prophet ﷺ is reported to have said, is not abundance of possessions but the richness of the soul, and success belongs to whoever is given enough and made content with it — a saying found, Ibn Kathīr (d. 1373) notes, in the Two Ṣaḥīḥs.<sup class=\"ref\">2,4,9,11,12,13</sup> Al-Saʿdī (d. 1957) instead reads the enrichment as fulfilled more fully later, through the lands opened to the Prophet ﷺ and the wealth gathered to him from them.<sup class=\"ref\">5</sup> Al-Qurṭubī notes al-Qushayrī's caution here: reading it as later conquest and war-spoils sits awkwardly, since this is a Meccan sūrah and jihād with its spoils was only legislated later, in Medina.<sup class=\"ref\">3</sup> Ibn Kathīr sums the verse up as joining two ideal states in the Prophet ﷺ, the poor man who is patient and the wealthy man who is grateful, a point echoed in the Kurdish commentary of Rebar.<sup class=\"ref\">4,14</sup></p><p>Al-Baghawī (d. 1122) also carries a report that the Prophet ﷺ once said he had asked his Lord a question he wished he had not asked, comparing his portion to what was given to Sulaymān ibn Dāwūd عليهما السلام; God's answer recalled to him exactly these three favours, and more besides.<sup class=\"ref\">2</sup> Several commentators observe that this triad of favours is matched, a few verses later, by three instructions — care for the orphan, do not repel the one who asks, speak of the favour — so that what was once received becomes what is now to be given.<sup class=\"ref\">4,7,8,10</sup></p><p class=\"close\">Read together, the three questions rest on a single ground: before any revelation came to him, the Prophet ﷺ had already been sheltered, guided, and made sufficient, and the commentators take this as the Prophet's ﷺ own proof that he was never abandoned.</p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:5f486861ca9bd142e600d4ddb4e4de715c87201a34758f6abc0f794655541100",
+        "2": "sha256:c07dacc3abd4814ee4fe5905891625cbefdebdb9a46fb7d2df00e35c04155de4",
+        "3": "sha256:46515aaf94d837ee64e5cb9177afcd9250051453f03726a831c71b01dcc98a6d",
+        "4": "sha256:15b98dd5f05f2c72abd18a6ae50326ebf16a5bc4f6fdd7c80139db80d6eb7646",
+        "5": "sha256:025784d94afb3c0e29193219d54cde939a267e0f6b22e15e8879e4b37075bb18",
+        "6": "sha256:39dff2802c0710295de77739fd119788789cb9423c6163785551535e53cfb663",
+        "7": "sha256:39f49e47d989798c668abfb70f79d7ded8e6e46e12531e732d87d74a672b7277",
+        "8": "sha256:8544f9042ec2972751391faea1e1ab9561a75e4cc9734a0ba8b4c2ae5db53ffa",
+        "9": "sha256:41ab3e73e468d6908aef58a20a711ba6ec101020dd6074e6dc4de96932e7f665",
+        "10": "sha256:b628a7490815421a06e1b1e7c6622b8c3f702b7b170ff38c18e33cb5ddfc08e1",
+        "11": "sha256:0c4297b7df22663104acdb878ab60ceb8a97b7fbd460ae8414a7ea432b68b5ba",
+        "12": "sha256:d5ddba11789d02691d8c4636938931316d5b861ba1e216d5e4907d2e2642cc3f",
+        "13": "sha256:48f0fdf21bd4ad37da2cfde6281651680d5a983452d30be3971288822eae7417",
+        "14": "sha256:97658444ea364a37a271e01957510578df2bf0cdbb646a5d434b1a29fb00fb88"
+      },
+      "flags": {
+        "creedal_stakes": true,
+        "legal_content": false,
+        "sensitive_content": false
+      },
+      "compiled_at": "2026-08-02"
+    },
+    "93:1": {
+      "verse_range": "1-5",
+      "title": "Not Forsaken, Not Hated",
+      "in_short": "God swears by the bright morning light and the settled night that He has not abandoned His Prophet ﷺ or come to hate him. What lies ahead for him, in this life and the next, will be better than what came before, and his Lord will give him so much that he is fully satisfied.",
+      "claims": [
+        {
+          "id": "93:1#c1",
+          "section_ref": "93:1",
+          "attaches_to": "93:1",
+          "text": "Al-Ḍuḥā (the morning brightness) is taken by most commentators to mean the whole daytime, since the next verse pairs it against 'the night' as its opposite.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "al-Ḍuḥā",
+              "gloss": "the morning brightness, or daytime as a whole"
+            }
+          ]
+        },
+        {
+          "id": "93:1#c2",
+          "section_ref": "93:1",
+          "attaches_to": "93:1",
+          "text": "An alternative reading takes al-Ḍuḥā more narrowly, as the specific forenoon hour when the sun has risen and settled, a time of vigour and activity. Ṭanṭāwī prefers this narrower sense.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "93:1#c3",
+          "section_ref": "93:1",
+          "attaches_to": "93:1",
+          "text": "A widely transmitted occasion for the surah: the Prophet ﷺ fell ill and did not rise for night prayer for a night or two; a woman then said to him, 'I think your devil has finally left you,' and this surah was revealed in response.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "Bukhārī and Muslim, per Ibn Kathīr and al-Qurṭubī"
+          }
+        },
+        {
+          "id": "93:1#c4",
+          "section_ref": "93:1",
+          "attaches_to": "93:1",
+          "text": "Some transmissions name the woman who taunted him as Umm Jamīl, the wife of Abū Lahab.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not specified by the sources"
+          }
+        },
+        {
+          "id": "93:1#c5",
+          "section_ref": "93:1",
+          "attaches_to": "93:1",
+          "text": "A related account: revelation through Jibrīl (Gabriel) عليه السلام was delayed, so the idolaters said, 'Muḥammad's Lord has abandoned him and come to hate him,' and this surah answers that taunt directly.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not specified"
+          }
+        },
+        {
+          "id": "93:1#c6",
+          "section_ref": "93:1",
+          "attaches_to": "93:1",
+          "text": "Other, less firmly established occasions are also reported: a puppy died under the Prophet's bed, halting revelation for some days until it was found and removed; or he delayed answering a question about the Spirit, Dhul-Qarnayn, or the Companions of the Cave without adding 'if God wills,' and revelation paused as a result. Reports differ on the length of the pause: twelve, fifteen, twenty-five, or forty days.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not specified"
+          }
+        },
+        {
+          "id": "93:1#c7",
+          "section_ref": "93:1",
+          "attaches_to": "93:2",
+          "text": "Sayyid Quṭb reads the oath by these two luminous times as forging a bond between the cosmos and the human soul: the universe itself is not indifferent to the Prophet, and he is reassured that he is not alone or abandoned in it.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "93:1#c8",
+          "section_ref": "93:1",
+          "attaches_to": "93:2",
+          "text": "Wahiduddin Khan reads the day/night pairing as reflecting a wider pattern: just as the world's order needs both day and night, human growth needs both hardship and ease; hardship is meant to draw out a person's latent capacities.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "93:1#c9",
+          "section_ref": "93:1",
+          "attaches_to": "93:2",
+          "text": "Sajā (grows still) is read as meaning the night became still and settled, its darkness spreading over creation as people and things quieten down. Al-Ṭabarī judges this the soundest of the reported meanings.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "sajā",
+              "gloss": "settled, grew still"
+            }
+          ]
+        },
+        {
+          "id": "93:1#c10",
+          "section_ref": "93:1",
+          "attaches_to": "93:2",
+          "text": "Other senses of sajā are also reported by the early exegetes: 'came on with its darkness,' 'departed/passed,' 'covered everything in darkness,' and 'spread evenly, levelled.'",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "93:1#c11",
+          "section_ref": "93:1",
+          "attaches_to": "93:2",
+          "text": "In support of 'settled,' commentators cite Arabic usage describing a calm sea, or a still night, as sāj, backed by lines of pre-Islamic poetry.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "93:1#c12",
+          "section_ref": "93:1",
+          "attaches_to": "93:2",
+          "text": "Ibn Kathīr reads the contrast of light and darkness, echoed elsewhere in the Qur'an (92:1-2, 6:96), as evidence of the Creator's power over both.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "93:1#c13",
+          "section_ref": "93:1",
+          "attaches_to": "93:3",
+          "text": "Verse 3 is the jawāb al-qasam, the answer to the oath sworn in verses 1-2.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "93:1#c14",
+          "section_ref": "93:1",
+          "attaches_to": "93:3",
+          "text": "The verse means: your Lord has not left you since He chose you, nor come to hate you since He loved you. It reassures of an ongoing, unbroken relationship, not a single event.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning",
+          "original_terms": [
+            {
+              "term": "waddaʿaka",
+              "gloss": "bid you farewell, forsook you"
+            },
+            {
+              "term": "qalā",
+              "gloss": "hated, held in aversion"
+            }
+          ]
+        },
+        {
+          "id": "93:1#c15",
+          "section_ref": "93:1",
+          "attaches_to": "93:3",
+          "text": "Al-Saʿdī notes a rhetorical point: denying an attribute's opposite implies the firm establishment of that attribute itself. A plain denial only counts as praise when it carries a positive perfection within it, here God's continuing love and care for the Prophet.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "93:1#c16",
+          "section_ref": "93:1",
+          "attaches_to": "93:3",
+          "text": "A minority recitation, attributed to Ibn ʿAbbās and Ibn al-Zubayr, reads 'wadaʿaka' without the doubled consonant, meaning simply 'left/abandoned you.' This usage is noted as rare.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "93:1#c17",
+          "section_ref": "93:1",
+          "attaches_to": "93:3",
+          "text": "Ṭanṭāwī notes the object of 'qalā' (hated [you]) is left unstated because it is understood from the parallel phrase 'mā waddaʿaka,' an economy of expression matched later in the surah by 'fa-āwā,' 'fa-hadā,' 'fa-aghnā.'",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "93:1#c18",
+          "section_ref": "93:1",
+          "attaches_to": "93:4",
+          "text": "'The Hereafter is better for you than the present' is read as: the abode of the next life, with what God has prepared there, is better than this present worldly abode, so there is no cause to grieve over anything missed here.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "93:1#c19",
+          "section_ref": "93:1",
+          "attaches_to": "93:4",
+          "text": "An alternative reading takes 'al-ūlā' and 'al-ākhira' as the Prophet's earlier and later states generally: every later stage of his life is better than the one before it, in knowledge, nearness to God, and worldly standing.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "93:1#c20",
+          "section_ref": "93:1",
+          "attaches_to": "93:4",
+          "text": "A hadith is cited to illustrate the Prophet's disregard for worldly comfort, supporting the reading that the Hereafter outweighs this life: he lay on a rough mat that left marks on his side, and said his likeness to this world was that of a rider who rests under a tree, then moves on and leaves it.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "hasan",
+            "graded_by": "al-Tirmidhī, per Ibn Kathīr"
+          }
+        },
+        {
+          "id": "93:1#c21",
+          "section_ref": "93:1",
+          "attaches_to": "93:4",
+          "text": "A hadith reports the Prophet ﷺ said, 'We are a household whom Allah chose the Hereafter over the world for.'",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Baghawī, no grading given"
+          }
+        },
+        {
+          "id": "93:1#c22",
+          "section_ref": "93:1",
+          "attaches_to": "93:4",
+          "text": "Sayyid Quṭb reads the verse as a promise that the call's future is bright: obstacles the Prophet faced will be cleared, and the truth he carries will prevail over the denial, mockery, and scheming ranged against him.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "93:1#c23",
+          "section_ref": "93:1",
+          "attaches_to": "93:5",
+          "text": "The gift promised in verse 5 is left open and unspecified: 'your Lord will give you until you are satisfied.' Commentators note the wording is general, covering every kind of favour, in this world and the next.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "93:1#c24",
+          "section_ref": "93:1",
+          "attaches_to": "93:5",
+          "text": "A widely cited report from Ibn ʿAbbās: the Prophet ﷺ was shown, land by land, the conquests that would open to his Ummah after him, and was pleased; this verse was then revealed, and God granted him a thousand palaces in Paradise, each furnished with whatever he wished of wives and servants.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "Ibn Kathīr, on the chain to Ibn ʿAbbās; he notes such details could only rest on revealed report (tawqīf)"
+          }
+        },
+        {
+          "id": "93:1#c25",
+          "section_ref": "93:1",
+          "attaches_to": "93:5",
+          "text": "Another reading of the satisfaction promised: it is the Prophet's intercession, so complete that none of his household, or in another version none of his Ummah, will enter the Fire.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "93:1#c26",
+          "section_ref": "93:1",
+          "attaches_to": "93:5",
+          "text": "A hadith reports the Prophet ﷺ, moved on hearing verses about earlier prophets disowning or seeking mercy for their followers, raised his hands weeping and said, 'O Allah, my Ummah, my Ummah.' Allah sent Jibrīl عليه السلام to tell him He would please him regarding his Ummah and not grieve him.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "reported via Muslim, per al-Qurṭubī and Muftī Shafīʿ"
+          }
+        },
+        {
+          "id": "93:1#c27",
+          "section_ref": "93:1",
+          "attaches_to": "93:5",
+          "text": "ʿAlī رضي الله عنه is reported to have said that while the people of Iraq took Qur'an 39:53 ('O My servants who have transgressed, do not despair of God's mercy') as the most hope-giving verse, the Prophet's household instead named this verse, 'your Lord will give you until you are satisfied,' as the most hope-giving in the Qur'an.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not specified"
+          }
+        },
+        {
+          "id": "93:1#c28",
+          "section_ref": "93:1",
+          "attaches_to": "93:5",
+          "text": "On hearing this verse, the Prophet ﷺ is reported to have said, 'Then, by Allah, I will not be satisfied while a single one of my Ummah remains in the Fire.'",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Qurṭubī, no grading given"
+          }
+        },
+        {
+          "id": "93:1#c29",
+          "section_ref": "93:1",
+          "attaches_to": "93:5",
+          "text": "Isrār Aḥmad links this verse to the closing verse of the preceding surah, al-Layl (92:21), 'wa lasawfa yarḍā' (and he will be pleased): the same promise pattern is given there for Abū Bakr رضي الله عنه in the third person, and here for the Prophet directly in the second person.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "93:1#c30",
+          "section_ref": "93:1",
+          "attaches_to": "93:5",
+          "text": "Wahiduddin Khan reads the promise against the pattern of God's earlier help to the Prophet, born an orphan yet given guardians, seeking truth and finding it, apparently without wealth yet made prosperous through Khadījah رضي الله عنها, as historical grounds for confidence in this further promise.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        }
+      ],
+      "essay_html": "<p>The surah opens with an oath: by the morning brightness, and by the night when it settles. Most commentators take the morning light (al-Ḍuḥā) as the whole daytime, paired against the night that follows.<sup class=\"ref\">1,2,3,9,13</sup> Some take it more narrowly, as the forenoon hour itself, the time of rising activity.<sup class=\"ref\">1,2,3,9</sup> Sajā, the night 'growing still,' is read by most as the night settling into quiet darkness, though early exegetes also record other senses: the night 'coming on,' 'passing,' or 'covering everything.'<sup class=\"ref\">1,2,3,4,5,8,9,11,12</sup> Sayyid Quṭb (d. 1966) reads the pairing of these two times as a sign that the universe itself is bound to the human soul, so the Prophet is not alone in it.<sup class=\"ref\">6</sup> Wahiduddin Khan (d. 2021) reads it as a pattern: just as the world needs both day and night, human growth needs both hardship and ease.<sup class=\"ref\">10</sup></p>\n<p>The oath answers a real wound. Commentators report that revelation paused for a time, whether through the Prophet's illness or a gap in Jibrīl's coming عليه السلام, and that this was met with mockery: a woman told him, 'I think your devil has left you,' and some said, 'his Lord has abandoned him and come to hate him.'<sup class=\"ref\">1,2,3,4,7,9,11,14</sup> Other accounts, less firmly fixed, mention a dead puppy under his bed halting the revelation, or an unanswered question about the Spirit that he had promised to answer without saying 'if God wills.'<sup class=\"ref\">2,3,7,9</sup> Against all of this, verse 3 answers directly: your Lord has not left you, nor hated you. Since He chose you He has not left you; since He loved you He has not hated you.<sup class=\"ref\">1,2,5,9,13</sup> Al-Saʿdī (d. 1957) draws out the logic: denying an opposite implies the firm presence of its contrary, so this denial is itself praise, carrying God's continuing love within it.<sup class=\"ref\">5</sup></p>\n<p>Verse 4 turns to time itself: what comes later is better than what came before. Most read this as the next life outweighing the present one, so there is no cause to grieve over what this world withholds.<sup class=\"ref\">1,4,5,9,13</sup> Others read 'al-ūlā' and 'al-ākhira' more generally, as every earlier and later stage of the Prophet's own life, each one surpassing what came before it in knowledge and standing.<sup class=\"ref\">7,8,9,11</sup> A hadith is brought to support the Prophet's own detachment from this world: he lay on a mat that left marks on his side, and likened himself to a rider who rests under a tree and then rides on.<sup class=\"ref\">4,11</sup> Another hadith has him say, 'We are a household whom Allah chose the Hereafter over the world for.'<sup class=\"ref\">2</sup> Sayyid Quṭb reads the verse as a promise for the call itself: the obstacles facing the Prophet will clear, and the truth he carries will prevail.<sup class=\"ref\">6</sup></p>\n<p>The final verse leaves the promised gift open: your Lord will give you until you are satisfied. The wording names nothing, so it is read as covering everything the Prophet could wish for.<sup class=\"ref\">5,7,9</sup> A well-known report from Ibn ʿAbbās رضي الله عنه says he was shown the conquests that would open for his Ummah after him, and was pleased; then this verse came down, and he was given a thousand palaces in Paradise. Ibn Kathīr (d. 1373) judges the chain to Ibn ʿAbbās authentic.<sup class=\"ref\">1,3,4,11,14</sup> Other reports take the satisfaction as intercession, so complete that none of his household, or none of his Ummah, enters the Fire.<sup class=\"ref\">1,2,3</sup> One hadith has him weeping, 'O Allah, my Ummah, my Ummah,' and Jibrīl عليه السلام bringing word that God would please him regarding them.<sup class=\"ref\">2,3,7</sup> ʿAlī رضي الله عنه is reported to have said that while others named a different verse the most hope-giving in the Qur'an, the Prophet's household named this one.<sup class=\"ref\">2,3,7</sup> On hearing it, the Prophet is reported to have said he would not be satisfied while even one of his Ummah remained in the Fire.<sup class=\"ref\">3,7</sup> Isrār Aḥmad (d. 2010) ties the verse back to the last words of the previous surah, al-Layl, where the same promise was made for Abū Bakr رضي الله عنه in the third person.<sup class=\"ref\">8</sup> Wahiduddin Khan reads it against the Prophet's own history, an orphan given a guardian, a seeker given truth, a poor man made prosperous, as grounds already laid for trusting what is still to come.<sup class=\"ref\">10</sup></p>\n<p class=\"close\">The morning and the still night are called to witness a single reassurance: no silence in revelation, however long, meant abandonment, and the account that follows, in this life and the one after, was never going to close on anything less than the Prophet's full satisfaction.</p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:f7bf118792e4455f927e932086cb945059f50dbbf451f8417a027ee7bd3eb60c",
+        "2": "sha256:52088db03f7ea966fd9f074d897aebd0355b5f7bed35f8207e4669cd94a5d540",
+        "3": "sha256:7fb556dcf5fbda312b5fc64664df88fc1f23c4441902a7bb735962c2d97a3aed",
+        "4": "sha256:5550dc68c35aebf94e2b627ef7e1ba2b162f83ee4e2e28ed028c10376d97593c",
+        "5": "sha256:2f585a2c98b0c36dd41a07006cb6d7240fa55fab1cd3becd326317828f7a7804",
+        "6": "sha256:b0ac46bea89d4a4d6fb06e2bc40e5ec424592ddaf71895b964e6b9389131d75a",
+        "7": "sha256:85cb87abe74290d4a37dda80dd13d15772abc1dc0161caacb9da5c2db12d7ad0",
+        "8": "sha256:b9fecd95f911b0a4edfa140786e7bb05555b254e2fa6efcd440190c90c817a9c",
+        "9": "sha256:8de88269553c26e4f2cdef8f28398eb71962cd99fcd1548f6439f2f37c42796d",
+        "10": "sha256:6645ee7921b070ee473fba375ee165629dbdba3b04d46abb6f2587becd8b0d4f",
+        "11": "sha256:c748c21661fc8603677b230b83fb3a38312f428169b6a69aef8f4aee470b71ff",
+        "12": "sha256:c1344cd3bdb70a2393bc261bb3a0bfcd5f2e2238c5165589975025f046242c6b",
+        "13": "sha256:1775d1f22d18452ec3d4357d17c5d37c8807c060cd2214ca70c710486cc9853e",
+        "14": "sha256:f25def0b40643dea2e8ffe8708a1ea5314c6b35dc38ce821e506fc22bf7d0f51"
+      },
+      "flags": {
+        "creedal_stakes": true,
+        "legal_content": false,
+        "sensitive_content": false
+      },
+      "compiled_at": "2026-08-02"
+    },
+    "93:11": {
+      "verse_range": "11-11",
+      "title": "Speak of Your Lord's Favour",
+      "in_short": "The Prophet ﷺ, and every believer after him, is told to speak openly about God's blessings, since naming a blessing out loud is itself a way of thanking the One who gave it.",
+      "claims": [
+        {
+          "id": "93:11#c1",
+          "section_ref": "93:11",
+          "attaches_to": "93:11",
+          "text": "The core command is to speak of, tell of, or proclaim the blessing your Lord has given you. Commentators take this as an instruction to voice thanks: naming and acknowledging a favour openly is itself an act of gratitude (shukr).",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "niʿmah",
+              "gloss": "blessing, favour"
+            },
+            {
+              "term": "ḥaddith / taḥdīth",
+              "gloss": "to speak of, to tell about"
+            },
+            {
+              "term": "shukr",
+              "gloss": "gratitude, giving thanks"
+            }
+          ]
+        },
+        {
+          "id": "93:11#c2",
+          "section_ref": "93:11",
+          "attaches_to": "93:11",
+          "text": "Mujāhid (as reported via Abū Bishr) held that 'your Lord's blessing' here refers specifically to prophethood (nubuwwah) — meaning: convey what you were sent with, and speak of the prophethood given to you.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "93:11#c3",
+          "section_ref": "93:11",
+          "attaches_to": "93:11",
+          "text": "A second reading, from Mujāhid (via al-Layth) and from al-Kalbī, takes the 'blessing' to be the Qurʾān itself — the Prophet is being told to recite it and convey it.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "93:11#c4",
+          "section_ref": "93:11",
+          "attaches_to": "93:11",
+          "text": "Several commentators read the 'blessing' broadly, tying it back to the favours already named earlier in the surah: being sheltered as an orphan, being guided out of error, and being made self-sufficient after poverty. On this reading the verse closes the surah by telling the Prophet ﷺ to give thanks precisely for what has just been listed, and some extend the term to cover any worldly or religious/hereafter favour.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "93:11#c5",
+          "section_ref": "93:11",
+          "attaches_to": "93:11",
+          "text": "Al-Saʿdī adds a nuance: a particular blessing may be singled out for mention where there is some benefit in doing so; otherwise one should speak of God's blessings in general terms.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "93:11#c6",
+          "section_ref": "93:11",
+          "attaches_to": "93:11",
+          "text": "Al-Saʿdī explains the wisdom behind the command: speaking of a blessing prompts gratitude for it, and it draws hearts to love the one who granted it, since hearts are naturally disposed to love a benefactor.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "93:11#c7",
+          "section_ref": "93:11",
+          "attaches_to": "93:11",
+          "text": "A hadith reported from al-Nuʿmān ibn Bashīr has the Prophet ﷺ say from the pulpit: whoever does not give thanks for a little will not give thanks for much; whoever does not thank people has not thanked God; speaking of God's blessing is gratitude, withholding it is ingratitude (kufr); unity is mercy, and division is punishment.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded in the cited sources"
+          }
+        },
+        {
+          "id": "93:11#c8",
+          "section_ref": "93:11",
+          "attaches_to": "93:11",
+          "text": "A hadith from Abū Hurayrah has the Prophet ﷺ say: whoever is not thankful to people has not thanked God. Ibn Kathīr notes al-Tirmidhī graded it sahih; Muftī Shafīʿ notes the chain is described as reliable.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "al-Tirmidhī, per Ibn Kathīr; described as reliable per Muftī Shafīʿ"
+          }
+        },
+        {
+          "id": "93:11#c9",
+          "section_ref": "93:11",
+          "attaches_to": "93:11",
+          "text": "A hadith reported from Jābir ibn ʿAbdullāh has the Prophet ﷺ say: whoever is done a good turn should repay it; if he cannot repay it, he should praise the one who did it, for praising him is itself gratitude, and concealing the favour is ingratitude; and one who claims a virtue he was not given is like one wearing two garments of falsehood.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded in the cited sources"
+          }
+        },
+        {
+          "id": "93:11#c10",
+          "section_ref": "93:11",
+          "attaches_to": "93:11",
+          "text": "A separate hadith, from Jābir, recorded only by Abū Dāwūd, has the Prophet ﷺ say: whoever is tested with something and mentions it has shown gratitude; whoever conceals it has shown ingratitude.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "Ibn Kathīr notes Abū Dāwūd alone transmitted it"
+          }
+        },
+        {
+          "id": "93:11#c11",
+          "section_ref": "93:11",
+          "attaches_to": "93:11",
+          "text": "Al-Qurṭubī relays reports of early Muslims putting this into practice: al-Ḥasan ibn ʿAlī رضي الله عنهما said that on experiencing or doing something good, one should tell a trusted brother about it; ʿAmr ibn Maymūn described men greeting trusted friends by recounting the night's blessings; and Abū Firās ʿAbdullāh ibn Ghālib, questioned for openly recounting his worship each morning, replied by citing this very verse. Similar practice is reported of Ayyūb al-Sakhtiyānī and Abū Rajāʾ al-ʿAṭāridī.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "untraced athār, as relayed by al-Qurṭubī"
+          }
+        },
+        {
+          "id": "93:11#c12",
+          "section_ref": "93:11",
+          "attaches_to": "93:11",
+          "text": "A saying attributed to the Prophet ﷺ through Bakr ibn ʿAbdullāh al-Muzanī states that whoever is given something good and shows no visible effect of it is called one hated by God, one who opposes God's favours.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded by al-Qurṭubī"
+          }
+        },
+        {
+          "id": "93:11#c13",
+          "section_ref": "93:11",
+          "attaches_to": "93:11",
+          "text": "A hadith reported via al-Nasāʾī tells of Mālik ibn Nadlah al-Jushamī, whom the Prophet ﷺ saw in shabby clothes and asked whether he had wealth; when he said yes, of every kind, the Prophet ﷺ told him: when God gives you wealth, let its effect be seen on you. This is used to show that gratitude includes letting a blessing show, not only speaking of it.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded by al-Qurṭubī"
+          }
+        },
+        {
+          "id": "93:11#c14",
+          "section_ref": "93:11",
+          "attaches_to": "93:11",
+          "text": "A hadith from Abū Saʿīd al-Khudrī has the Prophet ﷺ say: God is beautiful and loves beauty, and He loves to see the effect of His blessing on His servant.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded by al-Qurṭubī"
+          }
+        },
+        {
+          "id": "93:11#c15",
+          "section_ref": "93:11",
+          "attaches_to": "93:11",
+          "text": "Proclaiming a blessing must not be done through boasting, arrogance, or showing off, since that manner of speaking is disliked by God and draws His displeasure; the true manner is to remain immersed in gratitude, with a mindfulness that the blessing could be withdrawn.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "93:11#c16",
+          "section_ref": "93:11",
+          "attaches_to": "93:11",
+          "text": "Though the address in this verse is directed at the Prophet ﷺ, al-Qurṭubī notes that the ruling itself is general, applying to him and to others alike.",
+          "claim_type": "legal",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "93:11#c17",
+          "section_ref": "93:11",
+          "attaches_to": "93:11",
+          "text": "Muftī Muḥammad Shafīʿ draws a general principle from the verse: gratitude for a blessing should take the form suited to that blessing. Wealth should be partly spent sincerely in God's way; bodily strength should be used to fulfil religious duties; and religious knowledge should be taught to others.",
+          "claim_type": "legal",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "93:11#c18",
+          "section_ref": "93:11",
+          "attaches_to": "93:11",
+          "text": "Isrār Aḥmad reads the instruction as applying first to the guidance (hidāyah) given to the Prophet ﷺ, itself a great blessing, which gratitude requires him ﷺ to publicise as widely as possible. More broadly, if a person keeps the wealth of guidance confined to himself, that is a form of stinginess (bukhl); he should spread it to as many people as he can.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning",
+          "original_terms": [
+            {
+              "term": "bukhl",
+              "gloss": "stinginess, withholding good"
+            }
+          ]
+        },
+        {
+          "id": "93:11#c19",
+          "section_ref": "93:11",
+          "attaches_to": "93:11",
+          "text": "Sayyid Quṭb ties this closing instruction to the surah's earlier guidance on the orphan and the beggar: doing good to God's servants is itself gratitude in action, which purifies the blessing received. He adds that dignified, restrained speech is also a form of gratitude to God.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "93:11#c20",
+          "section_ref": "93:11",
+          "attaches_to": "93:11",
+          "text": "Wahiduddin Khan reads the verse as tying help for the weak to being deserving of God's grace, and holds that one's speech should carry the expression of that grace, so that God continues to bestow His blessings.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "93:11#c21",
+          "section_ref": "93:11",
+          "attaches_to": "93:11",
+          "text": "A recitation custom is reported: some reciters (in the transmission of Ibn Kathīr al-Makkī via al-Bazzī) say the takbīr ('Allāhu akbar') at the close of every surah from al-Ḍuḥā to the end of the Qurʾān, tied to the story that the Prophet ﷺ said it in joy when revelation resumed after Jibrīl's delay, following the disbelievers' taunt that he had been abandoned. Al-Qurṭubī cites al-Ḥākim's judgement that the chain for this practice is sahih, though not included by al-Bukhārī and Muslim, and holds the takbīr to be an established, recommended (mustaḥabb) practice rather than an obligatory one or part of the Qurʾān itself; other reciters do not say it, out of caution against anything resembling an addition to the Qurʾān, though al-Qurṭubī notes the Qurʾān's wording is preserved by well-attested transmission regardless.",
+          "claim_type": "legal",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "al-Ḥākim, per al-Qurṭubī"
+          }
+        }
+      ],
+      "essay_html": "<p>The surah closes with a single instruction: speak of your Lord's blessing. The commentators take this as more than permission to talk. Naming a blessing out loud, they say, is itself an act of gratitude (shukr) toward the One who gave it.<sup class=\"ref\">1,2,3,4,5,7,9,11,13,14</sup></p><p>Early exegetes differ on exactly which blessing is meant. Mujāhid, in one report, said it is prophethood itself: convey what you were sent with.<sup class=\"ref\">1,2,3</sup> In another report from him, and from al-Kalbī, it is the Qurʾān.<sup class=\"ref\">2,3</sup> Others read it more broadly, tying it back to everything the surah has just listed: shelter as an orphan, guidance out of error, sufficiency after poverty, and by extension any worldly or eternal favour God grants.<sup class=\"ref\">2,4,5,9,11,12,14</sup> Al-Saʿdī adds that a particular blessing may be singled out where there is benefit in doing so; otherwise one speaks of God's blessings in general.<sup class=\"ref\">5</sup></p><p>Several hadiths and reports press the same point from different angles. A tradition from al-Nuʿmān ibn Bashīr has the Prophet ﷺ say that whoever does not thank people has not thanked God, that speaking of God's blessing is gratitude and withholding it is ingratitude (kufr), and that unity is mercy while division is punishment.<sup class=\"ref\">2,3,9,14</sup> A hadith from Abū Hurayrah, graded sahih by al-Tirmidhī, makes the same link between thanking people and thanking God.<sup class=\"ref\">4,7</sup> A report from Jābir has the Prophet ﷺ say that if a good turn cannot be repaid, it should at least be praised, for praise is itself gratitude and concealment is ingratitude.<sup class=\"ref\">2,7</sup> A further report from Jābir, transmitted alone by Abū Dāwūd, says whoever is tested and mentions it has shown gratitude, and whoever conceals it has shown ingratitude.<sup class=\"ref\">4</sup></p><p>Al-Qurṭubī records how some early Muslims lived this out. Al-Ḥasan ibn ʿAlī رضي الله عنهما advised telling a trusted friend of any good that happens or is done. ʿAmr ibn Maymūn described men greeting each other by naming the night's blessings. Abū Firās ʿAbdullāh ibn Ghālib recounted his night's worship each morning and, when questioned for it, answered simply by citing this verse. Ayyūb al-Sakhtiyānī and Abū Rajāʾ al-ʿAṭāridī are reported to have done likewise.<sup class=\"ref\">3</sup> Other reports widen gratitude beyond speech: a saying traced to the Prophet ﷺ through Bakr ibn ʿAbdullāh al-Muzanī warns that one who shows no visible effect of a blessing is called an opponent of God's favours; a hadith about Mālik ibn Nadlah has the Prophet ﷺ tell a man in shabby clothes to let his wealth show; and a hadith from Abū Saʿīd al-Khudrī says God is beautiful, loves beauty, and loves to see the effect of His blessing on His servant.<sup class=\"ref\">3</sup></p><p>The proclaiming has a manner attached to it. It should not be boasting or showing off, which God dislikes; it should come from a heart immersed in gratitude, mindful that the blessing could be withdrawn.<sup class=\"ref\">9,12</sup> Al-Saʿdī explains the underlying wisdom: speaking of a blessing fuels gratitude for it, and it draws hearts to love the one who gave it, since hearts are made to love a benefactor.<sup class=\"ref\">5</sup> Al-Qurṭubī notes that although the address is to the Prophet ﷺ, the ruling is general, for him and for others.<sup class=\"ref\">3</sup></p><p>From here the commentators draw out applications. Muftī Muḥammad Shafīʿ says gratitude should match the blessing: wealth spent sincerely in God's way, strength used for worship, knowledge passed on to others.<sup class=\"ref\">7</sup> Isrār Aḥmad reads the verse as first about the Prophet's ﷺ guidance itself, a blessing gratitude requires him to spread as widely as possible, and draws the wider lesson that keeping guidance to oneself is a form of stinginess (bukhl).<sup class=\"ref\">8</sup> Sayyid Quṭb ties the verse back to the surah's earlier care for the orphan and the beggar, calling kindness to God's servants a form of gratitude that purifies the blessing, and calling dignified speech itself a form of thanks.<sup class=\"ref\">6</sup> Wahiduddin Khan reads helping the weak as what makes a person deserving of God's grace, with speech that carries that grace inviting more of it.<sup class=\"ref\">10</sup></p><p>A separate note concerns recitation practice. Some reciters, following the transmission of Ibn Kathīr al-Makkī, say the takbīr, 'Allāhu akbar', at the end of every surah from al-Ḍuḥā onward, said to go back to the Prophet's ﷺ own joy when revelation resumed after a period of silence in which disbelievers mocked that he had been abandoned. Al-Qurṭubī cites al-Ḥākim's judgement that the chain for this is sahih, though not included in al-Bukhārī and Muslim, and treats it as a recommended practice, not an obligation or part of the Qurʾān itself. Other reciters omit it, out of caution against anything resembling an addition to the Qurʾān.<sup class=\"ref\">2,3,7</sup></p><p class=\"close\">The surah that opened with a question about being forsaken ends with an instruction to speak, turning every blessing named earlier, shelter, guidance, sufficiency, into an occasion for gratitude spoken aloud.</p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:340d76b32ecbabcd9a13a1e1abebc6c6490040a61ea4cba0abb3b69ab644c5f0",
+        "2": "sha256:74bbf2803166fa971f8357561598a23caf89aec886266235890f61cfac90a2a2",
+        "3": "sha256:a1fc52b4b76f2626600c7fb348179a0cc10719a8c7957d41fdff327cd0011853",
+        "4": "sha256:bf4f448fe36c427dae56498750c4c27960a1787d49b76dd78afd42abf9dbb80e",
+        "5": "sha256:ff6a86663c10d191694fe90a9717e2a82791c6ab8068559903e9085fccade6cb",
+        "6": "sha256:eafd57b25d5cd1fbba39b30871a88f849bd86e141c23b3ba260c5c9129c45d82",
+        "7": "sha256:0dfcedd248703028683a35f15b4bb1c9028a995a3e672c2c4f523eea5e932aeb",
+        "8": "sha256:b8d38f1fda7f50350bb055267c62343504b3d235cd7498a65911a3522b01f9b9",
+        "9": "sha256:a3bc6a3ec48be435e4b92645ca96b94ad14b8ccfbc000901ec170f45773de1d6",
+        "10": "sha256:6dfbe0744250dc7e33c703220450302a28ec563d50dfb15ac9630f4519d5bd6f",
+        "11": "sha256:7892fc8db49a7e3c1dfc3948b4238b118660af4c205afe3684c2d8a28b4f9f4a",
+        "12": "sha256:a6138dbce854fcbf27a067d3c0cb7d92a97c2353e493bacfbcffaa778f90cc56",
+        "13": "sha256:ea8f21798343d2a5ea4eb5b01f70085d5db4a6a4b478bc47803aad8069f329e4",
+        "14": "sha256:c15cfa090a9bab56f9a609d8659c82517fa8f6583e54ab930121f3b71fde3d65"
+      },
+      "flags": {
+        "creedal_stakes": false,
+        "legal_content": true,
+        "sensitive_content": false
+      },
+      "compiled_at": "2026-08-02"
+    }
+  }
+}

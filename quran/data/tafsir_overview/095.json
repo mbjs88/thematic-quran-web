@@ -1,0 +1,2545 @@
+{
+  "surah": 95,
+  "name": "",
+  "coverage": {
+    "editions_present": [
+      "ar-tafsir-al-tabari",
+      "ar-tafsir-al-baghawi",
+      "ar-tafseer-al-qurtubi",
+      "en-tafisr-ibn-kathir",
+      "ar-tafseer-al-saddi",
+      "tafsir-fe-zalul-quran-syed-qatab",
+      "en-tafsir-maarif-ul-quran",
+      "tafsir-bayan-ul-quran",
+      "ar-tafsir-al-wasit",
+      "tazkirul-quran-en",
+      "bn-tafsir-abu-bakr-zakaria",
+      "bn-tafsir-ahsanul-bayaan",
+      "ar-tafsir-muyassar",
+      "kurd-tafsir-rebar"
+    ],
+    "editions_absent": [],
+    "independent_works": 14,
+    "languages_present": [
+      "ar",
+      "bn",
+      "en",
+      "ku",
+      "ur"
+    ],
+    "languages_absent": []
+  },
+  "pipeline_provenance": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "overview-v2.3",
+    "theme_breaks_version": "sha256:99880ec7b10b53313690f91df9ee8d065519ee698df34b35a3336b5705218f90",
+    "compiled_at": "2026-08-02"
+  },
+  "modern_lens_framing": "The Qurʾan is taken here as fixed, revealed truth; science is our provisional, evolving account of the observable world. What follows notes where the two meet — a contemplation, not a proof. Where the science later shifts, that reflects the limits of our knowledge, not the text.",
+  "references": [
+    {
+      "n": 1,
+      "work_id": "al-tabari",
+      "label": "Jāmiʿ al-Bayān",
+      "author_id": "al-tabari",
+      "author": "Abū Jaʿfar Muḥammad ibn Jarīr al-Ṭabarī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 2,
+      "work_id": "al-baghawi",
+      "label": "Maʿālim al-Tanzīl",
+      "author_id": "al-baghawi",
+      "author": "Abū Muḥammad al-Ḥusayn ibn Masʿūd al-Baghawī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 3,
+      "work_id": "al-qurtubi",
+      "label": "al-Jāmiʿ li-Aḥkām al-Qurʾān",
+      "author_id": "al-qurtubi",
+      "author": "Abū ʿAbd Allāh Muḥammad ibn Aḥmad al-Qurṭubī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 4,
+      "work_id": "ibn-kathir",
+      "label": "Tafsīr Ibn Kathīr",
+      "author_id": "ibn-kathir",
+      "author": "Ismāʿīl ibn ʿUmar ibn Kathīr",
+      "source_language": "ar",
+      "note": "One independent voice. The ar/ur/bn editions are the SAME work — never count as separate corroboration."
+    },
+    {
+      "n": 5,
+      "work_id": "al-saadi",
+      "label": "Taysīr al-Karīm al-Raḥmān",
+      "author_id": "al-saadi",
+      "author": "ʿAbd al-Raḥmān ibn Nāṣir al-Saʿdī",
+      "source_language": "ar",
+      "note": "Russian edition (170) is the SAME work — translate from the Arabic original, and do not count Russian as an independent voice."
+    },
+    {
+      "n": 6,
+      "work_id": "fi-zilal",
+      "label": "Fī Ẓilāl al-Qurʾān",
+      "author_id": "sayyid-qutb",
+      "author": "Sayyid Quṭb Ibrāhīm Ḥusayn",
+      "source_language": "ar",
+      "note": "Original is Arabic, but the API here carries only an URDU edition — translating from Urdu is one step removed from the original. Prefer the Arabic original if the QF Content API offers it."
+    },
+    {
+      "n": 7,
+      "work_id": "maarif",
+      "label": "Maʿārif al-Qurʾān",
+      "author_id": "muhammad-shafi-usmani",
+      "author": "Muftī Muḥammad Shafīʿ ʿUthmānī",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 8,
+      "work_id": "bayan-ul-quran",
+      "label": "Bayān al-Qurʾān",
+      "author_id": "israr-ahmad",
+      "author": "Isrār Aḥmad",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 9,
+      "work_id": "wasit",
+      "label": "al-Tafsīr al-Wasīṭ",
+      "author_id": "tantawi",
+      "author": "Muḥammad Sayyid Ṭanṭāwī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 10,
+      "work_id": "tazkirul",
+      "label": "Tazkīr al-Qurʾān",
+      "author_id": "wahiduddin-khan",
+      "author": "Wahiduddin Khan",
+      "source_language": "ur",
+      "note": "en and ur editions are the same work."
+    },
+    {
+      "n": 11,
+      "work_id": "abu-bakr-zakaria",
+      "label": "Tafsir Abu Bakr Zakaria",
+      "author_id": "abu-bakr-zakaria",
+      "author": "Abū Bakr Muḥammad Zakariyyā",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 12,
+      "work_id": "ahsanul-bayaan",
+      "label": "Ahsanul Bayaan",
+      "author_id": "bayaan-foundation",
+      "author": "Ahsanul Bayaan (Bayaan Foundation)",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 13,
+      "work_id": "muyassar",
+      "label": "al-Tafsīr al-Muyassar",
+      "author_id": "committee-muyassar",
+      "author": "al-Tafsīr al-Muyassar (committee)",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 14,
+      "work_id": "rebar-kurdish",
+      "label": "Rebar Kurdish Tafsir",
+      "author_id": "rebar",
+      "author": "Rebar Kurdish Tafsir",
+      "source_language": "ku",
+      "note": ""
+    }
+  ],
+  "sections": {
+    "95:8": {
+      "verse_range": "8-8",
+      "title": "The Most Decisive Judge",
+      "in_short": "The final verse asks a rhetorical question: is God not the most decisive of all judges? The classical answer is 'yes' - and this closing note is tied to the practice of answering it aloud when reciting the surah.",
+      "claims": [
+        {
+          "id": "95:8#c1",
+          "section_ref": "95:8",
+          "attaches_to": "95:8",
+          "text": "The question 'Is God not the most decisive of judges?' is a rhetorical question that functions as an emphatic affirmation, not a real question. When a question of negation carries the sense of appeal to what is already known, it turns into a statement.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وألف الاستفهام إذا دخلت على النفي وفي الكلام معنى التوقيف صار إيجابا",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "والاستفهام فى قوله - تعالى - للتقرير",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "95:8#c2",
+          "section_ref": "95:8",
+          "attaches_to": "95:8",
+          "text": "'The most decisive of judges' (aḥkam al-ḥākimīn) can mean the one most precise and skilful in what He creates and decrees - perfect craftsmanship in every act of creation.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "أي أتقن الحاكمين صنعا في كل ما خلق",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "أحكم الحاكمين",
+              "gloss": "the most decisive/best of all judges"
+            }
+          ]
+        },
+        {
+          "id": "95:8#c3",
+          "section_ref": "95:8",
+          "attaches_to": "95:8",
+          "text": "Alternatively, 'the most decisive of judges' means the most just in ruling and deciding between His creatures - the one who judges with truth and fairness between people.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وقيل: بأحكم الحاكمين قضاء بالحق، وعدلا بين الخلق",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "بأقضى القاضين",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "relay",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "بأحكم الحاكمين في كل ما خلق",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "95:8#c4",
+          "section_ref": "95:8",
+          "attaches_to": "95:8",
+          "text": "God's being the best of judges means He never wrongs or oppresses anyone. Part of His justice is that He will establish the Judgement, giving back to every wronged person their due against whoever wronged them.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "95:8#c5",
+          "section_ref": "95:8",
+          "attaches_to": "95:8",
+          "text": "The verse implies that divine wisdom (ḥikmah) could not permit creation to be left purposeless, with no command, no prohibition, no reward and no punishment. Because God raised man through successive stages and granted him countless blessings and a good upbringing, He must return him to a final abode, his true destination.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "فهل تقتضي حكمته أن يترك الخلق سدى لا يؤمرون ولا ينهون، ولا يثابون ولا يعاقبون",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "فهل يُترك الخلق سدى لا يؤمرون ولا يُنهون، ولا يثابون ولا يعاقبون",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "95:8#c6",
+          "section_ref": "95:8",
+          "attaches_to": "95:8",
+          "text": "Muqātil is reported to have said the verse refers to God judging between the Prophet ﷺ and those who deny him.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "أليس الله يحكم بينك وبين أهل التكذيب بك يا محمد",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "95:8#c7",
+          "section_ref": "95:8",
+          "attaches_to": "95:8",
+          "text": "No earthly ruler, however limited his authority, treats his loyal subjects and his rebels alike. Since even such limited rulers distinguish between the two, God, who is the greatest of all rulers, cannot possibly make His obedient servants and His defiant ones equal - this is offered as an argument for the reality of judgement.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "کیا دنیا میں تم نے کوئی ایسا حاکم بھی دیکھا ہے جو اپنے باغیوں اور وفاداروں کو ایک ہی صف میں کھڑا کر دے؟",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "95:8#c8",
+          "section_ref": "95:8",
+          "attaches_to": "95:8",
+          "text": "The outcome described for believers versus deniers earlier in the surah - light for one, deprivation of God's firm rope for the other - is itself grounded in this profound wisdom and clear justice.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "95:8#c9",
+          "section_ref": "95:8",
+          "attaches_to": "95:8",
+          "text": "A report holds that whoever recites Sūrat al-Tīn and reaches its end, upon reciting 'Is God not the most decisive of judges?', should say: 'Yes indeed, and I am among those who bear witness to that' (balā, wa anā ʿalā dhālika min al-shāhidīn).",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "بلى، وأنا على ذلك من الشاهدين",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "فليقل: بلى، وأنا على ذلك من الشاهدين",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "فليقل: بلى، وأنا على ذلك من الشاهدين",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "relay",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "فليقل: بلى، وأنا على ذلك من الشاهدين",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "relay",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "original_terms": [
+            {
+              "term": "بلى وأنا على ذلك من الشاهدين",
+              "gloss": "Yes indeed, and I am among those who bear witness to that"
+            }
+          ],
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "reported by al-Ṭabarī, al-Baghawī, al-Qurṭubī, Muftī Shafīʿ, Isrār Aḥmad, Sayyid Quṭb and Ṭanṭāwī without a stated grade"
+          }
+        },
+        {
+          "id": "95:8#c10",
+          "section_ref": "95:8",
+          "attaches_to": "95:8",
+          "text": "It is reported that when the Prophet ﷺ himself recited this closing verse, he would sometimes say instead: 'Glory be to You, indeed so' (subḥānaka fa-balā). Ibn ʿAbbās and ʿAlī رضي الله عنهما are also reported to have said 'Glory be to You, O Allah, and yes' when reciting it, and Qatādah is reported to have said 'yes, and I am among those who bear witness to that' when reciting it, raising it as a marfūʿ report.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "كان ابن عباس إذا قرأ... قال: سبحانك اللهمّ، وبلى",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "relay",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "بعض روایات میں آتا ہے کہ حضور ﷺ جب یہ آیت پڑھتے تو فرماتے: سُبْحَانَکَ فَبَلٰی",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Ṭabarī and Isrār Aḥmad relay this without stating a grade"
+          }
+        },
+        {
+          "id": "95:8#c11",
+          "section_ref": "95:8",
+          "attaches_to": "95:8",
+          "text": "The jurists have ruled it is mustaḥabb (recommended, though not obligatory) to say this response after reciting the verse.",
+          "claim_type": "legal",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "95:8#c12",
+          "section_ref": "95:8",
+          "attaches_to": "95:8",
+          "text": "The hadith instructing the reciter to say 'balā, wa anā ʿalā dhālika min al-shāhidīn' after this verse is judged not authentic (not ṣaḥīḥ) by al-Tirmidhī's chain according to one assessment, and is described as weak (ḍaʿīf) by another.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "refute",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "original_excerpt": "এই সূরার শেষে... বলার হাদীস সহীহ নয়। (তিরমিযী)",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "refute",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "original_excerpt": "ئەو فەرموودەیە صەحیح نییە زەعیف و لاوازە",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "daif",
+            "graded_by": "Ahsanul Bayaan (12) and Rebar (14)"
+          }
+        },
+        {
+          "id": "95:8#c13",
+          "section_ref": "95:8",
+          "attaches_to": "95:8",
+          "text": "Some have said that this verse is abrogated (mansūkha) by the 'verse of the sword'. Others held that it remains valid, since there is no real contradiction between the two.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "أليس الله بأحكم الحاكمين: منسوخة بآية السيف. وقيل: هي ثابتة؛ لأنه لا تنافي بينهما",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        }
+      ],
+      "essay_html": "<p>The surah closes with a question that answers itself: is God not the most decisive of judges? Grammarians among the commentators note that a negative question like this, carrying the sense of an appeal to something already known, works as an emphatic statement rather than a genuine query.<sup class=\"ref\">3,9</sup></p><p>The phrase 'the most decisive of judges' (aḥkam al-ḥākimīn) is read two ways. It can mean the most precise and skilful in creation itself, perfect craftsmanship in everything He makes.<sup class=\"ref\">3</sup> Or it can mean the most just in ruling between His creatures, deciding with truth and fairness.<sup class=\"ref\">2,3,4,11,12,13,14</sup> On this second reading, being the best of judges means He never wrongs or oppresses anyone, and His justice includes establishing the Judgement, where the wronged receive their due against whoever wronged them.<sup class=\"ref\">4,11</sup></p><p>Several commentators draw out the logic behind the question. If God's wisdom (ḥikmah) is real, He could not have left creation purposeless, with no command, no prohibition, no reward, no punishment. Having raised man through stage after stage and given him countless blessings, He must return him to his true destination.<sup class=\"ref\">5,13</sup> Isrār Aḥmad رحمه الله pressed the same point through an image: no earthly ruler, however small his authority, puts his loyal subjects and his rebels in the same row. If limited rulers make that distinction, how could God, the greatest of all rulers, fail to?<sup class=\"ref\">8</sup> Sayyid Quṭb رحمه الله ties this closing question back to the fate described earlier in the surah, light for the believer and loss of God's firm rope for the denier, as itself resting on this profound wisdom and clear justice.<sup class=\"ref\">6</sup> Muqātil is reported to have narrowed the reference further, taking the verse as God's judgement between the Prophet ﷺ and those who denied him.<sup class=\"ref\">2</sup></p><p>Much of the commentary on this verse concerns how it is recited. A widely relayed report holds that on reaching the end of Sūrat al-Tīn, upon this very question, the reciter should answer: 'Yes indeed, and I am among those who bear witness to that.'<sup class=\"ref\">1,2,3,6,7,8,9,14</sup> Other reports vary the wording. Ibn ʿAbbās and ʿAlī رضي الله عنهما are said to have replied 'Glory be to You, O Allah, and yes,' and some reports have the Prophet ﷺ himself saying 'Glory be to You, indeed so.'<sup class=\"ref\">1,8</sup> Muftī Muḥammad Shafīʿ رحمه الله notes that jurists ruled this response mustaḥabb, recommended though not required.<sup class=\"ref\">7</sup> Against this, two of the sources judge the underlying hadith itself weak, one calling it not authentic by al-Tirmidhī's route and another describing it outright as ḍaʿīf.<sup class=\"ref\">12,14</sup></p><p>A further note, raised only by al-Qurṭubī رحمه الله, records a dispute over whether this verse was abrogated by the 'verse of the sword'. He relays that others held it stands unabrogated, since no real contradiction exists between the two.<sup class=\"ref\">3</sup></p><p class=\"close\">Whatever answer the reciter chooses to voice, the commentators read the verse itself as already carrying its own answer: yes, God is the most decisive of judges.</p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:33812a2ea504ec233fa25f18c27b633637ed3154ab198c2127e1e4fe589bb7a0",
+        "2": "sha256:4730954461e3283f24b424dd1870a4c764e93a63aea0d2fcbce903735f491dae",
+        "3": "sha256:bd56ef6179cfe7f585cb58578f893da1a502e5c10e129584202c83f59f1301e3",
+        "4": "sha256:d6f8661f9fc97d6e27ceacb6745aaccacd93daadf4d1ae5d5750d9ba8583847a",
+        "5": "sha256:14886facfa23dcc2b3db13aa42191cbc609f575ef42588fc5bce045c41df2a41",
+        "6": "sha256:c3d11c78cd762590a91a0080de721697a716b60e7baabd5d566f753d51c1aa5f",
+        "7": "sha256:2883ef17044fd722710170ecba525e9d70810916a299238cf9957f954b56f548",
+        "8": "sha256:e2c08ea3a85575629dbed66dd63e40ac2cbc6df47497e3144049a1faf52a0221",
+        "9": "sha256:7a20b072ef091efd86d3af1d89724defd35afac58e12b1a12a1586dbbf563a57",
+        "10": "sha256:7fa25cd1f1045e48b8ed1555cf33f07d1ce9b4f09ae6b4c8881e8799f0bd6525",
+        "11": "sha256:8181a44c3fcefa73a355c30938fbdca8dac2ddc267ff3911f6a7ea5700b21679",
+        "12": "sha256:9d24dc8e461ceba37264fbbf9d8706f0e0bd30a3f5665832e07690db4f1770e3",
+        "13": "sha256:47e25469b3fb77e80bb6fc7ddba1fbaabfbef3b011c83ef3a7257854ba716bda",
+        "14": "sha256:96bdea078a6484327244d13f7978ec4e0a1b3fec1ab667293a02e4ddbfd1eb81"
+      },
+      "flags": {
+        "creedal_stakes": true,
+        "legal_content": true,
+        "sensitive_content": false
+      },
+      "compiled_at": "2026-08-02"
+    },
+    "95:1": {
+      "verse_range": "1-3",
+      "title": "The Four Opening Oaths",
+      "in_short": "Sūrat al-Tīn opens with four oaths — by the fig, the olive, Mount Sinai, and \"this secure city\" — and the commentators read these either as the familiar fruits and places themselves, or as pointers to the lands and mountains linked to Jesus, Moses, and the Prophet Muhammad ﷺ.",
+      "claims": [
+        {
+          "id": "95:1#c1",
+          "section_ref": "95:1",
+          "attaches_to": "95:1",
+          "text": "The most common reading, going back to Ibn ʿAbbās, al-Ḥasan, Mujāhid, ʿIkrimah, Ibrāhīm al-Nakhaʿī, ʿAṭāʾ, Muqātil and al-Kalbī, is that \"the fig\" and \"the olive\" are simply the ordinary fig people eat and the olive people press for oil.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "al-Tīn",
+              "gloss": "the fig"
+            },
+            {
+              "term": "al-Zaytūn",
+              "gloss": "the olive"
+            }
+          ]
+        },
+        {
+          "id": "95:1#c2",
+          "section_ref": "95:1",
+          "attaches_to": "95:1",
+          "text": "Another report, from Qatādah and others, takes \"the fig\" as the mountain overlooking Damascus and \"the olive\" as the mountain overlooking Jerusalem, since figs and olives grow there.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "95:1#c3",
+          "section_ref": "95:1",
+          "attaches_to": "95:1",
+          "text": "A further report, from Kaʿb al-Aḥbār, al-Ḍaḥḥāk, Qatādah and Ibn Zayd, holds that \"the fig\" means the mosque of Damascus and \"the olive\" the mosque of Jerusalem (Bayt al-Maqdis).",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "95:1#c4",
+          "section_ref": "95:1",
+          "attaches_to": "95:1",
+          "text": "A report from Ibn ʿAbbās (via al-ʿAwfī) says \"the fig\" is the mosque of Noah built on Mount al-Jūdī, and \"the olive\" is Bayt al-Maqdis.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "95:1#c5",
+          "section_ref": "95:1",
+          "attaches_to": "95:1",
+          "text": "Muḥammad ibn Kaʿb reportedly said \"the fig\" is the mosque of the People of the Cave and \"the olive\" the mosque of Īlyā (Jerusalem).",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "95:1#c6",
+          "section_ref": "95:1",
+          "attaches_to": "95:1",
+          "text": "ʿIkrimah is reported simply to have said the fig and olive are two mountains, without further detail.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "95:1#c7",
+          "section_ref": "95:1",
+          "attaches_to": "95:1",
+          "text": "Al-Ṭabarī judges the literal-fruit reading correct, because Arabic usage does not know a mountain called \"fig\" or \"olive\"; al-Qurṭubī agrees this is the soundest view since one should not leave the literal sense for a figurative one without necessity, and al-Ṭanṭāwī says he leans the same way.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "95:1#c8",
+          "section_ref": "95:1",
+          "attaches_to": "95:1",
+          "text": "Some allow that the oath could implicitly be by the growing-places of the fig and olive (as if a word for \"place\" were omitted), though both al-Ṭabarī and al-Qurṭubī note there is no clear textual proof for this reading.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "95:1#c9",
+          "section_ref": "95:1",
+          "attaches_to": "95:1",
+          "text": "The fig is said to be singled out because it is a pure fruit with no stone, resembling the fruits of paradise; a report has Abū Dharr say the Prophet ﷺ was given a basket of figs, ate from it, and remarked that if any fruit had come down from paradise, it would be this one.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded by the source"
+          }
+        },
+        {
+          "id": "95:1#c10",
+          "section_ref": "95:1",
+          "attaches_to": "95:1",
+          "text": "The olive is said to be singled out for its many benefits as a blessed tree; a report has Muʿādh say he used an olive twig as a toothstick and heard the Prophet ﷺ call the olive an excellent toothstick from a blessed tree, and \"my toothstick and the toothstick of the prophets before me.\"",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded by the source"
+          }
+        },
+        {
+          "id": "95:1#c11",
+          "section_ref": "95:1",
+          "attaches_to": "95:1",
+          "text": "Ibn al-ʿArabī drew from Allah's honouring of the fig in this oath an argument that zakāt is due on figs, though he notes many scholars avoided stating this openly for fear of unjust tax-collectors; al-Shāfiʿī held there is no zakāt on the olive, but al-Qurṭubī states the correct view is that zakāt is due on both.",
+          "claim_type": "legal",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning",
+          "madhhab": "Mālikī"
+        },
+        {
+          "id": "95:1#c12",
+          "section_ref": "95:1",
+          "attaches_to": "95:1",
+          "text": "Sayyid Quṭb surveys the many identifications offered for fig and olive (a hill near Damascus, the tree whose leaves Adam and Eve wore, a hill where Noah's ark rested and figs grew abundantly, the Mount of Olives at Jerusalem, or the olive branch the dove brought Noah) and concludes no single report can be stated with certainty; he holds only that, following the Qurʾan's general pattern in oaths, fig and olive point to something connected to faith, perhaps the place in paradise where human life began.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "relay",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "95:1#c13",
+          "section_ref": "95:1",
+          "attaches_to": "95:1",
+          "text": "Sayyid Quṭb notes that the olive is mentioned elsewhere in the Qurʾan (linked to Mount Sinai, and paired with the date-palm), but the word for fig occurs nowhere else in the whole Qurʾan besides this verse.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "95:1#c14",
+          "section_ref": "95:1",
+          "attaches_to": "95:1",
+          "text": "Isrār Aḥmad relays that there was said to be a mountain called Jabal al-Tīn in the land of Noah's people, where Noah is said to have preached for nine hundred and fifty years, and that the olive refers also to the hill where Jesus often preached, known as the \"Sermon on the Mount.\"",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "relay",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "95:1#c15",
+          "section_ref": "95:1",
+          "attaches_to": "95:1",
+          "text": "Wahiduddin Khan reads Fig and Olive as the names of two hills near Jerusalem, in the area where Jesus carried out his mission.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "95:1#c16",
+          "section_ref": "95:1",
+          "attaches_to": "95:1",
+          "text": "Muftī Muḥammad Shafīʿ relays that some authorities take fig and olive as standing for the lands where these trees predominate, namely Palestine and Syria, the home of most prophets including Ibrāhīm عليه السلام, who later migrated from there to Makkah.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "95:1#c17",
+          "section_ref": "95:1",
+          "attaches_to": "95:2",
+          "text": "Almost all the commentators agree that \"Ṭūr Sīnīn\" is the mountain where Allah spoke to Mūsā عليه السلام.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "original_terms": [
+            {
+              "term": "Ṭūr Sīnīn",
+              "gloss": "Mount Sinai"
+            }
+          ]
+        },
+        {
+          "id": "95:1#c18",
+          "section_ref": "95:1",
+          "attaches_to": "95:2",
+          "text": "On the word \"Sīnīn\" itself there is dispute: ʿIkrimah said it means \"beautiful\" in the Abyssinian tongue; Qatādah and Mujāhid said it means \"blessed\"; and Mujāhid and al-Kalbī said \"Sīnīn/Sīnāʾ\" is simply the name for any mountain bearing fruit-trees.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "Sīnīn",
+              "gloss": "variously read as \"beautiful,\" \"blessed,\" or a name for any fruit-bearing mountain"
+            }
+          ]
+        },
+        {
+          "id": "95:1#c19",
+          "section_ref": "95:1",
+          "attaches_to": "95:2",
+          "text": "Al-Ṭabarī judges that \"Ṭūr Sīnīn\" is the proper name of a known mountain, not a descriptive phrase, arguing grammatically that a noun is not normally attached to its own adjective without cause; had \"Sīnīn\" meant \"beautiful\" or \"blessed\" as a description of the mountain, \"Ṭūr\" would carry nunation instead of being placed in construct with it.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "95:1#c20",
+          "section_ref": "95:1",
+          "attaches_to": "95:2",
+          "text": "Abū Bakr Zakariyyā notes that Sīnīn/Sīnā is the name of the valley or region in which this mountain lies, situated as a desert tract between Egypt and Palestine.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "95:1#c21",
+          "section_ref": "95:1",
+          "attaches_to": "95:3",
+          "text": "Ibn Kathīr states there is no disagreement that \"this secure city\" (al-balad al-amīn) means Makkah, a view given also by Ibn ʿAbbās, Mujāhid, ʿIkrimah, al-Ḥasan, Ibrāhīm al-Nakhaʿī, Ibn Zayd and Kaʿb al-Aḥbār, and repeated across the other commentaries.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "original_terms": [
+            {
+              "term": "al-balad al-amīn",
+              "gloss": "this secure/trustworthy city (Makkah)"
+            }
+          ]
+        },
+        {
+          "id": "95:1#c22",
+          "section_ref": "95:1",
+          "attaches_to": "95:3",
+          "text": "Linguistically, \"amīn\" here carries the sense of \"āmin\" (secure), a usage al-Farrāʾ supports with a line of poetry where \"amīnī\" stands for \"āminī\" (my secure one), matching the Qurʾan's own phrase elsewhere about \"a secure sanctuary.\"",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "amīn",
+              "gloss": "secure, safe (here glossed as āmin)"
+            }
+          ]
+        },
+        {
+          "id": "95:1#c23",
+          "section_ref": "95:1",
+          "attaches_to": "95:3",
+          "text": "Al-Ṭanṭāwī explains Makkah's security by citing the Prophet's ﷺ post-conquest declaration that Allah made Makkah sacred from the day He created the heavens and earth, forbidding the cutting of its trees and the hunting of its game.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded by the source"
+          }
+        },
+        {
+          "id": "95:1#c24",
+          "section_ref": "95:1",
+          "attaches_to": "95:1",
+          "text": "Several commentators read the four sworn objects as pointing to three great prophets and their lands: the land of the fig and olive for ʿĪsā عليه السلام, Mount Sinai for Mūsā عليه السلام, and Makkah for Muḥammad ﷺ; Ibn Kathīr relays a report attributed to some scholars that these three places, named in that same order, appear at the close of the Torah, and that the oath thus moves from a noble place, to a nobler one, to the noblest of all.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "relay",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded by the source"
+          }
+        },
+        {
+          "id": "95:1#c25",
+          "section_ref": "95:1",
+          "attaches_to": "95:1",
+          "text": "Muftī Muḥammad Shafīʿ and Abū Bakr Zakariyyā both note that the fig and olive trees are named alongside Mount Sinai and Makkah because, like those two places, they too carry abundant benefits and blessings.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        }
+      ],
+      "essay_html": "<p>Sūrat al-Tīn opens with four oaths, by the fig, the olive, Mount Sinai, and \"this secure city.\" The commentators broadly agree on the last two but differ sharply on the first two.</p><p>Most exegetes, from Ibn ʿAbbās down through Mujāhid and ʿIkrimah, take \"the fig\" and \"the olive\" as exactly what they sound like: the ordinary fig people eat and the olive pressed for oil.<sup class=\"ref\">1,2,3,4,5,9,11,13</sup> Al-Ṭabarī (d. 923 CE) judges this the correct view, since Arabic knows no mountain called \"fig\" or \"olive\"; al-Qurṭubī (d. 1273 CE) and al-Ṭanṭāwī (d. 2010 CE) agree.<sup class=\"ref\">1,3,9</sup> Other reports read the words as places: the mountains overlooking Damascus and Jerusalem, or the mosques of Damascus and Jerusalem, or the mosque of Noah on Mount al-Jūdī and Bayt al-Maqdis, or the mosque of the People of the Cave and Jerusalem's mosque.<sup class=\"ref\">1,2,3,4</sup> A few say simply that they are \"two mountains,\" without saying which.<sup class=\"ref\">1,2,3</sup> Some allow the oath might implicitly mean the growing-places of these fruits, though no clear proof settles it.<sup class=\"ref\">1,3</sup></p><p>The fig, some add, is singled out because it has no stone and resembles the fruits of paradise, a point tied to a report that the Prophet ﷺ, given a basket of figs, said no fruit could have come down from paradise if not this one.<sup class=\"ref\">2,3,9</sup> The olive is singled out for its wide use, called in a further report \"an excellent toothstick from a blessed tree\" and \"the toothstick of the prophets.\"<sup class=\"ref\">2,3,9</sup> Neither report is graded by the source that cites it. Ibn al-ʿArabī (Mālikī) drew from the honour paid to the fig here an argument for zakāt on figs; al-Qurṭubī notes al-Shāfiʿī denied zakāt on the olive but holds the sounder view obliges it on both.<sup class=\"ref\">3</sup></p><p>Sayyid Quṭb (d. 1966 CE) surveys still more identifications, a hill near Damascus, the leaf Adam and Eve wore, the hill where Noah's ark rested, the Mount of Olives, the olive branch of Noah's dove, and concludes none can be stated with certainty. He holds only that, by the Qurʾan's usual pattern in oaths, fig and olive point to something bound up with faith, perhaps paradise itself, where human life began.<sup class=\"ref\">6</sup> He also notes that while the olive appears elsewhere in the Qurʾan, the word for fig occurs nowhere else in the whole text.<sup class=\"ref\">6</sup> Isrār Aḥmad (d. 2010 CE) relays that a Jabal al-Tīn is said to lie in the land where Noah preached for nine hundred and fifty years, and that the olive also marks the hill where Jesus often preached.<sup class=\"ref\">8</sup> Wahiduddin Khan reads both as hills near Jerusalem, the field of Jesus's mission, and Muftī Muḥammad Shafīʿ relays that some take them as standing for Palestine and Syria, the home of most prophets, including Ibrāhīm عليه السلام before his migration to Makkah.<sup class=\"ref\">7,10</sup></p><p>On \"Ṭūr Sīnīn,\" the commentators are nearly unanimous: it is the mountain where Allah spoke to Mūsā عليه السلام.<sup class=\"ref\">1,2,3,4,5,7,9,10,11,12,13,14</sup> The word \"Sīnīn\" itself draws dispute: ʿIkrimah read it as \"beautiful\" in the Abyssinian tongue, Qatādah and Mujāhid as \"blessed,\" and others as simply the name for any fruit-bearing mountain.<sup class=\"ref\">1,2,3,9</sup> Al-Ṭabarī argues on grammatical grounds that \"Ṭūr Sīnīn\" is a proper name for a specific mountain rather than a description, since a noun is not normally joined to its own adjective without cause.<sup class=\"ref\">1</sup> Abū Bakr Zakariyyā adds that Sīnīn/Sīnā names the surrounding valley, a desert tract between Egypt and Palestine.<sup class=\"ref\">11</sup></p><p>On \"this secure city,\" Ibn Kathīr (d. 1373 CE) states there is no disagreement: it is Makkah, and every other source gathered here agrees.<sup class=\"ref\">1,2,3,4,5,7,9,10,11,12,13,14</sup> Al-Farrāʾ reads \"amīn\" here as meaning \"āmin,\" secure, supported by a line of poetry and matching the Qurʾan's language elsewhere about a secure sanctuary.<sup class=\"ref\">1,3</sup> Al-Ṭanṭāwī cites the Prophet's ﷺ declaration, after the conquest, that Allah made Makkah sacred from the creation of the heavens and earth, its trees not to be cut and its game not to be hunted.<sup class=\"ref\">9</sup></p><p>Several commentators bring the four oaths together as pointing to three great prophets: the land of fig and olive for ʿĪsā عليه السلام, Sinai for Mūsā عليه السلام, and Makkah for Muḥammad ﷺ. Ibn Kathīr relays a report, ungraded, that these three places appear in that very order at the end of the Torah, so that the oath rises from a noble place to a nobler one, and then to the noblest of all.<sup class=\"ref\">4,7,8,12,14</sup> Muftī Muḥammad Shafīʿ and Abū Bakr Zakariyyā add that the fig and olive trees stand alongside Sinai and Makkah precisely because, like them, they too carry abundant benefit.<sup class=\"ref\">7,11</sup></p><p class=\"close\">Whatever the fig and olive finally name, most of the sources gathered here converge on this: the oath moves from tree to mountain to city, tracing a line the commentators read as running through ʿĪsā, Mūsā, and Muḥammad ﷺ, three witnesses set before the reader as the surah turns to speak of the human being itself.</p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:e80800a7b0bca64e37ce06abacaa30317ab693c18c395c3e872ae0e3fb4abf9a",
+        "2": "sha256:089ab5d41a7e3e05419a52f37f9d2c3b47a3a0f8cbdcfb6947581e3fb81183ed",
+        "3": "sha256:04f6fa5df21c11daa2c1257443712817b6db0c028b3041cf4bb8f22f3873a53a",
+        "4": "sha256:85446bde89d048768c13c7cae87d343b152ac993da7382a117f345587143ca63",
+        "5": "sha256:3e86a6ea2c51a5e5dea309553926ecc5a846ea7c1105809791f3c86002548593",
+        "6": "sha256:4e2aa7c03e00762e4e06a24841c3a5675a00007f887de961950ce303ebab00c0",
+        "7": "sha256:f23c58564eafc923eb6526a36366ed462dca5696579bbc7ac03aae8a43b6b2a9",
+        "8": "sha256:a8edaca3c49fedbc8c6070caaf62e41a843d6f67089d679cdbd9059b22de60c9",
+        "9": "sha256:dce925f5c64f2a3e18c7cddf3fd2ed94e45c4ba5305402e2d9112bc73d1f0132",
+        "10": "sha256:beb10e59bc23fe552a5cba72cb48be384b9a40c0f6e8ecf5cdecdffb63f38981",
+        "11": "sha256:d578683fb1c57eb6bd226facbaa59c8e94716d8d29be3cfe81555a112c06355b",
+        "12": "sha256:22aad3b550096e53755411903624206b9aef7170fdad0ad21bdf37d8932cb09e",
+        "13": "sha256:cfa28d18342bf8becbbf076be69e1d81899b2b12e85c755b1fc6f95a3e3df7ac",
+        "14": "sha256:455eae4321145efd51534a5f0199cfad59e8cb093cd17a19a668c20b96a13eab"
+      },
+      "flags": {
+        "creedal_stakes": false,
+        "legal_content": true,
+        "sensitive_content": false
+      },
+      "compiled_at": "2026-08-02"
+    },
+    "95:4": {
+      "verse_range": "4-5",
+      "title": "Man's Best Form, Then Decline",
+      "in_short": "Allah swears that He created man in the finest possible form, then \"returns\" him to the lowest of the low — a phrase the commentators read either as the frailty of extreme old age or, for the one who disbelieves and disobeys, the depths of Hellfire.",
+      "claims": [
+        {
+          "id": "95:4#c1",
+          "section_ref": "95:4",
+          "attaches_to": "95:4",
+          "text": "This verse is the jawāb al-qasam, the answer to the oath sworn earlier in the sūrah (by the fig, the olive, Mount Sinai, and the secure city).",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric"
+        },
+        {
+          "id": "95:4#c2",
+          "section_ref": "95:4",
+          "attaches_to": "95:4",
+          "text": "\"Aḥsan taqwīm\" (the best form) means the most balanced, well-proportioned physical shape and figure — this is how most early exegetes explained it, and Ṭabarī states it as the soundest reading.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "relay",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "أحسن تقويم (aḥsan taqwīm)",
+              "gloss": "the best, most proportioned form"
+            }
+          ]
+        },
+        {
+          "id": "95:4#c3",
+          "section_ref": "95:4",
+          "attaches_to": "95:4",
+          "text": "Part of that superiority is posture: every other animal was made to move face-down toward the ground, while man alone was made to stand upright and take his food with his own hand.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "95:4#c4",
+          "section_ref": "95:4",
+          "attaches_to": "95:4",
+          "text": "An alternative reading, transmitted from Ibn ʿAbbās and ʿIkrimah, takes \"the best form\" to mean the prime of youth, when a person's strength and vigour are at their peak.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "95:4#c5",
+          "section_ref": "95:4",
+          "attaches_to": "95:4",
+          "text": "The excellence is not only physical: man was also given reason, speech, discernment, and understanding, faculties no other creature received in the same measure.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "95:4#c6",
+          "section_ref": "95:4",
+          "attaches_to": "95:4",
+          "text": "Ibn al-ʿArabī (as cited by Qurṭubī) argued that no creature of Allah is more excellent than man, since besides life he was given knowledge, power, will, speech, hearing and sight — qualities he links to the hadith \"Allah created Adam upon His form,\" understood as a reference to attributes, not to any physical shape, since Allah is beyond form.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded in the cited sources"
+          }
+        },
+        {
+          "id": "95:4#c7",
+          "section_ref": "95:4",
+          "attaches_to": "95:4",
+          "text": "Qurṭubī relates an anecdote about ʿĪsā ibn Mūsā al-Hāshimī, who rashly swore his wife was divorced unless she was more beautiful than the moon; a jurist resolved the dilemma by reciting this verse, arguing nothing is more beautiful than man, so the oath could not stand.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded in the cited sources"
+          }
+        },
+        {
+          "id": "95:4#c8",
+          "section_ref": "95:4",
+          "attaches_to": "95:4",
+          "text": "There is a difference over who \"man\" refers to here: some said it names a specific disbeliever (al-Walīd ibn al-Mughīra or Kaldah ibn Asīd), the verse then addressing deniers of resurrection; others said it means Adam and his descendants generally.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "95:4#c9",
+          "section_ref": "95:4",
+          "attaches_to": "95:4",
+          "text": "Sayyid Quṭb reads the verse as showing Allah's elevated regard for humanity from the very start of creation — physically, intellectually and spiritually supreme among creatures, capable even of rising, on the night journey, beyond the station reached by the angel Jibrīl.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "95:4#c10",
+          "section_ref": "95:4",
+          "attaches_to": "95:4",
+          "text": "Isrār Aḥmad connects this honouring of man to other Qurʾanic statements of human dignity: that Allah exalted the children of Adam, carried them on land and sea, provided good things for them, and created their forefather with His own two hands before commanding the angels to prostrate to him.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "95:4#c11",
+          "section_ref": "95:4",
+          "attaches_to": "95:4",
+          "text": "The Kurdish commentary reads this verse as a rebuttal of theories of gradual human physical evolution (citing the Neanderthal theory): man, from Adam onward, was created directly in this fine form, not shaped by a slow process of change.",
+          "claim_type": "other",
+          "sources": [
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "refute",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "95:4#c12",
+          "section_ref": "95:4",
+          "attaches_to": "95:4",
+          "text": "Lexically, taqwīm means bringing something to the form and proportion it ought to have — setting it right and giving it its due balance.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "تقويم (taqwīm)",
+              "gloss": "setting something into its correct, balanced form"
+            }
+          ]
+        },
+        {
+          "id": "95:4#c13",
+          "section_ref": "95:4",
+          "attaches_to": "95:5",
+          "text": "The most commonly relayed reading of \"the lowest of the low\" is a return to decrepit old age (ardhal al-ʿumr), when strength fails and reason itself can be lost.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "original_terms": [
+            {
+              "term": "أرذل العمر (ardhal al-ʿumr)",
+              "gloss": "the most degraded stage of old age, when strength and reason fail"
+            }
+          ]
+        },
+        {
+          "id": "95:4#c14",
+          "section_ref": "95:4",
+          "attaches_to": "95:5",
+          "text": "Ṭabarī states this old-age reading is the soundest, because the passage is arguing against people who deny resurrection; an argument must rest on something they can see and admit, and disbelievers witness the decline of old age even though they deny Hellfire — a link he ties to the following verse, \"what then makes you deny the Reckoning after this?\"",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "95:4#c15",
+          "section_ref": "95:4",
+          "attaches_to": "95:5",
+          "text": "A report, with a chain, states that some Companions were reduced to extreme old age during the Prophet's ﷺ lifetime; when he ﷺ was asked about their weakened minds, Allah revealed that they would still be rewarded for the deeds they did before losing their reason.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "Ṭabarī, no explicit grading given"
+          }
+        },
+        {
+          "id": "95:4#c16",
+          "section_ref": "95:4",
+          "attaches_to": "95:5",
+          "text": "ʿIkrimah is reported to have said that whoever completes memorising the Qurʾān will not be returned to decrepit old age.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "Ibn Kathīr, no explicit grading given"
+          }
+        },
+        {
+          "id": "95:4#c17",
+          "section_ref": "95:4",
+          "attaches_to": "95:5",
+          "text": "The alternative reading takes \"the lowest of the low\" as being cast into Hellfire in the worst of forms. Ibn Kathīr prefers this view, noting it fits better with the following exception, \"except those who believe and do righteous deeds\" — since the old-age reading would wrongly exclude believers, many of whom also suffer senility.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "95:4#c18",
+          "section_ref": "95:4",
+          "attaches_to": "95:5",
+          "text": "Grammatically, \"sāfilīn\" (the low ones) is discussed as an indefinite plural used to generalise the class, comparable to saying \"the noblest of one standing\" before narrowing to a definite plural; the codex of Ibn Masʿūd is noted to read \"asfal al-sāfilīn\" with the definite article.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar",
+          "original_terms": [
+            {
+              "term": "أسفل سافلين (asfal sāfilīn)",
+              "gloss": "lowest of the low"
+            }
+          ]
+        },
+        {
+          "id": "95:4#c19",
+          "section_ref": "95:4",
+          "attaches_to": "95:5",
+          "text": "A further reading takes \"returned to the lowest of the low\" as a return to misguidance and error, echoed by the parallel in Sūrat al-ʿAṣr, \"man is in loss, except those who believe and do righteous deeds.\"",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "95:4#c20",
+          "section_ref": "95:4",
+          "attaches_to": "95:5",
+          "text": "An anonymous view relayed by Qurṭubī holds that man, having been given these lofty qualities, grew arrogant, even to the point of claiming, \"I am your lord, most high\"; Allah then reduced him, filling him with filth and impurity that shows itself outwardly, sometimes by his own choice and sometimes despite him.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "95:4#c21",
+          "section_ref": "95:4",
+          "attaches_to": "95:5",
+          "text": "al-Saʿdī links the two verses morally: despite the immense favour of a perfect form, which calls for gratitude, most of mankind turns away, occupied with idle amusement and content with base conduct and bad character — so Allah returns them to the lowest depths of Hellfire, the abode of those who rebel against their Lord.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "95:4#c22",
+          "section_ref": "95:4",
+          "attaches_to": "95:5",
+          "text": "Muftī Shafīʿ reads the fall physically: in old age man loses his beauty and strength and becomes a burden on others, whereas animals remain useful even in death, through their hide, meat and bones — man alone becomes useless in decline, unlike any other creature.",
+          "claim_type": "other",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "95:4#c23",
+          "section_ref": "95:4",
+          "attaches_to": "95:5",
+          "text": "Sayyid Quṭb reads the fall as spiritual rather than physical: man cannot alter his bodily form, so when he falls it is in nature and spirit, sinking even lower than animals, which still follow the disposition (fiṭra) given to them and instinctively glorify their Lord.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "95:4#c24",
+          "section_ref": "95:4",
+          "attaches_to": "95:5",
+          "text": "Isrār Aḥmad reads the verse as describing the soul's descent into the physical body and the worldly life — sent down from an elevated spiritual station into the lowly material realm, though not into ignorance, since guidance had already been provided.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        }
+      ],
+      "essay_html": "<p>This verse answers the oath sworn earlier in the sūrah.<sup class=\"ref\">1,9</sup> Allah declares that He created man in \"the best form\" (aḥsan taqwīm) — most exegetes take this as the most balanced, well-proportioned shape, and Ṭabarī judges it the soundest reading.<sup class=\"ref\">1,2,3,4,9,11,12,13</sup> Part of that excellence is posture itself: every other animal moves face-down, man alone stands upright and feeds himself with his own hand.<sup class=\"ref\">1,2,3,12</sup> A different transmission, from Ibn ʿAbbās and ʿIkrimah, takes \"the best form\" to mean the prime of youth, the peak of a person's strength.<sup class=\"ref\">1</sup></p><p>The excellence is not only in the body. Man was given reason, speech, discernment and understanding, faculties no other creature was given in the same measure.<sup class=\"ref\">2,3,5,7,9,11,12</sup> Ibn al-ʿArabī, cited by Qurṭubī, went further: no creature of Allah is more excellent than man, since alongside life he was given knowledge, power, will, speech, hearing and sight — and he read the hadith \"Allah created Adam upon His form\" as pointing to these attributes, not to any physical shape, since Allah is beyond form.<sup class=\"ref\">3,7</sup> Qurṭubī also relates a story of a man who rashly swore his wife was divorced unless she were more beautiful than the moon, resolved when a jurist recited this verse to show nothing is more beautiful than man.<sup class=\"ref\">3,7</sup></p><p>There is a difference over who \"man\" names here. Some said a specific disbeliever, the verse then addressing deniers of resurrection; others said Adam and his descendants generally.<sup class=\"ref\">3</sup> Sayyid Quṭb (d. 1966) reads the verse as showing Allah's elevated regard for humanity from creation, supreme in body, mind and spirit, even able, on the night journey, to surpass the station reached by the angel Jibrīl.<sup class=\"ref\">6</sup> Isrār Aḥmad (d. 2010) ties it to other verses of human dignity: the honouring of Adam's children, their creation by Allah's own two hands, and the angels' prostration to their forefather.<sup class=\"ref\">8</sup> One modern commentary reads the verse as a rebuttal of theories of gradual human evolution: man was created directly in this fine form from the start.<sup class=\"ref\">14</sup> Lexically, taqwīm means bringing a thing to the form and proportion it ought to have.<sup class=\"ref\">7,9,11</sup></p><p>Then comes the reversal: \"We return him to the lowest of the low.\" The reading most often relayed takes this as a return to decrepit old age (ardhal al-ʿumr), when strength fails and reason itself can be lost.<sup class=\"ref\">1,2,3,4,9,11,12,14</sup> Ṭabarī (d. 923) prefers this reading precisely because the passage argues against deniers of resurrection: an argument must rest on what people can see, and disbelievers witness old age even while denying Hellfire — a link he ties to the following verse, \"what then makes you deny the Reckoning after this?\"<sup class=\"ref\">1</sup> A report with a chain states that some Companions were reduced to extreme old age in the Prophet's ﷺ time, and Allah revealed that they would still be rewarded for what they did before losing their reason.<sup class=\"ref\">1</sup> ʿIkrimah is also reported to have said that one who completes memorising the Qurʾān will not be returned to decrepit old age.<sup class=\"ref\">4</sup></p><p>The alternative reading takes \"the lowest of the low\" as Hellfire itself, in the worst of forms. Ibn Kathīr (d. 1373) prefers this, noting it fits better with the exception that follows, \"except those who believe and do righteous deeds\" — since the old-age reading would wrongly exclude believers, who also grow senile.<sup class=\"ref\">1,4,5,9,13</sup> Grammatically, \"sāfilīn\" is discussed as an indefinite plural generalising the class, and Ibn Masʿūd's codex is noted to read it with the definite article.<sup class=\"ref\">2,3</sup> Other readings take the phrase as a return to misguidance, echoing Sūrat al-ʿAṣr's \"man is in loss, except those who believe.\"<sup class=\"ref\">3</sup> One relayed view holds that man's fall follows his arrogance, even claiming divinity, after which he is filled with filth that shows itself outwardly.<sup class=\"ref\">3</sup></p><p>Al-Saʿdī (d. 1957) links the two verses morally: despite the immense favour of a perfect form, most people fail to give thanks, occupied with idle amusement, and so are returned to the lowest depths of Hellfire, the abode of the rebellious.<sup class=\"ref\">5</sup> Muftī Shafīʿ (d. 1976) reads the fall physically: in old age man loses beauty and strength and becomes a burden, while animals remain useful even after death.<sup class=\"ref\">7</sup> Sayyid Quṭb reads it as a spiritual fall: man cannot change his form, so his descent is in nature and spirit, sinking below animals, which still follow their given disposition and glorify their Lord.<sup class=\"ref\">6</sup> Isrār Aḥmad reads it as the descent of the soul into the body and the worldly life, sent down from an elevated station though not into ignorance, since guidance had already come.<sup class=\"ref\">8</sup></p><p class=\"close\">Across these readings the commentators agree on the shape of the passage: a creature given the finest form is capable of the deepest fall, whether that fall is read as the frailty of old age or as the ruin awaiting the one who turns from gratitude and guidance.</p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:2547a0abe3e1d960f4bd202864a8de044819393b0221b9199272b266abf8a8f8",
+        "2": "sha256:77015143efdbb39679b61e3986d9dcc537a11ad652deebf888e89ccf7824c92a",
+        "3": "sha256:5b262a384abe7cca99c6c6f5b2ba6c9f4bd566208a5bc3630dbebe98ae4cf2e8",
+        "4": "sha256:cec8ccce163b2f97beb097941cd5aa5ee1aa7c4875c490e557c2a5011faf7765",
+        "5": "sha256:46ac44244d263978abd4b891d2d0eec1d414c58552757d0659101a0f40330bc0",
+        "6": "sha256:964e249c6df3fd8534655f9971bdc7333e2fbe74ab539aa7ec6d068be68f3162",
+        "7": "sha256:63f8d0f12a64db2785974dd05801cb06f1c7e581a6eef4ce3064b7d60686e10d",
+        "8": "sha256:4acbffacec57ff237de909ceecfdfb897ed7071af22202a0f01c46985bc3a526",
+        "9": "sha256:4b338f5df951c7fb383f72f7c144e2df041a2b8e04461dae281be73d529f1bfb",
+        "10": "sha256:9c18c7f388748775c4eba05ab0f0c197b65e1dfa02e48e23dd1a81283f6ae3af",
+        "11": "sha256:46715e12aa173a6e7a3df09fa9f741a6de7319503d15c666ae3ba6cadb83fb22",
+        "12": "sha256:ea472b839757cb034fbf26b2f99cc3a4bf310fb1d9fe4285afda7ede8723226c",
+        "13": "sha256:d966d095c8e691f87b45671b370f77c2932db0a838975ee0d9acfeda6f4dfaa7",
+        "14": "sha256:c9ff33e8cec7134bf17e4f5ee905bfd9cd4da7fc20085edee5d63e478b2ba6ad"
+      },
+      "flags": {
+        "creedal_stakes": "true",
+        "legal_content": "false",
+        "sensitive_content": "true"
+      },
+      "compiled_at": "2026-08-02"
+    }
+  }
+}

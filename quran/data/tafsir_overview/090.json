@@ -1,0 +1,2932 @@
+{
+  "surah": 90,
+  "name": "",
+  "coverage": {
+    "editions_present": [
+      "ar-tafsir-al-tabari",
+      "ar-tafsir-al-baghawi",
+      "ar-tafseer-al-qurtubi",
+      "en-tafisr-ibn-kathir",
+      "ar-tafseer-al-saddi",
+      "tafsir-fe-zalul-quran-syed-qatab",
+      "en-tafsir-maarif-ul-quran",
+      "tafsir-bayan-ul-quran",
+      "ar-tafsir-al-wasit",
+      "tazkirul-quran-en",
+      "bn-tafsir-abu-bakr-zakaria",
+      "bn-tafsir-ahsanul-bayaan",
+      "ar-tafsir-muyassar",
+      "kurd-tafsir-rebar"
+    ],
+    "editions_absent": [],
+    "independent_works": 14,
+    "languages_present": [
+      "ar",
+      "bn",
+      "en",
+      "ku",
+      "ur"
+    ],
+    "languages_absent": []
+  },
+  "pipeline_provenance": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "overview-v2.3",
+    "theme_breaks_version": "sha256:99880ec7b10b53313690f91df9ee8d065519ee698df34b35a3336b5705218f90",
+    "compiled_at": "2026-08-02"
+  },
+  "modern_lens_framing": "The Qurʾan is taken here as fixed, revealed truth; science is our provisional, evolving account of the observable world. What follows notes where the two meet — a contemplation, not a proof. Where the science later shifts, that reflects the limits of our knowledge, not the text.",
+  "references": [
+    {
+      "n": 1,
+      "work_id": "al-tabari",
+      "label": "Jāmiʿ al-Bayān",
+      "author_id": "al-tabari",
+      "author": "Abū Jaʿfar Muḥammad ibn Jarīr al-Ṭabarī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 2,
+      "work_id": "al-baghawi",
+      "label": "Maʿālim al-Tanzīl",
+      "author_id": "al-baghawi",
+      "author": "Abū Muḥammad al-Ḥusayn ibn Masʿūd al-Baghawī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 3,
+      "work_id": "al-qurtubi",
+      "label": "al-Jāmiʿ li-Aḥkām al-Qurʾān",
+      "author_id": "al-qurtubi",
+      "author": "Abū ʿAbd Allāh Muḥammad ibn Aḥmad al-Qurṭubī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 4,
+      "work_id": "ibn-kathir",
+      "label": "Tafsīr Ibn Kathīr",
+      "author_id": "ibn-kathir",
+      "author": "Ismāʿīl ibn ʿUmar ibn Kathīr",
+      "source_language": "ar",
+      "note": "One independent voice. The ar/ur/bn editions are the SAME work — never count as separate corroboration."
+    },
+    {
+      "n": 5,
+      "work_id": "al-saadi",
+      "label": "Taysīr al-Karīm al-Raḥmān",
+      "author_id": "al-saadi",
+      "author": "ʿAbd al-Raḥmān ibn Nāṣir al-Saʿdī",
+      "source_language": "ar",
+      "note": "Russian edition (170) is the SAME work — translate from the Arabic original, and do not count Russian as an independent voice."
+    },
+    {
+      "n": 6,
+      "work_id": "fi-zilal",
+      "label": "Fī Ẓilāl al-Qurʾān",
+      "author_id": "sayyid-qutb",
+      "author": "Sayyid Quṭb Ibrāhīm Ḥusayn",
+      "source_language": "ar",
+      "note": "Original is Arabic, but the API here carries only an URDU edition — translating from Urdu is one step removed from the original. Prefer the Arabic original if the QF Content API offers it."
+    },
+    {
+      "n": 7,
+      "work_id": "maarif",
+      "label": "Maʿārif al-Qurʾān",
+      "author_id": "muhammad-shafi-usmani",
+      "author": "Muftī Muḥammad Shafīʿ ʿUthmānī",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 8,
+      "work_id": "bayan-ul-quran",
+      "label": "Bayān al-Qurʾān",
+      "author_id": "israr-ahmad",
+      "author": "Isrār Aḥmad",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 9,
+      "work_id": "wasit",
+      "label": "al-Tafsīr al-Wasīṭ",
+      "author_id": "tantawi",
+      "author": "Muḥammad Sayyid Ṭanṭāwī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 10,
+      "work_id": "tazkirul",
+      "label": "Tazkīr al-Qurʾān",
+      "author_id": "wahiduddin-khan",
+      "author": "Wahiduddin Khan",
+      "source_language": "ur",
+      "note": "en and ur editions are the same work."
+    },
+    {
+      "n": 11,
+      "work_id": "abu-bakr-zakaria",
+      "label": "Tafsir Abu Bakr Zakaria",
+      "author_id": "abu-bakr-zakaria",
+      "author": "Abū Bakr Muḥammad Zakariyyā",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 12,
+      "work_id": "ahsanul-bayaan",
+      "label": "Ahsanul Bayaan",
+      "author_id": "bayaan-foundation",
+      "author": "Ahsanul Bayaan (Bayaan Foundation)",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 13,
+      "work_id": "muyassar",
+      "label": "al-Tafsīr al-Muyassar",
+      "author_id": "committee-muyassar",
+      "author": "al-Tafsīr al-Muyassar (committee)",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 14,
+      "work_id": "rebar-kurdish",
+      "label": "Rebar Kurdish Tafsir",
+      "author_id": "rebar",
+      "author": "Rebar Kurdish Tafsir",
+      "source_language": "ku",
+      "note": ""
+    }
+  ],
+  "sections": {
+    "90:6": {
+      "verse_range": "6-10",
+      "title": "Boasting Man, Unthanked Blessings",
+      "in_short": "The passage answers a boastful man who brags about squandering his wealth: does he think Allah did not see him spend it? It then lists the ordinary gifts he has been given – eyes, a tongue, two lips – and the greatest gift of all: being shown the two roads, good and evil, so he can choose.",
+      "claims": [
+        {
+          "id": "90:6#c1",
+          "section_ref": "90:6",
+          "attaches_to": "90:6",
+          "text": "Lubadā means wealth that is abundant, piled up thickly one part on another; the man is boasting of a great fortune spent.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "أهلكت مالا كثيرا... وهو فعل من التلبُّد، وهو الكثير",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "مالا لبدا أي كثيرا بعضه على بعض",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "مالا لبدا أي كثيرا مجتمعا",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "أي: كثيًرا، بعضه فوق بعض",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "هو المال الكثير الذى تلبد والتصق بعضه ببعض",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "لُبَد",
+              "gloss": "wealth piled up thick, in great abundance"
+            }
+          ]
+        },
+        {
+          "id": "90:6#c2",
+          "section_ref": "90:6",
+          "attaches_to": "90:6",
+          "text": "Some reports identify the speaker: Abū al-Ashadd, who boasted of spending heavily against Muhammad ﷺ, though he was lying about it.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "كان أبو الأشدين يقول: أنفقت في عداوة محمد مالا كثيرا وهو في ذلك كاذب",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "90:6#c3",
+          "section_ref": "90:6",
+          "attaches_to": "90:6",
+          "text": "Another report (via Muqātil) names al-Ḥārith ibn ʿĀmir ibn Nawfal, who, after being told to pay an expiation (kaffārah) for a sin, complained that his wealth had gone in expiations and expenses since entering Islam.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "نزلت في الحارث بن عامر بن نوفل... لقد ذهب مالي في الكفارات والنفقات",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "90:6#c4",
+          "section_ref": "90:6",
+          "attaches_to": "90:6",
+          "text": "Al-Qurṭubī notes the statement could be read either as arrogant boasting about how much he spent, or as regret at how much it cost him.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "يحتمل أن يكون استطالة بما أنفق، فيكون طغيانا منه، أو أسفا عليه، فيكون ندما منه",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "90:6#c5",
+          "section_ref": "90:6",
+          "attaches_to": "90:6",
+          "text": "Al-Saʿdī: Allah calls spending on desires and sins 'destruction' because the spender gains no benefit and is left only with regret, loss, and fatigue, unlike one who spends to please Allah, who trades with Allah and profits many times over.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "لا ينتفع المنفق بما أنفق، ولا يعود عليه من إنفاقه إلا الندم والخسار والتعب والقلة",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "90:6#c6",
+          "section_ref": "90:6",
+          "attaches_to": "90:6",
+          "text": "Isrār Aḥmad reads this as reflecting the Quraysh chiefs' habit of doing good deeds out of rivalry rather than sincerity, then boasting of them; he cites Abū Jahl's own admission that tribal rivalry with the Prophet's ﷺ family, not disbelief in his honesty, kept him from accepting Islam.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "relay",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "یہ لوگ بھلائی اور نیکی کے کام اکثر و بیشتر جذبہ مسابقت کے تحت کرتے تھے",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "90:6#c7",
+          "section_ref": "90:6",
+          "attaches_to": "90:6",
+          "text": "A recitation variant is recorded: Abū Jaʿfar read the word with a doubled bāʾ (lubbadā), while the rest of the reciters read it lightened (lubadā); the lightened reading is what the majority transmit.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "90:6#c8",
+          "section_ref": "90:6",
+          "attaches_to": "90:7",
+          "text": "'Does he think no one saw him?' means the man imagines that Allah did not observe him while he spent, or does not know the truth of what he did.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "Does he think that Allah, the Mighty and Majestic, does not see him",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "90:6#c9",
+          "section_ref": "90:6",
+          "attaches_to": "90:7",
+          "text": "Qatādah: the son of Adam will be questioned about this very wealth, where he earned it from and where he spent it.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "إنك مسئول عن هذا المال، من أين اكتسبته، وأين أنفقته",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "90:6#c10",
+          "section_ref": "90:6",
+          "attaches_to": "90:7",
+          "text": "Al-Kalbī: the man was lying, claiming to have spent more than he actually did, thinking Allah would not know the true extent of it.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "إنه كان كاذبا في قوله أنفقت كذا وكذا، ولم يكن أنفق جميع ما قال",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "90:6#c11",
+          "section_ref": "90:6",
+          "attaches_to": "90:7",
+          "text": "A report (via Abū Hurayrah) describes the man being stopped on the Day of Judgement and asked what he did with the wealth given to him; he claims he spent and purified it, but is told this was only so people would call him generous, and he is sent to the Fire.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "يوقف العبد، فيقال ماذا عملت في المال الذي رزقتك؟ فيقول: أنفقته وزكيته",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Qurṭubī (no chain evaluation given)"
+          }
+        },
+        {
+          "id": "90:6#c12",
+          "section_ref": "90:6",
+          "attaches_to": "90:7",
+          "text": "A hadith is cited that every person will be asked on the Day of Judgement about four things: his youth, his life, and his wealth (its source and how it was spent).",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "لن تزل قدما عبد يوم القيامة حتى يسأل عن أربع",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Ṭanṭāwī (cited without chain-grading)"
+          }
+        },
+        {
+          "id": "90:6#c13",
+          "section_ref": "90:6",
+          "attaches_to": "90:7",
+          "text": "Al-Saʿdī: Allah has watched and preserved this man's deeds, entrusting them to the honourable recording angels (al-Kirām al-Kātibīn) for every act, small or great, good or evil.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "وحفظ عليه أعماله، ووكل به الكرام الكاتبين",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "90:6#c14",
+          "section_ref": "90:6",
+          "attaches_to": "90:8",
+          "text": "The question 'did We not make for him two eyes' is a rhetorical question of affirmation: Allah truly did give him these organs, though he did not give thanks for them.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "relay",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "والاستفهام هنا للتقرير",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "relay",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric"
+        },
+        {
+          "id": "90:6#c15",
+          "section_ref": "90:6",
+          "attaches_to": "90:8",
+          "text": "Al-Ṭabarī: the eyes were given to him so he can see the proofs (ḥujaj) Allah has set against him.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "عينين يبصر بهما حجج الله عليه",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "90:6#c16",
+          "section_ref": "90:6",
+          "attaches_to": "90:8",
+          "text": "Qatādah: eyes, tongue, and lips together are Allah's mutually-reinforcing blessings (niʿam mutaẕāhira), given to establish the case against man so that he might be grateful.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "نِعَم من الله متظاهرة، يقررك بها كيما تشكره",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "نعم الله ظاهرة، يقررك بها حتى تشكر",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "90:6#c17",
+          "section_ref": "90:6",
+          "attaches_to": "90:8",
+          "text": "Muftī Shafīʿ describes the eye's physiological delicacy in detail: optic nerves sending signals to the brain, the layered eyeball set in its socket, protected by eyelids, eyelashes, eyebrows and the facial bones.",
+          "claim_type": "other",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "90:6#c18",
+          "section_ref": "90:6",
+          "attaches_to": "90:8",
+          "text": "Al-Ṭanṭāwī: the eyes are singled out because sight is the most useful of the senses, and mentioning them directly answers the man's assumption that no one saw him.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "لأنهما أنفع المشاعر، ولأن المقصود إنكار ظنه أنه لم يره أحد",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "90:6#c19",
+          "section_ref": "90:6",
+          "attaches_to": "90:9",
+          "text": "The tongue and the two lips were given so man could speak and express what is within himself.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "لسانا ينطق به. وشفتين يستر بهما ثغره",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "relay",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "90:6#c20",
+          "section_ref": "90:6",
+          "attaches_to": "90:9",
+          "text": "A hadith report has Allah saying to the son of Adam: if your tongue, your eyes, or your private part press you toward what is forbidden, I have already aided you against it with two coverings (the lips, the eyelids) — so shut them.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "إن نازعك لسانك فيما حرمت عليك فقد أعنتك عليه بطبقتين فأطبق",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "إن نازعك لسانك فيما حرمت عليك، فقد أعنتك عليه بطبقين، فأطبق",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "relay",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Baghawī / al-Qurṭubī (cited without a chain-grading)"
+          }
+        },
+        {
+          "id": "90:6#c21",
+          "section_ref": "90:6",
+          "attaches_to": "90:9",
+          "text": "Muftī Shafīʿ reflects at length on the tongue as a remarkable organ: a thought in the heart is interpreted by the brain, put into words, and uttered by the tongue almost instantly; the tongue is called a double-edged sword, capable of great good or great harm, and the lips are given to sheathe it so it is not drawn carelessly.",
+          "claim_type": "other",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "90:6#c22",
+          "section_ref": "90:6",
+          "attaches_to": "90:9",
+          "text": "Al-Ṭanṭāwī: the two lips are two layers of skin covering the mouth and teeth, aiding clear speech; the tongue cannot articulate properly without the lips, and the lips cannot speak without the tongue — they work together.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "فاللسان لا ينطق نطقا صحيحا بدون الشفتين، وهما لا ينطقان بدونه",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "90:6#c23",
+          "section_ref": "90:6",
+          "attaches_to": "90:10",
+          "text": "Najd lexically means elevated land or a raised path (plural nujūd); the region of Najd is named for its height above the lowland of Tihāmah.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "والنجد: طريق في ارتفاع",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "فالنجد: العلو، وجمعه نجود",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "90:6#c24",
+          "section_ref": "90:6",
+          "attaches_to": "90:10",
+          "text": "The majority reading of 'the two najds' is the path of good and the path of evil — guidance and misguidance, right and wrong — compared to 'We showed him the way, whether he be grateful or ungrateful' (76:3).",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "قال أكثر المفسرين: طريق الخير والشر",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "طريقي الخير والشر",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "relay",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "90:6#c25",
+          "section_ref": "90:6",
+          "attaches_to": "90:10",
+          "text": "This good-and-evil reading is traced to a wide circle of early authorities: Ibn ʿAbbās, Ibn Masʿūd, ʿAlī, Mujāhid, ʿIkrimah, Abū Wāʾil, Abū Ṣāliḥ, al-Ḥasan, al-Ḍaḥḥāk, and others.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "90:6#c26",
+          "section_ref": "90:6",
+          "attaches_to": "90:10",
+          "text": "A minority reading takes 'the two najds' as the mother's two breasts, the two channels of milk by which the child is nourished; this is attributed (through one chain) to Ibn ʿAbbās, and also to Saʿīd ibn al-Musayyib, al-Ḍaḥḥāk, and ʿIkrimah.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "هما الثديان",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "النجدان: الثديان",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "relay",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "90:6#c27",
+          "section_ref": "90:6",
+          "attaches_to": "90:10",
+          "text": "Al-Rabīʿ ibn Khaytham explicitly rejected the breast-reading when asked about this verse, saying plainly: 'they are not the two breasts.'",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "refute",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "ليسا بالثديين",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "90:6#c28",
+          "section_ref": "90:6",
+          "attaches_to": "90:10",
+          "text": "Al-Ṭabarī states his own preference for the good-and-evil reading, reasoning that Allah is here enumerating His blessings of guidance, matching the pattern in 76:2-3 where hearing, sight and guidance to the path are listed together as blessings.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "وأولى القولين بالصواب في ذلك عندنا: قول من قال: عُنِي بذلك طريق الخير والشر",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "90:6#c29",
+          "section_ref": "90:6",
+          "attaches_to": "90:10",
+          "text": "A report has the Prophet ﷺ saying: 'They are only two paths, the path of good and the path of evil, so do not let the path of evil be more beloved to you than the path of good' — transmitted with the phrasing 'it was mentioned to us' rather than a direct chain to the Prophet ﷺ.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "ذُكر لنا أن نبيّ الله صلى الله عليه وسلم كان يقول: يا أيُّها النَّاسُ إنَّمَا هُمَا النَجْدَانِ",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Ṭabarī (transmitted as 'dhukira lanā' — mentioned to us, without a stated chain)"
+          }
+        },
+        {
+          "id": "90:6#c30",
+          "section_ref": "90:6",
+          "attaches_to": "90:10",
+          "text": "Isrār Aḥmad prefers the breast-reading himself, linking it to man's innate, instinctive guidance (as in the verse 'He who determined, then guided'): a newborn instinctively seeks and finds the mother's milk, a sign of Allah's built-in guidance.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "مجھے موخر الذکر رائے زیادہ پسند ہے",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "90:6#c31",
+          "section_ref": "90:6",
+          "attaches_to": "90:10",
+          "text": "Al-Saʿdī frames verses 8-9 as the blessings of this world (niʿam al-dunyā) and verse 10 as the blessing of religion (niʿam al-dīn), clarifying guidance from misguidance and right conduct from error; these many gifts require the servant to fulfil Allah's rights, give thanks, and not use these blessings to aid disobedience — but man did not do so.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "فهذه المنن الجزيلة، تقتضي من العبد أن يقوم بحقوق الله... ولكن هذا الإنسان لم يفعل ذلك",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "90:6#c32",
+          "section_ref": "90:6",
+          "attaches_to": "90:10",
+          "text": "Al-Ṭanṭāwī suggests the two paths are called 'najdayn' either because, once proofs and evidences became clear, they stood out like raised roads visible to anyone with sight, or because both paths are in fact rugged — and the path of evil is often the harder of the two, despite appearing easier.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "أو إنما سميا بذلك، للإشارة إلى أن كل منهما وعورة... وليس سلوك طريق الشر بأهون من سلوك الخير",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "90:6#c33",
+          "section_ref": "90:6",
+          "attaches_to": "90:10",
+          "text": "Zakariyyā pictures the two paths concretely: one climbs upward, hard and demanding a struggle against desire and Satan's promptings, leading to success; the other descends easily, needing no effort beyond loosening the leash of one's own desire, after which a person simply rolls downward. This man took the descending path.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "90:6#c34",
+          "section_ref": "90:6",
+          "attaches_to": "90:10",
+          "text": "Wahiduddin Khan reads the call here as urging man to climb two heights: dealing justly with others and helping them in need, and holding firm faith in Allah — and that when such faith takes root, it makes a person communicative, drawing others too onto the path of truth.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "90:6#c35",
+          "section_ref": "90:6",
+          "attaches_to": "90:7",
+          "text": "Sayyid Quṭb reads the whole passage as the Qurʾan holding up a mirror to man: he forgets he was created into hardship and forgets Allah watches him, so he gives, seizes, hoards and transgresses fearlessly — until, faced with a call to spend in good, he boasts instead of the wealth he has already 'blown away,' as if that were enough; the Qurʾan then shows him, within his own body, the countless kindnesses of his Creator, for which he has not thanked even once.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        }
+      ],
+      "essay_html": "<p>The man in this passage boasts. He says, ‘I have squandered great wealth,’ meaning a fortune piled up thick, spent in one go <sup class=\"ref\">1,2,3,5,9</sup>. Some reports name him as Abū al-Ashadd, who boasted of what he spent fighting the Prophet ﷺ, though he was lying <sup class=\"ref\">1,3</sup>; another report names al-Ḥārith ibn ʿĀmir, who complained after entering Islam that his wealth had gone on expiations <sup class=\"ref\">3</sup>. Al-Qurṭubī notes the words could carry either arrogance or regret <sup class=\"ref\">3</sup>. Al-Saʿdī calls this kind of spending ‘destruction’ precisely because it brings the spender nothing but regret and loss, unlike wealth given for Allah's sake, which trades with Him and returns manifold <sup class=\"ref\">5</sup>. Isrār Aḥmad ties the boast to a Quraysh habit of doing good only for rivalry, citing Abū Jahl's own admission that tribal competition, not doubt in the Prophet's ﷺ honesty, kept him from Islam <sup class=\"ref\">8</sup>.</p>\n<p>‘Does he think no one observes him?’ The commentators read this as exposing the man's forgetfulness: he assumes Allah did not see him spend, or does not know the truth of it <sup class=\"ref\">1,4,5,6,9,13</sup>. Qatādah says every son of Adam will be asked where his wealth came from and where it went <sup class=\"ref\">1,2,3,4</sup>; al-Kalbī adds that the man may have been lying about the amount, assuming Allah would not know better <sup class=\"ref\">2</sup>. One report pictures the scene at judgement: the man claims he spent and purified his wealth, only to be told it was for show, and is sent to the Fire <sup class=\"ref\">3</sup>; another names four things every person is questioned about, including the wealth's source and its spending <sup class=\"ref\">9</sup>. Al-Saʿdī adds that Allah has preserved every one of his deeds through the recording angels <sup class=\"ref\">5</sup>. Sayyid Quṭb reads the whole scene as a man who forgets both the hardship of his creation and the eye of his Creator, seizing and spending fearlessly, then boasting when asked to give in good <sup class=\"ref\">6</sup>.</p>\n<p>The rebuke turns from accusation to a rhetorical question, one that affirms rather than merely asks: did We not give him eyes? The tongue and lips follow <sup class=\"ref\">1,3,5,9,13</sup>. Al-Ṭabarī says the eyes were given so the man could see the proofs set against him <sup class=\"ref\">1</sup>; Qatādah calls eyes, tongue and lips ‘interlocking blessings’, meant to settle the case so man would give thanks <sup class=\"ref\">1,2,3</sup>. Muftī Muḥammad Shafīʿ lingers on the eye's fine construction, its optic nerve, its layered ball set in bone and guarded by lid, lash and brow <sup class=\"ref\">7</sup>; al-Ṭanṭāwī adds that sight is singled out as the most useful sense, and its mention directly answers the man's assumption that no one saw him <sup class=\"ref\">9</sup>.</p>\n<p>The tongue and two lips let him speak and say what is within him <sup class=\"ref\">1,3,4,5,9,13</sup>. One report has Allah telling the son of Adam that if tongue, eye, or private part press toward what is forbidden, He has already given two coverings against it, lips and eyelids, so ‘shut them’ <sup class=\"ref\">2,3,6</sup>. Muftī Shafīʿ describes the tongue as a swift, almost mysterious articulator of the heart's thought, calling it a double-edged sword sheathed by the lips so it is not drawn carelessly <sup class=\"ref\">7</sup>; al-Ṭanṭāwī notes tongue and lips need each other for clear speech, neither working alone <sup class=\"ref\">9</sup>.</p>\n<p>The greatest gift comes last: ‘and We showed him the two clear ways’ (al-najdayn), a word meaning elevated, visible roads, from which the highland of Najd takes its name <sup class=\"ref\">1,2,3,9</sup>. Most commentators, tracing the reading back to Ibn ʿAbbās, Ibn Masʿūd, ʿAlī, Mujāhid and others, take this as the path of good and the path of evil, compared to ‘We showed him the way, whether he be grateful or ungrateful’ (76:3) <sup class=\"ref\">1,2,3,4,5,9,11,12,13</sup>. A minority report reads it instead as the mother's two breasts, the two channels of milk; al-Rabīʿ ibn Khaytham flatly rejected this, saying ‘they are not the two breasts’ <sup class=\"ref\">1,2,3,8,12</sup>. Al-Ṭabarī states his own preference for the good-and-evil reading, since the passage is enumerating blessings of guidance, matching the pattern of 76:2-3 <sup class=\"ref\">1</sup>. Isrār Aḥmad prefers the breast-reading instead, linking it to an instinctive, built-in guidance already visible in the newborn who finds milk without being taught <sup class=\"ref\">8</sup>.</p>\n<p>Al-Saʿdī sums up the pattern: verses 8-9 list the blessings of this world, verse 10 the blessing of religion, both demanding gratitude and the fulfilment of Allah's rights, ‘but this man did not do that’ <sup class=\"ref\">5</sup>. Al-Ṭanṭāwī suggests the two roads are called ‘elevated’ either because the proofs stand out clearly to anyone with sight, or because both roads are in fact rough going, the road of evil often the harder of the two despite seeming easier <sup class=\"ref\">9</sup>. Zakariyyā pictures it concretely: one road climbs, demanding a struggle against desire, and leads to success; the other simply descends, needing only that a man loosen the leash of his own desire, after which he rolls downward on his own <sup class=\"ref\">11</sup>. Wahiduddin Khan reads the summons here as a call to climb two heights, justice toward others and firm faith in Allah, faith that in the end makes a believer speak and draw others along the same road <sup class=\"ref\">10</sup>.</p>\n<p class=\"close\">Eyes to see, a tongue and two lips to speak, and two roads already shown, plain as raised paths on open ground — the man who boasted of his spending has been given far more than he ever gave away, and has not yet thanked for a single one of it.</p>",
+      "sources_used": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "source_hashes": {
+        "1": "sha256:f9fb617b6fe9707b58ebd090b85d1c25b1de2a892f686705a0d69dd48a250f31",
+        "2": "sha256:cf5597bc6d4cc90a2307b14eeb1fd4402f4d05a42fafd8e0281fead1615ac16c",
+        "3": "sha256:cc7610c49e9c23a78d6eb8a55f5911ba16b40d234537dc19adebc774955e4f02",
+        "4": "sha256:98a902ff0e1f3de82ec0ef51cbd6e74fec468426cc8a35f076f15f4066aec05b",
+        "5": "sha256:3f66920c5a8efaa627261fbd4999696d0f5b54c238bd378d1e1cb240555a56ea",
+        "6": "sha256:600efb6f5fe6da619a70f76a4ffb2aaf82a9df59c0311c0eddcf850ca09b06c5",
+        "7": "sha256:30c85d7222acd105537eca9c4bce08fc4ea695632c2282755d6b44c2852ec959",
+        "8": "sha256:62f3861c498c240998e3aea59922bbc46771d4d605d72b393a6cd36cfd01f39b",
+        "9": "sha256:a7919878e5e98fe21a965870a404ee2c2b7a236e62cfc7523d031b441db0ce88",
+        "10": "sha256:82347366b2b5a3b290469247b5a06682628e4e104669ad36d1f72f229243aa27",
+        "11": "sha256:026e307dda1121290a60365f6903310bef2cf8b16d70e4cb913102350a3fa9b8",
+        "12": "sha256:f62512c1b210b956de5a2a2e60fb73d8b58d1e131566bfa6032099c6df39238c",
+        "13": "sha256:4fcdb9eb81d67c422c35d49acea4171b1ce279e45363227d92e84d033a2b2127",
+        "14": "sha256:bac49b25e9ac8aef22507283c19e637c4a133322724ac5b163f61841ef3c1150"
+      },
+      "flags": {
+        "creedal_stakes": "true",
+        "legal_content": "false",
+        "sensitive_content": "true"
+      },
+      "compiled_at": "2026-08-02"
+    },
+    "90:20": {
+      "verse_range": "20-20",
+      "title": "The Sealed Fire",
+      "in_short": "The final verse of the surah describes the fate of the 'companions of the left', those who rejected God's signs: a Fire that will be sealed shut over them, with no door, no light, and no way out.",
+      "claims": [
+        {
+          "id": "90:20#c1",
+          "section_ref": "90:20",
+          "attaches_to": "90:20",
+          "text": "Muʾṣadah means closed, sealed, or shut. It comes from a root meaning to firmly shut a door, so the verse describes Hell's fire as closed in on them, with no way to escape.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "أي مطبقة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "مطبقة عليهم أبوابها",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "معنى مؤصدة أي مطبقة مغلقة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "meaning, it will be sealed over them",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "أي: مغلقة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "أى : عليهم نار مغلقة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "جهنم مطبَقةٌ مغلقة عليهم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "original_excerpt": "مؤصَدَة এর অর্থ হল مُغلَقَة",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "low"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "مُؤْصَدَة",
+              "gloss": "sealed shut, from a root meaning to firmly close a door"
+            }
+          ]
+        },
+        {
+          "id": "90:20#c2",
+          "section_ref": "90:20",
+          "attaches_to": "90:20",
+          "text": "The word can be read two ways: with a hamza (muʾṣadah) or without it (mūṣadah). Both are recognised dialectal forms carrying the same meaning of 'closed'.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "وهما لغتان",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وهما لغتان",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "90:20#c3",
+          "section_ref": "90:20",
+          "attaches_to": "90:20",
+          "text": "Abū Bakr ibn ʿAyyāsh remarked that when his imam recited the word with a hamza, he wished he could block his ears rather than hear it, expressing a personal dislike for that reading.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "فأشتهي أن أسد أذني إذا سمعته",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "90:20#c4",
+          "section_ref": "90:20",
+          "attaches_to": "90:20",
+          "text": "Qatādah explained that this Fire will be shut over them with no light in it, no crack of an opening, and no way out of it ever.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "فلا ضوء فيها ولا فرج، ولا خروج منها آخر الأبد",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "It will be shut and there will be no light in it, no crevice",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "narrated as an athar of Qatādah without grading by the sources"
+          }
+        },
+        {
+          "id": "90:20#c5",
+          "section_ref": "90:20",
+          "attaches_to": "90:20",
+          "text": "Ibn ʿAbbās said the meaning is that the doors of the Fire will be closed upon them.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "قال: مُطْبَقة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "Its doors will be closed",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "narrated as an athar of Ibn ʿAbbās without grading by the sources"
+          }
+        },
+        {
+          "id": "90:20#c6",
+          "section_ref": "90:20",
+          "attaches_to": "90:20",
+          "text": "al-Ḍaḥḥāk gave a related but slightly different picture: the Fire will be sealed over them and will have no door at all, rather than doors that are simply shut.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "It will be sealed over them and it will have no door",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "narrated as an athar of al-Ḍaḥḥāk without grading by the sources"
+          }
+        },
+        {
+          "id": "90:20#c7",
+          "section_ref": "90:20",
+          "attaches_to": "90:20",
+          "text": "Al-Saʿdī added a further detail: the Fire is sealed with pillars stretched out behind the doors so that they cannot be forced open, leaving those inside in constriction, anguish, and severity.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "في عمد ممددة، قد مدت من ورائها، لئلا تنفتح أبوابها، حتى يكونوا في ضيق وهم وشدة",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "90:20#c8",
+          "section_ref": "90:20",
+          "attaches_to": "90:20",
+          "text": "Sayyid Quṭb reads 'closed upon them' in two linked senses: either the doors of Hell are literally shut once they are inside, or the torment of the fire simply covers and envelops them entirely. He treats the two senses as inseparable, since being wholly covered by the fire already means there is no way to get out.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "آگ کے دروازے ان پر بند ہیں ... آگ کا عذاب ان پر چھایا ہوا ہے",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "90:20#c9",
+          "section_ref": "90:20",
+          "attaches_to": "90:20",
+          "text": "Sayyid Quṭb observes that this Fire is the fitting close for the 'companions of the left', described just before as those who disbelieved in Allah's signs. Because disbelief (kufr) voids the benefit of any good deed, the verses feel no need to spell out that such people failed to free slaves or feed the needy, since kufr alone erases any credit for good.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "کفر کے ساتھ کوئی نیکی جمع ہی نہیں ہوسکتی",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "90:20#c10",
+          "section_ref": "90:20",
+          "attaches_to": "90:20",
+          "text": "Isrār Aḥmad likens the sealed Fire to a pressure cooker: sealing it in keeps all its heat trapped inside, so that the punishment reaching them is at its most intense.",
+          "claim_type": "other",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "تاکہ پریشر ککر کی طرح آگ کی ساری تپش اندر ہی رہے",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "90:20#c11",
+          "section_ref": "90:20",
+          "attaches_to": "90:20",
+          "text": "Ahsanul Bayaan explains the sealing as serving two purposes: first, so that the full heat of the fire reaches them, and second, so that they cannot flee from it to anywhere.",
+          "claim_type": "other",
+          "sources": [
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "original_excerpt": "প্রথমতঃ আগুনের সম্পূর্ণ তাপ তাদেরকে পৌঁছে এবং দ্বিতীয়তঃ সেখান হতে পলায়ন করে কোথাও যেতে না পারে",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "90:20#c12",
+          "section_ref": "90:20",
+          "attaches_to": "90:20",
+          "text": "Reflecting on this description, some commentators turn it into a prayer, asking Allah to protect them from such a fate and to make them among the companions of the right hand instead.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "نسأل الله - تعالى - أن يجعلنا من أصحاب الميمنة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "اللہ کی پناہ ! اللہ تعالیٰ سے دعا ہے کہ وہ ہمیں ایسے عذاب سے محفوظ رکھے",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "unspecified"
+        },
+        {
+          "id": "90:20#c13",
+          "section_ref": "90:20",
+          "attaches_to": "90:20",
+          "text": "Wahiduddin Khan frames the fate described here within a wider point: God has arranged guidance for people through the natural world, an innate moral sense, and the clear teaching of the prophets. Those who still reject the right path after all this are, in his reading, transgressors.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        }
+      ],
+      "essay_html": "<p>The surah ends on the fate of the 'companions of the left', those who denied Allah's signs. Their punishment is a Fire that is muʾṣadah, a word the commentators agree means closed, sealed, shut, so that it settles over them with no way out.<sup class=\"ref\">1,2,3,4,5,9,13,11,12,14</sup> The word itself can be read two ways, with or without a hamza, both recognised dialects carrying the same sense of closing.<sup class=\"ref\">2,3</sup> One reciter, Abū Bakr ibn ʿAyyāsh, is even remembered saying he would rather block his ears than hear an imam pronounce it with the hamza, a small note on how differently people heard the same word.<sup class=\"ref\">3</sup></p><p>The early commentators fill out what this sealing means. Qatādah described a Fire with no light inside it, no crack of an opening, and no way out of it ever.<sup class=\"ref\">1,4</sup> Ibn ʿAbbās is reported saying its doors will be closed, while al-Ḍaḥḥāk went further, saying it will have no door at all.<sup class=\"ref\">4</sup> Al-Saʿdī adds a further image: pillars stretched out behind the doors so they cannot be forced open, leaving those inside in constriction, anguish and severity.<sup class=\"ref\">5</sup></p><p>Sayyid Quṭb reads the closing in two linked ways. Either the doors of Hell are shut once people are inside it, or the torment of the fire simply covers them completely, and either way there is no way out.<sup class=\"ref\">6</sup> He also connects this Fire to the verse before it: because these people disbelieved in Allah's signs, that disbelief alone erases the value of any good deed, so there is no need to list what they failed to do, freeing slaves or feeding the needy, since kufr already voids the credit for such things.<sup class=\"ref\">6</sup></p><p>Later commentators offer plainer images of what the sealing achieves. Isrār Aḥmad compares it to a pressure cooker, trapping all the heat inside for maximum intensity.<sup class=\"ref\">8</sup> Ahsanul Bayaan gives the same idea in two parts: the seal ensures the full heat reaches them, and it stops any escape.<sup class=\"ref\">12</sup> Some commentators turn the description into a supplication, asking Allah to spare them this fate and to place them instead among the companions of the right hand.<sup class=\"ref\">8,9</sup> Wahiduddin Khan sets the fate within a broader picture: Allah guides through the natural world, the human conscience, and the prophets' clear teaching, so that anyone who still turns away after all this is a transgressor.<sup class=\"ref\">10</sup></p><p class=\"close\">Across every voice the picture holds together: a Fire closed over them, without light, without a crack, without an end.<sup class=\"ref\">1,4</sup></p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:1041cbf8318021846e6b83fb218ea7ba7817f956d368039f48f4edf016bd2b78",
+        "2": "sha256:081ba835eddf583220d2bc55ec7ec2495d987dbed2254807ded7390f98cc9b3d",
+        "3": "sha256:e47a91d9bfd69855bf94d1181848eee78af27ad95a319b90a4e9ea82b00edf07",
+        "4": "sha256:8b2a554db48edc741044c8cc88650febfeb87a96e931ace5602d90cdb10cd313",
+        "5": "sha256:1274ef413ccc78f380c9c96eb1cfc59e38e1078fe4448de7d64337567a173313",
+        "6": "sha256:d4b933584022b0b544dff5099bae3d85e4b87766ee88eae926a2cceeeea0ae5f",
+        "7": "sha256:8456f40500a789c96ff5d7d86200e5f501ee7754606d6377bab798e9ad195682",
+        "8": "sha256:ce7e49365d326947ff4f1ea00078249f59352b988b4c5ad5ad474769b109aa5f",
+        "9": "sha256:6df7daad96d81c7d2922513c7ebb78ac41031301d0488d92aa1d6cfd5913b55e",
+        "10": "sha256:5f64fa2c96d4e4ad57d9349befea7556e203d3ad3c04794c2625688f3568428e",
+        "11": "sha256:f3c59199e14ea6179c07c4bc477638630e98f9c492b2c521f07afabed6e4de0c",
+        "12": "sha256:83d1a1bf97c0b8a9ccedcaf3a75ee6fecc271821971407edc4f1e660c2f246c2",
+        "13": "sha256:71fa4e9c328ddb1edc3f536920fe54d9541fdcda717bbe9ed3badccdc97948e7",
+        "14": "sha256:a405e018c20479e8a074ae135d488f40750577f717fbe5b085e56983c18aa0c6"
+      },
+      "flags": {
+        "creedal_stakes": true,
+        "legal_content": false,
+        "sensitive_content": true
+      },
+      "compiled_at": "2026-08-02"
+    },
+    "90:1": {
+      "verse_range": "1-5",
+      "title": "Sworn by the City, Born to Toil",
+      "in_short": "Allah swears by the sacred city of Makkah, by the Prophet's ﷺ presence in it, and by every parent and child, to establish that man is created into a life of toil and hardship, and that no one, however strong, escapes God's power over him.",
+      "claims": [
+        {
+          "id": "90:1#c1",
+          "section_ref": "90:1",
+          "attaches_to": "90:1",
+          "text": "The opening particle 'lā' before the oath is understood in two ways: either as a grammatical filler added for emphasis (so the meaning is simply 'I swear'), or as a rebuttal of a false idea the disbelievers held, before the oath proper begins ('No! ... I swear').",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar",
+          "original_terms": [
+            {
+              "term": "lā",
+              "gloss": "the negating particle 'no', here read either as emphatic filler or as refuting a false claim"
+            }
+          ]
+        },
+        {
+          "id": "90:1#c2",
+          "section_ref": "90:1",
+          "attaches_to": "90:1",
+          "text": "'This city' (al-balad) is Makkah, by unanimous agreement among the commentators.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "90:1#c3",
+          "section_ref": "90:1",
+          "attaches_to": "90:2",
+          "text": "'Ḥill' in 'you are ḥill in this city' is read as: it was made lawful for the Prophet ﷺ to fight and kill in Makkah, exceptionally, for a single hour on the day of the Conquest, though Makkah's sanctity as a sanctuary is otherwise permanent. This is grounded in a hadith stating Allah made the city sacred from the day He created the heavens and earth, that it was never lawful for anyone before the Prophet ﷺ nor will be after him, and it was only permitted to him for part of a day.",
+          "claim_type": "legal",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "relay",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "original_terms": [
+            {
+              "term": "ḥill",
+              "gloss": "lawful, permitted, released from a restriction"
+            }
+          ],
+          "report": {
+            "grade": "sahih",
+            "graded_by": "Ibn Kathīr, citing the hadith as agreed-upon (Bukhārī and Muslim)"
+          }
+        },
+        {
+          "id": "90:1#c4",
+          "section_ref": "90:1",
+          "attaches_to": "90:2",
+          "text": "Others read 'ḥill' as meaning: whatever the Prophet ﷺ did in Makkah, he was not held blameworthy or sinful for it, unlike ordinary people bound by the sanctuary's normal restrictions.",
+          "claim_type": "legal",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "90:1#c5",
+          "section_ref": "90:1",
+          "attaches_to": "90:2",
+          "text": "'Ḥill' is alternatively read from 'ḥulūl' (to reside), meaning simply that the Prophet ﷺ is a resident/dweller of this city, and that his presence there increases the city's honour, since a place gains in nobility when a noble person dwells in it.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "ḥulūl",
+              "gloss": "to settle, dwell, or reside in a place"
+            }
+          ]
+        },
+        {
+          "id": "90:1#c6",
+          "section_ref": "90:1",
+          "attaches_to": "90:2",
+          "text": "Some hold that 'anta ḥillun' is grammatically future in sense ('you will be made lawful'), not describing a present state, since the sura is Makkan and was revealed before the Conquest — comparable to 'innaka mayyitun' ('you will die') which is present in form but future in meaning.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "90:1#c7",
+          "section_ref": "90:1",
+          "attaches_to": "90:2",
+          "text": "The verse is read as pointing to the inconsistency of the Quraysh: they treated Makkah's sanctuary as inviolable even for animals and trees, yet they considered it permissible to harm and kill the Prophet ﷺ himself within that same sanctuary.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "90:1#c8",
+          "section_ref": "90:1",
+          "attaches_to": "90:3",
+          "text": "The majority reading of 'a parent and what he begot' is: the parent is Adam عليه السلام and 'what he begot' is his descendants, i.e. all mankind. Ibn Kathīr calls this the strong view, since Allah first swears by the Mother of Cities (a dwelling) then by its first dweller, Adam, and his children.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "relay",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "90:1#c9",
+          "section_ref": "90:1",
+          "attaches_to": "90:3",
+          "text": "Others read the phrase as general: every begetting parent and every child born, not restricted to Adam specifically. Al-Ṭabarī prefers this reading, arguing that Allah's wording is unrestricted and there is no compelling proof (narrated or rational) to limit it.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "90:1#c10",
+          "section_ref": "90:1",
+          "attaches_to": "90:3",
+          "text": "A further minority reading takes the parent as Ibrahim عليه السلام and 'what he begot' as his descendants.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "90:1#c11",
+          "section_ref": "90:1",
+          "attaches_to": "90:3",
+          "text": "A further minority reading takes 'walid' as the parent who does beget and treats 'mā walad' as a negation, meaning the barren one who cannot have children — so the oath spans both the fertile and the barren. Al-Ṭabarī and al-Qurṭubī note this requires an awkward, grammatically difficult reading of 'mā' as a hidden relative clause.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "refute",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "refute",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "90:1#c12",
+          "section_ref": "90:1",
+          "attaches_to": "90:3",
+          "text": "Sayyid Quṭb, citing a reflection of Muhammad ʿAbduh, reads the oath by parent and offspring as pointing to the wonder of the whole reproductive order in creation: the deep wisdom in a parent's toil to bring a child to completion, mirrored even in how a seed struggles against its environment to become a tree bearing further seed — a marvel repeated up through the animal world.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "90:1#c13",
+          "section_ref": "90:1",
+          "attaches_to": "90:3",
+          "text": "Sayyid Quṭb also connects the three oaths of the passage: the city, the Prophet ﷺ dwelling in it, and the parent and child understood as Ibrahim and Ismail عليهما السلام, the city's founders — a connection he reads as exposing the falseness of the Quraysh's claim to be the true custodians of the religion of Ibrahim while they persecute his household's descendant.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "90:1#c14",
+          "section_ref": "90:1",
+          "attaches_to": "90:4",
+          "text": "'Verily We have created man in kabad' is the response (jawāb al-qasam) to the preceding oaths — the statement they were sworn to establish.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "90:1#c15",
+          "section_ref": "90:1",
+          "attaches_to": "90:4",
+          "text": "The dominant reading of 'kabad' is hardship, toil, and struggle: man is created to endure difficulty at every stage of life — in the womb, at birth, at weaning, as his teeth come in, in earning a livelihood, in old age, in death, in the grave, and at resurrection and reckoning. Some add that no created thing endures what the son of Adam endures, despite being physically among the weaker creatures.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "relay",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "relay",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "original_terms": [
+            {
+              "term": "kabad",
+              "gloss": "hardship, toil, the effort of struggling through something difficult"
+            }
+          ]
+        },
+        {
+          "id": "90:1#c16",
+          "section_ref": "90:1",
+          "attaches_to": "90:4",
+          "text": "A second reading takes 'kabad' as uprightness: man alone among creatures is created standing erect on two legs in the womb and after birth, rather than bent over facing the ground as other animals are. Al-Ṭabarī and Tanṭāwī judge the hardship-reading to be the stronger one, based on established Arabic usage and supporting poetry.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "refute",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "90:1#c17",
+          "section_ref": "90:1",
+          "attaches_to": "90:4",
+          "text": "A minority reading, attributed to Ibn Zayd, takes 'kabad' to mean 'in the sky' — that man (understood as Adam) was created in the midst/zenith of the heaven, a sense in which the Arabs used the word 'kabad' for the sky's centre. Al-Ṭabarī does not adopt this reading.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "90:1#c18",
+          "section_ref": "90:1",
+          "attaches_to": "90:4",
+          "text": "Al-Saʿdī offers a further possible sense: that man was created in the best proportion and form, given great capacity for action, yet failed to be grateful for this and instead grew arrogant against his Creator, wrongly presuming his favourable state would last forever.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "90:1#c19",
+          "section_ref": "90:1",
+          "attaches_to": "90:4",
+          "text": "The word 'kabad' is rooted in the liver (kabid); its extension to mean hardship/toil is supported by classical Arabic usage, illustrated with a verse of the poet Labīd ibn Rabīʿa mourning his brother, where 'kabad' denotes distress and hardship.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "90:1#c20",
+          "section_ref": "90:1",
+          "attaches_to": "90:4",
+          "text": "That man is never able to free himself from hardship is read as pointing to man being subordinate to a Superior Power above him — a sign, if reflected on, that leads to recognising God.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "90:1#c21",
+          "section_ref": "90:1",
+          "attaches_to": "90:5",
+          "text": "The verse 'Does he think none has power over him?' is reported to have been revealed about a specific strong man of Banu Jumaḥ, called Abū al-Ashadd (also given as Abū al-Ashadayn, named Usayd/Asīd ibn Kaldah al-Jumaḥī), known for placing a hide on the ground and daring anyone to shift him off it; some also named al-Walīd ibn al-Mughīra.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "90:1#c22",
+          "section_ref": "90:1",
+          "attaches_to": "90:5",
+          "text": "The verse is read as a rebuke: man, relying on his own strength or resources, wrongly presumes that no one — meaning Allah — has power over him or will call him to account, whether for how he made or spent his wealth or for his deeds; this is delusion, since the One who created him can overpower him in an instant.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "relay",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "relay",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        }
+      ],
+      "essay_html": "<p>Allah opens the sura with an oath, and the commentators first pause on the small word before it: 'lā'. Some read it as filler added for emphasis, so the sense is simply 'I swear'. Others read it as a rebuttal, striking down a false idea in the listener's mind before the true oath begins.<sup class=\"ref\">1,3,7,8,9,11</sup> All agree on what is sworn by: 'this city' is Makkah.<sup class=\"ref\">1,2,3,4,5,6,9,11,13,14</sup></p><p>The next line, 'and you are ḥill in this city', carries more than one sense. Many take it as a legal announcement: it would be made lawful for the Prophet ﷺ to fight in Makkah, exceptionally, for a single hour on the day of the Conquest, even though the city's sanctity is otherwise permanent. This rests on a hadith, graded sound by agreement of Bukhārī and Muslim according to Ibn Kathīr (d. 1373 CE), in which the Prophet ﷺ said Allah made Makkah sacred the day He created the heavens and earth, and that it was never made lawful for anyone before him nor will be after him.<sup class=\"ref\">1,2,3,4,7,11,12,13,14</sup> Others read 'ḥill' as meaning he bore no blame for whatever he did there, unlike others bound by the sanctuary's ordinary rules.<sup class=\"ref\">1,3</sup> A third reading takes 'ḥill' from 'to dwell': the Prophet ﷺ is simply a resident of the city, and his presence there raises its honour.<sup class=\"ref\">7,8,9,11</sup> Some hold the phrase is grammatically future, 'you will be made lawful', since the sura predates the Conquest, much as 'you will die' uses the present form for a future event.<sup class=\"ref\">3,9,12</sup> Read together with the oath, the verse is also taken as exposing an inconsistency in the Quraysh: they held the sanctuary inviolable even for animals and trees, yet judged it permissible to harm the Prophet ﷺ himself within it.<sup class=\"ref\">1,3,8,11</sup></p><p>The oath continues, 'and a parent and what he begot'. Most commentators take the parent as Adam عليه السلام and what he begot as all mankind, since Allah has just sworn by the Mother of Cities and now by its first dweller and his children.<sup class=\"ref\">1,2,3,4,5,7,11,12,13,14</sup> Al-Ṭabarī (d. 923 CE) himself prefers a more general reading, every begetting parent and every child, since nothing in the wording restricts it.<sup class=\"ref\">1,3,9,12,14</sup> Others name Ibrahim عليه السلام and his descendants,<sup class=\"ref\">1,3,4,14</sup> while a further, more strained reading takes 'what he begot' as a negation meaning the barren who cannot beget — a construction al-Ṭabarī and al-Qurṭubī (d. 1273 CE) both find grammatically difficult.<sup class=\"ref\">1,3</sup> Sayyid Quṭb (d. 1966 CE), drawing on a reflection of Muhammad ʿAbduh, reads the oath as pointing to the wonder of begetting itself across creation, the toil a parent bears to bring a child to completion, mirrored even in how a seed struggles to become a tree.<sup class=\"ref\">6</sup> He also links the three oaths, city, dweller, and parent-and-child understood as Ibrahim and Ismail, to expose the Quraysh's false claim to be the true keepers of Ibrahim's religion while they persecute his descendant.<sup class=\"ref\">6</sup></p><p>The answer to all these oaths comes next: 'We have created man in kabad'.<sup class=\"ref\">1,3</sup> Most read kabad as hardship and toil, a struggle running through every stage of life, in the womb, at birth, weaning, the coming of teeth, the earning of a living, old age, death, the grave, and the reckoning to come. No creature, some add, endures what the son of Adam endures, despite being among the physically weaker creatures.<sup class=\"ref\">1,2,3,4,5,6,7,8,9,11,12,13,14</sup> A second, minority reading takes kabad as uprightness, man alone standing erect rather than bent to the ground as other animals are, though al-Ṭabarī and al-Ṭanṭāwī (d. 2010 CE) judge the hardship-reading stronger on grounds of established Arabic usage.<sup class=\"ref\">1,2,3,9</sup> A rarer reading, from Ibn Zayd, takes kabad as 'in the sky'.<sup class=\"ref\">1,3</sup> Al-Saʿdī (d. 1957 CE) adds a further angle: man was given the best of form and capacity, yet failed to be grateful and grew arrogant instead, presuming his ease would last.<sup class=\"ref\">5</sup> The word's root sits in the liver (kabid), extended in usage to mean distress, as classical poetry attests.<sup class=\"ref\">1,3</sup> Wahīduddīn Khān (d. 2021 CE) reads the very fact that man cannot free himself from hardship as itself a sign pointing to a Power above him.<sup class=\"ref\">10</sup></p><p>The passage closes on a question: 'does he think that no one has power over him?' This is reported to have come down about a particular strong man of Banū Jumaḥ, remembered as Abū al-Ashadd, who would dare others to shift him off a hide spread on the ground; some named al-Walīd ibn al-Mughīra instead.<sup class=\"ref\">1,2,3</sup> Whatever the occasion, the commentators read it as a rebuke of the same delusion in every age: that strength, wealth, or resource places a person beyond reckoning, when the One who created him in hardship can overpower him in an instant.<sup class=\"ref\">1,2,3,4,5,6,9,11,12,13,14</sup></p><p class=\"close\">Man is sworn into being amid a sacred city, a persecuted prophet, and every parent's toil for a child, only to be told the plain truth of his own life: he was made for struggle, and no strength he holds ever puts him beyond the grasp of the One who made him so.</p>",
+      "sources_used": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "source_hashes": {
+        "1": "sha256:4120d515a9f49f0df292cd971b2b8015678ca7eb6b9a0a2682ca7346efaf9ff5",
+        "2": "sha256:739ddf99c25565641564a74d31dddcafab408f77e40792afc2337dbda6dade75",
+        "3": "sha256:9e4458bd8b0df242df16abf7c59efcd5f954f76223977dc361aadb7c7e6c6368",
+        "4": "sha256:52f3c446b8f5add10792fef458db170e2179077b8c6039f6fbad0094ac3b2fff",
+        "5": "sha256:7851cb7080423260a3c4a7a7beb4a85c209ddcc3c3ab1349f6951a5173af6cd4",
+        "6": "sha256:b08bf6c8b8f8fbe271fd490b835195b7ff87de567f603f3fc75e22d9285e9a49",
+        "7": "sha256:d3981200bd9b9243036089699495851e4a1bcddabc4206bd3c1f59b4458f87ba",
+        "8": "sha256:dcb8dad5d6cecba60f773c8458e6e552a3885ae60424ca8b6e76a0d09a09179d",
+        "9": "sha256:ef17efc8c0d2442bfed7edfd8051a422bef6749ad45c8f68ff0da3de14b18eed",
+        "10": "sha256:1ecb097d82872a62bb57d8e1a04885cdd102233ba7ea88f473bad88d2dd57cc3",
+        "11": "sha256:af963099180d2cde268627a2849ca2df8a82a7eccc081581e3aa584ebd3c7277",
+        "12": "sha256:4f9cdea267d24fbece47e2c099ff4979164880d68418b4fcd1988796f38a4ad3",
+        "13": "sha256:247ded534a85b329fce0b67698d973b0da2ccf7ade532d3bf8fbecc5eeadc386",
+        "14": "sha256:15ceecb6c39b7ddd71cd076a1557dd484fc252dfa8181df2aa02007927e1d781"
+      },
+      "flags": {
+        "creedal_stakes": true,
+        "legal_content": true,
+        "sensitive_content": true
+      },
+      "compiled_at": "2026-08-02"
+    }
+  }
+}

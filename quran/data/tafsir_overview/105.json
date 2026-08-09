@@ -1,0 +1,2487 @@
+{
+  "surah": 105,
+  "name": "",
+  "coverage": {
+    "editions_present": [
+      "ar-tafsir-al-tabari",
+      "ar-tafsir-al-baghawi",
+      "ar-tafseer-al-qurtubi",
+      "en-tafisr-ibn-kathir",
+      "ar-tafseer-al-saddi",
+      "tafsir-fe-zalul-quran-syed-qatab",
+      "en-tafsir-maarif-ul-quran",
+      "tafsir-bayan-ul-quran",
+      "ar-tafsir-al-wasit",
+      "tazkirul-quran-en",
+      "bn-tafsir-abu-bakr-zakaria",
+      "bn-tafsir-ahsanul-bayaan",
+      "ar-tafsir-muyassar",
+      "kurd-tafsir-rebar"
+    ],
+    "editions_absent": [],
+    "independent_works": 14,
+    "languages_present": [
+      "ar",
+      "bn",
+      "en",
+      "ku",
+      "ur"
+    ],
+    "languages_absent": []
+  },
+  "pipeline_provenance": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "overview-v2.3",
+    "theme_breaks_version": "sha256:99880ec7b10b53313690f91df9ee8d065519ee698df34b35a3336b5705218f90",
+    "compiled_at": "2026-08-02"
+  },
+  "modern_lens_framing": "The Qurʾan is taken here as fixed, revealed truth; science is our provisional, evolving account of the observable world. What follows notes where the two meet — a contemplation, not a proof. Where the science later shifts, that reflects the limits of our knowledge, not the text.",
+  "references": [
+    {
+      "n": 1,
+      "work_id": "al-tabari",
+      "label": "Jāmiʿ al-Bayān",
+      "author_id": "al-tabari",
+      "author": "Abū Jaʿfar Muḥammad ibn Jarīr al-Ṭabarī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 2,
+      "work_id": "al-baghawi",
+      "label": "Maʿālim al-Tanzīl",
+      "author_id": "al-baghawi",
+      "author": "Abū Muḥammad al-Ḥusayn ibn Masʿūd al-Baghawī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 3,
+      "work_id": "al-qurtubi",
+      "label": "al-Jāmiʿ li-Aḥkām al-Qurʾān",
+      "author_id": "al-qurtubi",
+      "author": "Abū ʿAbd Allāh Muḥammad ibn Aḥmad al-Qurṭubī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 4,
+      "work_id": "ibn-kathir",
+      "label": "Tafsīr Ibn Kathīr",
+      "author_id": "ibn-kathir",
+      "author": "Ismāʿīl ibn ʿUmar ibn Kathīr",
+      "source_language": "ar",
+      "note": "One independent voice. The ar/ur/bn editions are the SAME work — never count as separate corroboration."
+    },
+    {
+      "n": 5,
+      "work_id": "al-saadi",
+      "label": "Taysīr al-Karīm al-Raḥmān",
+      "author_id": "al-saadi",
+      "author": "ʿAbd al-Raḥmān ibn Nāṣir al-Saʿdī",
+      "source_language": "ar",
+      "note": "Russian edition (170) is the SAME work — translate from the Arabic original, and do not count Russian as an independent voice."
+    },
+    {
+      "n": 6,
+      "work_id": "fi-zilal",
+      "label": "Fī Ẓilāl al-Qurʾān",
+      "author_id": "sayyid-qutb",
+      "author": "Sayyid Quṭb Ibrāhīm Ḥusayn",
+      "source_language": "ar",
+      "note": "Original is Arabic, but the API here carries only an URDU edition — translating from Urdu is one step removed from the original. Prefer the Arabic original if the QF Content API offers it."
+    },
+    {
+      "n": 7,
+      "work_id": "maarif",
+      "label": "Maʿārif al-Qurʾān",
+      "author_id": "muhammad-shafi-usmani",
+      "author": "Muftī Muḥammad Shafīʿ ʿUthmānī",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 8,
+      "work_id": "bayan-ul-quran",
+      "label": "Bayān al-Qurʾān",
+      "author_id": "israr-ahmad",
+      "author": "Isrār Aḥmad",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 9,
+      "work_id": "wasit",
+      "label": "al-Tafsīr al-Wasīṭ",
+      "author_id": "tantawi",
+      "author": "Muḥammad Sayyid Ṭanṭāwī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 10,
+      "work_id": "tazkirul",
+      "label": "Tazkīr al-Qurʾān",
+      "author_id": "wahiduddin-khan",
+      "author": "Wahiduddin Khan",
+      "source_language": "ur",
+      "note": "en and ur editions are the same work."
+    },
+    {
+      "n": 11,
+      "work_id": "abu-bakr-zakaria",
+      "label": "Tafsir Abu Bakr Zakaria",
+      "author_id": "abu-bakr-zakaria",
+      "author": "Abū Bakr Muḥammad Zakariyyā",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 12,
+      "work_id": "ahsanul-bayaan",
+      "label": "Ahsanul Bayaan",
+      "author_id": "bayaan-foundation",
+      "author": "Ahsanul Bayaan (Bayaan Foundation)",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 13,
+      "work_id": "muyassar",
+      "label": "al-Tafsīr al-Muyassar",
+      "author_id": "committee-muyassar",
+      "author": "al-Tafsīr al-Muyassar (committee)",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 14,
+      "work_id": "rebar-kurdish",
+      "label": "Rebar Kurdish Tafsir",
+      "author_id": "rebar",
+      "author": "Rebar Kurdish Tafsir",
+      "source_language": "ku",
+      "note": ""
+    }
+  ],
+  "sections": {
+    "105:5": {
+      "verse_range": "5-5",
+      "title": "Like Eaten Straw",
+      "in_short": "The verse says Allah left Abrahah's army looking like crop-stalks that animals have already eaten and scattered, a picture of total, physical destruction.",
+      "claims": [
+        {
+          "id": "105:5#c1",
+          "section_ref": "105:5",
+          "attaches_to": "105:5",
+          "text": "The whole verse is a simile: the stone-struck army, torn apart and scattered, is compared to the remains of a crop-plant after animals have eaten it, whether that is read as straw, dried leaves, or husk. Several commentators state this as the overall sense of the image.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "فجعل الله أصحاب الفيل كزرع أكلته الدواب فراثته, فيبس وتفرّقت أجزاؤه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "كزرع وتبن أكلته الدواب فراثته فيبس وتفرقت أجزاؤه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "جعل الله أصحاب الفيل كورق الزرع إذا أكلته الدواب، فرمت به من أسفل",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "صاروا بسبب ذلك صرعى هالكين، حالهم فى تمزقهم وتناثرهم كحال أوراق الأشجار اليابسة أو التبن الذى تأكله الدواب",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "محطمين كأوراق الزرع اليابسة التي أكلتها البهائم ثم رمت بها",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "چارے یا بھس کی طرح ہوگئی جسے جانوروں نے کھا کر چھوڑ دیا ہو",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "original_excerpt": "ভক্ষিত তৃণ-সদৃশ করেন",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "original_excerpt": "চিবানো ঘাসের মত",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "original_excerpt": "وەكـو كـای خـوراوی لێ ئەكردن",
+              "translation_confidence": "low"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "عصف (ʿaṣf)",
+              "gloss": "dried plant matter left after a crop is eaten or threshed"
+            },
+            {
+              "term": "مأكول (maʾkūl)",
+              "gloss": "eaten, consumed"
+            }
+          ]
+        },
+        {
+          "id": "105:5#c2",
+          "section_ref": "105:5",
+          "attaches_to": "105:5",
+          "text": "One line of explanation, going back to Mujahid, Qatadah and others, takes ʿaṣf to mean the leaves or straw of a wheat crop, or straw itself, left scattered after harvest or after animals graze it.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "ورق الحنطة ... هو التبن",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "ورق الحنطة ... هو التبن",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "the leaves of wheat ... straw, which the common people call Habbur",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "original_excerpt": "chaff, straw, husk or bran",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "105:5#c3",
+          "section_ref": "105:5",
+          "attaches_to": "105:5",
+          "text": "A second reading, from Ibn ʿAbbas, takes ʿaṣf as the outer husk that covers a grain of wheat, the shell that comes away from it, like a covering.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "البرّ يؤكل ويُلقى عصفه الريح والعصف: الذي يكون فوق البرّ: هو لحاء البرّ",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "القشر الخارج الذي يكون على حب الحنطة كهيئة الغلاف له",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "المراد به قشر البر؛ يعني الغلاف الذي تكون فيه حبة القمح",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "Al-ʿAsf is the shell of the grain, just like the covering of wheat",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "105:5#c4",
+          "section_ref": "105:5",
+          "attaches_to": "105:5",
+          "text": "ʿIkrimah is reported to have read ʿaṣf as being like a grain that has been eaten out and left hollow.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "كالحب إذا أكل فصار أجوف",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "105:5#c5",
+          "section_ref": "105:5",
+          "attaches_to": "105:5",
+          "text": "Ibn Zayd's reading takes ʿaṣf as the leaves of crops or greens, which, once eaten by cattle, are passed out and become dung, drying and scattering into pieces, the very picture the verse gives of the bodies.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "ورق الزرع وورق البقل, إذا أكلته البهائم فراثته, فصار رَوْثا",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "the leaves of vegetation and produce. When the cattle eat it they defecate it out and it becomes dung",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "105:5#c6",
+          "section_ref": "105:5",
+          "attaches_to": "105:5",
+          "text": "Al-Qurṭubī notes a grammatical point: the particle \"ka\" (like) is joined here for comparison in the same way it is used in the phrase \"laysa ka-mathālihi shayʾ\" (nothing is like Him), that is, as a marker of simile.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وأدخل الكاف في كعصف للتشبيه مع مثل، نحو قوله تعالى: ليس كمثله شيء",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "105:5#c7",
+          "section_ref": "105:5",
+          "attaches_to": "105:5",
+          "text": "Al-Qurṭubī also explains \"maʾkūl\" (eaten) as meaning its grain has been eaten, an implied possessive, the same construction as saying \"so-and-so is handsome\" meaning his face is handsome. He cites lines of pre-Islamic poetry by ʿAlqamah and Ruʾbah bin al-ʿAjjāj as linguistic evidence that ʿaṣf means the leaves of a crop.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "ومعنى مأكول مأكول حبه، كما يقال: فلان حسن؛ أي حسن وجهه",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "105:5#c8",
+          "section_ref": "105:5",
+          "attaches_to": "105:5",
+          "text": "Not everyone in the army was struck down on the spot at once. Some died immediately, others broke apart limb by limb while fleeing. Abrahah himself is reported to have been broken down piece by piece, dying only after reaching Ṣanʿāʾ, his heart falling out at the end.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "some of them were destroyed immediately, while others were gradually broken down limb by limb while trying to escape",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not specified by Ibn Kathīr for this particular report (ʿAṭāʾ bin Yasār and others)"
+          }
+        },
+        {
+          "id": "105:5#c9",
+          "section_ref": "105:5",
+          "attaches_to": "105:5",
+          "text": "Sayyid Quṭb reads the image as a plain, sensory depiction (a physical picture of crushing and scattering), and says there is no need for theories that the bodies disintegrated from disease such as smallpox or measles; the stones alone account for the description.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "یہ ایک حسی تصویر کشی ہے ... لہٰذا ایسی تاویلات کی ضرورت نہیں ہے کہ چیچک یا خسرے کی وجہ سے ان کے اجسام ریزہ ریزہ ہوگئے",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "105:5#c10",
+          "section_ref": "105:5",
+          "attaches_to": "105:5",
+          "text": "Sayyid Quṭb argues that Allah did not let the defence of His House be credited to the polytheist custodians of the Kaʿbah, so that no historical role in protecting it could later be claimed for shirk or tribal pride.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "اللہ نے یہ پسند نہ فرمایا کہ وہ اپنے گھر کی حمایت اور اس کا بچاؤ مشرکین کے ذریعہ انجام دے",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "105:5#c11",
+          "section_ref": "105:5",
+          "attaches_to": "105:5",
+          "text": "Al-Saʿdī notes that this event took place in the very year the Prophet ﷺ was born, so it counts among the preliminary signs (irhāṣāt) preparing the way for his mission.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "وكانت تلك السنة التي ولد فيها رسول الله صلى الله عليه وسلم، فصارت من جملة إرهاصات دعوته",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "105:5#c12",
+          "section_ref": "105:5",
+          "attaches_to": "105:5",
+          "text": "Muftī Muḥammad Shafīʿ notes that the miraculous destruction of Abrahah's army raised the standing of Quraysh across Arabia. Other tribes concluded Quraysh were men of God and custodians of His Sacred House, which gave Quraysh safe passage on their trading journeys where other caravans faced raiders.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "original_excerpt": "they were convinced that the Quraish are men of God, and custodians of the Sacred House of Allah",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "105:5#c13",
+          "section_ref": "105:5",
+          "attaches_to": "105:5",
+          "text": "Wahiduddin Khan frames the whole event historically (Abrahah's identity as a sixth-century Christian ruler of Yemen, his army and elephants, the disease that struck them) and reads it as a sign that whoever set himself against the Prophet ﷺ or his mission would be defeated in the same way.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "105:5#c14",
+          "section_ref": "105:5",
+          "attaches_to": "105:5",
+          "text": "Rebar's commentary notes that not everyone in the army was destroyed; some fled and survived so that word of what happened could reach their own people as a lesson (ʿibrah), and poses this as a challenge: the people of Makkah saw this with their own eyes, so why do they still not believe in the Prophet ﷺ.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "original_excerpt": "هەیشبووە كە ڕایان كردووەو دەرباز بوونە ... ئەی خەڵكی مەككە ئەم شتەتان بەچاوی خۆتان بینیوە بۆچی ئێستا ئیمان بە پێغەمبەری خوا صلى الله علیه وسلم ناهێنن",
+              "translation_confidence": "low"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "105:5#c15",
+          "section_ref": "105:5",
+          "attaches_to": "105:5",
+          "text": "Ibn Kathīr reports that the Prophet ﷺ later connected the People of the Elephant story to his own life. When his she-camel al-Qaṣwāʾ knelt and would not move at al-Ḥudaybiyyah, he said she had not become stubborn but had been \"stopped by He Who restrained the Elephant.\" This report is transmitted by al-Bukhārī alone.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "ما خَلَأَتِ الْقَصْوَاءُ ... وَلَكِنْ حَبَسَهَا حَابِسُ الْفِيل",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "Ibn Kathīr, noting al-Bukhārī recorded it alone"
+          }
+        },
+        {
+          "id": "105:5#c16",
+          "section_ref": "105:5",
+          "attaches_to": "105:5",
+          "text": "At the conquest of Makkah, the Prophet ﷺ is reported to have said that Allah had restrained the Elephant from Makkah and given authority over it to His Messenger and the believers, and that its sanctity had returned as it was before. This report is found in the Two Ṣaḥīḥs.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "إِنَّ اللهَ حَبَسَ عَنْ مَكَّةَ الْفِيلَ، وَسَلَّطَ عَلَيْهَا رَسُولَهُ وَالْمُؤْمِنِينَ",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "Ibn Kathīr, noting it is recorded in the Two Ṣaḥīḥs"
+          }
+        }
+      ],
+      "essay_html": "<p>The verse closes the story of Abrahah's army with a single, stark image: they were left like crop-stalks already eaten. Every commentator treats this as a picture of total, physical destruction, the bodies torn apart and scattered exactly as the leftover parts of a grazed crop are scattered.<sup class=\"ref\">1,2,3,4,9,13,8,11,12,14</sup></p><p>The word for that leftover matter is <span dir=\"rtl\">عصف</span> (ʿaṣf), and the early commentators do not all mean quite the same thing by it. One line, going back to Mujāhid and Qatādah, takes it as the leaves or straw of the wheat plant, left in the field after harvest.<sup class=\"ref\">1,2,4,7</sup> Ibn ʿAbbās instead reads it as the husk that wraps a grain of wheat, the outer shell that falls away from it.<sup class=\"ref\">1,2,3,4</sup> ʿIkrimah is reported to have taken it as a grain that has already been eaten out, left hollow.<sup class=\"ref\">2</sup> Ibn Zayd reads it as the leaves of crops and greens which, once eaten by cattle, come out again as dung, dry, and break into pieces, the very picture given of the bodies here.<sup class=\"ref\">1,3,4</sup></p><p>Al-Qurṭubī (d. 1273 CE) draws out two grammatical points. The particle \"like\" (<span dir=\"rtl\">كـ</span>) here works exactly as it does in the phrase \"nothing is like Him\", it marks a comparison, not an equation.<sup class=\"ref\">3</sup> And \"eaten\" (<span dir=\"rtl\">مأكول</span>, maʾkūl) is short for \"its grain has been eaten\", the same kind of shorthand as calling someone \"handsome\" when strictly it is his face that is handsome. He backs the reading of ʿaṣf as crop-leaves with lines of older Arabic poetry.<sup class=\"ref\">3</sup></p><p>Ibn Kathīr (d. 1373 CE) records that the destruction did not fall on everyone at the same instant. Some died on the spot; others broke apart limb by limb as they tried to flee. Abrahah himself is said to have disintegrated piece by piece on the road, dying only once he reached Ṣanʿāʾ, his heart falling out at the very end.<sup class=\"ref\">4</sup></p><p>Sayyid Quṭb (d. 1966 CE) reads the verse as a plain sensory picture, bodies literally crushed and scattered, and says there is no need to reach for theories that smallpox or measles explains the disintegration; the stones alone account for it.<sup class=\"ref\">6</sup> He also argues that Allah did not let the defence of His House be credited to its polytheist custodians, so that no historical role in protecting the Kaʿbah could ever be claimed for shirk or tribal pride.<sup class=\"ref\">6</sup></p><p>Several commentators draw out what followed. Al-Saʿdī (d. 1957 CE) notes the event fell in the very year the Prophet ﷺ was born, one of the preliminary signs before his mission.<sup class=\"ref\">5</sup> Muftī Muḥammad Shafīʿ (d. 1976 CE) notes it raised Quraysh's standing across Arabia, other tribes took them for men of God and guardians of His House, which gave their caravans safe passage where others faced raiders.<sup class=\"ref\">7</sup> Wahiduddin Khan (d. 2021 CE) reads the whole episode as a sign that whoever set himself against the Prophet ﷺ or his mission would meet the same fate.<sup class=\"ref\">10</sup> Rebar's commentary adds that some of the army fled and survived, so word of what happened could reach their people as a lesson, and asks why the people of Makkah, who saw this with their own eyes, still would not believe.<sup class=\"ref\">14</sup></p><p>Ibn Kathīr also ties the story forward into the Prophet's ﷺ own life. When his she-camel knelt at al-Ḥudaybiyyah and would not rise, he said she had been \"stopped by He Who restrained the Elephant\", a report carried by al-Bukhārī alone.<sup class=\"ref\">4</sup> And at the conquest of Makkah he is reported, in the Two Ṣaḥīḥs, to have said that Allah had restrained the Elephant from Makkah and given authority over it to him and the believers.<sup class=\"ref\">4</sup></p><p class=\"close\">Whether ʿaṣf is read as straw, husk, or crop-leaf, every reading points the same way: what stone and wind leave of a grazed field is what the stones from the sky left of Abrahah's army.</p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "9",
+        "10",
+        "13",
+        "14",
+        "8",
+        "11",
+        "12"
+      ],
+      "source_hashes": {
+        "1": "sha256:52eb3ee03a0bb314caeaeee5c4dfd8c37dc4fe0019efb20d9193828da97360fa",
+        "2": "sha256:f0553b5d1ce953321a4a3ee11a92c4a70cce3a0c6bf2b5da5e2ee9c66f5d46dc",
+        "3": "sha256:87b67294f0ab251b3847be15609cb08ae03a6204faadfee1c0df37847daf1278",
+        "4": "sha256:5f50ac6a2f20b95e23392376b370e7a3b97791d3206c188589ec5d7dafa52b88",
+        "5": "sha256:efe97443db0ea0ae415c4dd8a4de63f3fc4ae6a2df336e4683b2cd9548c1d679",
+        "6": "sha256:79f1753d11ae9885c2710020508fd1715a122694b1c6eb93e51bc8a85bbb1034",
+        "7": "sha256:00483fd38fbbe95c5b6beab5a85dba29138a8cf745639c4d88ca07a40e03288b",
+        "8": "sha256:17b82b185628083ce251af8f3b84df53753cbb83b67d4fe7847304e602de2227",
+        "9": "sha256:2e9345311e3d5a8fefc311ad9079b01568c9c53fdb468f6c59438fa5a9cb8fff",
+        "10": "sha256:b58fa51e9be4dc9a5e4dd6f1b5f21a9107bb75cca56d88f12e5b3c4e44106396",
+        "11": "sha256:7c0046bfd87a8a498b4c2ba35740ebb0ec668150e80025d279960cd3d278262a",
+        "12": "sha256:b79cb9804e242e201af87fc0de48e9537e044f5081c20a774af256a6ffe39647",
+        "13": "sha256:79926630fe0ccf8769432a0b4f2a21db907e89bfe1837d99fb0dedbe247c8711",
+        "14": "sha256:ed68fc8d67abb7464d941d6bc4485584c37590cec75ec79cd944705c3481cd1e"
+      },
+      "flags": {
+        "creedal_stakes": false,
+        "legal_content": false,
+        "sensitive_content": true
+      },
+      "compiled_at": "2026-08-02"
+    },
+    "105:1": {
+      "verse_range": "1-2",
+      "title": "The Army of the Elephant Foiled",
+      "in_short": "The verses recall a famous historical event: an army from Yemen brought elephants to destroy the Kaaba, and the Qur'an reminds the hearer that Allah made their whole scheme come to nothing before it succeeded.",
+      "claims": [
+        {
+          "id": "105:1#c1",
+          "section_ref": "105:1",
+          "attaches_to": "105:1",
+          "text": "The opening words 'Have you not seen' are a rhetorical question used to affirm a known fact (taqrīr), not to ask a real question.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "واللفظ استفهام، والمعنى تقرير",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "الاستفهام ... للتقرير",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "original_excerpt": "এখানে জিজ্ঞাসা সাব্যস্তের জন্য ব্যবহার হয়েছে",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "105:1#c2",
+          "section_ref": "105:1",
+          "attaches_to": "105:1",
+          "text": "al-Ṭabarī reads 'seeing' here as looking with the eye of the heart: an inward, certain awareness given to the Prophet ﷺ, not literal eyesight.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "ألم تنظر يا محمد بعين قلبك، فترى بها",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "بعين القلب",
+              "gloss": "with the eye of the heart, inward certainty"
+            }
+          ]
+        },
+        {
+          "id": "105:1#c3",
+          "section_ref": "105:1",
+          "attaches_to": "105:1",
+          "text": "Because the event happened before or around the Prophet's ﷺ birth, he could not have witnessed it with his own eyes; 'seeing' here means knowledge so firmly established by widespread report that it counts as if seen.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "المراد بالرؤية هنا: العلم المحقق",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "original_excerpt": "ألَم تَرَ এর অর্থ হল ألَم تَعلَم",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning",
+          "original_terms": [
+            {
+              "term": "الرؤية",
+              "gloss": "seeing, here meaning certain knowledge"
+            }
+          ]
+        },
+        {
+          "id": "105:1#c4",
+          "section_ref": "105:1",
+          "attaches_to": "105:1",
+          "text": "Though grammatically addressed to the Prophet ﷺ, the address is general, taking in everyone of that time who knew the famous story, not the Prophet ﷺ alone.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "والخطاب للنبي صلى الله عليه وسلم؛ ولكنه عام",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "105:1#c5",
+          "section_ref": "105:1",
+          "attaches_to": "105:1",
+          "text": "Sayyid Quṭb reads the question form as expressing wonder at an extraordinary event full of meaning; it was so well known among the Arabs that they dated other events by it, calling it 'the Year of the Elephant'.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "یہ سوالیہ انداز تعجب انگیزی کے لئے اختیار کیا گیا ہے",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric"
+        },
+        {
+          "id": "105:1#c6",
+          "section_ref": "105:1",
+          "attaches_to": "105:1",
+          "text": "'The People of the Elephant' refers to the Abyssinian-led army under Abraha that marched on Mecca bringing elephants, intending to demolish the Kaaba.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "relay",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "relay",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "105:1#c7",
+          "section_ref": "105:1",
+          "attaches_to": "105:1",
+          "text": "The background: Abraha built a grand church at Ṣanʿāʾ hoping to turn Arab pilgrimage away from the Kaaba toward it; when someone from Quraysh or Kinānah defiled it (in another report, a fire set by young Quraysh men burned it), Abraha swore to destroy the Kaaba in retaliation.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "105:1#c8",
+          "section_ref": "105:1",
+          "attaches_to": "105:1",
+          "text": "On the way, Abraha's men seized livestock near Mecca, including two hundred camels belonging to ʿAbd al-Muṭṭalib, the Prophet's ﷺ grandfather, who then went to negotiate with Abraha.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "105:1#c9",
+          "section_ref": "105:1",
+          "attaches_to": "105:1",
+          "text": "ʿAbd al-Muṭṭalib asked Abraha only for the return of his own camels, not for the Kaaba, saying: 'I am the lord of the camels; this House has its own Lord who will defend it.'",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "أنا رب هذه الإبل وإن لهذا البيت ربا سيمنعه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "105:1#c10",
+          "section_ref": "105:1",
+          "attaches_to": "105:1",
+          "text": "As the army advanced, the lead elephant (named Maḥmūd) knelt and refused to move toward the Kaaba, though it would walk readily when turned in any other direction; this is linked to Nufayl bin Ḥabīb's words to the animal.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "relay",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "105:1#c11",
+          "section_ref": "105:1",
+          "attaches_to": "105:1",
+          "text": "Commentators differ on the number of elephants: Muqātil says there was one; al-Ḍaḥḥāk says eight; another report says twelve besides the great one.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "105:1#c12",
+          "section_ref": "105:1",
+          "attaches_to": "105:1",
+          "text": "al-Baghawī explains why the Qur'an uses the singular 'the elephant' despite there being several: either because the whole army is named after its single greatest elephant, or for the sake of matching the rhyme-ending of the verses.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "وإنما وحد لأنه نسبهم إلى الفيل الأعظم. وقيل: لوفاق رءوس الآي",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "105:1#c13",
+          "section_ref": "105:1",
+          "attaches_to": "105:1",
+          "text": "Scholars differ on when the Year of the Elephant occurred relative to the Prophet's ﷺ birth: forty years before (Muqātil), twenty-three years before (al-Kalbī), while most say it was the very year of his birth.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "relay",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "105:1#c14",
+          "section_ref": "105:1",
+          "attaches_to": "105:1",
+          "text": "Because it happened just before his prophetic mission, scholars of Hadith class this event not as a full 'mu'jizah' (a miracle shown to prove a prophet's claim after that claim is made) but as an 'irhāṣ', a preparatory sign preceding it.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning",
+          "original_terms": [
+            {
+              "term": "irhāṣ",
+              "gloss": "a preparatory sign before a prophet's mission begins"
+            }
+          ]
+        },
+        {
+          "id": "105:1#c15",
+          "section_ref": "105:1",
+          "attaches_to": "105:1",
+          "text": "Physical traces of the event were said to remain visible even after the Prophet's ﷺ birth: two of the elephant's handlers reportedly survived, blind and disabled, begging in Mecca, and were seen by ʿĀ'ishah and Asmāʾ رضي الله عنهما.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not explicitly graded in the sources; relayed as narration"
+          }
+        },
+        {
+          "id": "105:1#c16",
+          "section_ref": "105:1",
+          "attaches_to": "105:1",
+          "text": "The Prophet ﷺ is reported to have later invoked this history himself, saying at the conquest of Mecca: 'Allah restrained the elephant from Mecca and gave authority over it to His Messenger and the believers, and its sanctity has returned as it was before.'",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "إِنَّ اللهَ حَبَسَ عَنْ مَكَّةَ الْفِيلَ، وَسَلَّطَ عَلَيْهَا رَسُولَهُ وَالْمُؤْمِنِينَ",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "recorded in the Two Ṣaḥīḥs, per Ibn Kathīr"
+          }
+        },
+        {
+          "id": "105:1#c17",
+          "section_ref": "105:1",
+          "attaches_to": "105:1",
+          "text": "Isrār Aḥmad holds that Abraha's campaign had a wider aim than demolishing the Kaaba alone: it also sought to spread Christianity in Arabia and gain control of the trade route running between the eastern lands and Byzantine territory.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "عرب میں عیسائیت پھیلانا اور اس تجارت پر قبضہ کرنا بھی تھا",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "105:1#c18",
+          "section_ref": "105:1",
+          "attaches_to": "105:1",
+          "text": "Wahiduddin Khan reads the whole episode as a sign that whoever set himself against the Prophet ﷺ or his mission would be defeated as Abraha's army was, and as Allah's way of showing that the Prophet's cause carried divine backing and that the revelation given to him would be preserved.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "105:1#c19",
+          "section_ref": "105:1",
+          "attaches_to": "105:2",
+          "text": "'Kaydahum' (their plot) refers to their scheming and effort aimed at destroying the Kaaba.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "يعني مكرهم وسعيهم في تخريب الكعبة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "كيد",
+              "gloss": "plot, scheme, hidden effort to harm"
+            }
+          ]
+        },
+        {
+          "id": "105:1#c20",
+          "section_ref": "105:1",
+          "attaches_to": "105:2",
+          "text": "'Tadlīl' means making their plot come to nothing: wasted, void, and ineffective, so it never reached the goal they intended; Muqātil is reported as glossing it also as loss (khasārah) or nullification (buṭlān).",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "في تضليلهم عما أرادوا وحاولوا من تخريبها",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "قال مقاتل: في خسارة، وقيل: في بطلان",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "أى: في تخسير وإبطال وتضييع",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "ألم يجعل ما دبَّروه من شر في إبطال وتضييع",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "تضليل",
+              "gloss": "leading astray, here meaning rendering a scheme useless and lost"
+            }
+          ]
+        },
+        {
+          "id": "105:1#c21",
+          "section_ref": "105:1",
+          "attaches_to": "105:2",
+          "text": "Ṭanṭāwī notes that although Abraha's men came openly to destroy the Kaaba, the Qur'an still calls their effort 'kayd' (covert scheming), because they concealed a deeper malice and enmity toward the people of Mecca greater than what they showed outwardly.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "لأنهم كانوا يضمرون من الحقد والحسد والعداوة لأهل مكة، أكثر مما كانوا يظهرونه",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric"
+        },
+        {
+          "id": "105:1#c22",
+          "section_ref": "105:1",
+          "attaches_to": "105:2",
+          "text": "al-Saʿdī summarises: Allah sufficed the believers against the enemy's evil and turned their scheming back upon them.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "كفى الله شرهم، ورد كيدهم في نحورهم",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "105:1#c23",
+          "section_ref": "105:1",
+          "attaches_to": "105:2",
+          "text": "Sayyid Quṭb reads the second rhetorical question as also affirming (expecting an answer 'yes'), and as a reminder to Quraysh that just as Allah defended His House when they themselves were powerless to defend it, He is equally able to protect the small community of believers whom Quraysh, in their pride, wished to crush.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "105:1#c24",
+          "section_ref": "105:1",
+          "attaches_to": "105:2",
+          "text": "Isrār Aḥmad reiterates that Abraha's whole scheme, not only the plan to demolish the Kaaba but also his wider aims of spreading Christianity and taking Arab trade routes, was made useless and ineffective.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "کیا اس نے ان کی تمام تدبیروں کو بےکار اور غیر موثر نہیں کردیا",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        }
+      ],
+      "essay_html": "<p>The verses open with a question: has the Prophet ﷺ not seen how his Lord dealt with the People of the Elephant? Commentators explain that this is not a real question but a rhetorical one, meant to affirm a well-known fact.<sup class=\"ref\">3,9,11,12</sup> al-Ṭabarī reads the 'seeing' as an inward, certain awareness, a looking with the eye of the heart.<sup class=\"ref\">1</sup> Others point out that the event happened before or around the Prophet's ﷺ own birth, so he could not literally have watched it, meaning 'seeing' here stands for knowledge so firmly established by widespread report that it counts as if seen.<sup class=\"ref\">7,9,11,12</sup> Though the words are addressed to him, the sense reaches everyone of that generation who knew the story.<sup class=\"ref\">3,11</sup> Sayyid Quṭb <span></span>(d. 1966 CE) reads the question as expressing wonder at an extraordinary event, so famous that Arabs dated other happenings by it, calling it 'the Year of the Elephant'.<sup class=\"ref\">6</sup></p>\n<p>The story behind the verse is told at length by the historians among the commentators. Abraha, ruling Yemen for Abyssinia, built a grand church at Ṣanʿāʾ, hoping to turn Arab pilgrimage away from the Kaaba toward it. When it was defiled, or in another account burned by a fire lit by young men of Quraysh, Abraha swore to march on Mecca and pull the Kaaba down stone by stone.<sup class=\"ref\">1,2,3,4,7,12,14</sup> On the way his troops seized livestock near Mecca, including two hundred camels belonging to ʿAbd al-Muṭṭalib, the Prophet's ﷺ grandfather.<sup class=\"ref\">1,2,3,4,7,12,14</sup> When ʿAbd al-Muṭṭalib went to Abraha, he asked only for his camels back, saying: 'I am the lord of the camels; this House has its own Lord who will defend it.'<sup class=\"ref\">1,2,3,4,7,12,14</sup> As the army turned toward the Kaaba, its lead elephant, named Maḥmūd, knelt and would go no further, though it walked readily when turned any other way.<sup class=\"ref\">1,2,3,4,7,10,12,14</sup></p>\n<p>Details differ in the reports. Some say there was a single elephant, others eight, others twelve besides the great one.<sup class=\"ref\">1,2,3</sup> al-Baghawī (d. 1122 CE) explains the Qur'an's singular 'the elephant' as naming the whole army after its greatest beast, or simply to match the rhyme of the verse-endings.<sup class=\"ref\">2</sup> On timing, some say the event was forty years before the Prophet's ﷺ birth, some twenty-three, though most hold it was the very year he was born.<sup class=\"ref\">2,3,7,10,11,12</sup> Because it came just before his mission, scholars of Hadith class it not as a full miracle proving a prophetic claim but as an 'irhāṣ' — a preparatory sign going before it.<sup class=\"ref\">7</sup> Traces were said to remain visible afterward: two of the elephant's handlers reportedly survived, blind and disabled, begging in Mecca, and were seen by ʿĀ'ishah and Asmāʾ رضي الله عنهما.<sup class=\"ref\">3,4,7,11</sup> The Prophet ﷺ himself is reported to have recalled the episode at the conquest of Mecca, saying that Allah had restrained the elephant from the city and given authority over it to him and the believers.<sup class=\"ref\">4</sup> Isrār Aḥmad (d. 2010 CE) adds that Abraha's aims went beyond the Kaaba, to spreading Christianity and controlling the trade route between east and Byzantium.<sup class=\"ref\">8</sup> Wahiduddin Khan (d. 2021 CE) takes the whole event as a sign that whoever opposed the Prophet ﷺ or his mission would be defeated just as Abraha's army was.<sup class=\"ref\">10</sup></p>\n<p>The second verse turns to the outcome: did Allah not make their plot (<span>kayd</span>, scheming aimed at harm) go astray (<span>taḍlīl</span>)? The commentators gloss 'their plot' as their planning and effort to tear down the Kaaba.<sup class=\"ref\">1,2,9</sup> 'Taḍlīl' is explained as making that plot come to nothing — wasted, void, never reaching what it aimed at; Muqātil is reported to have glossed it also as loss or nullification.<sup class=\"ref\">1,2,3,9,13</sup> Ṭanṭāwī (d. 2010 CE) observes that though Abraha's men marched openly, the Qur'an still calls their effort 'kayd', because behind the open march lay a hidden malice and enmity toward the people of Mecca greater than what they showed.<sup class=\"ref\">9</sup> al-Saʿdī (d. 1957 CE) sums up the outcome plainly: Allah sufficed the believers against the enemy's evil and turned their own scheming back upon them.<sup class=\"ref\">5</sup> Sayyid Quṭb reads the question as a reminder to Quraysh: the same power that defended the House when they themselves were helpless to defend it is equally able to protect the small community of believers whom Quraysh, in their pride, wished to crush.<sup class=\"ref\">6</sup> Isrār Aḥmad closes the circle: not only the plan to destroy the Kaaba but Abraha's wider ambitions were made useless.<sup class=\"ref\">8</sup></p>\n<p class=\"close\">What the sources agree on is the shape of the lesson: an army came with overwhelming force and a clear plan against the House of Allah, and that plan was turned to nothing before it ever succeeded.<sup class=\"ref\">1,2,3,5,9,13</sup></p>",
+      "sources_used": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "source_hashes": {
+        "1": "sha256:98f22572cfe3ee1151160ccaa01441e84a2cd3aa17bfab9c036a7cb731c60170",
+        "2": "sha256:5c72d063075d9336cf5e8f32400e46fa5e8cdb3a603f7e7094dddc10f57f3384",
+        "3": "sha256:3a0d884bac63df92ed83b364701414c8a0afec297501d87efea380451d4dffc5",
+        "4": "sha256:938419fc1ed54f609f0254b71447b136e7313768c25f6fdaad7d0392622f8b7d",
+        "5": "sha256:70bb8f0b4c29c25f181fbce0aab2cab341dee649ab88adc9fe91cef18456dc4a",
+        "6": "sha256:ad05ba57110b9f2817bf9b5d771f65eae932291cd9ee395692767c4685849444",
+        "7": "sha256:f2ab2273abb260efb6fc856db644b16acd7e863d13ff6b327d78b50f167bde61",
+        "8": "sha256:e6fc7609751d0c1fee90520cdb8d1f68fb60ddd997f30cec5cd6e83daf69a777",
+        "9": "sha256:9606782a563b63b210ffcaf8e2d2daafee1d2e58a8db367fcd1560b8764a7feb",
+        "10": "sha256:fb92e9498a890f043fa78403c5e82d18dc99ce26fc255efff50901021c2bf67f",
+        "11": "sha256:8f778098ca3cea05d864942d9c70bbc93396dde1a195e76c8eb11d6854d3dbbb",
+        "12": "sha256:8b052d87b37d230ceedd1a241d2f3d7193d304a27b8f59c5136acfb81ae29d1d",
+        "13": "sha256:37ac7a701bb72e67f1db7aa725f6fc3710ad1dfb029dcca22a9b9577a7e68ae4",
+        "14": "sha256:743717fea9d25fdba64b63920b8314ff8e7dce6ab6097b233a2440d61562b042"
+      },
+      "flags": {
+        "creedal_stakes": true,
+        "legal_content": false,
+        "sensitive_content": true
+      },
+      "compiled_at": "2026-08-02"
+    },
+    "105:3": {
+      "verse_range": "3-4",
+      "title": "The Birds and the Stones",
+      "in_short": "Allah sent flocks of birds against Abraha's army, each carrying small baked-clay stones, which struck the soldiers and destroyed them.",
+      "claims": [
+        {
+          "id": "105:3#c1",
+          "section_ref": "105:3",
+          "attaches_to": "105:3",
+          "text": "Ababil means flocks or groups of birds arriving one after another or from every direction. It is not the name of a specific species of bird.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "أَبَابِيلَ (Ababil)",
+              "gloss": "flocks or groups of birds, coming in succession or from all sides"
+            }
+          ]
+        },
+        {
+          "id": "105:3#c2",
+          "section_ref": "105:3",
+          "attaches_to": "105:3",
+          "text": "Grammarians disagreed over whether Ababil has a singular form at all. Some said it has none; others proposed forms such as ibala, ubul, or abil, though none of these was confirmed as widely known Arabic usage.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar",
+          "original_terms": [
+            {
+              "term": "إبالة / أُبُول / أَبِيل",
+              "gloss": "proposed but unconfirmed singular forms of Ababil"
+            }
+          ]
+        },
+        {
+          "id": "105:3#c3",
+          "section_ref": "105:3",
+          "attaches_to": "105:3",
+          "text": "Early exegetes described the birds physically in different ways: with beaks like birds but paws like dogs (Ibn ʿAbbas); green, with heads like predators, coming out of the sea (ʿIkrimah); black sea-birds carrying stones in their beaks and claws (Muhammad b. Kaʿb, ʿUbayd b. ʿUmayr); white birds; green birds with yellow beaks (Saʿid b. Jubayr); resembling swallows (ʿAʾishah) or bats. Ibn Kathir notes the chains for several of these reports are sound.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "Ibn Kathīr calls several of the chains sound (ṣaḥīḥ) but the full set is left ungraded here"
+          }
+        },
+        {
+          "id": "105:3#c4",
+          "section_ref": "105:3",
+          "attaches_to": "105:3",
+          "text": "A report reaching back to the Prophet ﷺ, through Ibn ʿAbbas, describes these birds as flying between heaven and earth, nesting and hatching there.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Qurṭubī (no grading given)"
+          }
+        },
+        {
+          "id": "105:3#c5",
+          "section_ref": "105:3",
+          "attaches_to": "105:4",
+          "text": "Each bird carried three stones, one in its beak and one in each claw, and pelted the enemy with them.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "relay",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "105:3#c6",
+          "section_ref": "105:3",
+          "attaches_to": "105:4",
+          "text": "The stones were small, described as between the size of a lentil and a chickpea.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "105:3#c7",
+          "section_ref": "105:3",
+          "attaches_to": "105:4",
+          "text": "Sijjil is explained as an Arabised Persian compound of sang (stone) and gil (clay): a stone made of hardened, baked clay.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "سِجِّيل (Sijjil)",
+              "gloss": "hardened, baked clay stone, from Persian sang (stone) + gil (clay)"
+            }
+          ]
+        },
+        {
+          "id": "105:3#c8",
+          "section_ref": "105:3",
+          "attaches_to": "105:4",
+          "text": "Some scholars read Sijjil as linked to sijill, a written record: the stones came from a decree already written against these people, just as their deeds were recorded in a register.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "105:3#c9",
+          "section_ref": "105:3",
+          "attaches_to": "105:4",
+          "text": "Ibn Zayd held that Sijjil is a name for the lowest heaven, the same heaven from which stones were sent down on the people of Lut. al-Tabari rejects this view, saying he knows no sound basis for it in report, reason, or language.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "refute",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "105:3#c10",
+          "section_ref": "105:3",
+          "attaches_to": "105:4",
+          "text": "The stones struck with great force, piercing bodies through, entering at the head and exiting from below, or entering one side and exiting the other. A fierce wind that Allah sent alongside the birds is said to have increased the force of the stones.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "105:3#c11",
+          "section_ref": "105:3",
+          "attaches_to": "105:4",
+          "text": "Being struck by the stones caused pustules resembling smallpox, and it is said this was the first time smallpox was seen in the land of the Arabs.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "105:3#c12",
+          "section_ref": "105:3",
+          "attaches_to": "105:4",
+          "text": "Sayyid Qutb argues there is no need to explain the men's destruction through natural processes like smallpox or measles. The Qur'an's own image, of bodies reduced like chewed-up straw, already says the stones themselves crushed them.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "105:3#c13",
+          "section_ref": "105:3",
+          "attaches_to": "105:4",
+          "text": "Not everyone was struck at once. Some in the army died immediately, while others, including Abraha himself, suffered a gradual bodily disintegration as they fled.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "105:3#c14",
+          "section_ref": "105:3",
+          "attaches_to": "105:3",
+          "text": "Isrār Aḥmad observes that Allah needed no extraordinary means to destroy Abraha's vast army: small birds arriving from the coast, and a few moments of stone-throwing, were enough to wipe it out.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "105:3#c15",
+          "section_ref": "105:3",
+          "attaches_to": "105:4",
+          "text": "The pebbles themselves were unremarkable, small clay stones without any inherent destructive power. It was Allah who gave them a devastating force, greater than a bullet or cannon-shot.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "105:3#c16",
+          "section_ref": "105:3",
+          "attaches_to": "105:3",
+          "text": "Wahiduddin Khan situates the episode historically: Abraha, a sixth-century Christian ruler of Yemen, marched on Makka in the year of the Prophet's birth with about sixty thousand men and a dozen elephants. As they neared Makka the elephants refused to advance, then flocks of birds dropped pebbles on the army, afflicting it with a strange disease that put it to flight, killing Abraha and many of his men on the way home.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "relay",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "105:3#c17",
+          "section_ref": "105:3",
+          "attaches_to": "105:4",
+          "text": "The common recitation reads tarmīhim (\"she/it pelts them\", the birds), but another reading has yarmīhim (\"he pelts them\"), taken to refer to Allah directly, comparable to the phrasing \"but Allah threw\" elsewhere in the Qur'an.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar",
+          "original_terms": [
+            {
+              "term": "تَرْمِيهِمْ / يَرْمِيهِمْ",
+              "gloss": "she/it pelts them (referring to birds) / he pelts them (referring to Allah), two reported recitations"
+            }
+          ]
+        }
+      ],
+      "essay_html": "<p>These two verses describe the strike itself. Allah sent flocks of birds against Abraha's army, and those birds pelted them with small stones of baked clay.</p><p>The word Ababil describes flocks or groups of birds coming one after another or from every side. It is not the name of a species.<sup class=\"ref\">1,2,3,4,5,6,7,9,11,12,13,14</sup> Grammarians even argued over whether the word has a singular at all. Some proposed forms like ibala or ubul, but none of these was firmly established as ordinary Arabic.<sup class=\"ref\">1,2,3,4</sup></p><p>Exegetes did not agree on what the birds looked like. Reports describe them with dog-like paws and bird-like beaks, or green with heads like predators, or black sea-birds carrying stones, or white, or resembling swallows or bats.<sup class=\"ref\">1,2,3,4</sup> Ibn Kathīr (d. 1373) notes that several of the chains behind these descriptions are sound, though the reports themselves differ widely. One further report, going back to the Prophet ﷺ through Ibn ʿAbbas, has him describing these birds as living between heaven and earth, nesting and hatching there.<sup class=\"ref\">3</sup></p><p>Each bird is said to have carried three stones, one in its beak and one in each claw, and to have hurled them at the army.<sup class=\"ref\">1,2,4,8,9</sup> The stones themselves were small, somewhere between a lentil and a chickpea in size.<sup class=\"ref\">1,3,4</sup> Yet their effect was devastating: reports describe a stone entering at a man's head and coming out below, and a fierce wind sent alongside the birds is said to have driven the stones with even greater force.<sup class=\"ref\">2,4,9</sup> Being struck is also said to have raised sores resembling smallpox, the first such outbreak seen in Arab lands.<sup class=\"ref\">1,3,9</sup> Sayyid Quṭb (d. 1966) pushes back against reading the destruction as simply a disease like smallpox or measles. The Qur'an's own image of the men afterwards, like straw that has been eaten and crushed, already tells the reader that the stones themselves did the work.<sup class=\"ref\">6</sup> Not everyone was struck at the same moment. Ibn Kathīr relays that some died on the spot, while others, including Abraha himself, fell apart gradually as they tried to flee.<sup class=\"ref\">4</sup></p><p>Sijjil, the word used for the stones, is generally explained as an Arabised Persian compound, sang (stone) and gil (clay), meaning a stone of hardened, baked clay.<sup class=\"ref\">1,4,6,7,8,9,11,12,13</sup> Others connect it to sijill, a written record, as if the stones carried out a punishment already decreed and written down.<sup class=\"ref\">3,9</sup> Ibn Zayd went further, holding that Sijjil names the lowest heaven itself, the same heaven from which stones fell on the people of Lūṭ. al-Ṭabarī (d. 923) rejects this, saying he finds no sound support for it in report, reason, or language.<sup class=\"ref\">1</sup> A minor point of recitation is also noted: most read tarmīhim (\"it pelts them\", the birds), though another reading has yarmīhim (\"He pelts them\"), taken to point to Allah as the true actor behind the birds' throw.<sup class=\"ref\">3</sup></p><p>Two commentators draw out what the scene says about power. Isrār Aḥmad (d. 2010) observes that Allah needed nothing extraordinary to break a great army: ordinary birds from the coast and a few moments of stone-throwing were enough.<sup class=\"ref\">8</sup> Muftī Muḥammad Shafīʿ (d. 1976), together with Zakariyyā and Ahsanul Bayān, makes a related point: the pebbles were unremarkable clay stones with no destructive power of their own, until Allah gave them a force greater than any bullet or cannon-shot.<sup class=\"ref\">7,11,12</sup></p><p class=\"close\">Small birds, small stones, and by the sources' account, a mighty army left as though it had never stood.</p>",
+      "sources_used": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "source_hashes": {
+        "1": "sha256:8ddd80f5708965e239d595cdc13cc87496058de7e2fc5dcea96a0e8f8eeafb8e",
+        "2": "sha256:2944d3a6bcdb60d1fb9367890b45a73134fb121b66e22c1f37f1ecab98a045a3",
+        "3": "sha256:aa8613ba743345e365197dd808bb02848988f042ddf6138abf6cf00fe148d4e8",
+        "4": "sha256:3d010edc7a1dedce2527e00098ef152238a1aba1616a70cea6010cac17e696d3",
+        "5": "sha256:e6d8a7a32bd3c0483dbcf2c240a9de5fb701a77d39f946d9f6069591cc886fc5",
+        "6": "sha256:454b84101f1231f9f87020f0cd91d686cb5867569b2502a5d3a0b28eb079c11c",
+        "7": "sha256:ab810d94e94b0ebb75793e50c396cba367b53ed4dd91bc0db25f403568eb4c0f",
+        "8": "sha256:1670f70a2712bcc2fb3b677db18bab0239ff25928296316b5938d88af109ccb7",
+        "9": "sha256:18f802a71993e6010a0aa09e4fe0a68539cc95c9829130b531671d8b31d6f253",
+        "10": "sha256:4dff2e281e8e333e18ccfe4e964a0040d8567367d96cd6f9cdb847ea460751dd",
+        "11": "sha256:e24709fb7d24bb9be5ec400dc5f3200b8f657339a96f2896026c49c07e2e46e1",
+        "12": "sha256:0bd80db369502eb799439f0ff976481c6b62ed3a5554206c85e1c62037547601",
+        "13": "sha256:86e9ff3c5a05aec25bd18f999f73489d631eb275595d97fe20a08ebf547ec588",
+        "14": "sha256:a879d9b4bb0f6ccc82461d72858b68b74fbdce209345de2ef479b5b5a2c1571a"
+      },
+      "flags": {
+        "creedal_stakes": "true",
+        "legal_content": "false",
+        "sensitive_content": "true"
+      },
+      "compiled_at": "2026-08-02"
+    }
+  }
+}

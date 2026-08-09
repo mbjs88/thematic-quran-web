@@ -1,0 +1,2633 @@
+{
+  "surah": 85,
+  "name": "",
+  "coverage": {
+    "editions_present": [
+      "ar-tafsir-al-tabari",
+      "ar-tafsir-al-baghawi",
+      "ar-tafseer-al-qurtubi",
+      "en-tafisr-ibn-kathir",
+      "ar-tafseer-al-saddi",
+      "tafsir-fe-zalul-quran-syed-qatab",
+      "en-tafsir-maarif-ul-quran",
+      "tafsir-bayan-ul-quran",
+      "ar-tafsir-al-wasit",
+      "tazkirul-quran-en",
+      "bn-tafsir-abu-bakr-zakaria",
+      "bn-tafsir-ahsanul-bayaan",
+      "ar-tafsir-muyassar",
+      "kurd-tafsir-rebar"
+    ],
+    "editions_absent": [],
+    "independent_works": 14,
+    "languages_present": [
+      "ar",
+      "bn",
+      "en",
+      "ku",
+      "ur"
+    ],
+    "languages_absent": []
+  },
+  "pipeline_provenance": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "overview-v2.3",
+    "theme_breaks_version": "sha256:99880ec7b10b53313690f91df9ee8d065519ee698df34b35a3336b5705218f90",
+    "compiled_at": "2026-08-02"
+  },
+  "modern_lens_framing": "The Qurʾan is taken here as fixed, revealed truth; science is our provisional, evolving account of the observable world. What follows notes where the two meet — a contemplation, not a proof. Where the science later shifts, that reflects the limits of our knowledge, not the text.",
+  "references": [
+    {
+      "n": 1,
+      "work_id": "al-tabari",
+      "label": "Jāmiʿ al-Bayān",
+      "author_id": "al-tabari",
+      "author": "Abū Jaʿfar Muḥammad ibn Jarīr al-Ṭabarī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 2,
+      "work_id": "al-baghawi",
+      "label": "Maʿālim al-Tanzīl",
+      "author_id": "al-baghawi",
+      "author": "Abū Muḥammad al-Ḥusayn ibn Masʿūd al-Baghawī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 3,
+      "work_id": "al-qurtubi",
+      "label": "al-Jāmiʿ li-Aḥkām al-Qurʾān",
+      "author_id": "al-qurtubi",
+      "author": "Abū ʿAbd Allāh Muḥammad ibn Aḥmad al-Qurṭubī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 4,
+      "work_id": "ibn-kathir",
+      "label": "Tafsīr Ibn Kathīr",
+      "author_id": "ibn-kathir",
+      "author": "Ismāʿīl ibn ʿUmar ibn Kathīr",
+      "source_language": "ar",
+      "note": "One independent voice. The ar/ur/bn editions are the SAME work — never count as separate corroboration."
+    },
+    {
+      "n": 5,
+      "work_id": "al-saadi",
+      "label": "Taysīr al-Karīm al-Raḥmān",
+      "author_id": "al-saadi",
+      "author": "ʿAbd al-Raḥmān ibn Nāṣir al-Saʿdī",
+      "source_language": "ar",
+      "note": "Russian edition (170) is the SAME work — translate from the Arabic original, and do not count Russian as an independent voice."
+    },
+    {
+      "n": 6,
+      "work_id": "fi-zilal",
+      "label": "Fī Ẓilāl al-Qurʾān",
+      "author_id": "sayyid-qutb",
+      "author": "Sayyid Quṭb Ibrāhīm Ḥusayn",
+      "source_language": "ar",
+      "note": "Original is Arabic, but the API here carries only an URDU edition — translating from Urdu is one step removed from the original. Prefer the Arabic original if the QF Content API offers it."
+    },
+    {
+      "n": 7,
+      "work_id": "maarif",
+      "label": "Maʿārif al-Qurʾān",
+      "author_id": "muhammad-shafi-usmani",
+      "author": "Muftī Muḥammad Shafīʿ ʿUthmānī",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 8,
+      "work_id": "bayan-ul-quran",
+      "label": "Bayān al-Qurʾān",
+      "author_id": "israr-ahmad",
+      "author": "Isrār Aḥmad",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 9,
+      "work_id": "wasit",
+      "label": "al-Tafsīr al-Wasīṭ",
+      "author_id": "tantawi",
+      "author": "Muḥammad Sayyid Ṭanṭāwī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 10,
+      "work_id": "tazkirul",
+      "label": "Tazkīr al-Qurʾān",
+      "author_id": "wahiduddin-khan",
+      "author": "Wahiduddin Khan",
+      "source_language": "ur",
+      "note": "en and ur editions are the same work."
+    },
+    {
+      "n": 11,
+      "work_id": "abu-bakr-zakaria",
+      "label": "Tafsir Abu Bakr Zakaria",
+      "author_id": "abu-bakr-zakaria",
+      "author": "Abū Bakr Muḥammad Zakariyyā",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 12,
+      "work_id": "ahsanul-bayaan",
+      "label": "Ahsanul Bayaan",
+      "author_id": "bayaan-foundation",
+      "author": "Ahsanul Bayaan (Bayaan Foundation)",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 13,
+      "work_id": "muyassar",
+      "label": "al-Tafsīr al-Muyassar",
+      "author_id": "committee-muyassar",
+      "author": "al-Tafsīr al-Muyassar (committee)",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 14,
+      "work_id": "rebar-kurdish",
+      "label": "Rebar Kurdish Tafsir",
+      "author_id": "rebar",
+      "author": "Rebar Kurdish Tafsir",
+      "source_language": "ku",
+      "note": ""
+    }
+  ],
+  "sections": {
+    "85:12": {
+      "verse_range": "12-21",
+      "title": "The Lord's Grip, Mercy, and Glorious Qur'an",
+      "in_short": "This passage warns that God's grip on wrongdoers is severe, then turns straight to His mercy and love for those who repent, His total power over His will, and the fate of Pharaoh and Thamud as proof. It ends by saying the disbelievers still deny, God surrounds them completely, and the Qur'an itself is truly glorious.",
+      "claims": [
+        {
+          "id": "85:12#c1",
+          "section_ref": "85:12",
+          "attaches_to": "85:12",
+          "text": "Grammatically, 'Your Lord's seizing is truly severe' is read as the answer to the oath sworn at the start of the surah ('By the sky with its constellations...'), with the intervening verses forming a parenthetical clause confirming that oath.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "قال المبرد: إن بطش ربك جواب القسم",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "قال المبرد : إن بطش ربك جواب القسم",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "85:12#c2",
+          "section_ref": "85:12",
+          "attaches_to": "85:12",
+          "text": "'Your Lord's seizing' refers to God's vengeance and punishment upon tyrants and deniers, similar to His seizing of wrongdoing towns elsewhere in the Qur'an (11:102); it is a warning to the Prophet's people that the same fate that befell the People of the Ditch could befall them.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "relay",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "85:12#c3",
+          "section_ref": "85:12",
+          "attaches_to": "85:12",
+          "text": "The real might belongs to God, the King of heaven and earth, which dwarfs the limited, temporary power of any earthly tyrant. The address 'your Lord' stresses the bond between God and the Prophet ﷺ, the source of strength while his people were persecuted.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "85:12#c4",
+          "section_ref": "85:12",
+          "attaches_to": "85:12",
+          "text": "God is also forbearing and gives people respite (a trait developed further in the next surah), but when He does seize someone, that seizing is severe.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "relay",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "85:12#c5",
+          "section_ref": "85:12",
+          "attaches_to": "85:12",
+          "text": "Lexically, 'baṭsh' (seizing) means to take hold with force, speed and violence; the verse is meant to give believers patience, since the good outcome will belong to them.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "والبطش : هو الأخذ بقوة وسرعة وعنف",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "بطش",
+              "gloss": "to seize with force, speed and violence"
+            }
+          ]
+        },
+        {
+          "id": "85:12#c6",
+          "section_ref": "85:12",
+          "attaches_to": "85:13",
+          "text": "There are two readings of 'He originates and repeats': (a) the majority view, that God originates creation and then resurrects it after death (relayed from al-Dahhak and Ibn Zayd, and held by Baghawi, Qurtubi, Ibn Kathir, Saadi, and Isra Ahmad); (b) a reading from Ibn Abbas, that it means God begins the punishment for disbelievers in this world and repeats it in the next, which al-Tabari judges the stronger reading because it links better to the severity of the 'seizing' before it and the forgiveness after it.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "يُبْدِئُ العذاب ويعيده",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "relay",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "relay",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "85:12#c7",
+          "section_ref": "85:12",
+          "attaches_to": "85:13",
+          "text": "Al-Ṭanṭāwī combines both readings, and notes a grammatical point: the object of the verb 'begins and repeats' is deliberately dropped, so the meaning is left general, covering creation, punishment, or anything else that God begins and then brings back.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "85:12#c8",
+          "section_ref": "85:12",
+          "attaches_to": "85:13",
+          "text": "Sayyid Qutb reads 'He begins and repeats' as describing a continuous cosmic process happening at every moment, not only the single creation and the single resurrection; the incident of the People of the Ditch itself passed within this ongoing pattern of divine decree.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "85:12#c9",
+          "section_ref": "85:12",
+          "attaches_to": "85:14",
+          "text": "Al-Ghafūr (the Most Forgiving) means He forgives the sins of those who repent and turn back to Him, sparing them exposure.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "relay",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "85:12#c10",
+          "section_ref": "85:12",
+          "attaches_to": "85:14",
+          "text": "Al-Wadūd is explained in several ways: as al-Ḥabīb, 'the Loving one' who actively loves (Ibn Abbas, and Mujahid taking the form fa'ūl as active); as mawdūd, 'the Beloved' in a passive sense, like ḥalūb/rakūb; as al-Raḥīm, 'the Merciful' (Ibn Zayd); and as the One who shows affection to His allies through forgiveness (Dahhak from Ibn Abbas).",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "الْغَفُورُ الْوَدُودُ يقول: الحبيب",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "كما يود أحدكم أخاه بالبشرى والمحبة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "الودود",
+              "gloss": "the Loving / the Beloved"
+            }
+          ]
+        },
+        {
+          "id": "85:12#c11",
+          "section_ref": "85:12",
+          "attaches_to": "85:14",
+          "text": "A minority linguistic view, related by al-Qurtubi from al-Mubarrad quoting Ismail b. Ishaq al-Qadi, holds that al-Wadūd means 'one who has no child' (using an Arabic verse about a she-camel called wadūd for loving without offspring); on this reading, God forgives His servants purely, without needing an heir to justify or receive that mercy.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "أن الودود هو الذي لا ولد له",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "85:12#c12",
+          "section_ref": "85:12",
+          "attaches_to": "85:14",
+          "text": "Al-Saʿdī notes that pairing al-Wadūd immediately after al-Ghafūr is a deliberate, subtle signal: those who repent are not merely forgiven but truly loved by God. He rejects a mistaken view held by some that only forgiveness, not love, returns to the repentant. He relates a report describing God's greater joy at a servant's repentance than a man who despaired of finding his lost mount in a barren desert, only to find it standing over him.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded by al-Saʿdī in the cited passage"
+          }
+        },
+        {
+          "id": "85:12#c13",
+          "section_ref": "85:12",
+          "attaches_to": "85:14",
+          "text": "Al-Saʿdī says the love of God found in the hearts of His chosen servants is unlike any other love, just as nothing resembles Him in His attributes of majesty and beauty; this love is the very foundation of true servitude. Any other love not made subordinate to it becomes a torment to its holder.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "85:12#c14",
+          "section_ref": "85:12",
+          "attaches_to": "85:14",
+          "text": "Sayyid Qutb links this verse to the earlier one about persecutors who 'did not repent' (85:10): it shows an open door of mercy for anyone who returns, however grave their sin. He connects al-Wadūd especially to believers who preferred God over everything else, a station of love and closeness with the Lord that makes worldly suffering, even death by burning, insignificant by comparison.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "85:12#c15",
+          "section_ref": "85:12",
+          "attaches_to": "85:15",
+          "text": "There is a recitation difference over al-Majīd (the Glorious) after 'Owner of the Throne': read with a nominative ending it is an attribute of God Himself; read with a genitive ending it becomes an attribute of the Throne ('the Glorious Throne'). Commentators hold that both recitations are sound and both meanings correct.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "relay",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar",
+          "original_terms": [
+            {
+              "term": "المجيد",
+              "gloss": "the Glorious"
+            }
+          ]
+        },
+        {
+          "id": "85:12#c16",
+          "section_ref": "85:12",
+          "attaches_to": "85:15",
+          "text": "'Dhū al-ʿArsh' (Owner/Possessor of the Throne) means possessor of dominion and authority, in the way Arabic speaks of someone being 'on the throne of his kingdom' even if not literally seated, or says his 'throne collapsed' meaning his authority ended.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "85:12#c17",
+          "section_ref": "85:12",
+          "attaches_to": "85:15",
+          "text": "Al-Saʿdī describes the Throne's vastness: it encloses the heavens, the earth and the Kursī, which compared to the Throne are like a ring thrown down in a vast desert. The Throne is singled out for mention because of its greatness and because it is the creation nearest to God.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "85:12#c18",
+          "section_ref": "85:12",
+          "attaches_to": "85:15",
+          "text": "It is noted that the Companions, the generation after them, and the scholars of hadith held that the Throne is above all creation, and that God is above the Throne.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "theological_school": "Atharī"
+        },
+        {
+          "id": "85:12#c19",
+          "section_ref": "85:12",
+          "attaches_to": "85:16",
+          "text": "'Fa'āl li-mā yurīd' (Doer of whatever He wills) means nothing can obstruct or resist what God wills: He forgives whom He wills upon repentance and punishes whom He wills to persist, because dominion over the heavens and the earth is entirely His.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "relay",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "85:12#c20",
+          "section_ref": "85:12",
+          "attaches_to": "85:16",
+          "text": "Al-Saʿdī observes that unlike created beings, whose will always needs a helper or runs into some obstacle before it is realised, God's will needs no helper and meets no obstacle; hence only God can truly be described as 'Fa'āl li-mā yurīd'.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "85:12#c21",
+          "section_ref": "85:12",
+          "attaches_to": "85:16",
+          "text": "A report is related about Abu Bakr al-Ṣiddīq رضي الله عنه during his final illness: companions asked if a doctor had seen him. He said yes. Asked what the doctor said, he replied, 'He said: I am the Doer of whatever I intend' — meaning God, not a human physician, held the outcome.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded in the cited sources"
+          }
+        },
+        {
+          "id": "85:12#c22",
+          "section_ref": "85:12",
+          "attaches_to": "85:17",
+          "text": "The rhetorical question 'Has the story reached you of the hosts, of Pharaoh and Thamud?' reminds and consoles the Prophet ﷺ: just as those earlier peoples denied their messengers and were destroyed, so his own people's persecution will not go unanswered; the outcome for deniers was ruin.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "85:12#c23",
+          "section_ref": "85:12",
+          "attaches_to": "85:18",
+          "text": "Grammatically, 'Pharaoh and Thamud' stands as a substitute (badal) for 'the hosts,' with Pharaoh named as leader standing in for his people and army.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "85:12#c24",
+          "section_ref": "85:12",
+          "attaches_to": "85:18",
+          "text": "Pharaoh and Thamud are singled out among all destroyed nations because they were more excessive in tyranny and injustice than others, and their stories were the best known to the people of Mecca.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "85:12#c25",
+          "section_ref": "85:12",
+          "attaches_to": "85:18",
+          "text": "Sayyid Qutb contrasts the two stories as different patterns of the same divine decree: Pharaoh and his army were drowned while the Children of Israel were rescued and given worldly power for a time to fulfil God's plan; Thamud were destroyed while the small group with Ṣāliḥ عليه السلام was saved but not given worldly power, only delivered from the wicked. A third pattern was that of the People of the Ditch, who were killed. These patterns were held up before the small early Muslim community in Mecca, and later generations, as the range of outcomes possible for those who call people to God.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "85:12#c26",
+          "section_ref": "85:12",
+          "attaches_to": "85:19",
+          "text": "Despite the example and warning of Pharaoh and Thamud, the disbelievers among the Prophet's own people persist stubbornly in denial, favouring their own desires and following the ways of their forefathers rather than learning the lesson.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "85:12#c27",
+          "section_ref": "85:12",
+          "attaches_to": "85:19",
+          "text": "Sayyid Qutb likens the disbelievers, surrounded by God's power and knowledge yet oblivious to it, to mice caught in the middle of a flood.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "85:12#c28",
+          "section_ref": "85:12",
+          "attaches_to": "85:20",
+          "text": "'God surrounds them from behind' means His knowledge and power over them are total; nothing of their deeds is hidden from Him, and He is fully able to bring upon them what He brought upon Pharaoh.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "85:12#c29",
+          "section_ref": "85:12",
+          "attaches_to": "85:20",
+          "text": "This verse is read as reinforcing and affirming the earlier statement about the severity of the Lord's seizing (85:12).",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "85:12#c30",
+          "section_ref": "85:12",
+          "attaches_to": "85:21",
+          "text": "'Majīd' (Glorious) is used here to refute those who claimed the Qur'an was mere poetry or sorcery; rather it is truly noble and glorious speech.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "relay",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "85:12#c31",
+          "section_ref": "85:12",
+          "attaches_to": "85:21",
+          "text": "Al-Qurṭubī relates a minority view that 'Majīd' here can mean the Qur'an is 'uncreated' (ghayr makhlūq), a creedal point about the nature of the Qur'an.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning",
+          "theological_school": "Atharī"
+        },
+        {
+          "id": "85:12#c32",
+          "section_ref": "85:12",
+          "attaches_to": "85:21",
+          "text": "Among all revealed scriptures, the Qur'an is uniquely protected. This is a sign that it is under God's special care, and it cannot be suppressed by anyone until the Day of Judgement.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "85:12#c33",
+          "section_ref": "85:12",
+          "attaches_to": "85:21",
+          "text": "Sayyid Qutb explains 'Majīd' as meaning elevated, worthy of honour, and of profound reality, qualities that apply in full only to God's own speech. That it is 'in a Preserved Tablet' is an unseen matter known only to God, but its implication is understood: the Qur'an is a protected book, and its ruling in every matter is final.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        }
+      ],
+      "essay_html": "<p>The section opens with a warning: God's seizing of wrongdoers is severe.<sup class=\"ref\">1,2,3,4,5,13</sup> Some commentators read this line as the very answer to the oath sworn at the start of the surah, 'by the sky with its constellations,' with everything in between forming a long parenthesis confirming it.<sup class=\"ref\">2,3</sup> Sayyid Qutb notes that God's real power dwarfs any earthly tyrant's, however cruel, and that naming Him 'your Lord' reminds the Prophet ﷺ of the bond sustaining him through persecution.<sup class=\"ref\">6</sup> One reading adds that God is also forbearing and gives people time, but once He does seize someone, the grip is severe.<sup class=\"ref\">8</sup> Lexically, 'seizing' (بطش) means taking hold with force, speed, and violence, meant here to steady believers with patience.<sup class=\"ref\">9</sup></p>\n<p>'He begins and repeats' is read two ways. Most take it to mean God originates creation and brings it back after death.<sup class=\"ref\">2,3,4,5,8</sup> Al-Ṭabarī prefers a reading from Ibn ʿAbbās: God begins the punishment for deniers in this world and repeats it in the next, which fits neatly between the 'severe seizing' before it and the forgiveness after it.<sup class=\"ref\">1</sup> Al-Ṭanṭāwī keeps both meanings together, noting that the verb's object is deliberately left unstated to cover creation, punishment, or anything else that begins and returns.<sup class=\"ref\">9</sup> Sayyid Qutb reads it as a continuous process running through the universe at every moment, of which even the tragedy of the People of the Ditch was one instance.<sup class=\"ref\">6</sup></p>\n<p>Then come two names together: al-Ghafūr, the Most Forgiving, for those who repent,<sup class=\"ref\">1,2,3,4,5,13</sup> and al-Wadūd. Commentators explain al-Wadūd as 'the Loving,' one who actively loves; as 'the Beloved,' one who is loved; as 'the Merciful'; or as one who shows tenderness to His allies through forgiveness.<sup class=\"ref\">1,2,3,4</sup> A minority reading, related by al-Qurṭubī, takes it to mean 'one with no child,' so that God's forgiveness is pure grace, owed to no heir.<sup class=\"ref\">3</sup> Al-Saʿdī draws out why al-Wadūd follows al-Ghafūr directly: the repentant sinner is not merely forgiven, but genuinely loved, against those who say only the forgiveness, not the love, returns to them. He relates that God's joy at a servant's repentance is likened to a man who had lost his mount in a desert, given up hope, and then found it standing over him.<sup class=\"ref\">5</sup> He adds that this love in the hearts of God's chosen servants is unmatched by any other love, and forms the very foundation of true servitude.<sup class=\"ref\">5</sup> Sayyid Qutb ties this back to the earlier mention of those who 'did not repent,' showing an open door of mercy for anyone who returns, and describes al-Wadūd as belonging especially to believers who preferred God over everything, a closeness that makes even death by fire seem small.<sup class=\"ref\">6</sup></p>\n<p>God is then named Dhū al-ʿArsh al-Majīd, Owner of the Throne, the Glorious. A recitation difference means 'Majīd' can describe either God or the Throne, and both readings are held sound.<sup class=\"ref\">1,2,3,4,5,11,12</sup> 'Owner of the Throne' is explained as owner of dominion and authority, in the way Arabic speaks of someone 'on the throne of his kingdom' without meaning he literally sits there.<sup class=\"ref\">3</sup> Al-Saʿdī pictures the Throne's vastness: the heavens, earth, and the Kursī together are like a ring cast down in a wide desert compared to it.<sup class=\"ref\">5</sup> It is noted that the Companions, the generation after them, and the scholars of hadith held that the Throne stands above all creation, with God above it.<sup class=\"ref\">11</sup></p>\n<p>'Doer of whatever He wills' means nothing obstructs His will: He forgives whom He wills and punishes whom He wills, since the heavens and earth are His alone.<sup class=\"ref\">1,2,3,4,5,8,9,11,12</sup> Al-Saʿdī contrasts this with creatures, whose will always needs help or meets some obstacle; only God's will needs neither.<sup class=\"ref\">5</sup> A report about Abū Bakr al-Ṣiddīq رضي الله عنه is related here: asked in his final illness what a doctor had told him, he answered, 'He said: I am the Doer of whatever I intend,' meaning God held the outcome, not any physician.<sup class=\"ref\">3,4,11,12</sup></p>\n<p>The question 'Has the story reached you of the hosts, of Pharaoh and Thamud?' reminds and consoles the Prophet ﷺ: those earlier deniers were destroyed, and his people's persecution will not go unanswered either.<sup class=\"ref\">1,4,5,9</sup> Grammatically, 'Pharaoh and Thamud' stands in for 'the hosts,' Pharaoh representing his whole army and people.<sup class=\"ref\">1,3</sup> They are singled out, it is said, because they were more excessive in tyranny than others and their stories were best known to the Meccans.<sup class=\"ref\">9</sup> Sayyid Qutb contrasts their fates as two patterns of the same decree: Pharaoh's army drowned while the Children of Israel were rescued and given power for a time; Thamud were destroyed while Ṣāliḥ's عليه السلام small group was saved but given no power, only deliverance. A third pattern belonged to the People of the Ditch, who were killed outright. These were held up, he says, before the small early Muslim community, and later generations, as the range of outcomes that can follow the call to God.<sup class=\"ref\">6</sup></p>\n<p>Even so, the disbelievers among the Prophet's own people persist in denial, following their own desires and the ways of their forefathers rather than the lesson of Pharaoh and Thamud.<sup class=\"ref\">1,2,4,5</sup> Sayyid Qutb likens them, surrounded by God's power yet oblivious to it, to mice caught in a flood.<sup class=\"ref\">6</sup> 'God surrounds them from behind' is explained as total knowledge and power: nothing of their deeds escapes Him, and He is fully able to bring upon them what He brought upon Pharaoh.<sup class=\"ref\">1,2,3,4,5,11</sup> It is read, too, as reinforcing the earlier statement about the severity of the Lord's seizing.<sup class=\"ref\">11,12</sup></p>\n<p>The section closes by turning to the Qur'an itself: 'Majīd,' glorious, is set against those who called it mere poetry or sorcery.<sup class=\"ref\">1,2,3,9,13</sup> Al-Qurṭubī relates a minority view that 'Majīd' here can mean the Qur'an is uncreated.<sup class=\"ref\">3</sup> Wahīduddīn Khān notes that among all revealed scriptures the Qur'an is uniquely protected, a sign of God's special care, and that it cannot be suppressed until the Day of Judgement.<sup class=\"ref\">10</sup> Sayyid Qutb reads 'Majīd' as elevated, worthy of honour, and profound, qualities that belong fully only to God's own speech, and takes its being 'in a Preserved Tablet' as an unseen matter known only to God, whose implication we can still grasp: the Qur'an is a protected book whose ruling, in every matter, is final.<sup class=\"ref\">6</sup></p>\n<p class=\"close\">Severity and love, forgiveness and grip, sit side by side in these verses, and the commentators read that pairing as deliberate: the same Lord whose seizing is severe is also al-Ghafūr al-Wadūd, and whatever He wills of either, nothing can turn Him from it.</p>",
+      "sources_used": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "source_hashes": {
+        "1": "sha256:806e3cc561d7cfadc76b252ad8a78d0a272e5c8ad0b4353c54d65f56a07390cb",
+        "2": "sha256:ef71c78adcb12c8ea44fe0998f7ae8bf19f120ccdbf1d2600e7af6e8df8e7de7",
+        "3": "sha256:63af63fb34402254ade844c968d4c092629940364960de5c9035145b497c5a49",
+        "4": "sha256:b9adb1b4fe12b48411aa3ac137836baf7fc4d37a192e705cada273e5b75e40d2",
+        "5": "sha256:f75c6333be7a6a34fe7fe7e47b5b49415e8115deb9231ce36ae8ecca36842a33",
+        "6": "sha256:03e33f561c001dca8e03c464a566df5455d1c429c500f71cf75aa4df205a17be",
+        "7": "sha256:446d25c80c562c7917d55af43fe0a59a066afe5facb24d55a25ef4e8f2dfd911",
+        "8": "sha256:b2b7f64b4c956c4a885d8aaa91e62fa44184227de4db28e3ae2ae9a89bd3b0c9",
+        "9": "sha256:902c1806be5ade9a95762b0d98eb228e76ff5867dd3204d414b317052273d0f0",
+        "10": "sha256:63bdd1aec307c879358b3dec361c5fb363dad7e882b02c532ba3219ea240e3a9",
+        "11": "sha256:9a295b5dc36da88d79acda0115a87c3290340c38dc69d1ab5dd73fc05333fa74",
+        "12": "sha256:61be3462e4717a4d6a752b98c0c9b78b2b84a33836f993b6815b447f34dcdfe5",
+        "13": "sha256:df41ce09bd87af5bfb3c14374e5b663d1c07d691ca36e2b4fc7c08d06677e3e2",
+        "14": "sha256:ff62833c9295a2e170d2d0defbc1459b3bf330ef0c58a80248e709c58dcb28c3"
+      },
+      "flags": {
+        "creedal_stakes": "true",
+        "legal_content": "false",
+        "sensitive_content": "true"
+      },
+      "compiled_at": "2026-08-02"
+    },
+    "85:22": {
+      "verse_range": "22-22",
+      "title": "The Preserved Tablet",
+      "in_short": "The Qur'an is described as written on a 'Preserved Tablet' (al-Lawḥ al-Maḥfūẓ), a description the commentators explain as pointing to the Qur'an's protection from change and to its exalted standing with Allah, while several caution against claiming detailed knowledge of a matter that belongs to the unseen.",
+      "claims": [
+        {
+          "id": "85:22#c1",
+          "section_ref": "85:22",
+          "attaches_to": "85:22",
+          "text": "The word maḥfūẓ (protected) can be read in two ways: with a genitive ending, so it describes the Tablet itself as protected; or with a nominative ending (Nāfiʿ's reading), so it describes the Qur'an as protected. Al-Ṭabarī holds both readings are established and correct in meaning, and whichever a reciter uses is valid.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "واختلفت القرّاء في قراءة قوله: ( مَحْفُوظٍ )... فبأيتهما قرأ القارئ فمصيب",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "قرأ نافع : \" محفوظ \" بالرفع على نعت القرآن",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وقرأ نافع ( في لوح محفوظ ) بالرفع نعتا للقرآن",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar",
+          "original_terms": [
+            {
+              "term": "محفوظ",
+              "gloss": "protected/preserved"
+            }
+          ]
+        },
+        {
+          "id": "85:22#c2",
+          "section_ref": "85:22",
+          "attaches_to": "85:22",
+          "text": "Whether it describes the Tablet or the Qur'an, 'protected' is explained as meaning protected from any addition, deletion, alteration or distortion.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "من الزيادة فيه والنقصان منه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "محفوظ من الشياطين ، ومن الزيادة فيه والنقصان",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "محفوظ عند الله تعالى من وصول الشياطين إليه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "guarded from any increase, decrease, distortion, or change",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "من التغيير والزيادة والنقص",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "كائن فى لوح محفوظ من التغيير والتبديل",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "لا يناله تبديل ولا تحريف",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "original_excerpt": "كەس ناتوانێ دەستكاری بكات و زیادو كەمی تێ بكات",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "unspecified"
+        },
+        {
+          "id": "85:22#c3",
+          "section_ref": "85:22",
+          "attaches_to": "85:22",
+          "text": "Part of what 'protected' means is that the Tablet, or the Qur'an, is safeguarded from devils reaching it.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "محفوظ من الشياطين",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "من وصول الشياطين إليه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "ومحفوظ من الشياطين",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "ومن وصول الشياطين إليه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "original_excerpt": "یاخود شەیتانەكان ناتوانن پێی بگەن",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "unspecified"
+        },
+        {
+          "id": "85:22#c4",
+          "section_ref": "85:22",
+          "attaches_to": "85:22",
+          "text": "One identification is that the Preserved Tablet is the 'Mother of the Book' (Umm al-Kitāb), the source from which the Qur'an and other scriptures were copied. This was reported from Mujāhid, and Isrār Aḥmad notes that the same reality is named differently elsewhere in the Qur'an: Umm al-Kitāb (43:4), Kitāb Maknūn (56:78), and Ṣuḥuf Mukarramah, Marfūʿah, Muṭahharah (80:13-14).",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "في أمّ الكتاب",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "هو أم الكتاب ; ومنه انتسخ القرآن والكتب",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "relay",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "اُمُّ الْکِتٰب... کِتٰبٍ مَّـکْنُوْن... صُحُفٍ مُّکَرَّمَۃٍ مَّرْفُوْعَۃٍ مُّطَھَّرَۃٍ",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not specified by source"
+          }
+        },
+        {
+          "id": "85:22#c5",
+          "section_ref": "85:22",
+          "attaches_to": "85:22",
+          "text": "Another report says the Tablet is simply 'with Allah' (ʿinda Allāh), attributed to Qatāda.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "فِي لَوْحٍ مَحْفُوظٍ عند الله",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Ṭabarī (transmits without grading)"
+          }
+        },
+        {
+          "id": "85:22#c6",
+          "section_ref": "85:22",
+          "attaches_to": "85:22",
+          "text": "Another report locates the Preserved Tablet on the forehead of the angel Isrāfīl, attributed to Anas b. Mālik and Mujāhid.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "إن اللوح المحفوظ الذي ذكر الله... في جَبْهَة إسرافيل",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "إن اللوح المحفوظ الذي ذكره الله تعالى في جبهة إسرافيل",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Ṭabarī / al-Qurṭubī (transmit without grading)"
+          }
+        },
+        {
+          "id": "85:22#c7",
+          "section_ref": "85:22",
+          "attaches_to": "85:22",
+          "text": "Another report, attributed to Muqātil, places the Preserved Tablet to the right of the Throne.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "اللوح المحفوظ عن يمين العرش",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وقال مقاتل : اللوح المحفوظ عن يمين العرش",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Baghawī / al-Qurṭubī (transmit without grading)"
+          }
+        },
+        {
+          "id": "85:22#c8",
+          "section_ref": "85:22",
+          "attaches_to": "85:22",
+          "text": "A detailed physical description of the Tablet is transmitted from Ibn ʿAbbās (via Mujāhid, Muqātil and Ibn Jurayj): it is made of white pearl/red ruby, its length spans between heaven and earth and its width from east to west, its edges are pearl and ruby, its covers are red ruby, its pen and its writing are light, it is suspended from the Throne, and its base rests in the lap of an angel.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "واللوح لوح من درة بيضاء ، طوله ما بين السماء والأرض... وقلمه نور",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "اللوح من ياقوتة حمراء ، أعلاه معقود بالعرش وأسفله في حجر ملك يقال له ماطريون",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Baghawī / al-Qurṭubī transmit the chain without grading it"
+          }
+        },
+        {
+          "id": "85:22#c9",
+          "section_ref": "85:22",
+          "attaches_to": "85:22",
+          "text": "A report from Ibn ʿAbbās gives the first words written on the Tablet: the testimony of Allah's oneness and Muḥammad's ﷺ messengership, followed by words about whoever submits to Allah's decree, is patient in trial, and is grateful for blessing being written among the truthful, and whoever does not being told to take another god.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "أول شيء كتبه الله تعالى في اللوح المحفوظ \" إني أنا الله لا إله إلا أنا...",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Qurṭubī transmits without grading"
+          }
+        },
+        {
+          "id": "85:22#c10",
+          "section_ref": "85:22",
+          "attaches_to": "85:22",
+          "text": "A further report says Allah looks upon the Preserved Tablet 360 times each day, and with every look He does as He wills, raising the low, lowering the high, enriching the poor and impoverishing the rich, giving life and death. Al-Qurṭubī also relates that Muḥammad ibn al-Ḥanafiyya رضي الله عنه invoked this same report in a letter warning al-Ḥajjāj not to be complacent.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "ينظر الله - عز وجل - فيه كل يوم ثلاثمائة وستين نظرة",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Qurṭubī transmits the report and the anecdote without grading"
+          }
+        },
+        {
+          "id": "85:22#c11",
+          "section_ref": "85:22",
+          "attaches_to": "85:22",
+          "text": "Some commentators explained 'lawḥ' (tablet) as something that becomes visible (yalūḥu) to the angels, who then read it, connecting the word to its root meaning of appearing or gleaming.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وقال بعض المفسرين : اللوح شيء يلوح للملائكة فيقرؤنه",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "85:22#c12",
+          "section_ref": "85:22",
+          "attaches_to": "85:22",
+          "text": "Al-Qurṭubī notes the lexical range of the root l-w-ḥ: to appear or glimmer, to be altered by travel, to be thirsty, and also the shoulder-blade or any broad bone, as well as (with a different vowelling reported from Yaḥyā ibn Yaʿmur) the space or air between heaven and earth.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "اللوح ( بالضم ) : الهواء بين السماء والأرض",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "لاح",
+              "gloss": "to appear, to glimmer"
+            }
+          ]
+        },
+        {
+          "id": "85:22#c13",
+          "section_ref": "85:22",
+          "attaches_to": "85:22",
+          "text": "Some hold that the true nature of the Preserved Tablet should not be pressed further, since it is a matter of the unseen (ghayb) known only to Allah; what is said in circulating descriptions is not backed by an authentic hadith one can rely upon.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "نفوض معرفة حقيقة هذا اللوح وكيفيته إلى علمه - تعالى -... لم يرد به حديث صحيح يعتمد عليه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "ہمیں معلوم نہیں کہ لوح محفوظ کی نوعیت کیسی ہوگی کیونکہ یہ ایک غیبی معاملہ ہے۔ اس کی حقیقت کے بارے میں صرف اللہ جانتا ہے",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "85:22#c14",
+          "section_ref": "85:22",
+          "attaches_to": "85:22",
+          "text": "What can be understood from the expression, on Sayyid Quṭb's reading, is that the Qur'an is a protected book whose judgment in every matter is final; other things may pass away, but this remains preserved.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "قرآن ایک محفوظ کتاب ہے۔ اور ہر معاملے میں اس کا فیصلہ آخری فیصلہ ہے",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "85:22#c15",
+          "section_ref": "85:22",
+          "attaches_to": "85:22",
+          "text": "This description of the Qur'an being on the Preserved Tablet points to the Qur'an's majesty, weightiness, and elevated standing with Allah.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "وهذا يدل على جلالة القرآن وجزالته، ورفعة قدره عند الله تعالى",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "85:22#c16",
+          "section_ref": "85:22",
+          "attaches_to": "85:22",
+          "text": "Among all revealed scriptures, the Qur'an is described as exceptionally protected; this is a sign that it is under Allah's special care, and there is no possibility of it being suppressed by anyone until the Day of Judgement.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "original_excerpt": "Of all the revealed scriptures, the Quran is an exceptionally protected book.",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "85:22#c17",
+          "section_ref": "85:22",
+          "attaches_to": "85:22",
+          "text": "Angels are appointed to guard the Qur'an at the Preserved Tablet, and Allah sends it down according to need.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "original_excerpt": "যেখানে ফিরিশতাগণ তার সংরক্ষণের জন্য নিযুক্ত আছেন। আল্লাহ তাআলা প্রয়োজন ও চাহিদানুযায়ী তা অবতীর্ণ করে থাকেন",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "unspecified"
+        }
+      ],
+      "essay_html": "<p>The final verse of the surah closes the description of the Qur'an by saying it is written 'on a Preserved Tablet' (al-Lawḥ al-Maḥfūẓ). Al-Ṭabarī notes that the word 'protected' (maḥfūẓ) can be recited in two grammatically valid ways: one makes the Tablet itself the protected thing, the other, in Nāfiʿ's reading, makes the Qur'an the protected thing. Both readings are established, he says, and correct in meaning.<sup class=\"ref\">1,2,3</sup></p><p>Whichever reading is taken, the commentators explain 'protected' the same way: safeguarded from any addition, deletion, alteration or distortion, and safeguarded from devils ever reaching it.<sup class=\"ref\">1,2,3,4,5,9,13,14</sup> Wahiduddin Khan (d. 2021) draws out the implication: among all revealed scriptures the Qur'an is uniquely protected, a sign of Allah's special care, so that it cannot be suppressed by anyone until the Day of Judgement.<sup class=\"ref\">10</sup></p><p>Several reports try to locate or describe this Tablet. One line calls it the 'Mother of the Book' (Umm al-Kitāb), the source from which the Qur'an and earlier scriptures were copied<sup class=\"ref\">1,3</sup> — Isrār Aḥmad (d. 2010) points out that the Qur'an names this same reality differently elsewhere: Umm al-Kitāb in Sūrat al-Zukhruf, Kitāb Maknūn in Sūrat al-Wāqiʿah, and Ṣuḥuf Mukarramah, Marfūʿah, Muṭahharah in Sūrat ʿAbasa.<sup class=\"ref\">8</sup> Other reports say it is simply 'with Allah',<sup class=\"ref\">1</sup> or on the forehead of the angel Isrāfīl,<sup class=\"ref\">1,3</sup> or to the right of the Throne.<sup class=\"ref\">2,3</sup> A longer report from Ibn ʿAbbās, transmitted without grading by al-Baghawī and al-Qurṭubī, describes the Tablet as made of white pearl or red ruby, stretching between heaven and earth in length and east to west in breadth, its pen and writing made of light, suspended from the Throne with its base resting in an angel's lap.<sup class=\"ref\">2,3</sup> Further reports, likewise ungraded, speak of the opening words inscribed on it, and of Allah looking upon it three hundred and sixty times each day, raising and lowering, enriching and impoverishing as He wills — a report al-Qurṭubī also finds echoed in a warning letter Muḥammad ibn al-Ḥanafiyya رضي الله عنه once sent to al-Ḥajjāj.<sup class=\"ref\">3</sup></p><p>Against this richness of narration, two voices urge restraint. Al-Ṭanṭāwī (d. 2010) says the believer affirms the Qur'an is on a Preserved Tablet but leaves its true nature to Allah's knowledge, since it belongs to the unseen (ghayb); the descriptions in circulation are not backed by an authentic hadith one can rely upon.<sup class=\"ref\">9</sup> Sayyid Quṭb (d. 1966) says the same: we cannot know what kind of thing the Tablet is, only Allah knows its reality, and what we may draw from the expression is simply that the Qur'an is a protected book whose ruling, in every matter, is final.<sup class=\"ref\">6</sup></p><p>Read this way, the verse's weight lies less in the shape of the Tablet than in what it says about the Book itself. Al-Saʿdī (d. 1957) takes it as pointing to the Qur'an's majesty and its elevated standing with Allah.<sup class=\"ref\">5</sup> Ibn Kathīr (d. 1373) reads 'in the Preserved Tablet' as meaning the Qur'an is held among the highest company, guarded from any increase, decrease, distortion or change.<sup class=\"ref\">4</sup></p><p class=\"close\">Whatever is said about the Tablet's shape and place, the commentators converge on one plain point: what is written there cannot be altered, and the Qur'an it names is held safe in that protection.<sup class=\"ref\">1,2,3,4,5,9,10,13,14</sup></p>",
+      "sources_used": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        8,
+        9,
+        10,
+        12,
+        13,
+        14
+      ],
+      "source_hashes": {
+        "1": "sha256:95fb90780b6433b89d105e5578795f2295c70cc44fbfb075bd4eb75c8789061b",
+        "2": "sha256:c6b41a02893ea38dfa00ffe9f33331f97a60826d44e77e0317a015c3191b7b27",
+        "3": "sha256:df61c86e0f00b2ae7333b3df5ea11f180d8dd61f819517bd49597896529a0204",
+        "4": "sha256:399d8c568d56717d93b59f23c3067e2d68aeb52a934e25eeda4e5ac55616f01b",
+        "5": "sha256:d7483e6bf2f87dd134314d38e3cb306b8393b18fd9662253d42ec659834a5bc9",
+        "6": "sha256:1cbb6fa1c97b2106fa7c5c5f7d2b2a80b883bb43d744381a1e57b40eb8e53723",
+        "7": "sha256:ec17fdae533a955a64566b275656f3ff8fc75efa827de485c2a517fc28dfbdaf",
+        "8": "sha256:0f5a7d10256117ef2a352a8d138755116e9781eda056a445c7743171b74745a8",
+        "9": "sha256:dc54e513f145f7837ac658bf71583a4deff88b0368e078daddee377b9b30671a",
+        "10": "sha256:fdca32df5b19780ee94949f9e7ed1db5e9dc34b498ad200f95452c3ee021af8f",
+        "11": "sha256:201bca9c749f7a761e7048eb0e469b292d9fd62a9398cb041a4b79f392d61a35",
+        "12": "sha256:45e52052de068b1b3cca91cb823124aa74b1af51e6887d9f89237fc1e6461825",
+        "13": "sha256:c713233c7e61f9951b3e3fb7416d88cfe4901784747052e4e6a1a878b82ef9ca",
+        "14": "sha256:3659ce99707850e17cbd6861e133aaa5ac4dd38d005d3b91de18aeadb963d08e"
+      },
+      "flags": {
+        "creedal_stakes": true,
+        "legal_content": false,
+        "sensitive_content": false
+      },
+      "compiled_at": "2026-08-02"
+    },
+    "85:10": {
+      "verse_range": "10-11",
+      "title": "The Sentence and the Reward",
+      "in_short": "Those who tormented believing men and women and never repented face Hell's punishment and burning; those who believed and did good will have gardens with flowing rivers, called the great triumph.",
+      "claims": [
+        {
+          "id": "85:10#c1",
+          "section_ref": "85:10",
+          "attaches_to": "85:10",
+          "text": "The word for what the persecutors did (fatanū) is read as 'they burned them with fire', reported from Ibn ʿAbbās, Mujāhid, Qatādah, al-Ḍaḥḥāk and Ibn Abzā, and echoed by later commentators; al-Baghawī links it to the same wording used for people burning in the Fire elsewhere in the Qurʾān.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "حرّقوا المؤمنين والمؤمنات",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "فتنت الشيء إذا أحرقته",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "أدخلته فى النار",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "original_excerpt": "سووتاندیانن بە ئاگر",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "فتنوا (fatanū)",
+              "gloss": "put to trial / burned"
+            }
+          ],
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Ṭabarī's chains of transmission, left ungraded here"
+          }
+        },
+        {
+          "id": "85:10#c2",
+          "section_ref": "85:10",
+          "attaches_to": "85:10",
+          "text": "Behind this usage lies an Arabic idiom: fatana was used for testing a gold or silver coin in the furnace to check its purity, so a goldsmith was called al-fattān.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "فتن فلان الدرهم والدينار إذا أدخله الكور لينظر جودته",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "85:10#c3",
+          "section_ref": "85:10",
+          "attaches_to": "85:10",
+          "text": "'Then did not repent' means they never turned back from their disbelief nor from what they had done to the believers.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "85:10#c4",
+          "section_ref": "85:10",
+          "attaches_to": "85:10",
+          "text": "The door of repentance stayed open until death: had any of them repented and believed before dying, that crime could have been forgiven.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "اگر ان میں سے کسی نے مرنے سے پہلے توبہ کرلی اور ایمان لے آیا تو اس کا یہ جرم معاف ہوسکتا ہے",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "85:10#c5",
+          "section_ref": "85:10",
+          "attaches_to": "85:10",
+          "text": "al-Ḥasan al-Baṣrī's remark is carried on this verse: look at this generosity, he said, they killed Allah's friends (awliyāʾ), yet He still calls them to repentance and forgiveness.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "relay",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "انظروا إلى هذا الكرم والجود",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded by the sources cited"
+          }
+        },
+        {
+          "id": "85:10#c6",
+          "section_ref": "85:10",
+          "attaches_to": "85:10",
+          "text": "One reading takes 'the punishment of Hell' and 'the punishment of burning' as both belonging to the Hereafter, the second an emphatic restatement underlining that their fire in Hell will be everlasting.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "85:10#c7",
+          "section_ref": "85:10",
+          "attaches_to": "85:10",
+          "text": "Another reading takes 'the punishment of burning' as already delivered in this world: a report from al-Rabīʿ ibn Anas and al-Kalbī says Allah burned the persecutors themselves with the very fire that had leapt up out of their own pit.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "قاله الربيع بن أنس والكلبي",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded by the sources cited"
+          }
+        },
+        {
+          "id": "85:10#c8",
+          "section_ref": "85:10",
+          "attaches_to": "85:10",
+          "text": "A fuller narration along the same line: the believers' souls were taken before the fire touched them so only their bodies burned, the flames then spread and consumed the onlookers, and the king (identified as Yūsuf Dhū Nuwās) fled and drowned trying to escape.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "original_excerpt": "রবী ইবনে আনাস বলেন...",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "Mazhari, as cited by Muftī Shafīʿ; ungraded"
+          }
+        },
+        {
+          "id": "85:10#c9",
+          "section_ref": "85:10",
+          "attaches_to": "85:10",
+          "text": "A further possibility: 'the burning' (al-ḥarīq) is simply one of Hell's own names, like al-Saʿīr, and the wrongdoers might be tormented first by intense cold (zamharīr) and then by this burning heat.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "الحريق: اسم من أسماء جهنم; كالسعير",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "85:10#c10",
+          "section_ref": "85:10",
+          "attaches_to": "85:10",
+          "text": "The word 'burning' is deliberately the same one used for what the persecutors did to the believers, so the sentence echoes the crime. But worldly fire is lit by men and ends quickly, while the Fire of the Hereafter is prepared by Allah and never ends; the believers' worldly burning carried Allah's good pleasure and the triumph of higher values, while the persecutors' Hereafter burning carries only permanent disgrace and wrath.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "دنیا کے جلنے میں اللہ کی رضا پنہاں ہے اور اعلیٰ قدروں کی فتح ہے",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric"
+        },
+        {
+          "id": "85:10#c11",
+          "section_ref": "85:10",
+          "attaches_to": "85:10",
+          "text": "Nothing that happens on earth is the end of the story: every deed carries its recompense, and what the persecutors did to the believers will have its full reckoning only when Allah judges on the Day of Resurrection.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "85:10#c12",
+          "section_ref": "85:10",
+          "attaches_to": "85:10",
+          "text": "The warning is read as aimed first at the disbelievers of Quraysh, such as Abū Jahl and Umayyah ibn Khalaf, who tortured believers like Bilāl and ʿAmmār ibn Yāsir and his parents; the call 'then did not repent' fits an invitation extended to Muḥammad's ﷺ own contemporaries, though the verse can equally include the People of the Ditch and anyone else who persecutes believers.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "كفار قريش ، كأبى جهل وأمية ابن خلف",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "85:10#c13",
+          "section_ref": "85:10",
+          "attaches_to": "85:10",
+          "text": "The verse is read within the wider order of the universe: it guarantees that a Day of Judgement is coming, so those who fight the callers to truth with arrogance cannot escape its consequence, while those who respond to truth despite hardship receive the greatest reward from the Merciful.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "85:10#c14",
+          "section_ref": "85:10",
+          "attaches_to": "85:11",
+          "text": "'Those who believed and did righteous deeds' refers to the very believers burned by the People of the Ditch, and by extension anyone holding true tawḥīd; their righteous deeds mean obeying Allah's commands and avoiding what He forbade.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "85:10#c15",
+          "section_ref": "85:10",
+          "attaches_to": "85:11",
+          "text": "Their reward, gardens graced with flowing streams, is elaborated as rivers of water, milk, wine and honey, drawing on the qurʾanic image of Paradise's rivers.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "من ماء غير آسن، ومن لبن لم يتغير طعمه، ومن خمر لذة للشاربين، وأنهار من عسل مصفى",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "85:10#c16",
+          "section_ref": "85:10",
+          "attaches_to": "85:11",
+          "text": "The reward of gardens is the direct opposite of what Allah prepared for His enemies, gardens against fire.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "85:10#c17",
+          "section_ref": "85:10",
+          "attaches_to": "85:11",
+          "text": "Belief here is 'with the hearts' and righteous deeds are 'with the limbs'; the great triumph consists in reaching Allah's good pleasure and the abode of His honour.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "بقلوبهم...بجوارحهم",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "85:10#c18",
+          "section_ref": "85:10",
+          "attaches_to": "85:11",
+          "text": "'That is the great triumph' is explained as the believers finally attaining what they had sought through their faith and obedience in this world; commentators add that no other triumph resembles or comes close to it.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "الذي لا فوز يشبهه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "لا فوز يضارعه أو يقاربه",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "85:10#c19",
+          "section_ref": "85:10",
+          "attaches_to": "85:11",
+          "text": "'Triumph' (al-fawz) itself means deliverance and success: deliverance from the punishment of the Hereafter is already the great triumph, and gardens with flowing rivers add triumph upon triumph. With this the account of the People of the Ditch closes, showing that events on earth are never the whole story; the handful of Muslims suffering in Makkah when this surah came down, and anyone anywhere persecuted for working for the faith afterward, are given the same assurance, that the reckoning appears fully only on the Day of Judgement.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "فوز کے معنی نجات اور کامیابی کے ہیں",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric",
+          "original_terms": [
+            {
+              "term": "الفوز الكبير (al-fawz al-kabīr)",
+              "gloss": "the great triumph / supreme success"
+            }
+          ]
+        }
+      ],
+      "essay_html": "<p>The word for what the persecutors did, fatanū, is read by many commentators as burned. Ibn ʿAbbās, Mujāhid, Qatādah, al-Ḍaḥḥāk and Ibn Abzā are all reported to have said it means they burned the believers with fire.<sup class=\"ref\">1,4</sup> al-Baghawī links it to the same wording used elsewhere for people burning in the Fire.<sup class=\"ref\">2</sup> al-Qurṭubī (d. 1273 CE) and Ṭanṭāwī (d. 2010 CE) trace the idiom further back: fatana was used for testing a gold or silver coin in the furnace to check its purity, so a goldsmith was called al-fattān.<sup class=\"ref\">3,9</sup></p><p>\"Then did not repent\" is read as meaning they never turned back from their disbelief nor from what they had done to the believers.<sup class=\"ref\">1,4,7</sup> Isrār Aḥmad (d. 2010 CE) notes the door stayed open until death: had any of them repented and believed before dying, the crime could have been forgiven.<sup class=\"ref\">8</sup> Several works carry al-Ḥasan al-Baṣrī's remark on this: look at this generosity, he said, they killed Allah's friends, yet He still calls them to repentance.<sup class=\"ref\">4,5,7,11,14</sup></p><p>Two punishments are named: the punishment of Jahannam, and the punishment of burning. One reading takes both as belonging to the Hereafter, the second phrase an emphatic restatement of an everlasting fire.<sup class=\"ref\">3,7</sup> Another reading, carried from al-Rabīʿ ibn Anas and al-Kalbī, takes \"the burning\" as already delivered in this world, Allah burning the persecutors themselves with the very fire that had leapt up out of their own pit.<sup class=\"ref\">1,2,3</sup> A fuller narration along the same line says the believers' souls were taken before the fire touched them, so only their bodies burned, before the flames spread and consumed the onlookers themselves, with the king fleeing and drowning as he tried to escape.<sup class=\"ref\">7,11</sup> al-Qurṭubī records a further possibility, that \"the burning\" is simply one of Hell's own names, like al-Saʿīr, and that the wrongdoers might be tormented first by intense cold and then by this heat.<sup class=\"ref\">3</sup></p><p>Sayyid Quṭb (d. 1966 CE) notes that \"burning\" is deliberately the same word used for what the persecutors did to the believers, so the sentence echoes the crime. But he stresses the difference is vast: worldly fire is lit by men and ends quickly, while the Fire of the Hereafter is prepared by Allah and never ends. The believers' worldly burning carried Allah's good pleasure and the triumph of higher values, while the persecutors' Hereafter burning carries only permanent disgrace and wrath.<sup class=\"ref\">6</sup> Nothing on earth, he adds, is the end of the story: every deed carries its recompense, and the treatment of the believers will have its full reckoning only on the Day of Resurrection.<sup class=\"ref\">6</sup></p><p>Ṭanṭāwī reads the warning as aimed first at the disbelievers of Quraysh, men like Abū Jahl and Umayyah ibn Khalaf, who tortured believers such as Bilāl and ʿAmmār ibn Yāsir and his parents. He notes the call to repent fits an invitation to Muḥammad's ﷺ own contemporaries, though the verse can equally include the People of the Ditch and anyone else who persecutes believers.<sup class=\"ref\">9</sup> Wahiduddin Khan (d. 2021) reads the verse within the order of the universe as a whole: it guarantees a Day of Judgement is coming, so those who fight the callers to truth with arrogance cannot escape its consequence, while those who respond to truth despite hardship receive the greatest reward from the Merciful.<sup class=\"ref\">10</sup></p><p>Turning to the believers, \"those who believed and did righteous deeds\" is read as the very people burned by the People of the Ditch, and by extension anyone holding true tawḥīd, their deeds meaning obedience to what Allah commanded and avoidance of what He forbade.<sup class=\"ref\">1</sup> Their reward, gardens graced with flowing streams, is elaborated as rivers of water, milk, wine and honey.<sup class=\"ref\">1,3</sup> Ibn Kathīr (d. 1373 CE) notes this reward stands as the direct opposite of what Allah prepared for His enemies, gardens set against fire.<sup class=\"ref\">4</sup> al-Saʿdī (d. 1957 CE) distinguishes belief \"with the hearts\" from deeds \"with the limbs,\" and reads the great triumph as reaching Allah's good pleasure and the abode of His honour.<sup class=\"ref\">5</sup></p><p>\"That is the great triumph\" is explained by al-Ṭabarī (d. 923 CE) as the believers finally attaining what they had sought through their faith and obedience in this world.<sup class=\"ref\">1</sup> al-Qurṭubī and Ṭanṭāwī add that no other triumph resembles or comes close to it.<sup class=\"ref\">3,9</sup> Quṭb reads fawz itself as meaning deliverance and success: deliverance from the Hereafter's punishment is already the great triumph, and gardens with flowing rivers add triumph upon triumph. With this the account of the People of the Ditch closes, and he takes the moment to remind believers that events on earth are never the whole story, an assurance he extends to the handful of Muslims suffering in Makkah when the surah came down, and to anyone anywhere persecuted for the faith since.<sup class=\"ref\">6</sup></p><p class=\"close\">The section closes the story of the Ditch on a plain balance: fire, and no turning back, for those who persecuted and never repented; gardens with flowing rivers, called the great triumph, for those who believed and stayed faithful.</p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:1a6d8437bc12b1048e2eed6c08df2587daecba6e6fe457ecc6922c50da400b40",
+        "2": "sha256:5a9ad71473c6ff8ceadc6c855c0ccadad5f9d4b43db8b8f6ec6692b2d2d73678",
+        "3": "sha256:61498b611b38dbbe819ec6d0794a23df35e7eb443bf5390a6896b4acf3d2a136",
+        "4": "sha256:3f8d60516db6a0f70c5571ea467f12d0580328b100a84e8c6924be2a1fbe8913",
+        "5": "sha256:570e3a52b08dbcce1f612df0cd2831428ea70c26690ab86df2caa7afc6c069f9",
+        "6": "sha256:24e1084a4d227b1f23e0a2e3f752a5e62b6adaab171060e0f12fcf44031addb4",
+        "7": "sha256:fedfe998ebd2073ade9165a783527e4265595126aa26e9f25cca9de1ccda95d7",
+        "8": "sha256:be7fde1e1e09e230884b85ff266bd49adc221e8a2c6e641524ebbc87daf7416c",
+        "9": "sha256:097442a5b796bb1125770bdc02651b74b1e05638498f5c2f0d40280762825839",
+        "10": "sha256:dd8d366251bb3165e81778afdd9fa91f1008a7df0c9ce2bcf85215ce606ddf4a",
+        "11": "sha256:23e371b69a03701fb51be13972bcf4e917ff37f193813cf90cd02e3152e477d6",
+        "12": "sha256:2a5be965cd42f6d698568fb101fa03b83a610f27dffb553c11d2120615fef724",
+        "13": "sha256:430862f74698324475b2ed026ae3fc44fe57a9942986b12ac89eae221910be51",
+        "14": "sha256:cf05ec8595aab3eb18d443978d296adc4a24c4831f150189db9d4e62d2300959"
+      },
+      "flags": {
+        "creedal_stakes": true,
+        "legal_content": false,
+        "sensitive_content": true
+      },
+      "compiled_at": "2026-08-02"
+    }
+  }
+}

@@ -1,0 +1,3000 @@
+{
+  "surah": 104,
+  "name": "",
+  "coverage": {
+    "editions_present": [
+      "ar-tafsir-al-tabari",
+      "ar-tafsir-al-baghawi",
+      "ar-tafseer-al-qurtubi",
+      "en-tafisr-ibn-kathir",
+      "ar-tafseer-al-saddi",
+      "tafsir-fe-zalul-quran-syed-qatab",
+      "en-tafsir-maarif-ul-quran",
+      "tafsir-bayan-ul-quran",
+      "ar-tafsir-al-wasit",
+      "tazkirul-quran-en",
+      "bn-tafsir-abu-bakr-zakaria",
+      "bn-tafsir-ahsanul-bayaan",
+      "ar-tafsir-muyassar",
+      "kurd-tafsir-rebar"
+    ],
+    "editions_absent": [],
+    "independent_works": 14,
+    "languages_present": [
+      "ar",
+      "bn",
+      "en",
+      "ku",
+      "ur"
+    ],
+    "languages_absent": []
+  },
+  "pipeline_provenance": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "overview-v2.3",
+    "theme_breaks_version": "sha256:99880ec7b10b53313690f91df9ee8d065519ee698df34b35a3336b5705218f90",
+    "compiled_at": "2026-08-02"
+  },
+  "modern_lens_framing": "The Qurʾan is taken here as fixed, revealed truth; science is our provisional, evolving account of the observable world. What follows notes where the two meet — a contemplation, not a proof. Where the science later shifts, that reflects the limits of our knowledge, not the text.",
+  "references": [
+    {
+      "n": 1,
+      "work_id": "al-tabari",
+      "label": "Jāmiʿ al-Bayān",
+      "author_id": "al-tabari",
+      "author": "Abū Jaʿfar Muḥammad ibn Jarīr al-Ṭabarī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 2,
+      "work_id": "al-baghawi",
+      "label": "Maʿālim al-Tanzīl",
+      "author_id": "al-baghawi",
+      "author": "Abū Muḥammad al-Ḥusayn ibn Masʿūd al-Baghawī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 3,
+      "work_id": "al-qurtubi",
+      "label": "al-Jāmiʿ li-Aḥkām al-Qurʾān",
+      "author_id": "al-qurtubi",
+      "author": "Abū ʿAbd Allāh Muḥammad ibn Aḥmad al-Qurṭubī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 4,
+      "work_id": "ibn-kathir",
+      "label": "Tafsīr Ibn Kathīr",
+      "author_id": "ibn-kathir",
+      "author": "Ismāʿīl ibn ʿUmar ibn Kathīr",
+      "source_language": "ar",
+      "note": "One independent voice. The ar/ur/bn editions are the SAME work — never count as separate corroboration."
+    },
+    {
+      "n": 5,
+      "work_id": "al-saadi",
+      "label": "Taysīr al-Karīm al-Raḥmān",
+      "author_id": "al-saadi",
+      "author": "ʿAbd al-Raḥmān ibn Nāṣir al-Saʿdī",
+      "source_language": "ar",
+      "note": "Russian edition (170) is the SAME work — translate from the Arabic original, and do not count Russian as an independent voice."
+    },
+    {
+      "n": 6,
+      "work_id": "fi-zilal",
+      "label": "Fī Ẓilāl al-Qurʾān",
+      "author_id": "sayyid-qutb",
+      "author": "Sayyid Quṭb Ibrāhīm Ḥusayn",
+      "source_language": "ar",
+      "note": "Original is Arabic, but the API here carries only an URDU edition — translating from Urdu is one step removed from the original. Prefer the Arabic original if the QF Content API offers it."
+    },
+    {
+      "n": 7,
+      "work_id": "maarif",
+      "label": "Maʿārif al-Qurʾān",
+      "author_id": "muhammad-shafi-usmani",
+      "author": "Muftī Muḥammad Shafīʿ ʿUthmānī",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 8,
+      "work_id": "bayan-ul-quran",
+      "label": "Bayān al-Qurʾān",
+      "author_id": "israr-ahmad",
+      "author": "Isrār Aḥmad",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 9,
+      "work_id": "wasit",
+      "label": "al-Tafsīr al-Wasīṭ",
+      "author_id": "tantawi",
+      "author": "Muḥammad Sayyid Ṭanṭāwī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 10,
+      "work_id": "tazkirul",
+      "label": "Tazkīr al-Qurʾān",
+      "author_id": "wahiduddin-khan",
+      "author": "Wahiduddin Khan",
+      "source_language": "ur",
+      "note": "en and ur editions are the same work."
+    },
+    {
+      "n": 11,
+      "work_id": "abu-bakr-zakaria",
+      "label": "Tafsir Abu Bakr Zakaria",
+      "author_id": "abu-bakr-zakaria",
+      "author": "Abū Bakr Muḥammad Zakariyyā",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 12,
+      "work_id": "ahsanul-bayaan",
+      "label": "Ahsanul Bayaan",
+      "author_id": "bayaan-foundation",
+      "author": "Ahsanul Bayaan (Bayaan Foundation)",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 13,
+      "work_id": "muyassar",
+      "label": "al-Tafsīr al-Muyassar",
+      "author_id": "committee-muyassar",
+      "author": "al-Tafsīr al-Muyassar (committee)",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 14,
+      "work_id": "rebar-kurdish",
+      "label": "Rebar Kurdish Tafsir",
+      "author_id": "rebar",
+      "author": "Rebar Kurdish Tafsir",
+      "source_language": "ku",
+      "note": ""
+    }
+  ],
+  "sections": {
+    "104:9": {
+      "verse_range": "9-9",
+      "title": "Sealed in Towering Pillars",
+      "in_short": "Verse 9 finishes the picture of Hell's sealing begun in verse 8: the Fire is shut in by towering, stretched-out pillars (ʿamad). Commentators read this in several ways — as the bars that lock the doors shut, as columns the condemned are bound within, or as instruments of their torment — and describe the effect as total: no gap for breath to enter or grief to escape.",
+      "claims": [
+        {
+          "id": "104:9#c1",
+          "section_ref": "104:9",
+          "attaches_to": "104:9",
+          "text": "The word for 'pillars' is read two ways: with a fatha (ʿamad) or a ḍamma (ʿumud) on both letters. Grammarians treat both as sound, recognised plurals of the singular ʿamūd (a pillar or column), on the model of other Arabic nouns that take either vowel pattern in their plural.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "فَقَرَأَتْهُ عَامَّةُ قُرَّاءِ الْمَدِينَةِ وَالْبَصْرَةِ: (فِي عَمَدٍ) بِفَتْحِ الْعَيْنِ وَالْمِيمِ. وَقَرَأَ ذَلِكَ عَامَّةُ قُرَّاءِ الْكُوفَةِ: فِي عُمُدٍ بِضَمِّهِمَا",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "قرأ حمزة والكسائي وأبو بكر: في عمد بضم العين والميم، وقرأ الآخرون بفتحهما",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "والعمد والعمد: جمعان صحيحان لعمود",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar",
+          "original_terms": [
+            {
+              "term": "ʿamad / ʿumud",
+              "gloss": "both are valid plurals of ʿamūd, a pillar or column"
+            }
+          ]
+        },
+        {
+          "id": "104:9#c2",
+          "section_ref": "104:9",
+          "attaches_to": "104:9",
+          "text": "In a variant reading attributed to Ibn Masʿūd (with the added letter bāʾ), the verse reads 'it is closed upon them BY extended pillars' — meaning the pillars are the very device that seals the doors shut.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "إِنَّهَا عَلَيْهِمْ مُؤْصَدَةٍ بِعَمَدٍ مُمَدَّدَةٍ",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "وهي في قراءة عبد الله \"بعمد\" بالباء",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "أي موصدة بعمد ممددة; قاله ابن مسعود",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "104:9#c3",
+          "section_ref": "104:9",
+          "attaches_to": "104:9",
+          "text": "Ibn ʿAbbās held that the people of Hell are first made to enter into pillars, which are then stretched and extended over them, with chains fastened on their necks, so that the doors are sealed shut this way.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "أَدْخَلَهُمْ فِي عَمَدٍ، فَمُدَّتْ عَلَيْهِمْ بِعِمَادٍ، وَفِي أَعْنَاقِهِمُ السَّلَاسِلُ، فَسُدَّتْ بِهَا الْأَبْوَابُ",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "أدخلهم في عمد فمدت عليهم بعماد",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وقال ابن عباس: إن العمد الممددة أغلال في أعناقهم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "104:9#c4",
+          "section_ref": "104:9",
+          "attaches_to": "104:9",
+          "text": "Qatādah reported that the pillars are things by which the people of Hell are actually beaten and tortured. Al-Ṭabarī judged this the soundest of the views, though he adds that God alone knows the exact manner of that torment, since no clear report describes it further. Al-Qurṭubī notes this was Ṭabarī's preference; a Bengali source likewise records that Ṭabarī adopted this reading.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "وأولى الأقوال بالصواب في ذلك قول من قال: معناه أنهم يعذّبون بعمد في النار، والله أعلم كيف تعذيبه إياهم بها",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وقال قتادة: عمد يعذبون بها. واختاره الطبري",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "104:9#c5",
+          "section_ref": "104:9",
+          "attaches_to": "104:9",
+          "text": "Ibn Zayd held that the pillars are of iron, that the condemned are shackled within them, and that these iron pillars are themselves made of, or scorched by, fire, and are extended over the people of Hell.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "فِي عَمَدٍ مِنْ حَدِيدٍ مَغْلُولِينَ فِيهَا، وَتِلْكَ الْعَمَدُ مِنْ نَارٍ قَدِ احْتَرَقَتْ مِنَ النَّارِ",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "104:9#c6",
+          "section_ref": "104:9",
+          "attaches_to": "104:9",
+          "text": "The majority view, reported via al-Qushayrī, is that the 'pillars' are the pegs or stakes that fasten shut the covering layers (aṭbāq) placed over the people of Hell, so that heat and grief have no way to escape. Muqātil elaborated: the doors are closed over them, then fastened with nails of fire, until their own anguish and heat return upon them, no door opens, and no breath enters.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "أطبقت الأبواب عليهم ثم سدت بأوتاد من حديد من نار حتى يرجع عليهم غمها وحرها، فلا يفتح عليهم باب ولا يدخل عليهم روح",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "والمعظم على أن العمد أوتاد الأطباق التي تطبق على أهل النار",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "104:9#c7",
+          "section_ref": "104:9",
+          "attaches_to": "104:9",
+          "text": "Another reading takes 'extended pillars' to mean elongated chains and shackles — around the neck, according to one report tied to Ibn ʿAbbās, or around the legs, according to Abū Ṣāliḥ — the point being that longer restraints are firmer and more secure than short ones. Some later sources render the verse this way directly, and Bengali commentary notes scholars disagreed over whether ʿamad means shackles/iron restraint or literal pillars, citing Fatḥ al-Qadīr.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وهي أحكم وأرسخ من القصيرة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "إنها عليهم مطبَقة في سلاسل وأغلال مطوَّلة؛ لئلا يخرجوا منها",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "104:9#c8",
+          "section_ref": "104:9",
+          "attaches_to": "104:9",
+          "text": "Al-Qurṭubī also records a minor alternative reading: that 'extended pillars' means an unending stretch of time (dahr mumaddad), rather than a physical object.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وقيل: المعنى في دهر ممدود؛ أي لا انقطاع له",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "104:9#c9",
+          "section_ref": "104:9",
+          "attaches_to": "104:9",
+          "text": "A hadith reported from Abū Hurayrah describes God sending angels with layers of fire, nails of fire, and pillars of fire: the layers are closed over the people of Hell, fastened with the nails, and stretched tight with the pillars, so that no gap remains for a breath to enter or for anguish to escape. The Merciful, it says, forgets them on His Throne, while the people of Paradise are absorbed in their bliss; the condemned never cry for help again, and their speech is reduced to sighing and groaning.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "ثم إن الله يبعث إليهم ملائكة بأطباق من نار، ومسامير من نار وعمد من نار...وينساهم الرحمن على عرشه",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded in the source text provided"
+          }
+        },
+        {
+          "id": "104:9#c10",
+          "section_ref": "104:9",
+          "attaches_to": "104:9",
+          "text": "Al-Saʿdī reads the pillars as standing behind Hell's doors, extended precisely so escape is impossible, tying this to the idea that whenever the damned try to leave they are driven back into it.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "{فِي عَمَدٍ} من خلف الأبواب {مُمَدَّدَةٍ} لئلا يخرجوا منها",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "104:9#c11",
+          "section_ref": "104:9",
+          "attaches_to": "104:9",
+          "text": "The Fire is shut tight over them so that its heat has full effect and inflicts the greatest possible suffering.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "تاکہ اس کی تمام تر حرارت ان پر اثر انداز ہو اور انہیں زیادہ سے زیادہ تکلیف پہنچے",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "104:9#c12",
+          "section_ref": "104:9",
+          "attaches_to": "104:9",
+          "text": "The description of the Fire as 'closed' (mūʾṣadah) comes from the verb meaning to lock a door forcefully, so that no exit at all is possible; the pillars belong to this same total sealing.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "اسم مفعول من قولك أوصدت الباب، إذا أغلقته بشدة، بحيث لا يستطاع الخروج منه",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "mūʾṣadah",
+              "gloss": "shut and locked forcefully, so escape is impossible"
+            }
+          ]
+        },
+        {
+          "id": "104:9#c13",
+          "section_ref": "104:9",
+          "attaches_to": "104:9",
+          "text": "Sayyid Quṭb reads the scene as an image: the wrongdoer flung into the Fire is bound to pillars the way livestock are tied in their pens. He notes the sharp, deliberate word choices across the surah's closing verses (throwing, certainly not, he will surely be flung, reaching up, stretched out) and its emphatic sentence forms, which together build an atmosphere of dread, severity and finality — functioning both as threat and as confirmation of what is coming.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "اس آگ میں بھی یہ شخص ستونوں کے ساتھ بندھا ہوا ہوگا، جس طرح مویشیوں کو باڑوں میں باندھ دیا جاتا ہے",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric"
+        },
+        {
+          "id": "104:9#c14",
+          "section_ref": "104:9",
+          "attaches_to": "104:9",
+          "text": "Reflecting on this closed, pillar-bound fire with no way out, one modern reading takes it as the true consequence awaiting someone who slanders others while feeling their worldly position safe: what looks like a costless accusation is, in truth, a leap into a pit of fire from which there is no escape.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "relay",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        }
+      ],
+      "essay_html": "<p>The final verse closes the picture that began with the Fire being shut (mūʾṣadah) upon its people: it is sealed in, and stretched over by, pillars (ʿamad). Grammarians note the word is read two ways, ʿamad or ʿumud, both sound plurals of ʿamūd, a pillar or column.<sup class=\"ref\">1,2,3</sup></p>\n<p>Early commentators read the pillars in several distinct ways. One reading, tied to a variant recitation attributed to Ibn Masʿūd, takes the pillars as the very device that seals the doors shut: the fire is locked BY means of them.<sup class=\"ref\">1,2,3,11</sup> Ibn ʿAbbās read it differently: the condemned are first placed inside the pillars, which are then stretched over them, with chains on their necks, sealing the doors this way.<sup class=\"ref\">1,2,3,11</sup> A third report, from Qatādah, holds that the pillars are instruments by which the people of Hell are actually struck and tortured. Al-Ṭabarī, weighing these, judged this the soundest reading, though he adds that God alone knows the exact manner of that torment, since no clear report spells it out further. Al-Qurṭubī records this as Ṭabarī's preference, and a Bengali source confirms Ṭabarī adopted it.<sup class=\"ref\">1,3,11</sup></p>\n<p>Other reports add further detail. Ibn Zayd described the pillars as iron, the condemned shackled within them, the pillars themselves scorched by, or made of, fire.<sup class=\"ref\">1</sup> The majority view, transmitted via al-Qushayrī, takes the pillars as the pegs or stakes that fasten shut the covering layers placed over Hell, trapping the heat inside. Muqātil filled this out vividly: the doors are closed, then fastened with nails of fire, until the heat and anguish return upon the condemned themselves, with no door opening and no breath entering.<sup class=\"ref\">2,3</sup> A hadith transmitted from Abū Hurayrah, reported by al-Qurṭubī without a stated grading, pictures angels bringing layers of fire, nails of fire and pillars of fire, closing and fastening and stretching until no gap remains for a breath to enter or a grief to escape, with the Merciful, it says, forgetting them on His Throne while the people of Paradise are absorbed in their bliss.<sup class=\"ref\">3</sup></p>\n<p>A separate line of reading takes 'extended pillars' as elongated chains and shackles rather than literal columns, around the neck by one report or around the legs by another, on the reasoning that a longer restraint is firmer than a short one. Some later renderings state this plainly, and Bengali commentary notes the same disagreement, some scholars taking ʿamad as shackles, others as pillars proper, citing Fatḥ al-Qadīr.<sup class=\"ref\">2,3,12,13,14</sup> Al-Qurṭubī also notes a minor alternative: that 'extended' might describe unending TIME rather than a physical object.<sup class=\"ref\">3</sup></p>\n<p>Later commentators draw out the same point in plainer terms. Al-Saʿdī places the pillars behind Hell's doors, extended precisely so no escape is possible.<sup class=\"ref\">5</sup> Isrār Aḥmad (d. 2010) reads the sealing as ensuring the Fire's full heat takes effect, for maximum suffering.<sup class=\"ref\">8</sup> Ṭanṭāwī (d. 2010) traces mūʾṣadah to the verb for locking a door forcefully, so exit becomes impossible altogether, of which the pillars are part.<sup class=\"ref\">9</sup></p>\n<p>Sayyid Quṭb (d. 1966) reads the scene as an image: the wrongdoer is bound to pillars in the Fire the way livestock are tied in their pens. He points to the surah's sharp, deliberate vocabulary, and its emphatic sentence forms, as building an atmosphere of dread and finality, both a warning and a confirmation.<sup class=\"ref\">6</sup> One modern reflection ties the sealed, pillar-bound fire to the fate awaiting the slanderer: what feels like a costless accusation, made from a position that seems safe, is in truth a leap into a pit of fire with no way out.<sup class=\"ref\">10</sup></p>\n<p class=\"close\">Whatever the precise nature of these pillars, the commentators converge on one plain point: nothing that goes into this Fire comes back out.<sup class=\"ref\">1,2,3,5,9,13</sup></p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "5",
+        "6",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:5770a759ddfa8288088af6b2728a0cac7180318d4937cb8540cc15283cffeb1a",
+        "2": "sha256:55fa04cac6aa2bdca4860e4d757c892dab6f347c0c06b4fe030eba6637a5a0d9",
+        "3": "sha256:8e3c9e7bb5a6264cfed5de7eaada8c6ac52cba4d931eacc16f1d4ff6ae61fb01",
+        "4": "sha256:857cba5f7b75fa44ba42ef087aff44eef08cd2adfc8a9c67c050889c6a73ae7a",
+        "5": "sha256:55f8cd5714b27dad9cb651f5e38f48186752b61f313e9b4cb6a0c8065236dbb5",
+        "6": "sha256:6362b168d68c33239c1a24d82094c504abfd89cfb3f95c4dd30c2a31d6ad23d8",
+        "7": "sha256:557ae93194dc07dff6db721581b108ff451b0170006668a8e424106cd312bc00",
+        "8": "sha256:c069cdc283206ba7b88643b5a34c8d3a192c51121df9f05f43315409b6b0db38",
+        "9": "sha256:1192675dc324873455f4f2eaf65bc847455903b6358834f3ccc3cdc756f64a07",
+        "10": "sha256:9bc2578fb1e236f01cc52e99b0a587a57134fe0818878fdffbbf67d5ef572184",
+        "11": "sha256:1cfa6d6ca4302939a5b61bbc08fdc5935ae24faf5aa721d5b31b91804434fcca",
+        "12": "sha256:f01805b64a5c94a70856088d5cf8f90aad0c897fc9748c91a8b3c1f355104b46",
+        "13": "sha256:c0bf75b7b06302af28c9ca15983a1d7f83f9dd636f1440734b98329fab50b2ea",
+        "14": "sha256:450c0606720a76a88ae7657fd7f457921fcf5ffbfa5911906d7a743a1e95c6c8"
+      },
+      "flags": {
+        "creedal_stakes": true,
+        "legal_content": false,
+        "sensitive_content": true
+      },
+      "compiled_at": "2026-08-02"
+    },
+    "104:1": {
+      "verse_range": "1-3",
+      "title": "Woe to the Fault-Finding Hoarder",
+      "in_short": "These verses warn of severe punishment for anyone who habitually mocks and slanders others, and for the man who hoards wealth thinking it will keep him alive forever.",
+      "claims": [
+        {
+          "id": "104:1#c1",
+          "section_ref": "104:1",
+          "attaches_to": "104:1",
+          "text": "Wayl (woe) signals a severe threat of punishment, disgrace, and ruin. Some said it is also the name of a valley in Hell.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "الوادي يسيل من صديد أهل النار وقيحهم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "معناه الخزي والعذاب والهلكة . وقيل : واد في جهنم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "لفظ يدل على الذم وعلى طلب العذاب والهلكة . . وقيل : اسم لواد فى جهنم",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "وَيْل",
+              "gloss": "woe, a cry threatening severe punishment"
+            }
+          ]
+        },
+        {
+          "id": "104:1#c2",
+          "section_ref": "104:1",
+          "attaches_to": "104:1",
+          "text": "Ibn ʿAbbās رضي الله عنه defined the two words together: those meant are the ones who go about with malicious gossip, split friends apart, and seek out faults in innocent people. On this reading humazah and lumazah carry essentially the same meaning.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "هم المشاءون بالنميمة, المفرقون بين الأحبة, الباغون أكبر العيب",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "هم المشاءون بالنميمة ، المفرقون بين الأحبة ، الباغون للبرآء العيب",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "هم المشاءون بالنميمة ، المفسدون بين الأحبة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "هما بمعنى واحد",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "relay",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "شر وهلاك لكل مغتاب للناس، طعان فيهم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "104:1#c3",
+          "section_ref": "104:1",
+          "attaches_to": "104:1",
+          "text": "Muqātil's distinction: the humazah faults a person behind his back (backbiting), while the lumazah faults him to his face.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "الهمزة : الذي يعيبك في الغيب ، و اللمزة : الذي يعيبك في الوجه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "إن الهمزة : الذي يغتاب بالغيبة ، واللمزة : الذي يغتاب في الوجه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "104:1#c4",
+          "section_ref": "104:1",
+          "attaches_to": "104:1",
+          "text": "The opposite distinction, from Abū al-ʿĀliya and al-Ḥasan: the humazah faults a person to his face, while the lumazah faults him behind his back.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "الهمزة: يهمزه في وجهه, واللمزة: من خلفه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "وقال أبو العالية والحسن بضده",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "الهمزة : الذي يغتاب ويطعن في وجه الرجل ، واللمزة : الذي يغتابه من خلفه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "104:1#c5",
+          "section_ref": "104:1",
+          "attaches_to": "104:1",
+          "text": "Qatādah and (in one transmission) Mujāhid held that one term means devouring people's flesh, that is gossiping about them, and the other means taunting or slandering them. Al-Ṭabarī notes the reports on which word gets which meaning were confused among the transmitters.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "الهمزة يأكل لحوم الناس, واللمزة: الطعان",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "الهمزة الذي يأكل لحوم الناس ويغتابهم ، واللمزة : الطعان عليهم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "الهمزة : الطعان في الناس ، واللمزة : الطعان في أنسابهم",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "104:1#c6",
+          "section_ref": "104:1",
+          "attaches_to": "104:1",
+          "text": "Ibn Zayd's reading: the humazah strikes people with his hand, while the lumazah strikes them with his tongue.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "الهمزة: الذي يهمز الناس بيده, ويضربهم بلسانه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "الهمزة الذي يهمز الناس بيده ويضربهم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "104:1#c7",
+          "section_ref": "104:1",
+          "attaches_to": "104:1",
+          "text": "Sufyān al-Thawrī and Ibn Kaysān distinguished hamz done with the tongue from lamz done with the eye or a gesture, such as winking or pointing.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "ويهمز بلسانه ويلمز بعينه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "الهمزة الذي يؤذي جلساءه بسوء اللفظ ، واللمزة : الذي يكسر عينه على جليسه",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "104:1#c8",
+          "section_ref": "104:1",
+          "attaches_to": "104:1",
+          "text": "Mujāhid held the verse is not particular to any one person, and al-Ṭabārī, after surveying the reports, concludes the correct view is that the warning is general, covering anyone who has this trait, whoever he may be.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "والصواب من القول في ذلك: أن يقال: إن الله عمّ بالقول كلّ همزة لمزة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "وقال مجاهد : هي عامة في حق كل من هذه صفته",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "ليست بخاصة لأحد ، بل لكل من كانت هذه صفته",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "104:1#c9",
+          "section_ref": "104:1",
+          "attaches_to": "104:1",
+          "text": "Others named a specific person the verse was said to concern: al-Akhnas ibn Sharīq, Jamīl ibn ʿĀmir al-Jumaḥī, Umayyah ibn Khalaf, or al-Walīd ibn al-Mughīrah, who was reported to backbite the Prophet ﷺ behind his back and taunt him to his face.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "نزلت في الأخنس بن شريق بن وهب الثقفي",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "الآية نزلت في الأخنس بن شريق ، فيما روى الضحاك عن ابن عباس",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "104:1#c10",
+          "section_ref": "104:1",
+          "attaches_to": "104:1",
+          "text": "Al-Farrāʾ noted that Arabic sometimes states something in general terms while meaning one particular person, as when a man says 'whoever doesn't visit me, I won't visit him,' meaning only the one he is addressing.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "هذا من نوع ما تذكر العرب اسم الشيء العام, وهي تقصد به الواحد",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "يجوز أن يذكر الشيء العام ويقصد به الخاص",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "104:1#c11",
+          "section_ref": "104:1",
+          "attaches_to": "104:1",
+          "text": "A hadith cited in explaining the verse states: 'The worst of Allah's servants are those who go about with malicious gossip, separate loved ones, and seek out faults in the innocent.'",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "شرار عباد الله تعالى المشاءون بالنميمة ، المفرقون بين الأحبة ، الباغون للبرآء العيب",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "original_excerpt": "আল্লাহ্‌র বান্দাদের মধ্যে নিকৃষ্টতম তারা...",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded in the sources provided; Zakariyā cites it from Musnad Aḥmad without stating its authenticity"
+          }
+        },
+        {
+          "id": "104:1#c12",
+          "section_ref": "104:1",
+          "attaches_to": "104:1",
+          "text": "Al-Qurṭubī traces the root sense: hamz is to crush or bite something with force, and lamz is to push or strike, before both words came to be used for wounding someone with speech.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "أصل الهمز : الكسر ، والعض على الشيء بعنف",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "104:1#c13",
+          "section_ref": "104:1",
+          "attaches_to": "104:1",
+          "text": "Al-Qurṭubī notes a variant recitation with a silent mīm (humazatan lumazata), which would carry a passive sense: someone who exposes himself to being mocked and provokes others into backbiting him.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "فإن صح ذلك عنهما ، فهي في معنى المفعول",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "104:1#c14",
+          "section_ref": "104:1",
+          "attaches_to": "104:1",
+          "text": "Ṭanṭāwī observes that the intensive noun pattern used for both words (fuʿalah) marks the trait as a settled habit, the way calling someone 'ḍuḥakah' means he is one who laughs constantly, not just once.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "يؤتى به للدلالة على أن الموصوف به ديدنه ودأبه الإِتيان بهذا الوصف",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "104:1#c15",
+          "section_ref": "104:1",
+          "attaches_to": "104:1",
+          "text": "Muftī Shafīʿ and Zakariyā point out an asymmetry: backbiting is in one way worse than face-to-face slander, because the victim does not know and cannot defend himself, so the sin only grows; but face-to-face insult is worse in another way, because it directly humiliates the person present.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "104:1#c16",
+          "section_ref": "104:1",
+          "attaches_to": "104:1",
+          "text": "Wahiduddin Khan frames the moral distinction: a person may legitimately settle a disagreement through argument, but defaming and levelling allegations against another is not legitimate. Those who slander do so because they feel their worldly position is safe, but this is mere foolishness, since it amounts to falling into a pit of fire with no escape.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "104:1#c17",
+          "section_ref": "104:1",
+          "attaches_to": "104:2",
+          "text": "The man described gathered wealth and kept tallying it over and over, holding onto it and not spending it in Allah's way or paying its due right.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "جمع مالا وأحصى عدده, ولم ينفقه في سبيل الله",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "أحصاه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "relay",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "لا هم له سوى جمع المال وتعديده والغبطة به",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "جعله عدته وذخيرته ، وأكثر من عده وإحصائه لحرصه عليه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "relay",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "الذي كان همُّه جمع المال وتعداده",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "عَدَّدَهُ",
+              "gloss": "counted/tallied it repeatedly"
+            }
+          ]
+        },
+        {
+          "id": "104:1#c18",
+          "section_ref": "104:1",
+          "attaches_to": "104:2",
+          "text": "The word for 'gathered' is read two ways among the reciters: lightly (jamaʿa) or doubled for intensity (jammaʿa, meaning gathered again and again); both readings are transmitted and accepted.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "التشديد والتخفيف فيهما صوابان",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "قرأ أبو جعفر ، وابن عامر ، وحمزة ، والكسائي : جمع بتشديد الميم على التكثير",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "وهو مبالغة فى جمع بتخفيف الميم",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "104:1#c19",
+          "section_ref": "104:1",
+          "attaches_to": "104:2",
+          "text": "Hoarding wealth is not itself sinful; the condemnation attaches to failing to pay its due rights such as zakat, or to wealth that breeds pride and arrogance, or to a love of wealth so consuming it makes a person neglect his religious obligations.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "104:1#c20",
+          "section_ref": "104:1",
+          "attaches_to": "104:3",
+          "text": "He thinks his wealth will keep him alive forever, that it wards off death from him in this world.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "مخلده في الدنيا, فمزيل عنه الموت",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "يظن أنه لا يموت مع يساره",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "أي يبقيه حيا لا يموت",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "relay",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "بجهله",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "relay",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "original_excerpt": "সবচেয়ে সঠিক অর্থ হল, 'তাকে সর্বদা জীবিত রাখবে'",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "relay",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "الخلود في الدنيا والإفلات من الحساب",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "104:1#c21",
+          "section_ref": "104:1",
+          "attaches_to": "104:3",
+          "text": "Al-Ṭabarī notes that 'has immortalised him' is stated in the past tense though the outcome has not yet come to pass, on the pattern of Arabic idiom that uses the past tense for something a person is heading toward, as when one says 'so-and-so has perished' meaning he is bringing about his own ruin.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "وقيل: أخلده, والمعنى: يخلده",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "104:1#c22",
+          "section_ref": "104:1",
+          "attaches_to": "104:3",
+          "text": "Al-Saʿdī reads this as the fruit of ignorance: preoccupied with growing his wealth as though it grows his lifespan, the man does not realise that stinginess cuts lives short and ruins households, while charity in fact lengthens life.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "أن البخل يقصف الأعمار، ويخرب الديار، وأن البر يزيد في العمر",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "104:1#c23",
+          "section_ref": "104:1",
+          "attaches_to": "104:3",
+          "text": "Isrār Aḥmad connects this delusion to a wider human impulse to leave a lasting mark through wealth so that one's name endures in the world, the same impulse that produced monuments like the Pyramids of Egypt, quoting an English poem on the Pyramids to illustrate this psychology.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "گویا اس کے مال نے اسے زندئہ جاوید کردیا ہے",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        }
+      ],
+      "essay_html": "<p>These three verses open a short surah with a warning against two failings: mocking and finding fault with people, and hoarding wealth as if it could stop death. The word for the warning itself, Wayl, marks a severe threat of punishment and disgrace; some said it also names a valley in Hell.<sup class=\"ref\">1,3,9</sup></p><p>Ibn ʿAbbās رضي الله عنه read the two key words, humazah and lumazah, as pointing to one type of person: the one who spreads malicious gossip, splits friends apart, and hunts for faults in the innocent.<sup class=\"ref\">1,2,3,9,11,12,13,14</sup> Other commentators drew a finer line between the two words. Muqātil said the humazah faults someone behind his back while the lumazah faults him to his face.<sup class=\"ref\">2,3,7</sup> Abū al-ʿĀliya and al-Ḥasan said the reverse.<sup class=\"ref\">1,2,3,11,12</sup> Qatādah and, in one report, Mujāhid, took humazah to mean 'devouring people's flesh' through gossip and lumazah to mean taunting them, though al-Ṭabarī noted that even the transmitters disagreed about which word carried which sense.<sup class=\"ref\">1,2,3</sup> Ibn Zayd distinguished a hand-strike from a tongue-strike,<sup class=\"ref\">1,2,3</sup> and Sufyān al-Thawrī and Ibn Kaysān distinguished the tongue from a mocking glance or gesture.<sup class=\"ref\">2,3</sup> Al-Qurṭubī traced the root sense of both words back to crushing or striking with force, before they came to mean wounding someone with speech.<sup class=\"ref\">3</sup> He also noted a variant reading that would flip the meaning, describing someone who provokes others into mocking him.<sup class=\"ref\">3</sup> Ṭanṭāwī observed that the intensive noun-pattern used for both words marks the trait as a fixed habit, not a single lapse.<sup class=\"ref\">9</sup></p><p>On who is meant, some named the occasion of revelation as a particular man: al-Akhnas ibn Sharīq, Jamīl ibn ʿĀmir, Umayyah ibn Khalaf, or al-Walīd ibn al-Mughīrah, said to have mocked the Prophet ﷺ both behind his back and to his face.<sup class=\"ref\">1,2,3</sup> Mujāhid held the verse names no one in particular, and al-Ṭabarī concluded this was correct: the warning covers anyone who bears this trait, whoever he is.<sup class=\"ref\">1,2,3</sup> Al-Farrāʾ noted that Arabic can state something in general terms while meaning one person in particular, as when a man says 'whoever does not visit me, I will not visit him' while meaning only the one he is speaking to.<sup class=\"ref\">1,3</sup> A hadith brought to explain the verse describes 'the worst of Allah's servants' as those who spread gossip, sever friendships, and hunt for faults in the innocent.<sup class=\"ref\">2,3,7,11</sup> Muftī Shafīʿ and Zakariyā add a further point: backbiting is worse in one sense, because the victim cannot answer back and the sin keeps growing unchecked, while face-to-face slander is worse in another sense, because it humiliates the person directly.<sup class=\"ref\">7,11</sup> Wahiduddin Khan frames the matter as a moral line: arguing out a disagreement is legitimate, defaming someone is not. Those who slander feel safe in their worldly position, but this, he says, is mere foolishness, no different from stepping into a fire with no way out.<sup class=\"ref\">10</sup></p><p>The second failing named is the man who gathers wealth and keeps counting it, holding on to it rather than spending it in Allah's way or paying what is due on it.<sup class=\"ref\">1,2,5,9,11,12,13,14</sup> The word for 'gathered' is read two ways, light or doubled for intensity, both transmitted and accepted.<sup class=\"ref\">1,2,3,9</sup> Several commentators are careful to note that gathering wealth is not sinful in itself. What draws the warning is failing to pay its due right such as zakat, letting it breed pride, or loving it so much that religious duty is forgotten.<sup class=\"ref\">7,11,12</sup></p><p>His error, in the third verse, is thinking his wealth will make him live forever, as if riches could keep death away.<sup class=\"ref\">1,2,3,5,8,9,11,12,13,14</sup> Al-Ṭabarī notes a grammatical curiosity: the verb 'has immortalised him' is put in the past tense though the outcome has not actually occurred, the way Arabic can say 'so-and-so has perished' of someone still walking toward his own ruin.<sup class=\"ref\">1</sup> Al-Saʿdī رحمه الله calls this the fruit of ignorance: the man toils to grow his wealth as though it grows his lifespan, never realising that stinginess cuts life short and ruins households, while generosity in fact lengthens it.<sup class=\"ref\">5</sup> Isrār Aḥmad رحمه الله links the delusion to a wider human urge, the wish to leave a lasting mark through riches so one's name survives, the same urge that built monuments like the Pyramids, and he quotes an English poem on the Pyramids to make the point.<sup class=\"ref\">8</sup></p><p class=\"close\">Every reading offered for these three verses, however it divides the words, points to the same two things: a tongue and an eye turned against other people's honour, and a heart that mistakes a full purse for a guarantee against death.</p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "5",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:b5248cb92690070a8e283ce2da05c342695b5d1f1cbebeb4f514176fef8e4cb5",
+        "2": "sha256:addb0dcf68056ec86faeb5d4cc2fcf09c99137b045bd1f9f660b63e4fbf4c6e1",
+        "3": "sha256:d83a4445047108a3db20327eebef4a92131b754151ab53af9312e7acd03defa9",
+        "4": "sha256:919f30fdab7aa8285eab559a85d2363f29975b631e77ade39e31b1604c2a46d8",
+        "5": "sha256:4effd5a3b36ef54042378e98a51140c7552a65c96ff44c140d592ba1068cdd95",
+        "6": "sha256:1a15efb87bc73ab01c12b779325c9d83e9a560a4a53bf6db7f5d7c21fa33cf3b",
+        "7": "sha256:186daab70bf15ff640eae312d44748e42220e9dba719d9f6a0dabaef4769cd78",
+        "8": "sha256:229b8f6509f48b236af4e7ebdd7db9ca679b5b7bb336f1cd51e2ee3f629dc404",
+        "9": "sha256:5f37657f0449e2651f4b25ef41447d1b3660f6dda78c891fc208d0462ee2c56e",
+        "10": "sha256:d447885451568084ae8662c890c2884342e5a23b4d966c21c1eb05088e1eaa00",
+        "11": "sha256:63d3ce129bd871e0f1718ac9723777d73f0f54231deb0d768c2b1a25c0d373e4",
+        "12": "sha256:34e9c049789252cfa9f29add17d325b8397446dcbd00bb063e7ebc7841cbe277",
+        "13": "sha256:bed264895f72f12069384448bc89e5d169f036e2edf159dae8e117d6c5b1e664",
+        "14": "sha256:691f5345976247b92829bf34257b762d96acde3b9222e800e8647fafb940f413"
+      },
+      "flags": {
+        "creedal_stakes": false,
+        "legal_content": false,
+        "sensitive_content": true
+      },
+      "compiled_at": "2026-08-02",
+      "truncated_sources": [
+        4,
+        6
+      ]
+    },
+    "104:4": {
+      "verse_range": "4-5",
+      "title": "Flung Into the Crusher",
+      "in_short": "The Qur'an flatly rejects the false hope that wealth can save a person, and says he will be flung into a fire called al-Ḥuṭamah — the Crusher — whose horror is beyond ordinary description.",
+      "claims": [
+        {
+          "id": "104:4#c1",
+          "section_ref": "104:4",
+          "attaches_to": "104:4",
+          "text": "\"Kallā\" (No indeed!) rebuts the false assumption of the wealthy, hoarding person that his money will make him immortal or lasting.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "ما ذلك كما ظنّ, ليس ماله مخلِّده",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "كلا، رداً عليه أن لا يخلده ماله",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "كلا رد لما توهمه الكافر ; أي لا يخلد ولا يبقى له مال",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "المراد به هنا إبطال ما توهمه هذا المغرور من حسبانه أن ماله سيخلده",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "original_excerpt": "نەخێر وا نییە نابێ وابن و سەروەت و سامان هۆكار نیە بۆ مانەوەی خەڵكی",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "kallā",
+              "gloss": "No indeed! (a strong word of rebuttal/checking)"
+            }
+          ]
+        },
+        {
+          "id": "104:4#c2",
+          "section_ref": "104:4",
+          "attaches_to": "104:4",
+          "text": "An early report, relayed by al-Qurṭubī, holds that whenever Allah says 'kallā', He is saying 'you lied' (kadhabta) — attributed to ʿUmar b. ʿAbdullāh, freedman of Ghafrah.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "إذا سمعت الله عز وجل يقول كلا فإنه يقول كذبت",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not specified by al-Qurṭubī"
+          }
+        },
+        {
+          "id": "104:4#c3",
+          "section_ref": "104:4",
+          "attaches_to": "104:4",
+          "text": "'La-yunbadhanna' means he will surely be thrown down, cast, or flung — carrying a sense of contempt and being treated as worthless.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "ليقذفنّ يوم القيامة في الحطمة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "لينبذن، ليطرحن",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "لينبذن أي ليطرحن وليلقين",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "النبذ: الطرح للشئ والإلقاء به مع التحقير والتصغير من شأنه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "original_excerpt": "‘নবয’ শব্দটি ব্যবহার করা হয় তুচ্ছ মনে করে ছুঁড়ে ফেলে দেয়া অর্থে",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "nabadha",
+              "gloss": "to throw away something as worthless, with contempt"
+            }
+          ]
+        },
+        {
+          "id": "104:4#c4",
+          "section_ref": "104:4",
+          "attaches_to": "104:4",
+          "text": "Al-Ḥuṭamah is one of the names of Hellfire, alongside Jahannam, Saqar, and Laẕā.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "والحطمة: اسم من أسماء النار, كما قيل لها: جهنم وسقر ولظى",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "والحطمة من أسماء النار، مثل سقر ولظى",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "original_excerpt": "এটাও একটি জাহান্নামের নাম",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "original_excerpt": "(الْحُطَمَةِ) ناوێكە لە ناوەكانی ئاگری دۆزەخ",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "104:4#c5",
+          "section_ref": "104:4",
+          "attaches_to": "104:4",
+          "text": "The name al-Ḥuṭamah comes from ḥaṭm, meaning to break, crush, or shatter — the fire is called this because it crushes and pulverises everything thrown into it, breaking even bones.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "أحسبها سميت بذلك لحطمها كلّ ما ألقي فيها",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "سميت حطمة لأنها تحطم العظام وتكسرها",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "سميت بذلك لأنها تكسر كل ما يلقى فيها وتحطمه وتهشمه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "من الحَطْم، وهو كسر الشئ بشدة وقوة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "original_excerpt": "হাতম মানে ভেঙ্গে ফেলা, পিষে ফেলা ও টুকরা করে ফেলা",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "original_excerpt": "'হুত্বামাহ' অর্থঃ ভেঙ্গে-চুরে ধ্বংস করা",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "حُطَمَۃ: حَطَمَسے ہے، یعنی توڑ ڈالنے والی، پیس ڈالنے والی، چور چور اور ریزہ ریزہ کردینے والی",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "original_excerpt": "وردو خاشیان ئەكات و تێكیان ئەشكێنێ و لەناویان ئەبات",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "al-Ḥuṭamah",
+              "gloss": "the Crusher — a name for Hellfire, from ḥaṭm, to break/crush"
+            }
+          ]
+        },
+        {
+          "id": "104:4#c6",
+          "section_ref": "104:4",
+          "attaches_to": "104:4",
+          "text": "Al-Ṭabarī notes the same root is used of a voracious eater — an Arab would call a man who devours everything 'al-ḥuṭamah', paralleling the fire that devours whatever is cast into it.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "كما يقال للرجل الأكول: الحطمة",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "104:4#c7",
+          "section_ref": "104:4",
+          "attaches_to": "104:4",
+          "text": "A variant recitation, reported from al-Ḥasan al-Baṣrī (and, per al-Qurṭubī, also from Muḥammad b. Kaʿb, Naṣr b. ʿĀṣim, Mujāhid, Ḥumayd, and Ibn Muḥayṣin), reads the verb in the dual — 'la-yunbadhānni' — meaning BOTH the slanderer and his wealth will be thrown into the fire together.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "ليُنْبَذَانِّ فِي الحُطَمَةِ يعني: هذا الهمزة اللمزة وماله, فثنَّاه لذلك",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "لينبذان بالتثنية، أي هو وماله",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar",
+          "original_terms": [
+            {
+              "term": "la-yunbadhānni",
+              "gloss": "dual form: 'the two of them will surely be thrown'"
+            }
+          ]
+        },
+        {
+          "id": "104:4#c8",
+          "section_ref": "104:4",
+          "attaches_to": "104:4",
+          "text": "Al-Qurṭubī reports further variant readings attributed to al-Ḥasan: one taking the verb to mean specifically 'his wealth will be thrown', another in the first person plural ('We will surely throw him', spoken by Allah of the wealth-owner), and another with a different vowelling understood to mean the slanderer, the backbiter, and the wealth together.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وعن الحسن أيضا لينبذنه على معنى لينبذن ماله. وعنه أيضا بالنون لننبذنه... وعنه أيضا لينبذن بضم الذال",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "104:4#c9",
+          "section_ref": "104:4",
+          "attaches_to": "104:4",
+          "text": "Reports differ on whether al-Ḥuṭamah names a specific level of Hell: attributed to al-Kalbī, it is the sixth level (per al-Māwardī) or the second level (per al-Qushayrī reporting the same al-Kalbī); al-Ḍaḥḥāk held it is the fourth level; Ibn Zayd simply took it as one of Hell's names without specifying a level.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وهي الطبقة السادسة من طبقات جهنم... الدركة الثانية من درك النار... وقال الضحاك: وهي الدرك الرابع",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Qurṭubī relays without adjudicating"
+          }
+        },
+        {
+          "id": "104:4#c10",
+          "section_ref": "104:4",
+          "attaches_to": "104:4",
+          "text": "Al-Ḥuṭamah is described as an intensely blazing fire that leaves nothing it touches unburned.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "النار الشديدة الاشتعال: التي لا تبقى على شئ إلا وأحرقته",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "آگ اتنی تیز ہوگی کہ اس میں جو شے بھی ڈالی جائے گی اس کو آنِ واحد میں پیس کر رکھ دے گی",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "unspecified"
+        },
+        {
+          "id": "104:4#c11",
+          "section_ref": "104:4",
+          "attaches_to": "104:5",
+          "text": "The rhetorical question 'What will explain to you what al-Ḥuṭamah is?' serves to magnify and exalt the terror of this fire, showing that its true reality cannot be grasped by ordinary human minds.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "وأي شيء أشعرك يا محمد ما الحطمة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "على التعظيم لشأنها, والتفخيم لأمرها",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "تعظيم لها، وتهويل لشأنها",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "تهويل أمر هذه النار، وتفظيع شأنها، وبيان أن كنهها لا تدركه عقول البشر",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "original_excerpt": "সেটা এমন ভয়ংকর আগুন হবে, যার প্রকৃতত্বে তোমার জ্ঞান-বুদ্ধি পৌঁছতে পারে না",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric"
+        },
+        {
+          "id": "104:4#c12",
+          "section_ref": "104:4",
+          "attaches_to": "104:5",
+          "text": "Al-Muyassar renders the rhetorical question plainly as an address to the Messenger: 'what do you know of the reality of this fire?'",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "relay",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "وما أدراك -أيها الرسول- ما حقيقة النار؟",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric"
+        },
+        {
+          "id": "104:4#c13",
+          "section_ref": "104:4",
+          "attaches_to": "104:5",
+          "text": "The question is addressed to the Prophet ﷺ specifically, meaning even he did not know how crushing and pulverising this fire is until told — carrying an implicit warning to guard against it.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "original_excerpt": "ئەی محمد صلى الله علیه وسلم تۆ چوزانی ئەو ئاگری دۆزەخە تێكشكێنەرە وردو خاشكەرە چۆن ئاگرێكە",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric"
+        },
+        {
+          "id": "104:4#c14",
+          "section_ref": "104:4",
+          "attaches_to": "104:4",
+          "text": "It is faith, good deeds, and monotheism — not wealth — that cause a person to remain forever in Paradise; one who mocks people, hoards wealth, and forgets death is the one who will be thrown into this fire.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "original_excerpt": "بەڵكو كردەوەی چاك و ئیمان و تەوحیدو یەكخواپەرستی ئەمانە وا لە مرۆڤ ئەكەن كە لە بەهەشتدا بەهەمیشەیی بمێنێتەوە",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "unspecified"
+        },
+        {
+          "id": "104:4#c15",
+          "section_ref": "104:4",
+          "attaches_to": "104:4",
+          "text": "Read as continuing the surah's condemnation of slander, this verse is applied to those who denigrate and defame others because they feel their worldly position is secure — thinking they lose nothing by levelling baseless allegations. This is described as mere foolishness, since it amounts to jumping into a pit of fire from which there is no escape.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "original_excerpt": "this amounts to jumping into a pit of fire—a pit of fire from which there will be no escape",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "unspecified"
+        },
+        {
+          "id": "104:4#c16",
+          "section_ref": "104:4",
+          "attaches_to": "104:4",
+          "text": "This threatened fate is understood to attach to a person whose accumulation of wealth is bound up with neglect of religious obligation, or with pride and arrogance from that wealth — such a person is warned of eternal perdition, though amassing wealth as such is not in itself condemned.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "original_excerpt": "a person attaching such profound love, greed and passion for material riches will suffer eternal perdition",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "unspecified"
+        }
+      ],
+      "essay_html": "<p>The verse opens with a flat rebuttal. \"Kallā\" — No indeed! — knocks down the assumption, held by the wealthy, boastful figure this surah has been describing, that his money can make him last forever.<sup class=\"ref\">1,2,3,9,14</sup> One report, relayed by al-Qurṭubī (d. 1273), even says that whenever Allah says \"kallā\" in the Qur'an, He is saying \"you lied\".<sup class=\"ref\">3</sup></p><p>What happens instead is that he will be \"flung\" — the verb <i>nabadha</i> means to throw something down as worthless, with contempt, the way rubbish is discarded.<sup class=\"ref\">1,2,3,9,11</sup> The place he is flung into is called al-Ḥuṭamah, one among Hell's names alongside Jahannam, Saqar, and Laẕā.<sup class=\"ref\">1,2,12,14</sup> The name comes from ḥaṭm — to break, crush, shatter. Commentators explain it names this fire because it crushes and pulverises everything cast into it, breaking even bone.<sup class=\"ref\">1,2,3,9,11,12,8,14</sup> Al-Ṭabarī (d. 923) adds a linguistic parallel: Arabs also called a voracious eater \"al-ḥuṭamah\", one who devours everything in his path, just as this fire devours whatever is thrown in.<sup class=\"ref\">1</sup></p><p>The grammar of the verb carries an old dispute. Al-Ḥasan al-Baṣrī and several other early reciters are reported to have read it in the dual — \"the two of them will surely be thrown\" — meaning both the slanderer and his wealth go into the fire together.<sup class=\"ref\">1,3</sup> Al-Qurṭubī records still other readings traced to al-Ḥasan: one taking the throwing to apply to the wealth itself, another cast as Allah speaking in the first person of throwing the wealth's owner.<sup class=\"ref\">3</sup> None of this changes the outcome; it only sharpens who, exactly, is being cast down.</p><p>There is also disagreement over whether al-Ḥuṭamah names a particular level of Hell. Al-Qurṭubī reports it called the sixth level in one chain, the second in another from the same source, and the fourth according to al-Ḍaḥḥāk, while Ibn Zayd simply took it as one of Hell's names without fixing its rank.<sup class=\"ref\">3</sup> The commentators pass these reports on without settling between them.</p><p>Verse five then asks: \"What will explain to you what al-Ḥuṭamah is?\" This kind of question is not asked because an answer is missing. It is used to magnify the matter, to make the reader feel that the true horror of this fire outruns ordinary human understanding.<sup class=\"ref\">1,3,5,9,12</sup> Even addressed to the Prophet ﷺ himself, the implication given is that its crushing, pulverising nature was beyond what anyone could grasp unaided.<sup class=\"ref\">14</sup></p><p>Read against the surah's opening complaint about backbiting and slander, the warning is drawn out further: someone who insults and defames others because his position feels secure, thinking he risks nothing, is in fact behaving like a man jumping into a pit of fire with no way back out.<sup class=\"ref\">10</sup> Others locate the danger specifically in wealth that breeds arrogance or crowds out religious duty, noting that amassing wealth is not itself condemned, but the love of it that forgets Allah is.<sup class=\"ref\">7</sup> One reading draws the positive counterpart: it is faith, right action, and the worship of Allah alone — not riches — that secure a lasting place, and it is the one who mocks others while hoarding wealth and forgetting death who is flung into the Crusher.<sup class=\"ref\">14</sup></p><p class=\"close\">A single name, al-Ḥuṭamah — the Crusher — carries the whole warning: whatever wealth or contempt a person builds his standing on, it is themselves that will be thrown down and broken, into a fire whose true nature, the commentators agree, no description can fully convey.</p>",
+      "sources_used": [
+        1,
+        2,
+        3,
+        5,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "source_hashes": {
+        "1": "sha256:cc73267e9359d8e4bca57ae1f33657c4d108c028e7ce7e37fc3002badd047168",
+        "2": "sha256:0b57841fb6ae0dbc8b1f6799dd41ec75715d85a18badb486ad846cd26e90a644",
+        "3": "sha256:f64d29dcb9e35ad4c194c267cc6e29f66a07b07095d4d4acf93ec9e1121d9490",
+        "4": "sha256:61e969f560de9c7dc71271bcf9845ca6c13ae5abfdddb00e6d0a089b4aa9573a",
+        "5": "sha256:150d23269456b0c1da824ee84209d2e150bae755486f614b1fb311302ae079f1",
+        "6": "sha256:f8172a99b1a9510c20c838d49db96e80d103aa51a71990299c0cd2ec451361a9",
+        "7": "sha256:8b925e9f1e935e3a1f3fb9235814ebb2f9195f12d7bbc0e11ee832b68318ae2a",
+        "8": "sha256:a505d2925b5ae7dffc2281d1dc49f034bc6021e7017c56d851a16ed24b61bdfa",
+        "9": "sha256:cabafc165befa86042f98d7d8bafbfc5742b389db2f66469a79b0a65206b2d6b",
+        "10": "sha256:743cc165078e56c0472dddf225d96bc2c02084682f1ec13a917322d5fed9b162",
+        "11": "sha256:78ea3afd0047b9be8615f3a16331253b146f0840c0eac6ccf811f9823419f4dd",
+        "12": "sha256:36c70316c450686506d57de8fbb3be23cdaa9b7dfe948727e89ccd7777bf006a",
+        "13": "sha256:0cd1fcb556098e1db8d395e28bce582a8959691d18600da9010ceb30117a1bdb",
+        "14": "sha256:90d8bd74c42dded3c718d39842d3a4f92e97bd26b60dd136299e4c86e3c1d526"
+      },
+      "flags": {
+        "creedal_stakes": true,
+        "legal_content": false,
+        "sensitive_content": true
+      },
+      "compiled_at": "2026-08-02",
+      "truncated_sources": [
+        6
+      ]
+    },
+    "104:6": {
+      "verse_range": "6-8",
+      "title": "God's Fire, Sealed Upon Them",
+      "in_short": "The Fire that awaits the slanderer and the hoarder is named as God's own Fire, kindled and fierce, whose heat does not stop at the skin but reaches into the heart itself. It is then sealed shut over those inside, with no way out.",
+      "claims": [
+        {
+          "id": "104:6#c1",
+          "section_ref": "104:6",
+          "attaches_to": "104:6",
+          "text": "Calling it 'God's Fire' rather than simply 'the Fire' sharpens the dread of it, since its Maker's power has no limit.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric"
+        },
+        {
+          "id": "104:6#c2",
+          "section_ref": "104:6",
+          "attaches_to": "104:6",
+          "text": "It has been kept ablaze for a thousand years, then another thousand, then another - it never dies down, and God prepared it for the guilty.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "unspecified"
+        },
+        {
+          "id": "104:6#c3",
+          "section_ref": "104:6",
+          "attaches_to": "104:6",
+          "text": "It is an intensely blazing fire, made ready for disbelievers and wrongdoers.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "unspecified"
+        },
+        {
+          "id": "104:6#c4",
+          "section_ref": "104:6",
+          "attaches_to": "104:6",
+          "text": "Its fuel is people and stones.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "relay",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "unspecified"
+        },
+        {
+          "id": "104:6#c5",
+          "section_ref": "104:6",
+          "attaches_to": "104:6",
+          "text": "Those who resort to slander think their worldly position keeps them safe, but doing so amounts to jumping into a pit of fire from which there is no escape.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "104:6#c6",
+          "section_ref": "104:6",
+          "attaches_to": "104:7",
+          "text": "The verb rendered 'rises over' (تطلع) is used in the sense of 'reaches' (يبلغ), matching ordinary Arabic usage where one says a traveller's destination 'rose' when he finally arrived there.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "تَطَّلِعُ",
+              "gloss": "rises over / reaches (from root related to arrival, attainment)"
+            }
+          ]
+        },
+        {
+          "id": "104:6#c7",
+          "section_ref": "104:6",
+          "attaches_to": "104:7",
+          "text": "The fire's pain and heat travel through the body until they reach the hearts themselves.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "الأفئدة",
+              "gloss": "the hearts (plural of fu'ād)"
+            }
+          ]
+        },
+        {
+          "id": "104:6#c8",
+          "section_ref": "104:6",
+          "attaches_to": "104:7",
+          "text": "Hearts are named specifically because pain that reaches the heart ordinarily kills a person outright. Here it does not - they are as good as dead while still alive, matching the Qur'an's description elsewhere of those in that fire who neither die nor live.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "104:6#c9",
+          "section_ref": "104:6",
+          "attaches_to": "104:7",
+          "text": "A report attributed to the Prophet ﷺ describes the fire eating away the body of the damned until it reaches the heart, at which point a new body is created for them and the burning begins again.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Qurtubi (no grading given)"
+          }
+        },
+        {
+          "id": "104:6#c10",
+          "section_ref": "104:6",
+          "attaches_to": "104:7",
+          "text": "An alternative reading takes تطلع to mean 'knows' - the fire discerns and measures out to each person exactly the punishment they deserve.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "104:6#c11",
+          "section_ref": "104:6",
+          "attaches_to": "104:7",
+          "text": "Unlike worldly fire, which kills a person before it reaches the heart, hellfire reaches the heart while the person is still alive, so the burning of the heart itself is felt.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "104:6#c12",
+          "section_ref": "104:6",
+          "attaches_to": "104:7",
+          "text": "The fire reaching the heart carries three related senses: it reaches the very seat of false belief and corrupt intention; it is not blind like worldly fire but discerns and punishes according to each person's actual crime; and it reaches the heart while the person still lives, since there is no dying in that fire.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "104:6#c13",
+          "section_ref": "104:6",
+          "attaches_to": "104:7",
+          "text": "The heart is singled out because it is the heart's condition that decides whether all a person's deeds are good or bad; it is the seat of intention.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "104:6#c14",
+          "section_ref": "104:6",
+          "attaches_to": "104:7",
+          "text": "The verse's stress on heat reaching past the skin into the heart is compared, tentatively, to modern phenomena such as infrared and ultraviolet rays, or to a kind of atomic heat that pierces the body without being a direct flame - a suggestion attributed to another person and offered cautiously.",
+          "claim_type": "other",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "relay",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "104:6#c15",
+          "section_ref": "104:6",
+          "attaches_to": "104:7",
+          "text": "This fire's reach to the heart answers directly to the one who practises humz and lamz (backbiting and mockery), whose hidden material is arrogance and pride.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric"
+        },
+        {
+          "id": "104:6#c16",
+          "section_ref": "104:6",
+          "attaches_to": "104:8",
+          "text": "Mu'sadah (سؤصدة/مؤصدة) is glossed as mutabbaqah - closed shut, sealed - a reading traced through early authorities and repeated widely.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "مُؤْصَدَةٌ",
+              "gloss": "sealed shut / locked upon them"
+            }
+          ]
+        },
+        {
+          "id": "104:6#c17",
+          "section_ref": "104:6",
+          "attaches_to": "104:8",
+          "text": "A second gloss takes it as mughlaqah, locked, citing ordinary Arabic usage 'I locked the door' (آصدت الباب) and, per one report, said to be a Quraysh dialect usage, supported by a line of poetry.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "104:6#c18",
+          "section_ref": "104:6",
+          "attaches_to": "104:8",
+          "text": "The word can be read with or without a hamza, and both recitations are accepted.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "104:6#c19",
+          "section_ref": "104:6",
+          "attaches_to": "104:8",
+          "text": "Despite the fire's ferocious heat, those inside remain imprisoned within it, in despair of any escape.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "unspecified"
+        },
+        {
+          "id": "104:6#c20",
+          "section_ref": "104:6",
+          "attaches_to": "104:8",
+          "text": "It is sealed with extended chains and shackles, so that no one inside can get out.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "unspecified"
+        },
+        {
+          "id": "104:6#c21",
+          "section_ref": "104:6",
+          "attaches_to": "104:8",
+          "text": "It is sealed from above so completely that not even a crack is left open.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "unspecified"
+        },
+        {
+          "id": "104:6#c22",
+          "section_ref": "104:6",
+          "attaches_to": "104:8",
+          "text": "The purpose of the sealing is to ensure the fire's full heat afflicts them without any relief.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "104:6#c23",
+          "section_ref": "104:6",
+          "attaches_to": "104:8",
+          "text": "All seven gates of Hell are shut, and none who enter can leave, except people of monotheism who receive intercession or whom God frees by His own will; disbelievers remain in it permanently, its doors sealed.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "unspecified"
+        },
+        {
+          "id": "104:6#c24",
+          "section_ref": "104:6",
+          "attaches_to": "104:8",
+          "text": "A report describes a man in one of Hell's ravines calling out 'O Most Merciful' for a thousand years, at which God commands Gabriel عليه السلام to bring him out; Gabriel finds it sealed and reports back, whereupon God orders it opened and the man is brought out, left on the shore of Paradise until flesh, blood and hair grow back on him.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Ṭabarī (chain given, no explicit grading)"
+          }
+        }
+      ],
+      "essay_html": "<p>This fire is named God's own Fire, and the commentators read the naming itself as a warning: calling it 'God's Fire' rather than just 'the Fire' sharpens the dread of it, because its Maker's power has no limit.<sup class=\"ref\">9</sup> Al-Qurṭubī (d.1273) says it has been kept blazing for a thousand years, then another thousand, then another - it never dies down, kept ready by God for the guilty.<sup class=\"ref\">3</sup> Two later commentaries add that it stands prepared specifically for the disbelieving and the wrongdoing.<sup class=\"ref\">13,14</sup> Al-Saʿdī (d.1957) notes its fuel: people and stones.<sup class=\"ref\">5</sup> Wahīduddīn Khān reads the whole image as a warning against slander itself: those who defame others imagine their worldly position keeps them safe, but doing so amounts to jumping into a pit of fire with no way out.<sup class=\"ref\">10</sup></p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:f0ce417ff6953a538227029ce17f9363cc46f855998d55363ab67c48d35f5f2b",
+        "2": "sha256:93122f2c8a52240fe17dc561e86ac1141825adda86fcd97379825ce23f529ced",
+        "3": "sha256:a69beb5b059984c1b656335a9bddbf63f68427b84423582877938663b6395eae",
+        "4": "sha256:cbcd1ccc244c234574fea58fa92a23465f8bea446bf381b1bfdf68ee9f0f6e4f",
+        "5": "sha256:2c8fed2cd35d6c1b0b2fdeae84976f643f7cb1e6dd7ee221752335dec6e293e5",
+        "6": "sha256:9653757c7561648cf3102b3790c7b690c27bc5020247363ff996dbdca546d4b2",
+        "7": "sha256:3a30cf973152710e1571ade51bbd626fde0509601ef757790d525bcc75967036",
+        "8": "sha256:3535f4cfd36a5efb821873f1c92800b70e7262e6bb413bcb1f7a7e810cf3ea8d",
+        "9": "sha256:88ed2e4d8dfafc1e6b899b8b2047297bbfd21b5be216e13816b1d33157be3d2b",
+        "10": "sha256:8e83bcba866eb269e272dfdc16fec439b8ea1d93bd323ed3536e3be1335d0ed8",
+        "11": "sha256:ed6c905c2c633aa127b9807fb34940b3b304a59235b8e07ec4e03a282d2b7344",
+        "12": "sha256:ee10c525158bb223cdc6a34af0d9756c1801cdbf61248e9e20caac54a0e27a40",
+        "13": "sha256:e75cbba1a761bd6c56e943df019447c11b397283b001486e01adb71c7a981a67",
+        "14": "sha256:19cb8f2555feab9e55346df70208c84faa86ee349ae27be3ad364c472f850171"
+      },
+      "flags": {
+        "creedal_stakes": true,
+        "legal_content": false,
+        "sensitive_content": true
+      },
+      "compiled_at": "2026-08-02",
+      "truncated_sources": [
+        4
+      ]
+    }
+  }
+}

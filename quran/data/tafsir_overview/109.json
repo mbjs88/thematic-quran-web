@@ -1,0 +1,1423 @@
+{
+  "surah": 109,
+  "name": "",
+  "coverage": {
+    "editions_present": [
+      "ar-tafsir-al-tabari",
+      "ar-tafsir-al-baghawi",
+      "ar-tafseer-al-qurtubi",
+      "en-tafisr-ibn-kathir",
+      "ar-tafseer-al-saddi",
+      "tafsir-fe-zalul-quran-syed-qatab",
+      "en-tafsir-maarif-ul-quran",
+      "tafsir-bayan-ul-quran",
+      "ar-tafsir-al-wasit",
+      "tazkirul-quran-en",
+      "bn-tafsir-abu-bakr-zakaria",
+      "bn-tafsir-ahsanul-bayaan",
+      "ar-tafsir-muyassar",
+      "kurd-tafsir-rebar"
+    ],
+    "editions_absent": [],
+    "independent_works": 14,
+    "languages_present": [
+      "ar",
+      "bn",
+      "en",
+      "ku",
+      "ur"
+    ],
+    "languages_absent": []
+  },
+  "pipeline_provenance": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "overview-v2.3",
+    "theme_breaks_version": "sha256:99880ec7b10b53313690f91df9ee8d065519ee698df34b35a3336b5705218f90",
+    "compiled_at": "2026-08-02"
+  },
+  "modern_lens_framing": "The Qurʾan is taken here as fixed, revealed truth; science is our provisional, evolving account of the observable world. What follows notes where the two meet — a contemplation, not a proof. Where the science later shifts, that reflects the limits of our knowledge, not the text.",
+  "references": [
+    {
+      "n": 1,
+      "work_id": "al-tabari",
+      "label": "Jāmiʿ al-Bayān",
+      "author_id": "al-tabari",
+      "author": "Abū Jaʿfar Muḥammad ibn Jarīr al-Ṭabarī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 2,
+      "work_id": "al-baghawi",
+      "label": "Maʿālim al-Tanzīl",
+      "author_id": "al-baghawi",
+      "author": "Abū Muḥammad al-Ḥusayn ibn Masʿūd al-Baghawī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 3,
+      "work_id": "al-qurtubi",
+      "label": "al-Jāmiʿ li-Aḥkām al-Qurʾān",
+      "author_id": "al-qurtubi",
+      "author": "Abū ʿAbd Allāh Muḥammad ibn Aḥmad al-Qurṭubī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 4,
+      "work_id": "ibn-kathir",
+      "label": "Tafsīr Ibn Kathīr",
+      "author_id": "ibn-kathir",
+      "author": "Ismāʿīl ibn ʿUmar ibn Kathīr",
+      "source_language": "ar",
+      "note": "One independent voice. The ar/ur/bn editions are the SAME work — never count as separate corroboration."
+    },
+    {
+      "n": 5,
+      "work_id": "al-saadi",
+      "label": "Taysīr al-Karīm al-Raḥmān",
+      "author_id": "al-saadi",
+      "author": "ʿAbd al-Raḥmān ibn Nāṣir al-Saʿdī",
+      "source_language": "ar",
+      "note": "Russian edition (170) is the SAME work — translate from the Arabic original, and do not count Russian as an independent voice."
+    },
+    {
+      "n": 6,
+      "work_id": "fi-zilal",
+      "label": "Fī Ẓilāl al-Qurʾān",
+      "author_id": "sayyid-qutb",
+      "author": "Sayyid Quṭb Ibrāhīm Ḥusayn",
+      "source_language": "ar",
+      "note": "Original is Arabic, but the API here carries only an URDU edition — translating from Urdu is one step removed from the original. Prefer the Arabic original if the QF Content API offers it."
+    },
+    {
+      "n": 7,
+      "work_id": "maarif",
+      "label": "Maʿārif al-Qurʾān",
+      "author_id": "muhammad-shafi-usmani",
+      "author": "Muftī Muḥammad Shafīʿ ʿUthmānī",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 8,
+      "work_id": "bayan-ul-quran",
+      "label": "Bayān al-Qurʾān",
+      "author_id": "israr-ahmad",
+      "author": "Isrār Aḥmad",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 9,
+      "work_id": "wasit",
+      "label": "al-Tafsīr al-Wasīṭ",
+      "author_id": "tantawi",
+      "author": "Muḥammad Sayyid Ṭanṭāwī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 10,
+      "work_id": "tazkirul",
+      "label": "Tazkīr al-Qurʾān",
+      "author_id": "wahiduddin-khan",
+      "author": "Wahiduddin Khan",
+      "source_language": "ur",
+      "note": "en and ur editions are the same work."
+    },
+    {
+      "n": 11,
+      "work_id": "abu-bakr-zakaria",
+      "label": "Tafsir Abu Bakr Zakaria",
+      "author_id": "abu-bakr-zakaria",
+      "author": "Abū Bakr Muḥammad Zakariyyā",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 12,
+      "work_id": "ahsanul-bayaan",
+      "label": "Ahsanul Bayaan",
+      "author_id": "bayaan-foundation",
+      "author": "Ahsanul Bayaan (Bayaan Foundation)",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 13,
+      "work_id": "muyassar",
+      "label": "al-Tafsīr al-Muyassar",
+      "author_id": "committee-muyassar",
+      "author": "al-Tafsīr al-Muyassar (committee)",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 14,
+      "work_id": "rebar-kurdish",
+      "label": "Rebar Kurdish Tafsir",
+      "author_id": "rebar",
+      "author": "Rebar Kurdish Tafsir",
+      "source_language": "ku",
+      "note": ""
+    }
+  ],
+  "sections": {
+    "109:6": {
+      "verse_range": "6-6",
+      "title": "Your Religion, My Religion",
+      "in_short": "The closing verse states a final, complete separation between the Prophet ﷺ and the Meccan disbelievers over religion: each side keeps its own way, with no room for compromise.",
+      "claims": [
+        {
+          "id": "109:6#c1",
+          "section_ref": "109:6",
+          "attaches_to": "109:6",
+          "text": "‘Your religion’ (dīnukum) refers to shirk (idol-worship), and ‘my religion’ (dīnī) refers to Islam.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "لكم دينكم ) الشرك ( ولي دين ) الإسلام",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "قِيل: لَكُمْ دِينَكُمْ يعني الكفر ولِي دِين يعني الإسلام",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "original_excerpt": "তোমাদের দ্বীন (শিরক) তোমাদের জন্য এবং আমার দ্বীন (ইসলাম) আমার জন্য",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "دين",
+              "gloss": "religion / creed / way of life"
+            }
+          ]
+        },
+        {
+          "id": "109:6#c2",
+          "section_ref": "109:6",
+          "attaches_to": "109:6",
+          "text": "An alternative reading takes ‘dīn’ here not as creed but as ‘recompense’ (jazāʾ): ‘for you your recompense, for me mine’, since the word dīn can carry that sense.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "ومعنى لكم دينكم أي جزاء دينكم ، ولي جزاء ديني",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "original_excerpt": "the word din has been interpreted as jaza' or 'retribution or requital'",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "الدين ... وبمعنى الحساب والجزاء",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "109:6#c3",
+          "section_ref": "109:6",
+          "attaches_to": "109:6",
+          "text": "Ibn Kathīr's own preferred reading takes ‘dīn’ as the religious deeds/practice of each side, so the verse parallels ‘for me my deeds and for you your deeds’ (10:41) and ‘for us our deeds and for you your deeds’ (28:55): each side is accountable for its own actions.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "original_excerpt": "Ibn Kathir prefers this interpretation... refers to the 'deeds of religion'",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "original_excerpt": "ইবনে-কাসীর دين শব্দকে দ্বীনী ক্রিয়াকর্মের অর্থে নিয়েছেন",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "relay",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "كما قال تعالى: { أَنْتُمْ بَرِيئُونَ مِمَّا أَعْمَلُ وَأَنَا بَرِيءٌ مِمَّا تَعْمَلُونَ }",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "109:6#c4",
+          "section_ref": "109:6",
+          "attaches_to": "109:6",
+          "text": "Al-Ṭabarī reads the verse as a statement of permanence: the disbelievers' religion is sealed upon them, they will never leave it and will die on it; likewise the Prophet ﷺ will never leave his religion, since it was already known in God's foreknowledge that he would not.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "لكم دينكم فلا تتركونه أبدا... ولي دين الذي أنا عليه لا أتركه أبدا",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "109:6#c5",
+          "section_ref": "109:6",
+          "attaches_to": "109:6",
+          "text": "A report from Ibn Zayd (relayed by al-Ṭabarī) says the verse is addressed specifically to the polytheists, distinguishing them from Jews (who worship only Allah but disbelieved certain prophets, and some later said ʿUzayr was God's son) and from Christians (who worshipped the Messiah as God's son).",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "قال ابن زيد في قول الله... قال: للمشركين",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "109:6#c6",
+          "section_ref": "109:6",
+          "attaches_to": "109:6",
+          "text": "Some grammarians held that verse 6 is a repetition of the disavowal already stated in verses 2–5, repeated for emphasis (tawkīd), just as ‘with hardship comes ease’ is repeated twice for emphasis.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "كرّر قوله... على وجه التوكيد، كما قال: فَإِنَّ مَعَ الْعُسْرِ يُسْرًا",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "original_excerpt": "Verse [6] is the repetition of verse [5] and is deliberately reiterated to secure emphasis",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "تذييل مؤكد لما قبله",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric"
+        },
+        {
+          "id": "109:6#c7",
+          "section_ref": "109:6",
+          "attaches_to": "109:6",
+          "text": "Al-Qurṭubī reads the verse as carrying an implicit warning (tahdīd): if you are content with your religion, we are content with ours, meaning each side accepts the consequence of its own choice.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "فيه معنى التهديد؛ وهو كقوله تعالى: لنا أعمالنا ولكم أعمالكم",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "109:6#c8",
+          "section_ref": "109:6",
+          "attaches_to": "109:6",
+          "text": "Al-Ṭanṭāwī notes that ‘dīn’ here can bear three senses at once: the creed one holds, the way of life one's conduct follows, and the reckoning/recompense one receives; and the fronting of the predicate (‘for you… for me…’) signals exclusivity, as if to say ‘for you and no other, for me and no other’.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "والدين: يطلق بمعنى العقيدة... وقدم المسند على المسند إليه لإفادة القصد والاختصاص",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "109:6#c9",
+          "section_ref": "109:6",
+          "attaches_to": "109:6",
+          "text": "Al-Ṭanṭāwī concludes the verse cuts off every hope the disbelievers had of reaching a compromise with the Prophet ﷺ, or of him meeting any of their corrupt demands; he is entirely disavowed from them and their objects of worship.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "قد قطعت كل أمل توهم الكافرون عن طريقه الوصول إلى مهادنة النبى",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "109:6#c10",
+          "section_ref": "109:6",
+          "attaches_to": "109:6",
+          "text": "Reports (via Ibn ʿAbbās, through different chains) describe Meccan leaders offering the Prophet ﷺ compromise deals: worshipping their idols for a year in exchange for their worshipping his God for a year; or wealth, marriage and leadership if he simply stopped criticising their gods; or even just touching one of their idols. The surah was said to have been sent down in response.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "original_excerpt": "the pagans of Makkah proposed to the Messenger of Allah... let us agree that you worship our gods for a year and we would worship your God for another year",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "Muftī Muḥammad Shafīʿ, citing Ibn Isḥāq/al-Qurṭubī, al-Ṭabarānī, and Abū Ṣāliḥ"
+          }
+        },
+        {
+          "id": "109:6#c11",
+          "section_ref": "109:6",
+          "attaches_to": "109:6",
+          "text": "Some commentators held that Sūrat al-Kāfirūn (or verse 6 specifically) is abrogated by the later 'verse of the sword', since it was revealed before the command to fight and appears to preclude any accommodation with disbelief. Others held the whole surah abrogated. A third view (relayed by al-Qurṭubī) held that nothing is abrogated, because the verse is a statement of fact (khabar), not a legal ruling.",
+          "claim_type": "legal",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "وهذه الآية منسوخة بآية السيف",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "فنسخ بآية السيف. وقيل: السورة كلها منسوخة. وقيل: ما نسخ منها شيء لأنها خبر",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "109:6#c12",
+          "section_ref": "109:6",
+          "attaches_to": "109:6",
+          "text": "Muftī Muḥammad Shafīʿ reports that the majority position is that the surah is not abrogated: the verse does not permit or guarantee the disbelievers' continuance in disbelief, it only states that each side reaps the consequence of its own path (as in 28:55); this does not conflict with the Qur'an's separate permission to make peace treaties (8:61) or with the Prophet's ﷺ treaty with the Jews of Madina, since a valid treaty is one that does not make the forbidden lawful or the lawful forbidden.",
+          "claim_type": "legal",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "original_excerpt": "the correct position held by the majority of the scholars is that this Surah is not abrogated",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "109:6#c13",
+          "section_ref": "109:6",
+          "attaches_to": "109:6",
+          "text": "Abū Bakr Zakariyyā strongly refutes a modern reading of this verse as granting the disbelievers acceptance of their religion, or as proof that Islam endorses religious pluralism/secularism; he calls this a corruption of the text's meaning, and cites a series of Qur'anic parallels of disavowal (Yūnus 104, al-Shuʿarāʾ 216, Sabaʾ 25–26, al-Zumar 39–40, al-Mumtaḥanah 4) to show the verse is a final, hopeless declaration of separation, not an endorsement.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "refute",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "original_excerpt": "বর্তমান কালের কোন কোন জ্ঞানপাপী মনে করে থাকে যে, এখানে কাফেরদেরকে তাদের দ্বীনের উপর থাকার স্বীকৃতি দেয়া হয়েছে",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "109:6#c14",
+          "section_ref": "109:6",
+          "attaches_to": "109:6",
+          "text": "Abū Bakr Zakariyyā adds that this declaration of separation does not itself rule out peace treaties where needed, citing 8:61 (incline to peace if they incline to it) and the Prophet's ﷺ treaty with the Jews, and the hadith that any treaty is void only if it makes the forbidden lawful or the lawful forbidden.",
+          "claim_type": "legal",
+          "sources": [
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "source as cited (Abū Dāwūd, al-Tirmidhī, Ibn Mājah)"
+          }
+        },
+        {
+          "id": "109:6#c15",
+          "section_ref": "109:6",
+          "attaches_to": "109:6",
+          "text": "Sayyid Quṭb reads the verse as declaring a total, unbridgeable separation between belief and disbelief: there is no meeting point between the two positions, because the disagreement runs to the foundations, differing in the basic concept of life, its values, and its way of living, so no policy of 'give and take' is possible between tawḥīd and shirk.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "دونوں کے درمیان کوئی پل نہیں ہے جس پر یہ فریق مل سکیں... اختلاف بنیادی نظریات میں ہے",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "109:6#c16",
+          "section_ref": "109:6",
+          "attaches_to": "109:6",
+          "text": "Sayyid Quṭb extends the point to callers to truth in any age: they must declare, as the Prophet ﷺ first did, a complete disavowal from any ideological compromise with jāhiliyyah (pagan ignorance), following the model of this verse.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "آج کے داعیان حق اس بات کے محتاج ہیں... جاہلیت جدید کے مقابلے میں اپنی مکمل برات کا اعلان کریں",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "109:6#c17",
+          "section_ref": "109:6",
+          "attaches_to": "109:6",
+          "text": "Isrār Aḥmad reads the verse as a final severance: the relationship between the Prophet ﷺ and the disbelievers ends here; each side is left to its own path, and the contest between truth and falsehood would reach its logical conclusion, with Islam soon to prevail across the Arabian peninsula.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "اب میرا تمہارا تعلق ختم... جلد ہی جزیرئہ عرب پر دین اسلام غالب آکر رہے گا",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "109:6#c18",
+          "section_ref": "109:6",
+          "attaches_to": "109:6",
+          "text": "Rebar's commentary states that each side keeps its own religion and worship, with neither transferring to the other; on the Day of Judgment the disbelievers will see the outcome of this parting, remaining forever in the Fire's punishment.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "original_excerpt": "لە قیامەتدا سەرەنجامى ئەم هاوبەشبڕیاردانەتان دەزانن و بەهەمیشەیی لە سزاى ئاگرى دۆزەخدا دەمێننەوە",
+              "translation_confidence": "low"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "109:6#c19",
+          "section_ref": "109:6",
+          "attaches_to": "109:6",
+          "text": "There is a recognised reading (qirāʾah) variant on the final letter of ‘dīn’: some readers (Ibn Kathīr, Nāfiʿ, Ḥafṣ) pronounce the ‘y’ of ‘waliya dīni’ with a fatḥah, while others read it with sukūn (no vowel).",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "قرأ ابن كثير ، ونافع ، وحفص : ولي بفتح الياء ، قرأ الآخرون بإسكانها",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وفتح الياء من ولي دين نافع، والبزي عن ابن كثير باختلاف عنه",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "109:6#c20",
+          "section_ref": "109:6",
+          "attaches_to": "109:6",
+          "text": "Hadith reports describe the Prophet ﷺ reciting Sūrat al-Kāfirūn together with al-Ikhlāṣ in the two rakʿahs of Ṭawāf, in the sunnah of Fajr, and after Maghrib, on many occasions; these are recorded in Ṣaḥīḥ Muslim and by Aḥmad, with al-Tirmidhī grading one such report ḥasan.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "It has been confirmed in Sahih Muslim from Jabir that the Messenger of Allah recited this Surah... in the two Rak`ahs of Tawaf",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "original_excerpt": "Ibn Kathir cites several traditions... often recite Surah Al-Kafirun and Al-Ikhlas in the sunnah prayer of fajr and maghrib",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "hasan",
+            "graded_by": "al-Tirmidhī (as cited by Ibn Kathīr)"
+          }
+        },
+        {
+          "id": "109:6#c21",
+          "section_ref": "109:6",
+          "attaches_to": "109:6",
+          "text": "Further, weaker reports describe the surah being taught for recitation before sleep as protection from shirk, for blessing on a journey (the account of Jubayr ibn Muṭʿim), and as a remedy after a scorpion sting (a report from ʿAlī رضي الله عنه).",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "Muftī Muḥammad Shafīʿ, citing al-Mazharī/Abū Yaʿlā"
+          }
+        },
+        {
+          "id": "109:6#c22",
+          "section_ref": "109:6",
+          "attaches_to": "109:6",
+          "text": "Al-Muyassar renders the sense plainly: ‘your religion’ is the one you have insisted on following, and ‘my religion’ is the one I desire no other than.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "relay",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "لكم دينكم الذي أصررتم على اتباعه، ولي ديني الذي لا أبغي غيره",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "109:6#c23",
+          "section_ref": "109:6",
+          "attaches_to": "109:6",
+          "text": "Wahīduddīn Khān notes this surah belongs among the last revelations, from either the Farewell Pilgrimage period near Makkah or Madina shortly after, and reflects generally that a believer's victory should deepen humility rather than pride, attributing success to God's grace.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "relay",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "original_excerpt": "This chapter is one of the last revelations of the Quran received by the Prophet",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "unspecified"
+        }
+      ],
+      "essay_html": "<p>The closing line of the surah, ‘you have your religion, and I have mine’, states a final separation. Ibn Kathīr calls the whole surah a declaration of innocence from shirk, and this verse sums it up.<sup class=\"ref\">4</sup></p><p>Commentators read the word dīn (religion) here in more than one way. Most simply take it at face value: ‘your religion’ is shirk, idol-worship, and ‘my religion’ is Islam.<sup class=\"ref\">2,4,12</sup> Others take dīn in the sense of jazāʾ, recompense: ‘for you the consequence of your path, for me the consequence of mine’.<sup class=\"ref\">3,7,9</sup> Ibn Kathīr himself preferred a third reading: dīn here means religious deeds, so the verse parallels ‘for me my deeds, and for you your deeds’ (10:41) and ‘for us our deeds, and for you your deeds’ (28:55) — each side answers for its own actions.<sup class=\"ref\">4,7,11</sup> Al-Ṭanṭāwī notes that the word can in fact carry all three senses, creed, way of life, and reckoning, together.<sup class=\"ref\">9</sup></p><p>Al-Ṭabarī reads the verse as a statement of permanence: the disbelievers were sealed upon their way and would die on it, and the Prophet ﷺ would never leave his, since it was already known in God's foreknowledge that he would not depart from it.<sup class=\"ref\">1</sup> A report he relays from Ibn Zayd says the address is specifically to the polytheists, distinct from the Jews (who worshipped only God but disbelieved some prophets) and the Christians (who worshipped the Messiah as God's son).<sup class=\"ref\">1</sup></p><p>Grammarians noted that this verse repeats the disavowal already made in verses 2–5, for emphasis, the way ‘with hardship comes ease’ is said twice.<sup class=\"ref\">1,7,9</sup> Al-Qurṭubī hears in it a note of warning: if you are content with your religion, we are content with ours, and each bears what follows from that choice.<sup class=\"ref\">3</sup> Al-Ṭanṭāwī adds that the Arabic word order, putting ‘for you’ and ‘for me’ first, signals exclusivity: for you and no other, for me and no other, cutting off every hope the disbelievers held of reaching a compromise with the Prophet ﷺ.<sup class=\"ref\">9</sup></p><p>Reports trace the occasion to Meccan leaders offering the Prophet ﷺ compromise deals: worship our idols for a year and we will worship your God for a year, or wealth, marriage, and leadership if he stopped criticising their gods, or merely touch one of their idols.<sup class=\"ref\">7</sup> The surah, on this account, answered all such offers at once.</p><p>Because the verse seems to close the door on any accommodation with disbelief, some held the surah, or this verse, abrogated by the later verse of the sword, revealed as it was before the command to fight; others held the whole surah abrogated; a third view held nothing abrogated, since the verse states a fact rather than a ruling.<sup class=\"ref\">2,3</sup> Muftī Muḥammad Shafīʿ reports that the majority hold it is not abrogated at all: the verse only says each side reaps its own path, and does not conflict with the Qur'an's separate permission to make peace when the other side inclines to it (8:61), or with the Prophet's ﷺ treaty with the Jews of Madina, since a valid treaty never makes the forbidden lawful or the lawful forbidden.<sup class=\"ref\">7</sup> Abū Bakr Zakariyyā makes the same point and pushes back firmly against a modern reading of the verse as endorsing religious pluralism or granting the disbelievers' religion any legitimacy; he calls this a distortion, pointing to a chain of Qur'anic parallels of disavowal elsewhere, while agreeing that treaties on worldly matters remain permitted.<sup class=\"ref\">11</sup></p><p>Sayyid Quṭb reads the verse as marking a total, unbridgeable separation: the disagreement between belief and disbelief runs to the foundations of how life itself is conceived, leaving no room for a policy of give and take, and he extends the point to callers of every age, who must declare the same clean break from ideological compromise.<sup class=\"ref\">6</sup> Isrār Aḥmad reads it as the final word ending the relationship between the Prophet ﷺ and the disbelievers, each left now to their own path.<sup class=\"ref\">8</sup> Rebar's commentary adds that neither religion transfers to the other, and that the outcome of this parting will be known at the Day of Judgment.<sup class=\"ref\">14</sup></p><p>Alongside the meaning, sources note a small point of recitation: readers differ on whether the final letter of ‘dīnī’ carries a vowel or not.<sup class=\"ref\">2,3</sup> And hadith reports, some strong and some weaker, describe the Prophet ﷺ reciting this surah with al-Ikhlāṣ in various prayers, recorded in Ṣaḥīḥ Muslim among other collections, along with weaker traditions about its use before sleep, on travel, and as a remedy.<sup class=\"ref\">4,7</sup></p><p class=\"close\">Across these readings the sources converge on one point: the verse leaves nothing open for negotiation on matters of creed, whatever room remains, in their view, for ordinary treaties of peace.</p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:52644fde8e6ed37a74736aa14dbad9dc205051a19c2600a9e06b58ef048a89aa",
+        "2": "sha256:b3e8c92deca0704aa610a8c5a423648938e980ea14d548b6ea9090cab053831a",
+        "3": "sha256:25e8285ae3663cd765dbbc3a94b32f5e0896286731202dca293bb38a4534db1a",
+        "4": "sha256:1fc153096ad73c93efabacc9a297cb00ee4fe85c0ea0bc5cbe16400d87badb9f",
+        "5": "sha256:17b5e8f202836e03000b5cca885647dbf899352686dc08aae9934662eebbb511",
+        "6": "sha256:a37556310f7d5bfdbd41d6bdf6e9202d8387f7c468d0a4bb6090a0bf5a1bee21",
+        "7": "sha256:e9984f9331f189a3ebe25d034835014faf17c8b004dc458f2d5d49e95ba65ced",
+        "8": "sha256:04e55f3d4ab212bc5bf15121715ca667501e8f304b4d9dba429558a7e320107b",
+        "9": "sha256:45db42db5e70e498a589f1d675ec941afb942f0f383fea66d2d081e235eec639",
+        "10": "sha256:19add01750e0fd55fbadd2089c5a4d197e6bc56272f9146ccd021448c6c44ffd",
+        "11": "sha256:605b59f193d94820fd5fae324c6d1b047e0f950a33ee6396bdd474202cc09549",
+        "12": "sha256:d3ff7f3d984fe90ad297f8a85d11c21fce5a99c1d76f2422ab6083816f5e3b04",
+        "13": "sha256:7d5ed200927f934c0faf42fa3281c140c0c4df41aaeb198668ac523ba168f2fa",
+        "14": "sha256:8f91cf6595db1d9844af0b36085b96d7a43fb0cf7a3a8ce347096c8f179c6ce0"
+      },
+      "flags": {
+        "creedal_stakes": true,
+        "legal_content": true,
+        "sensitive_content": true
+      },
+      "compiled_at": "2026-08-02"
+    },
+    "109:3": {
+      "verse_range": "3-5",
+      "title": "No Shared Ground in Worship",
+      "in_short": "The surah's refusal grows stronger and more final: from \"I do not worship what you worship\" it moves to \"I will never worship what you worship, and you will never worship what I worship\" — a complete, unrepeatable parting between the Prophet's ﷺ worship and the polytheists'.",
+      "claims": [
+        {
+          "id": "109:3#c1",
+          "section_ref": "109:3",
+          "attaches_to": "109:3",
+          "text": "Reports say some Quraysh leaders (named as Walīd ibn al-Mughīra, al-ʿĀṣ ibn Wāʾil, al-Aswad ibn al-Muṭṭalib and Umayya ibn Khalaf, or Quraysh more broadly) proposed a bargain to the Prophet ﷺ: he would worship their idols for a year and they would worship his God for a year. Other versions of the story add offers of wealth and marriage, or simply ask him to touch one of their idols. This surah answers that offer.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded by the sources provided"
+          }
+        },
+        {
+          "id": "109:3#c2",
+          "section_ref": "109:3",
+          "attaches_to": "109:3",
+          "text": "The most common resolution of the apparent repetition splits the two pairs of verses by time: verses 2-3 speak of the present (\"I do not worship... now, nor do you\"), while verses 4-5 close off the future (\"I never will, nor will you ever\"). This reading is traced to al-Bukhārī and was preferred by Mawlānā Ashraf ʿAlī Thānawī.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "109:3#c3",
+          "section_ref": "109:3",
+          "attaches_to": "109:4",
+          "text": "Ibn Kathīr reads the two pairs differently: verses 2-3 say the objects of worship are not shared (his God is not their gods), while verses 4-5 say the manner of worship is not shared either — his worship follows what Allah legislated through revelation, theirs is self-invented.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "109:3#c4",
+          "section_ref": "109:3",
+          "attaches_to": "109:4",
+          "text": "Al-Qurṭubī and al-Ṭanṭāwī reach a related conclusion through grammar: they read the particle mā in \"mā aʿbud\" and \"mā ʿabadtum\" (in verses 4-5) as mā maṣdariyya, a particle that names the manner of an action rather than its object, giving the sense \"you do not worship as I worship, nor I as you worship.\"",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar",
+          "original_terms": [
+            {
+              "term": "mā maṣdariyya",
+              "gloss": "a grammatical particle meaning \"the manner of\" an action, as opposed to mā mawṣūla, a relative pronoun meaning \"that which\""
+            }
+          ]
+        },
+        {
+          "id": "109:3#c5",
+          "section_ref": "109:3",
+          "attaches_to": "109:4",
+          "text": "Ibn al-Qayyim (relayed by Abū Bakr Zakariyyā) noted that verse 4 uses the past-tense verb ʿabadtum (\"you worshipped\"), specifically denying that the Prophet ﷺ ever shared in their past worship, while verse 2's present-tense verb already covers present and future together. Isrār Aḥmad reads the sequence the same way: never in the past, never to be expected in future.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "109:3#c6",
+          "section_ref": "109:3",
+          "attaches_to": "109:4",
+          "text": "A further reading, citing Ibn Taymiyyah, distinguishes fact from principle: verse 2 says the proposed exchange will never happen in fact, while verse 4 says it could never even be accepted in principle — a difference between \"will not\" and \"cannot be permitted.\"",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "109:3#c7",
+          "section_ref": "109:3",
+          "attaches_to": "109:5",
+          "text": "Al-Qutaybī (cited by al-Baghawī) traced the repeated wording to the shape of the original proposal: since the Quraysh offer was itself for a year-for-year exchange, the divine reply mirrors that repeated structure.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "109:3#c8",
+          "section_ref": "109:3",
+          "attaches_to": "109:5",
+          "text": "Imam al-Shawkānī (relayed by Ahsanul Bayaan) held that no special explanatory device is needed at all: repeating a sentence for emphasis is ordinary Arabic style, also found in Sūrat al-Raḥmān and Sūrat al-Mursalāt, so the elaborate present/future or object/manner distinctions are unnecessary.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric"
+        },
+        {
+          "id": "109:3#c9",
+          "section_ref": "109:3",
+          "attaches_to": "109:5",
+          "text": "Al-Saʿdī reads the double negation (verses 3 and 5) as building in stages: the first denial shows the act of true worship simply is not happening; the second shows that this absence has become a fixed, permanent trait of theirs.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar",
+          "original_terms": [
+            {
+              "term": "waṣf lāzim",
+              "gloss": "a permanent, inseparable characteristic, as opposed to a passing state"
+            }
+          ]
+        },
+        {
+          "id": "109:3#c10",
+          "section_ref": "109:3",
+          "attaches_to": "109:3",
+          "text": "Even where the polytheists claimed to worship Allah, that worship was mixed with shirk (associating partners with Him), and so, on this reading, it does not count as the true worship (ʿibādah) the Prophet ﷺ meant. \"You are not worshippers of what I worship\" is read as denying them real worship of Allah, not merely denying they worship the same idols.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning",
+          "original_terms": [
+            {
+              "term": "shirk",
+              "gloss": "associating partners with Allah in worship"
+            }
+          ]
+        },
+        {
+          "id": "109:3#c11",
+          "section_ref": "109:3",
+          "attaches_to": "109:3",
+          "text": "Sayyid Quṭb reads the whole passage as a rising wall of denial: refusal after refusal, confirmation after confirmation, every grammatical form of negation, certainty and emphasis that Arabic possesses gathered into these verses, so that no gap is left for a middle position between belief and disbelief.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric"
+        },
+        {
+          "id": "109:3#c12",
+          "section_ref": "109:3",
+          "attaches_to": "109:4",
+          "text": "Verse 4, \"wa lā anā ʿābidun\" (\"nor am I a worshipper\"), is a negated nominal sentence rather than a verbal one; this form carries more force, permanence and continuity than an ordinary verbal negation, according to Sayyid Quṭb and, as one view among several, Rebar.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar",
+          "original_terms": [
+            {
+              "term": "jumla ismiyya",
+              "gloss": "a nominal sentence (built around a noun, not a verb), read here as conveying firmer, more permanent negation"
+            }
+          ]
+        },
+        {
+          "id": "109:3#c13",
+          "section_ref": "109:3",
+          "attaches_to": "109:4",
+          "text": "Behind the different grammatical explanations, commentators read this passage as a declaration of complete disavowal (barāʾah) from shirk, ruling out any middle ground between worship Allah legislated and worship human beings invented for themselves.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning",
+          "original_terms": [
+            {
+              "term": "barāʾah",
+              "gloss": "disavowal, a formal declaration of separation from something"
+            }
+          ]
+        },
+        {
+          "id": "109:3#c14",
+          "section_ref": "109:3",
+          "attaches_to": "109:3",
+          "text": "Ibn Kathīr notes that mā (\"what\") ordinarily refers to things, not persons, yet here it stands for Allah; he explains this as matching the parallel wording used for the idols (\"mā taʿbudūn\"). Al-Qurṭubī adds that Arabic does sometimes use mā for one possessed of intellect, citing an old Arabic expression as precedent.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "mā / man",
+              "gloss": "\"what\" (for things) versus \"who\" (for persons) — here mā is used for Allah despite normally being used for things"
+            }
+          ]
+        },
+        {
+          "id": "109:3#c15",
+          "section_ref": "109:3",
+          "attaches_to": "109:5",
+          "text": "Al-Ṭabarī ties the categorical \"never\" to particular people: Allah already knew that these named individuals among the Quraysh would never believe, so the Prophet ﷺ was told to give up hope of their conversion. Al-Ṭabarī adds that some of them were later killed at Badr and others died still disbelieving. Al-Muyassar states the same about verse 5.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "109:3#c16",
+          "section_ref": "109:3",
+          "attaches_to": "109:3",
+          "text": "Wahiduddin Khan places the surah among the last revelations the Prophet ﷺ received, delivered either near Makkah during the Farewell Pilgrimage in 10 AH, or in Madina shortly after his return from it.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "unspecified"
+        }
+      ],
+      "essay_html": "<p>The commentators link these verses to a moment when some Quraysh leaders came to the Prophet ﷺ with a bargain. Reports name Walīd ibn al-Mughīra, al-ʿĀṣ ibn Wāʾil, al-Aswad ibn al-Muṭṭalib and Umayya ibn Khalaf, or speak more generally of Quraysh: worship our gods for a year, they said, and we will worship your God for a year. Other versions of the story add offers of wealth and marriage, or simply ask him to touch one of their idols.<sup class=\"ref\">1,3,7</sup> These verses answer that offer.</p><p>The wording of verse 3 restates verse 2, and verses 4-5 add \"I shall never\" and \"you will never.\" Commentators ask why the same idea is said four times. The most common answer, traced to al-Bukhārī and adopted by several exegetes, splits the two pairs by time: verses 2-3 describe the present, \"I do not worship now, nor do you,\" while verses 4-5 close off the future, \"I never will, nor will you ever.\"<sup class=\"ref\">1,2,3,7,11</sup> Mawlānā Ashraf ʿAlī Thānawī preferred this reading.<sup class=\"ref\">7</sup></p><p>Ibn Kathīr (d. 1373 CE) reads the same two pairs differently. For him, verses 2-3 say the objects of worship are not shared, his God is not their gods. Verses 4-5 say the manner of worship is not shared either: his worship follows what Allah legislated through revelation, theirs is self-invented.<sup class=\"ref\">4,7,11</sup> Al-Qurṭubī (d. 1273 CE) and al-Ṭanṭāwī reach a related conclusion through grammar. They read mā in \"mā aʿbud\" and \"mā ʿabadtum\" as mā maṣdariyya, a particle naming the manner of an action rather than its object, so the sense becomes \"you do not worship as I worship, nor I as you worship.\"<sup class=\"ref\">3,9</sup></p><p>Other readings turn on the verb tenses themselves. Ibn al-Qayyim, as relayed by Abū Bakr Zakariyyā, noted that verse 4 uses the past-tense verb ʿabadtum, \"you worshipped,\" so it specifically denies that the Prophet ﷺ ever shared in their past worship, while verse 2's present-tense verb already covers present and future. Isrār Aḥmad reads the sequence the same way: never in the past, never to be expected in the future.<sup class=\"ref\">8,11</sup> A further view, citing Ibn Taymiyyah, distinguishes fact from principle: verse 2 says the exchange will never happen, verse 4 says it could never even be accepted.<sup class=\"ref\">11</sup></p><p>Al-Qutaybī, as cited by al-Baghawī, traced the repeated wording to the shape of the original request: since the Quraysh proposal was itself for a year-for-year exchange, the reply mirrors that repetition.<sup class=\"ref\">2</sup> Imam al-Shawkānī took the opposite view, relayed by Ahsanul Bayaan: no special device is needed at all, since repeating a sentence for emphasis is ordinary Arabic style, found also in Sūrat al-Raḥmān and Sūrat al-Mursalāt.<sup class=\"ref\">12</sup></p><p>Al-Saʿdī (d. 1957 CE) reads the double negative in stages. The first denial, verse 3, says true worship simply is not happening among them; the second, verse 5, shows that this has become a fixed, permanent trait.<sup class=\"ref\">5</sup> He and others add that even where the polytheists claimed to worship Allah, that worship was mixed with shirk, associating partners with Him, and so does not count as the worship the Prophet ﷺ meant. Al-Qurṭubī records this reading too, as do Isrār Aḥmad and the Kurdish commentator Rebar.<sup class=\"ref\">3,5,8,14</sup></p><p>Sayyid Quṭb (d. 1966 CE) reads the whole passage as a rising wall of denial: refusal after refusal, confirmation after confirmation, every grammatical form of certainty and emphasis that Arabic possesses gathered into a few short verses. He points out that verse 4, \"wa lā anā ʿābidun,\" is a negated nominal sentence rather than a verbal one, and that this form carries more force, permanence and continuity than ordinary verbal negation. Rebar notes the same grammatical point among the possible answers.<sup class=\"ref\">6,14</sup></p><p>Behind the grammar, the commentators agree on the substance: this is a declaration of complete disavowal, barāʾah, from shirk. Ibn Kathīr, Sayyid Quṭb and al-Ṭanṭāwī all read it as ruling out any middle ground between worship Allah legislated and worship human beings invented for themselves.<sup class=\"ref\">4,6,9</sup> Ibn Kathīr also notes a lexical oddity: mā normally means \"what,\" used for things, not persons, yet here it stands for Allah. He explains this as matching the parallel wording used for the idols. Al-Qurṭubī adds that Arabic does sometimes use mā for one possessed of intellect, citing an old expression as precedent.<sup class=\"ref\">3,4</sup></p><p>Al-Ṭabarī (d. 923 CE) ties the categorical \"never\" to particular people: Allah already knew, in His foreknowledge, that these named individuals among the Quraysh would never believe. The Prophet ﷺ was told to give up hope of their conversion, and, as al-Ṭabarī notes, some of them were later killed at Badr and others died still disbelieving. Al-Muyassar states the same about verse 5.<sup class=\"ref\">1,13</sup></p><p>Wahiduddin Khan places the surah differently in time, among the last revelations the Prophet ﷺ received, delivered either near Makkah during the Farewell Pilgrimage or in Madina shortly afterwards.<sup class=\"ref\">10</sup></p><p class=\"close\">Read together, the commentators hear in these three verses not a single sentence repeated by accident, but a wall built layer by layer, in object, in manner, in tense and in grammar, until no gap is left for compromise between worship of Allah alone and worship of anything besides Him.<sup class=\"ref\">6,9</sup></p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:748ae15b0796b072d92f72f6c0f57e8052fae46166ddbb4b7f9d71c465c58c01",
+        "2": "sha256:a5a71a97647022628626ad5a962565c2df1bdc36bfb924b9bb7b0c10c41c5eb3",
+        "3": "sha256:7bb9f29ef74643bb5ecbd7514bc97cb74d3f744e7f9b5d8eadccc02f244051ca",
+        "4": "sha256:773426356a74a14773da24a29f49e9c6f531b6c33a3301ee1f593f715d496046",
+        "5": "sha256:4a90542769116eb9a4cacd58b39d8f0074a621131e1b474c13d817f8c9a17eeb",
+        "6": "sha256:003bab35a4cb87bbbc8a5ea4b921e14a72921f3e58fd000a068eef9772849711",
+        "7": "sha256:7518a97df93dda880c10475e23972c1a0a2cfd707d8105e7565ec97a735bc87f",
+        "8": "sha256:deea9b02d8daf732aab8abde4612beab2510e3fcd2d751550a24425943ad7211",
+        "9": "sha256:595bd9a807ecbd616e3c769aba3404916cce2ceebf2c5335da300aa5ab7bba86",
+        "10": "sha256:f3f361be7b01cea171b49ebe3befba744aca5ce8150e45a412ff41e9f7b69c9f",
+        "11": "sha256:a32a417e03512cca6a8d6d88213e42e71b65ed98a8ad331396cb2f26bf84c178",
+        "12": "sha256:6611971c69e470182bf7eaf9f026563a524a8740a2e79c69e8eb051c543a4cfe",
+        "13": "sha256:96751d72495be5d3a95d0eea7c0d0a7a05af7c324c42f8bbd1214675e6c5a0ce",
+        "14": "sha256:f57b25c79ca8bd098543eaa7164299395da96225901d956ca82d9a8cb7947335"
+      },
+      "flags": {
+        "creedal_stakes": "true",
+        "legal_content": "false",
+        "sensitive_content": "true"
+      },
+      "compiled_at": "2026-08-02"
+    }
+  }
+}

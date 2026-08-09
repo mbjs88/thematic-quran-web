@@ -1,0 +1,3479 @@
+{
+  "surah": 96,
+  "name": "",
+  "coverage": {
+    "editions_present": [
+      "ar-tafsir-al-tabari",
+      "ar-tafsir-al-baghawi",
+      "ar-tafseer-al-qurtubi",
+      "en-tafisr-ibn-kathir",
+      "ar-tafseer-al-saddi",
+      "tafsir-fe-zalul-quran-syed-qatab",
+      "en-tafsir-maarif-ul-quran",
+      "tafsir-bayan-ul-quran",
+      "ar-tafsir-al-wasit",
+      "tazkirul-quran-en",
+      "bn-tafsir-abu-bakr-zakaria",
+      "bn-tafsir-ahsanul-bayaan",
+      "ar-tafsir-muyassar",
+      "kurd-tafsir-rebar"
+    ],
+    "editions_absent": [],
+    "independent_works": 14,
+    "languages_present": [
+      "ar",
+      "bn",
+      "en",
+      "ku",
+      "ur"
+    ],
+    "languages_absent": []
+  },
+  "pipeline_provenance": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "overview-v2.3",
+    "theme_breaks_version": "sha256:99880ec7b10b53313690f91df9ee8d065519ee698df34b35a3336b5705218f90",
+    "compiled_at": "2026-08-02"
+  },
+  "modern_lens_framing": "The Qurʾan is taken here as fixed, revealed truth; science is our provisional, evolving account of the observable world. What follows notes where the two meet — a contemplation, not a proof. Where the science later shifts, that reflects the limits of our knowledge, not the text.",
+  "references": [
+    {
+      "n": 1,
+      "work_id": "al-tabari",
+      "label": "Jāmiʿ al-Bayān",
+      "author_id": "al-tabari",
+      "author": "Abū Jaʿfar Muḥammad ibn Jarīr al-Ṭabarī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 2,
+      "work_id": "al-baghawi",
+      "label": "Maʿālim al-Tanzīl",
+      "author_id": "al-baghawi",
+      "author": "Abū Muḥammad al-Ḥusayn ibn Masʿūd al-Baghawī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 3,
+      "work_id": "al-qurtubi",
+      "label": "al-Jāmiʿ li-Aḥkām al-Qurʾān",
+      "author_id": "al-qurtubi",
+      "author": "Abū ʿAbd Allāh Muḥammad ibn Aḥmad al-Qurṭubī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 4,
+      "work_id": "ibn-kathir",
+      "label": "Tafsīr Ibn Kathīr",
+      "author_id": "ibn-kathir",
+      "author": "Ismāʿīl ibn ʿUmar ibn Kathīr",
+      "source_language": "ar",
+      "note": "One independent voice. The ar/ur/bn editions are the SAME work — never count as separate corroboration."
+    },
+    {
+      "n": 5,
+      "work_id": "al-saadi",
+      "label": "Taysīr al-Karīm al-Raḥmān",
+      "author_id": "al-saadi",
+      "author": "ʿAbd al-Raḥmān ibn Nāṣir al-Saʿdī",
+      "source_language": "ar",
+      "note": "Russian edition (170) is the SAME work — translate from the Arabic original, and do not count Russian as an independent voice."
+    },
+    {
+      "n": 6,
+      "work_id": "fi-zilal",
+      "label": "Fī Ẓilāl al-Qurʾān",
+      "author_id": "sayyid-qutb",
+      "author": "Sayyid Quṭb Ibrāhīm Ḥusayn",
+      "source_language": "ar",
+      "note": "Original is Arabic, but the API here carries only an URDU edition — translating from Urdu is one step removed from the original. Prefer the Arabic original if the QF Content API offers it."
+    },
+    {
+      "n": 7,
+      "work_id": "maarif",
+      "label": "Maʿārif al-Qurʾān",
+      "author_id": "muhammad-shafi-usmani",
+      "author": "Muftī Muḥammad Shafīʿ ʿUthmānī",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 8,
+      "work_id": "bayan-ul-quran",
+      "label": "Bayān al-Qurʾān",
+      "author_id": "israr-ahmad",
+      "author": "Isrār Aḥmad",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 9,
+      "work_id": "wasit",
+      "label": "al-Tafsīr al-Wasīṭ",
+      "author_id": "tantawi",
+      "author": "Muḥammad Sayyid Ṭanṭāwī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 10,
+      "work_id": "tazkirul",
+      "label": "Tazkīr al-Qurʾān",
+      "author_id": "wahiduddin-khan",
+      "author": "Wahiduddin Khan",
+      "source_language": "ur",
+      "note": "en and ur editions are the same work."
+    },
+    {
+      "n": 11,
+      "work_id": "abu-bakr-zakaria",
+      "label": "Tafsir Abu Bakr Zakaria",
+      "author_id": "abu-bakr-zakaria",
+      "author": "Abū Bakr Muḥammad Zakariyyā",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 12,
+      "work_id": "ahsanul-bayaan",
+      "label": "Ahsanul Bayaan",
+      "author_id": "bayaan-foundation",
+      "author": "Ahsanul Bayaan (Bayaan Foundation)",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 13,
+      "work_id": "muyassar",
+      "label": "al-Tafsīr al-Muyassar",
+      "author_id": "committee-muyassar",
+      "author": "al-Tafsīr al-Muyassar (committee)",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 14,
+      "work_id": "rebar-kurdish",
+      "label": "Rebar Kurdish Tafsir",
+      "author_id": "rebar",
+      "author": "Rebar Kurdish Tafsir",
+      "source_language": "ku",
+      "note": ""
+    }
+  ],
+  "sections": {
+    "96:19": {
+      "verse_range": "19-19",
+      "title": "Do Not Obey Him: Prostrate and Draw Near",
+      "in_short": "Allah tells the Prophet ﷺ not to obey Abū Jahl's demand that he stop praying. Instead he is told to prostrate and draw near to his Lord, a command the commentators read as reaching every forbidder of good and everyone who is forbidden.",
+      "claims": [
+        {
+          "id": "96:19#c1",
+          "section_ref": "96:19",
+          "attaches_to": "96:19",
+          "text": "\"Kallā\" (No!) rejects Abū Jahl's position outright: the matter is not as he supposes.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "ليس الأمر كما يقول أبو جهل",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "ليس الأمر على ما عليه أبو جهل",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "ليس الأمر على ما يظنه أبو جهل",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "ليس الأمر كما قال هذا المغرور",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "ليس الأمر كما يزعم أبو جهل",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "كَلَّا",
+              "gloss": "No! (a strong rejection)"
+            }
+          ]
+        },
+        {
+          "id": "96:19#c2",
+          "section_ref": "96:19",
+          "attaches_to": "96:19",
+          "text": "\"Do not obey him\" commands the Prophet ﷺ not to obey Abū Jahl in what he was demanding: that he abandon prayer to his Lord.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "لا تُطع أبا جهل فيما أمرك به من ترك الصلاة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "لا تطعه في ترك الصلاة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "فيما دعاك إليه من ترك الصلاة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "96:19#c3",
+          "section_ref": "96:19",
+          "attaches_to": "96:19",
+          "text": "The verse was revealed about Abū Jahl, who threatened the Prophet ﷺ for praying at the Kaʿba, boasted of his own kinsmen, and was told that if he called on them the angels of punishment would seize him at once. The Prophet ﷺ said that had Abū Jahl come near him, the angels would have snatched him limb by limb.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "لئن رأيت محمدًا يصلي لأطأنّ عنقه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "relay",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "relay",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "Bukhārī, and Tirmidhī as hasan sahih, per Ibn Kathīr [4]"
+          }
+        },
+        {
+          "id": "96:19#c4",
+          "section_ref": "96:19",
+          "attaches_to": "96:19",
+          "text": "\"Prostrate\" (wasjud) is glossed as: pray to Allah / perform ṣalāh for your Lord.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "صل لله",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "أي صل لله",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "96:19#c5",
+          "section_ref": "96:19",
+          "attaches_to": "96:19",
+          "text": "\"Draw near\" (waqtarib) means to draw close to Allah through obedience and worship generally, not only through the physical act of prostration; every act of obedience brings one nearer to His pleasure.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "بالتحبب إليه بطاعته",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "بالطاعة والعبادة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "فإنها كلها تدني من رضاه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "96:19#c6",
+          "section_ref": "96:19",
+          "attaches_to": "96:19",
+          "text": "A hadith of Abū Hurayrah رضي الله عنه is cited to ground the command to draw near: \"The closest a servant can be to his Lord is when he is prostrating, so make much supplication [there].\"",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "أقرب ما يكون العبد من ربه وهو ساجد",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "recorded in Muslim, per Ibn Kathīr [4]"
+          }
+        },
+        {
+          "id": "96:19#c7",
+          "section_ref": "96:19",
+          "attaches_to": "96:19",
+          "text": "A ruling: it is valid to supplicate while prostrating in a voluntary (nafl) prayer; there is no clear evidence for such supplication in the prostration of an obligatory prayer, since obligatory prayer should be kept brief.",
+          "claim_type": "legal",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "madhhab": "Ḥanafī"
+        },
+        {
+          "id": "96:19#c8",
+          "section_ref": "96:19",
+          "attaches_to": "96:19",
+          "text": "There is a difference over which prostration \"wasjud\" refers to: the prostration within the prayer, or the prostration of recitation (sujūd al-tilāwah) specific to this verse. Ibn al-ʿArabī held the apparent sense is prayer-prostration, given the run of verses about a servant who prays, but the hadith that the Prophet ﷺ used to prostrate on reciting this sūrah points to recitation-prostration.",
+          "claim_type": "legal",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "والظاهر أنه سجود الصلاة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "96:19#c9",
+          "section_ref": "96:19",
+          "attaches_to": "96:19",
+          "text": "This is one of the verses marked for a recitation-prostration (sujūd al-tilāwah). Sources differ on its status: one ruling calls it compulsory for the one who recites or hears it; another calls prostrating after reciting it recommended (mustaḥabb).",
+          "claim_type": "legal",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "low"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "unspecified"
+        },
+        {
+          "id": "96:19#c10",
+          "section_ref": "96:19",
+          "attaches_to": "96:19",
+          "text": "A report from ʿAlī b. Abī Ṭālib رضي الله عنه lists four \"emphatic\" prostrations (ʿazāʾim al-sujūd) in the Qurʾān: al-Sajdah (32), Ḥā-Mīm al-Sajdah/Fussilat (41), al-Najm (53), and this sūrah, Iqraʾ (96).",
+          "claim_type": "legal",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "عزائم السجود أربع",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Qurṭubī [3], who notes Ibn al-ʿArabī's caveat that, if authentic, it would also require a second sajdah in Sūrat al-Ḥajj"
+          }
+        },
+        {
+          "id": "96:19#c11",
+          "section_ref": "96:19",
+          "attaches_to": "96:19",
+          "text": "It is reported that Mālik b. Anas رحمه الله used to prostrate privately, to himself, at the end of this sūrah, and Ibn Wahb counted it among the emphatic prostrations.",
+          "claim_type": "legal",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "كان مالك يسجد في خاصة نفسه بخاتمة هذه السورة",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Qurṭubī [3]"
+          },
+          "madhhab": "Mālikī"
+        },
+        {
+          "id": "96:19#c12",
+          "section_ref": "96:19",
+          "attaches_to": "96:19",
+          "text": "A narrative report states that when this verse was revealed, the Prophet ﷺ had Muʿādh write it down; as he reached \"kallā lā tuṭiʿhu wasjud waqtarib\" the writing tablet, the pen, and the ink itself prostrated, invoking Allah's forgiveness, whereupon Muʿādh prostrated and told the Prophet ﷺ, who then prostrated as well.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "سجد اللوح، وسجد القلم، وسجدت النون",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Qurṭubī [3] relays it without independently grading it"
+          }
+        },
+        {
+          "id": "96:19#c13",
+          "section_ref": "96:19",
+          "attaches_to": "96:19",
+          "text": "Zayd b. Aslam is reported to have read the two imperatives as addressed to two different people: \"prostrate\" to the Prophet ﷺ (pray), and \"draw near\" to Abū Jahl (draw near to the Fire).",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "اسجد أنت يا محمد مصليا، واقترب أنت يا أبا جهل من النار",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "96:19#c14",
+          "section_ref": "96:19",
+          "attaches_to": "96:19",
+          "text": "A cited couplet expresses the theme that the utmost humbling of oneself before Allah is itself honour: the further one falls from claiming any attribute for oneself, the nearer one draws to His Garden and His nearness.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وإذا تذللت الرقاب تواضعا منا إليك فعزها في ذلها",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric"
+        },
+        {
+          "id": "96:19#c15",
+          "section_ref": "96:19",
+          "attaches_to": "96:19",
+          "text": "Though the occasion of revelation concerns Abū Jahl specifically, the command applies generally: to every one who forbids good, and to every one who is forbidden from it.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "وهذا عام لكل ناه عن الخير ومنهي عنه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "96:19#c16",
+          "section_ref": "96:19",
+          "attaches_to": "96:19",
+          "text": "Sayyid Quṭb reads this closing command as binding the sūrah's separate paragraphs together: the whole passage on Abū Jahl links back to the opening call, and the instruction is that every rebellious opponent should simply be disregarded while the believer prostrates and seeks nearness to Allah.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "96:19#c17",
+          "section_ref": "96:19",
+          "attaches_to": "96:19",
+          "text": "This verse is also read as a further rebuttal of Abū Jahl's earlier boast that he would summon his own people to his aid, confirming his powerlessness to actually stop the Prophet ﷺ from praying.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        }
+      ],
+      "essay_html": "<p>The verse gives a flat rejection of Abū Jahl's position: \"No!\" — the matter is not as he supposes.<sup class=\"ref\">1,2,3,9,13</sup> The Prophet ﷺ is told not to obey him in the one thing he was demanding: that he give up prayer to his Lord.<sup class=\"ref\">1,2,3,4,5,9,13,14</sup></p><p>The commentators trace this to a real confrontation. Abū Jahl threatened the Prophet ﷺ for praying at the Kaʿba, boasting of his own kinsmen for backup. He was warned that if he called on them, the angels of punishment would seize him at once, and the Prophet ﷺ said that had Abū Jahl come near him while he prayed, the angels would have snatched him limb by limb.<sup class=\"ref\">1,4,5,6</sup> Ṭanṭāwī reads the verse as a further blow to that boast, confirming Abū Jahl's actual powerlessness to stop the prayer.<sup class=\"ref\">9</sup></p><p>Two commands follow. \"Prostrate\" (wasjud) is read as: pray to your Lord.<sup class=\"ref\">1,2,3,9,13,14</sup> \"Draw near\" (waqtarib) is read more broadly, as drawing close to Allah through obedience and worship in general, since every act of obedience brings a person nearer to His pleasure, not the physical act of prostration alone.<sup class=\"ref\">1,3,5,9,13</sup> Standing behind this is a hadith of Abū Hurayrah رضي الله عنه: \"the closest a servant can be to his Lord is when he is prostrating, so make much supplication [there]\", recorded in Muslim.<sup class=\"ref\">2,3,4,7,11</sup> From this, Muftī Muḥammad Shafīʿ notes a ruling: supplicating in prostration is valid in voluntary prayer, though there is no clear proof for it in the prostration of obligatory prayer, which is meant to stay brief.<sup class=\"ref\">7</sup></p><p>There is a discussion over exactly which prostration is meant. Ibn al-ʿArabī judged the apparent sense to be the prostration within prayer itself, matching the run of verses about \"a servant who prays\", but weighed against this a hadith that the Prophet ﷺ used to prostrate on reciting this very sūrah, which points instead to the prostration of recitation (sujūd al-tilāwah).<sup class=\"ref\">3,4</sup> Sources differ on the status of that prostration here: one ruling calls it compulsory for reciter and listener, another calls it recommended.<sup class=\"ref\">7,11,12,14</sup> A report from ʿAlī رضي الله عنه lists this sūrah among four verses carrying an \"emphatic\" prostration, and it is said that Mālik رحمه الله used to prostrate quietly to himself at its close, though Ibn al-ʿArabī flagged a difficulty in that report if taken strictly.<sup class=\"ref\">3</sup> A further narrative, relayed without independent grading, tells of the pen, tablet, and ink themselves prostrating as Muʿādh wrote this verse down.<sup class=\"ref\">3</sup> A minority reading, attributed to Zayd b. Aslam, splits the two imperatives between two addressees: the Prophet ﷺ is told to pray, Abū Jahl to draw near to the Fire.<sup class=\"ref\">3</sup></p><p>Beyond Abū Jahl, several commentators take the instruction as general: it applies to every person who forbids good, and to every person forbidden from doing it.<sup class=\"ref\">5,6,10</sup> Sayyid Quṭb reads the verse as tying the sūrah's separate parts together, so that its final word is simply to disregard any such opponent and seek nearness to Allah through prostration and obedience.<sup class=\"ref\">6</sup> A couplet cited by al-Qurṭubī catches the same thought: the deeper one bows in humility before Allah, the nearer one is drawn to His Garden.<sup class=\"ref\">3</sup></p><p class=\"close\">Against a man's threats, the Prophet ﷺ is given no argument to make, only an instruction: do not obey him, prostrate, and draw near.</p>",
+      "sources_used": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "source_hashes": {
+        "1": "sha256:eb9cb3acbee45f5520e9febfbafe222e91762ba03a2e58ee6932cd5d53a0f790",
+        "2": "sha256:05e43a9910853627f2b708535fa10c638818820a992f2843898119d4ef13f85c",
+        "3": "sha256:82ccb385421cb5b86b1167603b5894edeeb71da78fbf2069384888c9d87b0830",
+        "4": "sha256:2f5c59d2258e9e8afc7aebb107115c742ded8a74380c89d25cd32c05230f0e8a",
+        "5": "sha256:5c37b5fb0321e5a8952129eca803e8aed4fbc3455847bccb13c5cde39c584cac",
+        "6": "sha256:590d7eb75592ff1db17c6699b592ed14f7ad5503353149431e23ed999cda76aa",
+        "7": "sha256:c9e64f885802cd2b539a953940b7e6e664eb62f8394ba5fe3d6a30c01841b922",
+        "8": "sha256:211717d3810805ccae52e78b5024464e402aeaefdf4ee70783fdb2ef02c4a4c6",
+        "9": "sha256:f35b2e014be537e88d748e8e400525fecece7d20c4a069fea7cfa8dbbbb6aa52",
+        "10": "sha256:2d86695b990be0421be2a0f9638b7914196acf91bd7d49452375299f39f54f7d",
+        "11": "sha256:6d221c631a57acff1a96885d56c991ee681248f0eb3acb2cae2e14348affdef0",
+        "12": "sha256:ef9bff3098ccb0d9b21d03553505e938f2f734128ab00ec770f607e0f99feb3f",
+        "13": "sha256:6153527926e5a520110413be8d0e949ddcff6225e3c07469385a01c540cde2b5",
+        "14": "sha256:cf8adbfc4511b835be6eb777688eb29f4eab97b7e6e026949813b663aa460d31"
+      },
+      "flags": {
+        "creedal_stakes": "true",
+        "legal_content": "true",
+        "sensitive_content": "false"
+      },
+      "compiled_at": "2026-08-02"
+    },
+    "96:1": {
+      "verse_range": "1-5",
+      "title": "The First Revelation: Read",
+      "in_short": "These verses record the very first words revealed to the Prophet Muhammad ﷺ: a command to read in God's name, who created man from a clinging clot, and who taught man, by the pen, what he did not know.",
+      "claims": [
+        {
+          "id": "96:1#c1",
+          "section_ref": "96:1",
+          "attaches_to": "96:1",
+          "text": "Most commentators hold that these five verses are the very first passage of the Qur'an to be revealed, given to the Prophet ﷺ in the cave of Hira'.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "هذه السورة أول ما نزل من القرآن في قول معظم المفسرين",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "96:1#c2",
+          "section_ref": "96:1",
+          "attaches_to": "96:1",
+          "text": "The account behind the revelation (from ʿĀ'ishah رضي الله عنها): the Prophet ﷺ had been seeing true dreams and had grown to love solitude in the cave of Hira'. There an angel came to him and said 'Read!'. He replied he could not read. The angel pressed him three times, then spoke these verses. He returned home trembling and asked to be wrapped up. Khadījah رضي الله عنها reassured him, reminding him of his good character, and took him to Waraqah ibn Nawfal, who recognised this as the same revelation given to Mūsā عليه السلام and predicted that his own people would oppose him.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "أول ما بدئ به رسول الله صلى الله عليه وسلم من الوحي الرؤيا الصادقة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "recorded in the Two Ṣaḥīḥs (Bukhārī and Muslim) via al-Zuhrī, as noted by the commentators"
+          }
+        },
+        {
+          "id": "96:1#c3",
+          "section_ref": "96:1",
+          "attaches_to": "96:1",
+          "text": "Some reports name a different passage as the first revealed: Sūrat al-Muddaththir (attributed to Jābir ibn ʿAbdullāh), or al-Fātiḥah (attributed to Abū Maysarah), or Qur'an 6:151 (attributed to ʿAlī). Al-Qurṭubī states that the report naming al-ʿAlaq is the correct one. Muftī Shafīʿ and Ṭanṭāwī reconcile the views: al-Muddaththir was first after a pause in revelation, and al-Fātiḥah may have been the first surah revealed complete in one piece, while the opening of al-ʿAlaq came earliest of all but the rest of its verses came later.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "والصحيح الأول",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "96:1#c4",
+          "section_ref": "96:1",
+          "attaches_to": "96:1",
+          "text": "On the grammar of 'bismi rabbika' (in/by the name of your Lord): some hold the bā' marks a circumstance ('reading while invoking His name'), some read it as meaning 'ʿalā' (upon, by the authority of), and some (Abū ʿUbaydah, cited by al-Baghawī) hold the bā' is extra, so the sense is simply 'read the name of your Lord', i.e. the Qur'an itself.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "فمحل الباء من باسم ربك النصب على الحال",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "الباء زائدة",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar",
+          "original_terms": [
+            {
+              "term": "بِاسْمِ",
+              "gloss": "in/with the name of"
+            }
+          ]
+        },
+        {
+          "id": "96:1#c5",
+          "section_ref": "96:1",
+          "attaches_to": "96:1",
+          "text": "'The One who created' (al-ladhī khalaqa) leaves the object of creation unstated, so the verb is read absolutely: God is Creator of the entire universe and everything it contains, not of man alone. Al-Kalbī (cited by al-Baghawī) explains it as 'the Creator of all creatures'.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "96:1#c6",
+          "section_ref": "96:1",
+          "attaches_to": "96:2",
+          "text": "'Alaq (from which man was created) is the plural of 'alaqah, meaning clotted or congealed blood, a viscous drop that clings (yaʿlaqu) to whatever it touches until it dries. The word appears in the plural even though 'al-insān' is singular, because 'man' here stands for the whole human genus, each passing through this stage. Ṭanṭāwī also records a more descriptive reading: a cluster of cells formed by division of the fertilised egg, called 'alaq because it clings to the wall of the womb.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "من علق والمراد به من علقة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "العلقة قطعة من دم رطب سميت بذلك لأنها تعلق لرطوبتها",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "مجموعة من الخلايا التى نشأت بطريقة الانقسام",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "عَلَق",
+              "gloss": "clinging clot / coagulated blood"
+            }
+          ]
+        },
+        {
+          "id": "96:1#c7",
+          "section_ref": "96:1",
+          "attaches_to": "96:2",
+          "text": "Man is singled out after the general statement of creation either to honour him as the noblest creature, or to display the scale of God's favour: that He raised him from something as lowly as a clot of blood to a fully reasoning, perceiving human being.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "96:1#c8",
+          "section_ref": "96:1",
+          "attaches_to": "96:3",
+          "text": "The command 'Read!' is repeated. Explanations differ: some take it as simple emphasis, the sentence having closed and a new one beginning with 'and your Lord is al-Akram'; others hold the first command was to read for himself and the second to convey and teach others; Ṭanṭāwī suggests repetition was needed because a skill like reading settles in the soul only through practice repeated.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "اقرأ تأكيد وتم الكلام ثم استأنف",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric"
+        },
+        {
+          "id": "96:1#c9",
+          "section_ref": "96:1",
+          "attaches_to": "96:3",
+          "text": "'Al-Akram' (the Most Generous) is read by most as describing God's abundant generosity and bounty. Al-Kalbī offers a different reading, cited by al-Baghawī: that it means God is forbearing toward His servants' ignorance, not hurrying to punish them. Al-Qurṭubī states the generosity reading fits the context better, since what precedes it points to God's favours.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "والأول أشبه بالمعنى",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "الْأَكْرَمُ",
+              "gloss": "the Most Generous / Most Noble"
+            }
+          ]
+        },
+        {
+          "id": "96:1#c10",
+          "section_ref": "96:1",
+          "attaches_to": "96:3",
+          "text": "Naming God 'al-Akram' here signals that His creating and teaching of man serve no benefit to Himself; the favour is pure grace, given unasked.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "96:1#c11",
+          "section_ref": "96:1",
+          "attaches_to": "96:4",
+          "text": "'Who taught by the pen' means He taught mankind writing and script by means of the pen, a skill they did not previously possess.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "الْقَلَمِ",
+              "gloss": "the pen"
+            }
+          ]
+        },
+        {
+          "id": "96:1#c12",
+          "section_ref": "96:1",
+          "attaches_to": "96:4",
+          "text": "Qatādah said the pen is an immense favour from God; without it, no religion could stand and no livelihood could be properly ordered. Al-Qurṭubī expands: without writing, knowledge could not be recorded, rights could not be secured, the histories of earlier peoples could not be preserved, and the revealed Books could never have reached us.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "القلم نعمة من الله عظيمة لولا ذلك لم يقم ولم يصلح عيش",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "an athar attributed to Qatādah, a successor; left ungraded by the sources"
+          }
+        },
+        {
+          "id": "96:1#c13",
+          "section_ref": "96:1",
+          "attaches_to": "96:4",
+          "text": "Scholars describe three kinds of pen: the pen God created with His own hand and commanded to write the decree of all that will happen until the Day of Judgement; the pens of the angels, who record events and human deeds; and the pens of human beings, with which they set their own speech into writing.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "96:1#c14",
+          "section_ref": "96:1",
+          "attaches_to": "96:4",
+          "text": "A report states that when God created the creation, He wrote in a Book kept with Him above the Throne: 'My mercy prevails over My wrath.'",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "cited by Abū Bakr Zakariyyā as recorded in Bukhārī and Muslim"
+          }
+        },
+        {
+          "id": "96:1#c15",
+          "section_ref": "96:1",
+          "attaches_to": "96:4",
+          "text": "Another report states that the first thing God created was the pen, which He commanded to write, so that it wrote all that would occur until the Day of Judgement, kept with Him in the Preserved Record above the Throne.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "cited from Musnad Aḥmad by Abū Bakr Zakariyyā, not graded further by the sources"
+          }
+        },
+        {
+          "id": "96:1#c16",
+          "section_ref": "96:1",
+          "attaches_to": "96:4",
+          "text": "Scholars differ on who was first taught to write: Kaʿb al-Aḥbār said it was Ādam عليه السلام, the first person ever to write; al-Ḍaḥḥāk said it was Idrīs عليه السلام; others hold the teaching applies to everyone who has ever written, since behind every scribe stands God's own teaching.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "96:1#c17",
+          "section_ref": "96:1",
+          "attaches_to": "96:4",
+          "text": "That the pen is named in the first revelation given to an unlettered Prophet ﷺ, who could not himself read or write, is treated as significant: his later eloquence and knowledge could not have come from ordinary human learning, since he had no access to writing, teachers, or the centres of learning of his time. This is presented as evidence for his prophethood.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "96:1#c18",
+          "section_ref": "96:1",
+          "attaches_to": "96:4",
+          "text": "Isrār Aḥmad notes a contrast: ordinary human beings are taught by means of the pen, while the Prophet ﷺ himself was taught directly by an angel.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "گویا عام انسانی تعلیم کا ذریعہ قلم ہے، جبکہ حضور ﷺ کی تعلیم کے لیے فرشتہ مقرر ہوا",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "96:1#c19",
+          "section_ref": "96:1",
+          "attaches_to": "96:4",
+          "text": "Wahiduddin Khan reads the pen as a symbol of knowledge: reading lets a person acquire knowledge, and the pen lets him spread it widely. He extends this to the present day, holding that the same task of conveying truth now continues through print, the internet, and multimedia, and describes it as a serious duty on believers.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "96:1#c20",
+          "section_ref": "96:1",
+          "attaches_to": "96:5",
+          "text": "'Taught man what he did not know': commentators differ on who 'man' refers to here. Some take it generically, meaning mankind taught various forms of guidance and clear explanation. Some say it is Ādam عليه السلام specifically, taught the names of all things (cf. 2:31). Others say it is the Prophet Muhammad ﷺ himself, comparing it to 4:113 ('and taught you what you did not know'), taking it as pointing to knowledge he would come to receive, since this is among the earliest revelation.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "قيل الإنسان هنا آدم عليه السلام ... وقيل الإنسان هنا الرسول محمد صلى الله عليه وسلم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "96:1#c21",
+          "section_ref": "96:1",
+          "attaches_to": "96:5",
+          "text": "Man is brought out of his mother's womb knowing nothing. God gave him hearing, sight, and a heart, and made the means of knowledge easy for him: He taught him the Qur'an, taught him wisdom, and taught him by the pen, through which knowledge is preserved and rights are secured.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "أخرجه من بطن أمه لا يعلم شيئًا وجعل له السمع والبصر والفؤاد",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "96:1#c22",
+          "section_ref": "96:1",
+          "attaches_to": "96:5",
+          "text": "These verses point to the honour given man through knowledge: it is by knowledge that Ādam, the father of mankind, was distinguished above the angels. Knowledge may sit in the mind, be spoken by the tongue, or set down by the pen in writing; the written depends on the first two, though the reverse is not true.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "96:1#c23",
+          "section_ref": "96:1",
+          "attaches_to": "96:5",
+          "text": "A saying is quoted: 'Whoever acts on what he knows, God will make him inherit knowledge he did not know.'",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "presented by Ibn Kathīr as a saying, not attributed to the Prophet ﷺ"
+          }
+        },
+        {
+          "id": "96:1#c24",
+          "section_ref": "96:1",
+          "attaches_to": "96:1",
+          "text": "Sayyid Quṭb reflects that these opening words mark an event of immense scale: the exalted God turning His attention to this obscure creature, man, in an obscure corner of His creation, honouring him by making him the vessel of revelation. He describes the moment as a turning-point that reshaped human history and human conscience from that instant on.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "اللہ نے اپنی بلندیوں سے اس حقیقت پر نظر کرم فرمائی جسے عرف عام میں 'انسان' کہتے ہیں",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "96:1#c25",
+          "section_ref": "96:1",
+          "attaches_to": "96:5",
+          "text": "Isrār Aḥmad notes that this first revelation of five verses contained no command yet to preach or warn; that formal command came later, in Sūrat al-Muddaththir ('O you wrapped one, arise and warn'). He notes a structural resemblance between the two surahs, each opening by addressing the Prophet ﷺ before turning to the Hereafter.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "96:1#c26",
+          "section_ref": "96:1",
+          "attaches_to": "96:1",
+          "text": "When revelation later paused, the Prophet ﷺ is reported to have grieved deeply, going up to mountain peaks intending to throw himself down; each time Jibrīl appeared and said, 'O Muhammad, you are truly the messenger of God,' which settled him and he returned home.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "Ibn Kathīr notes this portion is likewise recorded via al-Zuhrī in the Two Ṣaḥīḥs"
+          }
+        }
+      ],
+      "essay_html": "<p>Most commentators agree that these five verses are the very first words of the Qur'an given to the Prophet Muhammad ﷺ, in the cave of Ḥirā'.<sup class=\"ref\">1,2,3,4,7,9,11,12,14</sup> The account, from ʿĀ'ishah رضي الله عنها, tells of true dreams, then a love of solitude, then an angel appearing and saying 'Read!'. The Prophet ﷺ replied that he could not read. The angel pressed him three times before speaking these verses. He returned home trembling, was wrapped up, and was reassured by Khadījah رضي الله عنها, who pointed to his good character. She then took him to her cousin Waraqah, who recognised the experience as the same revelation once given to Mūsā عليه السلام, and warned that opposition from his own people would follow.<sup class=\"ref\">1,2,3,4,7,9,11,12,14</sup> This narration is carried in the Two Ṣaḥīḥs. A later report adds that when revelation paused for a time, the Prophet ﷺ grieved, and went up to mountain peaks intending to throw himself down, until Jibrīl appeared each time and told him he was truly God's messenger.<sup class=\"ref\">1,2,3,4</sup></p><p>Not every source agrees on which passage came first. Some name Sūrat al-Muddaththir, others al-Fātiḥah, others verse 6:151. Al-Qurṭubī judges the report naming al-ʿAlaq correct; Muftī Shafīʿ and Ṭanṭāwī reconcile the views by noting al-Muddaththir came after a pause, while al-Fātiḥah may have been the first surah revealed whole in one sitting.<sup class=\"ref\">1,3,7,9</sup></p><p>'Read in the name of your Lord' opens with a grammatical question over the small word bā' (in/with): is it marking a state, standing for 'upon', or simply extra, so that the phrase means 'read the name of your Lord' — the Qur'an itself?<sup class=\"ref\">2,3</sup> 'The One who created' leaves unstated what He created, so the verb stands absolute: Creator of everything, not of man alone.<sup class=\"ref\">2,7,9</sup></p><p>Man is created from ʿalaq, a word meaning clotted or congealed blood, a viscous drop that clings to whatever it touches until it dries.<sup class=\"ref\">1,2,3,7,9,11,12</sup> Ṭanṭāwī also records a more descriptive picture, of a cluster of cells clinging to the womb wall.<sup class=\"ref\">9</sup> Man is singled out here, after the general statement of creation, either to honour him as the noblest of creatures, or to display the scale of the favour: from something so lowly to a full, reasoning human being.<sup class=\"ref\">3,7,9</sup></p><p>'Read' is repeated. Some read this simply as emphasis. Others say the first Read was for the Prophet ﷺ himself, the second to convey what he read to others. Ṭanṭāwī suggests that a new skill like reading only settles in the soul through repeated practice.<sup class=\"ref\">2,3,7,9,11,12</sup> 'Al-Akram', Most Generous, is read by most simply as praise of God's abundant generosity; al-Kalbī reads it instead as God's forbearance towards the ignorance of His servants, not rushing to punish. Al-Qurṭubī judges the generosity reading closer to the sense, since what came before points to favour.<sup class=\"ref\">2,3</sup> Either way, the name signals that God's creating and teaching serve no purpose of His own; the gift is pure, unasked-for grace.<sup class=\"ref\">7,9</sup></p><p>'Who taught by the pen' means God taught mankind the very skill of writing.<sup class=\"ref\">1,2,3,9,11,12,13</sup> Qatādah called the pen an immense favour: without it, no religion could stand and no livelihood could be properly ordered. Al-Qurṭubī adds that without writing, knowledge could not be recorded, rights secured, or the revealed Books preserved and passed down.<sup class=\"ref\">1,3,7</sup> Scholars speak of three pens: the one God made and commanded to write the decree of all that will happen, kept above the Throne; the pens of the angels, recording deeds; and the pens of human beings, turning speech into writing.<sup class=\"ref\">3,7</sup> Reports are cited that the first thing God created was the pen, and that when He created the creation He wrote, 'My mercy prevails over My wrath.'<sup class=\"ref\">3,7,11</sup> On who was first taught to write, some say Ādam عليه السلام, others Idrīs عليه السلام, others hold every scribe is ultimately taught by God.<sup class=\"ref\">3,7</sup> That the pen is named to a Prophet ﷺ who himself could not read or write is treated as telling: his later knowledge and eloquence could not have come by ordinary human learning, since he had no access to writing or teachers.<sup class=\"ref\">3,7,9</sup> Isrār Aḥmad adds a contrast of his own: ordinary people are taught by the pen, but the Prophet ﷺ was taught directly by an angel.<sup class=\"ref\">8</sup> Wahiduddin Khan reads the pen as a lasting symbol, its work of spreading truth now carried on, in his view, through print, the internet, and multimedia.<sup class=\"ref\">10</sup></p><p>'Taught man what he did not know' draws differing readings of 'man': mankind in general, taught guidance and clear explanation; Ādam عليه السلام, taught the names of all things as in 2:31; or the Prophet Muhammad ﷺ himself, compared to 4:113, 'and taught you what you did not know'.<sup class=\"ref\">1,2,3,7,11</sup> Al-Saʿdī reads it as the whole shape of human learning: born knowing nothing, given hearing, sight and a heart, then taught the Qur'an, wisdom, and the pen.<sup class=\"ref\">5</sup> Ibn Kathīr sees here the honour knowledge gave Ādam over the angels, and notes that knowledge may live in the mind, on the tongue, or in writing, though writing depends on the other two and not the reverse.<sup class=\"ref\">4</sup> A saying is cited alongside this: whoever acts on what he knows, God gives him knowledge he did not have.<sup class=\"ref\">4</sup></p><p>Sayyid Quṭb reads the whole opening as an event of vast scale: the exalted God turning towards this obscure creature, man, in an obscure corner of creation, and honouring him as the vessel of revelation, a moment he describes as reshaping human history from that instant.<sup class=\"ref\">6</sup> Isrār Aḥmad observes that this first revelation carried no command yet to preach; that came later, in Sūrat al-Muddaththir.<sup class=\"ref\">8</sup></p><p class=\"close\">Read, and your Lord is al-Akram: the whole passage turns on that one claim, that a Lord who created man from a clinging clot, and taught him what he did not know, does so out of generosity that asks nothing back.<sup class=\"ref\">3,5,7,9</sup></p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:3e24b029c7157625aed1d52dd94ff3adc4d1527205b7ae4dda023c6db07789ce",
+        "2": "sha256:10d47be6a1638b9677eaaa15c148450f9d03f4d0019439c5d5c4138007dd2c93",
+        "3": "sha256:2da90903035a84e6ede71140f8922dd18e88230730b428d0014cb465b3351877",
+        "4": "sha256:6db451026a90edfa40308d1f170129abff0ed83ae329cd8c3037d06716104379",
+        "5": "sha256:a5831aec56fdef7fdc0ad247944ee80b649f1fcbad47f4db27cee398a5c4a6ca",
+        "6": "sha256:ad06cdcaf9113ce27d4fb2bc94ef795614d49531235e94a7895ba39277fc2a13",
+        "7": "sha256:05e35bce3a729f1d31df8b1c24d6dffaf9995455d4c127cb92f2d27de1cb0547",
+        "8": "sha256:207fccf4900cf0f90a1ede3adf620403a4b751a3b487978a4187518362449cca",
+        "9": "sha256:f950445b83ccb68765b8fdc778cd5a6a046a7671f2a6301ee7b9e66e41ea92d6",
+        "10": "sha256:6be53c4acd884564c4cb0bb68a74a93e039359681a3d96b73142ff42cfb1b3ed",
+        "11": "sha256:3dee7f6b14f36c4edfa3801f746fb4910446c45acdf6f87bdd9e078f6ce040e9",
+        "12": "sha256:ac2abea1b6bfd9f3b4a298b95919fd8e30680983d0d94ee164e2edc5f7638a1c",
+        "13": "sha256:d2fb8ba66b04ec109245c3e4d35109bf4e0885408a58c4bef54149f4d0292632",
+        "14": "sha256:57382be838b8080830505f781854589664d58363c4e19ee2bbf40d72836a0573"
+      },
+      "flags": {
+        "creedal_stakes": true,
+        "legal_content": false,
+        "sensitive_content": true
+      },
+      "compiled_at": "2026-08-02"
+    },
+    "96:9": {
+      "verse_range": "9-14",
+      "title": "The One Who Forbids Prayer",
+      "in_short": "These verses describe a man who tries to stop God's servant from praying, though that servant follows guidance and calls others to piety. The Qur'an asks, with astonishment, whether the forbidder has forgotten that Allah sees everything he does.",
+      "claims": [
+        {
+          "id": "96:9#c1",
+          "section_ref": "96:9",
+          "attaches_to": "96:9",
+          "text": "\"The one who forbids\" refers to Abu Jahl, who tried to stop the Prophet ﷺ from praying.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "نـزلت في أبي جهل بن هشام",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "نزلت في أبي جهل",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وهو أبو جهل",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "This was revealed about Abu Jahl",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "للتعجيب من جهالة هذا الطاغى",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "original_excerpt": "বারণকারী বলতে আবু জাহলকে বোঝানো হয়েছে",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "وهو أبو جهل",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "96:9#c2",
+          "section_ref": "96:9",
+          "attaches_to": "96:9",
+          "text": "A saying, transmitted from Qatāda, held that every nation has its Pharaoh, and the Pharaoh of this community was Abu Jahl.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "لكل أمة فرعون، وفرعون هذه الأمة أبو جهل",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Ṭabarī (transmits from Qatāda without grading)"
+          }
+        },
+        {
+          "id": "96:9#c3",
+          "section_ref": "96:9",
+          "attaches_to": "96:9",
+          "text": "The repeated question \"have you seen\" (أرأيت) is not a literal request for information but an expression addressed to the Prophet ﷺ (or the reader) to provoke amazement at the forbidder's folly.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "يُعجِّب جلّ ثناؤه نبيه والمؤمنين من جهل أبي جهل",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "ومعنى \"أرأيت\" هاهنا تعجيب للمخاطب",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "تعجبا منه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "فالاستفهام ... للتعجيب من جهالة هذا الطاغى",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric",
+          "original_terms": [
+            {
+              "term": "أرأيت",
+              "gloss": "\"have you seen\" — used here to provoke wonder, not to ask for information"
+            }
+          ]
+        },
+        {
+          "id": "96:9#c4",
+          "section_ref": "96:9",
+          "attaches_to": "96:9",
+          "text": "Sayyid Quṭb described the passage's technique as vivid and almost cinematic, presenting the scene in brief, rapid flashes to show how ugly it is that one man worships while another forbids him.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "نہایت ہی تیز رفتار فلم کی شکل میں پیش کیا جاتا ہے",
+              "translation_confidence": "low"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric"
+        },
+        {
+          "id": "96:9#c5",
+          "section_ref": "96:9",
+          "attaches_to": "96:9",
+          "text": "Wahīduddīn Khān drew a general lesson: those who obstruct the path of truth come to a miserable end, and a preacher of truth, disappointed by people, should turn instead to prayer and submission to God.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "96:9#c6",
+          "section_ref": "96:9",
+          "attaches_to": "96:10",
+          "text": "\"A servant\" refers to the Prophet ﷺ. The verse recalls Abu Jahl threatening that if he saw Muhammad ﷺ praying at the Ka'bah he would trample his neck, a threat later linked to reports that angels would have seized him had he tried.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "لئن رأيت محمدا يصلي، لأطأنّ رقبته",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "لئن رأيته يفعل ذلك لأطأن على رقبته",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "He threatened the Prophet for performing Salah at the Ka'bah",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "relay",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "hasan",
+            "graded_by": "al-Tirmidhī, as noted by Ibn Kathīr, for the report via Ibn ʿAbbās رضي الله عنه"
+          }
+        },
+        {
+          "id": "96:9#c7",
+          "section_ref": "96:9",
+          "attaches_to": "96:10",
+          "text": "Isrār Aḥmad related further specific incidents of Abu Jahl's harassment: having camel entrails placed on the Prophet's ﷺ back while he prostrated, twisting a cloak round his neck until his eyes bulged, and a later encounter (after the return from Ṭāʾif) where Abu Jahl retreated in terror, saying a ditch of fire and a winged creature stood between him and the Prophet ﷺ.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "relay",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "اونٹ کی اوجھڑی منگوا کر عین سجدے کی حالت میں آپ ﷺ کی پشت مبارک پر رکھوا دی",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "Isrār Aḥmad (relates without formal grading)"
+          }
+        },
+        {
+          "id": "96:9#c8",
+          "section_ref": "96:9",
+          "attaches_to": "96:10",
+          "text": "Abū Bakr Zakariyyā noted that referring to the Prophet ﷺ as merely \"a servant\" (rather than by name) follows a Qur'anic pattern of honouring him this way, comparing it to similar phrasing elsewhere in the Qur'an.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "96:9#c9",
+          "section_ref": "96:9",
+          "attaches_to": "96:11",
+          "text": "\"On guidance\" and \"enjoins piety\" describe the servant being forbidden, that is, the Prophet ﷺ, who is himself rightly guided in his prayer and who calls others to piety and sincere monotheism.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "يعني: على استقامة وسَدَاد في صلاته لربه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "يعني العبد المنهي وهو محمد",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "العلم بالحق والعمل به",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "unspecified"
+        },
+        {
+          "id": "96:9#c10",
+          "section_ref": "96:9",
+          "attaches_to": "96:12",
+          "text": "The piety commanded here is glossed as sincerity (ikhlāṣ), the oneness of God (tawḥīd), and good deeds by which people might be saved.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "يعني بالإخلاص والتوحيد",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "original_excerpt": "ইখলাস, তাওহীদ এবং নেক আমলের শিক্ষা দেয়",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "التقوى",
+              "gloss": "piety, God-consciousness"
+            }
+          ]
+        },
+        {
+          "id": "96:9#c11",
+          "section_ref": "96:9",
+          "attaches_to": "96:12",
+          "text": "Al-Saʿdī reasoned that forbidding prayer of this kind can only be seen as one of the gravest acts of defiance against Allah, since forbidding is fitting only against someone who is himself misguided, or who commands others contrary to piety — neither of which applies to the one being forbidden here.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "أليس نهيه، من أعظم المحادة لله، والمحاربة للحق؟",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "96:9#c12",
+          "section_ref": "96:9",
+          "attaches_to": "96:12",
+          "text": "Al-Qurṭubī phrased the same point rhetorically: if Muhammad ﷺ is truly of this description, is not the one who forbids him from prayer and piety himself doomed?",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "أليس ناهيه عن التقوى والصلاة هالكا؟",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "96:9#c13",
+          "section_ref": "96:9",
+          "attaches_to": "96:12",
+          "text": "Isrār Aḥmad noted that Abu Jahl had certain positive traits, generosity in spending and plain speech, but these traits availed him nothing because he ultimately failed to affirm the truth.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "relay",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "وہ مال خرچ کرنے میں ہمیشہ پیش پیش رہتا تھا",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "96:9#c14",
+          "section_ref": "96:9",
+          "attaches_to": "96:13",
+          "text": "The one who \"denies and turns away\" is Abu Jahl, denying the truth brought by the Prophet ﷺ and turning away from faith.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "يقول: وأدبر عنه، فلم يصدِّّق به",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "يعني أبا جهل، عن الإيمان",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "يعني أبا جهل كذب بكتاب الله",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "96:9#c15",
+          "section_ref": "96:9",
+          "attaches_to": "96:13",
+          "text": "Al-Farrāʾ, as cited by al-Qurṭubī, read the syntax differently: the phrase describes the forbidder himself as one who denies and turns from remembrance, so the sense throughout remains one continuous exclamation of astonishment.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وقال الفراء: المعنى ... فما أعجب هذا",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "96:9#c16",
+          "section_ref": "96:9",
+          "attaches_to": "96:13",
+          "text": "Al-Ṭanṭāwī summarised the threefold purpose of the repeated \"have you seen\": to console the Prophet ﷺ, to provoke wonder at the tyrant's persistence in error, and to warn the tyrant of an evil end, since Allah observes his deeds.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "تسلية النبى ... وتعجيبه ... وتهديد هذا الكافر الطاغى",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric"
+        },
+        {
+          "id": "96:9#c17",
+          "section_ref": "96:9",
+          "attaches_to": "96:14",
+          "text": "The verse is a rhetorical question of reproach and warning: does the forbidder not realise that Allah sees his deeds and will requite him for what he does?",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "بأن الله يراه فيخاف سطوته وعقابه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "يعني أبا جهل، بأن الله يرى ذلك فيجازيه به",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "فهو تقرير وتوبيخ",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "He will compensate him in full for what he has done",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "96:9#c18",
+          "section_ref": "96:9",
+          "attaches_to": "96:14",
+          "text": "Muftī Muḥammad Shafīʿ observed that the verse leaves unstated whom Allah watches, making the statement general: Allah is watching both the one performing the prayer and the wretched one obstructing it; the verse also stops short of describing what will happen at the Resurrection, since those scenes are too dreadful to state here.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "original_excerpt": "the verse does not mention whom He is watching. It is of general application",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "96:9#c19",
+          "section_ref": "96:9",
+          "attaches_to": "96:14",
+          "text": "Grammarians read \"does he not know\" as the deferred answer (jawāb al-sharṭ) standing in for the unstated response to the earlier conditional clauses (\"if he is upon guidance\" and \"if he denies and turns away\"), the answer being omitted the first time because its sense is carried by its later repetition.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "كررت أرأيت مرات ثلاثًا على البدل",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وقيل: كل واحد من أرأيت بدل من الأول",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "هو محذوف تقديره: إن كان على الهدى، ألم يعلم بأن الله يرى",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "original_excerpt": "أَلَم تَعلَم হল পূর্বে উল্লিখিত ... শর্ত বাক্যের পরিপূরক",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        }
+      ],
+      "essay_html": "<p>These verses turn to a specific scene named by the commentators: a man forbidding \"a servant\" from praying. The forbidder is identified as Abu Jahl, and the servant as the Prophet ﷺ.<sup class=\"ref\">1,2,3,4,7,9,11,12,13,14</sup> One report even carried the saying that every nation has its Pharaoh, and the Pharaoh of this community was Abu Jahl.<sup class=\"ref\">1</sup></p>\n<p>The reports behind this describe Abu Jahl swearing that if he saw Muhammad ﷺ praying at the Ka'bah he would trample his neck. When he tried, he backed away in fear, saying a ditch of fire and a winged being stood between them.<sup class=\"ref\">1,2,4,7,9,11,12,13,14</sup> One version of this account was graded hasan by al-Tirmidhī.<sup class=\"ref\">4</sup> Isrār Aḥmad (d. 2010) gathered further incidents of the same harassment: camel entrails placed on the Prophet's ﷺ back in prostration, a cloak twisted round his neck, and a later encounter after the return from Ṭāʾif when Abu Jahl again retreated in terror.<sup class=\"ref\">8</sup> Abū Bakr Zakariyyā noted that calling the Prophet ﷺ simply \"a servant\" follows a pattern found elsewhere in the Qur'an, where he is honoured by that title rather than named.<sup class=\"ref\">11</sup></p>\n<p>The repeated phrase \"have you seen\" (أرأيت) is not really a request for information. The commentators read it as an expression of astonishment, aimed at the Prophet ﷺ and the reader, meant to provoke wonder at the forbidder's folly.<sup class=\"ref\">1,2,3,9</sup> Sayyid Quṭb (d. 1966) described the whole passage as almost cinematic, unfolding in brief, rapid flashes that expose how ugly the scene really is: one man at worship, another trying to stop him.<sup class=\"ref\">6</sup> Wahīduddīn Khān drew from it a broader principle, that those who obstruct the path of truth meet a miserable end, and that a preacher of truth, disappointed by people, should turn instead to God in prayer.<sup class=\"ref\">10</sup></p>\n<p>Verses 11 and 12 sharpen the absurdity. \"On guidance\" and \"enjoins piety\" describe the very man being forbidden: the Prophet ﷺ, upright in his prayer and calling others to piety, sincerity, and the oneness of God.<sup class=\"ref\">1,2,3,4,5,7,9,11,12,13,14</sup> Al-Saʿdī (d. 1957) reasoned that forbidding of this kind is one of the gravest acts of defiance against Allah, since forbidding is only fitting against someone himself misguided, or urging what is contrary to piety, neither of which describes the one forbidden here.<sup class=\"ref\">5</sup> Al-Qurṭubī (d. 1273) put the same thought as a question: if Muhammad ﷺ truly answers to this description, is not his forbidder the one who is doomed?<sup class=\"ref\">3</sup> Isrār Aḥmad added that Abu Jahl himself had some admirable traits, generosity, plain speech, but none of it could help him once he failed to affirm the truth.<sup class=\"ref\">8</sup></p>\n<p>Verse 13 turns the description back onto the forbidder: he is the one who \"denies and turns away\", refusing the message and turning from faith.<sup class=\"ref\">1,2,3,5,9,11,12,13,14</sup> Al-Farrāʾ, as reported by al-Qurṭubī, read the grammar slightly differently, folding the description of denial into the forbidder's own character throughout, so that the whole passage remains one continuous cry of astonishment.<sup class=\"ref\">3</sup> Al-Ṭanṭāwī (d. 2010) summed up the purpose of the threefold \"have you seen\": it consoles the Prophet ﷺ, provokes wonder at the tyrant's persistence, and warns him of an evil end.<sup class=\"ref\">9</sup></p>\n<p>The final question, \"does he not know that Allah sees\", is read as reproach and warning together: does the forbidder not realise Allah observes his deeds and will requite him for them?<sup class=\"ref\">1,2,3,4,5,9,11,12,13</sup> Muftī Muḥammad Shafīʿ (d. 1976) pointed out that the verse leaves unstated whom Allah is watching, making it deliberately general, covering both the one who prays and the one obstructing him, and that it stops short of describing what awaits at the Resurrection, because those scenes are too dreadful to set down here.<sup class=\"ref\">7</sup> Grammarians further explained \"does he not know\" as standing in for an answer left unstated earlier, after the conditional clauses \"if he is upon guidance\" and \"if he denies and turns away\", its sense carried forward by its final repetition.<sup class=\"ref\">1,3,9,12</sup></p>\n<p class=\"close\">The passage rests its whole force on a single, unadorned fact stated at the very end: whatever a man forbids or threatens in secret or in the open, Allah sees it.<sup class=\"ref\">1,2,3,4,5,9,11,12,13</sup></p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13"
+      ],
+      "source_hashes": {
+        "1": "sha256:f2582e1904c5fa7faabb6cc40475d76d8e8ac69faa552693d08cacf94701dc3f",
+        "2": "sha256:8d612fc4ad4fe4d4ef5769fcc08be70e721c7608240df022afecdf7d156edd84",
+        "3": "sha256:3dfdbd5f1cea1843ab7d8e6a945eb84a646db756ccac2465f2d92972e398b083",
+        "4": "sha256:ece2df9b0435fe4044bca9f3d9382ca90b27e646aab847158d6fdf388a3042a3",
+        "5": "sha256:8521d51bf466de4b9e3eb6d3539abe035ce823ea07e26d5ed1e555b9cad0a989",
+        "6": "sha256:0586d8fba5aeabb4ed7b2f68f66fd936dfec7ba077e32398656e2ee317081d99",
+        "7": "sha256:ba306e1cd36411d47e2786cc40ff420c1f294e554b87063bfdbafb714d6cec5f",
+        "8": "sha256:3fea913ee8eb1ba50b490f118032f480abdefb24dba458343c135b0ef9c79407",
+        "9": "sha256:844304f4e5c236e46a84976db5a7ac13177b463430edc4815678014ee8ac1fc5",
+        "10": "sha256:677b2f503c3a5fbea7c5480ead557dd08b6fed886ba94a78ecc7eb9c9f4e977c",
+        "11": "sha256:a7f3ea3371b95bde6a2f8a88591fab1c528fcf04f8242a4e3fe0068042247bb7",
+        "12": "sha256:08c7d2e080d57de56008b170a67ca2873a9140f31454d1bb7fc56a489ccef7f4",
+        "13": "sha256:276de92b0a3c09cb710dd6462646b0b206f8d0a2b3adaab58e84ce45b090502e",
+        "14": "sha256:c9b529cb2301493cf1186bd8685cb4777968fb354c9f24fb97f70addc47d76ac"
+      },
+      "flags": {
+        "creedal_stakes": true,
+        "legal_content": false,
+        "sensitive_content": true
+      },
+      "compiled_at": "2026-08-02"
+    },
+    "96:6": {
+      "verse_range": "6-8",
+      "title": "When Self-Sufficiency Breeds Arrogance",
+      "in_short": "Man tends to overstep his limits the moment he feels he no longer needs anyone; the passage traces this to Abu Jahl's arrogance toward the Prophet ﷺ, and answers it with a warning: everyone returns to the Lord.",
+      "claims": [
+        {
+          "id": "96:6#c1",
+          "section_ref": "96:6",
+          "attaches_to": "96:6",
+          "text": "Many commentators read 'Kalla' here as simply meaning 'truly/certainly' (haqqan), since nothing in the preceding verses calls for a rebuke.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "كلا (Kalla)",
+              "gloss": "No! / Truly - an opening particle of denial or emphasis"
+            }
+          ]
+        },
+        {
+          "id": "96:6#c2",
+          "section_ref": "96:6",
+          "attaches_to": "96:6",
+          "text": "Others take 'Kalla' as an active rebuke: al-Ṭabarī ties it back to man's ingratitude for the earlier blessings of creation and teaching; al-Ṭanṭāwī offers it as a check against arrogance and rebellion generally.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric"
+        },
+        {
+          "id": "96:6#c3",
+          "section_ref": "96:6",
+          "attaches_to": "96:6",
+          "text": "'Yaṭghā' (transgresses) means going beyond due bounds into disobedience and arrogance.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "طغى (ṭaghā)",
+              "gloss": "to transgress, exceed one's proper limit"
+            }
+          ]
+        },
+        {
+          "id": "96:6#c4",
+          "section_ref": "96:6",
+          "attaches_to": "96:6",
+          "text": "The verse is historically tied to Abū Jahl, who threatened the Prophet ﷺ for praying at the Kaʿbah; this episode is recorded in hadith (Bukhārī and others), including his boast about his own standing and Allah's warning that the angels would seize him had he called his people.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "recorded by al-Bukhārī; also graded 'ḥasan ṣaḥīḥ' by al-Tirmidhī per Ibn Kathīr; a related version via Abū Hurayrah is recorded by Aḥmad, Muslim and al-Nasāʾī, though the narrator was unsure it was the exact occasion for this particular verse"
+          }
+        },
+        {
+          "id": "96:6#c5",
+          "section_ref": "96:6",
+          "attaches_to": "96:6",
+          "text": "Though the occasion was Abū Jahl, the wording of the verse is general: it names a universal weakness, not only his case. As long as man feels he needs others he stays straight; once he feels self-sufficient, transgression, tyranny and pride tend to follow — a pattern seen in the wealthy, the powerful, and those with many dependants.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "96:6#c6",
+          "section_ref": "96:6",
+          "attaches_to": "96:6",
+          "text": "Al-Qurṭubī notes a debate on the surah's composition: some hold the whole surah concerns Abū Jahl's forbidding of prayer; others hold the first five verses were among the earliest revelation, with the rest added later regarding Abū Jahl and joined by divine instruction — so the surah's arrangement need not match the chronological order of revelation.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "96:6#c7",
+          "section_ref": "96:6",
+          "attaches_to": "96:7",
+          "text": "On the odd phrasing 'raʾāhu' (saw him[self]) rather than 'raʾā nafsahu' (saw his own self), al-Farrāʾ explained that verbs like 'raʾā', similar to 'ẕanna' and 'ḥasiba', take a subject and a predicate together, and Arabic habitually drops the reflexive pronoun 'nafs' in such constructions.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "96:6#c8",
+          "section_ref": "96:6",
+          "attaches_to": "96:7",
+          "text": "'Istaghnā' (he saw himself self-sufficient) is explained as man regarding himself as wealthy: rising through levels of clothing and food (al-Kalbī), or specifically that Abū Jahl increased his clothes, mount and food whenever he gained wealth, which was his transgression (Muqātil); more broadly it covers wealth, status, and the backing of one's clan and supporters.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "استغنى (istaghnā)",
+              "gloss": "he regarded himself as self-sufficient, in no need of others"
+            }
+          ]
+        },
+        {
+          "id": "96:6#c9",
+          "section_ref": "96:6",
+          "attaches_to": "96:7",
+          "text": "A report from Ibn ʿAbbās via Abū Ṣāliḥ states that when this verse was revealed, Abū Jahl challenged the Prophet ﷺ to turn Mecca's mountains to gold, reasoning that if wealth causes transgression they would then transgress and abandon their religion; Jibrīl عليه السلام told the Prophet ﷺ to give them the choice, warning that refusal would bring a fate like that of the 'companions of the Table'; the Prophet ﷺ, knowing they would not accept, held back.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Qurṭubī relays without grading"
+          }
+        },
+        {
+          "id": "96:6#c10",
+          "section_ref": "96:6",
+          "attaches_to": "96:7",
+          "text": "Man's presumed self-sufficiency is a fallacy: he depends constantly on the vast, unseen cooperation of countless people and animals for even a single mouthful of food or piece of clothing. Only Allah's wisdom, not any government or individual, could set such a network of mutual need in motion — so true independence belongs to no one but Allah.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "96:6#c11",
+          "section_ref": "96:6",
+          "attaches_to": "96:7",
+          "text": "Man tends to transgress because he sees no immediate worldly consequence for wrongdoing: physical laws punish (poison kills), but moral wrongs (ill-gotten gain) seem to carry no visible penalty, so once justice and honesty appear practically meaningless to him, he abandons restraint.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "96:6#c12",
+          "section_ref": "96:6",
+          "attaches_to": "96:8",
+          "text": "'Al-Rujʿā' (the return) is a verbal noun on the pattern fuʿlā, equivalent in meaning to rujūʿ or marjiʿ, comparable to the noun 'bushrā' (glad tidings).",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "الرجعى (al-rujʿā)",
+              "gloss": "the return, a verbal noun for going back"
+            }
+          ]
+        },
+        {
+          "id": "96:6#c13",
+          "section_ref": "96:6",
+          "attaches_to": "96:8",
+          "text": "The return is to the Lord for a reckoning: man will be held to account for his wealth — where he obtained it and how he spent it — and every rejecter will taste a punishment he cannot bear.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "96:6#c14",
+          "section_ref": "96:6",
+          "attaches_to": "96:8",
+          "text": "The verse functions as a warning to the transgressor: whatever power or wealth he boasts of cannot spare him, since the return is to Allah alone, where he will see with his own eyes what has been prepared for his arrogance.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric"
+        },
+        {
+          "id": "96:6#c15",
+          "section_ref": "96:6",
+          "attaches_to": "96:8",
+          "text": "Sayyid Quṭb reads the verse as stating a foundational Islamic principle: everyone, good or bad, obedient or rebellious, rich or poor, must appear before Allah — there is no refuge or destination beyond Him. The man who thought himself self-sufficient will find himself bound before Allah all the same. This ties the beginning of human life (creation, taught by the pen) to its end (the return and reckoning).",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "96:6#c16",
+          "section_ref": "96:6",
+          "attaches_to": "96:8",
+          "text": "Al-Saʿdī links the man's transgression to ignorance and injustice: he forgets the return to his Lord and loses fear of the reckoning, and this can go so far that he not only abandons guidance himself but calls others to abandon it too, forbidding prayer, which is the finest act of faith.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "96:6#c17",
+          "section_ref": "96:6",
+          "attaches_to": "96:8",
+          "text": "Firm belief in the Hereafter and the coming reckoning is presented as the effective remedy for man's tendency to transgress, since on that day nothing, not even the weight of a speck, will remain hidden.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "96:6#c18",
+          "section_ref": "96:6",
+          "attaches_to": "96:6",
+          "text": "Those who campaign against the Truth or obstruct those who follow it are destined for a miserable end; in the face of such opposition, the real support for one who calls to the Truth lies in turning to Allah, distancing himself from people and drawing near to the God of all humanity.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        }
+      ],
+      "essay_html": "<p>This short passage names a pattern in human nature: a person walks straight while he needs others, but the moment he feels he needs no one, he tends to overstep his limits.<sup class=\"ref\">6,7,8,4,5</sup> The Arabic word for this overstepping is ṭaghā (طغى), to transgress beyond due bounds.<sup class=\"ref\">3,9</sup></p>\n<p>The opening word 'Kalla' is read two ways. Most take it simply as an emphatic 'truly', since nothing before it calls for correction.<sup class=\"ref\">2,3,9,11</sup> Others read it as an active rebuke: al-Ṭabarī (d. 923 CE) ties it back to the earlier verses, as if Allah were saying it is not fitting that man, given the blessing of his creation and the teaching he received, should then be ungrateful and transgress.<sup class=\"ref\">1</sup></p>\n<p>Historically, this verse is tied to Abū Jahl, who threatened the Prophet ﷺ for praying at the Kaʿbah and boasted of his own standing among his people. This episode is recorded in hadith, including Allah's warning that the angels would have seized him had he called on his people for help.<sup class=\"ref\">4,11,9,3</sup> Al-Qurṭubī (d. 1273 CE) even notes a difference of opinion on how the surah was put together: some hold the whole surah concerns this affair, others that the first five verses came earlier and the rest was joined to them later by divine instruction, showing that a surah's order need not match the order of revelation.<sup class=\"ref\">3</sup></p>\n<p>Even though Abū Jahl was the occasion, the commentators stress that the wording names something universal. Muftī Shafīʿ (d. 1976 CE) points out this is the pattern of the wealthy, of officials, of anyone surrounded by dependants: they become intoxicated by the power they hold over others.<sup class=\"ref\">7,9,5,4,8,11</sup></p>\n<p>'Istaghnā' (he saw himself self-sufficient) is glossed as regarding oneself as wealthy in money, status, food, clothing, or the backing of one's clan and supporters.<sup class=\"ref\">2,3,9,11</sup> A report traced to Ibn ʿAbbās رضي الله عنه, relayed without grading by al-Qurṭubī, has Abū Jahl challenging the Prophet ﷺ to turn Mecca's mountains to gold, so that wealth would make his people transgress and abandon the Prophet's ﷺ religion; Jibrīl عليه السلام told the Prophet ﷺ to offer them the choice, on pain of a fate like the 'companions of the Table', but the Prophet ﷺ, knowing they would refuse, held back.<sup class=\"ref\">3</sup></p>\n<p>Muftī Shafīʿ develops the point further: man's supposed self-sufficiency is an illusion. Even a single mouthful of food depends on the unseen labour of countless people, a network that only Allah's wisdom could ever set in motion. No one is truly independent of Him.<sup class=\"ref\">7</sup> Isrār Aḥmad (d. 2010 CE) asks why man drifts this way at all: because he sees no visible worldly penalty for wrongdoing, unlike the clear cause and effect of physical harm, so moral restraint starts to look meaningless to him.<sup class=\"ref\">8</sup></p>\n<p>The answer given is the return: 'al-Rujʿā', a verbal noun meaning simply 'the return', on the same pattern as the word for glad tidings, bushrā.<sup class=\"ref\">2,3,9,7</sup> The return is to the Lord, for a reckoning over wealth, where it came from and how it was spent, and every rejecter will taste what he cannot bear.<sup class=\"ref\">4,11,13,1</sup> Sayyid Quṭb (d. 1966 CE) reads this as the foundation of the whole Islamic view of existence: everyone, rich or poor, obedient or rebellious, returns to Allah alone, and the man who thought himself self-sufficient will find himself standing before Him regardless.<sup class=\"ref\">6</sup> Al-Ṭanṭāwī (d. 2010 CE) and Ibn Kathīr (d. 1373 CE) both take the verse as a warning: no wealth or standing can spare the transgressor from what has been prepared for him.<sup class=\"ref\">9,4</sup></p>\n<p>Al-Saʿdī (d. 1957 CE) traces where this forgetting can lead: a man who no longer fears the reckoning may not only abandon guidance himself but call others away from it too, even forbidding prayer, the finest act of faith.<sup class=\"ref\">5</sup> Isrār Aḥmad names the remedy as firm belief in that reckoning itself, since on that day nothing, not even the weight of a speck, stays hidden.<sup class=\"ref\">8</sup> Wahiduddin Khan (d. 2021 CE) adds that one who is opposed for calling to the truth finds his real support in turning to Allah, away from people who have disappointed him.<sup class=\"ref\">10</sup></p>\n<p class=\"close\">Whatever wealth, status, or following a man gathers, the passage insists that his path leads back to only one place: to his Lord, for the reckoning.<sup class=\"ref\">8,4,9,6</sup></p>",
+      "sources_used": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        13
+      ],
+      "source_hashes": {
+        "1": "sha256:4ba72704d5b897f570cc228d6aecf5c7853e37ca275ae785e6947a2742f41e77",
+        "2": "sha256:06a95fa1b065362409837cbb47be630462a8fac9799c196fedaf426cba65c0f6",
+        "3": "sha256:83c366f03494395d39b0eb65ada6e8dd11632958a88e85282848fb5d18b03e8b",
+        "4": "sha256:fd291cc8cd814c1483f9db653a33d715925363a60acac8e7085ebe10326daf4f",
+        "5": "sha256:e7c5657d1384b39c0786e33167c678c1faa2a91ecb7ed54c3a2d2cf969919a27",
+        "6": "sha256:50337f7ce0f8446fe69dad1268a6c6a8ecb8194986532f4ead3a07d57d63988e",
+        "7": "sha256:5ccec345230e2761f54a2c33f2c2f76f4bd77d93b4b2ea917264ce8877dc235a",
+        "8": "sha256:0ea52bb148dae05441e37c9ef7edc02a0e8dd53a6c8120f297d4146b0e8ea5bc",
+        "9": "sha256:452c640922bbb2010375d5416f1882b23c0d130953f6ed370bba16b4ef21f42e",
+        "10": "sha256:1bf96a9fd1fc7387118edfbee8b09c8ec42e226eeee3c11857a6a4e9d5f2c193",
+        "11": "sha256:6d33c2be10b8f4e778bf4aa55ca0d57a32a1e95c3ab9e0cf9df4ca7b31c9d205",
+        "12": "sha256:9e264eacb97852227a78f6c3ff82e8b8fbeb9c07f9aba42dd84508849bc61913",
+        "13": "sha256:d5e8b309c24060a645b760f17f01eb5e201b85ead04388a5c46c6f76d0084fc4",
+        "14": "sha256:ccacc97b8a108a207d9c1fe7911d36435407d670a7f5238530cc2cd9fbba546c"
+      },
+      "flags": {
+        "creedal_stakes": true,
+        "legal_content": false,
+        "sensitive_content": true
+      },
+      "compiled_at": "2026-08-02"
+    }
+  }
+}

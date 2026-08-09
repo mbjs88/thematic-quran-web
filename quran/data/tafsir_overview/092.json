@@ -1,0 +1,1572 @@
+{
+  "surah": 92,
+  "name": "",
+  "coverage": {
+    "editions_present": [
+      "ar-tafsir-al-tabari",
+      "ar-tafsir-al-baghawi",
+      "ar-tafseer-al-qurtubi",
+      "en-tafisr-ibn-kathir",
+      "ar-tafseer-al-saddi",
+      "tafsir-fe-zalul-quran-syed-qatab",
+      "en-tafsir-maarif-ul-quran",
+      "tafsir-bayan-ul-quran",
+      "ar-tafsir-al-wasit",
+      "tazkirul-quran-en",
+      "bn-tafsir-abu-bakr-zakaria",
+      "bn-tafsir-ahsanul-bayaan",
+      "ar-tafsir-muyassar",
+      "kurd-tafsir-rebar"
+    ],
+    "editions_absent": [],
+    "independent_works": 14,
+    "languages_present": [
+      "ar",
+      "bn",
+      "en",
+      "ku",
+      "ur"
+    ],
+    "languages_absent": []
+  },
+  "pipeline_provenance": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "overview-v2.3",
+    "theme_breaks_version": "sha256:99880ec7b10b53313690f91df9ee8d065519ee698df34b35a3336b5705218f90",
+    "compiled_at": "2026-08-02"
+  },
+  "modern_lens_framing": "The Qurʾan is taken here as fixed, revealed truth; science is our provisional, evolving account of the observable world. What follows notes where the two meet — a contemplation, not a proof. Where the science later shifts, that reflects the limits of our knowledge, not the text.",
+  "references": [
+    {
+      "n": 1,
+      "work_id": "al-tabari",
+      "label": "Jāmiʿ al-Bayān",
+      "author_id": "al-tabari",
+      "author": "Abū Jaʿfar Muḥammad ibn Jarīr al-Ṭabarī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 2,
+      "work_id": "al-baghawi",
+      "label": "Maʿālim al-Tanzīl",
+      "author_id": "al-baghawi",
+      "author": "Abū Muḥammad al-Ḥusayn ibn Masʿūd al-Baghawī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 3,
+      "work_id": "al-qurtubi",
+      "label": "al-Jāmiʿ li-Aḥkām al-Qurʾān",
+      "author_id": "al-qurtubi",
+      "author": "Abū ʿAbd Allāh Muḥammad ibn Aḥmad al-Qurṭubī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 4,
+      "work_id": "ibn-kathir",
+      "label": "Tafsīr Ibn Kathīr",
+      "author_id": "ibn-kathir",
+      "author": "Ismāʿīl ibn ʿUmar ibn Kathīr",
+      "source_language": "ar",
+      "note": "One independent voice. The ar/ur/bn editions are the SAME work — never count as separate corroboration."
+    },
+    {
+      "n": 5,
+      "work_id": "al-saadi",
+      "label": "Taysīr al-Karīm al-Raḥmān",
+      "author_id": "al-saadi",
+      "author": "ʿAbd al-Raḥmān ibn Nāṣir al-Saʿdī",
+      "source_language": "ar",
+      "note": "Russian edition (170) is the SAME work — translate from the Arabic original, and do not count Russian as an independent voice."
+    },
+    {
+      "n": 6,
+      "work_id": "fi-zilal",
+      "label": "Fī Ẓilāl al-Qurʾān",
+      "author_id": "sayyid-qutb",
+      "author": "Sayyid Quṭb Ibrāhīm Ḥusayn",
+      "source_language": "ar",
+      "note": "Original is Arabic, but the API here carries only an URDU edition — translating from Urdu is one step removed from the original. Prefer the Arabic original if the QF Content API offers it."
+    },
+    {
+      "n": 7,
+      "work_id": "maarif",
+      "label": "Maʿārif al-Qurʾān",
+      "author_id": "muhammad-shafi-usmani",
+      "author": "Muftī Muḥammad Shafīʿ ʿUthmānī",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 8,
+      "work_id": "bayan-ul-quran",
+      "label": "Bayān al-Qurʾān",
+      "author_id": "israr-ahmad",
+      "author": "Isrār Aḥmad",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 9,
+      "work_id": "wasit",
+      "label": "al-Tafsīr al-Wasīṭ",
+      "author_id": "tantawi",
+      "author": "Muḥammad Sayyid Ṭanṭāwī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 10,
+      "work_id": "tazkirul",
+      "label": "Tazkīr al-Qurʾān",
+      "author_id": "wahiduddin-khan",
+      "author": "Wahiduddin Khan",
+      "source_language": "ur",
+      "note": "en and ur editions are the same work."
+    },
+    {
+      "n": 11,
+      "work_id": "abu-bakr-zakaria",
+      "label": "Tafsir Abu Bakr Zakaria",
+      "author_id": "abu-bakr-zakaria",
+      "author": "Abū Bakr Muḥammad Zakariyyā",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 12,
+      "work_id": "ahsanul-bayaan",
+      "label": "Ahsanul Bayaan",
+      "author_id": "bayaan-foundation",
+      "author": "Ahsanul Bayaan (Bayaan Foundation)",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 13,
+      "work_id": "muyassar",
+      "label": "al-Tafsīr al-Muyassar",
+      "author_id": "committee-muyassar",
+      "author": "al-Tafsīr al-Muyassar (committee)",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 14,
+      "work_id": "rebar-kurdish",
+      "label": "Rebar Kurdish Tafsir",
+      "author_id": "rebar",
+      "author": "Rebar Kurdish Tafsir",
+      "source_language": "ku",
+      "note": ""
+    }
+  ],
+  "sections": {
+    "92:21": {
+      "verse_range": "21-21",
+      "title": "He Will Be Pleased",
+      "in_short": "The surah closes with a promise: the person who gives generously, guards himself from wrong, and seeks nothing but his Lord's pleasure will, in the end, be well pleased with what he receives.",
+      "claims": [
+        {
+          "id": "92:21#c1",
+          "section_ref": "92:21",
+          "attaches_to": "92:21",
+          "text": "The verse means that the pious, generous person will be satisfied with what Allah gives him in the Hereafter, honour, reward, and Paradise, as recompense for what he spent in this world when he meets his Lord.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "ولسوف يرضى هذا المؤتي ماله في حقوق الله",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "بما يعطيه الله عز وجل في الآخرة من الجنة والكرامة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "سوف يعطيه في الجنة ما يرضي وذلك أنه يعطيه أضعاف ما أنفق",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "indeed those with these characteristics will be pleased",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "بما يعطيه الله من أنواع الكرامات والمثوبات",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "المقصود به الوعد الصادق لهذا التقى بما يزيد فى سروره",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "original_excerpt": "শীঘ্রই আল্লাহ্ এ ব্যক্তিকে এত-কিছু দেবেন যার ফলে সে খুশী হয়ে যাবে",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "original_excerpt": "আল্লাহ তাকে জান্নাতের নিয়ামত এবং সম্মান ও মর্যাদা দান করবেন",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "ولسوف يعطيه الله في الجنة ما يرضى به",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "original_excerpt": "خوای گەورە لە بەهەشتدا ئەوەندە ئەجرو پاداشتی ئەداتەوە",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "unspecified"
+        },
+        {
+          "id": "92:21#c2",
+          "section_ref": "92:21",
+          "attaches_to": "92:21",
+          "text": "Most commentators, and some say there is near consensus among the exegetes, that these closing verses of the surah were revealed about Abu Bakr al-Siddiq (RA). The wording itself, however, is general and applies to anyone who carries these same qualities.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "والأكثر أن السورة نزلت في أبي بكر رضي الله عنه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "there is a consensus among the Qur'anic commentators concerning this... he is the most deserving of the Ummah",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "original_excerpt": "It is confirmed that these verses were revealed about Sayyidna Abu Bakr",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "أكثر المفسرين على أن هذه الآيات الكريمة نزلت فى شأن سيدنا أبو بكر الصديق",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "original_excerpt": "আবুবকর রাদিয়াল্লাহু আনহু-এর জন্যে একটি বিরাট সুসংবাদ",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "original_excerpt": "কেউ কেউ এ ব্যাপারে ইজমা বর্ণনা করেছেন যে এই আয়াতগুলি আবু বাকর রাঃ-এর শানে অবতীর্ণ হয়েছে",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "original_excerpt": "لەسەر (ئەبوبەكری صدیق) هاتۆتە خوارەوە بەڵام گشتیشە",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "92:21#c3",
+          "section_ref": "92:21",
+          "attaches_to": "92:21",
+          "text": "A separate report, transmitted via ʿAtāʾ and Ibn ʿAbbās, says the surah was revealed about Abū al-Daḥdāḥ, who bought a troublesome date-palm from an Anṣārī neighbour and gave it to the Prophet ﷺ in exchange for a palm in Paradise, after the Prophet ﷺ had offered the original owner that very exchange.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "إن السورة نزلت في أبي الدحداح في النخلة التي اشتراها بحائط له",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded by al-Qurṭubī in the passage cited"
+          }
+        },
+        {
+          "id": "92:21#c4",
+          "section_ref": "92:21",
+          "attaches_to": "92:21",
+          "text": "A report through ʿAlī (RA) has the Prophet ﷺ saying, 'May Allah have mercy on Abu Bakr, he married me to his daughter, carried me to the land of migration, and freed Bilal with his own wealth.' When Abu Bakr bought Bilal, Bilal asked whether he had been bought for Abu Bakr's own service or for Allah's sake; Abu Bakr answered 'for Allah's sake' and freed him, illustrating the verse's theme that he sought no favour owed to him in return.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "رحم الله أبا بكر زوجني ابنته... وأعتق بلالا من ماله",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded by al-Qurṭubī in the passage cited"
+          }
+        },
+        {
+          "id": "92:21#c5",
+          "section_ref": "92:21",
+          "attaches_to": "92:21",
+          "text": "Ibn Kathīr relates that ʿUrwah bin Masʿūd, chief of the Thaqīf tribe, told Abu Bakr at Ḥudaybiyyah that he would have accepted the Prophet's ﷺ call had he not owed Abu Bakr a debt of gratitude, at which Abu Bakr grew angry at being credited with any favour, showing that he sought no return even from powerful chiefs, matching the verse's description of one who spends 'seeking only his Lord's Face'.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "By Allah, if I did not owe you a debt, which I have not paid you back for, I would have responded to you",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "Ibn Kathīr, ungraded in the passage"
+          }
+        },
+        {
+          "id": "92:21#c6",
+          "section_ref": "92:21",
+          "attaches_to": "92:21",
+          "text": "A hadith recorded in the Two Ṣaḥīḥs states that whoever equips two mounts in Allah's way will be called to Paradise by its gatekeepers; Abu Bakr asked the Prophet ﷺ whether anyone would be called from every gate, and the Prophet ﷺ replied, 'Yes, and I hope you will be one of them,' cited as an example of the reward and pleasure the verse promises to the generous.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "نَعَمْ، وَأَرْجُو أَنْ تَكُونَ مِنْهُم",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "recorded in the Two Ṣaḥīḥs, per Ibn Kathīr"
+          }
+        },
+        {
+          "id": "92:21#c7",
+          "section_ref": "92:21",
+          "attaches_to": "92:21",
+          "text": "Two related reports say that Abu Bakr's father, seeing him free weak and helpless slaves rather than strong men who could defend him, questioned the wisdom of it; Abu Bakr answered that he sought no worldly benefit but only Allah's pleasure, matching the verse's promise that such a person will himself be pleased.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "original_excerpt": "My purpose of emancipating them is not to expect any benefit in return. My only purpose is to seek the pleasure of Allah.",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "يا بنى، أراك تعتق أناسا ضعفاء... فقال أبو بكر: إنما أريد ما عند الله",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "Mazharī (per Muftī Shafīʿ); Ibn Jarīr (per Ṭanṭāwī), ungraded in the excerpts"
+          }
+        },
+        {
+          "id": "92:21#c8",
+          "section_ref": "92:21",
+          "attaches_to": "92:21",
+          "text": "Sayyid Quṭb describes the promised pleasure as something that will fill the pious person's heart, soul, and every part of his being, leaving him content with his religion, his Lord, his fate, in richness and poverty, ease and hardship, gentleness and harshness alike, free of anxiety, distress, or despair. He calls this contentment the greatest reward there is, one obtainable only by giving wealth and self purely to please Allah.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "اس متقی کے کاسہ دل کو رضا سے بھر دیا جائے گا... خوشی اور غم دونوں پر راضی ہوگا",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "92:21#c9",
+          "section_ref": "92:21",
+          "attaches_to": "92:21",
+          "text": "The pronoun in 'yarḍā' (he will be pleased) is read as pointing both to Allah being pleased and to the person, identified with Abu Bakr, being pleased, echoing the formula 'Allah is pleased with them and they are pleased with Him' (raḍiya Allāhu ʿanhum wa raḍū ʿanhu). A thematic link is also noted with a later verse of the following surah, al-Ḍuḥā.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "یَرْضٰی کی ضمیر کا اشارہ بیک وقت اللہ تعالیٰ کی طرف بھی ہے اور اس شخصیت کی طرف بھی ہے",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar",
+          "original_terms": [
+            {
+              "term": "raḍiya Allāhu ʿanhum wa raḍū ʿanhu",
+              "gloss": "Allah is pleased with them and they are pleased with Him, a Qur'anic formula for mutual satisfaction between Allah and the believers"
+            }
+          ]
+        },
+        {
+          "id": "92:21#c10",
+          "section_ref": "92:21",
+          "attaches_to": "92:21",
+          "text": "The world's order requires both day and night, ease and hardship, for a person's proper development. Difficulty is placed in a person's path to awaken his latent capacities and to spur him towards a brighter future.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "original_excerpt": "hardship befalls the servant of God in order to activate his latent capabilities",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        }
+      ],
+      "essay_html": "<p>The surah's last words are simple: <em>he will be pleased</em>. The commentators take this to mean that the person who gave generously, guarded himself from wrong, and sought nothing from anyone in return will be satisfied with what Allah gives him in the Hereafter, reward, honour, and Paradise itself, as recompense for what he gave up in this world.<sup class=\"ref\">1,2,3,4,5,9,11,12,13,14</sup></p>\n<p>Most commentators hold, and some report it as close to a consensus among the exegetes, that these closing verses were revealed about Abu Bakr al-Siddiq (RA). Even so, the wording is general. It fits anyone who carries the same qualities of giving, guarding himself, and seeking only his Lord.<sup class=\"ref\">3,4,7,9,11,12,14</sup> Al-Qurṭubī also records a separate account: that the surah was revealed about Abū al-Daḥdāḥ, who bought a troublesome date-palm from a neighbour of the Prophet ﷺ and gave it up in exchange for a palm in Paradise.<sup class=\"ref\">3</sup></p>\n<p>Several reports are brought to illustrate the kind of giving the verse has in mind. One, through ʿAlī (RA), has the Prophet ﷺ saying, \"May Allah have mercy on Abu Bakr, he married me to his daughter, carried me to the land of migration, and freed Bilal with his own wealth.\" When Abu Bakr bought Bilal, Bilal asked whether it was for Abu Bakr's own service or for Allah's sake; the answer was \"for Allah's sake,\" and Bilal was freed.<sup class=\"ref\">3</sup> Another account has Abu Bakr's father asking why he freed weak, helpless slaves instead of strong men who might defend him, to which Abu Bakr replied that he sought no worldly return, only Allah's pleasure.<sup class=\"ref\">7,9</sup> Ibn Kathīr (d. 1373) also records that ʿUrwah bin Masʿūd, chief of Thaqīf, once told Abu Bakr he would have accepted the Prophet's ﷺ call but for an unpaid debt of gratitude he owed him, and Abu Bakr grew angry at being credited with any favour at all.<sup class=\"ref\">4</sup> A further hadith, recorded in the Two Ṣaḥīḥs, has the Prophet ﷺ telling Abu Bakr, who asked whether anyone would be called from every gate of Paradise for spending in Allah's way, \"Yes, and I hope you will be one of them.\"<sup class=\"ref\">4</sup></p>\n<p>Sayyid Quṭb (d. 1966) reads the promised pleasure as something that fills the whole person, heart, soul, and every limb, leaving him content with his religion, his Lord, and his fate, in wealth or want, ease or hardship, gentleness or harshness, free of anxiety and despair. He calls this contentment the greatest reward there is, one earned only by giving wealth and self purely to please Allah.<sup class=\"ref\">6</sup></p>\n<p>Isrār Aḥmad (d. 2010) reads the pronoun in \"yarḍā\" as carrying a double sense: Allah becomes pleased, and the person, taken here as Abu Bakr, becomes pleased in turn, echoing the phrase \"Allah is pleased with them and they are pleased with Him\" (raḍiya Allāhu ʿanhum wa raḍū ʿanhu). He also notes a link forward to a later verse of the following surah, al-Ḍuḥā.<sup class=\"ref\">8</sup> Wahiduddin Khan (d. 2021) closes on a broader note: the world needs both day and night, ease and hardship, for a person to grow, since difficulty is what awakens what lies dormant in him and drives him towards a better future.<sup class=\"ref\">10</sup></p>\n<p class=\"close\">Whatever was given up, in wealth or in ease, the surah ends on the same promise: what comes back from Allah will be enough to leave the giver, at the last, well pleased.</p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:5365aee158d06ac5974082d6d5d4324801db38e845bc6813037f4fcd1b1f0d3b",
+        "2": "sha256:3c3e8f912974e44911fe2ec633b6645e0234aed4a95803877c2d4958b5979bf3",
+        "3": "sha256:d55695a1eec4e5aad193ca2a48ce9ca2ccab3fcbf2108fb9c64a0316365add4e",
+        "4": "sha256:762dc66576288578cd70b6150f2d022d2193df473c9a4ac4311ec5aba7d3a730",
+        "5": "sha256:d9a0b3698eeb46040fef7579dc7b1d9e806504ae8fb607e5b5c57faa00ccbc2c",
+        "6": "sha256:e01bd9904eacac9b809b8015cc335e6e3284961a8d453d0c4f2c2c5c6a3e3832",
+        "7": "sha256:031342f5b305e775a796975ba8399dbb35737131a01c383fff048d671f8a7f78",
+        "8": "sha256:f4c302c35d6249cb818891bba433d2793703685ebe79247994c32feb20ecc309",
+        "9": "sha256:a4459338a0e9eeed509692d2b43f9333c5b34e78ac3551dfc7ddbee8088b9303",
+        "10": "sha256:7c0f09491f8153c646135f814cc71738fd303fd2124b0420a3d85034b9a0dd0e",
+        "11": "sha256:5bc65664bb74d58ac848de24281632b6f37955945654788a2ca506070e05c945",
+        "12": "sha256:e4258f35fae8b65e0efb5f999f7fd6d0709940ef6dcb30d1c45d58072fa555f8",
+        "13": "sha256:cdcc7f333526df2270e7fcdaf34bfb65288d7a4ffcf9623e45a0d76c04982414",
+        "14": "sha256:f4377e0e9a9fa7c85c35d7d9bd2d2db00c608c124cdbfff1e2d803a2a9f8cc93"
+      },
+      "flags": {
+        "creedal_stakes": "true",
+        "legal_content": "false",
+        "sensitive_content": "false"
+      },
+      "compiled_at": "2026-08-02"
+    },
+    "92:1": {
+      "verse_range": "1-4",
+      "title": "Night, Day, and the Diverging Paths",
+      "in_short": "Allah swears by the night that covers, the day that shines, and His creation of male and female, then declares that people's efforts and paths in life run in genuinely different directions.",
+      "claims": [
+        {
+          "id": "92:1#c1",
+          "section_ref": "92:1",
+          "attaches_to": "92:1",
+          "text": "The night is described as covering the world in darkness, removing the light of day.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "مقسما بالليل إذا غشَّى النهار بظلمته، فأذهب ضوءه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "يغشى النهار بظلمة فيذهب بضوئه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "أي يغطي",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "يعم الخلق بظلامه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "فيغطى ضياءه، ويذهب نوره",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "original_excerpt": "দিগন্তে ছেয়ে যায়",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "92:1#c2",
+          "section_ref": "92:1",
+          "attaches_to": "92:1",
+          "text": "The verb 'covers' has no stated object in the Arabic. Commentators differ on what is covered: some say the day, some say the earth, some say all creatures, and some say the phrase is left open deliberately to mean everything alike.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "ولم يذكر معه مفعولا للعلم به. وقيل: يغشى النهار. وقيل: الأرض. وقيل: الخلائق. وقيل: يغشى كل شيء بظلمته",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "غشَّى النهار بظلمته",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "وحذف مفعول \"يغشى\" للتعميم",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "92:1#c3",
+          "section_ref": "92:1",
+          "attaches_to": "92:1",
+          "text": "Qatāda held that night and day, sworn by here, are two mighty signs which Allah wraps over creation in turn.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "آيتان عظيمتان يكوّرهما الله على الخلائق",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "92:1#c4",
+          "section_ref": "92:1",
+          "attaches_to": "92:1",
+          "text": "Night's function is described as a time of stillness: every creature settles into its resting place and rests from toil and labour.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "فيسكن كل إلى مأواه ومسكنه، ويستريح العباد من الكد والتعب",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "يسكن الخلق عن الحركة، ويأوى كل إنسان أو حيوان أو مأواه",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "92:1#c5",
+          "section_ref": "92:1",
+          "attaches_to": "92:1",
+          "text": "The Prophet's instruction to Mu'adh to recite this surah, along with al-A'la and al-Shams, in the Isha prayer is noted as background to the surah.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "فَهَلَّا صَلَّيْتَ ب سَبِّحِ اسْمَ رَبِّكَ الاّعْلَى وَالشَّمْسِ وَضُحَـهَا وَالَّيْلِ إِذَا يَغْشَى",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "original_excerpt": "[বুখারী:৭০৫, মুসলিম: ৪৬৫]",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "Ibn Kathir (relayed without grading in this passage)"
+          }
+        },
+        {
+          "id": "92:1#c6",
+          "section_ref": "92:1",
+          "attaches_to": "92:1",
+          "text": "The whole section is read as an instance of a wider pattern in the universe: things exist in pairs (male and female, night and day), which shows the universe is purposeful, and therefore good and bad deeds cannot end the same way.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "original_excerpt": "All things in this world are in pairs",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "92:1#c7",
+          "section_ref": "92:1",
+          "attaches_to": "92:2",
+          "text": "Day is described as becoming manifest and radiant, dispelling the darkness of night that had concealed it.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "أضاء فأنار، وظهر للأبصار",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "بان وظهر من بين الظلمة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "إذا انكشف ووضح وظهر",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "وحق النهار حين ينكشف ويظهر",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "92:1#c8",
+          "section_ref": "92:1",
+          "attaches_to": "92:2",
+          "text": "Day's function is that creatures spread out for their livelihood and pursuits, now that its light has appeared.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "فاستضاءوا بنوره، وانتشروا في مصالحهم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "ويخرج الناس معه ليباشروا أعمالهم المتنوعة",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "92:1#c9",
+          "section_ref": "92:1",
+          "attaches_to": "92:3",
+          "text": "Grammarians differ on the particle 'mā' in 'by His creation of male and female'. Read as a relative pronoun (meaning 'the One who'), the oath falls on Allah Himself, the Creator of male and female. Read as a verbal noun, the oath falls on the act of creating them.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "يجعل \"ما\" بمعنى \"مَنْ\"... أو يكون قسما بخلقه الذكر والأنثى",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "يعني : ومن خلق ، قيل هي \"ما\" المصدرية",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "قال الحسن : معناه والذي خلق الذكر والأنثى فيكون قد أقسم بنفسه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "relay",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "إن كانت \"ما\" موصولة، كان إقسامًا بنفسه الكريمة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "يصح أن تكون \"ما\" هنا موصولة... ويصح أن تكون \"ما\" هنا حرفا مصدريا",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "original_excerpt": "ما মাওসূলা الذي -এর অর্থে",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar",
+          "original_terms": [
+            {
+              "term": "مَا",
+              "gloss": "the particle 'mā', which can act as 'who/that which' (relative) or turn a verb into a noun of action (verbal noun)"
+            }
+          ]
+        },
+        {
+          "id": "92:1#c10",
+          "section_ref": "92:1",
+          "attaches_to": "92:3",
+          "text": "Some say 'male and female' here specifically means Adam and Eve, as the first instance of the pair.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "قال مقاتل والكلبي : يعني آدم وحواء",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "آدم وحواء قاله ابن عباس والحسن والكلبي",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "92:1#c11",
+          "section_ref": "92:1",
+          "attaches_to": "92:3",
+          "text": "Others say 'male and female' means every male and female generally, among mankind and even animals, since Allah created every kind from a male and a female of its own sort; some further restrict it to humans alone, on account of their special standing in obedience to Allah.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "يعني جميع الذكور والإناث من بني آدم والبهائم... وقيل : كل ذكر وأنثى من الآدميين دون البهائم لاختصاصهم بولاية الله وطاعته",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "92:1#c12",
+          "section_ref": "92:1",
+          "attaches_to": "92:3",
+          "text": "A recitation attributed to Ibn Mas'ud and Abu al-Darda drops 'by His creation of' and reads directly 'by the male and the female'. Abu al-Darda said he heard the Prophet ﷺ recite it this way, transmitted through several chains, though he noted others in Damascus tried to press him away from it.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "كذا أقرأنيها رسول الله صلى الله عليه وسلم فوه إلى فيّ، فما زال هؤلاء حتى كادوا يردّونني عنها",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "قال : سمعته يقرأ والليل إذا يغشى والذكر والأنثى",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "وفي قراءة ابن مسعود ، وأبي الدرداء : والذكر والأنثى",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Ṭabarī transmits multiple chains without explicit grading; see following claim for al-Qurṭubī's assessment"
+          }
+        },
+        {
+          "id": "92:1#c13",
+          "section_ref": "92:1",
+          "attaches_to": "92:3",
+          "text": "Al-Qurṭubī judges that even where this narration's chain is sound (as in Ṣaḥīḥ Muslim's version through 'Alqama), it must be set aside because it conflicts with the consensus reading transmitted from Ibn Mas'ūd himself by Ḥamza and 'Āṣim, which the community of Muslims adopted. A single narrator's report, even a reliable one, is overridden when a group's transmission contradicts it, since forgetfulness can affect an individual more easily than a group.",
+          "claim_type": "legal",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "refute",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "كل من هذين الحديثين مردود بخلاف الإجماع له... وما يبنى على رواية واحد إذا حاذاه رواية جماعة تخالفه، أخذ برواية الجماعة",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "al-Qurṭubī notes the chain is acceptable (as in Ṣaḥīḥ Muslim), though he sets the resulting reading aside as contrary to the Companions' consensus"
+          }
+        },
+        {
+          "id": "92:1#c14",
+          "section_ref": "92:1",
+          "attaches_to": "92:3",
+          "text": "Ibn Kathīr links this oath to other Qur'anic statements on Allah's creating in pairs, such as 'We created you in pairs' (78:8) and 'of everything We created a pair' (51:49).",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "This is similar to Allah's saying, وَخَلَقْنَـكُمْ أَزْوَجاً",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "92:1#c15",
+          "section_ref": "92:1",
+          "attaches_to": "92:3",
+          "text": "Al-Saʿdī reflects that the wisdom in pairing male and female in every species meant to endure is that the species is preserved and does not die out; each is drawn to the other by desire, and each is made fitting for the other.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "ليبقى النوع ولا يضمحل، وقاد كلا منهما إلى الآخر بسلسلة الشهوة",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "92:1#c16",
+          "section_ref": "92:1",
+          "attaches_to": "92:3",
+          "text": "Israr Ahmad reads the paired opposites sworn by (night/day, male/female) as showing that apparent contrasts within creation are not flaws but the very mechanism by which the universe's order runs: the day-night cycle sustains animal and plant life, and the male-female difference sustains the continuation of the human line.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "ایک جنس سے تعلق رکھنے والی دو متضاد چیزیں باہم مل کر فطرت کے تقاضوں کی تکمیل کرتی ہیں",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "92:1#c17",
+          "section_ref": "92:1",
+          "attaches_to": "92:3",
+          "text": "Swearing by male and female is read as drawing people's attention to Allah's creation, so that His oneness, power, and greatness become evident to them.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "original_excerpt": "ئەمانە هەمووی سەرنج ڕاكێشانی مرۆڤە بۆ دروستكراوەكانی خوای گەورە",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "92:1#c18",
+          "section_ref": "92:1",
+          "attaches_to": "92:4",
+          "text": "'Your efforts are diverse' is the answer to the oath, the point being sworn about, and by rhetorical design mirrors the opposites just sworn by: as night is opposite to day and male opposite to female, so people's deeds are opposite to one another.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "جواب القسم، والكلام: والليل إذا يغشى إن سعيكم لشتى",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "هذا جواب القسم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "هو جواب القسم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "just as these things that are being sworn by are opposites, likewise that which this swearing is about are opposing things",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric"
+        },
+        {
+          "id": "92:1#c19",
+          "section_ref": "92:1",
+          "attaches_to": "92:4",
+          "text": "The basic meaning is that people's deeds differ: some disbelieve in and disobey their Lord, others believe and obey.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "إن عَمَلَكُمْ لمختلف أيها الناس، لأن منكم الكافر بربه... والمؤمن به",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "92:1#c20",
+          "section_ref": "92:1",
+          "attaches_to": "92:4",
+          "text": "Al-Qurṭubī sets out several possible dimensions in which this diversity may lie: in the deeds themselves (guidance versus misguidance, obedience versus disobedience), in their outcome or recompense (Paradise versus the Fire), or in temperament (mercy versus harshness, patience versus rashness, generosity versus miserliness).",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "أي فمنكم مؤمن وبر، وكافر وفاجر... وقيل: لشتى أي لمختلف الجزاء... وقيل: أي لمختلف الأخلاق",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "92:1#c21",
+          "section_ref": "92:1",
+          "attaches_to": "92:4",
+          "text": "The word 'shattā' (diverse) is explained as coming from the sense of scattering apart, of things pulled far from one another; it is the plural of 'shatīt', on the pattern of 'marīḍ/marḍā' (sick/sick people).",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وشتى واحده شتيت مثل مريض ومرضى... لتباعد ما بين بعضه وبعضه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "وشتى جمع شتيت... من الشتات بمعنى الابتعاد والافتراق",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "شَتَّى",
+              "gloss": "diverse, scattered apart from each other"
+            }
+          ]
+        },
+        {
+          "id": "92:1#c22",
+          "section_ref": "92:1",
+          "attaches_to": "92:4",
+          "text": "A saying attributed to the Prophet ﷺ compares people to traders setting out each morning: some deal well and free themselves, while others destroy themselves through their dealing.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "كل الناس يغدو فبائع نفسه فمعتقها أو موبقها",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "الناس غاديان: فمبتاع نفسه فمعتقها، وبائع نفسه فموبقها",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "الناس غاديان: فمبتاع نفسه فمعتقها، وبائع نفسه فموبقها",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "relay",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "کُلُّ النَّاسِ یَغْدُوْ فَبَائِِعٌ نَفْسَہٗ فَمُعْتِقُھَا اَوْ مُوْبِقُھَا",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "original_excerpt": "প্রত্যেক মানুষ সকাল বেলায় উঠে নিজেকে ব্যবসায়ে নিয়োজিত করে",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "identified as recorded in Ṣaḥīḥ Muslim by source [11]"
+          }
+        },
+        {
+          "id": "92:1#c23",
+          "section_ref": "92:1",
+          "attaches_to": "92:4",
+          "text": "Al-Saʿdī expands that the diversity of striving turns on the nature and extent of the deeds themselves, the energy put into them, and above all on the goal intended: whether it is the enduring and exalted Face of Allah, so that the effort and its benefit endure, or a fleeting and perishing goal, so that the effort perishes along with it.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "بحسب الغاية المقصودة بتلك الأعمال، هل هو وجه الله الأعلى الباقي؟",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "92:1#c24",
+          "section_ref": "92:1",
+          "attaches_to": "92:4",
+          "text": "Muftī Muḥammad Shafīʿ links this verse to 'you labour constantly toward your Lord' (84:6): mankind by nature exerts effort toward some goal, but the goals and results differ, and the Qur'an goes on to divide humankind into two opposing groups, each marked by three qualities.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "original_excerpt": "man, by his nature, is used to making efforts for one objective or another. But the nature and the results of these efforts are different",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "92:1#c25",
+          "section_ref": "92:1",
+          "attaches_to": "92:4",
+          "text": "Sayyid Quṭb reads the diversity of effort as spanning several dimensions at once: in essential nature, in cause and motive, in direction, and in outcome; yet despite this variety of temperament, humanity still divides into two opposing ranks around a shared common factor.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "تمہاری مساعی مختلف ہیں، اپنی حقیقت کے اعتبار سے بھی... اسباب اور محرکات کے اعتبار سے بھی مختلف ہیں",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "92:1#c26",
+          "section_ref": "92:1",
+          "attaches_to": "92:4",
+          "text": "Wahiduddin Khan reads this verse as showing that Allah's relationship to His servants is not only that of a ruler but also of a supporter: He smooths the path of those who wish to draw near to Him, while leaving those who choose arrogance to carry on in that way.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "original_excerpt": "He smooths the path of those of His subjects who want to draw near to Him",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        }
+      ],
+      "essay_html": "<p>The surah opens with a triple oath: by the night when it covers, by the day when it shines, and by Allah's creation of male and female. The point the oath is building to comes in verse four: people's efforts run in genuinely different directions.<sup class=\"ref\">1,3,9</sup></p>\n<p>Night is described as covering the world in darkness, taking away the light of day.<sup class=\"ref\">1,2,3,5,9,13,8,11,12,14</sup> The verb 'covers' is left without a stated object in the Arabic, and commentators differ on what exactly is covered, whether the day, the earth, every creature, or simply everything alike.<sup class=\"ref\">3,1,9</sup> Qatāda, as reported by al-Ṭabarī (d. 923 CE), called night and day two mighty signs which Allah wraps over creation in turn.<sup class=\"ref\">1</sup> Al-Saʿdī (d. 1957 CE) and Ṭanṭāwī (d. 2010 CE) add that night's purpose is stillness: creatures settle into their resting places and rest from toil.<sup class=\"ref\">5,9</sup></p>\n<p>Day, in turn, is when light becomes manifest and the darkness of night is dispelled.<sup class=\"ref\">1,2,3,5,9,13,8,11,12,14</sup> Its purpose is that creatures spread out again to their livelihoods and pursuits.<sup class=\"ref\">5,9</sup></p>\n<p>The third oath, by Allah's creation of male and female, carries a grammatical fork that shapes its meaning. If the particle used is read as 'the One who', the oath falls on Allah Himself as Creator, a reading al-Ḥasan gave explicitly. If it is read as marking the act itself, the oath falls on the act of creating male and female.<sup class=\"ref\">1,2,3,5,9,12</sup> On who is meant by 'male and female', some say specifically Adam and Eve, as the pair; others take it generally, to every male and female among mankind, and some extend it to animals too, since every kind is created from a male and female of its own sort, though some restrict it to humans alone on account of their standing in obedience.<sup class=\"ref\">2,3</sup> Al-Ṭabarī records, through several transmission chains, that Ibn Mas'ūd and Abū al-Dardā' recited this verse without the phrase 'His creation of', reading straight to 'by the male and the female', with Abū al-Dardā' saying he heard it so from the Prophet ﷺ himself.<sup class=\"ref\">1,3</sup> Al-Qurṭubī (d. 1273 CE), while granting the chain of this narration is sound, as it appears in Ṣaḥīḥ Muslim, judges that it must be set aside because it conflicts with the consensus reading transmitted from Ibn Mas'ūd by Ḥamza and 'Āṣim, which the community adopted; a single report, however reliable, yields to what a group transmits.<sup class=\"ref\">3</sup> Ibn Kathīr (d. 1373 CE) connects this oath to other verses on creation in pairs, and al-Saʿdī reflects on the wisdom in it: pairing preserves every species that is meant to endure, each drawn to the other by desire and fitted for the other.<sup class=\"ref\">4,5</sup> Isrār Aḥmad (d. 2010 CE) reads the paired opposites of this passage, night against day, male against female, as showing that contrast itself is how the universe's order runs, not a flaw in it.<sup class=\"ref\">8</sup> Rebar reads the oath as drawing attention to Allah's creation so that His oneness and power become evident.<sup class=\"ref\">14</sup> Wahiduddin Khan (d. 2021 CE) takes the pairing throughout the section, night and day, male and female, as a sign that the universe is purposeful, so good and bad deeds cannot end the same way.<sup class=\"ref\">10</sup></p>\n<p>The declaration 'your efforts are diverse' answers the oath, and its shape mirrors what came before: as night opposes day and male opposes female, so people's deeds oppose one another.<sup class=\"ref\">1,3,9,4</sup> Al-Ṭabarī explains this plainly, some disbelieve and disobey, others believe and obey.<sup class=\"ref\">1</sup> Al-Qurṭubī sets out where this diversity may lie: in the deeds themselves, in their outcome or reward, or in temperament, mercy against harshness, patience against rashness, generosity against miserliness.<sup class=\"ref\">3</sup> He also notes that 'shattā' (diverse) carries the sense of things scattered far apart from one another.<sup class=\"ref\">3,9</sup> Several sources record a saying attributed to the Prophet ﷺ, comparing people to traders who go out each morning: some deal well and free themselves, others destroy themselves through their dealing, a saying identified as recorded in Ṣaḥīḥ Muslim.<sup class=\"ref\">2,3,9,8,11</sup> Al-Saʿdī expands that the difference in striving turns on the nature and extent of deeds, the energy given to them, and above all on the goal intended, whether the enduring Face of Allah, so the effort's benefit endures, or a fleeting goal that perishes with it.<sup class=\"ref\">5</sup> Muftī Muḥammad Shafīʿ (d. 1976 CE) links the verse to 'you labour toward your Lord' (84:6), noting that mankind by nature exerts effort, though goals and results differ, and that the Qur'an goes on to divide people into two groups, each marked by three qualities.<sup class=\"ref\">7</sup> Sayyid Quṭb (d. 1966 CE) reads the diversity as spanning nature, cause, direction, and outcome all at once, yet finds that humanity still settles into two opposing camps around one shared line.<sup class=\"ref\">6</sup> Wahiduddin Khan reads the verse as revealing Allah not only as a ruler but as a supporter, smoothing the path of those who seek Him while leaving the arrogant to their own way.<sup class=\"ref\">10</sup></p>\n<p class=\"close\">The night that hides, the day that shows, and the two sexes that make life continue: all are cited as pairs of opposites, and against that backdrop the verse states, as its answer, that human effort itself splits the same way, into paths that pull apart from one another.<sup class=\"ref\">1,3,4,9</sup></p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:8aa45b798a4fc9e247eb54a5ee5d98878b6746d6a87b27a213c97a407e21eb3f",
+        "2": "sha256:401a5865881807647b289245d66e58573179d26dacb9e1505640c268787bcdde",
+        "3": "sha256:1d8aa941b76d99ff3c7198042b8594c828cd9da857492363510f8cefff44e090",
+        "4": "sha256:7eb3c5678f8f3cd2e4153c89e9bf14a72fa7d405784612ee600b34f29c9eb3bf",
+        "5": "sha256:93db64c7e9b96ad469373b237ea2f9fbb55af367f26b4f60c8dfab14de2e6f1d",
+        "6": "sha256:1eab7a13e37693301328ccf189656339ed5e735645fc9f77dee13a1e803e1832",
+        "7": "sha256:4f7b15df60232fbc11041fdc27b34e964cf96ba8b36b2af3692f6e3a1fdbae6e",
+        "8": "sha256:e6d92b6dc034cf2fc4548e95e39140a9752112e9dd0a6aaf2e1ae26070cdc17b",
+        "9": "sha256:5181ad8256bb973ab647ca67314eecd4090007ca4ad68b97ac68bc42ab39bae3",
+        "10": "sha256:f7e6e300bb4d3ed94d65e362ed2ec10ab478e69dcd076b54584baabb02befe54",
+        "11": "sha256:1613ff1145a1ac84a2c07c7c49e5806cb31808f80eba361d5b10d9b636600fad",
+        "12": "sha256:70df6b3a0acd3bf544acf8ddf76bc565459cc66dddf55c0b21e6c0ada0411548",
+        "13": "sha256:83b00fd22162753a554dadccc3623b7e08ecf1704e6395da695865ce59247e8c",
+        "14": "sha256:ff70a6942d6de757e1664ef242e6808154ad38c817063fe5136c18ca58396059"
+      },
+      "flags": {
+        "creedal_stakes": "true",
+        "legal_content": "false",
+        "sensitive_content": "false"
+      },
+      "compiled_at": "2026-08-02"
+    }
+  }
+}

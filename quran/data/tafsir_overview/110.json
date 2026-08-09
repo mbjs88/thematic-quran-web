@@ -1,0 +1,1743 @@
+{
+  "surah": 110,
+  "name": "",
+  "coverage": {
+    "editions_present": [
+      "ar-tafsir-al-tabari",
+      "ar-tafsir-al-baghawi",
+      "ar-tafseer-al-qurtubi",
+      "en-tafisr-ibn-kathir",
+      "ar-tafseer-al-saddi",
+      "tafsir-fe-zalul-quran-syed-qatab",
+      "en-tafsir-maarif-ul-quran",
+      "tafsir-bayan-ul-quran",
+      "ar-tafsir-al-wasit",
+      "tazkirul-quran-en",
+      "bn-tafsir-abu-bakr-zakaria",
+      "bn-tafsir-ahsanul-bayaan",
+      "ar-tafsir-muyassar",
+      "kurd-tafsir-rebar"
+    ],
+    "editions_absent": [],
+    "independent_works": 14,
+    "languages_present": [
+      "ar",
+      "bn",
+      "en",
+      "ku",
+      "ur"
+    ],
+    "languages_absent": []
+  },
+  "pipeline_provenance": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "overview-v2.3",
+    "theme_breaks_version": "sha256:99880ec7b10b53313690f91df9ee8d065519ee698df34b35a3336b5705218f90",
+    "compiled_at": "2026-08-02"
+  },
+  "modern_lens_framing": "The Qurʾan is taken here as fixed, revealed truth; science is our provisional, evolving account of the observable world. What follows notes where the two meet — a contemplation, not a proof. Where the science later shifts, that reflects the limits of our knowledge, not the text.",
+  "references": [
+    {
+      "n": 1,
+      "work_id": "al-tabari",
+      "label": "Jāmiʿ al-Bayān",
+      "author_id": "al-tabari",
+      "author": "Abū Jaʿfar Muḥammad ibn Jarīr al-Ṭabarī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 2,
+      "work_id": "al-baghawi",
+      "label": "Maʿālim al-Tanzīl",
+      "author_id": "al-baghawi",
+      "author": "Abū Muḥammad al-Ḥusayn ibn Masʿūd al-Baghawī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 3,
+      "work_id": "al-qurtubi",
+      "label": "al-Jāmiʿ li-Aḥkām al-Qurʾān",
+      "author_id": "al-qurtubi",
+      "author": "Abū ʿAbd Allāh Muḥammad ibn Aḥmad al-Qurṭubī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 4,
+      "work_id": "ibn-kathir",
+      "label": "Tafsīr Ibn Kathīr",
+      "author_id": "ibn-kathir",
+      "author": "Ismāʿīl ibn ʿUmar ibn Kathīr",
+      "source_language": "ar",
+      "note": "One independent voice. The ar/ur/bn editions are the SAME work — never count as separate corroboration."
+    },
+    {
+      "n": 5,
+      "work_id": "al-saadi",
+      "label": "Taysīr al-Karīm al-Raḥmān",
+      "author_id": "al-saadi",
+      "author": "ʿAbd al-Raḥmān ibn Nāṣir al-Saʿdī",
+      "source_language": "ar",
+      "note": "Russian edition (170) is the SAME work — translate from the Arabic original, and do not count Russian as an independent voice."
+    },
+    {
+      "n": 6,
+      "work_id": "fi-zilal",
+      "label": "Fī Ẓilāl al-Qurʾān",
+      "author_id": "sayyid-qutb",
+      "author": "Sayyid Quṭb Ibrāhīm Ḥusayn",
+      "source_language": "ar",
+      "note": "Original is Arabic, but the API here carries only an URDU edition — translating from Urdu is one step removed from the original. Prefer the Arabic original if the QF Content API offers it."
+    },
+    {
+      "n": 7,
+      "work_id": "maarif",
+      "label": "Maʿārif al-Qurʾān",
+      "author_id": "muhammad-shafi-usmani",
+      "author": "Muftī Muḥammad Shafīʿ ʿUthmānī",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 8,
+      "work_id": "bayan-ul-quran",
+      "label": "Bayān al-Qurʾān",
+      "author_id": "israr-ahmad",
+      "author": "Isrār Aḥmad",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 9,
+      "work_id": "wasit",
+      "label": "al-Tafsīr al-Wasīṭ",
+      "author_id": "tantawi",
+      "author": "Muḥammad Sayyid Ṭanṭāwī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 10,
+      "work_id": "tazkirul",
+      "label": "Tazkīr al-Qurʾān",
+      "author_id": "wahiduddin-khan",
+      "author": "Wahiduddin Khan",
+      "source_language": "ur",
+      "note": "en and ur editions are the same work."
+    },
+    {
+      "n": 11,
+      "work_id": "abu-bakr-zakaria",
+      "label": "Tafsir Abu Bakr Zakaria",
+      "author_id": "abu-bakr-zakaria",
+      "author": "Abū Bakr Muḥammad Zakariyyā",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 12,
+      "work_id": "ahsanul-bayaan",
+      "label": "Ahsanul Bayaan",
+      "author_id": "bayaan-foundation",
+      "author": "Ahsanul Bayaan (Bayaan Foundation)",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 13,
+      "work_id": "muyassar",
+      "label": "al-Tafsīr al-Muyassar",
+      "author_id": "committee-muyassar",
+      "author": "al-Tafsīr al-Muyassar (committee)",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 14,
+      "work_id": "rebar-kurdish",
+      "label": "Rebar Kurdish Tafsir",
+      "author_id": "rebar",
+      "author": "Rebar Kurdish Tafsir",
+      "source_language": "ku",
+      "note": ""
+    }
+  ],
+  "sections": {
+    "110:3": {
+      "verse_range": "3-3",
+      "title": "Glorify, and Seek Forgiveness",
+      "in_short": "Once God's help and the mass conversions promised in the surah arrive, the Prophet ﷺ is told to glorify God, thank Him, and seek forgiveness — a command commentators read partly as an act of gratitude for victory, and partly, through Ibn ʿAbbās's famous reading, as a hidden sign that his life on earth was drawing to its close.",
+      "claims": [
+        {
+          "id": "110:3#c1",
+          "section_ref": "110:3",
+          "attaches_to": "110:3",
+          "text": "The plain command is to glorify and praise God (declare Him free of every imperfection) and to ask His forgiveness, understood as an act of gratitude for the victory and conquest He has granted.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "فسبح ربك وعظمه بحمده وشكره, على ما أنجز لك من وعده",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "حامدا له على ما آتاك من الظفر والفتح",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "فداوم وواظب على تسبيح ربك",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "relay",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "unspecified"
+        },
+        {
+          "id": "110:3#c2",
+          "section_ref": "110:3",
+          "attaches_to": "110:3",
+          "text": "One report attributes to Ibn ʿAbbās the reading that 'fasabbih' here can mean 'pray' (ṣalli).",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وقيل: معنى سبح: صل",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "سبح",
+              "gloss": "glorify / (on this reading) pray"
+            }
+          ]
+        },
+        {
+          "id": "110:3#c3",
+          "section_ref": "110:3",
+          "attaches_to": "110:3",
+          "text": "Two readings of 'fasabbih bihamdi' are recorded: thanksgiving (shukr) for the victory, which is said to be the more apparent reading, or declaring God's transcendence (tanzīh) alongside gratitude.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "والأول أظهر",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "110:3#c4",
+          "section_ref": "110:3",
+          "attaches_to": "110:3",
+          "text": "Against the first guess of the Badr veterans that this verse simply commands thanks upon future victories, Ibn ʿAbbās told ʿUmar that the whole surah, and this command in particular, announced the approaching end of the Prophet's ﷺ life; ʿUmar affirmed he knew nothing more of it than that.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "هذا حديث حسن صحيح",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "al-Bukhārī (per Ibn Kathīr); also recorded by al-Tirmidhī who called it ḥasan ṣaḥīḥ (per al-Qurṭubī)"
+          }
+        },
+        {
+          "id": "110:3#c5",
+          "section_ref": "110:3",
+          "attaches_to": "110:3",
+          "text": "Mujāhid glossed 'wa-staghfirhu innahu kāna tawwāban' simply as: know that you will die at that point.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "اعلم أنك ستموت عند ذلك",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Ṭabarī (exegetical opinion, not a hadith)"
+          }
+        },
+        {
+          "id": "110:3#c6",
+          "section_ref": "110:3",
+          "attaches_to": "110:3",
+          "text": "Al-Ḥasan explained that since the Prophet's death was near, he was commanded to glorify God and seek forgiveness so that his life would be sealed with an increase of good deeds.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "أعلم أنه قد اقترب أجله فأمر بالتسبيح والتوبة",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "110:3#c7",
+          "section_ref": "110:3",
+          "attaches_to": "110:3",
+          "text": "After this surah was revealed, the Prophet ﷺ frequently said in his bowing and prostration, and (per another account) after every prayer, 'Glory be to You, our Lord, and praise be to You, O Allah forgive me' — deliberately living out this verse.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "يتأول القرآن",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "relay",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "al-Bukhārī and others (per Ibn Kathīr)"
+          }
+        },
+        {
+          "id": "110:3#c8",
+          "section_ref": "110:3",
+          "attaches_to": "110:3",
+          "text": "Another report has the Prophet ﷺ, towards the end of his life, often saying 'Glory be to Allah and praise be to Him, I seek Allah's forgiveness and repent to Him,' explaining that his Lord had told him he would see a sign in his community and had commanded him, on seeing it, to glorify and seek forgiveness — and that this surah was that very sign.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "Muslim (per Ibn Kathīr)"
+          }
+        },
+        {
+          "id": "110:3#c9",
+          "section_ref": "110:3",
+          "attaches_to": "110:3",
+          "text": "Umm Salamah reported that after this revelation the Prophet ﷺ said 'Glory be to Allah and praise be to Him' whenever he stood, sat, came, or went, saying 'I have been commanded to,' and then reciting the surah as his proof.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وفي غير الصحيح",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Qurṭubī notes it is transmitted outside the two Ṣaḥīḥ collections"
+          }
+        },
+        {
+          "id": "110:3#c10",
+          "section_ref": "110:3",
+          "attaches_to": "110:3",
+          "text": "Companions described the Prophet's ﷺ worship intensifying sharply after this revelation: Abū Hurayrah said he exerted himself until his feet swelled, and ʿIkrimah said he was never more intensely focused on the Hereafter than after this surah came down.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "اجتهد النبي بعد نزولها، حتى تورمت قدماه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Qurṭubī / Muftī Shafīʿ"
+          }
+        },
+        {
+          "id": "110:3#c11",
+          "section_ref": "110:3",
+          "attaches_to": "110:3",
+          "text": "Narrative accounts describe the surah being recited to the companions: joy from Abū Bakr, ʿUmar, and Saʿd, but weeping from al-ʿAbbās who understood it as announcing the Prophet's death, which the Prophet confirmed, living some sixty days more. A separate account places the revelation at Minā near the end of the Farewell Pilgrimage, with the same weeping and the same confirmation.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "نعيت إليك نفسك . قال : إنه لكما تقول",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Qurṭubī, citing Muqātil and an anonymous report without full chains"
+          }
+        },
+        {
+          "id": "110:3#c12",
+          "section_ref": "110:3",
+          "attaches_to": "110:3",
+          "text": "Reports differ on how long the Prophet ﷺ lived after this surah was revealed: two years according to Qatādah and Muqātil; around eighty days according to Ibn ʿUmar's tracking of subsequent revelations; and sixty days according to another account from Muqātil.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "والله ما عاش, بعد ذلك إلا قليلا سنتين",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "فعاش بعدها ثمانين يوما",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "differing narrations as presented by al-Ṭabarī, al-Baghawī, and al-Qurṭubī"
+          }
+        },
+        {
+          "id": "110:3#c13",
+          "section_ref": "110:3",
+          "attaches_to": "110:3",
+          "text": "Al-Saʿdī draws two indications from the command: first, that continued gratitude through glorification and seeking forgiveness is tied to the continuation and increase of divine support for the religion, a pattern he says was fulfilled in the era of the rightly-guided caliphs; second, that the command itself signals the Prophet's appointed term had drawn near, since periods of excellence, such as prayer or pilgrimage, are customarily closed with seeking forgiveness, so he was being told to prepare to meet his Lord.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "فأمر الله لرسوله بالحمد والاستغفار في هذه الحال، إشارة إلى أن أجله قد انتهى",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "110:3#c14",
+          "section_ref": "110:3",
+          "attaches_to": "110:3",
+          "text": "Commentators address why the sinless Prophet ﷺ would need to seek forgiveness: some say he counted his own shortcomings, measured against the scale of God's blessings on him, as faults needing pardon; others say the command is pure worship rather than a remedy for actual sin; others read it as an instructive reminder to his community not to grow complacent and abandon istighfār; and some read 'wa-staghfirhu' as 'seek forgiveness for your community.'",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "فماذا يغفر للنبي حتى يؤمر بالاستغفار",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "110:3#c15",
+          "section_ref": "110:3",
+          "attaches_to": "110:3",
+          "text": "Sayyid Quṭb reads the command to seek forgiveness at the moment of triumph as guarding against a subtle pride (ghurūr) that can settle into a victorious people's hearts, and as a remedy for the strain built up during a long struggle; he adds that human praise of God is always short of what His limitless favours deserve, so istighfār covers that shortfall too. He compares this posture to the humility of Yūsuf and Sulaymān عليهما السلام at the height of their power, and to the Prophet's own humble, bowed entry into Makkah despite conquering it.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "110:3#c16",
+          "section_ref": "110:3",
+          "attaches_to": "110:3",
+          "text": "Wahiduddin Khan reads the passage as teaching that true victory should deepen a believer's humility rather than pride, leading him to attribute even his own achievements to God's grace and to seek pardon even for actions that seem right.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "110:3#c17",
+          "section_ref": "110:3",
+          "attaches_to": "110:3",
+          "text": "Grammatically, 'fasabbih' is the jawāb (response clause) of the conditional 'idhā' opening the surah: once the victory, conquest, and mass entry of people into Islam described earlier have occurred, continual glorification and seeking of forgiveness, for oneself and for the believers, is the required response.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "وقوله ( فَسَبِّحْ ) جواب إذا",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "110:3#c18",
+          "section_ref": "110:3",
+          "attaches_to": "110:3",
+          "text": "Isrār Aḥmad notes that though hardships, preaching, and battles still lay ahead when the surah speaks, once the mission succeeded and God's religion prevailed, the Prophet ﷺ was to be wholly absorbed in glorifying and praising his Lord; he observes the same instructional pattern closes Sūrat al-Inshirāḥ.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "110:3#c19",
+          "section_ref": "110:3",
+          "attaches_to": "110:3",
+          "text": "On 'innahu kāna tawwāban': commentators explain that God is ever-turning in acceptance towards those who glorify Him and seek His forgiveness, accepting their repentance and showing them mercy.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "أى : كثير القبول لتوبة عباده التائبين إليه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "relay",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "إنه كان كثير التوبة على المسبحين والمستغفرين",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "unspecified",
+          "original_terms": [
+            {
+              "term": "تَوَّاب",
+              "gloss": "ever-turning in acceptance / One who repeatedly accepts repentance"
+            }
+          ]
+        }
+      ],
+      "essay_html": "<p>The plain sense of the verse is a double command: glorify God, thanking Him for the victory and conquest just described, and ask His forgiveness. Some read \"fasabbih\" simply as \"pray\"; others weigh whether it means thanksgiving for the victory, said to be the clearer reading, or declaring God free of every imperfection alongside that gratitude.<sup class=\"ref\">1,2,3,9,13,14</sup> Grammatically, the command is the required response to everything the surah has just described: once the help, the conquest, and the crowds entering Islam have all arrived, this is what must follow.<sup class=\"ref\">9</sup></p><p>The most striking reading of this verse comes from a well-known exchange. ʿUmar (d. 644 CE) once asked a gathering of Badr veterans what this surah meant. Most said it was simply a command to give thanks whenever victory came. Ibn ʿAbbās (d. 687 CE), still young among them, said instead that the whole surah was announcing the Prophet's ﷺ approaching death, and that this closing command to glorify and seek forgiveness was his preparation for it. ʿUmar said he knew nothing more of the surah than that.<sup class=\"ref\">1,2,3,4,11</sup> Mujāhid's brief comment on the verse makes the same point directly: \"know that you will die at that point.\"<sup class=\"ref\">1</sup> Al-Ḥasan explained the logic of it: since the Prophet's term was near, he was told to glorify and repent so that his life would close with an increase of good deeds.<sup class=\"ref\">2</sup></p><p>Several reports describe how the Prophet ﷺ lived out this instruction. ʿĀ'ishah رضي الله عنها said that after this surah came down, he frequently said in his bowing and prostration, and after every prayer, \"Glory be to You, our Lord, and praise be to You, O Allah forgive me.\"<sup class=\"ref\">1,2,3,4,5,7,9,11</sup> Another report through Masrūq has him saying, towards the end of his life, \"Glory be to Allah and praise be to Him, I seek Allah's forgiveness and repent to Him,\" explaining that his Lord had told him he would see a sign in his community, and that this surah was that sign.<sup class=\"ref\">1,2,4,11</sup> Umm Salamah رضي الله عنها reported something similar, though this version is noted as transmitted outside the two Ṣaḥīḥ collections.<sup class=\"ref\">1,3,7,11</sup> Companions also described his worship visibly intensifying after this revelation: Abū Hurayrah رضي الله عنه said his feet swelled from standing in prayer, and ʿIkrimah said he was never more focused on the Hereafter than in this period.<sup class=\"ref\">3,7</sup></p><p>Narrative accounts, without full chains, add colour to the same theme. When the surah was recited, Abū Bakr, ʿUmar, and Saʿd رضي الله عنهم rejoiced, but al-ʿAbbās رضي الله عنه wept, understanding it as news of the Prophet's death, which the Prophet confirmed, living some sixty days more. A separate account places this same weeping and confirmation at Minā, near the end of the Farewell Pilgrimage.<sup class=\"ref\">3</sup> Reports on exactly how long he lived afterward differ: two years according to Qatādah and Muqātil, around eighty days by Ibn ʿUmar's count of subsequent revelations, or sixty days in another account.<sup class=\"ref\">1,2,3</sup></p><p>Al-Saʿdī (d. 1957 CE) draws two lessons from the command. Gratitude, expressed through glorification and forgiveness-seeking, is tied to the continuation and increase of God's support for the religion, a pattern he sees fulfilled under the rightly-guided caliphs. And the command itself is a signal: periods of excellence, like prayer or pilgrimage, are customarily closed with seeking forgiveness, so this closing of the mission meant the Prophet's term had come and he should prepare to meet his Lord.<sup class=\"ref\">5</sup></p><p>One question commentators raise: why would a sinless Prophet need forgiveness at all? Answers vary. Some say he measured his own shortcomings against the scale of God's blessings on him and counted them as faults. Others say the istighfār here is pure worship, not a remedy for sin. Others read it as a lesson for his community, so they would not grow complacent. And some read the word as \"seek forgiveness for your community.\"<sup class=\"ref\">3</sup></p><p>Sayyid Quṭb (d. 1966 CE) reads the timing of the command closely. Seeking forgiveness at the very moment of triumph, he says, guards against a subtle pride that can settle into a victorious people's hearts, and eases the strain built up across a long struggle. He adds that human praise of God is always short of what His limitless favours deserve, so istighfār covers that gap too. He points to Yūsuf and Sulaymān عليهما السلام, humble at the height of their power, and to the Prophet's own bowed, humble entry into Makkah despite having conquered it.<sup class=\"ref\">6</sup> Wahiduddin Khan (d. 2021 CE) makes a related point more simply: true victory should deepen humility, not pride, leading a believer to attribute even his own achievements to God's grace.<sup class=\"ref\">10</sup> Isrār Aḥmad (d. 2010 CE) notes that once the mission had succeeded, the Prophet ﷺ was to be wholly absorbed in glorifying his Lord, just as Sūrat al-Inshirāḥ closes in the same pattern.<sup class=\"ref\">8</sup></p><p>On God's description as tawwāb, ever-turning in acceptance, commentators say this means He repeatedly accepts the repentance of those who glorify Him and seek His forgiveness, and shows them mercy.<sup class=\"ref\">3,9,13</sup></p><p class=\"close\">A command that on its surface asks only for gratitude was heard by those closest to the Prophet ﷺ as something graver: that the mission was complete, and the one who had carried it was being told, gently, to prepare to meet his Lord.</p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11"
+      ],
+      "source_hashes": {
+        "1": "sha256:623e55d3baddf046c4a28dc2958748d6734fee7f019ed4289ee838ff398b75e5",
+        "2": "sha256:2132103e064641f86bf15b029cf22083795d5a169e04b51adb0dfe7657a242ca",
+        "3": "sha256:21e91f07a50814648a66fa82ec237d3c4b2c08da27cca205ea5f5da4e8d3b694",
+        "4": "sha256:58ef04999a1b838260e482a2cba61b1ce1d411feb5080fb6b36214513984ee3d",
+        "5": "sha256:326788cd605a558c7c4de82910ba183b1448efdb784691771e50d03f2bed533e",
+        "6": "sha256:b53135e03326efa889d5c429eebb455b88a56b74ebbb7dc9139c028e03346abd",
+        "7": "sha256:d2f7ab9ba2dd87376e20505af62467dda1811a7a0b8375251a25ab17a2183b01",
+        "8": "sha256:97eb83188a96105fcdab8036f334759071677c6f72bac56f381a09142f9d483c",
+        "9": "sha256:3dc14e28481512a3861232c0ec087081cc124d4d547bdc8f12b9164608861910",
+        "10": "sha256:5a798efcdaa65b5c1c4e8b13118846252f56e30bc5c4006ec05cecd9a8d1dd6e",
+        "11": "sha256:23ca2c5d0cce394aa54c7ed7293158df888d9a7765d1a1535d9a90f0b84d4640",
+        "12": "sha256:9f00279b60b51b29332524b88fb5b004550abd60089160d0f0bbb80329c5c1b8",
+        "13": "sha256:482891293100aa24cf1d9a21b816695916a7d68301a5ec4d8944b73e59e63ba1",
+        "14": "sha256:2d1b7123c3f0c925da2e7f8ba077f3cf12574489a8bd327854187c782659535e"
+      },
+      "flags": {
+        "creedal_stakes": true,
+        "legal_content": false,
+        "sensitive_content": true
+      },
+      "compiled_at": "2026-08-02"
+    },
+    "110:1": {
+      "verse_range": "1-2",
+      "title": "God's Help and the Conquest",
+      "in_short": "This opens Surat al-Nasr, understood by the Companions as the Prophet's ﷺ farewell sign: when God's help and the Conquest (of Mecca) came, and people entered Islam tribe by tribe rather than one by one.",
+      "claims": [
+        {
+          "id": "110:1#c1",
+          "section_ref": "110:1",
+          "attaches_to": "110:1",
+          "text": "The surah is Medinan, has three verses, and is also known as Surat al-Tawdi' (the Farewell), because it was taken as a sign that the Prophet's ﷺ death was near.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وهي مدنية بإجماع وتسمى سورة (التوديع)",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "original_terms": [
+            {
+              "term": "al-Tawdi'",
+              "gloss": "the Farewell"
+            }
+          ]
+        },
+        {
+          "id": "110:1#c2",
+          "section_ref": "110:1",
+          "attaches_to": "110:1",
+          "text": "Ibn Abbas is reported, in Sahih Muslim, to have identified this as the last complete surah revealed to the Prophet ﷺ.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "reported as in Sahih Muslim (per Qurtubi, Zakaria)"
+          }
+        },
+        {
+          "id": "110:1#c3",
+          "section_ref": "110:1",
+          "attaches_to": "110:1",
+          "text": "Scholars differ on exactly when it was revealed. Some reports place it at the Farewell Pilgrimage, shortly before 'this day I have perfected your religion for you' (5:3), after which the Prophet lived only about eighty more days. Another report says it was recited on returning from the expedition of Khaybar, before the Conquest of Mecca, and Qatadah said the Prophet lived two more years after its revelation.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "relay",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "110:1#c4",
+          "section_ref": "110:1",
+          "attaches_to": "110:1",
+          "text": "Al-Nasr (help) comes from the same root as 'the rain aided the earth' (nasara al-ghaythu al-arda) — helping something come to fruition. Here it means Allah's aid to the Prophet ﷺ against his opponents.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "النصر : العون مأخوذ من قولهم : قد نصر الغيث الأرض",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "al-Nasr",
+              "gloss": "help, aid"
+            }
+          ]
+        },
+        {
+          "id": "110:1#c5",
+          "section_ref": "110:1",
+          "attaches_to": "110:1",
+          "text": "Al-Fath (the opening) can mean conquering a land by force, or deciding a judgment between people. The overwhelming reading among the commentators is that here it means the Conquest of Mecca.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "the meaning of Al-Fath here is the conquest of Makkah, and there is only one view concerning it",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "al-Fath",
+              "gloss": "the opening, the conquest"
+            }
+          ]
+        },
+        {
+          "id": "110:1#c6",
+          "section_ref": "110:1",
+          "attaches_to": "110:1",
+          "text": "A minority reading, attributed to Ibn Abbas and Sa'id b. Jubayr, took 'al-fath' to mean the opening of further cities and palaces, or all lands opened to Islam, or the opening of knowledge granted to the Prophet ﷺ.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وقال ابن عباس وسعيد بن جبير : هو فتح المدائن والقصور",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "110:1#c7",
+          "section_ref": "110:1",
+          "attaches_to": "110:1",
+          "text": "The word 'idha' (when) may here work like 'qad' (already happened), since the surah's revelation followed the conquest; or it may keep its usual future sense, 'when it comes to you.'",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "و ( إذا ) بمعنى قد",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "110:1#c8",
+          "section_ref": "110:1",
+          "attaches_to": "110:1",
+          "text": "The Conquest followed Quraysh's breach of the Hudaybiyyah treaty, when they helped Banu Bakr attack the Prophet's allies Khuza'ah. This led the Prophet ﷺ to march on Mecca, which fell largely without battle.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "110:1#c9",
+          "section_ref": "110:1",
+          "attaches_to": "110:1",
+          "text": "At the door of the Ka'bah the Prophet ﷺ declared a general amnesty for the Meccans (who came to be called al-tula-qa', 'the freed ones'), and abolished old tribal boasting over lineage. A report of Abu Hurayrah has him say that Mecca's sanctity, which Allah had defended even against the army of the Elephant, had been made lawful to him for a single hour and would not be lawful again after him.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not specified in source"
+          }
+        },
+        {
+          "id": "110:1#c10",
+          "section_ref": "110:1",
+          "attaches_to": "110:1",
+          "text": "The Companions took this surah as a sign that the Prophet's ﷺ death was near. Ibn Abbas explained to a gathering that included Umar that 'when Allah's help and the conquest come' meant the end of his life had come; Umar agreed he knew nothing beyond that. Aisha reported that near the end of his life the Prophet increased his glorification and seeking of forgiveness, saying his Lord had told him he would see a sign in his community and had commanded him, on seeing it, to do exactly that.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "نُعِيَتْ إِلَيَّ نَفْسِي",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "Bukhari and Muslim, as cited by the sources"
+          }
+        },
+        {
+          "id": "110:1#c11",
+          "section_ref": "110:1",
+          "attaches_to": "110:1",
+          "text": "Sayyid Qutb reads the opening clause as fixing the whole event outside human hands: the timing, the form and the purpose of the victory are all Allah's decision. The Prophet ﷺ and the believers have no independent role in bringing it about, only the honour of being entrusted with it.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "110:1#c12",
+          "section_ref": "110:1",
+          "attaches_to": "110:1",
+          "text": "Al-Sa'di reads the opening as glad tidings (bishara) given directly to the Messenger of Allah, of God's help and the coming conquest of Mecca.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "110:1#c13",
+          "section_ref": "110:1",
+          "attaches_to": "110:1",
+          "text": "Wahiduddin Khan notes that this kind of divine help always follows sustained effort in conveying the message (da'wah); the Prophet and his companions had striven for years before this help arrived.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "110:1#c14",
+          "section_ref": "110:1",
+          "attaches_to": "110:2",
+          "text": "'The people' in the general reading means the Arab tribes at large. Before the conquest they had said, 'if Muhammad prevails over his own people, he must be a true prophet'; once Mecca fell, whole tribes entered Islam together rather than one or two individuals at a time as before.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "the different areas of the Arabs were waiting for the conquest of Makkah before they would accept Islam",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "110:1#c15",
+          "section_ref": "110:1",
+          "attaches_to": "110:2",
+          "text": "Ikrimah and Muqatil read 'the people' specifically as the people of Yemen: about seven hundred of them came, some giving the call to prayer, some reciting the Qur'an, some proclaiming God's oneness. The Prophet was pleased, and Umar and Ibn Abbas wept at the sight.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "110:1#c16",
+          "section_ref": "110:1",
+          "attaches_to": "110:2",
+          "text": "A hadith describes the people of Yemen as 'tender-hearted, gentle-natured,' with the saying: 'faith is Yemeni, understanding is Yemeni, wisdom is Yemeni.'",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "قَوْمٌ رَقِيقَةٌ قُلُوبُهُمْ, لَيِّنةٌ طِبَاعُهُمْ, الإيمَانُ يَمَانٍ",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "Qurtubi, citing Sahih Muslim; Tabari's chain via Ibn Abbas left ungraded"
+          }
+        },
+        {
+          "id": "110:1#c17",
+          "section_ref": "110:1",
+          "attaches_to": "110:2",
+          "text": "'Afwajan' (in troops) means group after group, tribe by tribe, unlike the earlier pattern in which converts came one or two at a time.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "زُمرًا زُمرًا",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "أي جماعات : فوجا بعد فوج",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "Afwajan",
+              "gloss": "in troops, group after group"
+            }
+          ]
+        },
+        {
+          "id": "110:1#c18",
+          "section_ref": "110:1",
+          "attaches_to": "110:2",
+          "text": "A report of Amr b. Salamah, recorded by Bukhari, says that before the conquest tribes held back from Islam, saying 'leave him and his people; if he prevails over them, he is a true prophet.' Once Mecca fell, they raced each other to embrace Islam.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "Bukhari"
+          }
+        },
+        {
+          "id": "110:1#c19",
+          "section_ref": "110:1",
+          "attaches_to": "110:2",
+          "text": "Jabir b. Abdullah, in tears, is reported recalling the Prophet's words: 'the people entered God's religion in troops, and they will also leave it in troops.'",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "إِنَّ النَّاسَ دَخَلُوا فِي دِينِ اللهِ أَفْوَاجًا، وَسَيَخْرُجُونَ مِنْهُ أَفْوَاجًا",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not specified in source"
+          }
+        },
+        {
+          "id": "110:1#c20",
+          "section_ref": "110:1",
+          "attaches_to": "110:2",
+          "text": "Sayyid Qutb reads the believers' entire share in the victory as this: that people entered Islam in crowds through them. Because the triumph was pure grace and not their own achievement, the honour calls for humility, praise and asking forgiveness rather than pride.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "110:1#c21",
+          "section_ref": "110:1",
+          "attaches_to": "110:2",
+          "text": "Al-Sa'di notes that many who entered Islam this way had formerly been the Prophet's enemies, and became instead among its own people and its supporters — a promise, he says, that was fulfilled.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "110:1#c22",
+          "section_ref": "110:1",
+          "attaches_to": "110:2",
+          "text": "Wahiduddin Khan draws a lesson from seeing mass conversion follow victory: believers should grow more humble, not less, attributing success to God's grace and seeking pardon even for what seems their own right action.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        }
+      ],
+      "essay_html": "<p>Surat al-Nasr is remembered as Medinan and short, only three verses, and it carries another name: al-Tawdi', the Farewell, because the Companions read it as a sign of the Prophet's ﷺ approaching death.<sup class=\"ref\">3,7,14</sup> Ibn Abbas is reported, in Sahih Muslim, to have called it the last complete surah revealed.<sup class=\"ref\">3,4,7,11,14</sup> Exactly when it came down is itself disputed: some reports place it at the Farewell Pilgrimage, shortly before the verse announcing that the religion had been perfected, after which the Prophet lived only around eighty more days. Another report has it recited on the return from Khaybar, well before the Conquest of Mecca, with Qatadah saying the Prophet then lived two more years.<sup class=\"ref\">7,10,11,14</sup></p><p>The opening words turn on two words. Al-Nasr, help, comes from the same root used for rain 'helping' the earth bring forth growth.<sup class=\"ref\">3,9</sup> Al-Fath, the opening, can mean conquering a land by force or deciding a judgment between people; almost every commentator here takes it as the Conquest of Mecca.<sup class=\"ref\">1,2,3,4,5,7,9,11,12,13</sup> A minority view, going back to Ibn Abbas and Sa'id b. Jubayr, took it more broadly as further openings of cities, or of lands to Islam, or of knowledge granted to the Prophet.<sup class=\"ref\">3</sup> Qurtubi also notes a grammatical nuance: the word 'idha' (when) might function like 'qad' (already happened), since the surah came down after the conquest, or it might keep its ordinary future sense.<sup class=\"ref\">3</sup></p><p>Behind the word 'conquest' lies a real chain of events. Quraysh broke the Hudaybiyyah treaty by helping Banu Bakr attack the Prophet's allies Khuza'ah, and this brought the Prophet ﷺ marching on Mecca, which fell with almost no fighting.<sup class=\"ref\">1,2</sup> At the door of the Ka'bah he declared a general amnesty, so that the Meccans came to be called al-tula-qa', 'the freed ones', and he set aside the old boasting over lineage. One report has him say that Mecca's sanctity, once defended even against the army of the Elephant, had been made lawful to him for a single hour only, and would not be lawful again after him.<sup class=\"ref\">2</sup></p><p>For the Companions, the phrase 'when Allah's help and the conquest come' carried a second, heavier meaning. Ibn Abbas told a gathering that included Umar that it signalled the Prophet's death drawing near, and Umar agreed he knew nothing beyond that.<sup class=\"ref\">1,4,7,11,14</sup> Aisha reported that near the end of his life the Prophet increased his glorification of God and his seeking of forgiveness, explaining that his Lord had told him he would see a sign in his community and had commanded him to do exactly that when he saw it.<sup class=\"ref\">1,4</sup></p><p>Sayyid Quṭb (d. 1966) reads the opening clause as placing the whole event outside human hands: its timing, form and purpose are Allah's alone to fix, and neither the Prophet ﷺ nor the believers have any independent part in bringing it about, only the honour of being entrusted with it.<sup class=\"ref\">6</sup> Al-Saʿdi calls the verse a direct glad tiding to the Messenger of God's help and the coming conquest.<sup class=\"ref\">5</sup> Wahiduddin Khan adds that such help always follows years of tireless effort in conveying the message.<sup class=\"ref\">10</sup></p><p>The second verse turns to what that help produced: people entering God's religion 'in troops' (afwajan) — group after group, tribe by tribe, rather than the one-or-two-at-a-time pattern of before.<sup class=\"ref\">1,2,3,9</sup> Most commentators take 'the people' broadly, as the Arab tribes who had been waiting to see whether Muhammad ﷺ would prevail over his own people before deciding he was a true prophet; once Mecca fell, that hesitation dissolved.<sup class=\"ref\">2,3,4,7,11,12</sup> Ikrimah and Muqatil read 'the people' more narrowly, as the delegation of about seven hundred from Yemen, who arrived giving the call to prayer, reciting the Qur'an and proclaiming God's oneness, moving the Prophet to joy and Umar and Ibn Abbas to tears.<sup class=\"ref\">1,2,3</sup> A hadith describes the people of Yemen as tender-hearted and gentle-natured, with the saying that faith, understanding and wisdom are all 'Yemeni.'<sup class=\"ref\">1,2,3</sup> Bukhari's report from Amr b. Salamah shows the same reversal on a wider scale: tribes who had held back racing each other into Islam once the conquest removed their excuse.<sup class=\"ref\">4,7,11</sup> Against this joy stands a sober note: Jabir b. Abdullah, in tears, recalled the Prophet's warning that just as the people entered God's religion in troops, they would one day also leave it in troops.<sup class=\"ref\">3,4</sup></p><p>Reading the two verses together, Quṭb takes the believers' whole share in the victory to be this: people entered Islam through them, in crowds, not by their own doing, which is why the honour calls for humility rather than pride.<sup class=\"ref\">6</sup> Al-Saʿdi notes that many who entered this way had been enemies and became supporters instead, a promise he says was fulfilled.<sup class=\"ref\">5</sup> Wahiduddin Khan draws the same lesson: victory should deepen a believer's humility, with success, even where it looks like one's own achievement, attributed to God's grace.<sup class=\"ref\">10</sup></p><p class=\"close\">Read as the Companions read it, the arrival of God's help and the crowds entering His religion were not simply the end of a long struggle, but the sign that the Prophet's ﷺ own life's work, and his life itself, were drawing to their close.<sup class=\"ref\">1,4,7,11,14</sup></p>",
+      "sources_used": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "source_hashes": {
+        "1": "sha256:93e040060a7f7ebffd0bf23812be85925f635a8ecded2be34078dd147402e3c3",
+        "2": "sha256:79e6e4a4e48cbfa041d5f18f65736e2d280b27df4dd2032170505d7874fe101e",
+        "3": "sha256:a8be0ba86df0dfbf0a646661fc3aec7762520f6dc8ecd0523905150e32948ccc",
+        "4": "sha256:aeb594dddd498e7c5e7f9fcc526cec644786a5591d1dd1b47001318a07c6cc62",
+        "5": "sha256:7f59e19d19282c77a66f6326bfdbb4ce9e5fa6808b63ecf410b5417c68f688ce",
+        "6": "sha256:d763f404485c954eee4b816848d49adba195e5c21e5a61f882beac1fa4f8ef07",
+        "7": "sha256:9ff741c3cd4959165416bd205637c954e0c95c04435fc0ca745fdf78e010e6be",
+        "8": "sha256:856069305f120c34ba64b838dd5bb2008a4fc651afde89ad45ec8bde51501fc2",
+        "9": "sha256:96fcf2b3a27edaf179336ca7cdc11931f4f56e58048962941ec3beb384745151",
+        "10": "sha256:10e741d5261d68c6ae0063af93f9602351c26c44e3084fe00399ac5cf8ea0737",
+        "11": "sha256:bf7cdf90616c6275a2bb414d867421b6c1c4617117c8d38a5e06b1c61159acab",
+        "12": "sha256:a325759864f18df104c93629967533d0be88b3f0e3221063b0aacbe565b7cfb2",
+        "13": "sha256:0b70aa723023d431f85a86bc6cd163f6ac63c255a6d8f81af938682bcbf6c1fb",
+        "14": "sha256:343f8de73b8d54de1197f78f19d377060ea05a8aba5939241d6109471b2580fb"
+      },
+      "flags": {
+        "creedal_stakes": "true",
+        "legal_content": "false",
+        "sensitive_content": "true"
+      },
+      "compiled_at": "2026-08-02"
+    }
+  }
+}

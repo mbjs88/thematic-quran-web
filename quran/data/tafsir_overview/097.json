@@ -1,0 +1,2523 @@
+{
+  "surah": 97,
+  "name": "",
+  "coverage": {
+    "editions_present": [
+      "ar-tafsir-al-tabari",
+      "ar-tafsir-al-baghawi",
+      "ar-tafseer-al-qurtubi",
+      "en-tafisr-ibn-kathir",
+      "ar-tafseer-al-saddi",
+      "tafsir-fe-zalul-quran-syed-qatab",
+      "en-tafsir-maarif-ul-quran",
+      "tafsir-bayan-ul-quran",
+      "ar-tafsir-al-wasit",
+      "tazkirul-quran-en",
+      "bn-tafsir-abu-bakr-zakaria",
+      "bn-tafsir-ahsanul-bayaan",
+      "ar-tafsir-muyassar",
+      "kurd-tafsir-rebar"
+    ],
+    "editions_absent": [],
+    "independent_works": 14,
+    "languages_present": [
+      "ar",
+      "bn",
+      "en",
+      "ku",
+      "ur"
+    ],
+    "languages_absent": []
+  },
+  "pipeline_provenance": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "overview-v2.3",
+    "theme_breaks_version": "sha256:99880ec7b10b53313690f91df9ee8d065519ee698df34b35a3336b5705218f90",
+    "compiled_at": "2026-08-02"
+  },
+  "modern_lens_framing": "The Qurʾan is taken here as fixed, revealed truth; science is our provisional, evolving account of the observable world. What follows notes where the two meet — a contemplation, not a proof. Where the science later shifts, that reflects the limits of our knowledge, not the text.",
+  "references": [
+    {
+      "n": 1,
+      "work_id": "al-tabari",
+      "label": "Jāmiʿ al-Bayān",
+      "author_id": "al-tabari",
+      "author": "Abū Jaʿfar Muḥammad ibn Jarīr al-Ṭabarī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 2,
+      "work_id": "al-baghawi",
+      "label": "Maʿālim al-Tanzīl",
+      "author_id": "al-baghawi",
+      "author": "Abū Muḥammad al-Ḥusayn ibn Masʿūd al-Baghawī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 3,
+      "work_id": "al-qurtubi",
+      "label": "al-Jāmiʿ li-Aḥkām al-Qurʾān",
+      "author_id": "al-qurtubi",
+      "author": "Abū ʿAbd Allāh Muḥammad ibn Aḥmad al-Qurṭubī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 4,
+      "work_id": "ibn-kathir",
+      "label": "Tafsīr Ibn Kathīr",
+      "author_id": "ibn-kathir",
+      "author": "Ismāʿīl ibn ʿUmar ibn Kathīr",
+      "source_language": "ar",
+      "note": "One independent voice. The ar/ur/bn editions are the SAME work — never count as separate corroboration."
+    },
+    {
+      "n": 5,
+      "work_id": "al-saadi",
+      "label": "Taysīr al-Karīm al-Raḥmān",
+      "author_id": "al-saadi",
+      "author": "ʿAbd al-Raḥmān ibn Nāṣir al-Saʿdī",
+      "source_language": "ar",
+      "note": "Russian edition (170) is the SAME work — translate from the Arabic original, and do not count Russian as an independent voice."
+    },
+    {
+      "n": 6,
+      "work_id": "fi-zilal",
+      "label": "Fī Ẓilāl al-Qurʾān",
+      "author_id": "sayyid-qutb",
+      "author": "Sayyid Quṭb Ibrāhīm Ḥusayn",
+      "source_language": "ar",
+      "note": "Original is Arabic, but the API here carries only an URDU edition — translating from Urdu is one step removed from the original. Prefer the Arabic original if the QF Content API offers it."
+    },
+    {
+      "n": 7,
+      "work_id": "maarif",
+      "label": "Maʿārif al-Qurʾān",
+      "author_id": "muhammad-shafi-usmani",
+      "author": "Muftī Muḥammad Shafīʿ ʿUthmānī",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 8,
+      "work_id": "bayan-ul-quran",
+      "label": "Bayān al-Qurʾān",
+      "author_id": "israr-ahmad",
+      "author": "Isrār Aḥmad",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 9,
+      "work_id": "wasit",
+      "label": "al-Tafsīr al-Wasīṭ",
+      "author_id": "tantawi",
+      "author": "Muḥammad Sayyid Ṭanṭāwī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 10,
+      "work_id": "tazkirul",
+      "label": "Tazkīr al-Qurʾān",
+      "author_id": "wahiduddin-khan",
+      "author": "Wahiduddin Khan",
+      "source_language": "ur",
+      "note": "en and ur editions are the same work."
+    },
+    {
+      "n": 11,
+      "work_id": "abu-bakr-zakaria",
+      "label": "Tafsir Abu Bakr Zakaria",
+      "author_id": "abu-bakr-zakaria",
+      "author": "Abū Bakr Muḥammad Zakariyyā",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 12,
+      "work_id": "ahsanul-bayaan",
+      "label": "Ahsanul Bayaan",
+      "author_id": "bayaan-foundation",
+      "author": "Ahsanul Bayaan (Bayaan Foundation)",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 13,
+      "work_id": "muyassar",
+      "label": "al-Tafsīr al-Muyassar",
+      "author_id": "committee-muyassar",
+      "author": "al-Tafsīr al-Muyassar (committee)",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 14,
+      "work_id": "rebar-kurdish",
+      "label": "Rebar Kurdish Tafsir",
+      "author_id": "rebar",
+      "author": "Rebar Kurdish Tafsir",
+      "source_language": "ku",
+      "note": ""
+    }
+  ],
+  "sections": {
+    "97:1": {
+      "verse_range": "1-3",
+      "title": "The Night of Decree",
+      "in_short": "The surah announces that the Qur'an was sent down on the Night of al-Qadr, a night the Prophet ﷺ himself could not fully grasp, and declares that night worth more than a thousand months of ordinary time.",
+      "claims": [
+        {
+          "id": "97:1#c1",
+          "section_ref": "97:1",
+          "attaches_to": "97:1",
+          "text": "The pronoun 'it' in 'We sent it down' is not explained anywhere in the surah, yet everyone understands it means the Qur'an; this unnamed reference is itself read as a mark of the Qur'an's fame, since it needs no introduction.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "تنويه بشأنه، وإيذان بشهره أمره",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric",
+          "original_terms": [
+            {
+              "term": "أَنزَلْنَاهُ",
+              "gloss": "We sent it down (the 'it' left unnamed)"
+            }
+          ]
+        },
+        {
+          "id": "97:1#c2",
+          "section_ref": "97:1",
+          "attaches_to": "97:1",
+          "text": "The surah's position right after Surah al-ʿAlaq, the first revelation, is itself taken as a hint that the unnamed pronoun points back to the Qur'an whose descent began there.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "ومن تسديد ترتيب المصحف، أن سورة القدر وضعت عقب سورة العلق",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "97:1#c3",
+          "section_ref": "97:1",
+          "attaches_to": "97:1",
+          "text": "Two readings are given for how the Qur'an was 'sent down' on this night: either the whole Qur'an descended at once from the Preserved Tablet to the lowest heaven (to the 'House of Might'), after which it came to the Prophet ﷺ piece by piece over roughly twenty-three years; or the revelation to the Prophet ﷺ simply began on this night (a view attributed to al-Shaʿbī), continuing thereafter by stages.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "أنزله جملة واحدة في ليلة القدر من اللوح المحفوظ إلى السماء الدنيا",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "relay",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "reported from Ibn ʿAbbās, left ungraded by the commentators"
+          }
+        },
+        {
+          "id": "97:1#c4",
+          "section_ref": "97:1",
+          "attaches_to": "97:1",
+          "text": "Ibn al-ʿArabī rejected an elaborated version of the descent theory in which scribe-angels stand as an intermediary between Gabriel and God, and between Gabriel and Muḥammad ﷺ, calling this addition false; there is no such intermediary.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "refute",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وهذا باطل؛ ليس بين جبريل وبين الله واسطة، ولا بين جبريل ومحمد عليهما السلام واسطة",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning",
+          "theological_school": "Atharī"
+        },
+        {
+          "id": "97:1#c5",
+          "section_ref": "97:1",
+          "attaches_to": "97:1",
+          "text": "'Qadr' carries two main senses here: decree (the night in which the year's affairs are apportioned), and honour or rank (a night of great standing, as in the saying 'so-and-so has qadr with the ruler').",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "ليلة القدر: أي ليلة العظمة والشرف",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "لعظم قدرها وفضلها عند الله، ولأنه يقدر فيها ما يكون في العام",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "relay",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "قدر",
+              "gloss": "decree/measure, or honour/rank"
+            }
+          ]
+        },
+        {
+          "id": "97:1#c6",
+          "section_ref": "97:1",
+          "attaches_to": "97:1",
+          "text": "Beyond the two main senses, various further explanations of the name were offered: that a person of no standing gains standing by keeping this night vigil; that a scripture of standing was sent to a Messenger of standing for a nation of standing; that angels of standing descend on it; or that on it Allah decrees mercy for believers.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "سميت بذلك لأن من لم يكن له قدر ولا خطر يصير في هذه الليلة ذا قدر إذا أحياها",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "97:1#c7",
+          "section_ref": "97:1",
+          "attaches_to": "97:1",
+          "text": "On this night the affairs of the coming year are decreed and handed to the responsible angels: lifespan, death, provision, rain, and who will make the pilgrimage; some name the angels entrusted with this as Isrāfīl, Mīkāʾīl, ʿAzrāʾīl and Jibrāʾīl.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "relay",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "attributed to Ibn ʿAbbās, left ungraded"
+          }
+        },
+        {
+          "id": "97:1#c8",
+          "section_ref": "97:1",
+          "attaches_to": "97:1",
+          "text": "The Night of al-Qadr falls within Ramadan; the majority hold it is in the last ten nights, most likely an odd-numbered one, though scholars record about forty differing opinions on the exact date (including the 17th, 21st, 23rd, 25th, 27th and 29th); some, including one view of al-Shāfiʿī, hold the night is fixed and does not move, while most hold it varies year to year.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "relay",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "a range of hadith reports, variously assessed by the commentators cited"
+          }
+        },
+        {
+          "id": "97:1#c9",
+          "section_ref": "97:1",
+          "attaches_to": "97:1",
+          "text": "The Night of al-Qadr is not confined to the Prophet's ﷺ own lifetime but recurs every Ramadan until the Day of Judgement; this is supported by a report from Abū Hurayrah rejecting the claim that it had been lifted, and by Ibn ʿUmar's statement that 'it occurs during every Ramadan.'",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "كذب من قال ذلك",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "narrators judged reliable, though Abū Dāwūd notes it may be Ibn ʿUmar's own view rather than the Prophet's ﷺ words"
+          }
+        },
+        {
+          "id": "97:1#c10",
+          "section_ref": "97:1",
+          "attaches_to": "97:1",
+          "text": "A dialogue is recorded in which Ibn Masʿūd said 'whoever keeps vigil the whole year will catch it', which Ibn ʿUmar and Ubayy explained as a deliberate softening, since Ibn Masʿūd in fact knew the night falls in Ramadan but wished people not to rely on one night alone and slacken elsewhere.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "أراد أن لا يتكل الناس",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Baghawī, relayed without formal grading"
+          }
+        },
+        {
+          "id": "97:1#c11",
+          "section_ref": "97:1",
+          "attaches_to": "97:1",
+          "text": "A hadith describes signs by which the night can be recognised: it is clear and calm, neither hot nor cold, no shooting star falls until dawn, and the sun rises the next morning smooth, without rays.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "إِنَّ أَمَارَةَ لَيْلَةِ الْقَدْرِ أَنَّهَا صَافِيَةٌ بَلْجَةٌ",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "hasan",
+            "graded_by": "Ibn Kathīr, who calls the chain good but notes some objectionable wording in the text"
+          }
+        },
+        {
+          "id": "97:1#c12",
+          "section_ref": "97:1",
+          "attaches_to": "97:2",
+          "text": "The rhetorical question 'what will explain to you what the Night of al-Qadr is' is a device of exaltation, signalling that the night's true weight lies beyond what ordinary human understanding can take in.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "فإن شأنها جليل، وخطرها عظيم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "حتى لكأن عظمتها أكبر من أن تحيط بها الكلمات والألفاظ",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric"
+        },
+        {
+          "id": "97:1#c13",
+          "section_ref": "97:1",
+          "attaches_to": "97:2",
+          "text": "As a grammatical rule, wherever the Qur'an uses the form 'wa mā adrāka' (with the verb in this particular past form), it means the addressee has indeed been informed of the matter that follows; where it instead says 'wa mā yudrīka', the matter has not been disclosed to him.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "كل ما في القرآن من قوله تعالى: وما أدراك فقد أدراه، وما كان من قوله: وما يدريك فلم يدره",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "97:1#c14",
+          "section_ref": "97:1",
+          "attaches_to": "97:3",
+          "text": "The main reading of 'better than a thousand months' is that a good deed done on this night outweighs the same deed spread across a thousand months lacking this night; al-Ṭabarī states this is the reading closest to the apparent sense of the text, and dismisses rival readings as claims without support from report, reason, or the text itself.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "وأشبه الأقوال في ذلك بظاهر التنزيل قول من قال: عملٌ في ليلة القدر خير من عمل ألف شهر",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "97:1#c15",
+          "section_ref": "97:1",
+          "attaches_to": "97:3",
+          "text": "One reported occasion for the verse: the Prophet ﷺ was told of a warrior from the Children of Israel who bore arms in Allah's cause, or who worshipped by night and fought by day, for a thousand months without pause; the Companions marvelled, and this surah came down showing that worship on this single night exceeds that whole feat, a distinction given to this Ummah alone.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "original_excerpt": "reported from Mujahid (as mursal hadith)",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "daif",
+            "graded_by": "Muftī Muḥammad Shafīʿ, who identifies the underlying report as mursal (a broken chain from Mujāhid)"
+          }
+        },
+        {
+          "id": "97:1#c16",
+          "section_ref": "97:1",
+          "attaches_to": "97:3",
+          "text": "An alternative report ties the verse to the Prophet's ﷺ dream of seeing the Banū Umayyah mount his pulpit, which distressed him, so al-Kawthar and this surah were revealed as consolation, with 'a thousand months' said to match the length of Umayyad rule exactly; al-Ṭabarī rejects this reading outright, and al-Qurṭubī, while relaying it from al-Tirmidhī, notes it is graded gharīb (an isolated, uncorroborated report).",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "refute",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "فدعاوى معان باطلة، لا دلالة عليها من خبر ولا عقل، ولا هي موجودة في التنزيل",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "قال: حديث غريب",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "daif",
+            "graded_by": "al-Tirmidhī, as noted by al-Qurṭubī (gharīb); rejected outright by al-Ṭabarī"
+          }
+        },
+        {
+          "id": "97:1#c17",
+          "section_ref": "97:1",
+          "attaches_to": "97:3",
+          "text": "'A thousand months' may not be a precise count but a figure of speech for a very great, almost unmeasured span, in keeping with the Arabs' habit of using 'a thousand' for great multitude rather than an exact tally.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وقيل: عنى بألف شهر جميع الدهر؛ لأن العرب تذكر الألف في غاية الأشياء",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "97:1#c18",
+          "section_ref": "97:1",
+          "attaches_to": "97:3",
+          "text": "A thousand months is worked out as roughly eighty-three years and four months, taken as the span of a long human life, against which this single night is set.",
+          "claim_type": "other",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "97:1#c19",
+          "section_ref": "97:1",
+          "attaches_to": "97:3",
+          "text": "The night's virtue is reinforced by a hadith: whoever stands in prayer on the Night of al-Qadr out of faith and hope of reward will have his previous sins forgiven.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "مَنْ قَامَ لَيْلَةَ الْقَدْرِ إِيمَانًا وَاحْتِسَابًا غُفِرَ لَهُ مَا تَقَدَّمَ مِنْ ذَنْبِهِ",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "relay",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "recorded in Bukhārī and Muslim, per Ibn Kathīr"
+          }
+        },
+        {
+          "id": "97:1#c20",
+          "section_ref": "97:1",
+          "attaches_to": "97:3",
+          "text": "A supplication is recorded that the Prophet ﷺ taught ʿĀʾishah رضي الله عنها to say if she found the Night of al-Qadr: 'O Allah, You are the Pardoning, You love to pardon, so pardon me.'",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "hasan",
+            "graded_by": "al-Tirmidhī, said to be ḥasan ṣaḥīḥ, as noted by Ibn Kathīr"
+          }
+        },
+        {
+          "id": "97:1#c21",
+          "section_ref": "97:1",
+          "attaches_to": "97:3",
+          "text": "Some later narrators elaborated the identity of the warrior said to have worshipped or fought for a thousand months into fuller legendary figures (such as a strongman named Shamsūn, or a king whose thousand sons each fought a month); al-Qurṭubī relays these without endorsing them.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Qurṭubī, relayed without grading"
+          }
+        }
+      ],
+      "essay_html": "<p>The surah opens by announcing that 'it' was sent down on the Night of al-Qadr. Nothing in the wording names what 'it' is, yet the reference is taken for granted as the Qur'an itself, a silence read as proof of how well-known the Qur'an already is.<sup class=\"ref\">1,3,9,8,11,12</sup> Its placement straight after Surah al-ʿAlaq, the very first revelation, is read by some as reinforcing this: the pronoun points back to the Qur'an whose descent began there.<sup class=\"ref\">9,8</sup></p>\n<p>Two readings are given for how the Qur'an was 'sent down' on this single night. Either it descended whole, from the Preserved Tablet to the lowest heaven, and only then came to the Prophet ﷺ piece by piece over some twenty-three years, or the revelation to him simply began this night and continued in stages afterward.<sup class=\"ref\">1,2,3,4,7,9,8,11,12</sup> Ibn al-ʿArabī رحمه الله pushed back against one elaboration of the first view, which inserted scribe-angels as go-betweens for God, Gabriel, and the Prophet ﷺ; he called this an unfounded addition, since no such intermediary stands between them.<sup class=\"ref\">3</sup></p>\n<p>The word Qadr itself carries two senses. It can mean decree, since the year's affairs, lifespan, provision, rain, even who will make the pilgrimage, are apportioned this night and handed to the angels charged with carrying them out (some name these as Isrāfīl, Mīkāʾīl, ʿAzrāʾīl and Jibrāʾīl).<sup class=\"ref\">1,2,3,5,7,9,11,13,14</sup> Or it can mean honour and rank, as when the Arabs said a man 'has qadr' with a ruler.<sup class=\"ref\">2,3,7,9</sup> Beyond these two, further explanations were offered for the name: a person with no standing gains standing by keeping this night in worship, or Allah decrees mercy for believers in it.<sup class=\"ref\">2,7</sup></p>\n<p>The night falls somewhere in Ramadan. Most hold it is in the last ten nights, likely an odd-numbered one, though scholars have recorded some forty differing opinions on the exact date, including the seventeenth, twenty-first, twenty-third, twenty-fifth, twenty-seventh and twenty-ninth.<sup class=\"ref\">2,4,7,11,8</sup> Some hold the date is fixed and never changes; most hold it moves from year to year.<sup class=\"ref\">4,7</sup> It is not restricted to the Prophet's ﷺ own lifetime: Abū Hurayrah رضي الله عنه rejected the claim that it had been lifted, and Ibn ʿUmar رضي الله عنه said it occurs every Ramadan.<sup class=\"ref\">2,4</sup> One exchange is recorded where Ibn Masʿūd رضي الله عنه said whoever keeps vigil the whole year will catch it; Ibn ʿUmar and Ubayy رضي الله عنهما explained this as a deliberate softening, since he in fact knew it falls in Ramadan but did not want people relying on one night and neglecting the rest.<sup class=\"ref\">2</sup> A hadith describes how the night may be recognised: clear, calm, neither hot nor cold, with the following sun rising smooth, without rays.<sup class=\"ref\">4</sup></p>\n<p>The next line, 'what will explain to you what the Night of al-Qadr is', is a question that magnifies rather than informs. It signals that this night's weight goes beyond what ordinary understanding can hold.<sup class=\"ref\">5,6,9,12</sup> On a point of grammar, al-Qurṭubī رحمه الله notes that wherever the Qur'an uses this exact form, 'and what will explain to you', the addressee has in fact been told what follows; a different form, 'and what would let you know', signals the opposite.<sup class=\"ref\">3</sup></p>\n<p>'Better than a thousand months' is read, by the weight of the commentators, as meaning that a deed done on this night outweighs the same deed spread across a thousand months lacking it. Al-Ṭabarī رحمه الله states plainly that this reading sits closest to the plain sense of the text, and dismisses rival readings as unsupported claims.<sup class=\"ref\">1,2,3,5,7,8,9,11,12,13,14</sup> One report ties the verse to a warrior from the Children of Israel who bore arms, or worshipped by night and fought by day, for a thousand months without pause, the Companions marvelling until the surah came down showing that this Ummah is given something greater in a single night.<sup class=\"ref\">1,2,3,7</sup> Muftī Shafīʿ رحمه الله notes this report is mursal, meaning its chain is broken. Another report ties the verse to the Prophet's ﷺ dream of the Banū Umayyah mounting his pulpit, with 'a thousand months' said to match their later rule exactly; al-Ṭabarī rejects this outright, and al-Qurṭubī, while relaying it, flags it as gharīb, an isolated report.<sup class=\"ref\">1,3</sup> Some later narrators went further still, dressing the Israelite warrior into fuller legendary figures; al-Qurṭubī relays these without endorsing them.<sup class=\"ref\">3</sup> Separately, some hold the number a thousand is not exact but the Arabs' idiom for a great multitude, roughly the span of a long life, worked out by some as eighty-three years and four months.<sup class=\"ref\">3,9,8,6,7,12</sup></p>\n<p>Two further reports carry the night's weight. Whoever stands in prayer on it out of faith and hope of reward has his past sins forgiven, a hadith recorded in Bukhārī and Muslim.<sup class=\"ref\">4,2,8,11</sup> And when ʿĀʾishah رضي الله عنها asked what to say if she caught the night, the Prophet ﷺ taught her: 'O Allah, You are the Pardoning, You love to pardon, so pardon me.'<sup class=\"ref\">2,4,7</sup></p>\n<p class=\"close\">The surah leaves the night unnamed in detail and beyond the reader's full grasp, and lets its worth rest on a single comparison: what is done in it outweighs a thousand months without it.</p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:e719c35f4cde07d90e41ffea371a4b1a8addc8e63e22555f5e725c700a7f06cb",
+        "2": "sha256:e11864d99f35a3e38cb637f4ed5e79f60eb6d4242194e333e12e55e09f804443",
+        "3": "sha256:3596684415e876f232e614e7b2bf2cf043628fd7fdff0222a978972a2b501f74",
+        "4": "sha256:87796b487afd2ba781ba00c9583f0296d79eafad49a2a1687d67df9ab7b49a42",
+        "5": "sha256:f91947d5314868fc0ead31eba53270ebc54928525628d1aa568d5fa0f36f8554",
+        "6": "sha256:6c25d37d65f36f14aa9fe03f62f45712f1d4747091a2f7be62667d3ed5732d9d",
+        "7": "sha256:773e66e45dfe87fb01320e6ceffc0790756d31d1429d371842d9dff4fadaf76a",
+        "8": "sha256:80e78131b3f87a2b572967a6188ed456210e7b00d3ee45bdabf0160ea092b87e",
+        "9": "sha256:5c533a23964e1f9e19806b4d852256b5d77f94bc3bfec4f6da235219c28478bb",
+        "10": "sha256:0c0c1dbc58541784ec35951f1dd1afae77e575ee88271a0f82d4e459195d6f54",
+        "11": "sha256:a086ed69aeb5ec00c19fed2b3ef9ab71bd28a1e338bf3d603bf7ec68c71f7b0a",
+        "12": "sha256:016fada42c615b68f5ebf9769cc725db1d57241a4affe7791909133a74b0e5a5",
+        "13": "sha256:1d58725a7179ce12eb3fba32558a0421a1c1796279d4d86a19bc8b18307e22fc",
+        "14": "sha256:74b363026a754d94eb02b54ef559dd34f333c684f3b63dbfe4d9d97903d4078e"
+      },
+      "flags": {
+        "creedal_stakes": true,
+        "legal_content": false,
+        "sensitive_content": false
+      },
+      "compiled_at": "2026-08-02"
+    },
+    "97:4": {
+      "verse_range": "4-4",
+      "title": "Angels and the Spirit Descend",
+      "in_short": "This verse says that on that night the angels and 'the Spirit' descend, by their Lord's permission, carrying every matter decreed. The commentators discuss who the Spirit is, why the descent is described this way, and what 'every matter' refers to.",
+      "claims": [
+        {
+          "id": "97:4#c1",
+          "section_ref": "97:4",
+          "attaches_to": "97:4",
+          "text": "'The Spirit' (al-Rūḥ) here means the angel Jibrīl (Gabriel), mentioned by name after the general word 'angels'.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "تنـزل الملائكة وجبريل معهم، وهو الروح",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "يعني جبريل عليه السلام معهم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "أي جبريل عليه السلام",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "original_excerpt": "'Spirit' here refers to Jibra'il",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "روح سے مراد یہاں روح الامین یعنی حضرت جبرائیل علیہ السلام",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "والروح: هو جبريل",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "original_excerpt": "This refers to the Angel Gabriel.",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "original_excerpt": "প্রাধান্যপ্রাপ্ত মত হলো এর দ্বারা জিবরাঈলকে বোঝানো হয়েছে",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "original_excerpt": "এখানে 'রূহ' বলে জিবরীল (আঃ)-কে বোঝানো হয়েছে",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "وجبريل عليه السلام",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "original_excerpt": "یاخود جبریلە",
+              "translation_confidence": "low"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "الروح",
+              "gloss": "the Spirit; here read as the angel Jibrīl"
+            }
+          ]
+        },
+        {
+          "id": "97:4#c2",
+          "section_ref": "97:4",
+          "attaches_to": "97:4",
+          "text": "Naming Jibrīl separately after the general term 'the angels' is a known rhetorical pattern (singling out the specific after the general) meant to show his elevated rank and unique standing.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "the wording of the Ayah is a method of adding the name of the distinct object ... separate from the general group",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "ذكره بخصوصه بعد ذكر الملائكة، من باب ذكر الخاص بعد العام، لمزيد الفضل",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "حضرت جبرائیل علیہ السلام کا ذکر عام طور پر علیحدہ کیا جاتا ہے",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric"
+        },
+        {
+          "id": "97:4#c3",
+          "section_ref": "97:4",
+          "attaches_to": "97:4",
+          "text": "Other reports relayed alongside the Jibrīl reading: some hold al-Rūḥ is a distinct class of angel-guardians set to watch over the rest of the angels (invisible to them, as angels are invisible to us); Muqātil said they are the noblest angels, nearest to Allah; a report traced to Ibn ʿAbbās calls them an army of Allah that is not from the angels at all; another view (also from al-Qushayrī) describes them as beings who eat food and have hands and feet, not angels; another says al-Rūḥ is a single immense being standing in one row while all the angels stand in another; yet another equates al-Rūḥ with mercy, so that Jibrīl descends bringing mercy along with the angels.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وحكى القشيري: أن الروح صنف من الملائكة، جعلوا حفظة على سائرهم ... وقال مقاتل: هم أشرف الملائكة وأقربهم من الله تعالى ... وقيل إنهم جند من جند الله عز وجل من غير الملائكة ... وحكى القشيري: قيل هم صنف من خلق الله يأكلون الطعام ولهم أيد وأرجل وليسوا ملائكة ... وقيل الروح خلق عظيم يقوم صفا والملائكة كلهم صفا ... وقيل الروح الرحمة ينزل بها جبريل عليه السلام مع الملائكة",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "original_terms": [
+            {
+              "term": "الروح",
+              "gloss": "the Spirit; here debated as angel, class of guardian-angels, mercy, or a separate creation"
+            }
+          ]
+        },
+        {
+          "id": "97:4#c4",
+          "section_ref": "97:4",
+          "attaches_to": "97:4",
+          "text": "The verb form (tanazzalu, descend repeatedly) signals that the angels descend in abundance on that night, not just once.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "أي: يكثر نزولهم فيها",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "ينزلون فيها أفواجا إلى الأرض",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "يكثر نزول الملائكة وجبريل عليه السلام فيها",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar",
+          "original_terms": [
+            {
+              "term": "تنزل",
+              "gloss": "descend, in a form implying repetition/succession"
+            }
+          ]
+        },
+        {
+          "id": "97:4#c5",
+          "section_ref": "97:4",
+          "attaches_to": "97:4",
+          "text": "Grammatically, 'tanazzalu' is a contracted form of 'tatanazzalu' (one of the two tāʾ letters is dropped for ease of pronunciation), and their descent to earth is meant to spread down the blessings that accompany them, which itself signals the night's honour and Allah's mercy on His servants.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "وأصل تنزل تتنزل، فحذفت إحدى التاءين تخفيفا",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar",
+          "original_terms": [
+            {
+              "term": "تنزل / تتنزل",
+              "gloss": "the shortened verb form 'descend' from the fuller 'descend repeatedly'"
+            }
+          ]
+        },
+        {
+          "id": "97:4#c6",
+          "section_ref": "97:4",
+          "attaches_to": "97:4",
+          "text": "'With every matter' is most commonly read as: the angels descend carrying/for the sake of every matter Allah has decreed for the coming year, up to the same night the following year, whether provision, lifespan, or other affairs.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "يقضى فيها ما يكون في السنة إلى مثلها",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "من كل أمر أمر بكل أمر قدره الله وقضاه في تلك السنة إلى قابل; قاله ابن عباس",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "The matters are determined during it, and the times of death and provisions are measured out",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "original_excerpt": "the angels bring down, during the Night of Qadr, the decree for everything destined to occur in the coming year",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "بإذن ربهم من كل أمر قضاه في تلك السنة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "original_excerpt": "ফেরেশতাগণ শবে-কদরে সারা বছরের অবধারিত ঘটনাবলী নিয়ে পৃথিবীতে অবতরণ করে",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "original_excerpt": "যা আল্লাহ এক বছরের জন্য ফায়সালা করে থাকেন",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "97:4#c7",
+          "section_ref": "97:4",
+          "attaches_to": "97:4",
+          "text": "Isrār Aḥmad frames this as an annual 'budget session' in Allah's governance of creation: the year's key matters are settled that night and handed to the angels for execution, who then, led by Jibrīl, spread across the earth to carry them out and later submit completion-reports, linking this to the description of Allah's governance of affairs in Sūrat al-Sajdah.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "لیلۃ القدر اللہ تعالیٰ کی تکوینی سلطنت سے متعلق فیصلوں کے لیے سالانہ بجٹ سیشن کا درجہ رکھتی ہے",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "97:4#c8",
+          "section_ref": "97:4",
+          "attaches_to": "97:4",
+          "text": "A second reading connects 'every matter' to the word 'peace' (salām) that opens the following verse, so the meaning becomes: the night is a security/peace from every harm, in which Satan can do no evil.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "Mujahid said, 'Peace concerning every matter.' ... It is security in which Shaytan cannot do any evil or any harm",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "original_excerpt": "the phrase min kulli amrin is syntactically related to salam ... 'The night is a security from every evil, harm and calamity'",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "97:4#c9",
+          "section_ref": "97:4",
+          "attaches_to": "97:4",
+          "text": "The preposition 'min' in 'with every matter' can be read in the sense of 'bi' (with/by), parallel to its use in 'they guard him by/from the command of Allah' (13:11), so the angels descend carrying matters of good and blessing, or matters of life, death, and provision that Allah has decreed.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "أي بكل أمر من الخير والبركة، كقوله يحفظونه من أمر الله أي بأمر الله",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "original_excerpt": "the preposition min is used in the sense of 'with' as in [13:11] يحفظونه من أمر الله",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "والثانى: أنها بمعنى الباء، أى: تنزل بكل أمر قضاه الله تعالى فيها من موت وحياة ورزق",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "97:4#c10",
+          "section_ref": "97:4",
+          "attaches_to": "97:4",
+          "text": "It is clarified that Allah's decreeing is not confined to happening only on that night; rather, what happens that night is that the decreed matters are made known/disclosed to the angels.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "وليس المراد أن تقدير الله لا يحدث إلا فى تلك الليلة بل المراد إظهار تلك المقادير لملائكته",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "97:4#c11",
+          "section_ref": "97:4",
+          "attaches_to": "97:4",
+          "text": "A minority reading transmitted from Ibn ʿAbbās, ʿAlī, ʿIkrimah and al-Kalbī has 'min kulli imriʾin' ('every person') instead of 'amr' ('matter'), taken by al-Kalbī to mean that Jibrīl and the angels descend and greet every believing man and woman with peace ('min' here meaning 'upon').",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "كان يقرأ: من كل امرئ سلام ... تنـزل الملائكة والروح فيها بإذن ربهم من كل ملك يسلم على المؤمنين والمؤمنات",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وقرأ علي وابن عباس وعكرمة والكلبي (من كل امرئ) ... وتأولها الكلبي على أن جبريل ينزل فيها مع الملائكة، فيسلمون على كل امرئ مسلم",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "97:4#c12",
+          "section_ref": "97:4",
+          "attaches_to": "97:4",
+          "text": "This variant reading is judged unacceptable: it goes against the unanimous consensus of the authoritative reciters, and against what is written in the standard copies (maṣāḥif) of the Qurʾān, since the word 'amr' contains no letter yāʾ in any copy, whereas the alternative reading would require one.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "refute",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "ولا أرى القراءة بها جائزة، لإجماع الحجة من القرّاء على خلافها، وأنها خلاف لما في مصاحف المسلمين",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "97:4#c13",
+          "section_ref": "97:4",
+          "attaches_to": "97:4",
+          "text": "A report from Anas relates that on the Night of Qadr, Jibrīl descends with a great host of angels who pray for and greet every servant of Allah, man or woman, who is standing in prayer or engaged in remembrance of Allah.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "إذا كان ليلة القدر نزل جبريل في كبكبة من الملائكة، يصلون ويسلمون على كل عبد قائم أو قاعد يذكر الله تعالى",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "original_excerpt": "Jibra'il (علیہ السلام) descends on the earth with a huge throng of angels and all of them pray for every servant of Allah, man or woman, busy in salah or dhikr",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not specified by al-Qurṭubī or Muftī Shafīʿ"
+          }
+        },
+        {
+          "id": "97:4#c14",
+          "section_ref": "97:4",
+          "attaches_to": "97:4",
+          "text": "A hadith states that the angels present on the earth during that night are more numerous than the number of pebbles.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "the angels who are on the earth during that night are more numerous than the number of pebbles",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "original_excerpt": "লাইলাতুল-কদরের রাত্রিতে পৃথিবীতে ফেরেশতারা এত বেশী অবতরণ করে যে, তাদের সংখ্যা পাথর কুচির চেয়েও বেশী",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "original_excerpt": "ژمارەی ئەو مەلائیكەتانەى كە لەو شەوەدا دائەبەزن زیاترە لە ژمارەی وردە بەردەكان",
+              "translation_confidence": "low"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "hasan",
+            "graded_by": "Ibn Kathīr (chain judged sound though Aḥmad alone recorded it)"
+          }
+        },
+        {
+          "id": "97:4#c15",
+          "section_ref": "97:4",
+          "attaches_to": "97:4",
+          "text": "Reflecting on the verse, Sayyid Quṭb says that looking back across centuries at this night, one sees that the foundations of religion, the standards of right and wrong, the measure of truth, permanent values, and the way of life and law were all settled on it; he says humanity has since forgotten this night's true weight and, in forgetting it, lost the genuine peace and security it once brought, despite immense material progress.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "اس رات اساس دین، دینی اقدار اور حسن وقبح کے پیمانے طے ہوئے ... انسانیت نے اپنی جہالت اور بدبختی کی وجہ سے شب قدر کی قدر و قیمت کو بھلا دیا ہے",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        }
+      ],
+      "essay_html": "<p>The verse says that on that night the angels, and 'the Spirit' (al-Rūḥ), descend by their Lord's permission carrying every matter. Most of the commentators read al-Rūḥ as the angel Jibrīl, named separately from the angels in general.<sup class=\"ref\">1,2,3,7,8,9,10,11,12,13,14</sup> They note that naming him apart from the wider group of angels is itself a way of showing his special rank.<sup class=\"ref\">4,8,9</sup></p><p>Al-Qurṭubī (d. 1273) relays several other readings of who or what al-Rūḥ is: a distinct order of guardian-angels invisible even to other angels, the noblest angels closest to Allah according to Muqātil, an army of Allah that is not made of angels at all, beings who eat and have hands and feet and so are not angels, an immense single being standing apart in its own row, or mercy itself descending with Jibrīl.<sup class=\"ref\">3</sup> These are given as reports rather than settled positions.</p><p>The verb form of 'descend' (tanazzalu) is read as descending again and again, in abundance, not as a single event.<sup class=\"ref\">5,9,13</sup> Grammatically the word is a shortened form of 'tatanazzalu'.<sup class=\"ref\">9</sup> A hadith adds that the angels present on the earth that night outnumber the pebbles on the ground.<sup class=\"ref\">4,11,14</sup></p><p>On 'with every matter', the commonest reading is that the angels bring down what Allah has decreed for the coming year, matters of provision, lifespan, and the like, settled that night up to the same night next year.<sup class=\"ref\">1,3,4,7,11,12,13</sup> Isrār Aḥmad (d. 2010) frames this as an annual 'budget session' in Allah's running of creation, where the year's decrees are handed to the angels, led by Jibrīl, for execution across the earth, who then report back.<sup class=\"ref\">8</sup> A second reading ties 'every matter' to the word 'peace' that opens the next verse, so the phrase means the night is security from every harm, one in which Satan can do no evil.<sup class=\"ref\">4,7</sup> Others explain the preposition 'min' here as meaning 'with', on the model of a similar phrase in Sūrat al-Raʿd (13:11), so the angels come bearing matters of good and blessing.<sup class=\"ref\">2,7,9</sup> It is also clarified that Allah's decreeing itself is not confined to that single night; what happens that night is that the decreed matters are disclosed to the angels.<sup class=\"ref\">9</sup></p><p>A minority reading, traced to Ibn ʿAbbās, ʿAlī, ʿIkrimah and al-Kalbī, has 'every person' in place of 'every matter', taken to mean that the angels greet every believer with peace.<sup class=\"ref\">1,3</sup> Al-Ṭabarī (d. 923) rejects this reading outright, since it conflicts with the agreed text found in the standard copies of the Qurʾān and with the consensus of the reciters.<sup class=\"ref\">1</sup> A related report from Anas describes Jibrīl descending with a great host of angels who pray for and greet every worshipper standing in prayer or remembrance that night.<sup class=\"ref\">3,7</sup></p><p>Reflecting more broadly, Sayyid Quṭb (d. 1966) says that looking back across history at this night, one sees that the foundations of religion, the standards of right and wrong, and the shape of a whole way of life were settled on it, and that humanity, in forgetting its weight, lost a peace it has not recovered even amid great material progress.<sup class=\"ref\">6</sup></p><p class=\"close\">What the commentators agree on is the descent itself, of the angels and of Jibrīl by name, carrying that night whatever Allah has determined; what they differ on, without any of them claiming certainty over the others, is the precise nature of al-Rūḥ and the exact reach of 'every matter'.</p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:e24b5a2801ebc8475a97bf3cb71f2ecbdf42d9c37b4e6a5232c49834e57df8f8",
+        "2": "sha256:b0a27791cd9eff2bc6735015770faaccd5333907b7d7a29505e62f5ec55101ab",
+        "3": "sha256:366177e03b2e1864fe6d180ec35379f5c08210f16ab927bc1e36a2155cf96384",
+        "4": "sha256:7737291e8cd17a040b2a34a45b166db6c681e383cd6cccd9425f09d51dfdc527",
+        "5": "sha256:c5866b30dcf126c3768365ec3b0aa2222baa054c923915ba1c7151d6294ae2fe",
+        "6": "sha256:c795fb2b8f19692e0c137d219b2c02513e3fccab6fc6d5162956c2c2655486d0",
+        "7": "sha256:de9b9491355ef1b449a97580418be1c3add8149a4c423f8c9dd3b196f4562237",
+        "8": "sha256:ff479bfaf3f940aa16b6b96a801febe98eedf88ff00d4d8f420e54da1519ed81",
+        "9": "sha256:2cff93875b3a937593d697619ee06e2bb1d6a8035d7bbc4ee58fdcf4a1e4969d",
+        "10": "sha256:c85b47cbc2f22263fbb488e310ede97a637abfa42d36c3401969f25c143653fa",
+        "11": "sha256:697438dd1ce35a4e749281810edad11ef8614a703fa8d9f6ebbc9f1f5e60a1a2",
+        "12": "sha256:3ea0d644789c081429617a173a1823c92a7823a5c3fd55b1c5cbfced299bcc86",
+        "13": "sha256:ce925432aba218a6e2f40c313b1a4d16acba0f19613de115c0aa8b9f8a106344",
+        "14": "sha256:f4a5e296e49de433ca37b807be2def71539f1833af1622e435da7447c0a8616c"
+      },
+      "flags": {
+        "creedal_stakes": true,
+        "legal_content": false,
+        "sensitive_content": false
+      },
+      "compiled_at": "2026-08-02"
+    },
+    "97:5": {
+      "verse_range": "5-5",
+      "title": "Peace Until Dawn",
+      "in_short": "The night of Qadr is described as pure peace, safe from every evil, lasting from nightfall until the break of dawn. Commentators unpack what that peace means, how the verse is parsed, when exactly this night falls, and what the Prophet ﷺ taught believers to seek and say in it.",
+      "claims": [
+        {
+          "id": "97:5#c1",
+          "section_ref": "97:5",
+          "attaches_to": "97:5",
+          "text": "\"Salām hiya\" means the whole night is peace and good, with no evil in it at all, from its start to the coming of dawn.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "relay",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "original_terms": [
+            {
+              "term": "salām",
+              "gloss": "peace, safety, freedom from harm"
+            }
+          ]
+        },
+        {
+          "id": "97:5#c2",
+          "section_ref": "97:5",
+          "attaches_to": "97:5",
+          "text": "This peace runs across the whole night: it begins at sunset and ends at the rising of dawn.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "97:5#c3",
+          "section_ref": "97:5",
+          "attaches_to": "97:5",
+          "text": "Al-Shaʿbī read the peace as the angels greeting the people gathered in the mosques, from sunset until dawn.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "97:5#c4",
+          "section_ref": "97:5",
+          "attaches_to": "97:5",
+          "text": "Al-Kalbī held that the angels descend that night and greet every believing man or woman they meet, on their Lord's behalf.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "97:5#c5",
+          "section_ref": "97:5",
+          "attaches_to": "97:5",
+          "text": "Mujāhid explained the peace as security: Satan cannot do any evil or cause any harm during that night.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "97:5#c6",
+          "section_ref": "97:5",
+          "attaches_to": "97:5",
+          "text": "Al-Ḍaḥḥāk (and similarly al-Farrāʾ) said Allah decrees nothing but safety on this night in particular, whereas on other nights of the year He also decrees calamities alongside safety.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "theological_school": "Atharī"
+        },
+        {
+          "id": "97:5#c7",
+          "section_ref": "97:5",
+          "attaches_to": "97:5",
+          "text": "Some, relaying from Nāfiʿ and others, held that the sentence actually ends at \"every matter\" (min kulli amr), and \"salām hiya\" then opens a fresh sentence describing the night itself as wholly peace.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "97:5#c8",
+          "section_ref": "97:5",
+          "attaches_to": "97:5",
+          "text": "Others treated \"salām\" as still describing \"every matter\": the angels descend with every matter that is itself good and peace, rather than the night being independently declared peace.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "97:5#c9",
+          "section_ref": "97:5",
+          "attaches_to": "97:5",
+          "text": "Readers differed on \"maṭlaʿ al-fajr\": most read it with a fatḥa (maṭlaʿ), meaning \"the rising\" of dawn as a verbal noun; al-Kisāʾī and others read it with a kasra (maṭliʿ). Al-Ṭabarī judged the fatḥa correct, since the kasra form properly denotes \"the place from which something rises,\" which does not fit here; al-Baghawī likewise called the fatḥa the preferred reading; al-Qurṭubī noted both are attested patterns for the verbal noun.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar",
+          "original_terms": [
+            {
+              "term": "maṭlaʿ / maṭliʿ al-fajr",
+              "gloss": "the rising of dawn (verbal noun) vs. the place where dawn rises"
+            }
+          ]
+        },
+        {
+          "id": "97:5#c10",
+          "section_ref": "97:5",
+          "attaches_to": "97:5",
+          "text": "Al-Ṭanṭāwī analysed the sentence grammatically: \"salām\" is the fronted predicate and \"hiya\" the delayed subject, with the predicate brought forward to hurry the good news to the listener; the verbal-noun form is used either for emphasis, or as standing in for an implied active description of the night.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "97:5#c11",
+          "section_ref": "97:5",
+          "attaches_to": "97:5",
+          "text": "Because Laylat al-Qadr recurs every Ramadan and its exact night is not fixed to one calendar date everywhere, its timing on the clock will vary from place to place according to geography, and people should reckon it for their own location.",
+          "claim_type": "other",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "97:5#c12",
+          "section_ref": "97:5",
+          "attaches_to": "97:5",
+          "text": "Scholars disagreed over which night of Ramadan is Laylat al-Qadr; the majority position, supported by several narrations, is that it is the twenty-seventh night, though other reports point to other odd nights in the last ten days.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "hasan",
+            "graded_by": "al-Tirmidhī, also carried by Muslim (as noted by al-Qurṭubī and Ibn Kathīr) for the report naming the twenty-seventh night"
+          }
+        },
+        {
+          "id": "97:5#c13",
+          "section_ref": "97:5",
+          "attaches_to": "97:5",
+          "text": "Reported signs of the night: it is calm and radiant, neither hot nor cold, and the following morning the sun rises pale, without its usual rays, like the moon on a full-moon night.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "hasan",
+            "graded_by": "Ibn Kathīr, who called the chain good but noted some odd wording in the text"
+          }
+        },
+        {
+          "id": "97:5#c14",
+          "section_ref": "97:5",
+          "attaches_to": "97:5",
+          "text": "A hadith states that whoever stands in prayer on Laylat al-Qadr with faith and sincere hope of reward (iḥtisāb) will have his previous sins forgiven.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "original_terms": [
+            {
+              "term": "iḥtisāb",
+              "gloss": "acting purely in expectation of reward from Allah"
+            }
+          ],
+          "report": {
+            "grade": "sahih",
+            "graded_by": "reported as agreed upon in al-Ṣaḥīḥayn (per Ibn Kathīr and al-Ṭanṭāwī)"
+          }
+        },
+        {
+          "id": "97:5#c15",
+          "section_ref": "97:5",
+          "attaches_to": "97:5",
+          "text": "When ʿĀʾishah رضي الله عنها asked the Prophet ﷺ what to say if she caught Laylat al-Qadr, he taught her: \"O Allah, You are the Pardoning (al-ʿAfuww), You love to pardon, so pardon me.\"",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "relay",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "original_terms": [
+            {
+              "term": "al-ʿAfuww",
+              "gloss": "the Pardoning, one who forgives readily"
+            }
+          ],
+          "report": {
+            "grade": "hasan",
+            "graded_by": "al-Tirmidhī graded it hasan ṣaḥīḥ; al-Ḥākim held it authentic by the standard of the two Ṣaḥīḥ collections (as cited by al-Qurṭubī and Ibn Kathīr)"
+          }
+        },
+        {
+          "id": "97:5#c16",
+          "section_ref": "97:5",
+          "attaches_to": "97:5",
+          "text": "A hadith reports that whoever prays ʿIshāʾ and Fajr in congregation attains a share of the reward of standing the whole (or half the) night in worship, giving practical access to some of this night's blessing even without knowing its exact date.",
+          "claim_type": "legal",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "reported by Muslim from ʿUthmān رضي الله عنه, per Muftī Muḥammad Shafīʿ"
+          }
+        },
+        {
+          "id": "97:5#c17",
+          "section_ref": "97:5",
+          "attaches_to": "97:5",
+          "text": "Because the exact night is not certainly known (on the view that it is unspecified across the year), a divorce or manumission made conditional on Laylat al-Qadr does not take legal effect until a full year has passed from the oath, since such matters cannot rest on mere probability.",
+          "claim_type": "legal",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "97:5#c18",
+          "section_ref": "97:5",
+          "attaches_to": "97:5",
+          "text": "The abundance of angels present that night creates a spiritual atmosphere; those who are spiritually receptive are affected by it, which raises the value of worship performed then above worship performed in ordinary times.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "97:5#c19",
+          "section_ref": "97:5",
+          "attaches_to": "97:5",
+          "text": "Sayyid Quṭb reads the Prophet's ﷺ instruction to seek this night yearly in the last ten nights, and to worship in it with faith and sincere expectation of reward, as showing that Islam is not mere outward ritual: the practice is designed to fix belief inside the believer's conscience and living conduct, not leave it as abstract idea.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "97:5#c20",
+          "section_ref": "97:5",
+          "attaches_to": "97:5",
+          "text": "Isrār Aḥmad described the night's peace as having several facets, including that prayers made in it are answered and the reward for worship is multiplied many times over.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        }
+      ],
+      "essay_html": "<p>\"Salām hiya\" — the night is peace — is read by the commentators as covering the whole night from start to finish: it is entirely good, with no evil mixed into it, from nightfall until the break of dawn.<sup class=\"ref\">1,2,3,4,5,11,12,13</sup> The peace begins at sunset and ends when dawn rises.<sup class=\"ref\">5,7,11</sup></p>\n<p>Different scholars fill out what that peace is. Al-Shaʿbī took it as the angels themselves greeting the people gathered in the mosques all night long.<sup class=\"ref\">2,3,4,14</sup> Al-Kalbī said the angels descend and greet every believing man or woman they come across.<sup class=\"ref\">2</sup> Mujāhid read it as security from Satan: he can do no evil and cause no harm that night.<sup class=\"ref\">2,3,4</sup> Al-Ḍaḥḥāk and al-Farrāʾ went further, saying that on this night Allah decrees nothing but safety, whereas on the rest of the year's nights He decrees both calamity and safety together.<sup class=\"ref\">2,3</sup></p>\n<p>The grammar of the verse was also discussed. Some, relaying from Nāfiʿ, held that the sentence closes at \"every matter\" and a new sentence opens with \"salām hiya,\" making the night's peace its own independent statement.<sup class=\"ref\">2,3</sup> Others kept \"salām\" tied back to \"every matter,\" so the angels descend with every matter that is itself peaceable.<sup class=\"ref\">7</sup> Al-Ṭanṭāwī analysed it further: \"salām\" is the predicate placed first, and \"hiya\" (\"it\") the subject placed after, the good news brought forward for effect, with the noun form used for emphasis.<sup class=\"ref\">9</sup> There was also a difference in how \"maṭlaʿ al-fajr\" (the rising of dawn) was voweled. Most read it as a verbal noun meaning \"the rising\"; al-Kisāʾī read it differently, in a form that could suggest \"the place of rising.\" Al-Ṭabarī judged the first reading correct here, since \"the place of rising\" makes no sense in this context; al-Baghawī agreed it was the preferred choice.<sup class=\"ref\">1,2,3</sup></p>\n<p>On which night this is, the commentators note real disagreement, though the majority, on the strength of several reports, hold it is the twenty-seventh night of Ramadan; other reports point to other odd nights among the last ten.<sup class=\"ref\">3,4,9</sup> Its timing on the clock will also differ by geography, since the night itself is not tied to one fixed date everywhere.<sup class=\"ref\">7</sup> Reported signs of the night include calm, mild weather and a sun that rises the next morning pale and without its usual rays, like the moon at its fullest.<sup class=\"ref\">3,4,9,14</sup></p>\n<p>Several hadiths carry the practical weight of the night. One states that whoever stands in prayer that night with faith and sincere hope of reward (<span lang=\"ar\">iḥtisāb</span>) has his past sins forgiven.<sup class=\"ref\">4,6,9</sup> When ʿĀʾishah رضي الله عنها asked the Prophet ﷺ what to say if she caught the night, he taught her: \"O Allah, You are the Pardoning (al-ʿAfuww), You love to pardon, so pardon me.\"<sup class=\"ref\">3,4,10,12,14</sup> Another hadith notes that praying ʿIshāʾ and Fajr in congregation gives a share of this night's reward even without knowing its exact date.<sup class=\"ref\">7</sup> And because the exact night is uncertain, al-Qurṭubī records that a divorce or manumission made conditional on it only takes effect after a full year has passed.<sup class=\"ref\">3</sup></p>\n<p>Reflecting further, Wahiduddin Khan reads the abundance of angels that night as creating a spiritual atmosphere that heightens the worth of worship done in it.<sup class=\"ref\">10</sup> Sayyid Quṭb takes the Prophet's ﷺ instruction to seek and revive this night yearly as proof that Islam is not empty ritual, but a system built to root belief in lived practice.<sup class=\"ref\">6</sup> Isrār Aḥmad adds that the peace of the night includes prayers being answered and worship's reward being multiplied.<sup class=\"ref\">8</sup></p>\n<p class=\"close\">Every reading the commentators offer converges on the same plain sense of the words: a night entirely free of harm, held safe from sunset to the rising of dawn.<sup class=\"ref\">1,2,3,4,5,13</sup></p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:eddad94f98d053e0f32af9a1d7753bf358f0a0e2c35281ce1ea5019cc2dd0d4b",
+        "2": "sha256:b6291f2702ece0e09991f20994c557dc2f915f254a1a39c4e4abba0f08579ba2",
+        "3": "sha256:03b54d7a5545e3e26c0751e998bdd7eef5c0fff8663cc7f8a60b23b03df71d23",
+        "4": "sha256:c14ad22127069261382adc9bd5a683e03dcb0018c2ff20292eaa21e305130a04",
+        "5": "sha256:743b376c500c97977fc3315e2c1d819d362c7cb29f4bf97398b87fcc357a050f",
+        "6": "sha256:e16e96ab4ecf67c15e18f36830c4e516789267f826c5813c577edec023116bc3",
+        "7": "sha256:775f511e19cb4b671e6e18dd8e51b4280efaaa9e32895a954bb0c3535ab2c637",
+        "8": "sha256:670bb732118246dbbd2a20fcf4939c3728b272e10a4d7435ab3701173165084f",
+        "9": "sha256:46d52e5976dd274ba409fed9c3686a6db097b38bb6cf4a4c18dc391e4f905404",
+        "10": "sha256:9af2fd5f45e02761349e5646aee7e8fa2d7e69c2610b06da78d8ab4b141f61ab",
+        "11": "sha256:75e134e5a6bee69f3f97adf6428111cc08aa3645ba51abd0fb02128e44c9d140",
+        "12": "sha256:44909b32c22ab414665005fac56c9df538a5f00d9463c9ad3e48a2f5239cc5f4",
+        "13": "sha256:6b9f7133eb6859a6cdf17834c5586b4cf52629f765e1faa3a08657491bcfab03",
+        "14": "sha256:ed6409ad5de60fffc1226732ddf90598aa07ef6d5006352743052b5eea204281"
+      },
+      "flags": {
+        "creedal_stakes": true,
+        "legal_content": true,
+        "sensitive_content": false
+      },
+      "compiled_at": "2026-08-02"
+    }
+  }
+}

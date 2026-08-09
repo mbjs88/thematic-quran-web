@@ -1,0 +1,2025 @@
+{
+  "surah": 108,
+  "name": "",
+  "coverage": {
+    "editions_present": [
+      "ar-tafsir-al-tabari",
+      "ar-tafsir-al-baghawi",
+      "ar-tafseer-al-qurtubi",
+      "en-tafisr-ibn-kathir",
+      "ar-tafseer-al-saddi",
+      "tafsir-fe-zalul-quran-syed-qatab",
+      "en-tafsir-maarif-ul-quran",
+      "tafsir-bayan-ul-quran",
+      "ar-tafsir-al-wasit",
+      "tazkirul-quran-en",
+      "bn-tafsir-abu-bakr-zakaria",
+      "bn-tafsir-ahsanul-bayaan",
+      "ar-tafsir-muyassar",
+      "kurd-tafsir-rebar"
+    ],
+    "editions_absent": [],
+    "independent_works": 14,
+    "languages_present": [
+      "ar",
+      "bn",
+      "en",
+      "ku",
+      "ur"
+    ],
+    "languages_absent": []
+  },
+  "pipeline_provenance": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "overview-v2.3",
+    "theme_breaks_version": "sha256:99880ec7b10b53313690f91df9ee8d065519ee698df34b35a3336b5705218f90",
+    "compiled_at": "2026-08-02"
+  },
+  "modern_lens_framing": "The Qurʾan is taken here as fixed, revealed truth; science is our provisional, evolving account of the observable world. What follows notes where the two meet — a contemplation, not a proof. Where the science later shifts, that reflects the limits of our knowledge, not the text.",
+  "references": [
+    {
+      "n": 1,
+      "work_id": "al-tabari",
+      "label": "Jāmiʿ al-Bayān",
+      "author_id": "al-tabari",
+      "author": "Abū Jaʿfar Muḥammad ibn Jarīr al-Ṭabarī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 2,
+      "work_id": "al-baghawi",
+      "label": "Maʿālim al-Tanzīl",
+      "author_id": "al-baghawi",
+      "author": "Abū Muḥammad al-Ḥusayn ibn Masʿūd al-Baghawī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 3,
+      "work_id": "al-qurtubi",
+      "label": "al-Jāmiʿ li-Aḥkām al-Qurʾān",
+      "author_id": "al-qurtubi",
+      "author": "Abū ʿAbd Allāh Muḥammad ibn Aḥmad al-Qurṭubī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 4,
+      "work_id": "ibn-kathir",
+      "label": "Tafsīr Ibn Kathīr",
+      "author_id": "ibn-kathir",
+      "author": "Ismāʿīl ibn ʿUmar ibn Kathīr",
+      "source_language": "ar",
+      "note": "One independent voice. The ar/ur/bn editions are the SAME work — never count as separate corroboration."
+    },
+    {
+      "n": 5,
+      "work_id": "al-saadi",
+      "label": "Taysīr al-Karīm al-Raḥmān",
+      "author_id": "al-saadi",
+      "author": "ʿAbd al-Raḥmān ibn Nāṣir al-Saʿdī",
+      "source_language": "ar",
+      "note": "Russian edition (170) is the SAME work — translate from the Arabic original, and do not count Russian as an independent voice."
+    },
+    {
+      "n": 6,
+      "work_id": "fi-zilal",
+      "label": "Fī Ẓilāl al-Qurʾān",
+      "author_id": "sayyid-qutb",
+      "author": "Sayyid Quṭb Ibrāhīm Ḥusayn",
+      "source_language": "ar",
+      "note": "Original is Arabic, but the API here carries only an URDU edition — translating from Urdu is one step removed from the original. Prefer the Arabic original if the QF Content API offers it."
+    },
+    {
+      "n": 7,
+      "work_id": "maarif",
+      "label": "Maʿārif al-Qurʾān",
+      "author_id": "muhammad-shafi-usmani",
+      "author": "Muftī Muḥammad Shafīʿ ʿUthmānī",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 8,
+      "work_id": "bayan-ul-quran",
+      "label": "Bayān al-Qurʾān",
+      "author_id": "israr-ahmad",
+      "author": "Isrār Aḥmad",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 9,
+      "work_id": "wasit",
+      "label": "al-Tafsīr al-Wasīṭ",
+      "author_id": "tantawi",
+      "author": "Muḥammad Sayyid Ṭanṭāwī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 10,
+      "work_id": "tazkirul",
+      "label": "Tazkīr al-Qurʾān",
+      "author_id": "wahiduddin-khan",
+      "author": "Wahiduddin Khan",
+      "source_language": "ur",
+      "note": "en and ur editions are the same work."
+    },
+    {
+      "n": 11,
+      "work_id": "abu-bakr-zakaria",
+      "label": "Tafsir Abu Bakr Zakaria",
+      "author_id": "abu-bakr-zakaria",
+      "author": "Abū Bakr Muḥammad Zakariyyā",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 12,
+      "work_id": "ahsanul-bayaan",
+      "label": "Ahsanul Bayaan",
+      "author_id": "bayaan-foundation",
+      "author": "Ahsanul Bayaan (Bayaan Foundation)",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 13,
+      "work_id": "muyassar",
+      "label": "al-Tafsīr al-Muyassar",
+      "author_id": "committee-muyassar",
+      "author": "al-Tafsīr al-Muyassar (committee)",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 14,
+      "work_id": "rebar-kurdish",
+      "label": "Rebar Kurdish Tafsir",
+      "author_id": "rebar",
+      "author": "Rebar Kurdish Tafsir",
+      "source_language": "ku",
+      "note": ""
+    }
+  ],
+  "sections": {
+    "108:1": {
+      "verse_range": "1-2",
+      "title": "The Gift of al-Kawthar",
+      "in_short": "Allah tells the Prophet ﷺ that He has given him overflowing abundance (al-Kawthar), and tells him to answer that gift with prayer and sacrifice offered to Him alone.",
+      "claims": [
+        {
+          "id": "108:1#c1",
+          "section_ref": "108:1",
+          "attaches_to": "108:1",
+          "text": "Al-Kawthar is built on the pattern fawʿal from kathra (abundance), a pattern used for intensity. The Arabs called anything outstanding in number or worth 'kawthar'.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "الكوثر: فوعل من الكثرة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "فوعل من الكثرة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "والكوثر: فوعل من الكثرة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "الكوثر: فوعل من الكثرة",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "الكوثر",
+              "gloss": "al-Kawthar, an intensified form meaning 'overflowing abundance'"
+            },
+            {
+              "term": "فوعل",
+              "gloss": "an Arabic grammatical pattern used to intensify meaning"
+            }
+          ]
+        },
+        {
+          "id": "108:1#c2",
+          "section_ref": "108:1",
+          "attaches_to": "108:1",
+          "text": "The main and most widely reported reading is that al-Kawthar is a named river in Paradise given to the Prophet ﷺ, described in hadith reports: its banks are gold or hollow pearl, its bed is musk, its water whiter than milk and sweeter than honey, with vessels as numerous as the stars.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "reports found in Bukhārī and Muslim, as cited by Ibn Kathīr [4] and al-Tirmidhī's report as graded ḥasan ṣaḥīḥ, cited by Qurṭubī [3]"
+          }
+        },
+        {
+          "id": "108:1#c3",
+          "section_ref": "108:1",
+          "attaches_to": "108:1",
+          "text": "Another major reading, going back to Ibn ʿAbbās and Saʿīd ibn Jubayr, is that al-Kawthar simply means 'abundant good' — everything of value Allah gave the Prophet ﷺ, not narrowly one river.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "الخير الكثير الذي أعطاه الله إياه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "original_terms": [
+            {
+              "term": "الخير الكثير",
+              "gloss": "abundant good"
+            }
+          ]
+        },
+        {
+          "id": "108:1#c4",
+          "section_ref": "108:1",
+          "attaches_to": "108:1",
+          "text": "The two readings are not seen as contradictory. When told people claimed al-Kawthar was a river, Saʿīd ibn Jubayr replied that the Paradise river is itself one item within the abundant good Allah gave the Prophet ﷺ. The river sits inside the wider gift.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "النهر الذي في الجنة من الخير الذي أعطاه الله إياه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "relay",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "108:1#c5",
+          "section_ref": "108:1",
+          "attaches_to": "108:1",
+          "text": "Some hold al-Kawthar is (or includes) the Ḥawḍ, the Basin the Prophet ﷺ will stand at on the Day of Judgement, where his followers drink; this Basin is fed from the Paradise river of Kawthar by two channels.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "original_terms": [
+            {
+              "term": "الحوض",
+              "gloss": "the Basin at the place of Gathering, where the Prophet's followers drink"
+            }
+          ]
+        },
+        {
+          "id": "108:1#c6",
+          "section_ref": "108:1",
+          "attaches_to": "108:1",
+          "text": "Commentators list many further identifications proposed for al-Kawthar besides the river and the Basin: prophethood, the Qurʾān, Islam, ease of the Sharīʿah, the abundance of companions and followers, the raising of the Prophet's mention, intercession, and other things — Qurṭubī counts sixteen opinions in all.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "على ستة عشر قولا",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "relay",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "108:1#c7",
+          "section_ref": "108:1",
+          "attaches_to": "108:1",
+          "text": "Al-Qurṭubī states his own preference: the soundest of all these readings are the river and the Basin, because an explicit text from the Prophet ﷺ fixes the word to these; everything else said afterwards is, at most, additional favour granted alongside them.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "أصح هذه الأقوال الأول والثاني",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "108:1#c8",
+          "section_ref": "108:1",
+          "attaches_to": "108:1",
+          "text": "The setting reported for the whole surah: Anas ibn Mālik said the Prophet ﷺ dozed off among the companions, then lifted his head smiling and told them a surah had just been revealed to him — he recited it, then asked them if they knew what al-Kawthar was, and explained it as the river and the Basin promised to him.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "recorded in Muslim, as cited by these commentators"
+          }
+        },
+        {
+          "id": "108:1#c9",
+          "section_ref": "108:1",
+          "attaches_to": "108:1",
+          "text": "The surah is placed against the taunts of the Prophet's ﷺ opponents, who called him 'abtar' (cut off, without male heirs) after the deaths of his sons, hoping his message would die with him; named among the mockers are al-ʿĀṣ ibn Wāʾil, Kaʿb ibn al-Ashraf and others. The Prophet was under heavy pressure at the time, isolated and economically weakened.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "relay",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "relay",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "reports of the occasion vary in chain, as noted by Ibn Kathīr [4]"
+          }
+        },
+        {
+          "id": "108:1#c10",
+          "section_ref": "108:1",
+          "attaches_to": "108:2",
+          "text": "The core meaning of the command is: having been given this abundance, the Prophet ﷺ is to make his prayer and his sacrifice belong to Allah alone, in contrast to those who prayed and offered sacrifices to other than Allah.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "108:1#c11",
+          "section_ref": "108:1",
+          "attaches_to": "108:2",
+          "text": "One reading takes 'so pray' as a command to keep to the five obligatory prayers at their times.",
+          "claim_type": "legal",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "أي أقم الصلاة المفروضة عليك",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "108:1#c12",
+          "section_ref": "108:1",
+          "attaches_to": "108:2",
+          "text": "Another reading ties both halves of the verse to the pilgrimage: 'pray' means the prayer of the day of sacrifice (the Eid prayer), and 'sacrifice' means slaughtering the animal offering on that day.",
+          "claim_type": "legal",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "108:1#c13",
+          "section_ref": "108:1",
+          "attaches_to": "108:2",
+          "text": "A further Hajj-specific reading: 'pray' means the dawn prayer at Jamʿ (Muzdalifah), and 'sacrifice' means slaughtering the camels at Minā.",
+          "claim_type": "legal",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "108:1#c14",
+          "section_ref": "108:1",
+          "attaches_to": "108:2",
+          "text": "Saʿīd ibn Jubayr is reported to have said the verse was revealed at al-Ḥudaybiyyah, when the Prophet ﷺ and his companions were barred from the House; Jibrīl came and told him to sacrifice and turn back, so he prayed two units, then went and slaughtered the animals.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "Tabarī [1] and Qurṭubī [3] relay without grading"
+          }
+        },
+        {
+          "id": "108:1#c15",
+          "section_ref": "108:1",
+          "attaches_to": "108:2",
+          "text": "Lexically, naḥr specifically means slaughtering a camel by striking the jugular vein, the method used for that animal by the Arabs; the word is sometimes used more generally for any sacrifice.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "نحر",
+              "gloss": "to sacrifice by piercing the throat/jugular, especially of a camel"
+            }
+          ]
+        },
+        {
+          "id": "108:1#c16",
+          "section_ref": "108:1",
+          "attaches_to": "108:2",
+          "text": "A reading attributed to some scholars takes 'sacrifice' as raising the hands to the throat at the opening declaration of prayer (takbīr). Muftī Muḥammad Shafīʿ notes that Ibn Kathīr judged such reports as attributed to leading exegetes to be munkar (rejected, contradicted by stronger transmission).",
+          "claim_type": "legal",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "refute",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "original_excerpt": "Ibn Kathir holds such narrations as 'munkar'",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "original_terms": [
+            {
+              "term": "منكر",
+              "gloss": "munkar, a report judged rejected because it contradicts stronger transmission"
+            }
+          ],
+          "report": {
+            "grade": "daif",
+            "graded_by": "Ibn Kathīr, as reported by Muftī Muḥammad Shafīʿ [7]"
+          }
+        },
+        {
+          "id": "108:1#c17",
+          "section_ref": "108:1",
+          "attaches_to": "108:2",
+          "text": "A widely reported reading, attributed to ʿAlī رضي الله عنه, takes 'and sacrifice' as an instruction about the posture of prayer: placing the right hand over the left, near the chest, at the moment corresponding to the throat (naḥr).",
+          "claim_type": "legal",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "وضع اليمين على الشمال في الصلاة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "108:1#c18",
+          "section_ref": "108:1",
+          "attaches_to": "108:2",
+          "text": "Qurṭubī records that scholars disagreed over exactly where the hand should rest: some said on the chest, others above the navel, others below it; he notes Mālik, Aḥmad and Isḥāq held it should be done, and that it is even reported both ways from Mālik himself.",
+          "claim_type": "legal",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "108:1#c19",
+          "section_ref": "108:1",
+          "attaches_to": "108:2",
+          "text": "Qurṭubī also records a dispute over raising the hands during the prayer: some (al-Layth, al-Shāfiʿī, Aḥmad, Isḥāq, Abū Thawr) held it should be done at the opening takbīr, at bowing, and at rising from bowing; others (al-Thawrī and the people of legal reasoning, and the well-known Mālikī position) held it should be done only at the opening.",
+          "claim_type": "legal",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "108:1#c20",
+          "section_ref": "108:1",
+          "attaches_to": "108:2",
+          "text": "Some scholars of Arabic read 'and sacrifice' as 'face the qiblah with your chest/throat', drawing on the Arab expression that facing dwellings 'tanāḥar' one another, i.e. stand opposite.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "استقبل القبلة بنحرك",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "108:1#c21",
+          "section_ref": "108:1",
+          "attaches_to": "108:2",
+          "text": "Al-Ḍaḥḥāk is reported to have read the verse as simply 'pray to your Lord and ask (supplicate to) Him', taking naḥr in the broader sense of petitioning.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "صلّ لربك وسل",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "108:1#c22",
+          "section_ref": "108:1",
+          "attaches_to": "108:2",
+          "text": "Muḥammad ibn Kaʿb al-Quraẕī explained the occasion this way: some people used to pray and sacrifice for other than Allah; now that al-Kawthar has been given, the Prophet's ﷺ prayer and sacrifice must belong to Allah alone.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "108:1#c23",
+          "section_ref": "108:1",
+          "attaches_to": "108:2",
+          "text": "Al-Saʿdī explains why these two acts, prayer and sacrifice, are singled out for gratitude: prayer holds the submission of the heart and the limbs together to Allah, moving through every kind of worship, while sacrifice draws near to Allah with the best of what a person owns, giving up wealth the soul is naturally attached to and reluctant to part with.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "الصلاة تتضمن الخضوع في القلب والجوارح لله",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "108:1#c24",
+          "section_ref": "108:1",
+          "attaches_to": "108:2",
+          "text": "Ibn al-ʿArabī, cited by Qurṭubī, reflects that the deeper sense is simply: worship your Lord and sacrifice for Him, so that your whole life's work matches the scale of what was given, since a single day's prayer and the slaughter of one animal cannot by themselves be weighed as proportionate to a gift as vast as al-Kawthar.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "أن يكون جميع العمل يوازي هذه الخصوصية من الكوثر",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        }
+      ],
+      "essay_html": "<p>The surah opens with Allah addressing the Prophet ﷺ directly: 'We have given you al-Kawthar'. The word comes from an intensified Arabic pattern built on kathra, abundance, the kind of word the Arabs used for anything outstanding in number or worth.<sup class=\"ref\">1,2,3,9</sup></p><p>The most widely reported meaning is that al-Kawthar is a named river in Paradise given to the Prophet ﷺ. Hadith describe its banks as gold or hollow pearl, its bed as musk, its water whiter than milk and sweeter than honey, its vessels as numerous as the stars.<sup class=\"ref\">1,2,3,4,11,12,13,14</sup> Alongside this, Ibn ʿAbbās and Saʿīd ibn Jubayr read al-Kawthar more broadly as simply 'abundant good' — everything of value Allah gave the Prophet ﷺ, not one item only.<sup class=\"ref\">1,2,4,7,8,11</sup> The two readings are not treated as rivals. When told people said Kawthar was a river, Saʿīd ibn Jubayr answered that the Paradise river is itself part of the abundant good — one gift folded inside the larger one.<sup class=\"ref\">1,4,7,11,6</sup></p><p>Some commentators add that al-Kawthar is, or includes, the Ḥawḍ — the Basin where the Prophet's ﷺ followers will drink on the Day of Judgement, fed from the Paradise river by two channels.<sup class=\"ref\">1,2,3,7,11</sup> Beyond these, Qurṭubī collects sixteen further proposals altogether — prophethood, the Qurʾān, Islam, ease of the law, the multitude of followers, the Prophet's raised mention, and more.<sup class=\"ref\">3,8,9</sup> He himself judges the river and the Basin the soundest of all these, since an explicit word from the Prophet ﷺ fixes the term to them; whatever else is said belongs, at most, alongside them.<sup class=\"ref\">3,9</sup></p><p>The setting given for the whole surah comes through Anas ibn Mālik: the Prophet ﷺ dozed among the companions, then raised his head smiling and told them a surah had just come down to him. He recited it, then asked if they knew what al-Kawthar was, and told them it was the river and the Basin promised to him.<sup class=\"ref\">2,3,4,7,14</sup> Commentators also place the surah against the backdrop of taunts by the Prophet's ﷺ opponents, who called him 'abtar' — cut off, without male heirs — after his sons died, hoping his message would die with him; named among the mockers are al-ʿĀṣ ibn Wāʾil and Kaʿb ibn al-Ashraf.<sup class=\"ref\">4,6,7,10</sup></p><p>The second verse turns the gift into a command. Having received such abundance, the Prophet ﷺ is told to make his prayer and his sacrifice belong to Allah alone, unlike those who prayed and sacrificed to other than Him.<sup class=\"ref\">1,2,4,5,6,9,11,12,13</sup> Commentators read the specifics several ways. One take: 'pray' means keeping the five obligatory prayers.<sup class=\"ref\">1,3</sup> Another ties the verse to the pilgrimage: 'pray' as the Eid prayer on the day of sacrifice, 'sacrifice' as slaughtering the offering that day.<sup class=\"ref\">1,2,3,4</sup> A third, also Hajj-specific, reads 'pray' as the dawn prayer at Muzdalifah and 'sacrifice' as slaughtering camels at Minā.<sup class=\"ref\">1,2,3</sup> Saʿīd ibn Jubayr is reported to have placed the verse instead at al-Ḥudaybiyyah, when the Prophet ﷺ and his companions were barred from the House and told by Jibrīl to pray, then sacrifice, and turn back.<sup class=\"ref\">1,3</sup></p><p>Lexically, naḥr means slaughtering a camel by striking the jugular, the method the Arabs used for that animal, though the word can be used more loosely for any sacrifice.<sup class=\"ref\">7,8,11,12</sup> Beyond the literal sense, some readings turn 'and sacrifice' into a description of prayer's posture: raising the hands to the throat at the opening declaration, though Ibn Kathīr judged such reports, where attributed to leading exegetes, to be rejected (munkar).<sup class=\"ref\">1,3,7</sup> A more widely carried reading, attributed to ʿAlī رضي الله عنه, takes it as placing the right hand over the left near the chest.<sup class=\"ref\">1,2,3</sup> Qurṭubī records that jurists then disagreed over exactly where the hand rests — chest, above the navel, or below it — and over whether the hands should be raised only at the opening takbīr or also at bowing and rising.<sup class=\"ref\">3</sup> Other philologists took 'and sacrifice' as simply facing the qiblah with the chest, from the Arab usage of dwellings standing 'naḥr to naḥr', facing one another;<sup class=\"ref\">1,3</sup> al-Ḍaḥḥāk read it instead as 'pray to your Lord and ask Him'.<sup class=\"ref\">1</sup> Muḥammad ibn Kaʿb al-Quraẕī frames the whole command against people who used to pray and sacrifice to other than Allah: now, prayer and sacrifice must be His alone.<sup class=\"ref\">1,2,3,4</sup></p><p>Al-Saʿdī explains why these two acts were singled out: prayer carries the submission of heart and body through every form of worship, while sacrifice gives up wealth the soul is naturally attached to, drawing near to Allah with the best a person owns.<sup class=\"ref\">5</sup> Ibn al-ʿArabī, cited by Qurṭubī, adds that the deeper point is proportion: a single day's prayer and one slaughtered animal cannot by themselves match a gift as vast as al-Kawthar, so the true meaning is that the whole of one's worship should answer the whole of what was given.<sup class=\"ref\">3</sup></p><p class=\"close\">Whichever specific act each commentator names, the direction of the two verses holds together: what was given was vast, and what is owed in return is that the giving and the worship both belong to the One who gave it.</p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:f5f8a241002482a43fc1a3f0d3fe5f39dc2489a554b7d89f12a68711e2b288d0",
+        "2": "sha256:3474556cf77adc52bf662af16194a1866ec8ecc788ae8f6c6d2ee934872f4dfc",
+        "3": "sha256:02223398c0b893216e5f79f9f94d4fc1ece2d908cd2ccbebe666505321c8a405",
+        "4": "sha256:66b7ab67d2dda5e18412b07434f7de4da13e69a84ce0795d73b812c248fbf334",
+        "5": "sha256:76864693de8038ad2f1ac52426d503278648addeb9a0f24fca66c0055038ebbc",
+        "6": "sha256:dbf1821c83f0e93fb2a85e273d15e8a6f2f6c1658b948f289224f2f259c53629",
+        "7": "sha256:ceab4e5976f184493f771d4a8c2d79e9ed09ee904d59aa9c4263e298870b9e0b",
+        "8": "sha256:555173a66b6cb651311076186af4e547e634200d5f230d2d274164b9717215dd",
+        "9": "sha256:28df288506a883afba0d2089ffbad15d496b8bdd7530637d66d51ccb512bd675",
+        "10": "sha256:73a5e63bd79cb7ecd4b42923ecd76ebfbd3ddd8c84c9df418d2f436fd8de6e29",
+        "11": "sha256:7371e2bb88357d2e440bf24da63602f572c8ab245cda460a2914b7c1e01fd8a6",
+        "12": "sha256:42b3168131e2db3f7c23adf01fc2fbb88aaa162d1cec16bf06eda5aaf8f36837",
+        "13": "sha256:f798a399a8f1fa6eebc14066faba8864d1645d1d4048ebbb8fd50a1ba23b5232",
+        "14": "sha256:581ad09b60dbc28dd7432feb9e07d544cb9e575ef7f833ea6699aa95b47b1532"
+      },
+      "flags": {
+        "creedal_stakes": "true",
+        "legal_content": "true",
+        "sensitive_content": "false"
+      },
+      "compiled_at": "2026-08-02"
+    },
+    "108:3": {
+      "verse_range": "3-3",
+      "title": "The Hater, Truly Cut Off",
+      "in_short": "The verse answers the mockers who called the Prophet ﷺ \"cut off\" (childless, without a future): it is they, not he, who are truly cut off from every good.",
+      "claims": [
+        {
+          "id": "108:3#c1",
+          "section_ref": "108:3",
+          "attaches_to": "108:3",
+          "text": "\"Shāniʾaka\" means your hater, your enemy, the one hostile to you.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "إن مبغضك يا محمد وعدوك",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "عدوك ومبغضك",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "أي مبغضك",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "أي: مبغضك وذامك ومنتقصك",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "الشانئ: هو المبغض لغيره",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "إن مبغضك",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "shāniʾ",
+              "gloss": "one who hates / is hostile"
+            }
+          ]
+        },
+        {
+          "id": "108:3#c2",
+          "section_ref": "108:3",
+          "attaches_to": "108:3",
+          "text": "\"Al-Abtar\" originally describes an animal whose tail has been cut off. Applied to a person it means the lowest, most abased one, cut off from every good, with no lasting remembrance and no descendants to carry his name.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "الأقلّ والأذلّ المنقطع دابره, الذي لا عقب له",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "هو الأقل الأذل المنقطع دابره",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "والأبتر من الرجال: الذي لا ولد له, ومن الدواب الذي لا ذنب له",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "المقطوع من كل خير، مقطوع العمل، مقطوع الذكر",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "شبه بقاء الذكر الحسن بذنب الحيوان لأنه تابع له وهو زينته",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "هو المنقطع أثره، المقطوع من كل خير",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "al-abtar",
+              "gloss": "cut off; literally an animal with its tail severed"
+            }
+          ]
+        },
+        {
+          "id": "108:3#c3",
+          "section_ref": "108:3",
+          "attaches_to": "108:3",
+          "text": "Arabs conventionally called a man \"abtar\" when his male children died while daughters remained, since with no son to carry his name he was reckoned as having no future.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وكانت العرب تسمي من كان له بنون وبنات ثم مات البنون وبقي البنات: أبتر",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "relay",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "unspecified"
+        },
+        {
+          "id": "108:3#c4",
+          "section_ref": "108:3",
+          "attaches_to": "108:3",
+          "text": "One identification: the verse concerns al-ʿĀṣ ibn Wāʾil al-Sahmī, who met the Prophet ﷺ at the gate of Banū Sahm and, when asked by Quraysh chiefs who he had been speaking with, called him \"that cut-off one\" — around the time a son of the Prophet from Khadījah رضي الله عنها had died.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "هو العاص بن وائل",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "نزلت في العاص بن وائل السهمي",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وهو العاص بن وائل",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "This Ayah was revealed about Al-`As bin Wa'il",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "كان العاص بن وائل إذا ذكر رسول الله صلى الله عليه وسلم قال: دعوه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded in the cited sources"
+          }
+        },
+        {
+          "id": "108:3#c5",
+          "section_ref": "108:3",
+          "attaches_to": "108:3",
+          "text": "Another identification: the verse concerns ʿUqbah ibn Abī Muʿayṭ, per a report from Shamir ibn ʿAṭiyyah.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "بل عني بذلك: عقبة بن أبي معيط",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وقال شمر بن عطية: هو عقبة بن أبي معيط",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "This Surah was revealed concerning `Uqbah bin Abi Mu`ayt",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded in the cited sources"
+          }
+        },
+        {
+          "id": "108:3#c6",
+          "section_ref": "108:3",
+          "attaches_to": "108:3",
+          "text": "Another identification: the verse concerns Kaʿb ibn al-Ashraf and a group of Quraysh. Kaʿb came to Makkah and was asked by Quraysh's chiefs whether they or \"this cut-off one, severed from his own people\" (meaning the Prophet ﷺ) were better; Kaʿb replied that Quraysh were better, and both this verse and 4:51 were revealed in response.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "نحن خير أم هذا الصنبور المنبتر من قومه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "نحن خير أم هذا الصنبور المنبتر من قومه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "نحن خير أم هذا الصنيبر الأبيتر من قومه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "So Allah revealed, إِنَّ شَانِئَكَ هُوَ الاٌّبْتَرُ",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "Ibn Kathir, citing al-Bazzār's chain as authentic for this account"
+          }
+        },
+        {
+          "id": "108:3#c7",
+          "section_ref": "108:3",
+          "attaches_to": "108:3",
+          "text": "Another identification: the verse concerns Abū Jahl, who, when the Prophet's ﷺ son Ibrāhīm died, went out and announced \"Muhammad has been cut off,\" per ʿIkrimah from Ibn ʿAbbās.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "خرج أبو جهل إلى أصحابه, فقال: بتر محمد",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded in the cited sources"
+          }
+        },
+        {
+          "id": "108:3#c8",
+          "section_ref": "108:3",
+          "attaches_to": "108:3",
+          "text": "A separate report, relayed by ʿAṭāʾ, says the verse concerns Abū Lahab, who upon the death of a son of the Prophet ﷺ said to the idolaters, \"Muhammad has been cut off tonight.\"",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "It has been reported that `Ata' said, \"This Surah was revealed about Abu Lahab",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded by Ibn Kathir"
+          }
+        },
+        {
+          "id": "108:3#c9",
+          "section_ref": "108:3",
+          "attaches_to": "108:3",
+          "text": "Another reading, held by al-Suddī and Ibn Zayd: the taunt is general to Quraysh, who used to say \"he has been cut off\" of any man whose sons died, and applied it to the Prophet ﷺ after the deaths of his sons Qāsim and Ibrāhīm.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "الرجل يقول: إنما محمد أبتر, ليس له كما ترون عقب",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "قال السدي وابن زيد",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "وقال السدى: كانوا إذا مات ذكور الرجل قالوا: بتر",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded in the cited sources"
+          }
+        },
+        {
+          "id": "108:3#c10",
+          "section_ref": "108:3",
+          "attaches_to": "108:3",
+          "text": "A further reading, from ʿIkrimah and Shahr ibn Hawshab: when the Prophet ﷺ invited Quraysh to belief, they said \"Muhammad has cut himself off from us,\" meaning he had broken with them; the verse turns this back, calling them the ones truly cut off.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "قالوا: انبتر منا محمد؛ أي خالفنا وانقطع عنا",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded in the cited sources"
+          }
+        },
+        {
+          "id": "108:3#c11",
+          "section_ref": "108:3",
+          "attaches_to": "108:3",
+          "text": "Al-Ṭabarī, after listing the various identifications, states his own preferred view: whichever individual the verse was revealed about, its description — the lowest, most abased, without descendants — fits anyone who hates the Prophet ﷺ.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "فذلك صفة كل من أبغضه من الناس, وإن كانت الآية نـزلت في شخص بعينه",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "108:3#c12",
+          "section_ref": "108:3",
+          "attaches_to": "108:3",
+          "text": "The hatred described is not merely personal dislike of the man but hatred of the guidance, truth, and clear light he brought.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "he hates what you have come with of guidance, truth, clear proof and manifest light",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "إن مبغضك ومبغض ما جئت به من الهدى والنور",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "unspecified"
+        },
+        {
+          "id": "108:3#c13",
+          "section_ref": "108:3",
+          "attaches_to": "108:3",
+          "text": "The verse works as a reversal: the disbelievers taunted the Prophet ﷺ as \"abtar\" (cut off, without a future), but the answer turns the label onto them — they are the ones truly cut off. Sayyid Qutb pictures this as the hunter caught in his own trap.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "شکاری اپنے جال میں پھنس جاتا ہے کہ حضرت محمد ﷺ ابتر نہیں بلکہ آپ کے دشمنوں کی جڑ کٹ چکی ہے",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "original_excerpt": "the enemy has been rebutted, on the one hand, and, on the other hand, their argument has been rebuffed",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "بشره - سبحانه - ببشارة أخرى",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric"
+        },
+        {
+          "id": "108:3#c14",
+          "section_ref": "108:3",
+          "attaches_to": "108:3",
+          "text": "The true abundance granted to the Prophet ﷺ (al-Kawthar of the first verse) includes spiritual \"children\": his Ummah, whose numbers, it is said, will exceed the combined followers of all earlier prophets عليهم السلام, refuting the charge that he was left with no legacy.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "فهو الكامل حقًا، الذي له الكمال الممكن في حق المخلوق، من رفع الذكر، وكثرة الأنصار، والأتباع",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "original_excerpt": "the spiritual father of his entire Ummah... will have the largest number of spiritual children compared to the Ummahs of the previous Prophets",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "آپ کے نام لیوا تو اربوں کی تعداد میں ہوں گے",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "108:3#c15",
+          "section_ref": "108:3",
+          "attaches_to": "108:3",
+          "text": "Historically, the prophecy has been fulfilled: across centuries the Prophet's ﷺ name has been exalted worldwide, while the names of those who taunted him (al-ʿĀṣ, ʿUqbah, Kaʿb) have vanished, remembered only for the sake of explaining this verse.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "آج ڈیڑھ ہزار سال کے بعد ہم دیکھتے ہیں کہ اس آیت میں کی گئی پیشن گوئی سچی ثابت ہوچکی ہے",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "original_excerpt": "Where are the children of ` As Ibn Wa'il? Where are the children of Ka'b Ibn Ashraf?",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "بل أبقى الله ذكره على رءوس الأشهاد، وأوجب شرعه على رقاب العباد",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "108:3#c16",
+          "section_ref": "108:3",
+          "attaches_to": "108:3",
+          "text": "The Prophet's ﷺ children from Khadījah رضي الله عنها were Qāsim, Zaynab, ʿAbdullāh, Umm Kulthūm, Fāṭimah, and Ruqayyah. Qāsim died first, then ʿAbdullāh (titled al-Ṭayyib wal-Ṭāhir), after which the disbelievers rejoiced that both his sons had died, leaving only daughters, and used this to taunt him with the term \"abtar.\"",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "relay",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "قاسم، پھر زینب، پھر عبداللہ، پھر ام کلثوم، پھر فاطمہ، پھر رقیہ",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded by Isrār Aḥmad"
+          }
+        }
+      ],
+      "essay_html": "<p>This last verse of Sūrat al-Kawthar answers a taunt. Quraysh's disbelievers called the Prophet ﷺ \"abtar,\" and the verse turns the word back on them.</p><p>\"Shāniʾaka\" simply means your hater, your enemy.<sup class=\"ref\">1,2,3,5,7,9,13</sup> \"Al-Abtar\" literally describes an animal whose tail has been cut off. Applied to a man it means the lowest and most abased, cut off from every good, with no lasting remembrance and no son to carry his name.<sup class=\"ref\">1,2,3,5,9,11,12,13</sup> Arabs conventionally used the word for a man whose sons had died while his daughters lived on, since without a son his name was thought to have no future.<sup class=\"ref\">3,7,8,11,12</sup></p><p>The commentators differ on exactly who is meant. Several trace the verse to al-ʿĀṣ ibn Wāʾil al-Sahmī, who met the Prophet ﷺ at the gate of Banū Sahm and, asked by Quraysh who he had been speaking with, dismissed him as \"that cut-off one\" — around the time one of the Prophet's sons from Khadījah رضي الله عنها had died.<sup class=\"ref\">1,2,3,4,7,9,14</sup> Others name ʿUqbah ibn Abī Muʿayṭ.<sup class=\"ref\">1,3,4,7,14</sup> Others point to Kaʿb ibn al-Ashraf, who came to Makkah and was asked by Quraysh's chiefs whether they or \"this cut-off one, severed from his own people\" were better; Kaʿb agreed Quraysh were better, and both this verse and Qur'an 4:51 were revealed over the exchange. Ibn Kathir marks this account, via al-Bazzār, as carried on an authentic chain.<sup class=\"ref\">1,2,3,4,11,14</sup> Still others report that Abū Jahl announced \"Muhammad has been cut off\" when the Prophet's son Ibrāhīm died,<sup class=\"ref\">3,14</sup> while a separate report names Abū Lahab as saying the same words the night a son of the Prophet ﷺ died.<sup class=\"ref\">4</sup> Al-Suddī and Ibn Zayd take it more generally: Quraysh used to call any bereaved father \"abtar,\" and applied it to the Prophet ﷺ after the deaths of Qāsim and Ibrāhīm.<sup class=\"ref\">1,3,9</sup> Yet another account, from ʿIkrimah and Shahr ibn Ḥawshab, has Quraysh saying Muhammad \"cut himself off\" from them by rejecting their ways, and the verse answers that it is they who are cut off.<sup class=\"ref\">3</sup> Isrār Aḥmad رحمه الله names the Prophet's children from Khadījah رضي الله عنها — Qāsim, Zaynab, ʿAbdullāh, Umm Kulthūm, Fāṭimah, Ruqayyah — noting that Qāsim died first, then ʿAbdullāh (called al-Ṭayyib wal-Ṭāhir), after which the disbelievers rejoiced that only daughters remained.<sup class=\"ref\">8</sup></p><p>Al-Ṭabarī رحمه الله, having set out these reports, gives his own conclusion: whichever man the verse names, its description fits anyone who hates the Prophet ﷺ, whether or not the verse was first revealed about one particular person.<sup class=\"ref\">1</sup> Some commentators add that the hatred at issue is not simply personal dislike, but hatred of the guidance, truth and light the Prophet ﷺ brought.<sup class=\"ref\">4,13,14</sup></p><p>Read this way, the verse is a reversal. Quraysh called the Prophet ﷺ \"abtar\"; the answer declares that they are the ones truly cut off. Sayyid Qutb رحمه الله pictures it as the hunter caught in his own trap.<sup class=\"ref\">6</sup> Muftī Muḥammad Shafīʿ رحمه الله calls it a rebuttal that turns the taunters' own argument against them.<sup class=\"ref\">7</sup> The abundance promised in the first verse, al-Kawthar, is read here as including spiritual children: the Prophet's ﷺ Ummah, said to outnumber the combined followers of every earlier prophet عليهم السلام.<sup class=\"ref\">5,7,8,11,12</sup> Looking back across the centuries, Sayyid Qutb and Muftī Shafīʿ both note that the prophecy has held: the Prophet's ﷺ name is honoured across the world, while the names of those who mocked him survive only in the books that explain this verse.<sup class=\"ref\">6,7,9</sup></p><p class=\"close\">Whoever hated the Prophet ﷺ, on this reading, is the one whose trace is cut, while his own remembrance was raised and kept.<sup class=\"ref\">1,7,9</sup></p>",
+      "sources_used": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        11,
+        12,
+        13,
+        14
+      ],
+      "source_hashes": {
+        "1": "sha256:0b1884af79f912bd73245bd259e4ff78ea7498c5ee1958434831cb83bb03dbd4",
+        "2": "sha256:fbf40c0eda8a5ccc3fad6471ee63676d410b09ed46c2c8a96887e51f24756525",
+        "3": "sha256:2ac98406718467be633ad58c6fddc4d82d155b00bf09dcd8ec5d46527255e248",
+        "4": "sha256:ff518ca64a5e2eeaec8c2b7deb8b04a3cca589a37937764df79abc44e6d3fa4b",
+        "5": "sha256:35b0ddfe3ffeceec759f0eaf3de6f3cbf5d901eb3d2621322337a20bd57d29f5",
+        "6": "sha256:29bd0d73837cc3183b0f0b79fdd215bc2d8307dd148999b704082a44f2127c83",
+        "7": "sha256:5894847fee6e56f83f986096a8364d606924f47436d6996c70997f665cd0c091",
+        "8": "sha256:bbffd9c42e3dc586c41f1bb125e4bbf907d7143a9f386403fa4f45c3bc9ffcb0",
+        "9": "sha256:02294f298da0e09fefe145af3348c2befe79ceebd3bc61ec43916f2e6d995ec3",
+        "10": "sha256:fc71d31db7aaf5a4c288fab3d919280e4bac989e56e2cf340040582685bdd90d",
+        "11": "sha256:bc30aa5de1f8d71a970e2354b2e5df0fa0174e0aa376ee3dfe4e30e7170fc378",
+        "12": "sha256:ab5958c739639936b68cb6ec7829d6907cc9573ae5130552fb2daace4ec47e00",
+        "13": "sha256:90baafbdefa2545338172a0fb750653ae8a8dda1fd1f2bae9be5f6d8e33ddc54",
+        "14": "sha256:5ed408953ad31ee86261b2674d1efc6d11ff08a39d0b967e1fdcc1ad72ad0db6"
+      },
+      "flags": {
+        "creedal_stakes": false,
+        "legal_content": false,
+        "sensitive_content": true
+      },
+      "compiled_at": "2026-08-02"
+    }
+  }
+}

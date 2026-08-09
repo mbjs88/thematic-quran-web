@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Overview — Compilation Console</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --card: #fff; --ink: #23201b; --muted: #6b6459;
+    --line: #e6e1d8; --accent: #7a6a4f; --bar: #b9a77f; --bar-bg: #ece7dd;
+    --ok: #4b7a52; --partial: #b5883b;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#1a1815; --card:#232019; --ink:#ece7dd; --muted:#a49c8c;
+            --line:#332f27; --accent:#c9b78f; --bar:#b9a77f; --bar-bg:#2c281f;
+            --ok:#7bab82; --partial:#d5a959; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink);
+    font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 32px 20px 64px; }
+  h1 { font-size: 1.4rem; margin: 0 0 4px; }
+  .sub { color: var(--muted); margin: 0 0 28px; font-size: .95rem; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:14px;
+    padding:22px; margin-bottom:18px; }
+  label { display:block; font-size:.85rem; color:var(--muted); margin-bottom:6px; }
+  input[type=password] { width:100%; padding:11px 13px; font-size:1rem; border-radius:9px;
+    border:1px solid var(--line); background:var(--bg); color:var(--ink); }
+  button { cursor:pointer; border:none; border-radius:9px; padding:11px 18px; font-size:.95rem;
+    font-weight:600; background:var(--accent); color:#fff; }
+  button.ghost { background:transparent; color:var(--muted); border:1px solid var(--line); font-weight:500; }
+  .row { display:flex; gap:10px; align-items:flex-end; flex-wrap:wrap; }
+  .row > div { flex:1; min-width:180px; }
+  .err { color:#b4453c; font-size:.9rem; margin-top:10px; min-height:1.1em; }
+  .stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:14px; margin-bottom:8px; }
+  .stat { background:var(--bg); border:1px solid var(--line); border-radius:11px; padding:16px; }
+  .stat .num { font-size:1.8rem; font-weight:700; letter-spacing:-.02em; }
+  .stat .lbl { color:var(--muted); font-size:.82rem; margin-top:2px; }
+  .progress { height:12px; background:var(--bar-bg); border-radius:99px; overflow:hidden; margin:14px 0 6px; }
+  .progress > i { display:block; height:100%; background:var(--bar); border-radius:99px; transition:width .4s; }
+  .meta { color:var(--muted); font-size:.82rem; }
+  table { width:100%; border-collapse:collapse; font-size:.9rem; }
+  th,td { text-align:left; padding:8px 10px; border-bottom:1px solid var(--line); }
+  th { color:var(--muted); font-weight:600; font-size:.78rem; text-transform:uppercase; letter-spacing:.04em; }
+  td.n { text-align:right; font-variant-numeric:tabular-nums; }
+  .pill { display:inline-block; font-size:.72rem; padding:2px 9px; border-radius:99px; font-weight:600; }
+  .pill.done { background:color-mix(in srgb,var(--ok) 18%,transparent); color:var(--ok); }
+  .pill.partial { background:color-mix(in srgb,var(--partial) 20%,transparent); color:var(--partial); }
+  .pill.none { background:var(--bar-bg); color:var(--muted); }
+  .bar { height:7px; width:90px; background:var(--bar-bg); border-radius:99px; overflow:hidden; }
+  .bar > i { display:block; height:100%; background:var(--bar); }
+  .toolbar { display:flex; justify-content:space-between; align-items:center; gap:12px; margin:22px 0 10px; flex-wrap:wrap; }
+  .hidden { display:none; }
+  .scroll { max-height:52vh; overflow:auto; border:1px solid var(--line); border-radius:11px; }
+  .filter { padding:7px 11px; border-radius:8px; border:1px solid var(--line); background:var(--bg); color:var(--ink); font-size:.85rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Overview — Compilation Console</h1>
+  <p class="sub">Grounded tafsir Overview — how many thematic sections are compiled. Private.</p>
+
+  <!-- login -->
+  <div class="card" id="login">
+    <div class="row">
+      <div>
+        <label for="tok">Console token</label>
+        <input id="tok" type="password" autocomplete="current-password" placeholder="Enter token" />
+      </div>
+      <button id="go">Log in</button>
+    </div>
+    <div class="err" id="loginErr"></div>
+  </div>
+
+  <!-- dashboard -->
+  <div id="dash" class="hidden">
+    <div class="card">
+      <div class="stats">
+        <div class="stat"><div class="num" id="secDone">–</div><div class="lbl">sections compiled</div></div>
+        <div class="stat"><div class="num" id="secTotal">–</div><div class="lbl">sections total</div></div>
+        <div class="stat"><div class="num" id="surComplete">–</div><div class="lbl">surahs complete</div></div>
+        <div class="stat"><div class="num" id="avgComm">–</div><div class="lbl">avg voices / surah</div></div>
+      </div>
+      <div class="progress"><i id="barFill" style="width:0%"></i></div>
+      <div class="meta"><span id="pct">0%</span> · generated <span id="gen">–</span></div>
+    </div>
+
+    <div class="toolbar">
+      <strong>By surah</strong>
+      <div>
+        <select class="filter" id="filter">
+          <option value="all">All surahs</option>
+          <option value="partial">In progress</option>
+          <option value="done">Complete</option>
+          <option value="none">Not started</option>
+        </select>
+        <button class="ghost" id="refresh">Refresh</button>
+        <button class="ghost" id="logout">Log out</button>
+      </div>
+    </div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>#</th><th>Surah</th><th>Progress</th><th class="n">Done</th><th class="n">Total</th><th>Status</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+  const $ = (id) => document.getElementById(id);
+  const KEY = "overview_console_token";
+  let DATA = null;
+
+  function tokenGet() { return sessionStorage.getItem(KEY) || ""; }
+  function tokenSet(t) { sessionStorage.setItem(KEY, t); }
+  function tokenClear() { sessionStorage.removeItem(KEY); }
+
+  async function load(token) {
+    const res = await fetch("/api/overview/progress", {
+      headers: { "X-Overview-Admin-Token": token },
+    });
+    if (res.status === 401) throw new Error("Wrong token.");
+    if (res.status === 503) throw new Error("Console token not configured on the server.");
+    if (res.status === 404) throw new Error("No progress data deployed yet — compile a section and deploy.");
+    if (!res.ok) throw new Error("Server error (" + res.status + ").");
+    const j = await res.json();
+    return j.progress;
+  }
+
+  function render(p) {
+    DATA = p;
+    const t = p.totals || {};
+    $("secDone").textContent = t.sections_done ?? "–";
+    $("secTotal").textContent = t.sections_total ?? "–";
+    $("surComplete").textContent = (t.surahs_complete ?? 0) + " / " + (t.surahs ?? 114);
+    $("avgComm").textContent = t.avg_commentators ?? "–";
+    const pct = t.pct_sections ?? 0;
+    $("pct").textContent = pct + "%";
+    $("barFill").style.width = Math.max(0.5, pct) + "%";
+    $("gen").textContent = p.generated_at || "–";
+    renderRows();
+  }
+
+  function renderRows() {
+    const f = $("filter").value;
+    const rows = (DATA.surahs || []).filter((s) => {
+      if (f === "all") return true;
+      if (f === "done") return s.status === "done" || s.status === "complete";
+      if (f === "partial") return s.status === "partial";
+      if (f === "none") return !s.sections_done;
+      return true;
+    });
+    $("rows").innerHTML = rows.map((s) => {
+      const total = s.sections_total || 0, done = s.sections_done || 0;
+      const w = total ? Math.round((done / total) * 100) : 0;
+      const isDone = done && done >= total;
+      const cls = isDone ? "done" : (done ? "partial" : "none");
+      const label = isDone ? "complete" : (done ? "in progress" : "—");
+      return `<tr>
+        <td class="n">${s.num}</td>
+        <td>${s.name || ""}</td>
+        <td><div class="bar"><i style="width:${w}%"></i></div></td>
+        <td class="n">${done}</td>
+        <td class="n">${total}</td>
+        <td><span class="pill ${cls}">${label}</span></td>
+      </tr>`;
+    }).join("");
+  }
+
+  function showDash(on) {
+    $("login").classList.toggle("hidden", on);
+    $("dash").classList.toggle("hidden", !on);
+  }
+
+  async function attempt(token) {
+    $("loginErr").textContent = "";
+    try {
+      const p = await load(token);
+      tokenSet(token);
+      render(p);
+      showDash(true);
+    } catch (e) {
+      $("loginErr").textContent = e.message || String(e);
+      showDash(false);
+    }
+  }
+
+  $("go").onclick = () => attempt($("tok").value.trim());
+  $("tok").addEventListener("keydown", (e) => { if (e.key === "Enter") $("go").click(); });
+  $("refresh").onclick = () => attempt(tokenGet());
+  $("filter").onchange = renderRows;
+  $("logout").onclick = () => { tokenClear(); showDash(false); $("tok").value = ""; };
+
+  // auto-login if a token is remembered for this session
+  if (tokenGet()) attempt(tokenGet());
+</script>
+</body>
+</html>

@@ -1,0 +1,3257 @@
+{
+  "surah": 82,
+  "name": "",
+  "coverage": {
+    "editions_present": [
+      "ar-tafsir-al-tabari",
+      "ar-tafsir-al-baghawi",
+      "ar-tafseer-al-qurtubi",
+      "en-tafisr-ibn-kathir",
+      "ar-tafseer-al-saddi",
+      "tafsir-fe-zalul-quran-syed-qatab",
+      "en-tafsir-maarif-ul-quran",
+      "tafsir-bayan-ul-quran",
+      "ar-tafsir-al-wasit",
+      "tazkirul-quran-en",
+      "bn-tafsir-abu-bakr-zakaria",
+      "bn-tafsir-ahsanul-bayaan",
+      "ar-tafsir-muyassar",
+      "kurd-tafsir-rebar"
+    ],
+    "editions_absent": [],
+    "independent_works": 14,
+    "languages_present": [
+      "ar",
+      "bn",
+      "en",
+      "ku",
+      "ur"
+    ],
+    "languages_absent": []
+  },
+  "pipeline_provenance": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "overview-v2.3",
+    "theme_breaks_version": "sha256:99880ec7b10b53313690f91df9ee8d065519ee698df34b35a3336b5705218f90",
+    "compiled_at": "2026-08-02"
+  },
+  "modern_lens_framing": "The Qurʾan is taken here as fixed, revealed truth; science is our provisional, evolving account of the observable world. What follows notes where the two meet — a contemplation, not a proof. Where the science later shifts, that reflects the limits of our knowledge, not the text.",
+  "references": [
+    {
+      "n": 1,
+      "work_id": "al-tabari",
+      "label": "Jāmiʿ al-Bayān",
+      "author_id": "al-tabari",
+      "author": "Abū Jaʿfar Muḥammad ibn Jarīr al-Ṭabarī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 2,
+      "work_id": "al-baghawi",
+      "label": "Maʿālim al-Tanzīl",
+      "author_id": "al-baghawi",
+      "author": "Abū Muḥammad al-Ḥusayn ibn Masʿūd al-Baghawī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 3,
+      "work_id": "al-qurtubi",
+      "label": "al-Jāmiʿ li-Aḥkām al-Qurʾān",
+      "author_id": "al-qurtubi",
+      "author": "Abū ʿAbd Allāh Muḥammad ibn Aḥmad al-Qurṭubī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 4,
+      "work_id": "ibn-kathir",
+      "label": "Tafsīr Ibn Kathīr",
+      "author_id": "ibn-kathir",
+      "author": "Ismāʿīl ibn ʿUmar ibn Kathīr",
+      "source_language": "ar",
+      "note": "One independent voice. The ar/ur/bn editions are the SAME work — never count as separate corroboration."
+    },
+    {
+      "n": 5,
+      "work_id": "al-saadi",
+      "label": "Taysīr al-Karīm al-Raḥmān",
+      "author_id": "al-saadi",
+      "author": "ʿAbd al-Raḥmān ibn Nāṣir al-Saʿdī",
+      "source_language": "ar",
+      "note": "Russian edition (170) is the SAME work — translate from the Arabic original, and do not count Russian as an independent voice."
+    },
+    {
+      "n": 6,
+      "work_id": "fi-zilal",
+      "label": "Fī Ẓilāl al-Qurʾān",
+      "author_id": "sayyid-qutb",
+      "author": "Sayyid Quṭb Ibrāhīm Ḥusayn",
+      "source_language": "ar",
+      "note": "Original is Arabic, but the API here carries only an URDU edition — translating from Urdu is one step removed from the original. Prefer the Arabic original if the QF Content API offers it."
+    },
+    {
+      "n": 7,
+      "work_id": "maarif",
+      "label": "Maʿārif al-Qurʾān",
+      "author_id": "muhammad-shafi-usmani",
+      "author": "Muftī Muḥammad Shafīʿ ʿUthmānī",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 8,
+      "work_id": "bayan-ul-quran",
+      "label": "Bayān al-Qurʾān",
+      "author_id": "israr-ahmad",
+      "author": "Isrār Aḥmad",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 9,
+      "work_id": "wasit",
+      "label": "al-Tafsīr al-Wasīṭ",
+      "author_id": "tantawi",
+      "author": "Muḥammad Sayyid Ṭanṭāwī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 10,
+      "work_id": "tazkirul",
+      "label": "Tazkīr al-Qurʾān",
+      "author_id": "wahiduddin-khan",
+      "author": "Wahiduddin Khan",
+      "source_language": "ur",
+      "note": "en and ur editions are the same work."
+    },
+    {
+      "n": 11,
+      "work_id": "abu-bakr-zakaria",
+      "label": "Tafsir Abu Bakr Zakaria",
+      "author_id": "abu-bakr-zakaria",
+      "author": "Abū Bakr Muḥammad Zakariyyā",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 12,
+      "work_id": "ahsanul-bayaan",
+      "label": "Ahsanul Bayaan",
+      "author_id": "bayaan-foundation",
+      "author": "Ahsanul Bayaan (Bayaan Foundation)",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 13,
+      "work_id": "muyassar",
+      "label": "al-Tafsīr al-Muyassar",
+      "author_id": "committee-muyassar",
+      "author": "al-Tafsīr al-Muyassar (committee)",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 14,
+      "work_id": "rebar-kurdish",
+      "label": "Rebar Kurdish Tafsir",
+      "author_id": "rebar",
+      "author": "Rebar Kurdish Tafsir",
+      "source_language": "ku",
+      "note": ""
+    }
+  ],
+  "sections": {
+    "82:9": {
+      "verse_range": "9-12",
+      "title": "The Noble Recording Angels",
+      "in_short": "The disbelievers' real problem is not confusion but denial of the Day of Judgement. God tells them that noble angels stand over every person, recording everything they do, so nothing is lost or forgotten.",
+      "claims": [
+        {
+          "id": "82:9#c1",
+          "section_ref": "82:9",
+          "attaches_to": "82:9",
+          "text": "The word 'Kalla' at the start of the verse can carry the sense of 'truly' (ḥaqqan) or function as an outright negation ('no, it is not so').",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "يجوز أن تكون كلا بمعنى حقا و ( ألا )... ويجوز أن تكون بمعنى ( لا )",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "original_excerpt": "এখানে كلا শব্দটি حقًا শব্দের অর্থেও হতে পারে",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "كَلَّا",
+              "gloss": "no! / truly not — a word of rebuke"
+            }
+          ]
+        },
+        {
+          "id": "82:9#c2",
+          "section_ref": "82:9",
+          "attaches_to": "82:9",
+          "text": "'Kalla' works as a rebuke that stops the previous line of thought and pivots the discourse to a fresh, truer statement: it deters man from being deceived by God's forbearance and generosity into forgetting judgement.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "ليس الأمر أيها الكافرون كما تقولون",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "هو بمعنى الردع والزجر . أي لا تغتروا بحلم الله وكرمه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "لفظ کلا بھی زجرو توبیخ کا لفظ ہے",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "كلا ردع عن الاغترار بكرم الله",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric"
+        },
+        {
+          "id": "82:9#c3",
+          "section_ref": "82:9",
+          "attaches_to": "82:9",
+          "text": "'al-Din' here means the reckoning, the requital, the Day of Account, not the religion in the sense of ritual practice.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "بالحساب... بيوم الحساب",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "بالدين ، بالجزاء والحساب",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "أي بالحساب",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "تكذيبهم بالبعث والحساب والجزاء",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "بل تكذِّبون بيوم الحساب والجزاء",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "لا تزالون مستمرين على التكذيب بالجزاء",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "الدِّين",
+              "gloss": "the reckoning / requital, the Day of Account"
+            }
+          ]
+        },
+        {
+          "id": "82:9#c4",
+          "section_ref": "82:9",
+          "attaches_to": "82:9",
+          "text": "The real cause of man's heedlessness toward his Generous Lord is not confusion but a settled denial in the heart of the Hereafter, the reckoning and the reward: the verse unveils the true reason behind the earlier question 'what deceived you?'",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "بل تكذّبون بالثواب والعقاب، والجزاء والحساب",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "you are only compelled to oppose the Most Generous... by your rejection in your hearts of the Hereafter",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "تكذيبهم بالبعث والحساب والجزاء هو الذى حملكم على الكفر",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "اصل بات یہ ہے کہ اپنے اس فلسفے کی آڑ میں تم جزا و سزاکا انکار کرنا چاہتے ہو",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "original_excerpt": "তোমাদের হৃদয়ে এ কথার প্রত্যয় নেই যে, কিয়ামত সংঘটিত হবে",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "82:9#c5",
+          "section_ref": "82:9",
+          "attaches_to": "82:9",
+          "text": "A person who truly believed in accountability could not go on living carelessly. Some hearts obey God purely out of love, without expecting reward, yet even they still affirm the Day and hope to meet their Lord. Denying the Day, by contrast, empties a person of moral restraint and deadens the conscience.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "بعض اوقات ، بعض لوگوں کے دل اس قدر صاف و شفاف ہوجاتے ہیں کہ وہ رب کی اطاعت صرف رب کی محبت کی وجہ سے کرتے ہیں",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "82:9#c6",
+          "section_ref": "82:9",
+          "attaches_to": "82:9",
+          "text": "There is a reading variant: Abū Jaʿfar recited this verb in the third person ('they deny'), while other reciters read it in the second person ('you deny'), matching the second-person address that follows ('over you are watchers').",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "قرأ أبو جعفر بالياء، وقرأ الآخرون بالتاء",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "82:9#c7",
+          "section_ref": "82:9",
+          "attaches_to": "82:10",
+          "text": "'Watchers' (ḥāfiẓīn) means angels appointed to guard and record every deed a person does, missing nothing.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "رُقَباء حافظين يحفظون أعمالكم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "رقباء من الملائكة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "أي رقباء من الملائكة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "indeed there are noble guardian angels over you",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "أقام الله عليكم ملائكة كراما يكتبون أقوالكم وأفعالكم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "وإن عليكم لملائكه يحفظون أعمالكم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "ملائكة رقباء",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "low"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "unspecified"
+        },
+        {
+          "id": "82:9#c8",
+          "section_ref": "82:9",
+          "attaches_to": "82:10",
+          "text": "These watchers are spiritual beings among the angels who accompany man constantly. Exactly how they carry out the recording is not disclosed, and believers are not obliged to know its detail, since no reliable report from the Prophet ﷺ spells it out.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "یہ محافظ وہ روحانی مخلوقات ہیں جو فرشتوں سے ہیں... ہمیں یہ معلوم نہیں ہے کہ وہ کس طرح ریکارڈ تیار کرتے ہیں",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "من الأمور التى يجب الإيمان بها كما وردت... لأنه لم يرد حديث صحيح",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "82:9#c9",
+          "section_ref": "82:9",
+          "attaches_to": "82:10",
+          "text": "Scholars differed over whether disbelievers also have recording angels over them. Some said no, because a disbeliever's state is already plain (citing that 'the guilty will be known by their marks'). Others said yes, pointing to this very passage and to the verse describing a disbeliever receiving his book from behind his back, which shows disbelievers too have a book and therefore recorders.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "واختلف الناس في الكفار هل عليهم حفظة أم لا ؟",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "82:9#c10",
+          "section_ref": "82:9",
+          "attaches_to": "82:11",
+          "text": "'Kirāman' (noble) describes the angels' honoured standing with God, comparable to the description 'noble and pious' used elsewhere in the Qur'an.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "كراما على الله كاتبين",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "كراماً على الله",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "كراما كاتبين أي علي ; كقوله : كرام بررة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "لهم عند الله - تعالى - الكرامة والمنزلة الحسنة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "ان فرشتوں کی یہ صفت یہاں لائی گئی کہ وہ ” کرام “ ہیں",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "low"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "كِرَامًا كَاتِبِينَ",
+              "gloss": "noble, honoured writers/recorders"
+            }
+          ]
+        },
+        {
+          "id": "82:9#c11",
+          "section_ref": "82:9",
+          "attaches_to": "82:11",
+          "text": "A report is transmitted urging believers to honour these 'noble recorders', who leave a person only at two moments: relieving himself or intercourse, and to cover himself at such times (or have a brother screen him); further reports (one from ʿAlī رضي الله عنه, and another) describe the angel turning away from an exposed person, or the two angels cursing one who enters the bathhouse without a covering.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "أكرموا الكرام الكاتبين الذين لا يفارقونكم إلا عند إحدى حالتين",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Qurṭubī does not grade these reports"
+          }
+        },
+        {
+          "id": "82:9#c12",
+          "section_ref": "82:9",
+          "attaches_to": "82:11",
+          "text": "It is related that Sufyān was asked how the angels know a servant has merely intended a good or a bad deed; he answered that when a servant intends a good deed they perceive from him the scent of musk, and when he intends an evil deed they perceive a foul odour.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "إذا هم العبد بحسنة وجدوا منه ريح المسك، وإذا هم بسيئة وجدوا منه ريح النتن",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Qurṭubī does not grade this athar"
+          }
+        },
+        {
+          "id": "82:9#c13",
+          "section_ref": "82:9",
+          "attaches_to": "82:11",
+          "text": "This description of watching, noble writers is further clarified by the verse in Sūrat Qāf describing two sitting recorders, one on the right and one on the left, so that not a word is uttered without a ready watcher beside it.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "ما يلفظ من قول إلا لديه رقيب عتيد زيادة بيان لمعنى هذه الآية",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "unspecified"
+        },
+        {
+          "id": "82:9#c14",
+          "section_ref": "82:9",
+          "attaches_to": "82:11",
+          "text": "Because these angels hold honour before God, it is fitting that they be honoured, esteemed and respected. It is human nature to avoid vulgar words or shameful acts in the presence of honourable company, and awareness that God's honoured emissaries are noting one's words can restrain a person from vice.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "فاللائق بكم أن تكرموهم وتجلوهم وتحترموهم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "جب وہ شرفاء اور معزز لوگوں کے اندر بیٹھا ہو تو وہ قبیح حرکات نہیں کرتا",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "82:9#c15",
+          "section_ref": "82:9",
+          "attaches_to": "82:12",
+          "text": "The angels' knowledge covers everything a person does, including deeds of the heart as well as deeds of the limbs, whether good or bad; nothing escapes their record.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "ودخل في هذا أفعال القلوب، وأفعال الجوارح",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "من خير أو شر",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "سواء أكانت قليلة أم كثيرة ، صغيرة أم كبيرة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "82:9#c16",
+          "section_ref": "82:9",
+          "attaches_to": "82:12",
+          "text": "Two views are recorded on the scope of the angels' knowledge: al-Ḥasan said nothing at all of a person's deeds is hidden from them; another view restricts their knowledge to what appears outwardly, not to what a person merely converses with himself inwardly.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "يعلمون لا يخفى عليهم شيء من أعمالكم... وقيل : يعلمون ما ظهر منكم دون ما حدثتم به أنفسكم",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "82:9#c17",
+          "section_ref": "82:9",
+          "attaches_to": "82:12",
+          "text": "Two angels are appointed over every human being to record every single act. Anyone who supposes God does not intend to hold people to account is, in effect, claiming that this whole apparatus, appointing watchers and recording each deed, is pointless. Such futility is unbefitting of God, so the accounting, and its consequences, will certainly follow.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "اللہ تعالیٰ نے ہر انسان کے ساتھ دو فرشتے بطور نگران مقرر کر رکھے ہیں... کارِعبث اللہ کے شایانِ شان نہیں",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "82:9#c18",
+          "section_ref": "82:9",
+          "attaches_to": "82:12",
+          "text": "The angels stay with a person everywhere, in every state, so closely that the person does not even sense being watched, and they know the intention behind an act as well as the act itself, making the record complete, matching the description in Sūrat al-Kahf that on the Day nothing small or great is left unwritten.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "original_excerpt": "সব জায়গায় সব অবস্থায় সকল ব্যক্তির সাথে তারা এমনভাবে লেগে আছে",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "82:9#c19",
+          "section_ref": "82:9",
+          "attaches_to": "82:12",
+          "text": "The Qur'an's announcement of a recording of words and deeds matches a system already observable in the present world, which the commentator says makes the promise of Judgement understandable.",
+          "claim_type": "other",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "original_excerpt": "a system exists in the present world for the recording of the words and deeds of man",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        }
+      ],
+      "essay_html": "<p>The word 'Kalla' opens this passage like a stop sign. It rejects what has just been implied and pivots to the real point.<sup class=\"ref\">1,3,6,9</sup> It can mean 'truly' or serve as an outright 'no'.<sup class=\"ref\">3,12</sup> What it rebukes is any excuse: man is not confused about God's generosity, he denies the reckoning (al-dīn) altogether, meaning the Day of Account, the reward and the requital.<sup class=\"ref\">1,2,3,5,9,13</sup></p><p>This unveils the true reason behind man's earlier heedlessness. It is not that he misjudged his Lord's kindness. He simply does not believe, in his heart, that judgement is coming.<sup class=\"ref\">1,4,5,8,9,11,12</sup> Sayyid Qutb (d. 1966) draws out the consequence: some hearts obey God purely out of love, expecting nothing, yet even they still affirm the Day. Denial of the Day, by contrast, strips a person of restraint and, in his words, deadens the conscience.<sup class=\"ref\">6</sup> A reading variant is also noted: some reciters read the verb in the third person, 'they deny', others in the second, 'you deny', matching the direct address that follows.<sup class=\"ref\">2</sup></p><p>Then comes the answer to that denial: 'over you are watchers'. These are angels appointed to guard and to record every deed, missing nothing.<sup class=\"ref\">1,2,3,4,5,9,11,12,13,14</sup> Sayyid Qutb notes that exactly how they record is not disclosed, and this is knowledge God has not made anyone's duty to seek.<sup class=\"ref\">6</sup> Ṭanṭāwī (d. 2010) agrees: this is something to be believed as reported, without probing its mechanism, since no reliable hadith spells it out.<sup class=\"ref\">9</sup> Al-Qurṭubī (d. 1273) records a dispute over whether disbelievers, too, have such watchers. Some said no, since a disbeliever's state is already plain. Others said yes, pointing to this very passage and to the verse describing a disbeliever receiving his book from behind his back, which shows he too has a book, and so a recorder.<sup class=\"ref\">3</sup></p><p>These watchers are called 'kirāman', noble, honoured before God, the same description used elsewhere for the pious.<sup class=\"ref\">1,2,3,6,9,11,12,14</sup> Al-Qurṭubī transmits reports urging that they be honoured: they leave a person only at two moments, relieving himself or intercourse, and one should cover himself at such times; further reports describe an angel turning away from someone exposed, or two angels cursing one who bathes uncovered.<sup class=\"ref\">3</sup> These reports are transmitted without a grading given. A further report has Sufyān answering how the angels perceive a mere intention: a good intention carries the scent of musk, a bad one a foul odour.<sup class=\"ref\">3</sup> Al-Qurṭubī also links this to Sūrat Qāf's picture of two recorders, one on the right and one on the left, so that no word is spoken without a ready watcher beside it.<sup class=\"ref\">3</sup> Because these angels hold such honour, al-Saʿdī (d. 1957) says it is fitting to honour and respect them; Sayyid Qutb adds that it is human nature to behave decently in honourable company, and knowing that God's noble emissaries note one's words can hold a person back from vice.<sup class=\"ref\">5,6</sup></p><p>Finally, 'they know what you do'. Their knowledge takes in deeds of the heart as well as deeds of the limbs, good or bad, nothing escaping the record.<sup class=\"ref\">2,5,9,11,12</sup> Al-Qurṭubī records two views on its exact scope: al-Ḥasan said nothing at all is hidden from them, while another view limits their knowledge to what appears outwardly, not to what a person merely converses within himself.<sup class=\"ref\">3</sup> Isrār Aḥmad (d. 2010) reasons that two angels are set over every person, and that to imagine God does not mean to call people to account is to imagine that this entire apparatus of watching and writing is pointless, which is unbefitting of Him.<sup class=\"ref\">8</sup> A further point stresses that the angels accompany a person so closely, in every state, that he does not even sense being watched, and that they know intention as well as action, matching the promise elsewhere that on the Day nothing small or great is left unwritten.<sup class=\"ref\">11</sup> One commentator adds that such a recording system is not unfamiliar; something like it is already observable in the present world, which he says makes the Qur'an's announcement understandable.<sup class=\"ref\">10</sup></p><p class=\"close\">Nothing said, intended or done escapes the noble watchers set over every person, and it is that certainty, not confusion, that the deniers are truly rejecting.</p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:64b43a70ca674bc0fc6beb9049d93dec691d0d2487517f96414e9fdad91021ed",
+        "2": "sha256:ee1b33acfb8127dd7f356990fdd9703fdc45ab03e5bd0f23963e0c988d2c26d8",
+        "3": "sha256:2819707548c0274ac209051eee48322c06e8888c58e69a53e027fb484a454d70",
+        "4": "sha256:4b31925499478166a087d3759e7cb79e3d6d435839eb572443ca063f6a23efe3",
+        "5": "sha256:cc7bf3d12537454f2adc50cc005210aab27d18a67e05d4187b0f10214eceeb28",
+        "6": "sha256:15df707cfa5abc3a9761ad7e4b9caf6c70359e868a0f1fe3f229823b431fb7be",
+        "7": "sha256:6e76819b9bf7ebd2cd6bb3b9b0f359f8e4b7b6c42efffc1a79f71dcef382770b",
+        "8": "sha256:0529921e74e6719bf7cab2f24489121c9baf39d39a2b6435c3627d70d94d7f86",
+        "9": "sha256:60c85e4404b9a2d3aff937d95919f08a2ad8ad8ba12850baf1bb94653bb1b0f0",
+        "10": "sha256:f92146ba59df03fdde593d3452ec1224563f0f63811fb80cdf590b8dab93d771",
+        "11": "sha256:873b499d960b5964403d88b14d5a982df0c64b00b6dec6708faeedd3420618be",
+        "12": "sha256:76d438a1b2fc5f4060a5da2d1e4f15946b352e2fdc13dd51fca0bb60e0050cb8",
+        "13": "sha256:0c087fbd79999d95b5df0599fcdb091bdef7c0cb56db89a3b1af4bfb290d5779",
+        "14": "sha256:0cb051408f2352403aa99daca198d1c739c8e6eacaead690dee1536bb39779cf"
+      },
+      "flags": {
+        "creedal_stakes": true,
+        "legal_content": true,
+        "sensitive_content": false
+      },
+      "compiled_at": "2026-08-02"
+    },
+    "82:19": {
+      "verse_range": "19-19",
+      "title": "No Soul Helps Another",
+      "in_short": "This closing verse of the surah says that on the Day of Judgement no soul will have any power to help another, and that command on that Day belongs to God alone.",
+      "claims": [
+        {
+          "id": "82:19#c1",
+          "section_ref": "82:19",
+          "attaches_to": "82:19",
+          "text": "Reciters differ on how to read the word 'day' (yawm) here. Most read it in the accusative, understanding an implied verb such as 'remember'. Some read it in the nominative, taking it as tied to or standing in for 'the Day of Recompense' mentioned earlier in the surah. Grammarians judged both readings valid Arabic, some finding the nominative the more eloquent.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "واختلفت القرّاء في قراءة قوله: يَوْمَ لا تَمْلِكُ نَفْسٌ",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "قرأ أهل الكوفة والبصرة: يوم برفع الميم ردا على اليوم الأول",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "قرأ ابن كثير وأبو عمرو يوم بالرفع على البدل من يوم الدين",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "قرأ بعض القراء السبعة يوم بالنصب ... وقرأ البعض الآخر بالرفع",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "82:19#c2",
+          "section_ref": "82:19",
+          "attaches_to": "82:19",
+          "text": "On that Day no soul at all will have power to benefit another, not even the closest, most beloved relative. Every person will be occupied entirely with themselves, cut off from everyone, seeking rescue for no one but themselves.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "ولو كانت لها قريبة أو حبيبة مصافية، فكل مشتغل بنفسه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "ہر شخص کو اپنی پڑی ہوئی ہوگی، وہ سب سے کٹ چکا ہوگا",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "82:19#c3",
+          "section_ref": "82:19",
+          "attaches_to": "82:19",
+          "text": "One report, from Muqātil and passed on by al-Baghawī, takes 'no soul' here to mean specifically that no disbelieving soul (nafs kāfirah) will gain any benefit that Day.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "يعني لنفس كافرة شيئا من المنفعة",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "original_terms": [
+            {
+              "term": "نفس كافرة",
+              "gloss": "a disbelieving soul"
+            }
+          ]
+        },
+        {
+          "id": "82:19#c4",
+          "section_ref": "82:19",
+          "attaches_to": "82:19",
+          "text": "The blanket statement that no soul can help another does not rule out intercession (shafāʿah). Any help granted that Day will only be by God's permission, given to whomever He wills and is pleased with, never by anyone's own free choice.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "original_excerpt": "This does not negate intercession, because that will not happen with one's own free will",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "82:19#c5",
+          "section_ref": "82:19",
+          "attaches_to": "82:19",
+          "text": "A report is cited that the Prophet ﷺ told Banū Hāshim, his aunt Ṣafiyyah, and his daughter Fāṭimah رضي الله عنها that he had no power to benefit them before God unless they saved themselves, illustrating the meaning of this verse.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "يَا بَنِي هَاشِم، أَنْقِذُوا أَنْفُسَكُمْ مِنَ النَّارِ لَا أَمْلِكُ لَكُمْ مِنَ اللهِ شَيْئًا",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "original_excerpt": "আমি তোমাদের জন্য আল্লাহর কাছে কোন প্রকার উপকার করতে পারব না",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "original_excerpt": "ئه‌ى به‌نى هاشم به‌ ئیمان هێنان خۆتان له‌ ئاگرى دۆزه‌خ رزگار بكه‌ن",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "cited as related in Ṣaḥīḥ Muslim and (for part of it) al-Bukhārī, per [12]"
+          }
+        },
+        {
+          "id": "82:19#c6",
+          "section_ref": "82:19",
+          "attaches_to": "82:19",
+          "text": "Qatāda, as relayed by al-Ṭabarī, noted that the command has always belonged to God, even in this world. What is distinctive about that Day is that no one at all will dispute Him over it, unlike in this world where people contend for power. Al-Baghawī makes a similar point: God will not grant anyone anything that Day as He granted people some authority in this world.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "والأمر والله اليوم لله، ولكنه يومئذ لا ينازعه أحد",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "أي لم يملك الله في ذلك اليوم أحدا شيئا كما ملكهم في الدنيا",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "82:19#c7",
+          "section_ref": "82:19",
+          "attaches_to": "82:19",
+          "text": "One reading explains why command 'belonging to God' is stressed specifically for that Day, even though all things already belong to Him in this world: on that Day no one will be able to speak, or lay claim to ownership or authority, as some people do in this world.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "original_excerpt": "له‌به‌ر ئه‌وه‌ی له‌و ڕۆژه‌دا هیچ كه‌سێك نیه‌ بتوانێ قسه‌ بكات",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "82:19#c8",
+          "section_ref": "82:19",
+          "attaches_to": "82:19",
+          "text": "Al-Saʿdī adds that on that Day God is the one who will judge between His servants, and will take the wronged person's right from the wrongdoer.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "فهو الذي يفصل بين العباد، ويأخذ للمظلوم حقه من ظالمه",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "82:19#c9",
+          "section_ref": "82:19",
+          "attaches_to": "82:19",
+          "text": "This verse is linked by some commentators to other Qur'anic descriptions of that Day: 'Whose is the dominion today? God's, the One, the Subduer' (Q40:16), and the warning to fear a Day when no soul avails another, no intercession is accepted, no ransom taken, and no help given (Q2:48).",
+          "claim_type": "other",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "لمن الملك اليوم لله الواحد القهار",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "relay",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "وَاتَّقُوْا یَوْماً لاَّ تَجْزِیْ نَفْسٌ عَنْ نَّفْسٍ شَیْئًا",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "original_excerpt": "আজ রাজত্ব কার? একক প্রবল পরাক্রান্ত আল্লাহর",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "82:19#c10",
+          "section_ref": "82:19",
+          "attaches_to": "82:19",
+          "text": "This verse is read as detailing the 'Day of Recompense' named earlier in the surah. The surah closes as it opened, magnifying the Day of Judgement, so that thoughtful people increase their readiness for it through faith and righteous deeds.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "ليزداد العقلاء استعداداً له، عن طريق الإِيمان والعمل الصالح",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "82:19#c11",
+          "section_ref": "82:19",
+          "attaches_to": "82:19",
+          "text": "This closing verse is read as the fearful conclusion of the surah, joining with the fearful cosmic upheavals of its opening to grip human thought and feeling together. Between these two frightening scenes, Sayyid Quṭb notes, lies a loving, compassionate rebuke addressed earlier in the surah to man, which softens a certain kind of person even amid the fear.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "یہ سورت کا خوفناک اختتام ہے ... ایک پر محبت، ہمدردانہ ملامت ہے",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        }
+      ],
+      "essay_html": "<p>The surah closes with a single scene: on the Day of Judgement no soul will have any power to do anything for another, and command that Day belongs to God alone.</p><p>Reciters read the opening word 'day' two ways, one placing it in the accusative with an implied verb like 'remember', the other in the nominative, tying it to the 'Day of Recompense' named earlier in the surah. Grammarians treated both as sound Arabic.<sup class=\"ref\">1,2,3,9</sup></p><p>The plain meaning is stark: no soul, however close or beloved, will be able to help another. Everyone will be entirely taken up with themselves, cut off from all, with no thought to spare for anyone else.<sup class=\"ref\">4,5,6,9,11,12,13,14</sup> One report from Muqātil, passed on by al-Baghawī, narrows the reading further, taking 'no soul' to mean specifically no disbelieving soul will find any benefit that Day.<sup class=\"ref\">2</sup></p><p>This total helplessness is not read as ruling out intercession (shafāʿah). Any benefit granted that Day will come only by God's permission, to whomever He wills and is pleased with, never by a person's own choice.<sup class=\"ref\">4,7,11,14</sup> A report is cited of the Prophet ﷺ telling Banū Hāshim, his aunt Ṣafiyyah, and his daughter Fāṭimah رضي الله عنها that he had no power to benefit them before God, and that they must save themselves.<sup class=\"ref\">4,12,14</sup></p><p>On 'command that Day belongs to God', Qatāda, as relayed by al-Ṭabarī, observed that the command has always been God's, even in this world. What marks that Day out is that no one at all will dispute Him over it, unlike here where people contend for power.<sup class=\"ref\">1,2</sup> One reading gives the reason: on that Day no one will be able to speak, or claim ownership or authority, as some do in this world.<sup class=\"ref\">14</sup> Al-Saʿdī adds that God will judge between His servants that Day, taking the wronged person's right from the one who wronged him.<sup class=\"ref\">5</sup></p><p>Commentators link the verse to other Qur'anic pictures of the same Day: 'Whose is the dominion today? God's, the One, the Subduer' (Q40:16), and the warning to fear a Day when no soul avails another, no intercession is accepted, and no ransom or help is given (Q2:48).<sup class=\"ref\">3,8,12</sup></p><p>Read as the close of the surah, this verse is said to detail the 'Day of Recompense' named earlier, so the surah ends as it began, magnifying the Day so that thoughtful people ready themselves through faith and right conduct.<sup class=\"ref\">9</sup> Sayyid Qutb reads it as the surah's fearful conclusion, joining the terror of its opening cosmic upheavals to grip human feeling from both ends, with a loving, compassionate rebuke placed between the two.<sup class=\"ref\">6</sup></p><p class=\"close\">No soul, however dear, will carry another's burden that Day; the command will rest with God alone.</p>",
+      "sources_used": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        11,
+        12,
+        13,
+        14
+      ],
+      "source_hashes": {
+        "1": "sha256:f1ff1c3758f840abdaae75c4ce8a41314406e84ed5a03b336f9fb5480d185b44",
+        "2": "sha256:38d3f11e398d2c2ab5e1a7420e3b906a501c63e301e6ec35f75a583db97390d0",
+        "3": "sha256:ad99c99761019d415d29f0614a8895e2339d082a743c148976a3305eecc203db",
+        "4": "sha256:7065910a4ab873cf46e9a9304d33659b84466af96c398b52ec8c6fd68b1e48c1",
+        "5": "sha256:ed60992fc5b769fceddf58b0e7315466a6ca8b06bc98ef98771059c96ecbefa4",
+        "6": "sha256:c2db0cf067cf8d5745d143c10955049787fda042c529340b09daf5216b99aba9",
+        "7": "sha256:64949413f4886e02cbe4dc240b5c0e28b84850e6ba3acaf40bf05cb846a9961e",
+        "8": "sha256:e7855da1195316c2b2b810c94a6c8dc7b6b9dee2662e32b58539c94078b2ccc1",
+        "9": "sha256:c6b0e0a545426b67061b638139c25d8b9fff9694dabc26563b4674a36e851ce7",
+        "10": "sha256:f0dc0e6ffcbf2c2bb1dc21f336acc1230f1ddb7b2f03c7dd2b7a69ecf11235c1",
+        "11": "sha256:1bf903922101c9032d7ccd210a6bd3fff79f482d48b695b483669ac1172b98b0",
+        "12": "sha256:6a9bcfa0f924d733bfb3bbb6e8dedca27bde66f0ab4842477d72ac55742d4912",
+        "13": "sha256:47510c4f8cbe845835a9e7c1ec2298213f589bfc12ea61d577a16305df756f56",
+        "14": "sha256:9baf251af641e9ef91561f130bc161a4db496b67fbe4aab8c220bae5b036632e"
+      },
+      "flags": {
+        "creedal_stakes": true,
+        "legal_content": false,
+        "sensitive_content": true
+      },
+      "compiled_at": "2026-08-02"
+    },
+    "82:13": {
+      "verse_range": "13-16",
+      "title": "Bliss for the Righteous, Fire for the Wicked",
+      "in_short": "The righteous will live in lasting bliss and the wicked will burn in blazing Fire. Both enter their destination on the Day of Judgement, and neither the reward nor the punishment will ever end.",
+      "claims": [
+        {
+          "id": "82:13#c1",
+          "section_ref": "82:13",
+          "attaches_to": "82:13",
+          "text": "The Abrar (the righteous) are those who fulfil Allah's rights and the rights of His servants, who carry out the duties Allah made obligatory and avoid what He forbade.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "الذين برّوا بأداء فرائض الله، واجتنابِ معاصيه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "الأبرار الذين بروا وصدقوا في إيمانهم بأداء فرائض الله عز وجل واجتناب معاصيه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "القائمون بحقوق الله وحقوق عباده، الملازمون للبر",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "الإِنسان التقى الموفى بعهد الله",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "الأتقياء القائمين بحقوق الله وحقوق عباده",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "original_excerpt": "چاكه‌كاران ئه‌وانه‌ی كه‌ گوێڕایه‌ڵی فه‌رمانی خوای گه‌وره‌ ئه‌كه‌ن",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "al-Abrar",
+              "gloss": "the righteous, those upright in fulfilling duties owed to Allah and to people"
+            }
+          ]
+        },
+        {
+          "id": "82:13#c2",
+          "section_ref": "82:13",
+          "attaches_to": "82:13",
+          "text": "The Naʿīm (bliss) they are promised is the bliss of Paradise, described as lasting comfort.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "أي في نعيم الجنة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "لفى نعيم دائم ، وهناء مقيم",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "82:13#c3",
+          "section_ref": "82:13",
+          "attaches_to": "82:13",
+          "text": "This split between the righteous and the wicked mirrors another Qur'anic statement that people will divide into 'one party in Paradise and one party in the Blazing Fire' (42:7).",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وهو مثل قوله تعالى : فريق في الجنة وفريق في السعير",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "original_excerpt": "একদল জান্নাতে এবং একদল জাহান্নামে প্রবেশ করবে",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "82:13#c4",
+          "section_ref": "82:13",
+          "attaches_to": "82:13",
+          "text": "Sayyid Quṭb notes that 'birr' (goodness) describes someone for whom doing good has become a settled habit, fitting with human dignity; every good deed falls under it.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "بر ، ابرار کا واحد ہے۔ وہ شخص کہ نیکی اس کی عادت ثانیہ بن جائے",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "birr",
+              "gloss": "goodness as a settled character trait, not a one-off act"
+            }
+          ]
+        },
+        {
+          "id": "82:13#c5",
+          "section_ref": "82:13",
+          "attaches_to": "82:14",
+          "text": "The Fujjar (the wicked) are those who fell short of Allah's rights and the rights of His servants, whose corrupted hearts produced corrupted deeds; some commentators identify them simply as disbelievers in their Lord.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "الذين كفروا بربهم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "الذين قصروا في حقوق الله وحقوق عباده، الذين فجرت قلوبهم ففجرت أعمالهم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "جمع فاجر ، وهو الإِنسان الكثير الفجور",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "الفُجَّار الذين قَصَّروا في حقوق الله وحقوق عباده",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "original_excerpt": "خراپه‌كارانن و سه‌رپێچى فه‌رمانى خوای گه‌وره‌ ئه‌كه‌ن",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "al-Fujjar",
+              "gloss": "the wicked, those who transgress and fall short of Allah's due and other people's due"
+            }
+          ]
+        },
+        {
+          "id": "82:13#c6",
+          "section_ref": "82:13",
+          "attaches_to": "82:14",
+          "text": "Quṭb describes the Fujjar as the shameless who plunge into sin and wrongdoing without hesitation, so that Hell (Jaḥīm) is the fitting place matched to their character.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "فجار ، وہ گستاخ ، بےادب جو اثم ومعصیت کے کاموں میں بےدھڑک کود پڑتے ہیں۔ جہنم ان کے فسق وفجور کے لئے موزوں جگہ ہے",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "82:13#c7",
+          "section_ref": "82:13",
+          "attaches_to": "82:14",
+          "text": "A report is related that Sulaymān b. ʿAbd al-Malik asked Abū Ḥāzim al-Madanī what he could expect from Allah; Abū Ḥāzim pointed him to this verse (righteous in bliss, wicked in Fire), and when Sulaymān asked where Allah's mercy was, Abū Ḥāzim answered with the verse 'near to those who do good' (7:56).",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "ليت شعري ما لنا عند الله ؟ قال : اعرض عملك على كتاب الله",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Baghawī (no grading given)"
+          }
+        },
+        {
+          "id": "82:13#c8",
+          "section_ref": "82:13",
+          "attaches_to": "82:13",
+          "text": "This announcement about the righteous and the wicked is tied back to the earlier statement that every soul will come to know what it sent ahead and what it left behind; that knowledge is what these two fates make good on.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "original_excerpt": "These two statements are connected with verse [5] above",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "82:13#c9",
+          "section_ref": "82:13",
+          "attaches_to": "82:15",
+          "text": "'Yaṣlawnahā' means the wicked will enter the Fire and be struck by its flame and heat, actually undergoing its burning, not merely being placed near it.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "يَصْلَى هؤلاء الفجار الجحيم يوم القيامة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "يصلونها أي يصيبهم لهبها وحرها",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "Therein they will enter, and taste its burning flame",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "يدخلون الجحيم ويقاسون حرها",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "يصيبهم لهبها يوم الجزاء",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "original_excerpt": "له‌ ڕۆژی سزاو لێپرسینه‌وه‌دا ئه‌چنه‌ ناو ئاگری دۆزه‌خه‌وه‌",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "yaṣlawnahā",
+              "gloss": "they will burn in it / be scorched by its heat, entering and suffering it"
+            }
+          ]
+        },
+        {
+          "id": "82:13#c10",
+          "section_ref": "82:13",
+          "attaches_to": "82:15",
+          "text": "'Yawm al-Dīn' (the Day of Recompense) is the Day when servants are judged and repaid for their deeds, the day of reckoning and recompense.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "يوم يُدان العباد بالأعمال، فيُجازَوْنَ بها",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "يوم الجزاء والحساب",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "the Day of Reckoning, Recompense, and Judgement",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "يوم الجزاء على الأعمال",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "يوم الجزاء والحساب",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "يوم الجزاء",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "Yawm al-Dīn",
+              "gloss": "the Day of Recompense/Judgement"
+            }
+          ]
+        },
+        {
+          "id": "82:13#c11",
+          "section_ref": "82:13",
+          "attaches_to": "82:15",
+          "text": "Ibn ʿAbbās رضي الله عنه is reported as saying that 'Yawm al-Dīn' is one of the names of the Day of Resurrection, a day Allah magnified and warned His servants about.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "من أسماء يوم القيامة، عظَّمه الله، وحذَّره عباده",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Ṭabarī (no grading given)"
+          }
+        },
+        {
+          "id": "82:13#c12",
+          "section_ref": "82:13",
+          "attaches_to": "82:16",
+          "text": "The wicked will never come out of the Fire; they remain in it forever, just as the righteous remain forever in bliss, a permanence set against the possibility of ever being 'absent' from it.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "وما هؤلاء الفجار من الجحيم بخارجين أبدا... ولكنهم فيها مخلَّدون ماكثون",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "عن الجحيم",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "بل هم ملازمون لها، لا يخرجون منها",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "original_excerpt": "will never be able to get away from it, because the torment will be eternal",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "بل هم ملازمون لها ملازمة تامة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "original_excerpt": "সেখানে তাদের জন্যে চিরকালীন আযাবের নির্দেশ আছে",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "original_excerpt": "বরং তারা তাতে চিরস্থায়ীভাবে থাকবে",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "لا بخروج ولا بموت",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "82:13#c13",
+          "section_ref": "82:13",
+          "attaches_to": "82:16",
+          "text": "The torment will never be lightened for the wicked; they will not even be granted the death they will beg for, nor a single day's rest, and their punishment is never a moment's respite.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "they will not be absent for even one hour from the torment. The torment will not be lightened from them, nor will they be granted the death that they will be requesting, or any rest -- not even for a single day.",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "original_excerpt": "هیچ كاتێك سزاكه‌یان له‌سه‌ر سووك ناكرێ، یان مۆڵه‌تیان پێ نادرێ و نامرێندرێن",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "82:13#c14",
+          "section_ref": "82:13",
+          "attaches_to": "82:16",
+          "text": "There will be no route out of the Fire and no strength in anyone to flee from it.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "جہنم سے بھاگ نکلنے کا نہ کوئی راستہ ہوگا اور نہ ہی کسی میں بھاگ جانے کی طاقت ہوگی",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "82:13#c15",
+          "section_ref": "82:13",
+          "attaches_to": "82:16",
+          "text": "Quṭb reads this as a certain, settled outcome, placed here to answer those who had denied the reckoning of the Day of Judgement: the states of the righteous and the wicked, like Paradise and Hell, stand as exact opposites, and this description of the Fire's terror is meant to intensify the reader's sense of a Day about which they otherwise know nothing.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "یقین کرو کہ یہ انجام لازمی ہونے والا ہے۔ یہ طے شدہ انجام ہے",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        }
+      ],
+      "essay_html": "<p>The passage draws a plain line between two groups. The Abrar, the righteous, live in lasting bliss (naʿīm). The Fujjar, the wicked, burn in blazing Fire (Jaḥīm). Commentators describe the Abrar as those who carry out what Allah made obligatory and hold back from what He forbade, upholding both Allah's rights and the rights of other people.<sup class=\"ref\">1,2,5,9,13,14</sup> Their naʿīm is identified with the bliss of Paradise, a lasting comfort.<sup class=\"ref\">3,9</sup> Sayyid Quṭb (d. 1966) adds that 'birr' names a settled habit of doing good, not a single act, matching human dignity at its best.<sup class=\"ref\">6</sup></p>\n<p>The Fujjar are described as those who fell short of Allah's rights and the rights of others, whose corrupted hearts produced corrupted deeds; some name them simply as disbelievers in their Lord.<sup class=\"ref\">1,5,9,13,14</sup> Quṭb pictures them as the shameless who plunge into wrongdoing without hesitation, so that Hell fits their character exactly.<sup class=\"ref\">6</sup> The split itself echoes another verse, where people divide into 'one party in Paradise and one party in the Blazing Fire' (42:7).<sup class=\"ref\">3,12</sup> Muftī Muḥammad Shafīʿ (d. 1976) ties this pairing back to an earlier line in the surah, where every soul comes to know what it sent ahead and what it left behind: these two fates are what that knowledge turns out to mean.<sup class=\"ref\">7</sup></p>\n<p>Al-Baghawī (d. 1122) relays a report that Sulaymān b. ʿAbd al-Malik once asked Abū Ḥāzim al-Madanī what he could expect from Allah. Abū Ḥāzim pointed him to this very verse. When Sulaymān asked where Allah's mercy then lay, Abū Ḥāzim answered with another verse, that mercy is 'near to those who do good' (7:56).<sup class=\"ref\">2</sup></p>\n<p>'Yaṣlawnahā' means the wicked actually enter the Fire and are struck by its flame and heat, not merely placed nearby.<sup class=\"ref\">1,3,4,9,13,14</sup> This happens on 'Yawm al-Dīn', the Day when servants are judged and repaid for their deeds, the day of reckoning and recompense.<sup class=\"ref\">1,3,4,5,9,13</sup> Al-Ṭabarī (d. 923) relays a report from Ibn ʿAbbās رضي الله عنه that Yawm al-Dīn is one of the names of the Day of Resurrection, a day Allah magnified and warned His servants about.<sup class=\"ref\">1</sup></p>\n<p>The final point is permanence. The wicked will never come out of the Fire. They remain in it, just as the righteous remain forever in their bliss.<sup class=\"ref\">1,3,5,7,9,11,12,13</sup> Ibn Kathīr (d. 1373) spells this out further: the torment is never lightened, not for even an hour, and they are not granted the death they will beg for, nor a single day's rest.<sup class=\"ref\">4,14</sup> Isrār Aḥmad (d. 2010) puts it plainly: there will be no route out of the Fire, and no strength in anyone to flee it.<sup class=\"ref\">8</sup> Quṭb reads the whole passage as answering people who had denied the reckoning of the Day of Judgement in the first place: the states of the righteous and the wicked stand as exact opposites, and the description of the Fire's terror is meant to press home a Day about which the denier otherwise knows nothing.<sup class=\"ref\">6</sup></p>\n<p class=\"close\">Two fates, set side by side, neither one ending: bliss that does not fade for the Abrar, Fire that is not lightened or escaped for the Fujjar.</p>",
+      "sources_used": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        11,
+        12,
+        13,
+        14
+      ],
+      "source_hashes": {
+        "1": "sha256:b9e360c27c50cf8b3a006c58206074f7e2dab4aac446658dd9bcaceb6e5863b0",
+        "2": "sha256:5059ef1c32e0c8223a1485b7766c1916e1ec65c67c23216a40062156894fd397",
+        "3": "sha256:0290eb3bc753c2d643c3a37e3d7f9cdb3fc57bb39fbf11b3a50248298b153979",
+        "4": "sha256:090e94fe08708514170d074e55ff6a2dc1a71b139f4be76df66950cd1f2f80fb",
+        "5": "sha256:ed2d017002247a3db611583dbdb0a9a5254419ee6c333c75c95fc89e155a2e51",
+        "6": "sha256:9d29e67edeaa4b70e78ab62d44df1c7826625d61f65b203f46d6d478fe8ed340",
+        "7": "sha256:0865a00bda1c4253e52b51bc56986953730afa09f4000de4b27aac087b6edbb3",
+        "8": "sha256:ae77c843b0825525c0d7d3cae92e3d37b0f6799605538ee9233ca0d8b603fa45",
+        "9": "sha256:4b137cce304a6c2a34186e80174ad1ad745652a786379b2b5c01a31563326f23",
+        "10": "sha256:e31f8c4f1c43476904393a0af78a5b06b28b77efb35abbc6cef32d6a7e9bea30",
+        "11": "sha256:251035e01334f5e4a8223133e4617db3372d18036c5389873b06e6f15da72320",
+        "12": "sha256:349c6c9cd73e0f9973b062507c864a2319ff6bf28a6d0cfcbcb91d552538f69b",
+        "13": "sha256:8d6cdc84b36cc09c8dfe78e93baa5430357d3f8dc83e2b94dfa80dfbc4309ca1",
+        "14": "sha256:ddd01136cdf2b8ef3e0ea441e28de85b77ae894dbc23c5b68ec25b2b732d0845"
+      },
+      "flags": {
+        "creedal_stakes": true,
+        "legal_content": false,
+        "sensitive_content": true
+      },
+      "compiled_at": "2026-08-02"
+    },
+    "82:17": {
+      "verse_range": "17-18",
+      "title": "The Day Beyond Knowing",
+      "in_short": "The verse asks twice, 'What will make you know what the Day of Judgement is?' The double question magnifies a Day too vast for the mind to grasp, before the passage goes on to explain it.",
+      "claims": [
+        {
+          "id": "82:17#c1",
+          "section_ref": "82:17",
+          "attaches_to": "82:17",
+          "text": "The rhetorical question 'wa mā adrāka' (what will make you know) is a device of magnification (taʿẓīm) — it exalts the Day of Judgement by declaring it beyond the Prophet's ﷺ own knowledge until Allah discloses it.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "معظما شأنه جلّ ذكره، بقيله ذلك",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "ثم عظم ذلك اليوم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "كرر ذكره تعظيما لشأنه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "This is a magnification of the affair of the Day of Judgement.",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "فخم - سبحانه - وعظم من شأن يوم الجزاء",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric",
+          "original_terms": [
+            {
+              "term": "yawm al-dīn",
+              "gloss": "the Day of Recompense/Judgement"
+            },
+            {
+              "term": "mā adrāka",
+              "gloss": "what will make you know"
+            }
+          ]
+        },
+        {
+          "id": "82:17#c2",
+          "section_ref": "82:17",
+          "attaches_to": "82:18",
+          "text": "The exact question is repeated a second time in verse 18, and this repetition intensifies the sense of magnitude and wonder about the Day, rather than merely restating the same point.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "ثم كرر تعجباً لشأنه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "كرر ذكره تعظيما لشأنه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "والتكرار للتهويل والتعظيم ليوم الدين",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "ففي هذا تهويل لذلك اليوم الشديد الذي يحير الأذهان",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "original_excerpt": "ঐ দিনের বিশালত্ব ও ভয়াবহতাকে স্পষ্ট করার জন্য",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric"
+        },
+        {
+          "id": "82:17#c3",
+          "section_ref": "82:17",
+          "attaches_to": "82:18",
+          "text": "The same repeated formula appears elsewhere in the Qur'an with the same intensifying effect, for instance in the openings of Sūrat al-Qāriʿa and Sūrat al-Ḥāqqah.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "نحو قوله تعالى : القارعة ما القارعة .وما أدراك ما القارعة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "كما فى قوله - تعالى - ( الحاقة . مَا الحآقة . وَمَآ أَدْرَاكَ مَا الحاقة )",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric"
+        },
+        {
+          "id": "82:17#c4",
+          "section_ref": "82:17",
+          "attaches_to": "82:17",
+          "text": "A principle attributed to Ibn ʿAbbās رضي الله عنه: wherever the Qur'an says 'wa mā adrāka' (what will make you know), the matter is subsequently explained to the Prophet ﷺ; wherever it says 'wa mā yudrīka' (what would make you know), the matter is left undisclosed.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "كل شيء من القرآن من قوله : وما أدراك فقد أدراه . وكل شيء من قوله وما يدريك فقد طوي عنه",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Qurṭubī, relaying from Ibn ʿAbbās without grading"
+          }
+        },
+        {
+          "id": "82:17#c5",
+          "section_ref": "82:17",
+          "attaches_to": "82:17",
+          "text": "The Qur'an's general style is to leave a calamity unnamed and unknown, which sharpens its terror: whatever dread the human mind can imagine, the reality of the Day exceeds it. Repeating the question compounds this effect before the frightening details are given.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "یعنی یہ کہ انسانی تصور سے قیامت کی مصیبت ماوراء ہے۔ مصیبت اور خوف کا ہم جو بھی بھیانک تصور کرسکتے ہیں ، اس سے بھی وہ بڑھ کر ہے",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric"
+        },
+        {
+          "id": "82:17#c6",
+          "section_ref": "82:17",
+          "attaches_to": "82:17",
+          "text": "This double questioning produces tahwīl — a sense of dread and awe — about a Day so severe that it bewilders the mind.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "تهويل لذلك اليوم الشديد الذي يحير الأذهان",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "82:17#c7",
+          "section_ref": "82:17",
+          "attaches_to": "82:17",
+          "text": "Grammatically, 'mā' is an interrogative noun functioning as subject, 'adrāka' is the predicate with the attached pronoun as its first object, and the clause 'mā yawmu 'l-dīn' stands in for the second object of 'adrāka'.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "و ما اسم استفهام مبتدأ . وجملة أدراك خبره ، والكاف مفعول أول",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "82:17#c8",
+          "section_ref": "82:17",
+          "attaches_to": "82:18",
+          "text": "The question addressed to the Prophet ﷺ ('what will make you know') implies that only Allah truly grasps the severity of that Day; He has told the Prophet part of what will happen in it, as a warning so people prepare through faith and righteous deeds.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "إننا نحن وحدنا الذين ندرك شدة هوله .. وقد أخبرناك بجانب مما يحدث فيه من شدائد لتنذر الناس",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "original_excerpt": "تۆ چوزانی ئه‌و ڕۆژه‌ كه‌ ڕۆژی قیامه‌ته‌ چ ڕۆژێكی سه‌خته",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "82:17#c9",
+          "section_ref": "82:17",
+          "attaches_to": "82:18",
+          "text": "The rhetorical question anticipates what is explained next: on that Day no soul will have any power to help another, because all matters that Day belong to Allah alone, no rulership or authority remaining to anyone else.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "يوم لا تُغني نفس عن نفس شيئا ... الأمر صار لله الذي لا يغلبه غالب",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "no one will be able to benefit anyone else, or help him out of that which he will be in... the Decision, that Day, will be with Allah",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "لا يقدر أحد على نفع أحد، والأمر في ذلك اليوم لله وحده",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "82:17#c10",
+          "section_ref": "82:17",
+          "attaches_to": "82:18",
+          "text": "Ibn Kathīr cites the Prophet's ﷺ saying to Banī Hāshim, 'Save yourselves from the Fire, for I have no power to cause you any benefit from Allah,' as an illustration that no soul, however close, can help another that Day without Allah's leave.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "يَا بَنِي هَاشِم، أَنْقِذُوا أَنْفُسَكُمْ مِنَ النَّارِ لَا أَمْلِكُ لَكُمْ مِنَ اللهِ شَيْئًا",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "Ibn Kathīr, cited without a grading statement here"
+          }
+        },
+        {
+          "id": "82:17#c11",
+          "section_ref": "82:17",
+          "attaches_to": "82:18",
+          "text": "That no soul will have power for another on that Day does not negate intercession (shafāʿa), since intercession will not occur by anyone's own free will but only when Allah grants permission to intercede and accepts it.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "original_excerpt": "This does not negate intercession, because that will not happen with one's own free will, unless Allah grants permission",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        }
+      ],
+      "essay_html": "<p>Twice in a row the passage asks the same question: what will make you know what the Day of Recompense (yawm al-dīn) is? The commentators read this repetition itself as a signal. Naming the Day is not enough; the Qur'an first magnifies it by declaring it beyond ordinary knowing.<sup class=\"ref\">1,2,3,4,9</sup></p>\n<p>The second asking, introduced by 'then' (thumma), is not idle repetition. Al-Baghawī (d. 1122 CE) reads it as renewed wonder at the Day's affair, and al-Qurṭubī (d. 1273 CE) and Ṭanṭāwī (d. 2010 CE) both note the Qur'an uses the same doubling elsewhere, at the openings of Sūrat al-Qāriʿa and Sūrat al-Ḥāqqah, always to deepen the sense of dread.<sup class=\"ref\">2,3,5,9,12</sup></p>\n<p>Al-Qurṭubī also relays a rule attributed to Ibn ʿAbbās رضي الله عنه: whenever the Qur'an says 'what will make you know' (mā adrāka), the matter that follows is then disclosed to the Prophet ﷺ. Where it instead says 'what would make you know' (mā yudrīka), the matter stays hidden. Here, since the phrase is 'adrāka', the explanation does come, further on in the sūrah.<sup class=\"ref\">3</sup></p>\n<p>Sayyid Quṭb (d. 1966 CE) draws out the wider Qur'anic habit behind this: a calamity is often left unnamed and undefined, and that very silence makes it more frightening. Whatever dread the human mind can construct, the reality outstrips it. Asking the question twice sharpens that fear further, before the details are finally given.<sup class=\"ref\">6</sup></p>\n<p>Al-Saʿdī (d. 1957 CE) sums up the effect as tahwīl, a deliberate dread cast over a Day so severe it bewilders the mind. Ṭanṭāwī adds that only Allah truly grasps its severity; He has told the Prophet ﷺ only part of what will happen, as a warning meant to move people towards faith and right action.<sup class=\"ref\">5,9,14</sup></p>\n<p>The question also reaches forward to what the sūrah explains next: that Day no soul will have power to help another, because the whole matter belongs to Allah alone. Ibn Kathīr (d. 1373 CE) recalls the Prophet's ﷺ words to his own kin, Banī Hāshim, that he has no power to benefit them before Allah. Muftī Muḥammad Shafīʿ (d. 1976 CE) is careful to add that this does not rule out intercession, since intercession will only ever happen by Allah's own permission and acceptance, never by anyone's free will.<sup class=\"ref\">1,4,7,13</sup></p>\n<p class=\"close\">The Day is asked about twice because, on the commentators' reading, it cannot be taken in at once: it is named, then magnified again, precisely because it lies beyond what the mind, left to itself, could ever picture.<sup class=\"ref\">5,6,9</sup></p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "9",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:91a27a50d569c9de0b8bfa85176da8de2a9095ffbd7aea7efa2decb5809e2463",
+        "2": "sha256:c13829c195be90df856f732088f31333e6952f921dee2142600d60ca45e666d1",
+        "3": "sha256:818483bbc513d3a263827a865971ddea5f82ab5097d59d6f875b783208da89df",
+        "4": "sha256:a4ab03c78dcbf64c4aeaeb3416e03e2b8156b29e768acd9f69879da605deca5e",
+        "5": "sha256:ca548eda2369c8b1edd9accd53b8966bec36ce857c0b9e723b8b8544416aaad2",
+        "6": "sha256:06052e23a68572c6eb11851e39512426f0fda612545d96c7b71eae0d5d11a648",
+        "7": "sha256:dc3bacf658c3dcc16a581d077aa98421c14dba8107c79f903a155ab728fd2225",
+        "8": "sha256:7129fb7b510e8ef44310a088aef2524ddb963922d637def7253eb4d534d9824e",
+        "9": "sha256:113cc5d91ca58b3c1fbc6e2d4d260099e8557a0acf5ff2bc226610c8c289cac9",
+        "10": "sha256:47efa70cc6f97d669eceba3d0dc24498d07fc28f90fc05f8bb3f3d3cfc75d4a9",
+        "11": "sha256:a1293199b732492b8fc7cb27eb25df2246c4730db571aab4b995d0354ac9b6c7",
+        "12": "sha256:34b84404d5d2672e63ced5732b538f43b914965325069e9f0a8815081821f6d2",
+        "13": "sha256:e57c49a74db77cf7b6d10a8615acc29ee4a9681f00c5ab569bc5dc79de7805dd",
+        "14": "sha256:289948a9d6fb4ff09094a9a462865225c51eefc0e132744113a8830c9862d5f6"
+      },
+      "flags": {
+        "creedal_stakes": true,
+        "legal_content": false,
+        "sensitive_content": true
+      },
+      "compiled_at": "2026-08-02"
+    },
+    "82:1": {
+      "verse_range": "1-5",
+      "title": "When the Sky Is Torn Apart",
+      "in_short": "These verses paint the opening scenes of the Last Hour: the sky splits, the stars fall, the seas merge, graves turn inside out, and at that moment every soul finally knows the full account of what it did and what it left undone.",
+      "claims": [
+        {
+          "id": "82:1#c1",
+          "section_ref": "82:1",
+          "attaches_to": "82:1",
+          "text": "\"Infaṭarat\" means the sky splits or tears open, from the root meaning \"to split\" — the same sense used elsewhere in the Qur'an for the sky being cleft asunder.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "انفطرت (infaṭarat)",
+              "gloss": "split apart, torn open"
+            }
+          ]
+        },
+        {
+          "id": "82:1#c2",
+          "section_ref": "82:1",
+          "attaches_to": "82:1",
+          "text": "The sky splits so that the angels may descend through it; a second reading holds that it splits out of awe or dread of Allah's majesty.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "82:1#c3",
+          "section_ref": "82:1",
+          "attaches_to": "82:1",
+          "text": "A hadith reports that when Muʿādh dragged out the night prayer, the Prophet ﷺ told him to recite short suras instead, naming this sura among them (a detail found only in al-Nasā'ī, though the base story is in the Two Sahihs). A second report, from Ibn ʿUmar, states that whoever wants to see the Day of Resurrection as if with his own eyes should recite this sura together with At-Takwīr and Al-Inshiqāq.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "Ibn Kathīr notes the base story is in the Two Sahihs, but the specific mention of this sura is only in al-Nasā'ī; the Ibn ʿUmar report is relayed without a grading"
+          }
+        },
+        {
+          "id": "82:1#c4",
+          "section_ref": "82:1",
+          "attaches_to": "82:1",
+          "text": "This scene belongs to a family of parallel Qur'anic descriptions of the sky's undoing (compare 55:37 and 69:16). The exact manner of the splitting is beyond human knowledge; what is certain is that the present cosmic order, which now holds everything fixed in place, will be completely undone.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "82:1#c5",
+          "section_ref": "82:1",
+          "attaches_to": "82:1",
+          "text": "The passage announces that the Day of Judgement will finally arrive, when humanity is gathered and repaid for its deeds. This news fits the present order of the world, where a system already exists for recording human words and deeds.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "82:1#c6",
+          "section_ref": "82:1",
+          "attaches_to": "82:2",
+          "text": "\"Intatharat\" means the stars fall and scatter, from the sense of scattering something loosely over the ground.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "انتثرت (intatharat)",
+              "gloss": "scattered, fallen loosely"
+            }
+          ]
+        },
+        {
+          "id": "82:1#c7",
+          "section_ref": "82:1",
+          "attaches_to": "82:2",
+          "text": "The stars now race through their orbits at tremendous speed yet remain bound within them. Their \"scattering\" on that Day means release from this unseen binding order, so that each is left to wander loose in space, like a speck of dust drifting in the air.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "82:1#c8",
+          "section_ref": "82:1",
+          "attaches_to": "82:3",
+          "text": "\"Fujjirat\" means the seas are burst open, from a root meaning a wide bursting-forth of water.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "فُجِّرَت (fujjirat)",
+              "gloss": "burst open, made to gush forth"
+            }
+          ]
+        },
+        {
+          "id": "82:1#c9",
+          "section_ref": "82:1",
+          "attaches_to": "82:3",
+          "text": "Early exegetes differ on exactly what this bursting means: some (relayed from Ibn ʿAbbās) say the seas burst into one another and become a single sea; others (Qatādah, and similarly Baghawī and Ahsanul Bayaan) say the fresh water mixes with the salt water; al-Rabīʿ said it means the seas overflow; others (al-Ḥasan, relayed by Ṭabarī and Qurṭubī) say the seas burst apart from one another and their water disappears and dries up.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "82:1#c10",
+          "section_ref": "82:1",
+          "attaches_to": "82:3",
+          "text": "Sayyid Quṭb reflects that the seas' bursting could mean overwhelming the dry land in a great flood, or the water splitting into its constituent elements (oxygen and hydrogen), or those elements bursting apart on the scale of an atomic or hydrogen explosion, dwarfing any bomb known to man. He states plainly that the true nature of it is beyond present understanding.",
+          "claim_type": "other",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "relay",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "82:1#c11",
+          "section_ref": "82:1",
+          "attaches_to": "82:4",
+          "text": "\"Buʿthirat\" means overturned, so that what was hidden below becomes exposed above, like turning a water-trough upside down.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "بُعثِرَت (buʿthirat)",
+              "gloss": "overturned, turned inside out"
+            }
+          ]
+        },
+        {
+          "id": "82:1#c12",
+          "section_ref": "82:1",
+          "attaches_to": "82:4",
+          "text": "The overturning of graves means the dead are dug up and brought out alive, to be raised for reckoning.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "82:1#c13",
+          "section_ref": "82:1",
+          "attaches_to": "82:4",
+          "text": "A minority view, held by al-Farrāʾ, takes \"buʿthirat\" to mean that the earth brings out the gold and silver buried within it, one of the signs of the Hour.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "82:1#c14",
+          "section_ref": "82:1",
+          "attaches_to": "82:5",
+          "text": "Grammatically, the four \"when\" clauses of verses 1 to 4 all form the condition, and verse 5 (\"a soul will know...\") is their single answer: when all this happens, every soul will know.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "82:1#c15",
+          "section_ref": "82:1",
+          "attaches_to": "82:1",
+          "text": "Al-Qurṭubī notes a dispute over whether these opening verses form an oath (qasam) or a plain statement of fact (khabar), and states his own preference that the correct view, God willing, is that it is a statement of fact rather than an oath.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "82:1#c16",
+          "section_ref": "82:1",
+          "attaches_to": "82:5",
+          "text": "\"What it sent forward and what it left behind\" has been read several ways: the good or bad deeds a person did, against those they left undone; or the charity given in life, against the estate left to others; or, more broadly, the deeds a person carried out in this life, against the good or bad example they left in society for others to follow afterward.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "relay",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "قدّمت وأخّرت (qaddamat wa akhkharat)",
+              "gloss": "what it sent forward, and what it left behind"
+            }
+          ]
+        },
+        {
+          "id": "82:1#c17",
+          "section_ref": "82:1",
+          "attaches_to": "82:5",
+          "text": "A hadith states that whoever establishes a good practice in Islam receives its reward and the reward of all who act on it after him, undiminished, and whoever establishes a bad practice bears its burden and the burden of all who act on it after him, undiminished. This is cited to explain how a person's deeds keep accruing reward or sin after death through what they \"left behind\".",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not specified by the source (cited to Tirmidhī, Ibn Mājah, and Musnad Aḥmad without a stated grade)"
+          }
+        },
+        {
+          "id": "82:1#c18",
+          "section_ref": "82:1",
+          "attaches_to": "82:5",
+          "text": "At that moment the veil is lifted and everything hidden is disclosed. Each soul learns its gains and losses. The wrongdoer bites his hands on seeing his deeds voided, his scale grown light, and the wrongs he committed gathered against him, certain now of everlasting wretchedness. The God-conscious, who did good deeds beforehand, attain the great triumph, lasting bliss, and safety from the Fire.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "82:1#c19",
+          "section_ref": "82:1",
+          "attaches_to": "82:5",
+          "text": "The Qur'an says \"a soul\" (nafs) in the singular rather than \"every soul\", and dropping \"every\" makes the wording more refined while still meaning every single soul. The verse does not spell out the effect of this knowledge, but the manner of expression suggests it will strike the soul more severely than even the cosmic catastrophes just described.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric",
+          "original_terms": [
+            {
+              "term": "نفس (nafs)",
+              "gloss": "a soul, a self"
+            }
+          ]
+        }
+      ],
+      "essay_html": "<p>This sura opens with four scenes of the world's undoing, one after another, and closes them with a single result: every soul will finally know.</p><p>The first scene is the sky itself splitting apart (<i>infaṭarat</i>) <sup class=\"ref\">1,2,3,4,9,13</sup>. Commentators offer two reasons for it: that it splits open so the angels can descend, or that it splits out of dread of Allah's majesty <sup class=\"ref\">3,12,14</sup>. Ibn Kathīr (d. 1373) records that the Prophet ﷺ told Muʿādh رضي الله عنه to recite short suras like this one rather than draw out the night prayer, and a further report from Ibn ʿUmar رضي الله عنه states that whoever wants to see the Day of Resurrection as if with his own eyes should recite this sura together with two others <sup class=\"ref\">4,14</sup>. Sayyid Quṭb (d. 1966) places the verse among several Qur'anic descriptions of the sky's collapse, and says plainly that the exact manner of it lies beyond human knowledge, only that the present cosmic order will be entirely undone <sup class=\"ref\">6</sup>. Wahiduddin Khan (d. 2021) reads the whole announcement as consistent with the present order of the world, where a system for recording deeds already exists <sup class=\"ref\">10</sup>. Al-Qurṭubī (d. 1273) adds a grammatical note, preferring, in his own words, that these opening lines are a plain statement of fact rather than an oath <sup class=\"ref\">3</sup>.</p><p>The second scene is the stars scattering (<i>intatharat</i>) <sup class=\"ref\">1,2,3,4,9</sup>. Quṭb pictures the stars as currently racing through fixed orbits at tremendous speed, held there by an unseen order; their scattering means that binding is released, and each star is left to drift loose like a speck of dust in the air <sup class=\"ref\">6</sup>.</p><p>The third scene is the seas bursting open (<i>fujjirat</i>) <sup class=\"ref\">1,2,3,4,9,13</sup>. Early exegetes read this differently: some say the seas burst into one another and become a single sea, others that fresh water mixes with salt, al-Rabīʿ that the seas overflow, and al-Ḥasan that they burst apart and their water simply disappears <sup class=\"ref\">1,2,3,4,12</sup>. Quṭb goes further, wondering aloud whether it means the seas flood the land, or water splitting into its elements, or those elements bursting on a scale beyond any bomb known to man, while admitting the true sense is beyond present understanding <sup class=\"ref\">6</sup>.</p><p>The fourth scene is graves turned inside out (<i>buʿthirat</i>), like a trough flipped so its bottom becomes its top <sup class=\"ref\">1,2,3,9</sup>. Nearly all the commentators agree this means the dead are dug up and brought out alive for the reckoning <sup class=\"ref\">1,3,4,9,11,12,13,14</sup>, though al-Farrāʾ took it instead to mean the earth casts out its buried gold and silver <sup class=\"ref\">3</sup>.</p><p>Grammatically, all four \"when\" clauses lead to one answer, given in the fifth verse: when all this happens, a soul will know what it sent forward and what it left behind <sup class=\"ref\">3,9</sup>. That phrase has been read several ways: as good or bad deeds done against deeds left undone, as charity given against an estate left behind, or, more broadly, as what a person did in life against the example they left for others to keep following after them <sup class=\"ref\">2,4,7,8,11,12</sup>. On this last reading a hadith is cited: whoever starts a good practice keeps its reward for as long as others follow it, and whoever starts a bad one bears its burden in the same way <sup class=\"ref\">7,11</sup>. Al-Saʿdī (d. 1957) pictures the moment itself: the veil lifted, the wrongdoer biting his hands as his deeds are voided and his scale found light, certain now of lasting wretchedness, while the God-conscious who sent good ahead of them reach the great triumph <sup class=\"ref\">5</sup>. Quṭb notes that the Qur'an says \"a soul\" rather than \"every soul\", and that dropping the word \"every\" makes the line more refined while still meaning every single one, its wording hinting that this knowledge will strike harder than the cosmic ruin just described <sup class=\"ref\">6</sup>.</p><p class=\"close\">Four upheavals in the sky, the stars, the sea, and the earth, all answer to one fact: nothing a soul sent ahead, or left behind, will stay hidden from it.</p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:da660e1d9e979d79edaf77d62bdb374909efe837f33f78675d4be67e8279b3a2",
+        "2": "sha256:b59c8adc6181f9b6517736fcc4e6aa61210ec18230eca4e03723be44bde160f7",
+        "3": "sha256:04b6817fd11c90fb5e868fc9edbc6fbe86899a6638f5ae0fc0e64d0ae9e46946",
+        "4": "sha256:616c4dfe42881899d3630bf6ed32fe9d07a813afdcaedf0cf18f4c6b58c297f1",
+        "5": "sha256:4ab7760aaffb8a29251fba04fa81ce92169db13bbd9e0c19393c76ec4d1cfdcb",
+        "6": "sha256:9ced243441c90bd5912672d7947baef65974b638e3cbcbb8cba5906078825507",
+        "7": "sha256:e317e62a9ae87a435a7ae63c5223bcf42960d35f16aaf6ada28ef3fac8c8c3fd",
+        "8": "sha256:070ce8148dd79c76802d94990f872cfda7a41bd32a4485aae830ef9d8b80b918",
+        "9": "sha256:235d1ace85f0e87f317060ad111212daf10fecb702afa7015c2d5abf87f267bd",
+        "10": "sha256:015045d18ffafd3faa87cdf44027ec19f52841ea7f664ccc05f6895a7ae82783",
+        "11": "sha256:eaa54ee5a1baf41df96c9ccc5c54c82bfa7cc3a814f794eb31bf25833e0fa2f2",
+        "12": "sha256:6384e8f79ed05dd7a369735f312f19257aefbaf6c53431f957629828ef6ab492",
+        "13": "sha256:0376f149e0a950aa655507574388a6a380eb21657a9555f31676f0137ce80b0b",
+        "14": "sha256:4c9d6960427340e3b217a5bd38e36773ca3573282c4207b40babf50e658cdd83"
+      },
+      "flags": {
+        "creedal_stakes": true,
+        "legal_content": false,
+        "sensitive_content": true
+      },
+      "compiled_at": "2026-08-02"
+    }
+  }
+}

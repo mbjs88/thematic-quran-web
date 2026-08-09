@@ -1,0 +1,1674 @@
+{
+  "surah": 91,
+  "name": "",
+  "coverage": {
+    "editions_present": [
+      "ar-tafsir-al-tabari",
+      "ar-tafsir-al-baghawi",
+      "ar-tafseer-al-qurtubi",
+      "en-tafisr-ibn-kathir",
+      "ar-tafseer-al-saddi",
+      "tafsir-fe-zalul-quran-syed-qatab",
+      "en-tafsir-maarif-ul-quran",
+      "tafsir-bayan-ul-quran",
+      "ar-tafsir-al-wasit",
+      "tazkirul-quran-en",
+      "bn-tafsir-abu-bakr-zakaria",
+      "bn-tafsir-ahsanul-bayaan",
+      "ar-tafsir-muyassar",
+      "kurd-tafsir-rebar"
+    ],
+    "editions_absent": [],
+    "independent_works": 14,
+    "languages_present": [
+      "ar",
+      "bn",
+      "en",
+      "ku",
+      "ur"
+    ],
+    "languages_absent": []
+  },
+  "pipeline_provenance": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "overview-v2.3",
+    "theme_breaks_version": "sha256:99880ec7b10b53313690f91df9ee8d065519ee698df34b35a3336b5705218f90",
+    "compiled_at": "2026-08-02"
+  },
+  "modern_lens_framing": "The Qurʾan is taken here as fixed, revealed truth; science is our provisional, evolving account of the observable world. What follows notes where the two meet — a contemplation, not a proof. Where the science later shifts, that reflects the limits of our knowledge, not the text.",
+  "references": [
+    {
+      "n": 1,
+      "work_id": "al-tabari",
+      "label": "Jāmiʿ al-Bayān",
+      "author_id": "al-tabari",
+      "author": "Abū Jaʿfar Muḥammad ibn Jarīr al-Ṭabarī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 2,
+      "work_id": "al-baghawi",
+      "label": "Maʿālim al-Tanzīl",
+      "author_id": "al-baghawi",
+      "author": "Abū Muḥammad al-Ḥusayn ibn Masʿūd al-Baghawī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 3,
+      "work_id": "al-qurtubi",
+      "label": "al-Jāmiʿ li-Aḥkām al-Qurʾān",
+      "author_id": "al-qurtubi",
+      "author": "Abū ʿAbd Allāh Muḥammad ibn Aḥmad al-Qurṭubī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 4,
+      "work_id": "ibn-kathir",
+      "label": "Tafsīr Ibn Kathīr",
+      "author_id": "ibn-kathir",
+      "author": "Ismāʿīl ibn ʿUmar ibn Kathīr",
+      "source_language": "ar",
+      "note": "One independent voice. The ar/ur/bn editions are the SAME work — never count as separate corroboration."
+    },
+    {
+      "n": 5,
+      "work_id": "al-saadi",
+      "label": "Taysīr al-Karīm al-Raḥmān",
+      "author_id": "al-saadi",
+      "author": "ʿAbd al-Raḥmān ibn Nāṣir al-Saʿdī",
+      "source_language": "ar",
+      "note": "Russian edition (170) is the SAME work — translate from the Arabic original, and do not count Russian as an independent voice."
+    },
+    {
+      "n": 6,
+      "work_id": "fi-zilal",
+      "label": "Fī Ẓilāl al-Qurʾān",
+      "author_id": "sayyid-qutb",
+      "author": "Sayyid Quṭb Ibrāhīm Ḥusayn",
+      "source_language": "ar",
+      "note": "Original is Arabic, but the API here carries only an URDU edition — translating from Urdu is one step removed from the original. Prefer the Arabic original if the QF Content API offers it."
+    },
+    {
+      "n": 7,
+      "work_id": "maarif",
+      "label": "Maʿārif al-Qurʾān",
+      "author_id": "muhammad-shafi-usmani",
+      "author": "Muftī Muḥammad Shafīʿ ʿUthmānī",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 8,
+      "work_id": "bayan-ul-quran",
+      "label": "Bayān al-Qurʾān",
+      "author_id": "israr-ahmad",
+      "author": "Isrār Aḥmad",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 9,
+      "work_id": "wasit",
+      "label": "al-Tafsīr al-Wasīṭ",
+      "author_id": "tantawi",
+      "author": "Muḥammad Sayyid Ṭanṭāwī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 10,
+      "work_id": "tazkirul",
+      "label": "Tazkīr al-Qurʾān",
+      "author_id": "wahiduddin-khan",
+      "author": "Wahiduddin Khan",
+      "source_language": "ur",
+      "note": "en and ur editions are the same work."
+    },
+    {
+      "n": 11,
+      "work_id": "abu-bakr-zakaria",
+      "label": "Tafsir Abu Bakr Zakaria",
+      "author_id": "abu-bakr-zakaria",
+      "author": "Abū Bakr Muḥammad Zakariyyā",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 12,
+      "work_id": "ahsanul-bayaan",
+      "label": "Ahsanul Bayaan",
+      "author_id": "bayaan-foundation",
+      "author": "Ahsanul Bayaan (Bayaan Foundation)",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 13,
+      "work_id": "muyassar",
+      "label": "al-Tafsīr al-Muyassar",
+      "author_id": "committee-muyassar",
+      "author": "al-Tafsīr al-Muyassar (committee)",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 14,
+      "work_id": "rebar-kurdish",
+      "label": "Rebar Kurdish Tafsir",
+      "author_id": "rebar",
+      "author": "Rebar Kurdish Tafsir",
+      "source_language": "ku",
+      "note": ""
+    }
+  ],
+  "sections": {
+    "91:15": {
+      "verse_range": "15-15",
+      "title": "He Fears No Comeback",
+      "in_short": "The verse says God did not fear any comeback for the destruction He sent on Thamud. Commentators are split on whether the pronoun points to God, to the man who hamstrung the she-camel, or even to the Prophet Salih.",
+      "claims": [
+        {
+          "id": "91:15#c1",
+          "section_ref": "91:15",
+          "attaches_to": "91:15",
+          "text": "The verse carries two recognised recitations: with fā (فَلا يَخافُ), read by the reciters of Madinah and Shām, and with wāw (وَلا يَخافُ), read by the reciters of Iraq. Both are valid, established readings that do not conflict in meaning. Al-Qurṭubī judged the fā-reading (read by Nāfiʿ and Ibn ʿĀmir) to be the more fitting one, since it matches the sense that God is the one who fears no comeback, while the wāw-reading suits the sense that the wrongdoer feared no comeback. He also reports that Mālik's own family copy of the Qurʾān, said to date to ʿUthmān's compilation, carries the wāw-reading, which is also what Abū ʿUbayd and Abū Ḥātim chose, following the majority of manuscript copies.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "فبأيتهما قرأ القارئ فمصيب",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "قرأ أهل المدينة والشام: فلا بالفاء ... وقرأ الباقون بالواو",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وهو الأجود؛ لأنه يرجع إلى المعنى الأول",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "it has also been recited as (فَلَا يَخَافُ)",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar",
+          "original_terms": [
+            {
+              "term": "فَلا / وَلا",
+              "gloss": "the two variant readings, with fā or with wāw"
+            }
+          ]
+        },
+        {
+          "id": "91:15#c2",
+          "section_ref": "91:15",
+          "attaches_to": "91:15",
+          "text": "The majority reading takes the pronoun in 'He does not fear' to refer to God: He fears no liability or comeback (tabiʿah) for what He did to Thamud, because no one stands over Him to call Him to account. This is reported from Ibn ʿAbbās, al-Ḥasan al-Baṣrī, Qatādah, Mujāhid and Bakr b. ʿAbdullāh al-Muzanī.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "لا يخاف الله من أحد تبعة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "لا يخاف الله من أحد تبعة في إهلاكهم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "غير خائف أن تلحقه تبعة الدمدمة من أحد",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "Allah does not fear any consequences from anyone else",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "ولا يخاف- جلت قدرته- تبعة ما أنزله بهم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "original_excerpt": "خوای گه‌وره‌ له‌سه‌ره‌نجامی كاره‌كانی ناترسێ",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "لا يخاف الله - تعالى -عاقبة ما فعله بهؤلاء الطغاة الأشقياء",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "original_terms": [
+            {
+              "term": "تَبِعَة",
+              "gloss": "a liability or claim that could be brought against one afterwards"
+            }
+          ]
+        },
+        {
+          "id": "91:15#c3",
+          "section_ref": "91:15",
+          "attaches_to": "91:15",
+          "text": "Those who read it this way explain why: God does not fear because He is the Subduer (al-Qāhir) whom no creature can escape or oppose, and He is Wise (al-Ḥakīm) in everything He decrees and legislates. A created being fears because it can be questioned or overpowered, but the Creator of everything is not questioned about what He does, and He is just in His rulings. Mufti Muḥammad Shafīʿ (d. 1976) contrasts this with an earthly tyrant-king: such a king, even after crushing a whole people, still fears revenge from survivors or their avengers, because whoever destroys others risks being destroyed in turn, except God, who fears no such counter-attack when He destroys a people.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "وكيف يخاف من هو قاهر، لا يخرج عن قهره وتصرفه مخلوق",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "لأن الذى يخاف إنما هو المخلوق",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "original_excerpt": "a tyrant king who destroys his people on a large scale, fears for his life",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "91:15#c4",
+          "section_ref": "91:15",
+          "attaches_to": "91:15",
+          "text": "A second reading takes the pronoun to point instead to the man who hamstrung the she-camel: that wretched individual did not fear the consequence of his own deed when he committed it. On this reading the sentence's word order is treated as inverted, so the sense reconstructs as: 'when the most wretched of them rose up [to hamstring her], not fearing its consequence.' This is reported from al-Ḍaḥḥāk, al-Suddī and al-Kalbī.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "لم يخف الذي عقرها عقباها",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "هو راجع إلى العاقر، وفي الكلام تقديم وتأخير",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "لم يخف الذي عقرها عقبى ما صنع",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "أن هذا الشقى قد أسرع إلى عقر الناقة دون أن يخشى سوء عاقبة فعله",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "original_terms": [
+            {
+              "term": "تقديم وتأخير",
+              "gloss": "an inversion of the natural word order for rhetorical effect"
+            }
+          ]
+        },
+        {
+          "id": "91:15#c5",
+          "section_ref": "91:15",
+          "attaches_to": "91:15",
+          "text": "Al-Qurṭubī (d. 1273) also records a further reading: that it is the Prophet Ṣāliḥ (عليه السلام) who is meant. He did not fear the outcome of his people's destruction for himself, since he had already warned them, and God had saved him when they were destroyed.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "لا يخاف رسول الله صالح عاقبة إهلاك قومه",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "91:15#c6",
+          "section_ref": "91:15",
+          "attaches_to": "91:15",
+          "text": "On the pronoun in 'its consequence' (ʿuqbāhā): al-Qurṭubī explains that it refers back not to a named noun but to the deed itself, comparing it to the idiom 'whoever performs the greater wash on Friday, so be it and well' (man ightasala yawm al-jumuʿati fa-bihā wa niʿmat), where the pronoun points to the act or quality rather than a person or thing. Ṭanṭāwī similarly says the pronoun refers to the deed, or to the crushing punishment (al-damdama) itself.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "والهاء في عقباها ترجع إلى الفعلة كقوله: من اغتسل يوم الجمعة فبها ونعمت",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "والضمير فى عقباها، يعود إلى الفعلة أو إلى الدمدمة",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "91:15#c7",
+          "section_ref": "91:15",
+          "attaches_to": "91:15",
+          "text": "Sayyid Quṭb (d. 1966) reads the statement as pointing to the severity of God's grip (akhdh). In human experience, whoever acts without fearing any consequence inflicts the harshest oppression. In the same way, God's seizing of the defiant will be extremely severe, since none can question Him or call Him to account. Quṭb links this to the theme found elsewhere in the Qurʾān that 'your Lord's grip is truly severe', and situates the whole episode within God's wider order of decree governing the self, the cosmos, and His pattern of seizing tyrants and deniers.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "91:15#c8",
+          "section_ref": "91:15",
+          "attaches_to": "91:15",
+          "text": "Isrār Aḥmad (d. 2010) draws the verse back to God's absolute ownership: as Owner and Creator of the whole universe He does as He wills. He wiped out this nation entirely and brought another people in its place. This closes the surah's movement from the success or failure of the individual self to the success or failure of whole nations.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        }
+      ],
+      "essay_html": "<p>The verse closes the surah with a single short statement: God did not fear any comeback for what He did to Thamud. Commentators divide over exactly who the pronoun 'he' names, and the disagreement runs alongside a genuine difference in how the verse itself is recited.<sup class=\"ref\">1,2,3,4</sup></p><p>The verse is read two ways: with fā by the reciters of Madinah and Shām, and with wāw by the reciters of Iraq, both established and both correct.<sup class=\"ref\">1,2,4</sup> Al-Qurṭubī (d. 1273) judged the fā-reading more fitting, because it matches the first meaning below, while the wāw-reading suits the second.<sup class=\"ref\">3</sup></p><p>Most commentators take 'he' to mean God: He fears no liability for destroying Thamud, since none can call Him to account. This is reported from Ibn ʿAbbās, al-Ḥasan al-Baṣrī, Qatādah, Mujāhid and Bakr b. ʿAbdullāh al-Muzanī, and it is the reading carried by al-Ṭabarī, al-Baghawī, Ibn Kathīr, al-Muyassar, Ṭanṭāwī, Rebar, Zakariyyā and Ahsanul Bayaan.<sup class=\"ref\">1,2,3,4,9,11,12,13,14</sup> Al-Saʿdī (d. 1957) asks how the One who subdues every creature, and who is Wise in all He decrees, could ever fear.<sup class=\"ref\">5</sup> Ṭanṭāwī adds that fear belongs to what is created, not to the Creator, who is not questioned about what He does. Muftī Muḥammad Shafīʿ (d. 1976) sharpens the contrast with an earthly tyrant: even a king who crushes his own people still fears revenge from those left behind, because whoever destroys others risks being destroyed in turn. God alone destroys without that fear.<sup class=\"ref\">5,7,9,11,12</sup></p><p>A second reading points the pronoun elsewhere: to the man who hamstrung the she-camel. On this reading he is the one who did not fear the outcome of his own deed, and the sentence's word order is taken as inverted, so it reads as though it said 'when the most wretched of them rose up, not fearing its consequence.' This comes from al-Ḍaḥḥāk, al-Suddī and al-Kalbī, and Ṭanṭāwī notes it too.<sup class=\"ref\">1,2,3,9</sup> Al-Qurṭubī records a third possibility still: that the Prophet Ṣāliḥ عليه السلام is meant, unafraid for himself because he had warned his people and had already been saved when they were destroyed.<sup class=\"ref\">3</sup></p><p>On the smaller pronoun, in 'its consequence', al-Qurṭubī explains that it points back to the deed itself rather than to any named thing, much as an idiom can let 'it' stand for an act just performed. Ṭanṭāwī agrees, saying it refers to the deed or to the crushing punishment itself.<sup class=\"ref\">3,9</sup></p><p>Sayyid Quṭb (d. 1966) reads the line as a warning about the weight of God's grip. Anyone who acts without fearing a consequence acts at his harshest, and so this line signals just how severe God's seizing of the defiant will be, since none can question Him.<sup class=\"ref\">6</sup> Isrār Aḥmad (d. 2010) ties the verse to God's plain ownership of everything: He wiped out one nation and raised another in its place, closing the surah's turn from the fate of a single self to the fate of whole peoples.<sup class=\"ref\">8</sup></p><p class=\"close\">Whichever reading is followed, the verse leaves Thamud's end with no appeal and no aftermath to fear, for the one who is unafraid is the one who answers to no one.<sup class=\"ref\">3,5,7,9</sup></p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:79bb826017ffecfeb0d517f3191056de460e3116226247168359591c0d36feb6",
+        "2": "sha256:a0fcf1adb5c1975c46d138c34608b4c0f08a33b7c1f625a39d96c5026ba650d1",
+        "3": "sha256:afd9d3a4e8aacad99e27eac4b3588f5a4c375208504771a9a908583d2ac76c97",
+        "4": "sha256:9f61e981faa70df0ca9cdb4460bdc975788825776bfdf2f55bc61a3993d7c4e3",
+        "5": "sha256:1ccb4d3dc393ef3f8bf79cd1f197895bce8721d24b2499727d7e01812e45fa68",
+        "6": "sha256:d4af7dc392acb8233331355edeb28dd171c3bd63257b704b2256367048de098e",
+        "7": "sha256:706592af6ef6f7f7cd1a0dbe3efd8d39a03356de0086d948191607a3d41a7183",
+        "8": "sha256:235235c6f89efd43be0478a3f44d9dce7d0aac1b36494142fe6f268c45a35c19",
+        "9": "sha256:58cc078ad16260363ba33aa201081233eef12d928c6d297d9a2f1fc4e6a0de43",
+        "10": "sha256:8f209527e274af93056ddeff00991a29bc07f05f62a85a674119b68d6d75cf6f",
+        "11": "sha256:628ceb15a91175494c05f765cf20dbc37407ee5e7d21aaf481d0ad696c674dca",
+        "12": "sha256:9a247bbd08449d1ad65293dd56b15aa39a0a0db0a9706c5f5a198fc2f748f1d1",
+        "13": "sha256:6caede6870065475aa4be1af2a874c518a27d84e66cf57291e4f65eb1054595a",
+        "14": "sha256:2d5b14b631fd27f4f2c70a187fab745682b0ab0e56cec135d5d1ca686e3d2f2b"
+      },
+      "flags": {
+        "creedal_stakes": true,
+        "legal_content": false,
+        "sensitive_content": true
+      },
+      "compiled_at": "2026-08-02"
+    },
+    "91:11": {
+      "verse_range": "11-14",
+      "title": "Thamud and the She-Camel",
+      "in_short": "Thamud's overreaching arrogance led them to deny their prophet Salih. Their most wicked man hamstrung the miraculous she-camel God had sent them as a sign, and their Lord then crushed the whole community equally, sparing no one.",
+      "claims": [
+        {
+          "id": "91:11#c1",
+          "section_ref": "91:11",
+          "attaches_to": "91:11",
+          "text": "Ṭaghwā (their 'ṭaghwā') is read by most commentators as their transgression and insolence (ṭughyān) - the excess that pushed them past the bounds of obedience and into denial of their prophet.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "بطغيانها وعدوانها، أي الطغيان حملهم على التكذيب",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "بطغيانها ، وهو خروجها عن الحد في العصيان قاله مجاهد وقتادة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "بسبب طغيانها وترفعها عن الحق",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "بسبب طغيانهم وإفراطهم فى الجحود والتكبر والعناد",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "original_excerpt": "طغيان সেই অবাধ্যতাকে বলে, যা সীমা ছাড়িয়ে যায়",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "relay",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "low"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "91:11#c2",
+          "section_ref": "91:11",
+          "attaches_to": "91:11",
+          "text": "Ibn ʿAbbās read 'ṭaghwā' differently: as the name of the very punishment Salih had warned them of. On this reading the verse means 'Thamud denied the punishment promised to them,' since it overwhelmed (ṭaghā) them.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "اسم العذاب الذي جاءها، الطَّغْوَى، فقال: كذّبت ثمود بعذابها",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "بطغواها أي بعذابها الذي وعدت به",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "91:11#c3",
+          "section_ref": "91:11",
+          "attaches_to": "91:11",
+          "text": "Muḥammad ibn Kaʿb read 'bi-ṭaghwāhā' as meaning 'in its entirety' (bi-ajmaʿihā) - the whole tribe together, not merely a faction.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "بأجمعها",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "91:11#c4",
+          "section_ref": "91:11",
+          "attaches_to": "91:11",
+          "text": "Grammatically, ṭaghwā is a verbal noun (maṣdar) shaped to match the rhyme of the surah's short verse-endings, just as 'daʿwāhum' stands for 'duʿāʾahum' elsewhere in the Qurʾan. A minority reading even vowels it 'ṭughwā', on the pattern of other verbal nouns like 'rujʿā' and 'ḥusnā'.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "وهما مصدران للتوفيق بين رءوس الآي",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وقرأ الحسن والجحدري وحماد بن سلمة ( بضم الطاء )",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "91:11#c5",
+          "section_ref": "91:11",
+          "attaches_to": "91:12",
+          "text": "'The most wicked among them' (ashqāhā) is identified as Qudar ibn Sālif, described as short, ginger-haired and blue-eyed, the man who stepped forward to hamstring the she-camel.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "قدار بن سالف ، وكان أشقر أزرق العينين قصيرا",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "relay",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "original_excerpt": "কুদ্দার বিন সালেফ",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "relay",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "low"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "91:11#c6",
+          "section_ref": "91:11",
+          "attaches_to": "91:12",
+          "text": "A hadith is reported that the Prophet ﷺ, while giving a sermon mentioning the she-camel and the man who killed her, described him as 'a mighty, formidable man, strong among his people, like Abu Zamʿah.' It came through ʿAbdullah ibn Zamʿah and is recorded by al-Bukhari, Muslim, al-Tirmidhī and al-Nasāʾī.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "انْبَعَثَ لَهَا رَجُلٌ عَزِيزٌ عارِمٌ، مَنِيعٌ فِي رَهْطِهِ، مِثْلُ أبي زَمْعَةَ",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "Ibn Kathīr, citing al-Bukhārī and Muslim"
+          }
+        },
+        {
+          "id": "91:11#c7",
+          "section_ref": "91:11",
+          "attaches_to": "91:12",
+          "text": "A separate hadith in al-Bukhārī has the Prophet ﷺ asking a companion, 'Do you know who was the most wicked of the earlier peoples?' - the man who hamstrung the she-camel - and 'the most wicked of the later ones' - 'your killer.'",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "أتدري من أشقى الأولين؟ ... قال: عاقر الناقة، قال: أتدري من أشقى الآخرين؟ ... قال: قاتلك",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "Qurṭubī, citing al-Bukhārī"
+          }
+        },
+        {
+          "id": "91:11#c8",
+          "section_ref": "91:11",
+          "attaches_to": "91:12",
+          "text": "Ibn Kathīr connects this man to the leader named in Surah al-Qamar (54:29), 'they called their comrade, and he took [a sword] and killed her' - noting he was a man of noble lineage and an obeyed leader among his tribe, which explains why the whole tribe bore responsibility.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "91:11#c9",
+          "section_ref": "91:11",
+          "attaches_to": "91:12",
+          "text": "The verb 'inbaʿatha' (rose up / rushed forth) signals that he hastened without hesitation once his people incited him, reflecting the depth of his defiance.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "الانبعاث : هو الإسراع في الطاعة للباعث",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "للإِشعار بأنه قام مسرعا عندما أرسله قومه لقتل الناقة، ولم يتردد فى ذلك",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "91:11#c10",
+          "section_ref": "91:11",
+          "attaches_to": "91:12",
+          "text": "Though one man struck the blow, reports say he did not act until the whole tribe - young and old, men and women - had pledged their agreement to it, which is why the killing is attributed to all of them together in the Qurʾan's wording.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "أن أحيمر ثَمود أبى أن يعقرها، حتى بايعه صغيرُهم وكبيرُهم، وذكرهم وأنثاهم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "لم يعقرها حتى تابعه صغيرهم وكبيرهم، ذكرهم وأنثاهم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "Qatādah, as relayed without isnād evaluation in the provided sources"
+          }
+        },
+        {
+          "id": "91:11#c11",
+          "section_ref": "91:11",
+          "attaches_to": "91:12",
+          "text": "Sayyid Quṭb draws from this a wider principle: responsibility in communal life can be collective, since the tribe encouraged the deed rather than restraining it. He notes this does not contradict individual accountability in the Hereafter, since failing to forbid wrong or encourage good is itself culpable.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "91:11#c12",
+          "section_ref": "91:11",
+          "attaches_to": "91:13",
+          "text": "'Rasūl Allāh' in this verse refers to Ṣāliḥ عليه السلام, sent to call Thamud to sincere worship.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "low"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "91:11#c13",
+          "section_ref": "91:11",
+          "attaches_to": "91:13",
+          "text": "Grammatically, 'nāqata Allāh' (the she-camel of God) stands in the accusative of warning (taḥdhīr), a construction like 'the lion! the lion!' meaning 'beware of her, do not touch her.'",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "منصوب على معنى: ذروا ناقة الله",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "ناقة منصوب على التحذير كقولك : الأسد الأسد",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "ولفظ \"ناقة\" منصوب على التحذير",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "91:11#c14",
+          "section_ref": "91:11",
+          "attaches_to": "91:13",
+          "text": "Ṣāliḥ's warning covered both the she-camel herself and her allotted drinking day: God had appointed her a day to drink alone from the water, and the people a separate day, and they were told not to trespass on hers.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "أن للناقة شِربَ يوم، ولهم شِرْب يومٍ آخر",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "91:11#c15",
+          "section_ref": "91:11",
+          "attaches_to": "91:13",
+          "text": "The she-camel was originally brought forth from a rock as the miraculous sign Thamud themselves had demanded from Ṣāliḥ, to prove his prophethood.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "relay",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "91:11#c16",
+          "section_ref": "91:11",
+          "attaches_to": "91:13",
+          "text": "Wahīduddīn Khān reads the she-camel as symbolising a wider principle: one must respect the rights of others and honour one's duties toward them, even toward the weak and helpless. Something outwardly ordinary can be God's sign, set before people as a test.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "91:11#c17",
+          "section_ref": "91:11",
+          "attaches_to": "91:14",
+          "text": "Al-Ṭabarī discusses the order 'they denied him, then they hamstrung her': either order of wording is acceptable in Arabic when one act is the cause of the other, just as one may say 'he gave, and so was generous' or 'he was generous, and so gave.'",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "جاز تقديم التكذيب قبل العقر، والعقر قبل التكذيب",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "91:11#c18",
+          "section_ref": "91:11",
+          "attaches_to": "91:14",
+          "text": "The verb 'they hamstrung her' (ʿaqarūhā) is plural even though one man dealt the blow, because the whole people consented to and approved his act, so the deed and the blame are attributed to all of them together.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "ولذلك نُسب التكذيب والعقر إلى جميعهم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وأضيف إلى الكل ; لأنهم رضوا بفعله",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "91:11#c19",
+          "section_ref": "91:11",
+          "attaches_to": "91:14",
+          "text": "Al-Farrāʾ notes that grammatically two people may have carried out the hamstringing together, comparing it to Arabic usage where a dual or plural act is still described with a superlative singular form, as in 'these two are the best of people.'",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "عقرها اثنان : والعرب تقول : هذان أفضل الناس",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "91:11#c20",
+          "section_ref": "91:11",
+          "attaches_to": "91:14",
+          "text": "'Fa-damdama' means an intensified, repeated scourge that presses down again and again until it wipes out its target entirely. Related senses given for the root include destruction by uprooting, and covering something over completely, as one covers a grave.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "فدمَّر عليهم ربهم بذنبهم ذلك",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "الدمدمة إهلاك باستئصال",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "حقيقة الدمدمة تضعيف العذاب وترديده",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "بمعنى تضعيف العذاب وترديده",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "91:11#c21",
+          "section_ref": "91:11",
+          "attaches_to": "91:14",
+          "text": "'Fa-sawwāhā' means the punishment fell equally on all of them, without exception, sweeping up young and old, male and female alike - since, by report, the whole tribe had shared in the crime.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "فسوّى الدمدمة عليهم جميعهم، فلم يُفْلِت منهم أحد",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "سوى بينهم بالعقوبة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "91:11#c22",
+          "section_ref": "91:11",
+          "attaches_to": "91:14",
+          "text": "Al-Farrāʾ offers an alternate reading of 'fa-sawwāhā': that the ground itself was levelled flat over them, as one levels earth over a grave, after the destruction.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "سوى الأمة وأنزل العذاب بصغيرها وكبيرها",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "دمدمت على الميت التراب : أي سويت عليه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "أطبق عليهم الأرض ، وسواها من فوقهم جميعا",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "91:11#c23",
+          "section_ref": "91:11",
+          "attaches_to": "91:14",
+          "text": "Al-Saʿdī specifies the mechanism of destruction: a Cry (al-Ṣayḥah) fell upon them from above and a Tremor (al-Rajfah) from beneath, leaving them fallen dead on their knees.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "أرسل عليهم الصيحة من فوقهم، والرجفة من تحتهم",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "91:11#c24",
+          "section_ref": "91:11",
+          "attaches_to": "91:14",
+          "text": "A report from al-Ḥasan al-Baṣrī adds that after hamstringing the mother, they went looking for her young one, which fled into a rock in the mountain, and God then 'cut off their hearts.'",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "لما عقروا الناقة طلبوا فصيلها، فصار في قارة الجبل، فقطع الله قلوبهم",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Ṭabarī, relaying from al-Ḥasan without isnād evaluation given here"
+          }
+        },
+        {
+          "id": "91:11#c25",
+          "section_ref": "91:11",
+          "attaches_to": "91:14",
+          "text": "Sayyid Quṭb observes that the very sound of the word 'damdama', with its doubled, hammering syllables, evokes the harshness of the scourge before its meaning is even considered.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric"
+        },
+        {
+          "id": "91:11#c26",
+          "section_ref": "91:11",
+          "attaches_to": "91:14",
+          "text": "Ibn al-Zubayr is reported to have recited 'fa-dahdama' instead of 'fa-damdama' - two dialectal forms carrying the same meaning.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وقرأ ابن الزبير ( فدهدم ) وهما ، لغتان",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        }
+      ],
+      "essay_html": "<p>Thamud denied their prophet Ṣāliḥ عليه السلام because of their ṭaghwā - most commentators read this as their transgression, the insolence that pushed them past every limit into denial.<sup class=\"ref\">2,3,4,5,8,9,11,12,13,14</sup> Ibn ʿAbbās رضي الله عنه took the word differently, as the name of the very punishment Ṣāliḥ had warned them of, so that the verse means they denied the punishment itself.<sup class=\"ref\">1,3</sup> Muḥammad ibn Kaʿb read it as 'in its entirety' - the whole tribe together, not a mere faction.<sup class=\"ref\">1,3</sup> Al-Ṭabarī notes the word's shape (ṭaghwā) also matches the rhyme running through the surah's short verse-endings, and some read it with a different vowel, ṭughwā, on the pattern of other verbal nouns.<sup class=\"ref\">1,3</sup></p>\n<p>The 'most wicked among them' who rose up is named as Qudār ibn Sālif, described as short, ginger-haired and blue-eyed.<sup class=\"ref\">1,2,3,4,5,9,11,12,13,14</sup> A hadith reports the Prophet ﷺ describing him, in a sermon, as a mighty and formidable man among his people, like Abū Zamʿah - recorded in Bukhārī and Muslim.<sup class=\"ref\">1,2,4</sup> Another hadith in Bukhārī has the Prophet ﷺ naming him 'the most wicked of the earlier peoples,' paired with a warning about 'the most wicked of the later ones.'<sup class=\"ref\">3</sup> Ibn Kathīr رحمه الله links him to the leader named in Sūrat al-Qamar, a man of noble lineage whom his tribe obeyed.<sup class=\"ref\">4</sup> The verb used for his rising, inbaʿatha, suggests he rushed to the deed without hesitation.<sup class=\"ref\">2,9</sup> By report, though he struck the blow, he did not act until young and old, men and women, had all pledged their agreement, which is why the Qurʾan speaks of the deed as belonging to all of them.<sup class=\"ref\">1,2,3,4</sup> Sayyid Quṭb رحمه الله draws from this a wider principle: responsibility in communal life can be shared, since a people who encourage or fail to restrain wrongdoing share in its guilt, without this contradicting each soul's individual reckoning in the Hereafter.<sup class=\"ref\">6</sup></p>\n<p>Ṣāliḥ warned his people plainly: 'God's she-camel, and her drink.' Grammatically this phrase stands in the Arabic construction of warning, like crying 'the lion! the lion!' - meaning, beware, do not touch her.<sup class=\"ref\">2,3,9</sup> God had given the she-camel her own day to drink from the well, and the people a separate day, and Ṣāliḥ told them not to trespass on hers.<sup class=\"ref\">1,3,4,5,11,12</sup> The she-camel herself had been brought out of a rock as the very sign Thamud had demanded to prove Ṣāliḥ's prophethood.<sup class=\"ref\">3,6,9,11</sup> Wahīduddīn Khān reads her as standing for something wider still: that the rights of others, even the weak and the helpless, are to be honoured, and that something outwardly ordinary may carry God's test.<sup class=\"ref\">10</sup></p>\n<p>They denied him, and they hamstrung her. Al-Ṭabarī notes that Arabic allows either order of these two clauses, since each act was bound up with the other as cause and effect.<sup class=\"ref\">1</sup> Though one man struck her, the verb is plural because the whole people had consented, so the deed and its blame fall on all of them.<sup class=\"ref\">1,2,3,4,12</sup> Al-Farrāʾ notes a grammatical possibility that two men may have done the actual killing.<sup class=\"ref\">3</sup> Then their Lord 'dammed down' on them (damdama) - a word the commentators explain as an intensified, repeated scourge, pressing down again and again until nothing was left, akin to sealing something over completely.<sup class=\"ref\">1,2,3,4,7,9,11</sup> Sayyid Quṭb notes that the very sound of the word, its hammering repetition, carries the harshness of the blow before its meaning is even weighed.<sup class=\"ref\">6</sup> Al-Saʿdī رحمه الله specifies how: a Cry from above them and a Tremor from beneath, leaving them fallen dead on their knees.<sup class=\"ref\">5</sup> 'Fasawwāhā' - He levelled it upon them - is read as meaning the punishment fell equally on everyone, young and old, sparing none, since by report the whole tribe had shared the crime.<sup class=\"ref\">1,2,3,4,5,7,11,12</sup> Al-Farrāʾ offers a second reading: that the ground itself was flattened over them afterwards, as earth is levelled over a grave.<sup class=\"ref\">2,3,9</sup> One further report, from al-Ḥasan al-Baṣrī, adds that they hunted down the she-camel's fleeing young one before God 'cut off their hearts' - a detail relayed without comment on its chain.<sup class=\"ref\">1</sup></p>\n<p class=\"close\">A whole people is described here as bound together, in denial, in the killing of a single camel, and in the punishment that swept over all of them, sparing neither the man who struck the blow nor those who merely let it happen.</p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:a800ef7bf0409c7a22aeb96e009370fd44eb19aadb89d7b1f2d7ea528dcad0d9",
+        "2": "sha256:a72f9b0ef47572a7789c671b0b5e4a5c437c628ae68dc3a7c9d70134e9521597",
+        "3": "sha256:52aab17d1f33659dbd24075df2c8d837ae7205b1f65382a188e37aeb5ab90fc7",
+        "4": "sha256:1454a2126de7fbae060c5b0d7bf9a92e82a0ae882a5c489f3bf9bdc8edeb0f76",
+        "5": "sha256:9d9a488972a6e7f8b85d7e30118e6055e3d02bcf768b9a96e18b5a311c9b9802",
+        "6": "sha256:71ba81e3d216d152e29f8ca29fecf2dc83cdd553e14cff528fd49d372a6ea448",
+        "7": "sha256:6c5480391cb4177db28f25f622ad515bebf48e266c29297fddb772b46c45379b",
+        "8": "sha256:0277efb6b2d8143035ec6cd78c5f3057d3a9a6687f29faf14e8a393dce3f965a",
+        "9": "sha256:0457ca47712a342b6f7d3649a9c14296f29b43a3b78f5cbb56d0f89a3855fae1",
+        "10": "sha256:73cd148f8b2cdd67631d43088331f3f00683f13af7ef281e8f7331e68ac30ad5",
+        "11": "sha256:4284663e144fa23f900d1e314c148eb816783b7e49e9670af3c78070bf90ced5",
+        "12": "sha256:54e66f9989a910baf16903431aa29a0d794cdec54da22e39bcb0949339d92aed",
+        "13": "sha256:1c7b0ca1f88fc2129129ffd689924e888d0443aead894ee736b3bed7229cefa3",
+        "14": "sha256:66434a182b942340e7023367377a00f312105922d6d41e2fe6517d07dea7aee5"
+      },
+      "flags": {
+        "creedal_stakes": false,
+        "legal_content": false,
+        "sensitive_content": true
+      },
+      "compiled_at": "2026-08-02"
+    }
+  }
+}

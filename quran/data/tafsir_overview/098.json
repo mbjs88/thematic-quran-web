@@ -1,0 +1,2928 @@
+{
+  "surah": 98,
+  "name": "",
+  "coverage": {
+    "editions_present": [
+      "ar-tafsir-al-tabari",
+      "ar-tafsir-al-baghawi",
+      "ar-tafseer-al-qurtubi",
+      "en-tafisr-ibn-kathir",
+      "ar-tafseer-al-saddi",
+      "tafsir-fe-zalul-quran-syed-qatab",
+      "en-tafsir-maarif-ul-quran",
+      "tafsir-bayan-ul-quran",
+      "ar-tafsir-al-wasit",
+      "tazkirul-quran-en",
+      "bn-tafsir-abu-bakr-zakaria",
+      "bn-tafsir-ahsanul-bayaan",
+      "ar-tafsir-muyassar",
+      "kurd-tafsir-rebar"
+    ],
+    "editions_absent": [],
+    "independent_works": 14,
+    "languages_present": [
+      "ar",
+      "bn",
+      "en",
+      "ku",
+      "ur"
+    ],
+    "languages_absent": []
+  },
+  "pipeline_provenance": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "overview-v2.3",
+    "theme_breaks_version": "sha256:99880ec7b10b53313690f91df9ee8d065519ee698df34b35a3336b5705218f90",
+    "compiled_at": "2026-08-02"
+  },
+  "modern_lens_framing": "The Qurʾan is taken here as fixed, revealed truth; science is our provisional, evolving account of the observable world. What follows notes where the two meet — a contemplation, not a proof. Where the science later shifts, that reflects the limits of our knowledge, not the text.",
+  "references": [
+    {
+      "n": 1,
+      "work_id": "al-tabari",
+      "label": "Jāmiʿ al-Bayān",
+      "author_id": "al-tabari",
+      "author": "Abū Jaʿfar Muḥammad ibn Jarīr al-Ṭabarī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 2,
+      "work_id": "al-baghawi",
+      "label": "Maʿālim al-Tanzīl",
+      "author_id": "al-baghawi",
+      "author": "Abū Muḥammad al-Ḥusayn ibn Masʿūd al-Baghawī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 3,
+      "work_id": "al-qurtubi",
+      "label": "al-Jāmiʿ li-Aḥkām al-Qurʾān",
+      "author_id": "al-qurtubi",
+      "author": "Abū ʿAbd Allāh Muḥammad ibn Aḥmad al-Qurṭubī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 4,
+      "work_id": "ibn-kathir",
+      "label": "Tafsīr Ibn Kathīr",
+      "author_id": "ibn-kathir",
+      "author": "Ismāʿīl ibn ʿUmar ibn Kathīr",
+      "source_language": "ar",
+      "note": "One independent voice. The ar/ur/bn editions are the SAME work — never count as separate corroboration."
+    },
+    {
+      "n": 5,
+      "work_id": "al-saadi",
+      "label": "Taysīr al-Karīm al-Raḥmān",
+      "author_id": "al-saadi",
+      "author": "ʿAbd al-Raḥmān ibn Nāṣir al-Saʿdī",
+      "source_language": "ar",
+      "note": "Russian edition (170) is the SAME work — translate from the Arabic original, and do not count Russian as an independent voice."
+    },
+    {
+      "n": 6,
+      "work_id": "fi-zilal",
+      "label": "Fī Ẓilāl al-Qurʾān",
+      "author_id": "sayyid-qutb",
+      "author": "Sayyid Quṭb Ibrāhīm Ḥusayn",
+      "source_language": "ar",
+      "note": "Original is Arabic, but the API here carries only an URDU edition — translating from Urdu is one step removed from the original. Prefer the Arabic original if the QF Content API offers it."
+    },
+    {
+      "n": 7,
+      "work_id": "maarif",
+      "label": "Maʿārif al-Qurʾān",
+      "author_id": "muhammad-shafi-usmani",
+      "author": "Muftī Muḥammad Shafīʿ ʿUthmānī",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 8,
+      "work_id": "bayan-ul-quran",
+      "label": "Bayān al-Qurʾān",
+      "author_id": "israr-ahmad",
+      "author": "Isrār Aḥmad",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 9,
+      "work_id": "wasit",
+      "label": "al-Tafsīr al-Wasīṭ",
+      "author_id": "tantawi",
+      "author": "Muḥammad Sayyid Ṭanṭāwī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 10,
+      "work_id": "tazkirul",
+      "label": "Tazkīr al-Qurʾān",
+      "author_id": "wahiduddin-khan",
+      "author": "Wahiduddin Khan",
+      "source_language": "ur",
+      "note": "en and ur editions are the same work."
+    },
+    {
+      "n": 11,
+      "work_id": "abu-bakr-zakaria",
+      "label": "Tafsir Abu Bakr Zakaria",
+      "author_id": "abu-bakr-zakaria",
+      "author": "Abū Bakr Muḥammad Zakariyyā",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 12,
+      "work_id": "ahsanul-bayaan",
+      "label": "Ahsanul Bayaan",
+      "author_id": "bayaan-foundation",
+      "author": "Ahsanul Bayaan (Bayaan Foundation)",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 13,
+      "work_id": "muyassar",
+      "label": "al-Tafsīr al-Muyassar",
+      "author_id": "committee-muyassar",
+      "author": "al-Tafsīr al-Muyassar (committee)",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 14,
+      "work_id": "rebar-kurdish",
+      "label": "Rebar Kurdish Tafsir",
+      "author_id": "rebar",
+      "author": "Rebar Kurdish Tafsir",
+      "source_language": "ku",
+      "note": ""
+    }
+  ],
+  "sections": {
+    "98:8": {
+      "verse_range": "8-8",
+      "title": "Eternal Gardens and Mutual Pleasure",
+      "in_short": "The reward of the believers described earlier is eternal gardens with flowing rivers, sealed by a mutual pleasure between Allah and them, and the commentators close by explaining that all of this belongs to whoever holds true awe (khashiya) of his Lord.",
+      "claims": [
+        {
+          "id": "98:8#c1",
+          "section_ref": "98:8",
+          "attaches_to": "98:8",
+          "text": "Jannāt ʿAdn means gardens of permanent residence, a settled abode with no departure, no travelling on from it, unlike an earthly garden one eventually leaves.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "بساتين إقامَة لا ظعن فيها",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "عدن أي إقامة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "جنات إقامة، لا ظعن فيها ولا رحيل",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "جنات إقامة واستقرار في منتهى الحسن",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "ʿAdn",
+              "gloss": "permanent residence, settled abode"
+            }
+          ]
+        },
+        {
+          "id": "98:8#c2",
+          "section_ref": "98:8",
+          "attaches_to": "98:8",
+          "text": "Khālidīn fīhā abadan (abiding therein forever) means the dwellers will never leave and will never die there; their stay has no end.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "ماكثين فيها أبدًا, لا يخرجون عنها, ولا يموتون فيها",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "لا يظعنون ولا يموتون",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "خالدين فى تلك الجنات خلودا أبديا",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "98:8#c3",
+          "section_ref": "98:8",
+          "attaches_to": "98:8",
+          "text": "Isrār Aḥmad notes a grammatical detail: at two places in the Qur'an where believers and disbelievers are contrasted side by side, the phrase for Paradise adds 'abadan' (forever) while the phrase for Hell omits it, this occurs here (verse 6 vs verse 8) and in Sūrat al-Taghābun (verses 9-10). On this basis two major scholarly figures, Ibn ʿArabī and Ibn Taymiyyah, held that Paradise's bliss is eternal but Hell itself is not, and will eventually be ended. He states clearly this is not the position of mainstream Sunni scholars, who hold Hell to be eternal just like Paradise, and that he raises it only as a point of scholarly interest.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "relay",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "اہل جنت کے لیے خٰلِدِیْنَ فِیْہَآ اَبَدًا جبکہ اہل جہنم کے لیے صرف خٰلِدِیْنَ فِیْہَا کے الفاظ آئے ہیں",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar",
+          "theological_school": "Atharī"
+        },
+        {
+          "id": "98:8#c4",
+          "section_ref": "98:8",
+          "attaches_to": "98:8",
+          "text": "Allah's being pleased (riḍā) is described as of two kinds: being pleased with Him as Lord and Master (over one's belief in Him as such), and being pleased with Him in what He decrees and apportions. Al-Suddī is cited saying: 'If you yourself are not pleased with Allah, how can you ask Him to be pleased with you?'",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "إذا كنت لا ترضى عن الله فكيف تسأله الرضا عنك",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Baghawī relays without a chain assessment"
+          }
+        },
+        {
+          "id": "98:8#c5",
+          "section_ref": "98:8",
+          "attaches_to": "98:8",
+          "text": "Allah's pleasure with the believers is a greater and more illustrious thing than every one of the everlasting delights they are given in the Gardens.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "The condition of Him being pleased with them is more illustrious than all of the everlasting delights",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "98:8#c6",
+          "section_ref": "98:8",
+          "attaches_to": "98:8",
+          "text": "Allah's pleasure with them (raḍiya Allāhu ʿanhum) means His acceptance of their deeds; their pleasure with Him (raḍū ʿanhu) means their joy and contentment at the abundant favour He has given them.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "رضي الله عنهم أي رضي أعمالهم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "فرضي عنهم بما قاموا به من مراضيه، ورضوا عنه، بما أعد لهم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "قبوله لأعمالهم، وبرضاهم عنه: فرحهم بما أعطاهم من فضله",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "رضي الله عنهم فقبل أعمالهم الصالحة، ورضوا عنه بما أعدَّ لهم",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "98:8#c7",
+          "section_ref": "98:8",
+          "attaches_to": "98:8",
+          "text": "A hadith is cited in which Allah addresses the people of Paradise asking if they are pleased; they reply that they could not fail to be pleased given what He has granted them beyond any other creation, and Allah responds that He is giving them something still greater, His eternal good pleasure, after which He will never again be displeased with them.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "original_excerpt": "আল্লাহ্ তা‘আলা জান্নাতীদেরকে উদ্দেশ্য করে বলবেন...",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "source cites Bukhārī 6549, 7518 and Muslim 2829"
+          }
+        },
+        {
+          "id": "98:8#c8",
+          "section_ref": "98:8",
+          "attaches_to": "98:8",
+          "text": "Allah's pleasure being the supreme favour is echoed elsewhere in the Qur'an, where His good pleasure is called greater than anything else given to the believers.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "original_excerpt": "وَرِضْوَانٌ مِنَ اللهِ أَكبَر",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "98:8#c9",
+          "section_ref": "98:8",
+          "attaches_to": "98:8",
+          "text": "Khashiya (awe/fear of one's Lord) is not the agitated, disturbed fear one feels toward an enemy or a dangerous beast. It is a deep, reverential awe born of recognising Allah's Majesty and Incomparability, which moves a person to seek His pleasure in every circumstance and avoid His displeasure. This awe is the axis on which religious perfection and all the bounties of the Hereafter turn.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "original_excerpt": "'Khashyatullah' (Allah's awe) is... a feeling of deep, reverential awe that leads man to Allah's obedience.",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "98:8#c10",
+          "section_ref": "98:8",
+          "attaches_to": "98:8",
+          "text": "Khashiya of one's Lord means fearing Allah in private and in public, restraining oneself from sin, and fulfilling the duties He has laid down.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "لمن خاف الله في الدنيا في سرّه وعلانيته, فاتقاه بأداء فرائضه, واجتناب معاصيه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "أي خاف ربه، فتناهى عن المعاصي",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "أي: لمن خاف الله، فأحجم عن معاصيه، وقام بواجباته",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "لمن خاف الله واجتنب معاصيه",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "98:8#c11",
+          "section_ref": "98:8",
+          "attaches_to": "98:8",
+          "text": "Sayyid Quṭb reads the flowing rivers beneath these fresh gardens as an image of unending vitality, in contrast to worldly pleasures where the fear of ending or ceasing spoils every enjoyment; here there is no such threat, and the gardens will remain forever fresh and full of life and beauty.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "فنا ہونے اور امن و اطمینان کا ختم ہوجانا دنیا کی تمام سہولیات اور طیبات کا مزہ خراب کردیتا ہے",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "98:8#c12",
+          "section_ref": "98:8",
+          "attaches_to": "98:8",
+          "text": "Sayyid Quṭb explains that Allah's pleasure with the believers and their pleasure with Him is a mutual satisfaction that cannot be rendered in any other words; it includes contentment with what Allah has decreed for them, with what He has granted them, and with the very relationship between themselves and Him.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "ایک ایسا انداز ہے جس کی تعبیر کیسی دوسرے الفاظ میں نہیں جاسکتی",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "98:8#c13",
+          "section_ref": "98:8",
+          "attaches_to": "98:8",
+          "text": "Sayyid Quṭb reads the closing phrase 'that is for him who has awe of his Lord' as the final emphasis of the surah: everything promised rests on the nature of one's connection to Allah. Awe of Him strips away every veil, brings the heart to stand directly before the One and Overpowering, and purifies worship and deeds from any trace of association with others (shirk) or showing off (riyā). Allah is Self-Sufficient and accepts only deeds done purely for Him, rejecting any act mixed with another motive.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "اس شعور کی وجہ سے انسان کی عبادت اور اس کے اعمال صالح ہر قسم کی شرک ، ریاکاری سے پاک ہوجاتا ہیں",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "98:8#c14",
+          "section_ref": "98:8",
+          "attaches_to": "98:8",
+          "text": "Fear of Allah restrains a person from persisting in disobedience; if a lapse occurs through human weakness, such a person turns back in repentance and corrects himself, so that his life ends in a state of obedience rather than defiance. A heart genuinely emptied by fear of Allah cannot remain fixed on disobeying Him.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "original_excerpt": "যদি কোন সময় মানব মনের প্রবণতায় পাপ হয়েই যায়, তাহলে তারা সঙ্গে সঙ্গে তওবা করে নিজেদেরকে সংশোধন করে নেয়",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        }
+      ],
+      "essay_html": "<p>The surah closes with the reward promised to those who believed and did righteous deeds: gardens of ʿAdn, everlasting residence, with rivers flowing beneath them. The word ʿAdn itself signals permanence, a settled abode with no departure, unlike any garden known on earth, which one eventually leaves.<sup class=\"ref\">1,3,5,13</sup> The phrase khālidīn fīhā abadan makes this explicit: no leaving, and no dying, ever.<sup class=\"ref\">1,3,9</sup> Sayyid Quṭb (d. 1966) reads the flowing rivers as an image of unending freshness, contrasted with worldly pleasure, which is always shadowed by the fear that it will end. Here there is no such threat.<sup class=\"ref\">6</sup></p>\n<p>Isrār Aḥmad (d. 2010) draws attention to a grammatical detail: in this surah, and again in Sūrat al-Taghābun, Paradise's eternity is described with the added word 'abadan' while Hell's is not. On this basis, he notes, two major figures, Ibn ʿArabī and Ibn Taymiyyah رحمهما الله, held that Hell itself will eventually end, though its people will remain confined for a very long stretch first. He is careful to state that this is not the position of mainstream Sunni scholarship, which holds Hell to be as eternal as Paradise, and that he raises the point only as a matter of scholarly interest.<sup class=\"ref\">8</sup></p>\n<p>The verse then turns to a mutual pleasure: Allah is pleased with them, and they are pleased with Him. Al-Suddī رحمه الله is quoted asking, if a person is not pleased with Allah, how can he ask Allah to be pleased with him.<sup class=\"ref\">2</sup> The commentators explain the two sides of this pleasure: Allah's pleasure with them is His acceptance of their deeds, and their pleasure with Him is their joy at the abundant favour He has given.<sup class=\"ref\">3,5,9,13</sup> Ibn Kathīr (d. 1373) adds that Allah's pleasure with them outweighs every one of the everlasting delights they are given in the Gardens.<sup class=\"ref\">4</sup> A hadith is cited describing Allah asking the people of Paradise if they are pleased; they answer that they could not fail to be, given what no other creation has received, and Allah tells them He is giving something greater still, His eternal good pleasure, after which He will never again be displeased with them.<sup class=\"ref\">11</sup> One commentator connects this to another verse of the Qur'an calling Allah's good pleasure the greatest of all things given to the believers.<sup class=\"ref\">12</sup></p>\n<p>Everything promised rests on one condition, stated in the closing words: this is for whoever holds khashiya, awe, of his Lord. Muftī Muḥammad Shafīʿ (d. 1976) distinguishes this khashiya sharply from the agitated fear one feels toward an enemy or a dangerous beast. It is a reverential awe born of recognising Allah's Majesty, an awe that drives a person toward His pleasure in every circumstance. He calls it the axis on which religious perfection turns.<sup class=\"ref\">7</sup> The earlier commentators describe khashiya plainly as fearing Allah in private and in public, restraining from sin, and fulfilling one's duties.<sup class=\"ref\">1,3,5,13</sup> Sayyid Quṭb takes this further: such awe strips away every veil between the heart and Allah, and purifies worship of any trace of association with others or showing off, since Allah, being Self-Sufficient, accepts only what is done purely for Him.<sup class=\"ref\">6</sup> A related note observes that this fear does not mean sinlessness; where a lapse occurs, such a person turns back in repentance, so that his life ends in obedience rather than defiance.<sup class=\"ref\">12</sup></p>\n<p class=\"close\">The surah ends where it began, on the difference between the one who fears his Lord and the one who does not, with the whole of the reward described, gardens, rivers, permanence, and Allah's own pleasure, resting on that single quality of the heart.<sup class=\"ref\">1,6,7</sup></p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "11",
+        "12",
+        "13"
+      ],
+      "source_hashes": {
+        "1": "sha256:c4a4af4e186b3e59b814383b4c7c351e04cd27c68e9a40e6e2d646d95433fb87",
+        "2": "sha256:a5be6b4b81d00e2c4040c5f2b7ae5b90f6c7ad47bdae55db1b659bc6f8cd7997",
+        "3": "sha256:1d9c4b81c0fdb946ae2a79faf183acab48b8252b1b71a23b46b348a1aa9b8610",
+        "4": "sha256:02ec46de0e83d0a48e98167d3af49874795c237d3fc462feb47db8edc9412e16",
+        "5": "sha256:c499d8c721ebe6a46f5f6e744e66c6740b9ce22dbc776df6483b3fa480ad0ed9",
+        "6": "sha256:c0c07a161d838fb6d8f2397b702b0a2c60bbc81a566285c06ab916a489b637ea",
+        "7": "sha256:696014ac26c0dc1cb9e5a0f2109f8e6b1dab5f1d19fdab23ae5c0df71557ba03",
+        "8": "sha256:adc2873c9acb0b389dec49e045314689c80ca033dd06ba12baac6103515cd452",
+        "9": "sha256:4e5f4b1c1d8414995d9a6bb1cf835300121e8f8b688c52470de782e19a28565b",
+        "10": "sha256:0e2a95f78e9d454a33092a5b912feecd8d057aace0411a54dffb112b03e9993b",
+        "11": "sha256:b848b6ee742b6e636ac7338bb9d0694c01b481558f9e94c9f9055266253011cb",
+        "12": "sha256:a82964f149a71d7c0430226fd84d773d1824facc7c6097c01c6798882a5e33df",
+        "13": "sha256:a544399ac088ab90307a8f152c98196bf5db47adf2732b1de54d3de2c385852c",
+        "14": "sha256:849379e2b883c72fa2f5d2a89fdbe60c3fcc5a4ea45b66a06b4ec222085c2034"
+      },
+      "flags": {
+        "creedal_stakes": "true",
+        "legal_content": "false",
+        "sensitive_content": "false"
+      },
+      "compiled_at": "2026-08-02"
+    },
+    "98:5": {
+      "verse_range": "5-5",
+      "title": "The Straight Religion Defined",
+      "in_short": "The verse says the whole of what the People of the Book (and every earlier community) were commanded came down to one simple thing: worship God alone with sincere devotion, keep the prayer, and pay the alms. That, the verse says, is the straight and upright religion.",
+      "claims": [
+        {
+          "id": "98:5#c1",
+          "section_ref": "98:5",
+          "attaches_to": "98:5",
+          "text": "The verse states that all the People of the Book were ever commanded was to worship God alone with sincere devotion (ikhlāṣ), free of any mixing with shirk. Al-Ṭabarī adds the historical note that the Jews mixed shirk into their worship by calling ʿUzayr a son of God, and the Christians did the same regarding the Messiah, besides both groups denying the prophethood of Muhammad ﷺ.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "وما أمر الله هؤلاء اليهود والنصارى... إلا أن يعبدوا الله مخلصين له الدين",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "ما أمروا في التوراة والإنجيل إلا بالإخلاص في العبادة لله موحدين",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وما أمر هؤلاء الكفار في التوراة والإنجيل إلا ليعبدوا الله أي ليوحدوه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "unspecified",
+          "original_terms": [
+            {
+              "term": "مخلصين له الدين (mukhliṣīna lahu al-dīn)",
+              "gloss": "devoting religion sincerely to Him, mixing no share of it with shirk"
+            }
+          ]
+        },
+        {
+          "id": "98:5#c2",
+          "section_ref": "98:5",
+          "attaches_to": "98:5",
+          "text": "Because ikhlāṣ (sincerity) is a matter of the heart, this phrase is taken as proof that intention (niyyah) is required in acts of worship, since sincerity is the heart's work of directing the deed to God's face alone.",
+          "claim_type": "legal",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وفي هذا دليل على وجوب النية في العبادات فإن الإخلاص من عمل القلب",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "98:5#c3",
+          "section_ref": "98:5",
+          "attaches_to": "98:5",
+          "text": "Ḥunafāʾ (people of true faith) means those who turn away from all other religions towards true monotheism. Ibn ʿAbbās linked it to being on the religion of Ibrāhīm عليه السلام, and elsewhere read it in this verse as referring to pilgrims free of shirk. Qatādah described ḥanīfiyyah more broadly as including circumcision, the prohibition of marrying mothers, daughters, sisters, aunts, and the hajj rites. Saʿīd b. Jubayr said a ḥanīf is one who is circumcised and performs the pilgrimage. Ṭanṭāwī explains the root sense: ḥanaf is turning from falsehood towards truth, the opposite of janaf, turning from truth towards falsehood.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "الحنيفية: الختان, وتحريم الأمهات والبنات والأخوات والعمات والخالات والمناسك",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "مائلين عن الأديان كلها إلى دين الإسلام",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "كان ابن عباس يقول: حنفاء على دين إبراهيم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "الحَنف, وهو الميل من الدين الباطل إلى الدين الحق",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "حنفاء (ḥunafāʾ)",
+              "gloss": "those turning away from every false religion towards true monotheism"
+            }
+          ]
+        },
+        {
+          "id": "98:5#c4",
+          "section_ref": "98:5",
+          "attaches_to": "98:5",
+          "text": "Prayer and zakat are named separately even though they are already included in the general command to worship God sincerely. Al-Saʿdī explains this is because of their special excellence, and because whoever establishes these two upholds the whole of the religion's laws.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "وخص الصلاة والزكاة مع أنهما داخلان في قوله لفضلهما وشرفهما، وكونهما العبادتين اللتين من قام بهما قام بجميع شرائع الدين",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "98:5#c5",
+          "section_ref": "98:5",
+          "attaches_to": "98:5",
+          "text": "The phrase dīn al-qiyyamah (the straight religion) raises a grammatical puzzle, since qiyyamah is feminine while dīn is masculine. Explanations offered include: it is the attribute of an implied noun such as millah (community) or ummah (nation), so the sense is 'the religion of the upright community'; al-Khalīl b. Aḥmad said qiyyamah is a plural of qayyim, so the meaning is 'the religion of those who stand firm for God in monotheism'; al-Farrāʾ said the word is added to its own description for emphasis, with the tāʾ marking intensification; and some, including Muḥammad b. al-Ashʿath al-Ṭāliqānī, said qiyyamah refers back to the 'upright Books' (kutub qayyimah) mentioned earlier in the sūrah, so the phrase means 'the religion of the upright Books'. A variant reading attributed to ʿAbdullāh (Ibn Masʿūd) reads dīn al-qayyim instead.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "وهي في قراءة عبد الله... وذلك دين الْقَيِّمَةِ وأُنِّثت القيمة, لأنها جعلت صفة للملة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "القيمة: جمع القيم، والقيم والقائم واحد",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وقيل: الهاء راجعة إلى الملة أو الشريعة... القيمة هاهنا: الكتب التي جرى ذكرها",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "ولفظ القيمة بزنة فيعلة... صفة لموصوف محذوف",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "original_excerpt": "The word qayyimah is apparently the qualifier of the noun kutub",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar",
+          "original_terms": [
+            {
+              "term": "دين القيمة (dīn al-qiyyamah)",
+              "gloss": "the straight, upright religion"
+            }
+          ]
+        },
+        {
+          "id": "98:5#c6",
+          "section_ref": "98:5",
+          "attaches_to": "98:5",
+          "text": "This straight religion is not something new or exclusive to the People of the Book; it is the same religion every messenger was sent with. Ibn Kathīr links it to God's statements that no messenger was sent except with the call to worship God alone, and that a messenger was raised in every nation to worship God and avoid false deities. Muftī Shafīʿ likewise notes that every earlier upright, scripture-bearing religion shared these very features, and suggests the phrase may point to the fact that the Prophet's ﷺ own commands mirrored what was already given to them, leaving them no pretext for opposition.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "98:5#c7",
+          "section_ref": "98:5",
+          "attaches_to": "98:5",
+          "text": "Sayyid Quṭb reads this verse as the root principle common to all religions: worship God alone, devote religion purely to Him, avoid shirk and its people, establish prayer, and pay zakat. He describes this creed as free of complication or division, plain and simple, so that the disputes found among the People of the Book have nothing to do with the true religion, since clear proofs had already reached them through their own messengers before Muhammad ﷺ.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "یہی نہایت صحیح اور درست دین ہے... اور اس عقیدے اور عمل میں کوئی پیچیدگی نہیں ہے",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "98:5#c8",
+          "section_ref": "98:5",
+          "attaches_to": "98:5",
+          "text": "Isrār Aḥmad reads this verse as a summary of the entire religion, paralleling the emphasis found in Sūrat al-Zumar. He stresses that worship demands complete obedience, not partial submission where one prays while continuing forbidden acts, and cites the warning given to the Children of Israel in 2:85 about disgrace in this life and severe punishment in the next for accepting part of the Scripture while rejecting another part. He also distinguishes 'ibadah (total life-submission) from the specific acts of prayer and zakat, describing the latter as means through which a servant keeps his bond with God constantly renewed, illustrating this with lines of Persian and Urdu poetry about servanthood.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "جزوی بندگی اور ساجھے کی اطاعت اللہ تعالیٰ کو ہرگز قابل قبول نہیں",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "98:5#c9",
+          "section_ref": "98:5",
+          "attaches_to": "98:5",
+          "text": "A number of scholars, as noted by Ibn Kathīr, use this verse as evidence that deeds ('amal) are part of faith (īmān), since the verse joins the command to sincere worship with prayer and zakat as constituent parts of the straight religion.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "original_excerpt": "অধিকাংশ উলামাগণ এই আয়াত থেকে প্রমাণ করেছেন যে, আমল ঈমানের অন্তর্ভুক্ত",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "98:5#c10",
+          "section_ref": "98:5",
+          "attaches_to": "98:5",
+          "text": "Wahiduddin Khan summarises the verse as describing the true religion of God: praying to and worshipping the one God, loving and admiring Him from the heart, consistently performing prayer and paying zakat. He adds that the best people are those who adopt this correct religion, and the worst are those who reject it or invent another religion and call it the true one.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "unspecified"
+        },
+        {
+          "id": "98:5#c11",
+          "section_ref": "98:5",
+          "attaches_to": "98:5",
+          "text": "Ṭanṭāwī notes a grammatical point: the wa in 'wa mā umirū' introduces a circumstantial (ḥāl) clause. Its function is to show that the disbelievers reached an extreme of corrupt action and thought, given that they divided and turned from guidance despite being commanded only to what was for their own good.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "والواو فى قوله - تعالى - وَمَآ أمروا للحال ، فهذه الجملة حالية",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        }
+      ],
+      "essay_html": "<p>The verse closes the sūrah's argument by stating plainly what was ever asked of the People of the Book: worship God alone, sincerely, with no share given to shirk.<sup class=\"ref\">1,2,3,4,9,13,14</sup> Al-Ṭabarī notes that the Jews broke this very command by calling ʿUzayr a son of God, and the Christians by making a similar claim about the Messiah, alongside both groups' denial of Muhammad's ﷺ prophethood.<sup class=\"ref\">1</sup></p>\n<p>Al-Qurṭubī draws a legal point from the word 'sincere' (mukhliṣīn): since sincerity is the heart's work, this phrase is read as evidence that intention (niyyah) is required in acts of worship.<sup class=\"ref\">3</sup></p>\n<p>The word ḥunafāʾ (people of true faith) describes those turning away from every false religion towards monotheism. Ibn ʿAbbās tied it to the religion of Ibrāhīm عليه السلام, and elsewhere took it, in this verse, to mean pilgrims free of shirk. Qatādah gave it a wider sense, including circumcision, prohibited marriages, and the hajj rites; Saʿīd b. Jubayr said simply that a ḥanīf is one circumcised and performing hajj. Ṭanṭāwī traces the root: ḥanaf is turning from falsehood to truth, the reverse of janaf.<sup class=\"ref\">1,2,3,9,12</sup></p>\n<p>Prayer and zakat are named on their own even though they already sit inside 'worship sincerely'. Al-Saʿdī explains this as recognition of their special standing: whoever upholds these two upholds the whole of the religion's laws.<sup class=\"ref\">5</sup></p>\n<p>The closing phrase, dīn al-qiyyamah (the straight religion), puzzled the grammarians, since qiyyamah is feminine and dīn is masculine. Some took it as the attribute of an unstated noun, 'the straight community' or 'nation'. Al-Khalīl b. Aḥmad read qiyyamah as a plural of qayyim, giving 'the religion of those who stand firm for God'. Al-Farrāʾ explained it as a description added for emphasis. Others, including Muḥammad b. al-Ashʿath al-Ṭāliqānī, tied qiyyamah back to the 'upright Books' named earlier in the sūrah, so the sense becomes 'the religion of the upright Books'. A variant reading attributed to Ibn Masʿūd has dīn al-qayyim instead.<sup class=\"ref\">1,2,3,7,9,12</sup></p>\n<p>None of this, the commentators stress, is new or exclusive to the People of the Book. Ibn Kathīr links the verse to God's word that every messenger came with the same call, and Muftī Muḥammad Shafīʿ notes that all earlier scripture-based religions shared these very features, so the Prophet's ﷺ commands mirrored what had already been given, leaving no pretext for opposition.<sup class=\"ref\">4,7,11</sup></p>\n<p>Sayyid Quṭb reads the verse as the root principle shared by every religion: pure worship, prayer, zakat, free of complication or division, so that the disputes among the People of the Book have nothing to do with the true faith, since clear proofs had already reached them through their own messengers.<sup class=\"ref\">6</sup> Isrār Aḥmad reads it as a summary of the whole religion, warning that worship demands complete obedience rather than partial submission, and recalling the warning given to the Children of Israel in 2:85 against accepting part of the Scripture while rejecting another. He also separates ʿibādah, total life-submission, from prayer and zakat specifically, calling the latter the means by which a servant keeps his bond with God renewed.<sup class=\"ref\">8</sup></p>\n<p>Some scholars, as Ibn Kathīr records, take this verse as proof that deeds are part of faith, since sincere worship is joined here directly to prayer and zakat as constituents of the straight religion.<sup class=\"ref\">12</sup> Ṭanṭāwī adds a grammatical observation: the opening 'and they were not commanded' functions as a circumstantial clause, showing how far the disbelievers had strayed given how simple and beneficial the actual command was.<sup class=\"ref\">9</sup></p>\n<p class=\"close\">Across these readings the verse comes down to one description of religion held out to every scripture-bearing people alike: sincere worship of God alone, prayer, and zakat, called here simply the straight religion.<sup class=\"ref\">1,2,3,4,5,9,10,13</sup></p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:031784861fac3c402335cc7f71d2f250dad07e67bc11d95d916aa56ccc560034",
+        "2": "sha256:e08daea0fa7d4a8d3a60789ca4e3029ca5b0518a4903a889803a1a158d26af6a",
+        "3": "sha256:35a84682df1e3f8984c9971636b7523f27e104714f7a3e7f018a40c9c9661379",
+        "4": "sha256:80074dbda459b77d6f63929050b242ee179ab6494004039133da4254361743c8",
+        "5": "sha256:4c2caf937f823a89a9b9f26918fe29ac3e6861b4f70c59e4cd2ab83e8cda6d4a",
+        "6": "sha256:8915795cdb602599175b41d55a514fab953b6ed811ffed38b1d80c4a45c83bf3",
+        "7": "sha256:a12eb3074deca57bdca67ace377f4a4157e24d5c62b4562f8d758167350278c1",
+        "8": "sha256:62841748592db4348a5a1bd0c8f7020fb5199a469eab4b482d960123dcf67172",
+        "9": "sha256:9e0fd7847d6ce8a62452cad37f81eeed061ddcfa819c803a2472fbef8b77d8d7",
+        "10": "sha256:1937c2d44c2e0fd94e268d407c14a1976c3c3001eab1f9ba88c37c91b3e63a18",
+        "11": "sha256:20a095598043cebb9ba018374c31f579c010464eda52f32693719e55749e0a9d",
+        "12": "sha256:73b7d5f5ee790f3d980d1a0c1d011265973fbfd7b728d3be03429c7762143d18",
+        "13": "sha256:e5843a879190fc11b92f57b6478d1d7d4d766ee222e30f8620d088e0c8bff228",
+        "14": "sha256:b5865ac196b6642fea5e657af0185165db6f00071a8817ab5da86b5fc581d146"
+      },
+      "flags": {
+        "creedal_stakes": true,
+        "legal_content": true,
+        "sensitive_content": false
+      },
+      "compiled_at": "2026-08-02"
+    },
+    "98:6": {
+      "verse_range": "6-7",
+      "title": "The Worst and Best of Creation",
+      "in_short": "Disbelievers among the People of the Book and the idolaters are declared the worst of creation, destined for Hell forever; believers who do good deeds are declared the best of creation. The commentators unpack the wording, the scope, and what the reward and blame actually rest on.",
+      "claims": [
+        {
+          "id": "98:6#c1",
+          "section_ref": "98:6",
+          "attaches_to": "98:6",
+          "text": "Disbelieving People of the Book (Jews and Christians) and the idolaters, despite their differences from one another, are grouped under one verdict: the Fire of Hell, remaining in it forever with the punishment never lightened or lifted.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "خالدين فيها أبدا لا يخرجون منها",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "خلودا أبديا",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "عقابهم نار جهنم خالدين فيها",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "unspecified"
+        },
+        {
+          "id": "98:6#c2",
+          "section_ref": "98:6",
+          "attaches_to": "98:6",
+          "text": "The word al-Bariyyah (creation) is read two ways: with a glottal stop (hamza) by Nafiʿ and Ibn ʿĀmir/Ibn Dhakwān, tracing it to 'bara'a' (to create, as in the divine name al-Bārī, the Originator); and without the hamza by the remaining reciters, some tracing it instead to 'al-barā' (dust/soil), since man is made from earth.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "والعرب لا تهمز البرية",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "قرأ نافع وابن عامر البريئة بالهمزة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "قرأ نافع وابن ذكوان بالهمز على الأصل",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "ولفظ البرية من البرَى وهو التراب",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "al-Bariyyah",
+              "gloss": "creation, that which is made"
+            },
+            {
+              "term": "al-Bārī",
+              "gloss": "the Originator, a divine name from the same root"
+            }
+          ]
+        },
+        {
+          "id": "98:6#c3",
+          "section_ref": "98:6",
+          "attaches_to": "98:6",
+          "text": "'Shar al-bariyyah' (the worst of creation) means: the worst of every kind of thing Allah has fashioned and created.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "هم شرّ من برأه الله وخلقه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "relay",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "هم شر كل صنف من أصناف المخلوقات",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "relay",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "98:6#c4",
+          "section_ref": "98:6",
+          "attaches_to": "98:6",
+          "text": "The reason they are the worst of creation: they recognised the truth and then abandoned it, so they lost both this world and the next.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "لأنهم عرفوا الحق وتركوه، وخسروا الدنيا والآخرة",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "98:6#c5",
+          "section_ref": "98:6",
+          "attaches_to": "98:6",
+          "text": "They are the worst of creation because they set up partners with Allah and did no good deed.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "98:6#c6",
+          "section_ref": "98:6",
+          "attaches_to": "98:6",
+          "text": "These disbelievers are worse even than animals: animals lack reason and free will, but these people, despite having both, still turn away from the truth.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "98:6#c7",
+          "section_ref": "98:6",
+          "attaches_to": "98:6",
+          "text": "The scope of 'worst/best of creation' is debated: it may be general, covering all creation across time, or it may refer specifically to the disbelievers/believers of the Prophet's ﷺ own generation, as with the phrase 'I favoured you over the worlds' elsewhere in the Qurʾān, meaning the peoples of their time. It is not implausible that some earlier disbelieving nations produced figures even worse, such as Pharaoh or the man who hamstrung the she-camel of Ṣāliḥ عليه السلام.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "أي هم شر البرية الذين كانوا في عصر النبي",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "98:6#c8",
+          "section_ref": "98:6",
+          "attaches_to": "98:6",
+          "text": "The People of the Book are named before the idolaters in blame because their offence against the Prophet ﷺ is graver: they used to invoke his coming as proof against the idolaters and promise to follow him, yet when he came, they disbelieved.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "98:6#c9",
+          "section_ref": "98:6",
+          "attaches_to": "98:6",
+          "text": "This is a decisive, non-negotiable judgement. Even if the People of the Book or the idolaters show some outwardly good conduct or useful practice, that does not change the verdict, because their deeds are cut off from the true source of goodness and are not part of a sound way of life, so long as they do not believe in the final message and the final Prophet ﷺ.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "98:6#c10",
+          "section_ref": "98:6",
+          "attaches_to": "98:6",
+          "text": "True religion consists in worshipping the one God, loving Him from the heart, praying, and paying zakat. Those who adopt this correct religion are the best of all; those who do not, or who invent another religion and call it the true one, are the worst.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "98:6#c11",
+          "section_ref": "98:6",
+          "attaches_to": "98:7",
+          "text": "Those who believe and do righteous deeds are the best of creation.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "relay",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "unspecified"
+        },
+        {
+          "id": "98:6#c12",
+          "section_ref": "98:6",
+          "attaches_to": "98:7",
+          "text": "Abū Hurayrah رضي الله عنه and a group of scholars used this verse as proof that believers hold a rank with Allah superior even to some of the angels.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "المؤمن أكرم على الله من بعض الملائكة الذين عنده",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "98:6#c13",
+          "section_ref": "98:6",
+          "attaches_to": "98:7",
+          "text": "On whether angels are included in the term 'creation' here: those who derive al-bariyyah from 'al-barā' (dust) say angels are excluded, since angels are not made of dust; those who derive it from 'bariya al-qalam' (to whittle, i.e. to shape) say angels are included. Al-Qurṭubī notes this second view is weak, since it would require declaring the reciters who use the hamza mistaken.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "لا تدخل الملائكة تحت هذه اللفظة",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "al-barā",
+              "gloss": "dust or soil"
+            },
+            {
+              "term": "bariya al-qalam",
+              "gloss": "to whittle/shape the pen"
+            }
+          ]
+        },
+        {
+          "id": "98:6#c14",
+          "section_ref": "98:6",
+          "attaches_to": "98:7",
+          "text": "Ibn Kathīr transmits a report from Abū Hurayrah: the Prophet ﷺ asked, 'Shall I not inform you of the best of creation?' and answered: a man holding the reins of his horse in the way of Allah, ready to mount whenever the alarm is raised; and, 'Shall I not inform you of the worst of creation?': one who is asked by Allah's name and does not give.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "أَلَا أُخْبِرُكُمْ بِخَيْرِ الْبَرِيَّةِ",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "Ibn Kathīr (cites Imam Aḥmad from Abū Hurayrah, without grading it in the source)"
+          }
+        },
+        {
+          "id": "98:6#c15",
+          "section_ref": "98:6",
+          "attaches_to": "98:7",
+          "text": "Al-Ṭabarī relays, through a chain via Abū al-Jārūd from Muḥammad b. ʿAlī, that on 'they are the best of creation' the Prophet ﷺ said: 'You, O ʿAlī, and your followers (shīʿatuka).'",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "أنْتَ يا عَلي وَشِيعَتُكَ",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Ṭabarī relays it without grading; isolated chain"
+          }
+        },
+        {
+          "id": "98:6#c16",
+          "section_ref": "98:6",
+          "attaches_to": "98:7",
+          "text": "This too is a decisive judgement, admitting no dispute. True faith is not being born in a land or family that claims to be Muslim, nor merely uttering words; it must show itself in righteous deeds in life, the foremost of which is establishing Allah's Sharīʿah in the earth and judging between people by it.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "98:6#c17",
+          "section_ref": "98:6",
+          "attaches_to": "98:7",
+          "text": "Closing the discussion of this verse with a supplication: 'O Allah, our Lord, make us among them' — asking to be counted among the best of creation.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "اَللّٰھُمَّ رَبَّـنَا اجْعَلْنَا مِنْھُمْ",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "unspecified"
+        }
+      ],
+      "essay_html": "<p>These two verses give a stark, twin verdict. Those among the People of the Book and the idolaters who disbelieve are grouped together under one sentence: the Fire, forever, the punishment never lightened.<sup class=\"ref\">1,4,9,13,14</sup> Those who believe and do good deeds receive the opposite verdict: they are called the best of creation.<sup class=\"ref\">1,4,5,9,13,14</sup></p><p>The word used for 'creation', al-Bariyyah, carries a small linguistic dispute. Nāfiʿ and Ibn ʿĀmir read it with a glottal stop, tying it to 'bara'a', to create, the same root as the divine name al-Bārī, the Originator. Other reciters read it without the stop, and some trace it instead to 'al-barā', meaning dust or soil, since man was made from earth.<sup class=\"ref\">1,2,3,9,12</sup></p><p>'The worst of creation' (shar al-bariyyah) means simply the worst of everything Allah has fashioned and made.<sup class=\"ref\">1,4,5,9,13,14</sup> Al-Saʿdī (d. 1957) gives the reason: they knew the truth and abandoned it, so they lost both this world and the next.<sup class=\"ref\">5</sup> A note relayed in the Kurdish tafsir adds that they earned this rank by setting up partners with Allah and doing no good.<sup class=\"ref\">14</sup> A further note observes they are worse even than animals, since an animal has no reason or free will to reject the truth with, while these people did.<sup class=\"ref\">11</sup></p><p>Al-Qurṭubī (d. 1273) raises a question of scope. Does 'worst of creation' mean the worst across all of history, or the worst among the disbelievers of the Prophet's ﷺ own time, as in the Qurʾān's use of 'I favoured you over the worlds' to mean one's own generation? He notes it is not impossible that earlier disbelieving nations produced figures worse still, such as Pharaoh or the man who hamstrung Ṣāliḥ's عليه السلام she-camel.<sup class=\"ref\">3</sup> Al-Ṭanṭāwī (d. 2010) adds that the People of the Book are named first in blame because their offence is graver: they had promised to follow the coming prophet, and used him as an argument against the idolaters, then disbelieved when he came.<sup class=\"ref\">9</sup></p><p>Sayyid Quṭb (d. 1966) reads the verse as a closed, decisive ruling. No apparent good conduct among the People of the Book or the idolaters changes it, because their deeds are cut off from the true source of goodness and do not belong to a sound way of life, until they believe in the final message.<sup class=\"ref\">6</sup> Wahiduddin Khan (d. 2021) frames the same line more simply: true religion is worshipping the one God, loving Him, praying, and paying zakat. Whoever adopts this is among the best; whoever rejects it, or invents a substitute and calls it true religion, is among the worst.<sup class=\"ref\">10</sup></p><p>Turning to the believers, the same phrase 'khayr al-bariyyah', best of creation, is drawn on by Abū Hurayrah رضي الله عنه and a group of scholars as proof that the believer's rank with Allah can exceed that of some angels.<sup class=\"ref\">3,4,12,14</sup> Al-Qurṭubī records a linked linguistic dispute here too: if al-bariyyah comes from dust, angels (not made of dust) fall outside the term; if it comes from shaping or whittling, angels are included, though he notes this second view is weak, since it would mean the reciters who used the hamza were simply wrong.<sup class=\"ref\">3</sup></p><p>Ibn Kathīr (d. 1373) brings a hadith that fills out what 'best' and 'worst' of creation can look like in practice: the Prophet ﷺ named the best as a man holding his horse's reins in Allah's way, ready to ride out the moment there is an alarm, and the worst as one who is asked by Allah's name for help and refuses to give.<sup class=\"ref\">4</sup> Separately, al-Ṭabarī (d. 923) relays, through a chain going back to Muḥammad b. ʿAlī, a report that the Prophet ﷺ identified the best of creation as ʿAlī رضي الله عنه and his followers. He records it without grading it, and it rests on an isolated chain.<sup class=\"ref\">1</sup></p><p>Sayyid Quṭb reads verse 7 with the same insistence on decisiveness: true faith is not a matter of birthplace or family claim, nor mere words on the tongue. It must appear in life through righteous deeds, foremost among them establishing Allah's Sharīʿah on earth and judging between people by it.<sup class=\"ref\">6</sup> Isrār Aḥmad (d. 2010) closes his comment on the verse with a supplication rather than an argument: 'O Allah, our Lord, make us among them.'<sup class=\"ref\">8</sup></p><p class=\"close\">The passage leaves no middle ground: rejection of the final message places a person, whatever their outward conduct, among the worst of creation; faith joined to right action places a person among the best, a rank the commentators say can even surpass that of the angels.</p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:2d9b9b77d17d2246f68a5e97c56bfdf765d41f2ec564d439b1ccd2f4d6b379c2",
+        "2": "sha256:793d68c9281f9f4fd2ffe0c8961361e9cf0aa385c73fe6df3eb45512d329955b",
+        "3": "sha256:595acaf587e33afa843f1710cb8aaa501465ef0fe8f5112a528a7178587782fa",
+        "4": "sha256:ddedca22d64e9cf656b432e5bb3941db56d59925b5be0184b72d426e55370859",
+        "5": "sha256:0caddf92006c612149d17625ec24a73044a27b68ad9d54df49cbdbfa678d9efc",
+        "6": "sha256:dc26522d13e049b22fa21290fa48449ac5fdc1803b735d9c4cb9155a1300ebd0",
+        "7": "sha256:93e276c2269280bdc65405111e9f4c77e2ab0e600e313b1f0eba27a60c9a3e6e",
+        "8": "sha256:78e252bfcd8ae4724d948834131b43033f757b4caf1e352722a06c6e43163d63",
+        "9": "sha256:1d38fe6153ba29e332d4aa53915093ed8d4b5e1fe9b0508c89502f4cd8e65523",
+        "10": "sha256:ee53dbb3724cee339a54e57516c3668139ac268398f781e55574fab06dbab222",
+        "11": "sha256:81cba08b07cceb8fe492df84b1572bdab0c60ab6f2ab307d65df5ffcd6d47242",
+        "12": "sha256:be81fb9c74eddb032991c322ad40637fa0c678eb5fcf285669d8ec300207e9f1",
+        "13": "sha256:5090def2f3169cf1fb5e55f0ae93dc4d0e19fb55b9da7d6598ca6ffa97cfcfae",
+        "14": "sha256:b2192550a3368ec47749ad1bd538000a29a5f96db5a68b779ebe6cbf92a29ad8"
+      },
+      "flags": {
+        "creedal_stakes": true,
+        "legal_content": false,
+        "sensitive_content": true
+      },
+      "compiled_at": "2026-08-02"
+    },
+    "98:1": {
+      "verse_range": "1-4",
+      "title": "Until the Clear Proof Came",
+      "in_short": "The surah says disbelievers among the People of the Book and the idolaters would not give up their ways until a clear proof came to them: a Messenger reciting pure, true scriptures. Those given the Book only split into rival factions after that proof arrived, not before.",
+      "claims": [
+        {
+          "id": "98:1#c1",
+          "section_ref": "98:1",
+          "attaches_to": "98:1",
+          "text": "The 'People of the Book' here are the Jews and Christians; the 'mushrikin' are idol-worshippers (and fire-worshippers among non-Arabs), a separate group named because their disbelief has a different character.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "أهل الكتاب",
+              "gloss": "People of the Book, i.e. Jews and Christians"
+            },
+            {
+              "term": "المشركين",
+              "gloss": "those who associate partners with God, idol/fire-worshippers"
+            }
+          ]
+        },
+        {
+          "id": "98:1#c2",
+          "section_ref": "98:1",
+          "attaches_to": "98:1",
+          "text": "The word 'munfakkin' (رفض/انفكاك) means they were not going to desist or leave off their disbelief until the clear proof reached them; the disbelief would simply continue, unbroken, until then.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "منفكين",
+              "gloss": "desisting, breaking away, from infikāk = the separation of one thing from another"
+            }
+          ]
+        },
+        {
+          "id": "98:1#c3",
+          "section_ref": "98:1",
+          "attaches_to": "98:1",
+          "text": "A minority linguistic reading takes 'munfakkin' from a different root sense, describing the tearing/breaking of the pelvic bone in childbirth, so the phrase would mean they were not going to be destroyed or punished until the proof was established against them. Al-Baghawi and al-Qurtubi record this but judge the first reading (desisting from disbelief) more correct.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "منفكين",
+              "gloss": "here read as 'perishing', from the image of bone separating fatally in childbirth"
+            }
+          ]
+        },
+        {
+          "id": "98:1#c4",
+          "section_ref": "98:1",
+          "attaches_to": "98:1",
+          "text": "Another reading (attributed to Ibn Kaysan) takes the verse to mean the People of the Book did not abandon the description of Muhammad ﷺ preserved in their own scripture until he was actually sent; once sent, they denied and envied him despite recognising him.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "98:1#c5",
+          "section_ref": "98:1",
+          "attaches_to": "98:1",
+          "text": "Al-Tabari argues grammatically that 'munfakkin' needs no following predicate because it comes from the separation of two distinct things, unlike an expression such as 'ma zala' (never ceased), which would require a completing predicate.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "98:1#c6",
+          "section_ref": "98:1",
+          "attaches_to": "98:1",
+          "text": "The 'clear proof' (al-Bayyinah) referred to is identified as the Messenger himself, Muhammad ﷺ.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning",
+          "original_terms": [
+            {
+              "term": "البينة",
+              "gloss": "the clear proof, the unmistakable evidence"
+            }
+          ]
+        },
+        {
+          "id": "98:1#c7",
+          "section_ref": "98:1",
+          "attaches_to": "98:1",
+          "text": "The world before the Prophet's mission was sunk in ignorance, corruption, and moral collapse across every nation, and needed a fresh, effective message capable of curing conditions no existing religion could reach.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "98:1#c8",
+          "section_ref": "98:1",
+          "attaches_to": "98:1",
+          "text": "The Prophet ﷺ told Ubayy b. Ka'b that Allah had commanded him to recite this surah to him by name; Ubayy wept on hearing he had been named. This report is recorded in Bukhari and Muslim.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "Bukhari and Muslim, as noted by Ibn Kathir and al-Qurtubi"
+          }
+        },
+        {
+          "id": "98:1#c9",
+          "section_ref": "98:1",
+          "attaches_to": "98:1",
+          "text": "A separate report circulating on the virtues of this surah, attributed to Abu al-Darda, is judged a fabricated (batil) hadith by Ibn al-'Arabi, who contrasts it with the sound report about Ubayy.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "refute",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "mawdu",
+            "graded_by": "Ibn al-'Arabi, as cited by al-Qurtubi"
+          }
+        },
+        {
+          "id": "98:1#c10",
+          "section_ref": "98:1",
+          "attaches_to": "98:1",
+          "text": "Al-Qurtubi notes variant readings of the opening words, including a reading attributed to Ibn Mas'ud that reorders the phrase as an explanatory (tafsir) reading rather than a standard recitation.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "98:1#c11",
+          "section_ref": "98:1",
+          "attaches_to": "98:1",
+          "text": "The disbelievers, both pagan and scriptured, had demanded miraculous signs before accepting the Prophet's message, just as their forebears had made similar demands and still failed to believe once granted.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "98:1#c12",
+          "section_ref": "98:1",
+          "attaches_to": "98:2",
+          "text": "The clear proof is then specified: it is 'a Messenger from Allah, reciting purified pages' — the Bayyinah unpacked as the Prophet reciting revealed scripture.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "رسول من الله",
+              "gloss": "a Messenger from God"
+            }
+          ]
+        },
+        {
+          "id": "98:1#c13",
+          "section_ref": "98:1",
+          "attaches_to": "98:2",
+          "text": "'Suhuf mutahharah' (purified pages) means pages free of falsehood, doubt, hypocrisy, misguidance and forgery — completely clean of anything false.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "صحف مطهرة",
+              "gloss": "purified pages/scrolls"
+            }
+          ]
+        },
+        {
+          "id": "98:1#c14",
+          "section_ref": "98:1",
+          "attaches_to": "98:2",
+          "text": "The Prophet ﷺ recited from memory rather than from a physical scripture, since he could neither read nor write; the 'pages' are understood as what is preserved on high, comparable to the honoured, exalted, purified pages mentioned in Surat 'Abasa (80:13-16).",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "98:1#c15",
+          "section_ref": "98:1",
+          "attaches_to": "98:2",
+          "text": "An alternative sense of 'purified' takes it to mean that only the ritually pure may touch them, comparable to a similar phrase in Surat al-Waqi'ah.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "relay",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "98:1#c16",
+          "section_ref": "98:1",
+          "attaches_to": "98:2",
+          "text": "Grammatically, 'a Messenger' stands as a substitute (badal) for 'the clear proof', which presents the Messenger himself, by way of emphasis, as the very embodiment of the proof rather than merely its bearer.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "98:1#c17",
+          "section_ref": "98:1",
+          "attaches_to": "98:3",
+          "text": "'Kutub qayyimah' (upright writings) means true, just, straight content without error, because it comes from Allah.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "كتب قيمة",
+              "gloss": "upright, true, straight writings/ordinances"
+            }
+          ]
+        },
+        {
+          "id": "98:1#c18",
+          "section_ref": "98:1",
+          "attaches_to": "98:3",
+          "text": "Mufti Muhammad Shafi argues that 'kutub' cannot simply be a synonym of 'suhuf' (pages), since that would make the phrase 'containing kutub' redundant; instead 'kutub' here refers to the laws and injunctions the pages contain, as the word can also carry the sense of a binding writ.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "كتاب",
+              "gloss": "can mean a written page, or a binding writ/decree"
+            }
+          ]
+        },
+        {
+          "id": "98:1#c19",
+          "section_ref": "98:1",
+          "attaches_to": "98:3",
+          "text": "Sayyid Qutb notes that 'kitab' is also used in Arabic for a subject or topic (as in 'Kitab al-Tahara', the chapter on purity), so 'kutub' here may mean the range of subjects and rulings the Qur'an addresses.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "98:1#c20",
+          "section_ref": "98:1",
+          "attaches_to": "98:3",
+          "text": "Israr Ahmad states that 'kitab' in Qur'anic usage generally denotes the rulings of the Shari'ah, so the phrase points to the Messenger and the Book together forming a single unit called 'al-Bayyinah'.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "98:1#c21",
+          "section_ref": "98:1",
+          "attaches_to": "98:4",
+          "text": "The People of the Book only split into rival factions after the clear proof (the Messenger) came to them; before that they had been united in acknowledging or expecting him.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "98:1#c22",
+          "section_ref": "98:1",
+          "attaches_to": "98:4",
+          "text": "Ibn Kathir connects this verse to 3:105, which warns against becoming like those who divided and differed after clear proofs had come to them, for whom there is a severe punishment.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "98:1#c23",
+          "section_ref": "98:1",
+          "attaches_to": "98:4",
+          "text": "A hadith transmitted through many routes states that the Jews divided into 71 sects, the Christians into 72, and this Ummah will divide into 73, all of them in the Fire except one; those asked who that one is were told: those who hold to what the Prophet and his companions held.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "Ibn Kathir, who notes it has many chains of transmission without giving a specific ruling here"
+          }
+        },
+        {
+          "id": "98:1#c24",
+          "section_ref": "98:1",
+          "attaches_to": "98:4",
+          "text": "A detailed historical account (drawn from Abul Hasan Ali Nadwi) describes pre-Islamic Jewish sectarian splits (such as Sadducees, Pharisees, and Essenes) and violent Jewish-Christian conflicts in the sixth and seventh centuries, followed by further Christian splits over the nature of Christ.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "relay",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "98:1#c25",
+          "section_ref": "98:1",
+          "attaches_to": "98:4",
+          "text": "The verse names only the People of the Book, not the polytheists, for this specific division, because they had the knowledge and expectation to recognise the Messenger; their rejection after such knowledge is judged more shameful than the disbelief of those with no scripture at all.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "98:1#c26",
+          "section_ref": "98:1",
+          "attaches_to": "98:4",
+          "text": "The division among the People of the Book is attributed to envy, obstinacy, and deliberate rejection despite knowledge, rather than to genuine ignorance about who the Messenger was.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "98:1#c27",
+          "section_ref": "98:1",
+          "attaches_to": "98:4",
+          "text": "Mufti Shafi notes that the Torah contained clear prophecies of the coming Prophet, and that the Jews themselves used to tell the pagan Arabs a new prophet would come and that they would side with him for victory, connecting this to 2:89.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "98:1#c28",
+          "section_ref": "98:1",
+          "attaches_to": "98:4",
+          "text": "Mufti Shafi observes that this division described in verse 4 is restricted to the People of the Book, unlike verse 1, which included both the People of the Book and the polytheists together.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        }
+      ],
+      "essay_html": "<p>The surah opens by describing two groups of disbelievers together: the People of the Book, meaning Jews and Christians, and the mushrikin, the idol- and fire-worshippers.<sup class=\"ref\">1,2,3,4,9,11,12,14</sup> Both groups, the commentators say, were not going to desist from disbelief on their own. They would carry on as they were until a clear proof (al-Bayyinah) reached them.<sup class=\"ref\">1,2,3,4,5,9,11,12,13,14</sup></p>\n<p>A minority reading takes the same word differently, from an image of bone breaking in childbirth, so that the sense becomes: they were not going to be destroyed or punished until the proof was established against them. Al-Baghawi and al-Qurtubi record this but judge the first reading, desisting from disbelief, to be the more correct one.<sup class=\"ref\">2,3</sup> A further reading, attributed to Ibn Kaysan, takes the verse to mean that the People of the Book did not abandon the description of Muhammad ﷺ preserved in their own scripture, until he was actually sent, and only then did they deny and envy him despite recognising him.<sup class=\"ref\">1,3</sup> Al-Tabari adds a grammatical note: the word needs no following predicate here, because it comes from the sense of two things separating, unlike a phrase such as \"never ceased\", which would require one.<sup class=\"ref\">1</sup></p>\n<p>The clear proof itself is then named: it is the Messenger, Muhammad ﷺ.<sup class=\"ref\">1,2,3,4,5,7,9,13,14</sup> Sayyid Qutb and Mufti Muhammad Shafi place this against the state of the world before his mission, a time they describe as sunk in ignorance and moral collapse across every nation, unreachable by any existing religion.<sup class=\"ref\">6,7</sup> Wahiduddin Khan adds that both groups had in fact demanded miraculous signs before they would believe, just as their forebears had, and had still failed to believe once such signs were given.<sup class=\"ref\">10</sup></p>\n<p>The clear proof is unpacked in the next verse: \"a Messenger from Allah, reciting purified pages\".<sup class=\"ref\">1,2,3,4,5,9,13,14</sup> The purified pages (suhuf mutahharah) are pages free of falsehood, doubt, hypocrisy and forgery.<sup class=\"ref\">1,2,3,4,5,7,9,11,13</sup> Since the Prophet ﷺ could neither read nor write, the commentators note he recited from memory rather than from a physical scripture; the \"pages\" are understood as what is preserved on high, comparable to the honoured pages mentioned in Surat 'Abasa.<sup class=\"ref\">2,3,4,5,7,11</sup> Some add that \"purified\" could also mean only the ritually pure may touch them.<sup class=\"ref\">3,5</sup> Grammatically, \"a Messenger\" is treated as standing in for \"the clear proof\" itself, so that the Messenger is presented, by way of emphasis, as the very embodiment of the proof.<sup class=\"ref\">1,3,9</sup></p>\n<p>What the pages contain is called \"kutub qayyimah\", upright writings, meaning content that is true, just and without error because it comes from Allah.<sup class=\"ref\">1,2,3,4,5,9,13,14</sup> Mufti Muhammad Shafi points out that \"kutub\" cannot simply repeat \"suhuf\" (pages), since that would make the phrase redundant; he takes it instead to mean the laws and rulings the pages contain.<sup class=\"ref\">7</sup> Sayyid Qutb notes that Arabic also uses \"kitab\" for a subject, as in \"Kitab al-Tahara\", so \"kutub\" here could mean the range of subjects the Qur'an addresses.<sup class=\"ref\">6</sup> Israr Ahmad similarly reads \"kitab\" in Qur'anic usage as generally meaning the rulings of the Shari'ah.<sup class=\"ref\">8</sup></p>\n<p>The final verse turns to what happened once the proof arrived: the People of the Book only split into rival factions after it came to them, having been united beforehand in acknowledging or expecting the Messenger.<sup class=\"ref\">1,2,3,4,5,7,9,11,12,13,14</sup> Ibn Kathir connects this to 3:105, which warns against becoming like those who divided after clear proofs came to them.<sup class=\"ref\">4</sup> He also relays a hadith, transmitted through many routes, that the Jews split into 71 sects and the Christians into 72, with this Ummah warned it would split into 73, though he does not further grade the report here.<sup class=\"ref\">4</sup> Sayyid Qutb, drawing at length on Abul Hasan Ali Nadwi's history, traces pre-Islamic Jewish sectarian splits and violent Jewish-Christian conflict in the sixth and seventh centuries, followed by further Christian division over the nature of Christ.<sup class=\"ref\">6</sup></p>\n<p>The commentators ask why the verse names only the People of the Book here, not the polytheists. Their answer: the People of the Book had the knowledge to recognise the Messenger, so their rejection after such knowledge is judged worse than disbelief without any scripture at all.<sup class=\"ref\">3,9,12</sup> The division, several add, sprang from envy and obstinacy rather than genuine ignorance.<sup class=\"ref\">6,9</sup> Mufti Shafi notes the Torah itself had foretold the coming Prophet, and that Jews had told the pagan Arabs of his coming, expecting to side with him for victory.<sup class=\"ref\">7</sup> He also observes that this verse's scope is narrower than verse 1's, which named both People of the Book and polytheists together.<sup class=\"ref\">7</sup></p>\n<p>Separately, it is recorded that the Prophet ﷺ told Ubayy b. Ka'b that Allah had commanded him to recite this very surah to him by name, at which Ubayy wept, a report carried in Bukhari and Muslim.<sup class=\"ref\">3,4,11,14</sup> Al-Qurtubi also notes a different report on the surah's virtues, attributed to Abu al-Darda, which Ibn al-'Arabi judged fabricated.<sup class=\"ref\">3</sup></p>\n<p class=\"close\">The proof, on this reading, was never a puzzle left half-solved. It came, whole and named, in the Messenger himself, and what divided the People of the Book afterwards was not a lack of knowledge but what they did with it.</p>",
+      "sources_used": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "source_hashes": {
+        "1": "sha256:a115dd85df5ab65f3e871657e89935406ebfaaefc4566cc70148edcbe56ba69b",
+        "2": "sha256:cac0c3e18145bced277908608c46e34ef246789cc35f91633959ee6a256a3fc1",
+        "3": "sha256:f139194fac1205e4c50fb69c532519595f9c6b695bda9ff67d9d8001938e8827",
+        "4": "sha256:a40c040115d53b39b4008e4d91b65b6e8b8a77c6792d7246dc7b769aaeed7233",
+        "5": "sha256:befcef5925e77a4fa28cf3a3209da78771487d0a4c2f49fe39a72554dea66e35",
+        "6": "sha256:10412440bdb7a1c59c9a8c3bcfc9137efb6e0d7f5a2a466a6fe945ff127abd18",
+        "7": "sha256:344d7bd556191088f2174475659ce309fddfb7384fe643c8d3d822ced616a003",
+        "8": "sha256:da374a9ee87963afc2ef3e395822497c3bea56a4623862e57ea636699a0599d1",
+        "9": "sha256:0fae997f6efbeabec60d802f89d9673cf07e35cb96c5c2701fd79a378e6eedd7",
+        "10": "sha256:cc348c54bf170e6e4b0168d4d85f761c27a56190262bb55db239b9d323217999",
+        "11": "sha256:e2d0e9ad3e4656e4e93bb90bef1f09fa97558250df89c4b8c8a5d596939bf093",
+        "12": "sha256:d476a32811558bf7c3c3e1f446d77c563adb4393263b889aa52f81395313bd41",
+        "13": "sha256:202e3c91e4620fa09b7ac484077ed0fead0402654ec962595dd0e667af550f1e",
+        "14": "sha256:f77d2bfbdb0b5fe2aeb75e1d75e330a0aa52070bf40dac8ce3fc7470f9fe0ec1"
+      },
+      "flags": {
+        "creedal_stakes": false,
+        "legal_content": false,
+        "sensitive_content": true
+      },
+      "compiled_at": "2026-08-02"
+    }
+  }
+}

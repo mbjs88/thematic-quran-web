@@ -1,0 +1,2523 @@
+{
+  "surah": 101,
+  "name": "",
+  "coverage": {
+    "editions_present": [
+      "ar-tafsir-al-tabari",
+      "ar-tafsir-al-baghawi",
+      "ar-tafseer-al-qurtubi",
+      "en-tafisr-ibn-kathir",
+      "ar-tafseer-al-saddi",
+      "tafsir-fe-zalul-quran-syed-qatab",
+      "en-tafsir-maarif-ul-quran",
+      "tafsir-bayan-ul-quran",
+      "ar-tafsir-al-wasit",
+      "tazkirul-quran-en",
+      "bn-tafsir-abu-bakr-zakaria",
+      "bn-tafsir-ahsanul-bayaan",
+      "ar-tafsir-muyassar",
+      "kurd-tafsir-rebar"
+    ],
+    "editions_absent": [],
+    "independent_works": 14,
+    "languages_present": [
+      "ar",
+      "bn",
+      "en",
+      "ku",
+      "ur"
+    ],
+    "languages_absent": []
+  },
+  "pipeline_provenance": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "overview-v2.3",
+    "theme_breaks_version": "sha256:99880ec7b10b53313690f91df9ee8d065519ee698df34b35a3336b5705218f90",
+    "compiled_at": "2026-08-02"
+  },
+  "modern_lens_framing": "The Qurʾan is taken here as fixed, revealed truth; science is our provisional, evolving account of the observable world. What follows notes where the two meet — a contemplation, not a proof. Where the science later shifts, that reflects the limits of our knowledge, not the text.",
+  "references": [
+    {
+      "n": 1,
+      "work_id": "al-tabari",
+      "label": "Jāmiʿ al-Bayān",
+      "author_id": "al-tabari",
+      "author": "Abū Jaʿfar Muḥammad ibn Jarīr al-Ṭabarī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 2,
+      "work_id": "al-baghawi",
+      "label": "Maʿālim al-Tanzīl",
+      "author_id": "al-baghawi",
+      "author": "Abū Muḥammad al-Ḥusayn ibn Masʿūd al-Baghawī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 3,
+      "work_id": "al-qurtubi",
+      "label": "al-Jāmiʿ li-Aḥkām al-Qurʾān",
+      "author_id": "al-qurtubi",
+      "author": "Abū ʿAbd Allāh Muḥammad ibn Aḥmad al-Qurṭubī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 4,
+      "work_id": "ibn-kathir",
+      "label": "Tafsīr Ibn Kathīr",
+      "author_id": "ibn-kathir",
+      "author": "Ismāʿīl ibn ʿUmar ibn Kathīr",
+      "source_language": "ar",
+      "note": "One independent voice. The ar/ur/bn editions are the SAME work — never count as separate corroboration."
+    },
+    {
+      "n": 5,
+      "work_id": "al-saadi",
+      "label": "Taysīr al-Karīm al-Raḥmān",
+      "author_id": "al-saadi",
+      "author": "ʿAbd al-Raḥmān ibn Nāṣir al-Saʿdī",
+      "source_language": "ar",
+      "note": "Russian edition (170) is the SAME work — translate from the Arabic original, and do not count Russian as an independent voice."
+    },
+    {
+      "n": 6,
+      "work_id": "fi-zilal",
+      "label": "Fī Ẓilāl al-Qurʾān",
+      "author_id": "sayyid-qutb",
+      "author": "Sayyid Quṭb Ibrāhīm Ḥusayn",
+      "source_language": "ar",
+      "note": "Original is Arabic, but the API here carries only an URDU edition — translating from Urdu is one step removed from the original. Prefer the Arabic original if the QF Content API offers it."
+    },
+    {
+      "n": 7,
+      "work_id": "maarif",
+      "label": "Maʿārif al-Qurʾān",
+      "author_id": "muhammad-shafi-usmani",
+      "author": "Muftī Muḥammad Shafīʿ ʿUthmānī",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 8,
+      "work_id": "bayan-ul-quran",
+      "label": "Bayān al-Qurʾān",
+      "author_id": "israr-ahmad",
+      "author": "Isrār Aḥmad",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 9,
+      "work_id": "wasit",
+      "label": "al-Tafsīr al-Wasīṭ",
+      "author_id": "tantawi",
+      "author": "Muḥammad Sayyid Ṭanṭāwī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 10,
+      "work_id": "tazkirul",
+      "label": "Tazkīr al-Qurʾān",
+      "author_id": "wahiduddin-khan",
+      "author": "Wahiduddin Khan",
+      "source_language": "ur",
+      "note": "en and ur editions are the same work."
+    },
+    {
+      "n": 11,
+      "work_id": "abu-bakr-zakaria",
+      "label": "Tafsir Abu Bakr Zakaria",
+      "author_id": "abu-bakr-zakaria",
+      "author": "Abū Bakr Muḥammad Zakariyyā",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 12,
+      "work_id": "ahsanul-bayaan",
+      "label": "Ahsanul Bayaan",
+      "author_id": "bayaan-foundation",
+      "author": "Ahsanul Bayaan (Bayaan Foundation)",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 13,
+      "work_id": "muyassar",
+      "label": "al-Tafsīr al-Muyassar",
+      "author_id": "committee-muyassar",
+      "author": "al-Tafsīr al-Muyassar (committee)",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 14,
+      "work_id": "rebar-kurdish",
+      "label": "Rebar Kurdish Tafsir",
+      "author_id": "rebar",
+      "author": "Rebar Kurdish Tafsir",
+      "source_language": "ku",
+      "note": ""
+    }
+  ],
+  "sections": {
+    "101:11": {
+      "verse_range": "11-11",
+      "title": "Ḥāmiyah: The Blazing Fire",
+      "in_short": "The verse names the fire waiting for those whose good deeds are light: a fire heated to its utmost, described in hadith as far hotter than any fire known on earth.",
+      "claims": [
+        {
+          "id": "101:11#c1",
+          "section_ref": "101:11",
+          "attaches_to": "101:11",
+          "text": "Ḥāmiyah (حامية) means a fire that has been heated to its extreme by the fuel kindled upon it, intensely hot.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "يعني بالحامية: التي قد حميت من الوقود عليها",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "أي حارة قد انتهى حرها",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "أي شديدة الحرارة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "أي: شديدة الحرارة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "نار قد بلغت النهاية فى حرارتها",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "original_excerpt": "আগুনটি হবে অত্যন্ত উত্তপ্ত ও লেলিহান",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "نار قد حَمِيت من الوقود عليها",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "original_excerpt": "ئاگرێكه‌ له‌وپه‌ڕی گه‌رمی و گڕو بڵێسه‌دایه‌",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "حامية (ḥāmiyah)",
+              "gloss": "intensely hot, heated to the utmost by fuel"
+            }
+          ]
+        },
+        {
+          "id": "101:11#c2",
+          "section_ref": "101:11",
+          "attaches_to": "101:11",
+          "text": "A hadith reports that the fire people kindle in this world is only one part out of seventy parts of the heat of Hell; when the Companions said that this world's fire was already severe enough, the Prophet ﷺ replied that Hell's fire exceeds it by sixty-nine further parts, each equal to that heat.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "ناركم هذه التي يوقد ابن آدم جزء من سبعين جزءا من حر جهنم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "recorded in al-Bukhārī and Muslim, as cited by Ibn Kathīr, al-Qurṭubī and others"
+          }
+        },
+        {
+          "id": "101:11#c3",
+          "section_ref": "101:11",
+          "attaches_to": "101:11",
+          "text": "Al-Saʿdī states that Hell's heat exceeds the heat of worldly fire by seventy times, adding a prayer for refuge from it.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "قد زادت حرارتها على حرارة نار الدنيا سبعين ضعفًا. نستجير بالله منها",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "101:11#c4",
+          "section_ref": "101:11",
+          "attaches_to": "101:11",
+          "text": "A hadith describes the lightest punishment among the people of Hell as a man given two sandals of fire, from which his brain boils.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "cited from Musnad Aḥmad without a stated grade by Ibn Kathīr and Zakariyyā"
+          }
+        },
+        {
+          "id": "101:11#c5",
+          "section_ref": "101:11",
+          "attaches_to": "101:11",
+          "text": "A hadith reports that Hell complained to its Lord that its parts were devouring one another, so it was permitted two exhalations, one in winter and one in summer; the extreme cold felt in winter and extreme heat felt in summer in this world come from these two breaths.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "confirmed in the Two Ṣaḥīḥs (al-Bukhārī and Muslim), as noted by Ibn Kathīr"
+          }
+        },
+        {
+          "id": "101:11#c6",
+          "section_ref": "101:11",
+          "attaches_to": "101:11",
+          "text": "A hadith instructs that when the heat becomes intense, prayer should be delayed until it cools, because the severity of worldly heat comes from the exhalation (fayḥ) of Hell.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "recorded in the Two Ṣaḥīḥs, as cited by Ibn Kathīr, Zakariyyā and Ahsanul Bayaan"
+          }
+        },
+        {
+          "id": "101:11#c7",
+          "section_ref": "101:11",
+          "attaches_to": "101:11",
+          "text": "Sayyid Quṭb reads a bitter irony in this fire being called, in the preceding verse, the man's 'mother': instead of the shelter and comfort of a mother's lap, what awaits is a deep pit of blazing fire, a sudden and biting reversal of expectation that is as real as it is harsh, almost beyond imagining.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "یہ گرم آگ ان کی ماں ہوگی ... یہ اچانک طنزیہ انداز اس قدر حقیقی ہے اور اس قدر تلخ ہے جس کا تصور نہیں کیا جاسکتا",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric"
+        }
+      ],
+      "essay_html": "<p>The word used here, ḥāmiyah, is explained by the commentators as fire heated to its utmost, intensely hot from the fuel kindled upon it.<sup class=\"ref\">1,2,3,4,9,11,13,14</sup> Al-Saʿdī (d. 1957) simply calls it 'shadīdat al-ḥarārah', extreme in heat.<sup class=\"ref\">5</sup></p><p>Several hadiths are brought in to show how extreme. One report has the Prophet ﷺ telling his Companions that the fire people kindle in this world is only one part out of seventy parts of Hell's heat. When they said that this world's fire already seemed severe enough as punishment, he told them that Hell's fire exceeds it by a further sixty-nine parts, each equal to that heat. This is recorded in al-Bukhārī and Muslim.<sup class=\"ref\">3,4,11,12,14</sup> Al-Saʿdī gives a close but not identical figure, seventy times the heat of worldly fire, and adds a prayer asking refuge from it.<sup class=\"ref\">5</sup></p><p>Other reports are cited to the same end. One states that the lightest punishment in Hell is a man given two sandals of fire that make his brain boil, a report drawn from Musnad Aḥmad without a stated grade.<sup class=\"ref\">4,11</sup> Another, confirmed in the Two Ṣaḥīḥs, has Hell complaining to its Lord that its parts were consuming one another, after which it was permitted two exhalations, one in winter and one in summer, so that the sharpest cold and the sharpest heat felt in this world are said to come from these two breaths.<sup class=\"ref\">4,11,12</sup> A further report in the Two Ṣaḥīḥs instructs that prayer be delayed when heat is intense, because that intensity comes from the same exhalation of Hell.<sup class=\"ref\">4,11,12</sup></p><p>Sayyid Quṭb (d. 1966) draws out the bitterness of the image. The previous verse had called this fire the man's 'mother'. Where a mother's lap should mean shelter and comfort, what awaits instead is a deep pit of blazing fire. He calls this a sudden, biting reversal, as real as it is harsh, almost beyond what can be pictured.<sup class=\"ref\">6</sup></p><p class=\"close\">What the verse names in three short words, the commentators and hadith unfold as a fire beyond ordinary experience, hotter by many multiples than anything known on earth, and, in Sayyid Quṭb's reading, a bitter overturning of the very idea of a mother's shelter.</p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "9",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:c953e536356661fc3cbdb233b80d8d0578d9527d2f5eb7f5a92133bf3729dfbc",
+        "2": "sha256:b2ebe6878694f2d1f8e6314fb9df57a3ce1f1389546dca3349000ba85123a651",
+        "3": "sha256:12bb6688cdc25c5f6f266df8d4baf423532346c7e426bd4813ce6ca27d19d326",
+        "4": "sha256:9a9c1f16aa63639cf8f70258dfeadbe5e1419f4376deb4bc06b51c33052832fd",
+        "5": "sha256:0effd21b26b881179c7c90f56d5b3e7e86c1c1cc2659386dfb173c7a606a4f1c",
+        "6": "sha256:26137551152aab2afce25cc45bf7d60d42cfda8d97d548fe6d3ac65a4d179a5c",
+        "7": "sha256:5f8423781bfa184d60e8ea146e08076b1b7c9c9f625734ead3baae56fb056277",
+        "8": "sha256:7c704459ffbcfcfc5efc60c28f53e73e034f312883587ab7deb9bbfddd008fba",
+        "9": "sha256:e34b38c43765c361249cae0f7cd2424a4a3547f5c2bca754d58887cbd891ae18",
+        "10": "sha256:1bf4dca1ee196421031c3ef6fa8e8884b02e7aa36c7d04f8457bbf8aedfa1de6",
+        "11": "sha256:a7629a73e862291303896da81b06d3ad591a8bda6fdcc9dba8fc79a4088849d6",
+        "12": "sha256:1515acf9c968a4b7a0e21bac331f97b8405c534894b28d7b1458ac9e671733b6",
+        "13": "sha256:96039f058887c61033eddc0f618443de35240d68944250d5b46758efcb87b0d1",
+        "14": "sha256:25f364414cefcd10855931d703b5228e397e47e8d4c10e0f2b65fa0f1aa3dcef"
+      },
+      "flags": {
+        "creedal_stakes": true,
+        "legal_content": false,
+        "sensitive_content": true
+      },
+      "compiled_at": "2026-08-02"
+    },
+    "101:10": {
+      "verse_range": "10-10",
+      "title": "What Is That Abyss?",
+      "in_short": "This verse puts a stark question to the Prophet ﷺ, and to every reader: do you really know what this abyss is? The Qur'an uses the question itself to build dread, before spelling out what it means.",
+      "claims": [
+        {
+          "id": "101:10#c1",
+          "section_ref": "101:10",
+          "attaches_to": "101:10",
+          "text": "The verse is Allah addressing the Prophet Muhammad ﷺ directly: 'and what would make you aware, O Muhammad, what al-hāwiyah is' — asking whether even he knows its reality.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "وما أشعرك يا محمد ما الهاوية",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "وما أدراك -أيها الرسول- ما هذه الهاوية",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "original_excerpt": "ئه‌ی محمد - صلی الله علیه وسلم - تۆ چوزانی ئه‌و ئاگری دۆزه‌خه‌ چیه‌",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "unspecified"
+        },
+        {
+          "id": "101:10#c2",
+          "section_ref": "101:10",
+          "attaches_to": "101:10",
+          "text": "The word 'hiyah' in this verse refers back to al-hāwiyah, the pit named in the verse just before it.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "يعني الهاوية",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "101:10#c3",
+          "section_ref": "101:10",
+          "attaches_to": "101:10",
+          "text": "Grammatically, the base form of the word is simply 'mā hī' (what is it). The extra letter ه at the end was added purely as a pause-letter (hā' al-sakt), to give the reciter a place to rest at the stop.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "أصلها : ما هي ، أدخل الهاء فيها للوقف والاستراحة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "الأصل ( ما هي ) فدخلت الهاء للسكت",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar",
+          "original_terms": [
+            {
+              "term": "هاء السكت",
+              "gloss": "the pause-letter, a ه added at a stop for rest in recitation, with no meaning of its own"
+            }
+          ]
+        },
+        {
+          "id": "101:10#c4",
+          "section_ref": "101:10",
+          "attaches_to": "101:10",
+          "text": "A group of reciters — Ḥamzah, al-Kisāʾī, Yaʿqūb, and Ibn Muḥayṣin — read the phrase as 'mā hī nārun' without the extra ه when continuing the recitation (waṣl), only adding it when pausing (waqf). Al-Qurṭubī notes the fuller discussion is given under Sūrat al-Ḥāqqah.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وقرأ حمزة والكسائي ويعقوب وابن محيصن ( ما هي نار ) بغير هاء في الوصل ، ووقفوا بها",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "101:10#c5",
+          "section_ref": "101:10",
+          "attaches_to": "101:10",
+          "text": "This 'what will make you know what it is' formula is a recognised style of the Qur'an: to make something more terrifying, it is first raised as an unanswered question — implying the matter exceeds ordinary imagination, human knowledge, and even the Prophet's own foreknowledge — before the answer is given.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "وهذا تعظيم لأمرها",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "کسی چیز کو ہولناک بنانے کے لئے یہ کہ دینا کہ تمہیں کیا معلوم کہ وہ کیا ہے",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "ما يزيد من هول هذه الهاوية",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric"
+        },
+        {
+          "id": "101:10#c6",
+          "section_ref": "101:10",
+          "attaches_to": "101:10",
+          "text": "Sayyid Quṭb notes the structural pattern: the unanswered question is followed by an answer, and that answer forms the final, climactic stroke of the passage.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "پھر اس کے بعد ایک جواب آتا ہے اور یہ آخری نچ ہوتا ہے",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric"
+        },
+        {
+          "id": "101:10#c7",
+          "section_ref": "101:10",
+          "attaches_to": "101:10",
+          "text": "Ibn Kathīr links this question back to the two readings of 'his mother is hāwiyah' just before it: one reading takes it to mean the person falls headfirst into the Fire, with 'mother' standing for the brain — reported from Ibn ʿAbbās, ʿIkrimah, Abū Ṣāliḥ, and Qatādah. The other reading takes hāwiyah itself as a name for the Fire, the person's final home and 'mother' because he has nowhere else to return to — a view attributed to Ibn Jarīr and Ibn Zayd.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "101:10#c8",
+          "section_ref": "101:10",
+          "attaches_to": "101:10",
+          "text": "Allah then answers His own question by naming what al-hāwiyah is: a scorching fire (nār ḥāmiyah) of extreme heat, accompanied by an intense flame — this is presented as a warning against the deeds that lead to it.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "على سبيل التحذير من العمل الذى يؤدى إليها",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "unspecified"
+        }
+      ],
+      "essay_html": "<p>The verse turns to the Prophet Muhammad ﷺ directly, asking whether even he knows the reality of the pit just named in the verse before, al-hāwiyah.<sup class=\"ref\">1,13,14</sup> The word rendered simply as 'it' (hiyah) points straight back to that name.<sup class=\"ref\">1,2,13</sup></p><p>A small grammatical note sits inside the word itself. Its base form is just 'mā hī', what is it. The extra ه at the end carries no meaning; it is a pause-letter added so the reciter has somewhere to rest at the stop.<sup class=\"ref\">2,3</sup> A group of reciters, Ḥamzah, al-Kisāʾī, Yaʿqūb, and Ibn Muḥayṣin among them, in fact read the phrase without that letter when continuing on, adding it only when they paused.<sup class=\"ref\">3</sup></p><p>The commentators read the question itself as doing work. This is a familiar Qur'anic move: raise something as an unanswered question first, so its weight and terror register, before giving the answer.<sup class=\"ref\">5,6,9,12,14</sup> Sayyid Quṭb (d. 1966) calls the answer that follows the final, climactic stroke of the passage.<sup class=\"ref\">6</sup></p><p>Ibn Kathīr (d. 1373) traces this back to how the previous verse, 'his mother is hāwiyah', was understood. Some took it to mean the person falls headfirst into the Fire, with 'mother' standing for the brain, a reading reported from Ibn ʿAbbās, ʿIkrimah, Abū Ṣāliḥ, and Qatādah. Others took hāwiyah as a name for the Fire itself, the person's final home, called 'mother' because he has nowhere else to return to, a view attributed to Ibn Jarīr and Ibn Zayd.<sup class=\"ref\">4</sup></p><p>The question does get answered. Allah names what al-hāwiyah is: a scorching fire of extreme heat, carrying an intense flame, given here as a warning against whatever deeds lead a person to it.<sup class=\"ref\">4,9</sup></p><p class=\"close\">The question comes first, and the fire it names comes after, so that the reader feels the weight of the matter before being told what it is.<sup class=\"ref\">5,6,9</sup></p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "9",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:f15ba5c3aeb5170845d5dcd07a4dda644c8895afd554bf731a26e208897a4266",
+        "2": "sha256:a4caa63e6919d04ee03f721627cd4f48bfa2c66c289e930a7d1c68a9feef23ac",
+        "3": "sha256:83b4bf72ab91dc7516325251cc578e67fd76bf74edf42e5358bd6bb4e7b6b901",
+        "4": "sha256:d9be6e43766d9c50b06b1584c30eb07baff17f4c76fd9a795779870c78a6ec14",
+        "5": "sha256:3ef21242799b1cd32a3e5d390edb3aaa2e8626906560f5e7854e76254ea0c273",
+        "6": "sha256:7a44d51f30115ddc5af8a4d2830df8ec6c87663a6a6c7ff989c740b3e7bea2df",
+        "7": "sha256:4ae81c139f852e621cf15f8f93ffabf3f90432ef4fe8fbf56557c7e183781689",
+        "8": "sha256:808591f47527a6bd56efaa53e587ca387e48dd1b7cd0d3dbd26ea5a7f9f817d7",
+        "9": "sha256:bf2b9bbf93299a5aa8aa6372ed52aa534e20a013c7793585a1b06f8a4d7bf356",
+        "10": "sha256:6be5781ca61835494c11f991a5152f59ffb0909f5f7c938d20a2d6c86c543e9e",
+        "11": "sha256:2fac4a0fd1131839fae2526e81cc429db6fe2a3b1ab61407f3b19b1b361a2bd9",
+        "12": "sha256:a8750b9ac0a65ce6f025e053839d23c4839d7d703c3dec82683a376e5156a766",
+        "13": "sha256:4f50a4c3cb385ca10bfa8e472a9a1373193ff8fe2e5004a0b8e53c297daf72c5",
+        "14": "sha256:0e644599444ecd486e6bf9c2f3ad20886fb2db4027393f05e256f5e228c714ab"
+      },
+      "flags": {
+        "creedal_stakes": true,
+        "legal_content": false,
+        "sensitive_content": true
+      },
+      "compiled_at": "2026-08-02"
+    },
+    "101:1": {
+      "verse_range": "1-3",
+      "title": "Al-Qāriʿah: The Striking Calamity",
+      "in_short": "The sūrah opens with a single bare word, al-Qāriʿah, \"The Crashing Blow\", one of the Qur'an's names for the Day of Judgment. Two questions follow, each one pressing home how far this event lies beyond ordinary human grasp, even the Prophet's ﷺ own.",
+      "claims": [
+        {
+          "id": "101:1#c1",
+          "section_ref": "101:1",
+          "attaches_to": "101:1",
+          "text": "Al-Qāriʿah is one of the Qur'an's names for the Day of Judgment / the Hour, standing alongside other names such as al-Ḥāqqah, al-Wāqiʿah, al-Ṭāmmah, al-Ṣākhkhah and al-Ghāshiyah.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "من أسماء يوم القيامة، عظَّمه الله وحذّره عباده",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "اسم من أسماء القيامة، لأنها تقرع القلوب بالفزع",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "أي القيامة والساعة; كذا قال عامة المفسرين",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "Al-Qariah is one of the names of the Day of Judgement, like Al-Haqqah, At-Tammah, As-Sakhkhah others",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "المراد بها هنا: القيامة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "original_excerpt": "আল-কারি‘আহ শব্দটি কিয়ামতের একটি নাম",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "original_excerpt": "এটাও কিয়ামতের নামাবলীর অন্যতম",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "الساعة التي تقرع قلوب الناس بأهوالها",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "original_excerpt": "ناوێكه‌ له‌ ناوه‌كانی ڕۆژی قیامه‌ت",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "original_terms": [
+            {
+              "term": "القارعة",
+              "gloss": "the Striking/Crashing one, a name of the Day of Judgment"
+            }
+          ],
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Ṭabarī (chain to Ibn ʿAbbās given, left ungraded)"
+          }
+        },
+        {
+          "id": "101:1#c2",
+          "section_ref": "101:1",
+          "attaches_to": "101:1",
+          "text": "The sūrah is Meccan; sources differ slightly on the verse count, with one giving ten verses and another giving eleven.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "مكية",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وهي مكية بإجماع . وهي عشر آيات",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "Which was revealed in Makkah",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "original_excerpt": "سووره‌تێكى مه‌ككى یه‌و (١١) ئایه‌ته‌",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "101:1#c3",
+          "section_ref": "101:1",
+          "attaches_to": "101:1",
+          "text": "The word al-Qāriʿah comes from the root qarʿ, meaning to strike one thing against another so forcefully that it produces a loud noise, like knocking hard on a door; Arabic speakers applied the word to any terrible calamity.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "لأنها تقرع القلوب بالفزع",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "تقول العرب قرعتهم القارعة ... إذا وقع بهم أمر فظيع",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "قَرْع کے معنی ایک چیز کو کسی دوسری چیز پر زور سے دے مارنے کے ہیں",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "اسم فاعل من القرع، وهو الضرب بشدة بحيث يحصل منه صوت شديد",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "original_excerpt": "কারা‘আ মানে কোন জিনিসকে কোন জিনিসের ওপর এমন জোরে মারা যার ফলে তা থেকে প্রচণ্ড আওয়াজ হয়",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "original_excerpt": "দরজায় করাঘাতকারী ঠক্ঠক্ শব্দ করে গৃহবাসীকে সতর্ক করে থাকে",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "relay",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "الساعة التي تقرع قلوب الناس",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "قرع",
+              "gloss": "to strike or knock forcefully, producing a loud sound"
+            }
+          ]
+        },
+        {
+          "id": "101:1#c4",
+          "section_ref": "101:1",
+          "attaches_to": "101:1",
+          "text": "Al-Qāriʿah is named this because it strikes and pounds the hearts of people with terror at its horrors on that Day.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "الساعة التي يقرع قلوب الناس هولُها",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "لأنها تقرع القلوب بالفزع",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "لأنها تقرع الخلائق بأهوالها وأفزاعها",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "لأنها تقرع الناس وتزعجهم بأهوالها",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "لأنها قترع القلوب بأهوالها",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "original_excerpt": "কিয়ামত নিজ ভয়াবহতায় মানুষের হৃদয়কে জাগ্রত করে তুলবে",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "تقرع قلوب الناس بأهوالها",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "original_excerpt": "چونكه‌ به‌ ترسناكییه‌كانی له‌ دڵ ئه‌دات",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "101:1#c5",
+          "section_ref": "101:1",
+          "attaches_to": "101:1",
+          "text": "Al-Qurṭubī supports the calamity-sense of the word with recorded Arab usage (\"qaraʿathum al-qāriʿah\", when disaster struck a people), a line of poetry by Ibn Aḥmar, and the Qur'an's own parallel use of the word for a severe worldly blow (Q. 13:31).",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "تقول العرب قرعتهم القارعة ... وقارعة من الأيام لولا سبيلهم لزاحت عنك حينا ... وقال تعالى: ولا يزال الذين كفروا تصيبهم بما صنعوا قارعة",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "101:1#c6",
+          "section_ref": "101:1",
+          "attaches_to": "101:2",
+          "text": "Grammatically, al-Qāriʿah (v.1) is the subject; in \"mā al-Qāriʿah\" (v.2), mā is a second subject with al-Qāriʿah as its predicate, and the whole clause serves as the predicate of the first subject.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "القارعة: مبتدأ، وما: مبتدأ ثان، والقارعة: خبر المبتدأ الثاني",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "101:1#c7",
+          "section_ref": "101:1",
+          "attaches_to": "101:2",
+          "text": "The question \"What is the Qāriʿah?\" is not a request for information but a rhetorical device to magnify and exalt the terror of the matter (tahwīl wa taʿẕīm).",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "أيّ شيء القارعة ... أي ما أعظمها وأفظعها وأهولها",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "تهويل وتعظيم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "استفهام; أي أي شيء هي القارعة؟",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "عظَّم أمرها وفخمه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "استفهام عن حقيقتها، والمقصود به التهويل من أمرها",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "relay",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "أيُّ شيء هذه القارعة؟",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric"
+        },
+        {
+          "id": "101:1#c8",
+          "section_ref": "101:1",
+          "attaches_to": "101:3",
+          "text": "\"And what will make you know what the Qāriʿah is?\" (v.3) is addressed directly to the Prophet Muhammad ﷺ, pressing the intensification further and signalling that its reality lies beyond even his own comprehension; only Allah truly knows its measure.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "يقول تعالى ذكره لنبيه محمد صلى الله عليه وسلم: وما أشعرك يا محمد",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "استفهام على جهة التعظيم والتفخيم لشأنها، كما قال: الحاقة ما الحاقة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "relay",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "عظَّم أمرها وفخمه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "لا يعلم مقدارها إلا الله تعالى",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "original_excerpt": "ئه‌ی محمد؛ بۆ جه‌خت كردنه‌وه‌و به‌گه‌وره‌ زانین و ترسناكی ئه‌و ڕۆژه‌یه‌",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric"
+        },
+        {
+          "id": "101:1#c9",
+          "section_ref": "101:1",
+          "attaches_to": "101:1",
+          "text": "The sūrah's opening technique is deliberate: it begins with a single, bare word carrying no qualifying description, so the word's sound and force create a lingering echo. A question follows at once, as if the thing is unknown, hidden and frightening enough to provoke further questions. A second question then answers the first only by telling the listener he cannot know what it is, since it lies outside the reach of ordinary perception and imagination.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "یہ ایک گولہ ہے جو آکر گرتا ہے ... تمہارا تصور اسے نہیں چھوسکتا",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric"
+        },
+        {
+          "id": "101:1#c10",
+          "section_ref": "101:1",
+          "attaches_to": "101:1",
+          "text": "When the Hour comes, it will \"knock\" the entire universe apart and overturn everything in existence; the heavenly bodies will collide with one another, producing terrifying explosions and heart-stopping sounds.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "پوری کائنات کو کھٹکھٹا ڈالے گی ... تمام اجرامِ فلکی آپس میں ٹکرائیں گے",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "101:1#c11",
+          "section_ref": "101:1",
+          "attaches_to": "101:1",
+          "text": "The turmoil of the Qāriʿah / Doomsday will smash everything and leave people completely without their bearings, giving way to a new world governed by God alone, where only sincere truth carries any weight.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "original_excerpt": "The turmoil of Doomsday will smash everything. People will completely lose their bearings.",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        }
+      ],
+      "essay_html": "<p>The sūrah opens with a single word set alone: al-Qāriʿah, \"The Crashing Blow\" or \"The Striking Blow\". The commentators agree this is one of the Qur'an's names for the Day of Judgment, the Hour, standing alongside other names such as al-Ḥāqqah, al-Ṭāmmah, al-Ṣākhkhah and al-Ghāshiyah.<sup class=\"ref\">1,2,3,4,9,11,12,13,14</sup> The sūrah itself is Meccan, though sources differ slightly on whether it has ten or eleven verses.<sup class=\"ref\">2,3,4,14</sup></p><p>The word comes from the root qarʿ, meaning to strike one thing against another so hard that it makes a loud noise, like a fist pounding on a door.<sup class=\"ref\">2,3,8,9,11,12,13</sup> Because of this, the Arabs used the word for any terrible, sudden calamity. Al-Qurṭubī (d. 1273 CE) cites this old usage, a line of poetry, and the Qur'an's own parallel use of the word for a severe blow of misfortune elsewhere.<sup class=\"ref\">3</sup></p><p>The Day is called al-Qāriʿah, the commentators say, because it strikes and pounds the hearts of people with terror at its horrors.<sup class=\"ref\">1,2,3,5,9,12,13,14</sup></p><p>Having named it, the sūrah asks about it twice, each question pressing further than the last. \"What is the Qāriʿah?\" is not really a request for information. It is a way of magnifying the matter and stressing its terror.<sup class=\"ref\">1,2,3,5,9,13</sup> The third verse goes further still: \"and what will make you know what the Qāriʿah is?\" is addressed directly to the Prophet Muhammad ﷺ, telling him, in effect, that its reality is beyond even his own grasp.<sup class=\"ref\">1,3,14</sup> Only Allah knows its true measure, notes al-Ṭanṭāwī (d. 2010 CE).<sup class=\"ref\">9</sup></p><p>Sayyid Quṭb (d. 1966 CE) reads the whole opening as deliberate design. The sūrah begins with one bare word, unqualified by any description, so that the sound of the word itself lands with force and leaves an echo. A question follows at once, as though the thing were unknown, hidden, and frightening enough to provoke question after question. A second question then answers the first only by saying: you cannot know what it is. It lies outside anything the mind can picture.<sup class=\"ref\">6</sup></p><p>Later commentators draw out something of what that might mean. Isrār Aḥmad (d. 2010 CE) pictures the Hour \"knocking\" the whole universe apart, with the heavenly bodies colliding in terrifying, deafening blows.<sup class=\"ref\">8</sup> Wahīduddīn Khān (d. 2021 CE) writes that the turmoil of that Day smashes everything and leaves people with no bearings at all, clearing the ground for a new world in which only sincere truth carries any weight.<sup class=\"ref\">10</sup></p><p class=\"close\">Three short verses, and the sūrah has already made its point: whatever the Qāriʿah is, it exceeds every measure the listener already owns.</p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:debade6e8e0eeeeba07707e07e51cfaf3cfd67e9aaec95735d0f5dd4b847e357",
+        "2": "sha256:3b95aa8168911c524cc0a3e24110194b1ee115d1f01cb723913f3f23e4ca4bc7",
+        "3": "sha256:3efb551c9a46806af9d5ba7eac35d59f89f1176bc05cfc2245af9d9a761bf51a",
+        "4": "sha256:768245d21f95a148d4ee2cf300d35906520e7df4b0c65866411d4d218a1d7412",
+        "5": "sha256:4b0179111956e52b016caaabd1c86e781d0743b109953aea05b2c2d207aa931b",
+        "6": "sha256:66a73b4d199d4885f5bf9ac947310fbe749cffbabd62e4163fe3633064a6d772",
+        "7": "sha256:79c93f8f86f5b102ba67f75ad866b7c8dedda19a5f252088111e77a5875127dc",
+        "8": "sha256:43071db614279fe81925231ce8c37bf41d08ad87d5d7bb068c0100ca3ab94986",
+        "9": "sha256:799dac7085d85b101359c58c0cfd5c3e8fb88d702e1bf918c241d4b875a2c9be",
+        "10": "sha256:85afb98801b97e7cec26848eb5ad96e8cbc2ec2aa834b7c0dfc8077eaab89379",
+        "11": "sha256:144622dde3b950c775ccec1e47399f478e17eaee5034eead648eff7f95d2d221",
+        "12": "sha256:5068d6cde8cf80adef2aa4a97b90c12f46f3c43739e00a1a42b22a1b0c22f920",
+        "13": "sha256:29c39fe8fa84bbfbd518c048d7b8932e7eee789125465ba060923258fe9383ec",
+        "14": "sha256:e9f87f5f845189fde739f692f9777a1699a4b21b76388584ea0065f7ef7dfa8a"
+      },
+      "flags": {
+        "creedal_stakes": "true",
+        "legal_content": "false",
+        "sensitive_content": "true"
+      },
+      "compiled_at": "2026-08-02"
+    },
+    "101:4": {
+      "verse_range": "4-9",
+      "title": "The Scattering, the Scales, the Pit",
+      "in_short": "This passage paints the moment the Hour breaks: people scatter like moths, mountains crumble like carded wool, and every person's deeds are weighed. The heavy scale means a pleasant life in Paradise; the light scale means the Bottomless Pit, called \"his mother\" because it becomes his only refuge.",
+      "claims": [
+        {
+          "id": "101:4#c1",
+          "section_ref": "101:4",
+          "attaches_to": "101:4",
+          "text": "Al-farāsh means small moths or insects that fling themselves into a fire or a lamp; al-mabthūth means scattered. The verse pictures people rushing about in bewildered, aimless motion on that Day.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "al-farāsh",
+              "gloss": "small moths/insects that fling themselves at fire or a lamp"
+            },
+            {
+              "term": "al-mabthūth",
+              "gloss": "scattered, dispersed"
+            }
+          ]
+        },
+        {
+          "id": "101:4#c2",
+          "section_ref": "101:4",
+          "attaches_to": "101:4",
+          "text": "Some early commentators read it instead as a comparison to swarming locusts trampling over one another, matching the similar image elsewhere in the Qur'an of people 'as if they were locusts spread abroad' — people on that Day surge into and over each other.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "101:4#c3",
+          "section_ref": "101:4",
+          "attaches_to": "101:4",
+          "text": "The Prophet ﷺ is reported to have compared himself and his followers to a man who lights a fire while moths and locusts fling themselves into it: he pulls people back from the Fire by their waist-belts, but many still slip from his grip.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "al-Qurṭubī, citing Ṣaḥīḥ Muslim from Jābir"
+          }
+        },
+        {
+          "id": "101:4#c4",
+          "section_ref": "101:4",
+          "attaches_to": "101:4",
+          "text": "Sayyid Quṭb describes this as the first sight of the Striking Calamity: on seeing it, hearts are torn apart, the person trembles, and feels everything he once relied on in this world being blown away like scattered dust, until the final, complete end confronts him.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "101:4#c5",
+          "section_ref": "101:4",
+          "attaches_to": "101:4",
+          "text": "Wahiduddin Khan reads the verse as saying the turmoil of that Day smashes everything and people totally lose their bearings; a new world then comes into being where only truth carries weight, and all falsity is set at naught.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "101:4#c6",
+          "section_ref": "101:4",
+          "attaches_to": "101:5",
+          "text": "Al-ʿihn is dyed, coloured wool; al-manfūsh means teased or carded apart by hand. The mountains, famed for solidity, crumble into fluffy, weightless tufts of wool and then scatter like dust.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "al-ʿihn",
+              "gloss": "dyed, coloured wool"
+            },
+            {
+              "term": "al-manfūsh",
+              "gloss": "carded or teased apart by hand"
+            }
+          ]
+        },
+        {
+          "id": "101:4#c7",
+          "section_ref": "101:4",
+          "attaches_to": "101:5",
+          "text": "Al-Saʿdī observes that mountains, despite being hard solid rock, become so weak that the slightest wind can carry them off, and are later reduced to scattered dust with nothing left to be seen, matching the Qur'an's other description of mountains that only appear still while in fact passing by like clouds.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "101:4#c8",
+          "section_ref": "101:4",
+          "attaches_to": "101:5",
+          "text": "One report relayed by al-Ṭabarī says the mountains will move across the earth, still shaped as mountains, but as light and fine as scattered dust motes.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Ṭabarī leaves it unattributed"
+          }
+        },
+        {
+          "id": "101:4#c9",
+          "section_ref": "101:4",
+          "attaches_to": "101:5",
+          "text": "Ṭanṭāwī notes the rhetorical build of the passage: it opens with the striking name 'al-Qāriʿah', repeats it unexplained for emphasis, and only then delivers the shock that mountains — known for solidity and permanence — will become like torn, scattered wool.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric"
+        },
+        {
+          "id": "101:4#c10",
+          "section_ref": "101:4",
+          "attaches_to": "101:6",
+          "text": "In the majority reading, a heavy scale (mīzān) means a person's good deeds outweigh the bad, and a light scale means the reverse.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "mawāzīn",
+              "gloss": "scales/balances, plural of mīzān"
+            }
+          ]
+        },
+        {
+          "id": "101:4#c11",
+          "section_ref": "101:4",
+          "attaches_to": "101:6",
+          "text": "Mujāhid held a different view: there is no literal balance here at all — it is simply a parable (mathal).",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "101:4#c12",
+          "section_ref": "101:4",
+          "attaches_to": "101:6",
+          "text": "Al-Qurṭubī records several scholarly views on the nature of the balance: that it has a pan and a tongue on which the record-pages of good and bad deeds are weighed; that it may be one balance in the hand of Gabriel عليه السلام weighing all mankind's deeds, referred to in the plural for emphasis; that there are several balances, one for each kind of matter; or that 'scales' here means arguments and proofs, a reading held by ʿAbd al-ʿAzīz b. Yaḥyā and supported by a line of poetry.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "101:4#c13",
+          "section_ref": "101:4",
+          "attaches_to": "101:6",
+          "text": "Muftī Muḥammad Shafīʿ, reconciling various reports, holds that the weighing on the Plain of Resurrection happens twice: first to separate believers from disbelievers (the scale is heavy if the record contains belief, light if it does not), and second to distinguish the good and bad deeds of believers among themselves. This verse most likely refers to the first weighing.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "101:4#c14",
+          "section_ref": "101:4",
+          "attaches_to": "101:6",
+          "text": "Deeds are weighed, not counted. Sincerity and conformity to the Prophet's ﷺ example make deeds heavier, so a few sincere deeds can outweigh many performed with less sincerity.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "101:4#c15",
+          "section_ref": "101:4",
+          "attaches_to": "101:6",
+          "text": "Sayyid Quṭb reads 'heavy' and 'light' as referring strictly to Allah's own standard of value, not worldly measures of importance, and cautions that the rational and lexical debates scholars raise about the nature of the balance are unfair to the Qur'an, since its own style makes the point plain enough without them.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "101:4#c16",
+          "section_ref": "101:4",
+          "attaches_to": "101:6",
+          "text": "Isrār Aḥmad holds that the required 'weight' of good deeds is calibrated to each person's own capacity, shaped by inherited disposition and the effects of environment, following the principle that God does not burden a soul beyond its capacity.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "101:4#c17",
+          "section_ref": "101:4",
+          "attaches_to": "101:6",
+          "text": "One view Ṭanṭāwī cites urges caution: one must believe what Allah has said about the balance without probing further into what has not been established from Allah and His Messenger ﷺ, though weighing of deeds, of pages, or of forms is all possible and does not exceed divine power.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "101:4#c18",
+          "section_ref": "101:4",
+          "attaches_to": "101:6",
+          "text": "Wahiduddin Khan contrasts this world's judgement, based on outward appearance and people's approval, with the Hereafter's judgement, based on the inner reality of deeds. An insincere deed carries no weight there, however impressive it seemed here.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "101:4#c19",
+          "section_ref": "101:4",
+          "attaches_to": "101:7",
+          "text": "'A pleasing life' (ʿīshah rāḍiyah) means a life its owner is pleased with, granted in Paradise.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "ʿīshah rāḍiyah",
+              "gloss": "a life that is content, pleasing to the one who lives it"
+            }
+          ]
+        },
+        {
+          "id": "101:4#c20",
+          "section_ref": "101:4",
+          "attaches_to": "101:7",
+          "text": "Al-Qurṭubī elaborates: the life itself actively 'gives' satisfaction, drawing on reports of Paradise's raised couches lowering themselves for the believer, trees bending their fruit down to him, and rivers flowing wherever he wishes, so that his whole surroundings work to please him.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Qurṭubī, cited without a chain"
+          }
+        },
+        {
+          "id": "101:4#c21",
+          "section_ref": "101:4",
+          "attaches_to": "101:7",
+          "text": "Sayyid Quṭb notes that the details of this pleasant life are deliberately left unspecified in the verse; the greatest blessing described is simply that a person is content with his state.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric"
+        },
+        {
+          "id": "101:4#c22",
+          "section_ref": "101:4",
+          "attaches_to": "101:8",
+          "text": "A light scale means a person's bad deeds outweigh the good, mirroring the previous verse's structure in reverse.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "101:4#c23",
+          "section_ref": "101:4",
+          "attaches_to": "101:9",
+          "text": "'Al-Hāwiyah' is one of the names of Hell. It is called the person's 'mother' because it becomes his only abode, just as a mother is the refuge of her child.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "Hāwiyah",
+              "gloss": "a name of Hell, from 'to fall/plunge'"
+            }
+          ]
+        },
+        {
+          "id": "101:4#c24",
+          "section_ref": "101:4",
+          "attaches_to": "101:9",
+          "text": "An alternate reading, attributed to Ibn ʿAbbās رضي الله عنه, ʿIkrimah, Abū Ṣāliḥ, and Qatādah, takes 'umm' (mother) here as 'the mother of the head', meaning the crown or brain, so the verse means the person is hurled into the Fire headfirst.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "101:4#c25",
+          "section_ref": "101:4",
+          "attaches_to": "101:9",
+          "text": "Qatādah explained the phrase as an ordinary Arabic idiom: when a man falls into severe calamity, the Arabs say 'hawat ummuhu' (his mother is bereaved), so the expression signals ruin rather than describing a literal mother.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "101:4#c26",
+          "section_ref": "101:4",
+          "attaches_to": "101:9",
+          "text": "'Hāwiyah' derives from 'hawā' (to fall or plunge): it names a bottomless pit into which the damned are thrown from above.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "101:4#c27",
+          "section_ref": "101:4",
+          "attaches_to": "101:9",
+          "text": "A report relayed by al-Ṭabarī from al-Ashʿath b. ʿAbdullāh al-Aʿmā describes that when a believer dies, his soul is taken to the souls of other believers, who ask about those not yet joined; if told that someone has died and not arrived among them, they say he has been taken 'to his mother, al-Hāwiyah.'",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Ṭabarī transmits without grading the chain"
+          }
+        }
+      ],
+      "essay_html": "<p>On that Day, the passage says, people move about like scattered moths, al-farāsh, the small insects that fling themselves helplessly toward a fire or a lamp.<sup class=\"ref\">1,2,3,4,9,13,14</sup> Some early commentators pictured it differently again, as locusts trampling over one another, matching a similar image elsewhere in the Qur'an.<sup class=\"ref\">1,2,3,4,11</sup> A hadith reported in Ṣaḥīḥ Muslim compares the Prophet ﷺ to a man lighting a fire while moths and locusts fling themselves in, and himself pulling people back by their waist-belts even as many slip from his grip.<sup class=\"ref\">3</sup> Sayyid Quṭb (d. 1966) reads the scene as the first sight of the Calamity, hearts torn apart, the person trembling, feeling everything he once relied on being blown away like dust.<sup class=\"ref\">6</sup> Wahiduddin Khan (d. 2021) puts it as the turmoil that smashes everything, so that people lose their bearings entirely, and a new world of only truth replaces the world of appearances.<sup class=\"ref\">10</sup></p>\n<p>The mountains, famed for solidity, are said to become like al-ʿihn al-manfūsh, dyed wool that has been carded and teased apart by hand, weightless and fine.<sup class=\"ref\">1,2,3,5,9,11,12,13,14</sup> Al-Saʿdī (d. 1957) stresses the contrast: hard rock reduced to something the lightest wind can carry off, later scattering into dust with nothing left to see.<sup class=\"ref\">5,11</sup> One report says the mountains still keep their shape as they move, but as light as dust motes.<sup class=\"ref\">1</sup> Ṭanṭāwī (d. 2010) notes how the passage builds toward this shock, naming the Calamity first, repeating it unexplained, before delivering the picture of mountains unravelling like wool.<sup class=\"ref\">9</sup></p>\n<p>Then comes the weighing. Most commentators take a heavy balance (mīzān) to mean good deeds outweighing bad, and a light balance the reverse.<sup class=\"ref\">1,2,3,4,5,9,13,14</sup> Mujāhid held that there is no literal balance at all here, only a parable.<sup class=\"ref\">1</sup> Al-Qurṭubī (d. 1273) records several views on what exactly is weighed: a scale with a pan and tongue holding the record-pages of deeds, or one balance in Gabriel's عليه السلام hand weighing everyone, referred to in the plural, or several balances for different matters, or even that 'scales' means arguments and proofs.<sup class=\"ref\">1,3</sup> Muftī Muḥammad Shafīʿ (d. 1976) reconciles the reports by proposing two weighings: the first separates believers from disbelievers by whether the record contains belief at all, the second distinguishes good deeds from bad among believers, and this verse likely concerns the first.<sup class=\"ref\">7</sup> Several sources stress that deeds are weighed, not counted, so sincerity and conformity to the Prophet's ﷺ way make deeds heavier than sheer quantity.<sup class=\"ref\">7,11</sup> Sayyid Quṭb reads 'heavy' and 'light' as Allah's own standard of value, and thinks the scholarly debates over the balance's exact nature miss the Qur'an's real priorities.<sup class=\"ref\">6</sup> Isrār Aḥmad (d. 2010) adds that the required weight is calibrated to each person's own capacity, shaped by disposition and circumstance.<sup class=\"ref\">8</sup> One view Ṭanṭāwī cites counsels believing what is said and not probing further into what has not been established.<sup class=\"ref\">9</sup> Wahiduddin Khan contrasts worldly judgement, which looks at appearances, with the Hereafter's judgement of inner reality: an insincere deed weighs nothing there.<sup class=\"ref\">10</sup></p>\n<p>For the one whose scale is heavy, there is a pleasing life, ʿīshah rāḍiyah, a life its owner is content with, in Paradise.<sup class=\"ref\">1,2,4,5,9,13,14</sup> Al-Qurṭubī fills this in with reports of Paradise itself working to please the believer: raised couches that lower for him, fruiting trees that bend down, rivers that flow wherever he wishes.<sup class=\"ref\">3</sup> Sayyid Quṭb notes that the Qur'an leaves the details unspecified on purpose. The greatest blessing named is simply that the person is content with his state.<sup class=\"ref\">6</sup> For the one whose scale is light, the same structure runs in reverse: bad deeds outweigh good.<sup class=\"ref\">1,2,4,5,9,13,14</sup></p>\n<p>His outcome is named al-Hāwiyah, one of Hell's names, called 'his mother' because it becomes his only abode, as a mother is a refuge for her child.<sup class=\"ref\">1,2,3,4,5,9,11,12,13,14</sup> Another reading, going back to Ibn ʿAbbās رضي الله عنه, ʿIkrimah, Abū Ṣāliḥ, and Qatādah, takes 'his mother' as 'the mother of his head', meaning he is hurled in headfirst.<sup class=\"ref\">1,2,3,4,11,12,14</sup> Qatādah explains the phrase as ordinary Arabic idiom: Arabs say 'his mother is bereaved' of a man who has met disaster, so the words simply mean ruin.<sup class=\"ref\">1,2,3,9</sup> The name itself is said to come from 'to fall', naming a bottomless pit into which the damned are thrown from above.<sup class=\"ref\">1,3,11,12</sup> One report, relayed without a stated chain, pictures believing souls in the next world asking after the missing, and being told that one has been taken 'to his mother, al-Hāwiyah.'<sup class=\"ref\">1</sup></p>\n<p class=\"close\">Two scales, two destinations: a life its owner is pleased with, or a mother that offers no comfort at all, only a pit with no floor.</p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:612bd8a5a156561911faf439d6cda1345e7ba8f945e56b21014adf45ac6979ce",
+        "2": "sha256:2ea1f5be0b67363c528951fe18848af26781d1850040fb57201f3d502637a6c3",
+        "3": "sha256:bb1cf951ed58319811c15743d2db1b97f154cfda6f611756860202ea055b314e",
+        "4": "sha256:ce554ad560ee906d031c151472ac47179f554579fb05563185b3e698a220d55d",
+        "5": "sha256:25ad03d1d4022bbba82ce0cb437908844bc6c3d20c0b8a111ee144a6150a3014",
+        "6": "sha256:1eee899d77a6dc06ea0721151111fd4d4728202350884a35c42c170112d2fd6e",
+        "7": "sha256:f921e52dd2a8105f01744c22acf5ca0ff9775b170752301acd04f628f708d940",
+        "8": "sha256:108f35d4f052b35d79b6cc063ee77e2acd9cd7a637fd10b63822324bb95ab691",
+        "9": "sha256:4041cc7efe926e8b23a04fc7202d88d7d6b695679d60cab294bccc7c78c3a1f0",
+        "10": "sha256:daa32c86b5a9ceede64ab6d3e80aa40ddf8bb125ee4cd7b3f3cd431f3f610af1",
+        "11": "sha256:9f534f8e0030f42465baff762861aa527c37d634b210263e77c374ee725c3087",
+        "12": "sha256:dc49059b2ef7a70006d63a0f2ef2d24c44ce9cff7687b8646f2e50bf121071e7",
+        "13": "sha256:c846698f4287451ad625ebe85e2751d57d59a440a04688dbc688e010397bc6ce",
+        "14": "sha256:caf35e83f9b4ba0b76b1740c2c36d0e071f24ec860b8e75a333f0eeecc93df35"
+      },
+      "flags": {
+        "creedal_stakes": true,
+        "legal_content": false,
+        "sensitive_content": true
+      },
+      "compiled_at": "2026-08-02"
+    }
+  }
+}

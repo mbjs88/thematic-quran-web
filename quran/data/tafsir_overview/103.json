@@ -1,0 +1,1744 @@
+{
+  "surah": 103,
+  "name": "",
+  "coverage": {
+    "editions_present": [
+      "ar-tafsir-al-tabari",
+      "ar-tafsir-al-baghawi",
+      "ar-tafseer-al-qurtubi",
+      "en-tafisr-ibn-kathir",
+      "ar-tafseer-al-saddi",
+      "tafsir-fe-zalul-quran-syed-qatab",
+      "en-tafsir-maarif-ul-quran",
+      "tafsir-bayan-ul-quran",
+      "ar-tafsir-al-wasit",
+      "tazkirul-quran-en",
+      "bn-tafsir-abu-bakr-zakaria",
+      "bn-tafsir-ahsanul-bayaan",
+      "ar-tafsir-muyassar",
+      "kurd-tafsir-rebar"
+    ],
+    "editions_absent": [],
+    "independent_works": 14,
+    "languages_present": [
+      "ar",
+      "bn",
+      "en",
+      "ku",
+      "ur"
+    ],
+    "languages_absent": []
+  },
+  "pipeline_provenance": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "overview-v2.3",
+    "theme_breaks_version": "sha256:99880ec7b10b53313690f91df9ee8d065519ee698df34b35a3336b5705218f90",
+    "compiled_at": "2026-08-02"
+  },
+  "modern_lens_framing": "The Qurʾan is taken here as fixed, revealed truth; science is our provisional, evolving account of the observable world. What follows notes where the two meet — a contemplation, not a proof. Where the science later shifts, that reflects the limits of our knowledge, not the text.",
+  "references": [
+    {
+      "n": 1,
+      "work_id": "al-tabari",
+      "label": "Jāmiʿ al-Bayān",
+      "author_id": "al-tabari",
+      "author": "Abū Jaʿfar Muḥammad ibn Jarīr al-Ṭabarī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 2,
+      "work_id": "al-baghawi",
+      "label": "Maʿālim al-Tanzīl",
+      "author_id": "al-baghawi",
+      "author": "Abū Muḥammad al-Ḥusayn ibn Masʿūd al-Baghawī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 3,
+      "work_id": "al-qurtubi",
+      "label": "al-Jāmiʿ li-Aḥkām al-Qurʾān",
+      "author_id": "al-qurtubi",
+      "author": "Abū ʿAbd Allāh Muḥammad ibn Aḥmad al-Qurṭubī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 4,
+      "work_id": "ibn-kathir",
+      "label": "Tafsīr Ibn Kathīr",
+      "author_id": "ibn-kathir",
+      "author": "Ismāʿīl ibn ʿUmar ibn Kathīr",
+      "source_language": "ar",
+      "note": "One independent voice. The ar/ur/bn editions are the SAME work — never count as separate corroboration."
+    },
+    {
+      "n": 5,
+      "work_id": "al-saadi",
+      "label": "Taysīr al-Karīm al-Raḥmān",
+      "author_id": "al-saadi",
+      "author": "ʿAbd al-Raḥmān ibn Nāṣir al-Saʿdī",
+      "source_language": "ar",
+      "note": "Russian edition (170) is the SAME work — translate from the Arabic original, and do not count Russian as an independent voice."
+    },
+    {
+      "n": 6,
+      "work_id": "fi-zilal",
+      "label": "Fī Ẓilāl al-Qurʾān",
+      "author_id": "sayyid-qutb",
+      "author": "Sayyid Quṭb Ibrāhīm Ḥusayn",
+      "source_language": "ar",
+      "note": "Original is Arabic, but the API here carries only an URDU edition — translating from Urdu is one step removed from the original. Prefer the Arabic original if the QF Content API offers it."
+    },
+    {
+      "n": 7,
+      "work_id": "maarif",
+      "label": "Maʿārif al-Qurʾān",
+      "author_id": "muhammad-shafi-usmani",
+      "author": "Muftī Muḥammad Shafīʿ ʿUthmānī",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 8,
+      "work_id": "bayan-ul-quran",
+      "label": "Bayān al-Qurʾān",
+      "author_id": "israr-ahmad",
+      "author": "Isrār Aḥmad",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 9,
+      "work_id": "wasit",
+      "label": "al-Tafsīr al-Wasīṭ",
+      "author_id": "tantawi",
+      "author": "Muḥammad Sayyid Ṭanṭāwī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 10,
+      "work_id": "tazkirul",
+      "label": "Tazkīr al-Qurʾān",
+      "author_id": "wahiduddin-khan",
+      "author": "Wahiduddin Khan",
+      "source_language": "ur",
+      "note": "en and ur editions are the same work."
+    },
+    {
+      "n": 11,
+      "work_id": "abu-bakr-zakaria",
+      "label": "Tafsir Abu Bakr Zakaria",
+      "author_id": "abu-bakr-zakaria",
+      "author": "Abū Bakr Muḥammad Zakariyyā",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 12,
+      "work_id": "ahsanul-bayaan",
+      "label": "Ahsanul Bayaan",
+      "author_id": "bayaan-foundation",
+      "author": "Ahsanul Bayaan (Bayaan Foundation)",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 13,
+      "work_id": "muyassar",
+      "label": "al-Tafsīr al-Muyassar",
+      "author_id": "committee-muyassar",
+      "author": "al-Tafsīr al-Muyassar (committee)",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 14,
+      "work_id": "rebar-kurdish",
+      "label": "Rebar Kurdish Tafsir",
+      "author_id": "rebar",
+      "author": "Rebar Kurdish Tafsir",
+      "source_language": "ku",
+      "note": ""
+    }
+  ],
+  "sections": {
+    "103:3": {
+      "verse_range": "3-3",
+      "title": "The Four-Part Exception",
+      "in_short": "Verse 3 answers verse 2: the human race is in loss, except those who combine four things — believing, doing good, urging each other to the truth, and urging each other to patience.",
+      "claims": [
+        {
+          "id": "103:3#c1",
+          "section_ref": "103:3",
+          "attaches_to": "103:3",
+          "text": "Grammatically the exception is made from 'man' (al-insān) because that word, though singular in form, is being used with a collective, plural sense (mankind), which is why a plural exception ('those who believe') follows it.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "واستثنى الذين آمنوا من الإنسان، لأن الإنسان بمعنى الجمع، لا بمعنى الواحد",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "استثناء من الإنسان; إذ هو بمعنى الناس على الصحيح",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "103:3#c2",
+          "section_ref": "103:3",
+          "attaches_to": "103:3",
+          "text": "The verse sets out four qualities that exempt a person from the loss declared in the previous verse: believing, doing righteous deeds, urging one another to the truth, and urging one another to patience. These four together form the whole prescription for avoiding loss, in this life and the next.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "إلا من اتصف بأربع صفات",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "متصفا بهذه الأشياء الأربعة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "relay",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "103:3#c3",
+          "section_ref": "103:3",
+          "attaches_to": "103:3",
+          "text": "The four qualities fall into two pairs. Faith and righteous deeds complete a person's own self; urging the truth and urging patience are for completing others. Salvation from loss depends on the whole set, not on personal piety alone.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "فبالأمرين الأولين، يكمل الإنسان نفسه، وبالأمرين الأخيرين يكمل غيره",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "103:3#c4",
+          "section_ref": "103:3",
+          "attaches_to": "103:3",
+          "text": "The commentators differ on what 'the truth' (al-ḥaqq) that believers urge on one another refers to: the Qur'an itself (Ḥasan al-Baṣrī and Qatāda), the oneness of Allah / tawḥīd (Ibn ʿAbbās, via al-Ḍaḥḥāk), faith and monotheism together (Muqātil), or Allah Himself (al-Suddī).",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "الحقّ: كتاب الله",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "بالإيمان والتوحيد",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "الحق هنا هو الله - عز وجل",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "original_terms": [
+            {
+              "term": "al-Ḥaqq",
+              "gloss": "the truth — variously read as the Qur'an, tawḥīd, faith, or Allah Himself"
+            }
+          ]
+        },
+        {
+          "id": "103:3#c5",
+          "section_ref": "103:3",
+          "attaches_to": "103:3",
+          "text": "Ibn Kathīr (d. 1373) reads 'urging to the truth' as urging obedience to Allah's commands and avoidance of what He forbids, and 'urging to patience' specifically as enduring the plots, harm and enmity of those who oppose people for commanding good and forbidding evil.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "meaning, with the plots, the evils, and the harms of those who harm people due to their commanding them to do good and forbidding them from evil",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "103:3#c6",
+          "section_ref": "103:3",
+          "attaches_to": "103:3",
+          "text": "'al-Ṣabr' (patience) in this verse is glossed by early exegetes as 'obedience to Allah'; al-Saʿdī (d. 1957) widens it to patience in obeying Allah, patience in avoiding disobedience, and patience under Allah's painful decrees; other readings add self-restraint under trial and hardship.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "الصبر: طاعة الله",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "والتواصي بالصبر على طاعة الله، وعن معصية الله، وعلى أقدار الله المؤلمة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "original_terms": [
+            {
+              "term": "al-Ṣabr",
+              "gloss": "patience — steadfastness in obedience, in avoiding sin, and under hardship"
+            }
+          ]
+        },
+        {
+          "id": "103:3#c7",
+          "section_ref": "103:3",
+          "attaches_to": "103:3",
+          "text": "Although patience could be counted as part of 'urging to truth' more broadly, it is singled out in its own clause to mark its special rank, greatness, and distinct virtue.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric"
+        },
+        {
+          "id": "103:3#c8",
+          "section_ref": "103:3",
+          "attaches_to": "103:3",
+          "text": "'Tawāṣaw' (they urged one another) comes from waṣiyyah, meaning to press strong, earnest advice on someone about the best course in a situation — the same word used for a testament, so the two clauses ('advise to truth' and 'advise to patience') work like two articles of one shared testament among believers.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "من الوصية وهى تقديم النصح للغير مقرونا بالوعظ",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "tawāṣaw",
+              "gloss": "they earnestly advised one another"
+            }
+          ]
+        },
+        {
+          "id": "103:3#c9",
+          "section_ref": "103:3",
+          "attaches_to": "103:3",
+          "text": "Holding to the truth is genuinely difficult, since desires, tribal or national loyalty, and the pressure of tyrants and transgressors pull people away from it; mutual reminder among believers restores resolve and unites them.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "103:3#c10",
+          "section_ref": "103:3",
+          "attaches_to": "103:3",
+          "text": "Following Ibn Taymiyyah (رحمه الله), two things normally hold a person back from faith and good works: intellectual doubt about the truth, and selfish desire. The verse's two clauses answer each: 'advise to the truth' remedies doubt through instruction, and 'advise to patience' remedies desire by strengthening resolve against it.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "103:3#c11",
+          "section_ref": "103:3",
+          "attaches_to": "103:3",
+          "text": "Personal piety is not enough for one's own salvation; the Qur'an and Sunnah make it obligatory on every Muslim to strive, as far as he is able, to call others — especially his own family and children — to faith and good deeds, and to warn them from evil.",
+          "claim_type": "legal",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "103:3#c12",
+          "section_ref": "103:3",
+          "attaches_to": "103:3",
+          "text": "Because remaining upon faith, righteous deeds, and truth is hard, it demands patience against desires within and opposition without, against slow success, and against the length of the road; urging one another to patience gives the whole community a shared resolve.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "103:3#c13",
+          "section_ref": "103:3",
+          "attaches_to": "103:3",
+          "text": "It is precisely through mutual urging to truth and to patience that the character of the Muslim community (ummah) becomes visible: a group with one direction, aware of its own existence, bound together by a distinctive brotherhood, and carrying responsibility for guiding others.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "103:3#c14",
+          "section_ref": "103:3",
+          "attaches_to": "103:3",
+          "text": "Faith (īmān) is the bond by which a small, limited human being attaches itself to the eternal, abiding Reality that is the source of the whole universe; through it a person is joined to the laws and forces at work in creation and steps out of the narrow shell of his own limited self.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "103:3#c15",
+          "section_ref": "103:3",
+          "attaches_to": "103:3",
+          "text": "Righteous deed is the natural fruit of true faith: once faith settles in the heart it moves outward into action of its own accord, the way a flower cannot help giving off its scent — a faith that produces no visible action is, on this reading, dead or false faith.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "103:3#c16",
+          "section_ref": "103:3",
+          "attaches_to": "103:3",
+          "text": "Belief here covers all six articles of faith: in Allah as the sole Lord and object of worship, in the Messenger ﷺ as the guide sent by Him, in the angels, in the revealed Books (chiefly the Qur'an), in the Hereafter with its reckoning and reward, and in divine decree (taqdīr) as coming from Allah — a life built without this foundation, however outwardly attractive, is not accepted by Allah.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "103:3#c17",
+          "section_ref": "103:3",
+          "attaches_to": "103:3",
+          "text": "Isrār Aḥmad (d. 2010) reads the four conditions as a sequence: believing (grasping the unseen realities of the universe), then living out that belief in daily obedience, then actively calling others to the same truth (commanding good, forbidding wrong), and finally patience, which becomes necessary because taking up that calling invites hardship and opposition — as Luqmān told his son to enjoin good and forbid evil, and then to bear patiently whatever befalls him as a result.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "103:3#c18",
+          "section_ref": "103:3",
+          "attaches_to": "103:3",
+          "text": "Wahiduddin Khan (d. 2021) groups the verse into three courses that make proper use of one's time: consciousness and acceptance of the truth (faith), doing what religious duty requires while avoiding sin (righteous deeds), and advising others about truth and forbearance, which follows a deep enough grasp of the truth that a person becomes its preacher.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "103:3#c19",
+          "section_ref": "103:3",
+          "attaches_to": "103:3",
+          "text": "One report, transmitted by Ibn ʿAwn from Ibrāhīm al-Nakhaʿī, reads the whole sūrah differently: as man grows old in this world he naturally declines and slips backward — except the believer, for whom the good deeds and merits done in youth and health continue to be recorded in his favour, comparable to the verse about man being created in the best of forms then returned to the lowest, except those who believe and do righteous deeds.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "أراد أن الإنسان إذا عمر في الدنيا وهرم، لفي نقص وتراجع إلا المؤمنين",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Baghawī relays without comment"
+          }
+        },
+        {
+          "id": "103:3#c20",
+          "section_ref": "103:3",
+          "attaches_to": "103:3",
+          "text": "A report states that Ubayy ibn Kaʿb recited Sūrat al-ʿAṣr to the Prophet ﷺ and asked for its meaning; he was told it was an oath, with 'man is in loss' pointing to Abū Jahl, and the four exempted qualities matched, in turn, to Abū Bakr, ʿUmar, ʿUthmān and ʿAlī (رضي الله عنهم). A similar identification is reported as delivered by Ibn ʿAbbās from the pulpit, as his own statement.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "إلا الذين آمنوا: أبو بكر، وعملوا الصالحات عمر",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Qurṭubī relays without grading"
+          }
+        },
+        {
+          "id": "103:3#c21",
+          "section_ref": "103:3",
+          "attaches_to": "103:3",
+          "text": "When ʿAmr ibn al-ʿĀṣ (before his conversion) recited this sūrah to Musaylimah al-Kadhdhāb, Musaylimah tried to produce a matching verse ('O Wabr, O Wabr...') that was so absurd even a contemporary idol-worshipper was not convinced, a story taken as evidence of the sūrah's inimitable concision.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "Ibn Kathīr, citing a partial chain via al-Kharāʾiṭī"
+          }
+        },
+        {
+          "id": "103:3#c22",
+          "section_ref": "103:3",
+          "attaches_to": "103:3",
+          "text": "It is reported that whenever two of the Prophet's ﷺ Companions met, they would not part until one had recited the whole of Sūrat al-ʿAṣr to the other, followed by the greeting of peace.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "relay",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "narrated from al-Ṭabarānī via ʿAbdullāh ibn Ḥiṣn Abī Madīnah"
+          }
+        },
+        {
+          "id": "103:3#c23",
+          "section_ref": "103:3",
+          "attaches_to": "103:3",
+          "text": "Imām al-Shāfiʿī (رحمه الله) said that if people reflected carefully on this sūrah, it would be sufficient for their guidance.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        }
+      ],
+      "essay_html": "<p>Verse 2 declared that man is in loss. This verse gives the exception: those who combine four things escape it. They believe, they do righteous deeds, they urge one another to the truth, and they urge one another to patience. Grammatically the word 'man' (al-insān) is treated as standing for mankind collectively, which is why a plural exception, 'those who believe', follows it.<sup class=\"ref\">1,3</sup></p>\n<p>The four qualities split into two pairs. Faith and righteous deeds complete a person's own self. Urging the truth and urging patience are directed at completing others.<sup class=\"ref\">5,7,11</sup> Faith, on Sayyid Quṭb's reading, is the bond by which a small, limited human being attaches itself to the eternal Reality behind the universe, stepping out of the narrow shell of the self.<sup class=\"ref\">6</sup> Righteous deed then follows as its natural fruit, the way a flower cannot help giving off scent — faith that produces no action is, on this account, no true faith at all.<sup class=\"ref\">6</sup> Isrār Aḥmad reads the four qualities as a chain: grasping the unseen realities of the universe, translating that into daily obedience, then actively calling others to the same truth, with patience following as the necessary cost of taking up that calling.<sup class=\"ref\">8</sup> Wahiduddin Khan groups the same substance into three courses of a well-used life: conscious acceptance of the truth, righteous action, and advising others once one's own grasp of the truth is deep enough to preach it.<sup class=\"ref\">10</sup></p>\n<p>Commentators differ on what exactly 'the truth' (al-ḥaqq) means here. Some early exegetes said it is the Qur'an itself; others said it is tawḥīd, the oneness of Allah; Muqātil combined faith and monotheism; al-Suddī said it refers to Allah Himself.<sup class=\"ref\">1,2,3,11</sup> Ibn Kathīr reads 'urging to the truth' simply as urging obedience and avoidance of what is forbidden.<sup class=\"ref\">4</sup> The word for 'urged one another' (tawāṣaw) comes from waṣiyyah, an earnest, pressing piece of advice, the same word used for a testament — so the truth-clause and the patience-clause read like two articles of one shared testament among believers.<sup class=\"ref\">7,9</sup></p>\n<p>Patience (al-ṣabr) is glossed by early exegetes simply as obedience to Allah.<sup class=\"ref\">1</sup> al-Saʿdī widens this to patience in obeying Allah, patience in avoiding disobedience, and patience under Allah's painful decrees.<sup class=\"ref\">5</sup> Ibn Kathīr adds a specific sense: enduring the plots and harm of those who oppose believers precisely because they command good and forbid evil.<sup class=\"ref\">4</sup> Although patience could be seen as part of urging the truth more broadly, it is given its own clause to mark its special rank and distinct virtue.<sup class=\"ref\">12</sup></p>\n<p>Several commentators stress why the urging matters. Holding to the truth is genuinely hard: desire, tribal loyalty, and the pressure of tyrants pull people from it, so mutual reminder restores resolve.<sup class=\"ref\">6</sup> Drawing on Ibn Taymiyyah, Muftī Shafīʿ notes that two things normally hold people back from faith and good works — doubt and desire — and the verse's two clauses answer each in turn: advice to truth remedies doubt, advice to patience remedies desire.<sup class=\"ref\">7</sup> Personal piety is judged insufficient on its own; a Muslim is obliged to strive, as far as he is able, to call his own family and others to the same faith and deeds.<sup class=\"ref\">7</sup> Because holding this course to the end is difficult, requiring endurance against inner desire and outer opposition alike, mutual urging to patience gives a whole community shared resolve — and it is exactly this mutual urging to truth and patience, on Quṭb's reading, that gives the Muslim community its visible, distinctive character.<sup class=\"ref\">6,8</sup></p>\n<p>Alongside these readings sit several reports. One, from Ibrāhīm al-Nakhaʿī, understands the whole sūrah as being about old age: man naturally declines with years, except the believer, whose good deeds from youth continue to be credited to him.<sup class=\"ref\">2</sup> Another, cited by al-Qurṭubī, has Ubayy ibn Kaʿb reciting the sūrah to the Prophet ﷺ and receiving an explanation matching each clause to a named Companion — Abū Bakr, ʿUmar, ʿUthmān, ʿAlī رضي الله عنهم — with a similar identification attributed to Ibn ʿAbbās رضي الله عنه from the pulpit.<sup class=\"ref\">3</sup> A further account tells how ʿAmr ibn al-ʿĀṣ recited this sūrah to Musaylimah al-Kadhdhāb, whose attempt to match it produced nothing but absurdity, taken as a mark of the sūrah's inimitable concision.<sup class=\"ref\">4</sup> It is also reported that Companions of the Prophet ﷺ would not part from one another without first reciting the whole sūrah between them,<sup class=\"ref\">4,6,7</sup> and that al-Shāfiʿī رحمه الله said that reflecting carefully on this sūrah alone would be enough for a person's guidance.<sup class=\"ref\">4,7</sup></p>\n<p class=\"close\">Four things stand between man and the loss declared in the verse before: believing, doing good, and then turning outward to urge others toward the same truth and the same patience it takes to hold it.</p>",
+      "sources_used": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "source_hashes": {
+        "1": "sha256:6427ed699134eaeb43f4e46de2eb5c44e34ca3476099ee8798acb11de4a670c1",
+        "2": "sha256:37c34065c6fa2841562eadca4d18d2893bb36eb9777868325c0bca21e6e076ff",
+        "3": "sha256:7089e4a3703136e9767b19694650fce0d5428fac0a1d6f2b0d865b8bb2b76a27",
+        "4": "sha256:2d4167bdafc475ae89206548675f286dde14e654ed8825eb2b3545bb780086ff",
+        "5": "sha256:8cbbf6c02f9b03c38ebe0cb68e1bff76e87a840bd47a4c5a88c82554eef44d10",
+        "6": "sha256:2cb909bc37b77d1d8a37136e3dae47da1f13a9b5d3399520c3eb3b95bba477da",
+        "7": "sha256:7dcfa67f5a78ed8d3ffd151d7155679029cca2774f5b6dad7aba421517416607",
+        "8": "sha256:6cc2d53d4efb38cf26c6aee478431253f735ccabd0ed202493361abba183ba61",
+        "9": "sha256:636871acb8b9d849193667beac53e016a82b0649bc7638185b86429b2c7ae51c",
+        "10": "sha256:c45e6e4ba5b06d3fa9ec73711a1b6c329c3cba6d704526699e1702f4212a16ca",
+        "11": "sha256:c09cd8d30ad3a6fea278ff4d72015cb20e5622cda075456dd4a44b7dc5eafb07",
+        "12": "sha256:e9fd175de46809fe51a1230d931834259cad43ee26565a2e45ad50147aaac7b4",
+        "13": "sha256:757533b9f64194a42d6f8f8c097c97c9f14328b19d13c2aa13adda50df65559a",
+        "14": "sha256:f09eb416e3a23f4186b1c00601193fe1e615a4b1ced5c82f719e68896c3116db"
+      },
+      "flags": {
+        "creedal_stakes": true,
+        "legal_content": true,
+        "sensitive_content": false
+      },
+      "compiled_at": "2026-08-02"
+    },
+    "103:1": {
+      "verse_range": "1-2",
+      "title": "The Oath by Time, Man's Loss",
+      "in_short": "Allah swears by al-ʿAṣr (time), and then declares that every human being is in a state of loss (khusr), a loss so total that the sources reach for its full weight before the Surah names its escape route in verse 3.",
+      "claims": [
+        {
+          "id": "103:1#c1",
+          "section_ref": "103:1",
+          "attaches_to": "103:1",
+          "text": "Al-ʿAṣr in the oath means time or the age (al-dahr) in the broad sense, encompassing night and day together, without restricting it to one part of the day.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "relay",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "al-ʿAṣr",
+              "gloss": "time, or the passing age"
+            },
+            {
+              "term": "al-dahr",
+              "gloss": "time, the age, the sweep of days and nights"
+            }
+          ]
+        },
+        {
+          "id": "103:1#c2",
+          "section_ref": "103:1",
+          "attaches_to": "103:1",
+          "text": "Some commentators, reporting from al-Ḥasan and Qatāda, hold al-ʿAṣr means specifically the late afternoon, the period from the sun's decline until sunset.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "103:1#c3",
+          "section_ref": "103:1",
+          "attaches_to": "103:1",
+          "text": "Ibn Kaysān took al-ʿAṣr to mean 'the two ʿaṣrs', that is, night and day together, a known dual usage of the word.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "103:1#c4",
+          "section_ref": "103:1",
+          "attaches_to": "103:1",
+          "text": "Muqātil, and later al-Zamakhsharī as cited by Ṭanṭāwī, held that al-ʿAṣr refers to the ʿAṣr prayer, the 'middle prayer', on account of its excellence and the difficulty of guarding it as people are absorbed in trade at day's end.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "103:1#c5",
+          "section_ref": "103:1",
+          "attaches_to": "103:1",
+          "text": "Another view reported is that al-ʿAṣr refers to the era of prophethood, the Prophet's ﷺ own time, on account of its excellence over ages before it.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "103:1#c6",
+          "section_ref": "103:1",
+          "attaches_to": "103:1",
+          "text": "It was also suggested the meaning could be 'by the Lord of time', reading in an implied divine name behind the sworn-by object, as is sometimes done with such oaths.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "103:1#c7",
+          "section_ref": "103:1",
+          "attaches_to": "103:1",
+          "text": "Al-Ṭabarī judged the correct view to be that al-ʿAṣr is a name for time itself, covering evening, night and day without singling out one meaning over another; whatever this name applies to falls within the oath. Ṭanṭāwī records this as al-Ṭabarī's preferred ruling among the various opinions.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "103:1#c8",
+          "section_ref": "103:1",
+          "attaches_to": "103:1",
+          "text": "The oath by time draws attention to how conditions and circumstances constantly shift and change, in itself a sign pointing to the power of the Maker; commentators cite verse illustrating how time turns the rich poor, the strong weak, the joyful sorrowful.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "relay",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric"
+        },
+        {
+          "id": "103:1#c9",
+          "section_ref": "103:1",
+          "attaches_to": "103:1",
+          "text": "It is not permitted for a servant to swear by anything other than Allah; swearing by other than Him is a form of shirk (associating partners with God).",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning",
+          "theological_school": "Atharī"
+        },
+        {
+          "id": "103:1#c10",
+          "section_ref": "103:1",
+          "attaches_to": "103:1",
+          "text": "A legal question arose from the word ʿaṣr itself: if someone swears not to speak to a man for 'an ʿaṣr', Mālik held this means a year, following his general tendency to take the stricter reading of oaths, while al-Shāfiʿī held it means an hour unless the one swearing specifies an intention, in which case his stated meaning is followed.",
+          "claim_type": "legal",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning",
+          "madhhab": "Mālikī"
+        },
+        {
+          "id": "103:1#c11",
+          "section_ref": "103:1",
+          "attaches_to": "103:1",
+          "text": "A report attributes to ʿAlī رضي الله عنه a recitation adding words not in the standard text: 'wa al-ʿaṣri wa nawāʾib al-dahr... wa innahu fīhi ilā ākhir al-dahr' (and the calamities of time... and he remains in it till the end of time). Al-Ṭabarī transmits several chains for this; al-Qurṭubī notes that the correct position, held by the wider community and the muṣḥaf, is that this addition is not Qurʾān to be recited.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "refute",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Ṭabarī (chains given, not evaluated); al-Qurṭubī rejects it as recited Qurʾān"
+          }
+        },
+        {
+          "id": "103:1#c12",
+          "section_ref": "103:1",
+          "attaches_to": "103:1",
+          "text": "A report holds that whenever two Companions of the Prophet ﷺ met, they would not part until one had recited Sūrat al-ʿAṣr in full to the other, then exchanged greetings of peace.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "attributed to al-Ṭabarānī by the sources"
+          }
+        },
+        {
+          "id": "103:1#c13",
+          "section_ref": "103:1",
+          "attaches_to": "103:1",
+          "text": "Imam al-Shāfiʿī رحمه الله said that if people reflected carefully on this Surah, it would be sufficient for them, since it lays out a complete programme for human life in three verses.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "unspecified"
+        },
+        {
+          "id": "103:1#c14",
+          "section_ref": "103:1",
+          "attaches_to": "103:1",
+          "text": "A narrative is related that ʿAmr ibn al-ʿĀṣ, before his conversion, recited this Surah to Musaylimah al-Kadhdhāb, who then produced nonsensical verses about a small furry animal in a failed attempt to rival it; ʿAmr told him plainly that he knew Musaylimah was lying, and the fabrication did not even convince the idol-worshippers of the time.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "Ibn Kathīr (relates without formal grading)"
+          }
+        },
+        {
+          "id": "103:1#c15",
+          "section_ref": "103:1",
+          "attaches_to": "103:1",
+          "text": "There is a fitting link between the oath and what it swears to: every human action, growth, and change occurs within time, so swearing by time itself testifies to the truth about man's condition within it.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "103:1#c16",
+          "section_ref": "103:1",
+          "attaches_to": "103:2",
+          "text": "Khusr means loss, the opposite of profit: a diminishing, a ruin, a deficit. Different early authorities glossed it in near-synonymous ways: al-Akhfash as 'destruction' (halaka), al-Farrāʾ as 'punishment', Ibn Zayd as 'evil', with the overall sense converging on loss or diminishment.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "khusr",
+              "gloss": "loss, deficit, ruin - the opposite of profit"
+            }
+          ]
+        },
+        {
+          "id": "103:1#c17",
+          "section_ref": "103:1",
+          "attaches_to": "103:2",
+          "text": "One reading holds that 'al-insān' here refers specifically to the disbeliever, since believers are excepted in the following verse; Ibn ʿAbbās, in one report, is said to have named particular Meccan disbelievers meant by the word: al-Walīd ibn al-Mughīra, al-ʿĀṣ ibn Wāʾil, and two men named al-Aswad.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Qurṭubī (via reports from Abū Ṣāliḥ and al-Ḍaḥḥāk, no isnād evaluation given)"
+          }
+        },
+        {
+          "id": "103:1#c18",
+          "section_ref": "103:1",
+          "attaches_to": "103:2",
+          "text": "The more general reading, held by others, is that 'al-insān' names the human genus as a whole; the singular noun stands for every person, and it is precisely because all mankind is meant that the exception naming believers in the next verse is needed to carve anyone out of the loss.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "103:1#c19",
+          "section_ref": "103:1",
+          "attaches_to": "103:2",
+          "text": "Ibrāhīm al-Nakhaʿī is reported to have understood the verse as describing man's decline with age in this world, a weakening and diminishing that afflicts everyone in old age, except that believers continue to have the deeds of their youth recorded and rewarded.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "103:1#c20",
+          "section_ref": "103:1",
+          "attaches_to": "103:2",
+          "text": "Loss comes in degrees, one of which is total: the loss of both this world and the next, missing out on true bliss and deserving the Fire. This is contrasted implicitly with lesser degrees of loss.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "103:1#c21",
+          "section_ref": "103:1",
+          "attaches_to": "103:2",
+          "text": "The word order 'lafī khusr' (truly in loss) suggests man is engulfed and surrounded by loss from every side; the indefinite form of 'khusr' signals that the loss is immense, not slight.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "103:1#c22",
+          "section_ref": "103:1",
+          "attaches_to": "103:2",
+          "text": "Time itself, understood as history, testifies to man's loss: reflecting on why individuals and nations rise and fall shows that only the qualities named in the rest of the Surah secure real success, and abandoning them has repeatedly brought ruin, as history records.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "relay",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "103:1#c23",
+          "section_ref": "103:1",
+          "attaches_to": "103:2",
+          "text": "Life is likened to a shrinking capital: hours, days, months and years pass and abilities fade, so that man resembles someone whose wealth is taken from him daily without his consent. One scholar said he grasped this verse's meaning from an ice-seller crying in the market, 'Have mercy on one whose assets are melting away' - just as the ice melts, the given lifespan runs out. A Prophetic saying is cited in the same vein: everyone who wakes in the morning is trading with his own soul, either freeing it from loss or destroying it.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "relay",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "cited by Muftī Muḥammad Shafīʿ as a Prophetic ḥadīth, without a stated grading"
+          }
+        }
+      ],
+      "essay_html": "<p>Allah swears an oath by al-ʿAṣr, translated 'the declining day' or simply 'time'. The commentators differ on exactly what is meant. Most take it broadly as time itself, the whole sweep of night and day, following Ibn ʿAbbās رضي الله عنه.<sup class=\"ref\">1,2,3,9,13,11</sup> Others narrow it: al-Ḥasan and Qatāda took it as the late afternoon, from the sun's decline to sunset.<sup class=\"ref\">1,2,3</sup> Ibn Kaysān read it as 'the two times', night and day.<sup class=\"ref\">2</sup> Muqātil, and later al-Zamakhsharī as cited by Ṭanṭāwī (d. 2010 CE), took it as the ʿAṣr prayer itself, called the 'middle prayer', prized because it is hardest to guard as people rush to close their trading at day's end.<sup class=\"ref\">2,3,9,14</sup> A further view held it names the era of the Prophet ﷺ, on account of its excellence.<sup class=\"ref\">3,9</sup> Some even suggested it implies 'by the Lord of time'.<sup class=\"ref\">2</sup> Al-Ṭabarī (d. 923 CE) judged the first, broadest reading correct: the name al-ʿaṣr covers evening, night and day together, with nothing excluded from the oath.<sup class=\"ref\">1,9</sup></p><p>Why swear by time at all? The commentators say it draws the eye to how circumstances constantly turn: the rich become poor, the strong weak, the joyful sorrowful, and this shifting itself points to the power of the One who governs it.<sup class=\"ref\">3,9,13</sup> It is also noted that a servant may not swear by anything besides Allah; to do so is a form of shirk, associating something else with Him in an act reserved for Him alone.<sup class=\"ref\">12,13</sup></p><p>The word ʿaṣr even generated a point of law. If someone swears not to speak to another person for 'an ʿaṣr', Mālik (d. 795 CE) held this binds him for a year, in keeping with his stricter approach to oaths, while al-Shāfiʿī (d. 820 CE) held it means an hour, unless the one swearing states another intention, which is then followed.<sup class=\"ref\">3</sup></p><p>A report attributes to ʿAlī رضي الله عنه an expanded recitation adding 'the calamities of time' and 'and he remains in it till the end of time'. Al-Ṭabarī transmits several chains for this addition, but al-Qurṭubī (d. 1273 CE) states plainly that the community's muṣḥaf is what stands, and this extra wording is not Qurʾān to be recited.<sup class=\"ref\">1,3</sup></p><p>Several sources record the Surah's standing among the Companions: it is said that two of them would not part after meeting until one had recited it in full to the other.<sup class=\"ref\">4,7,11,14</sup> Al-Shāfiʿī رحمه الله is reported to have said that if people reflected on this Surah alone, it would be enough for them.<sup class=\"ref\">4,7,11,14</sup> Ibn Kathīr (d. 1373 CE) also relates that ʿAmr ibn al-ʿĀṣ رضي الله عنه, before his conversion, recited it to Musaylimah al-Kadhdhāb, whose attempted imitation, verses about a small furry animal, convinced no one, not even the idol-worshippers of the day.<sup class=\"ref\">4</sup></p><p>The answer to the oath comes at once: man is truly in loss (<em>khusr</em>). The link between swearing by time and declaring man in loss is direct: every human action, every stage of growth, happens within time, so time itself is fit witness to what happens to man inside it.<sup class=\"ref\">7,5,11</sup> <em>Khusr</em> means loss proper, the opposite of profit, glossed variously as destruction, punishment, or evil by early authorities, but converging on the sense of diminishment.<sup class=\"ref\">1,2,3,9,11</sup></p><p>Who is 'man' here? One reading takes it as the disbeliever specifically, since believers are excepted in the next verse; a report even names particular Meccan disbelievers said to be meant.<sup class=\"ref\">2,3</sup> The more common reading takes 'al-insān' as the whole human genus, precisely because the coming exception is needed to carve believers out of a loss that otherwise covers everyone.<sup class=\"ref\">3,9,11</sup> Ibrāhīm al-Nakhaʿī read it as describing the decline that comes with age, a universal weakening in this world, except that a believer's youthful deeds keep being recorded and rewarded even as his body fails.<sup class=\"ref\">3</sup></p><p>The scale of this loss is drawn out further. Al-Saʿdī (d. 1957 CE) notes that loss has degrees, the worst being total: losing both this world and the next, missing true bliss, and deserving the Fire.<sup class=\"ref\">5,12</sup> Ṭanṭāwī reads the wording itself as pointing to this scale: 'in loss' suggests man is engulfed by it on every side, and the indefinite noun 'khusr' signals an immense loss, not a small one.<sup class=\"ref\">9</sup> Muftī Muḥammad Shafīʿ (d. 1976 CE) adds that history itself testifies to the claim: watching how nations and individuals rise and fall shows that only the qualities named later in the Surah bring lasting success, and abandoning them has repeatedly brought ruin.<sup class=\"ref\">7,8</sup></p><p>Several sources reach for the same image to explain the urgency: life is capital that is always shrinking. One scholar said he understood this verse from an ice-seller in the market crying, 'Have mercy on one whose assets are melting away', just as the ice runs to nothing, so does a man's given span. A saying of the Prophet ﷺ is cited alongside it: every person who wakes in the morning is trading with his own soul, either freeing it from loss or destroying it.<sup class=\"ref\">7,10</sup></p><p class=\"close\">The oath and its answer sit together: time itself, forever slipping away, is called to witness that every human being stands, by nature, in loss, a loss the Surah has not yet named its way out of.</p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:feaea0d2e11e19d645d4970e8719bc7b1e62a9c830531994313ca9707acac24c",
+        "2": "sha256:16fe99f4494a051ac6e5c9173efc14ae3d7bd9c764d3b5e7bf5683a47d805e73",
+        "3": "sha256:4cc325e99eeee76b822e58bf8f79d1d39195f5352e3586f309bbea43af31eede",
+        "4": "sha256:2e3de4a9374fb3ebbcbd00304f9b1cfca2132e929e28539722895bf3f0cd0916",
+        "5": "sha256:e7c7e12443bd007965482af88081fce44113301f28f352835e29476d0460ce5c",
+        "6": "sha256:26147286cf6c932c00fded6d641a4aa47f499410c6dd4e0f721feb1cd6539d99",
+        "7": "sha256:7faefc61b20e1dddba1829bf53f14014b2e545b83cc44922a26c6504ae01aea0",
+        "8": "sha256:5c866c21fac2ac7f37bb2246a73887e2d8f14b70028978e9696e094ec5463a6e",
+        "9": "sha256:ab6a4f65e61db2f9be9b3c2995bd5887080f9eb8fde3634183fc988ea8157d11",
+        "10": "sha256:822ae1f98cc2622c8d30915cde9ef5169a976030782701dd8d5e2986c903575d",
+        "11": "sha256:155dcb9a6444a8b631a93d36c3f74adeb3759ee310ac405c91120c8021837841",
+        "12": "sha256:8262d00d544f5b29c021178ab4315ec5c3efce6e2b65c1398d48c43e98e206e3",
+        "13": "sha256:4cb34385efc626269458286020f9a8a931ca1f3a857be09eaa53947ce5b20109",
+        "14": "sha256:389fc9a5435ccc7c813bb274d4bd12f3d5d54650470a76c88b3585b73f3da2e4"
+      },
+      "flags": {
+        "creedal_stakes": "true",
+        "legal_content": "true",
+        "sensitive_content": "true"
+      },
+      "compiled_at": "2026-08-02",
+      "truncated_sources": [
+        6
+      ]
+    }
+  }
+}

@@ -37,6 +37,29 @@ def cmd_store(args):
     print("Dashboard refreshed: docs/overview-tafsir/progress.html")
 
 
+def cmd_catalogue(args):
+    """Reconcile the grounded catalogue against the LIVE API — the pre-flight check.
+    Confirms every planned work is actually served, and surfaces any API editions
+    not yet in commentators.json (which must be added deliberately, never guessed)."""
+    from . import qf_client, catalogue
+    live = qf_client.list_tafsirs()
+    served, coverage = qf_client.reconcile(config.fetch_plan(), live=live)
+    print(f"Planned works served : {coverage['independent_works']}")
+    print(f"Languages present    : {coverage['languages_present']}")
+    print(f"Languages absent     : {coverage['languages_absent']}")
+    if coverage["editions_absent"]:
+        print(f"  [!] planned but NOT served: {coverage['editions_absent']}")
+    known = {e["slug"] for e in catalogue.load()["editions"]}
+    extra = [t["slug"] for t in live if t.get("slug") not in known]
+    if extra:
+        print(f"\nAPI serves {len(extra)} tafsir(s) NOT in commentators.json "
+              f"(add deliberately if wanted):")
+        for s in extra:
+            print(f"  + {s}")
+    else:
+        print("\nEvery live tafsir is accounted for in commentators.json.")
+
+
 def cmd_batch(args):
     import anthropic
     client = anthropic.Anthropic(api_key=config.ANTHROPIC_API_KEY)
@@ -63,6 +86,7 @@ def main():
     ap = argparse.ArgumentParser(description="Overview pipeline status")
     sub = ap.add_subparsers(dest="cmd", required=True)
     st = sub.add_parser("store"); st.set_defaults(fn=cmd_store)
+    ca = sub.add_parser("catalogue"); ca.set_defaults(fn=cmd_catalogue)
     ba = sub.add_parser("batch"); ba.add_argument("batch_id", nargs="?"); ba.set_defaults(fn=cmd_batch)
     args = ap.parse_args()
     args.fn(args)

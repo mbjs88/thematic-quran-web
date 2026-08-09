@@ -1,0 +1,2376 @@
+{
+  "surah": 107,
+  "name": "",
+  "coverage": {
+    "editions_present": [
+      "ar-tafsir-al-tabari",
+      "ar-tafsir-al-baghawi",
+      "ar-tafseer-al-qurtubi",
+      "en-tafisr-ibn-kathir",
+      "ar-tafseer-al-saddi",
+      "tafsir-fe-zalul-quran-syed-qatab",
+      "en-tafsir-maarif-ul-quran",
+      "tafsir-bayan-ul-quran",
+      "ar-tafsir-al-wasit",
+      "tazkirul-quran-en",
+      "bn-tafsir-abu-bakr-zakaria",
+      "bn-tafsir-ahsanul-bayaan",
+      "ar-tafsir-muyassar",
+      "kurd-tafsir-rebar"
+    ],
+    "editions_absent": [],
+    "independent_works": 14,
+    "languages_present": [
+      "ar",
+      "bn",
+      "en",
+      "ku",
+      "ur"
+    ],
+    "languages_absent": []
+  },
+  "pipeline_provenance": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "overview-v2.3",
+    "theme_breaks_version": "sha256:99880ec7b10b53313690f91df9ee8d065519ee698df34b35a3336b5705218f90",
+    "compiled_at": "2026-08-02"
+  },
+  "modern_lens_framing": "The Qurʾan is taken here as fixed, revealed truth; science is our provisional, evolving account of the observable world. What follows notes where the two meet — a contemplation, not a proof. Where the science later shifts, that reflects the limits of our knowledge, not the text.",
+  "references": [
+    {
+      "n": 1,
+      "work_id": "al-tabari",
+      "label": "Jāmiʿ al-Bayān",
+      "author_id": "al-tabari",
+      "author": "Abū Jaʿfar Muḥammad ibn Jarīr al-Ṭabarī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 2,
+      "work_id": "al-baghawi",
+      "label": "Maʿālim al-Tanzīl",
+      "author_id": "al-baghawi",
+      "author": "Abū Muḥammad al-Ḥusayn ibn Masʿūd al-Baghawī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 3,
+      "work_id": "al-qurtubi",
+      "label": "al-Jāmiʿ li-Aḥkām al-Qurʾān",
+      "author_id": "al-qurtubi",
+      "author": "Abū ʿAbd Allāh Muḥammad ibn Aḥmad al-Qurṭubī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 4,
+      "work_id": "ibn-kathir",
+      "label": "Tafsīr Ibn Kathīr",
+      "author_id": "ibn-kathir",
+      "author": "Ismāʿīl ibn ʿUmar ibn Kathīr",
+      "source_language": "ar",
+      "note": "One independent voice. The ar/ur/bn editions are the SAME work — never count as separate corroboration."
+    },
+    {
+      "n": 5,
+      "work_id": "al-saadi",
+      "label": "Taysīr al-Karīm al-Raḥmān",
+      "author_id": "al-saadi",
+      "author": "ʿAbd al-Raḥmān ibn Nāṣir al-Saʿdī",
+      "source_language": "ar",
+      "note": "Russian edition (170) is the SAME work — translate from the Arabic original, and do not count Russian as an independent voice."
+    },
+    {
+      "n": 6,
+      "work_id": "fi-zilal",
+      "label": "Fī Ẓilāl al-Qurʾān",
+      "author_id": "sayyid-qutb",
+      "author": "Sayyid Quṭb Ibrāhīm Ḥusayn",
+      "source_language": "ar",
+      "note": "Original is Arabic, but the API here carries only an URDU edition — translating from Urdu is one step removed from the original. Prefer the Arabic original if the QF Content API offers it."
+    },
+    {
+      "n": 7,
+      "work_id": "maarif",
+      "label": "Maʿārif al-Qurʾān",
+      "author_id": "muhammad-shafi-usmani",
+      "author": "Muftī Muḥammad Shafīʿ ʿUthmānī",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 8,
+      "work_id": "bayan-ul-quran",
+      "label": "Bayān al-Qurʾān",
+      "author_id": "israr-ahmad",
+      "author": "Isrār Aḥmad",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 9,
+      "work_id": "wasit",
+      "label": "al-Tafsīr al-Wasīṭ",
+      "author_id": "tantawi",
+      "author": "Muḥammad Sayyid Ṭanṭāwī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 10,
+      "work_id": "tazkirul",
+      "label": "Tazkīr al-Qurʾān",
+      "author_id": "wahiduddin-khan",
+      "author": "Wahiduddin Khan",
+      "source_language": "ur",
+      "note": "en and ur editions are the same work."
+    },
+    {
+      "n": 11,
+      "work_id": "abu-bakr-zakaria",
+      "label": "Tafsir Abu Bakr Zakaria",
+      "author_id": "abu-bakr-zakaria",
+      "author": "Abū Bakr Muḥammad Zakariyyā",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 12,
+      "work_id": "ahsanul-bayaan",
+      "label": "Ahsanul Bayaan",
+      "author_id": "bayaan-foundation",
+      "author": "Ahsanul Bayaan (Bayaan Foundation)",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 13,
+      "work_id": "muyassar",
+      "label": "al-Tafsīr al-Muyassar",
+      "author_id": "committee-muyassar",
+      "author": "al-Tafsīr al-Muyassar (committee)",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 14,
+      "work_id": "rebar-kurdish",
+      "label": "Rebar Kurdish Tafsir",
+      "author_id": "rebar",
+      "author": "Rebar Kurdish Tafsir",
+      "source_language": "ku",
+      "note": ""
+    }
+  ],
+  "sections": {
+    "107:1": {
+      "verse_range": "1-3",
+      "title": "The Denier's Two Signs",
+      "in_short": "The Prophet ﷺ is asked to consider the person who denies the reckoning of the Hereafter: he shows himself by shoving the orphan away and by never urging anyone to feed the needy.",
+      "claims": [
+        {
+          "id": "107:1#c1",
+          "section_ref": "107:1",
+          "attaches_to": "107:1",
+          "text": "Al-Dīn in this verse means the reckoning, recompense and reward of the Hereafter, not religion in a general sense.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "يعني ... الذي يكذّب بثواب الله وعقابه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "أي بالجزاء والحساب",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "أي بالجزاء والحساب في الآخرة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "Here the word Din means the Hereafter, the Recompense and the Final Reward.",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "أي: بالبعث والجزاء",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "يكذِّب بالبعث والجزاء",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "al-Dīn",
+              "gloss": "the reckoning and recompense of the Hereafter"
+            }
+          ]
+        },
+        {
+          "id": "107:1#c2",
+          "section_ref": "107:1",
+          "attaches_to": "107:1",
+          "text": "Commentators differ on which individual first prompted this verse: candidates named include al-ʿĀṣ ibn Wāʾil, al-Walīd ibn al-Mughīra, ʿAmr ibn ʿĀʾidh, an unnamed hypocrite, and Abū Sufyān, said to have struck an orphan boy who asked him for meat.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "نزلت في العاص بن وائل السهمي ... في الوليد بن المغيرة ... في عمرو بن عائذ المخزومي",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "نزلت في أبي سفيان، وكان ينحر في كل أسبوع جزورا، فطلب منه يتيم شيئا، فقرعه بعصاه",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded by al-Baghawī or al-Qurṭubī"
+          }
+        },
+        {
+          "id": "107:1#c3",
+          "section_ref": "107:1",
+          "attaches_to": "107:1",
+          "text": "A variant reading attributed to Ibn Masʿūd omits the preposition 'bi' before al-Dīn, but the meaning is the same either way.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "وذُكر أن ذلك في قراءة عبد الله: أرأيْتَ الَّذِي يُكَذِّبُ الدِّينَ فالباء في قراءته صلة",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "107:1#c4",
+          "section_ref": "107:1",
+          "attaches_to": "107:1",
+          "text": "Al-Zajjāj's grammatical point is cited: the second hamza in arāʾayta is retained because one cannot simply say 'rayta'; the sentence carries an implied ending, meaning 'is he right or wrong?'",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وأرأيت بإثبات الهمزة الثانية ... والمعنى: أرأيت الذي يكذب بالدين: أمصيب هو أم مخطئ",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "107:1#c5",
+          "section_ref": "107:1",
+          "attaches_to": "107:1",
+          "text": "The opening question calls every person of understanding to attention, not the Prophet ﷺ alone; 'seeing' here can also mean knowing, recognising, and reflecting.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "rhetoric"
+        },
+        {
+          "id": "107:1#c6",
+          "section_ref": "107:1",
+          "attaches_to": "107:1",
+          "text": "The verse works as a preamble: it establishes that the ugly conduct described in the sūrah belongs to someone who denies the Hereafter outright. A believer who commits similar faults still sins gravely, but the specific warning of this sūrah is reserved for the denier or hypocrite.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "107:1#c7",
+          "section_ref": "107:1",
+          "attaches_to": "107:1",
+          "text": "The sūrah as a whole redefines what dīn and īmān mean: real belief always shows itself in action, so mercy toward the orphan and the poor follows automatically from genuine conviction of the Hereafter; its absence is itself a form of takdhīb (denial), whatever the tongue may claim.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "107:1#c8",
+          "section_ref": "107:1",
+          "attaches_to": "107:1",
+          "text": "Denying the reckoning frees a person from the boundaries of ḥalāl and ḥarām, so he lives as if this worldly life were the whole of existence, as reflected in the disbelievers' own words elsewhere in the Qur'an.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "107:1#c9",
+          "section_ref": "107:1",
+          "attaches_to": "107:1",
+          "text": "The chapter draws attention to the Day of Judgement and deplores those who deny it, describing them as arrogant, selfish people whose hearts are empty of faith and who extend no kindness to others.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "relay",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "107:1#c10",
+          "section_ref": "107:1",
+          "attaches_to": "107:2",
+          "text": "Yaduʿʿu (يدع) is a rough, forceful push or shove, not mere neglect; some add it carries a sense of violent contempt.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "يقال منه: دععت فلانًا عن حقه، فأنا أدعه دعًا",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "والدع: الدفع بالعنف والجفوة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "يدع أي يدفع، كما قال: يدعون إلى نار جهنم دعا",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "يقسو عليه، ويزجره زجرا عنيفا",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "يدفع اليتيم ... بعنف وشدة",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "yaduʿʿu",
+              "gloss": "pushes/shoves harshly and forcefully"
+            }
+          ]
+        },
+        {
+          "id": "107:1#c11",
+          "section_ref": "107:1",
+          "attaches_to": "107:2",
+          "text": "Reports going back to Ibn ʿAbbās, Mujāhid, Qatāda, al-Ḍaḥḥāk and Sufyān read the pushing-away as denying the orphan his due right and oppressing him.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "يدفع حقّ اليتيم ... يقهره ويظلمه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "يقهره ويدفعه عن حقه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "he is the one who oppresses the orphan and does not give him his just due",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "chains of exegetical transmission relayed by al-Ṭabarī, not formally graded"
+          }
+        },
+        {
+          "id": "107:1#c12",
+          "section_ref": "107:1",
+          "attaches_to": "107:2",
+          "text": "The harsh push comes from a hardened heart: such a person shows no mercy because he neither hopes for reward nor fears punishment.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "لقساوة قلبه، ولأنه لا يرجو ثوابًا، ولا يخشى عقابًا",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "107:1#c13",
+          "section_ref": "107:1",
+          "attaches_to": "107:2",
+          "text": "Since he denies reward and punishment, he sees no reason to spend his wealth on someone from whom he can expect nothing in return.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "107:1#c14",
+          "section_ref": "107:1",
+          "attaches_to": "107:2",
+          "text": "Pre-Islamic Arabs denied orphans and women any share of inheritance, holding that wealth belonged only to those who could fight for it with spear and sword; Islam abolished this custom.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "كانوا لا يورثون النساء ولا الصغار ... إنما يحوز المال من يطعن بالسنان، ويضرب بالحسام",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "107:1#c15",
+          "section_ref": "107:1",
+          "attaches_to": "107:2",
+          "text": "A saying is relayed that whoever takes a Muslim orphan into his care until the orphan becomes independent earns Paradise; the report is passed on without further grading.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "من ضم يتيما من المسلمين حتى يستغني فقد وجبت له الجنة",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Qurṭubī does not grade the report"
+          }
+        },
+        {
+          "id": "107:1#c16",
+          "section_ref": "107:1",
+          "attaches_to": "107:3",
+          "text": "Not urging others to feed the miskīn (needy person) means failing to incite even other people to give food, not merely failing to feed the needy himself.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "ولا يحثّ غيره على إطعام المحتاج من الطعام",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "لا يطعمه ولا يأمر بإطعامه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "And urges not the feeding of Al-Miskin",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "لا يحث أهله وغيرهم من الأغنياء على بذل الطعام للبائس المسكين",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "ولا يحضُّ غيره على إطعام المحتاج",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "yaḥuḍḍu",
+              "gloss": "urges, incites, spurs on"
+            }
+          ]
+        },
+        {
+          "id": "107:1#c17",
+          "section_ref": "107:1",
+          "attaches_to": "107:3",
+          "text": "If he will not even urge others to feed the needy, then all the more so he does not feed the needy with his own hand.",
+          "claim_type": "other",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "ومن باب أولى أنه بنفسه لا يطعم المسكين",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "فكيف له أن يطعمه بنفسه؟",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "107:1#c18",
+          "section_ref": "107:1",
+          "attaches_to": "107:3",
+          "text": "The blame in this verse falls only on those who could give but chose stinginess, excusing themselves by saying, 'why should we feed one whom God could feed if He willed'; the same wording, it is noted, occurs in Sūrat al-Ḥāqqah.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "أنطعم من لو يشاء الله أطعمه ... وهو مثل قوله تعالى في سورة الحاقة",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "107:1#c19",
+          "section_ref": "107:1",
+          "attaches_to": "107:3",
+          "text": "The charge here matches the same accusation phrased elsewhere in the Qur'an, that such people neither honour the orphan nor urge one another to feed the needy.",
+          "claim_type": "other",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "This is as Allah says ... And urge not one another on the feeding of Al-Miskin!",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "unspecified"
+        },
+        {
+          "id": "107:1#c20",
+          "section_ref": "107:1",
+          "attaches_to": "107:3",
+          "text": "This also exposes a moral weakness: a man who does not practise a good deed himself has no standing to press it on others.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "107:1#c21",
+          "section_ref": "107:1",
+          "attaches_to": "107:3",
+          "text": "He motivates neither himself, nor his own family, nor anyone else, to feed those in the community dying of hunger, because of his stinginess and disbelief in the Hereafter.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        }
+      ],
+      "essay_html": "<p>This opening of Sūrat al-Māʿūn puts a question to the Prophet ﷺ: have you seen the one who denies al-Dīn, meaning the reckoning and reward of the Hereafter?<sup class=\"ref\">1,2,3,4,5,11,12,13</sup> Commentators differ on who first prompted the verse. Names offered include al-ʿĀṣ ibn Wāʾil, al-Walīd ibn al-Mughīra, ʿAmr ibn ʿĀʾidh, an unnamed hypocrite, and Abū Sufyān, said to have struck an orphan boy who had asked him for meat.<sup class=\"ref\">2,3</sup></p><p>Two classical scholars linger on the wording itself. Al-Ṭabarī (d. 923) notes a variant reading, attributed to Ibn Masʿūd رضي الله عنه, that drops the preposition before al-Dīn without changing the meaning.<sup class=\"ref\">1</sup> Al-Qurṭubī (d. 1273), citing al-Zajjāj, points out a small grammatical feature in arāʾayta and reads an implied ending: is this person right, or wrong?<sup class=\"ref\">3</sup> Two later commentators add that the opening question calls every person of sense to attention, not the Prophet ﷺ alone; 'seeing' here reaches beyond the eye to knowing and reflecting.<sup class=\"ref\">11,12</sup></p><p>Muftī Muḥammad Shafīʿ (d. 1976) reads the verse as a preamble. It makes clear that the conduct described next belongs to someone who denies the Hereafter outright. A believer might commit similar faults and still sin gravely, but the specific threat carried by this sūrah is reserved for the denier or the hypocrite.<sup class=\"ref\">7</sup> Sayyid Quṭb (d. 1966) takes the point further. He reads the whole sūrah as redefining what dīn and īmān actually mean: real conviction always shows itself in action, so if a heart truly believes in the Hereafter, mercy toward the orphan and the poor follows on its own. Its absence, he says, is itself a form of takdhīb, denial, whatever the tongue may claim.<sup class=\"ref\">6</sup> Isrār Aḥmad (d. 2010) adds that denying the reckoning frees a person from the boundaries of ḥalāl and ḥarām, so he lives as if this world were all there is.<sup class=\"ref\">8</sup> Wahīduddīn Khān (d. 2021) sums the chapter's warning to those who deny the Day of Judgement, describing arrogant, selfish lives without kindness.<sup class=\"ref\">10</sup></p><p>Verse 2 names the first sign of that denial: yaduʿʿu al-yatīm, he pushes the orphan away. Several commentators fix yaduʿʿu (يدع) as a rough, forceful shove, not mere neglect.<sup class=\"ref\">1,2,3,9,11,12,13</sup> Reports going back to Ibn ʿAbbās رضي الله عنه, Mujāhid, Qatāda, al-Ḍaḥḥāk and Sufyān read it as denying the orphan his right and oppressing him.<sup class=\"ref\">1,2,4,14</sup> Al-Saʿdī (d. 1957) traces the harshness to a hardened heart: such a person shows no mercy because he neither hopes for reward nor fears punishment.<sup class=\"ref\">5</sup> Isrār Aḥmad reasons from the other side: someone who denies reward and punishment sees no point spending on someone from whom he expects nothing back.<sup class=\"ref\">8</sup> Al-Qurṭubī recalls the pre-Islamic custom of denying orphans and women any share of inheritance, on the claim that wealth belonged only to those who could fight for it, a custom Islam abolished; he also passes on, without grading it, a saying that whoever takes in an orphan until he becomes independent earns Paradise.<sup class=\"ref\">3</sup> A modern commentary likewise recalls this jāhiliyya practice.<sup class=\"ref\">11</sup></p><p>Verse 3 names the second sign: he does not urge the feeding of the miskīn, the needy person. The commentators take this as failing to incite even other people to feed the poor, not only failing to feed them himself.<sup class=\"ref\">1,2,4,9,12,13</sup> Al-Saʿdī draws the obvious inference: if he will not even urge others to it, all the more so he does not feed the needy with his own hand, a point echoed elsewhere too.<sup class=\"ref\">5,13</sup> Al-Qurṭubī stresses that the blame here falls only on those who could give but chose stinginess, making excuses such as 'why should we feed one whom God could feed if He willed', the same wording, he notes, found in Sūrat al-Ḥāqqah.<sup class=\"ref\">3</sup> Ibn Kathīr (d. 1373) links the charge to the same accusation elsewhere in the Qur'an, that such people neither honour the orphan nor urge one another to feed the needy.<sup class=\"ref\">4</sup> Isrār Aḥmad reads it as exposing a further weakness: a man who does not practise a good deed himself has no standing to press it on others.<sup class=\"ref\">8</sup> Another commentary explains that such a person motivates neither himself, nor his family, nor anyone else, to feed those dying of hunger, out of stinginess and disbelief in the Hereafter.<sup class=\"ref\">11,14</sup></p><p class=\"close\">Across these three verses the commentators converge on one plain thread: the denial named in verse one is read out in how a person treats the orphan and the hungry, and more than one voice takes this as the whole sūrah's real subject.<sup class=\"ref\">6,7</sup></p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:0fb609546125b697c83f97c5d95ce5ea73795f14c4f73f90c392e7933a535201",
+        "2": "sha256:d356fc015d3d04ca8a3317bfdcbe81e96b2225829cbc6d260b54526dd59f2a37",
+        "3": "sha256:6ed7abc773a25779cd86c0e1233d3af122efb186135357e98ea0071b801bc946",
+        "4": "sha256:77aa56e9e4f26da0c04d121725209364548051e5bed05cab09da4bcf1af6def8",
+        "5": "sha256:0cf022df250cc3c01efef9a91b128c80102094d3e0338fb902976d45121c2e1d",
+        "6": "sha256:9909120170477fa09a29e1309782aa20dc6c2bbb655e0351498cefb544c70b3f",
+        "7": "sha256:dc47e3a9615e26e97c9d976d4fea6295c0b8d1322ffde98786670846ff1aeca0",
+        "8": "sha256:68a3484a62904026cc801a8a36a56450a706e3e37174a05b8c031a6476e22140",
+        "9": "sha256:f2aa4ad0773637e1fd0841563f9513c692fbee572ce51c13aaa6df33a0f931c0",
+        "10": "sha256:24c6fd4ded6272111fab5d0e57bea660c30644f5c5c7dc1e5a63603dc8f9a496",
+        "11": "sha256:f0a233290b48af72c5400500eaf63922b3313335ef7ab7f10727703f6ee99cd4",
+        "12": "sha256:483baa6f5ac9e8867a0ac38bb814dca8c9efe2fbbaa8c680836bef16db6c848f",
+        "13": "sha256:5234acb49188831613e39253198943fb6e1bab3f6ad48fb5dbf5947b5a881e06",
+        "14": "sha256:562e8d632f6840a40bde95c68e1aff882db42f8c6bb0f92e605faa6012fe9240"
+      },
+      "flags": {
+        "creedal_stakes": true,
+        "legal_content": false,
+        "sensitive_content": true
+      },
+      "compiled_at": "2026-08-02"
+    },
+    "107:7": {
+      "verse_range": "7-7",
+      "title": "The Meaning of al-Māʿūn",
+      "in_short": "This verse condemns withholding \"al-Māʿūn\" — some ordinary, small kindness. The commentators record many explanations of the word itself: the obligatory zakat, everyday household items lent between neighbours, a borrowed object, wealth itself, or general acts of kindness — but every reading points to the same hard, ungenerous heart.",
+      "claims": [
+        {
+          "id": "107:7#c1",
+          "section_ref": "107:7",
+          "attaches_to": "107:7",
+          "text": "The word al-Māʿūn is rooted in the idea of usefulness in general. Old Arabic usage even called rainwater falling from a cloud \"māʿūn\" (a poem by al-Aʿshā is cited). In pre-Islamic usage it covered anything useful, large or small — an axe, a pot, a bucket, a fire-striker — while in Islamic usage it came especially to denote obedience and zakat, as shown in a verse of poetry about people who did not withhold their māʿūn or abandon their declaration of faith.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "وأصل الماعون من كلّ شيء منفعته",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "الماعون في الجاهلية كل ما فيه منفعة",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "الماعون",
+              "gloss": "something useful / a common necessity"
+            }
+          ]
+        },
+        {
+          "id": "107:7#c2",
+          "section_ref": "107:7",
+          "attaches_to": "107:7",
+          "text": "Most early commentators — reported from ʿAlī, Ibn ʿUmar (in some reports), al-Ḥasan al-Baṣrī, Qatādah, al-Ḍaḥḥāk, Saʿīd ibn Jubayr (in one report), and Ibn al-Ḥanafiyyah — held that al-Māʿūn here means the obligatory zakat: these people withhold the due charity on their wealth.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "أنه قال : هي الزكاة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "107:7#c3",
+          "section_ref": "107:7",
+          "attaches_to": "107:7",
+          "text": "Mālik (via Zayd ibn Aslam) observed that if zakat had been as hidden from people's sight as prayer is, the hypocrites would not have paid it either — showing that whatever giving they do is done to be seen, exactly like their prayer.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "لو خفيت لهم الصلاة كما خفيت لهم الزكاة ما صلوا",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "107:7#c4",
+          "section_ref": "107:7",
+          "attaches_to": "107:7",
+          "text": "A widely reported reading holds that al-Māʿūn means the ordinary household items neighbours lend one another — an axe, a cooking pot, a bucket, and similar things. This is attributed to Ibn Masʿūd through several chains, and to Ibn ʿAbbās in some reports (as \"household goods\").",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "الفأس والدلو والقدر وأشباه ذلك",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "It is what the people give to each other, like an axe, a pot, a bucket and similar items.",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "كالإناء، والدلو، والفأس",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "original_terms": [
+            {
+              "term": "الماعون",
+              "gloss": "everyday household items lent between neighbours"
+            }
+          ]
+        },
+        {
+          "id": "107:7#c5",
+          "section_ref": "107:7",
+          "attaches_to": "107:7",
+          "text": "When pressed, Ibn ʿUmar distinguished his own answer from Ibn Masʿūd's specific list. He described al-Māʿūn more broadly as \"withholding a right\" — someone asked for their wealth's due share who refuses it — insisting, \"this is what I tell you,\" rather than adopting the narrower axe-and-bucket list.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "هو منع الحقّ",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "107:7#c6",
+          "section_ref": "107:7",
+          "attaches_to": "107:7",
+          "text": "Another reading holds al-Māʿūn means al-ʿāriyah, a borrowed or lent item — attributed to Ibn ʿAbbās (via Saʿīd ibn Jubayr and via Mujāhid).",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "قال مجاهد : الماعون العارية",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "107:7#c7",
+          "section_ref": "107:7",
+          "attaches_to": "107:7",
+          "text": "Another reading holds that in the dialect of Quraysh, al-Māʿūn simply meant wealth or property (al-māl) — attributed to Saʿīd ibn al-Musayyab and Ibn Shihāb al-Zuhrī.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "الماعون, بلسان قريش: المال",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "107:7#c8",
+          "section_ref": "107:7",
+          "attaches_to": "107:7",
+          "text": "Another reading holds al-Māʿūn means general good or kindness that people give one another (al-maʿrūf) — attributed to Muḥammad ibn Kaʿb and al-Kalbī.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "107:7#c9",
+          "section_ref": "107:7",
+          "attaches_to": "107:7",
+          "text": "Some said al-Māʿūn refers to water and pasture, or water alone. Al-Farrāʾ reported hearing Arabs use al-Māʿūn for water itself, citing a line of poetry describing a rain cloud \"spitting out its māʿūn.\"",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "سمعت بعض العرب يقول : الماعون : الماء",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "107:7#c10",
+          "section_ref": "107:7",
+          "attaches_to": "107:7",
+          "text": "A report, given as a hadith, holds that al-Māʿūn refers to things it is never lawful to withhold at all — water, salt, and fire. ʿĀʾishah رضي الله عنها is reported asking the Prophet ﷺ what may never lawfully be withheld, with his reply naming these three and explaining the reward of giving each.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "الماء والنار والملح",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "daif",
+            "graded_by": "al-Qurṭubī, noting the chain has weakness (wa fī isnādihi lin)"
+          }
+        },
+        {
+          "id": "107:7#c11",
+          "section_ref": "107:7",
+          "attaches_to": "107:7",
+          "text": "One linguistic account traces the word to \"maʿn,\" meaning something small or slight — the Arabs said \"mā lahu saʿnah wa lā maʿnah\" (he has not even a small thing). On this account, zakat and acts of kindness are called māʿūn because each is a small portion given out of a much greater whole.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "أصل الماعون من القلة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "معن",
+              "gloss": "a small or slight amount"
+            }
+          ]
+        },
+        {
+          "id": "107:7#c12",
+          "section_ref": "107:7",
+          "attaches_to": "107:7",
+          "text": "A second linguistic account holds that al-Māʿūn derives from maʿūnah, meaning help or assistance, with the final alif standing in for the missing hāʾ. On this account al-Māʿūn is \"that by which one is helped to meet a need\" — a vessel, an axe, or fire.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "فلفظ الماعون أصله معونة والألف عوض من الهاء",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "معونة",
+              "gloss": "help, assistance"
+            }
+          ]
+        },
+        {
+          "id": "107:7#c13",
+          "section_ref": "107:7",
+          "attaches_to": "107:7",
+          "text": "Ibn al-ʿArabī explained that al-Māʿūn is a passive form (mafʿūl) from aʿāna – yuʿīnu (to help), and that al-ʿawn is the giving of strength, tools, and means that make a task easy — so al-Māʿūn is whatever assists someone toward their need.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "الماعون : مفعول من أعان يعين",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "107:7#c14",
+          "section_ref": "107:7",
+          "attaches_to": "107:7",
+          "text": "Another reported reading holds al-Māʿūn means obedience and compliance. Al-Akhfash related from an eloquent Bedouin a saying using al-māʿūn to mean submitting to someone and giving to them, supported by a line of verse.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "لصنعت بناقتك صنيعا تعطيك الماعون",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "107:7#c15",
+          "section_ref": "107:7",
+          "attaches_to": "107:7",
+          "text": "Al-Ṭabarī's own conclusion is that since Allah described these people in general terms without singling out one meaning, the soundest reading combines the possibilities: they withhold from others the everyday benefits people share with one another, and they withhold from the needy the rights Allah obligated in their wealth — both fall under \"benefits people draw from one another.\"",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "وأولى الأقوال في ذلك عندنا بالصواب",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "107:7#c16",
+          "section_ref": "107:7",
+          "attaches_to": "107:7",
+          "text": "The verse means these people neither worship their Lord well nor treat His creation well: they will not even lend something whose substance stays intact and returns to them. Such people are, all the more, likely to withhold zakat and other charitable acts that leave their hands for good.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "This means that they do not worship their Lord well, nor do they treat His creation well.",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "107:7#c17",
+          "section_ref": "107:7",
+          "attaches_to": "107:7",
+          "text": "Muftī Muḥammad Shafīʿ reasons that reports naming al-Māʿūn as household items (axe, pot, bucket) make a rhetorical point rather than fix the legal meaning: if a person is too stingy to lend a trivial item, he will certainly refuse the obligatory 2.5% zakat on his wealth. On his reading, the threat of chastisement (wayl) applies specifically to withholding the obligatory zakat, not to neighbourly loans, which though virtuous are not obligatory.",
+          "claim_type": "legal",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "107:7#c18",
+          "section_ref": "107:7",
+          "attaches_to": "107:7",
+          "text": "Al-Qurṭubī's own preference is that this description (neglecting prayer, praying to be seen, and withholding al-Māʿūn) fits hypocrites best, since they combine all three faults. He also relays that ʿIkrimah, asked whether withholding some ordinary item alone brings the threatened woe, said no — the woe falls only on one who combines all three: abandoning prayer, showing off, and stinginess with al-Māʿūn.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "كونها في المنافقين أشبه ، وبهم أخلق",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "107:7#c19",
+          "section_ref": "107:7",
+          "attaches_to": "107:7",
+          "text": "These people, out of the depth of their stinginess, withhold even harmless loans — a vessel, a bucket, an axe — things custom expects to be lent freely; if they are this tight-fisted here, they will certainly be more so with greater matters. From the surah as a whole comes encouragement to honour the orphan and the poor, to guard sincerity in prayer, and to give freely of small things such as lending a vessel, a bucket, or a book.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "فهؤلاء -لشدة حرصهم- يمنعون الماعون، فكيف بما هو أكثر منه",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "107:7#c20",
+          "section_ref": "107:7",
+          "attaches_to": "107:7",
+          "text": "Sayyid Quṭb reads the whole surah as showing that faith is not mere verbal profession or outward ritual. True faith must show itself in compassionate action toward people, especially the vulnerable. Withholding even the smallest everyday courtesy (al-Māʿūn), despite performing the prayer, proves that the inward reality of faith is absent, since real faith necessarily produces such small kindnesses of itself.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "چناچہ یہ لوگ معمولی ضرورت کی چیز (ماعون) بھی دوسروں کو نہیں دیتے",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "107:7#c21",
+          "section_ref": "107:7",
+          "attaches_to": "107:7",
+          "text": "One who denies the Reckoning will be devoid of goodness across the board: he neglects prayer, mistreats the vulnerable, and refuses even the smallest courtesy to others — even if it be only matchsticks or a good wish — because his heart is empty of faith.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        }
+      ],
+      "essay_html": "<p>The verse closes the surah with a single, plain charge: these people withhold al-Māʿūn. Commentators spend enormous effort recovering exactly what that word covers, and the range is wide, because al-Māʿūn at root simply means something useful <sup class=\"ref\">1,3</sup>. In old Arabic usage it could stretch to rainwater falling from a cloud; before Islam it covered any useful object, large or small, an axe, a pot, a bucket, a fire-striker; a line of old poetry then shows it narrowing, in an Islamic context, toward obedience and zakat <sup class=\"ref\">1,3</sup>.</p>\n<p>Two readings dominate. Most of the early commentators — ʿAlī, Ibn ʿUmar in some reports, al-Ḥasan al-Baṣrī, Qatādah, al-Ḍaḥḥāk and others — took al-Māʿūn here as the obligatory zakat: these people withhold the due charity on their wealth <sup class=\"ref\">1,2,3,7,14</sup>. Mālik added a sharp observation: if zakat had been as hidden from people's eyes as prayer is, the hypocrites would not have paid it either, since whatever they give is given to be seen <sup class=\"ref\">3</sup>. Others, led by a report from Ibn Masʿūd, held al-Māʿūn to be the ordinary household items neighbours lend one another, an axe, a cooking pot, a bucket, things borrowed and returned <sup class=\"ref\">1,2,3,4,5,8,9,11,12,13,14</sup>. Ibn ʿUmar, pressed for his own view, refused to narrow it to that list and instead called it simply \"withholding a right\" <sup class=\"ref\">1</sup>.</p>\n<p>Further readings are recorded besides these two. Some said al-Māʿūn is al-ʿāriyah, a borrowed item <sup class=\"ref\">1,2,3</sup>; some, that in the dialect of Quraysh it meant wealth itself <sup class=\"ref\">1,3</sup>; some, that it meant general kindness people extend to one another <sup class=\"ref\">1,2,3</sup>; some, water or water and pasture <sup class=\"ref\">1,3</sup>; and a report, given as a hadith with a weak chain, has the Prophet ﷺ naming water, salt and fire as things never lawful to withhold <sup class=\"ref\">3</sup>. A rarer reading takes it as obedience and submission <sup class=\"ref\">3</sup>. Two etymologies underlie much of this: one traces māʿūn to \"a small amount\" (maʿn), making zakat and kindness \"māʿūn\" because each is a small portion of a much greater whole <sup class=\"ref\">2,3,11,12</sup>; the other traces it to maʿūnah, help or assistance, so that māʿūn is whatever helps someone meet a need <sup class=\"ref\">3,9</sup>, a passive form built from \"to help,\" as Ibn al-ʿArabī explained it <sup class=\"ref\">3</sup>.</p>\n<p>Al-Ṭabarī, weighing all this, preferred not to choose one reading over another but to combine them: since Allah described these people in general terms, the sound reading is that they withhold both the everyday benefits people share with each other and the rights owed to the needy from their wealth, since both are \"benefits people draw from one another\" <sup class=\"ref\">1</sup>. Ibn Kathīr reasons in a similar direction: these people neither worship their Lord well nor treat His creation well, for they will not even lend something that stays intact and comes back to them, so they are all the more likely to withhold zakat and other charity that leaves their hands for good <sup class=\"ref\">4,9,13</sup>. Muḥammad Shafīʿ builds on this logic explicitly: the reports naming household items make a rhetorical point rather than settle the legal meaning, someone too stingy to lend an axe will certainly refuse the obligatory zakat, and it is failure of that obligation, not failure of neighbourly courtesy, that draws the surah's warning <sup class=\"ref\">7</sup>.</p>\n<p>Al-Qurṭubī judges that the description across these verses, abandoned prayer, praying to be seen, and withholding al-Māʿūn, fits hypocrites best, since it is they who combine all three faults together; he relays ʿIkrimah's answer that the threatened woe falls only on someone who combines all three, not on withholding some ordinary item alone <sup class=\"ref\">3</sup>. Al-Saʿdī draws the same lesson from the opposite direction: people this stingy even over a borrowed vessel or bucket will certainly be worse over greater matters, and from the whole surah comes an encouragement to honour the orphan, feed the poor, keep prayer sincere, and lend freely of small things <sup class=\"ref\">5</sup>. Sayyid Quṭb and Wahiduddin Khan read the verse as proof of a wider principle: faith that does not produce even the smallest kindness toward others is not really present in the heart at all, whatever is professed by the tongue or performed in ritual <sup class=\"ref\">6,10</sup>.</p>\n<p class=\"close\">Whatever the exact reference of al-Māʿūn, zakat, a borrowed axe, a due right, or plain kindness, the commentators converge on the same picture: a heart so closed that it will not part even with something small and returnable, and a religion, on their reading, that is judged not only by what is prayed but by what is given.</p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:bcd52d247f3416ea4d7cf688763852722e7cc982416008184291b3c3ac00ad7e",
+        "2": "sha256:3ef90b3de7525f0995f044cf8edb1dab3435076f2e20e5a996e80e54039eaafe",
+        "3": "sha256:ba4927be4bb9db9d24d4cead59f8de5e67414969c7da8217a3afc70cdad0f124",
+        "4": "sha256:2c338b892003ed15d3cf9eaceae05744d8aba9ec9dcc52e2437467700055149c",
+        "5": "sha256:417889536d48fbd97d44a00a2aa71e07e08bfc8921d37930c45bb45ea82ea6a6",
+        "6": "sha256:53c8869275e6c15d17eee991b8f160dd2c748b2a2dff115949c171be4d1b42ad",
+        "7": "sha256:2ae1fbe6b4cea04b7d53119ec5304a38b1afc2b0209784770312f78076d3af03",
+        "8": "sha256:9a014d2c7de4e984fe244b97ed7eae642a9785e56fe9deb34b5d7602018677ad",
+        "9": "sha256:534508e5b5dc48fed3bf33bf9af3f1dbd48cffc4e892dd1770fdd7ff082b6a25",
+        "10": "sha256:2a8f4ab4ce88c993405ff29aeba684c28c9eb3313f428a331b38407ae11acbae",
+        "11": "sha256:4a46b284dd0d1df713a20a90d3d11ce7798e7de831a29d95759cb353fd83e42c",
+        "12": "sha256:89ed47fcd42f93823f899b2b954868fa514b3dfc6d6627992059f6b72fc95755",
+        "13": "sha256:281166189dca99919fcef58231d24d20b4ab8629a6a2672baf810f13f605c58f",
+        "14": "sha256:9c39d5309c06496f51ecc43b8f7bb5bada1ed14ce5da9a3318f5a0e0151c279e"
+      },
+      "flags": {
+        "creedal_stakes": true,
+        "legal_content": true,
+        "sensitive_content": true
+      },
+      "compiled_at": "2026-08-02"
+    },
+    "107:4": {
+      "verse_range": "4-6",
+      "title": "The Heedless, Show-Off Worshipper",
+      "in_short": "These verses pronounce a severe threat on worshippers who pray but are careless about it, whether by delaying it, neglecting its due form, or caring nothing for it, and who perform it only to be seen by other people rather than for God.",
+      "claims": [
+        {
+          "id": "107:4#c1",
+          "section_ref": "107:4",
+          "attaches_to": "107:4",
+          "text": "The 'woe' (wayl) pronounced here denotes a severe threat: a great punishment awaiting those who possess the traits about to be described.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "وَيْلٌ",
+              "gloss": "a cry of woe, used in the Qur'an as a threat of severe punishment"
+            }
+          ]
+        },
+        {
+          "id": "107:4#c2",
+          "section_ref": "107:4",
+          "attaches_to": "107:4",
+          "text": "Pre-Islamic Arabs had some notion of prayer, but its actual practice had become thoroughly corrupted, as shown by the Qur'an's own description elsewhere of their 'prayer' near the Ka'ba as nothing but whistling and clapping.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "107:4#c3",
+          "section_ref": "107:4",
+          "attaches_to": "107:5",
+          "text": "One reading of 'heedless' (sahun) is that it means delaying the prayer past its due time, performing it only after its proper window has passed.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "سَاهُونَ",
+              "gloss": "heedless, negligent, careless about something"
+            }
+          ]
+        },
+        {
+          "id": "107:4#c4",
+          "section_ref": "107:4",
+          "attaches_to": "107:5",
+          "text": "A report has Sa'd b. Abi Waqqas asking the Prophet ﷺ directly about the meaning of this phrase; he is told it means those who delay the prayer beyond its time.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded by the citing sources"
+          }
+        },
+        {
+          "id": "107:4#c5",
+          "section_ref": "107:4",
+          "attaches_to": "107:5",
+          "text": "A second reading takes sahun to mean abandoning the prayer altogether, never performing it, a view attributed to Ibn Abbas (through one chain) and to Mujahid (through one chain).",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "107:4#c6",
+          "section_ref": "107:4",
+          "attaches_to": "107:5",
+          "text": "A third reading takes sahun as plain heedlessness or indifference toward prayer, not caring whether it is performed or missed. Al-Tabari judges this the soundest sense, since it covers both missing the prayer's time and abandoning it outright; several later commentators describe it in similar terms of neglect and carelessness.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "relay",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "107:4#c7",
+          "section_ref": "107:4",
+          "attaches_to": "107:5",
+          "text": "Others read sahun as falling short in the pillars and conditions of the prayer, not completing its bowing and prostration properly, or turning one's head about while prostrating.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "107:4#c8",
+          "section_ref": "107:4",
+          "attaches_to": "107:5",
+          "text": "Qutrub read sahun as meaning not reciting the Qur'an or remembering God within the prayer.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "107:4#c9",
+          "section_ref": "107:4",
+          "attaches_to": "107:5",
+          "text": "A grammatical detail is highlighted: the verse says heedless OF (‘an) their prayer, not heedless IN (fi) their prayer. Had it said 'fi', it would describe the passing distraction that occurs to anyone during prayer, since even the Prophet ﷺ experienced such lapses (which is why the jurists have a chapter on the prostration of forgetfulness). Using 'an' points instead to a deeper neglect: turning away from the very concept of prayer, with no real attachment to it, marking the hypocrite or the negligent rather than an ordinary believer's momentary slip.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar",
+          "original_terms": [
+            {
+              "term": "عَن صَلَاتِهِمْ",
+              "gloss": "heedless away from / about their prayer"
+            },
+            {
+              "term": "فِي صَلَاتِهِمْ",
+              "gloss": "heedless within their prayer"
+            }
+          ]
+        },
+        {
+          "id": "107:4#c10",
+          "section_ref": "107:4",
+          "attaches_to": "107:5",
+          "text": "'Ata' b. Dinar praised God for choosing the wording 'heedless of their prayer' rather than 'heedless in their prayer', taking the precision of the phrase itself as a sign of its meaning.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "107:4#c11",
+          "section_ref": "107:4",
+          "attaches_to": "107:5",
+          "text": "A hadith, said to be confirmed in the Two Sahihs, describes 'the prayer of the hypocrite': he sits watching the sun until it is between the two horns of Satan (the disliked time near sunset), then stands and 'pecks' four units of prayer hastily, like a crow pecking, remembering God in it only a little.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "Ibn Kathir (attributed to the Two Sahihs)"
+          }
+        },
+        {
+          "id": "107:4#c12",
+          "section_ref": "107:4",
+          "attaches_to": "107:5",
+          "text": "A separate report, through Abu Barza, has the Prophet ﷺ saying, on this verse's revelation, that it is better for believers than if each of them were given the like of the whole world; the one meant is described as someone who has no hope in his prayer if he performs it, and no fear of his Lord if he abandons it.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded by the citing source; chain includes an unnamed narrator"
+          }
+        },
+        {
+          "id": "107:4#c13",
+          "section_ref": "107:4",
+          "attaches_to": "107:5",
+          "text": "The root of this heedlessness is disbelief in the reckoning of the Hereafter: one who does not believe he will be held to account will inevitably be careless in prayer, alongside the other faults the surah lists.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "107:4#c14",
+          "section_ref": "107:4",
+          "attaches_to": "107:5",
+          "text": "The threat is aimed at prayer kept in outward form only, without truly being 'established': without the heart's presence, without the meanings of what is recited reaching the one praying. Such prayer produces no righteous fruit in a person's life, and becomes not merely worthless but a calamity for the one performing it.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "107:4#c15",
+          "section_ref": "107:4",
+          "attaches_to": "107:6",
+          "text": "'Those who are all show' is read as pointing to the hypocrites, who prayed only when others were watching and abandoned it in private, echoing the Qur'an's own description elsewhere of hypocrites standing for prayer lazily, only to be seen by people.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "107:4#c16",
+          "section_ref": "107:4",
+          "attaches_to": "107:6",
+          "text": "More broadly, riya (showing off) is defined as doing good, including praying, purely to be seen and praised by other people, rather than seeking God's reward or fearing His punishment.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "relay",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "يُرَاءُونَ",
+              "gloss": "to act so as to be seen; showing off"
+            }
+          ]
+        },
+        {
+          "id": "107:4#c17",
+          "section_ref": "107:4",
+          "attaches_to": "107:6",
+          "text": "A fuller treatment lists forms riya can take: improving one's outward bearing to gain standing and praise; wearing coarse, ascetic-looking clothes; speech that performs false discontent with worldly people or ostentatious exhortation; and displaying or beautifying acts of prayer and charity for onlookers. The same discussion draws a line: publicising an obligatory duty like prayer is not itself riya, since obligations are meant to be visibly upheld as marks of Islam and neglecting them draws blame; riya belongs properly to seeking people's praise, especially in voluntary acts better kept hidden.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "107:4#c18",
+          "section_ref": "107:4",
+          "attaches_to": "107:6",
+          "text": "A qualifying note: if someone acts sincerely for God's sake and people simply come to know of it, and he is pleased by that, this is not counted as riya.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "107:4#c19",
+          "section_ref": "107:4",
+          "attaches_to": "107:6",
+          "text": "A hadith is cited warning against showing off: 'Whoever tries to make the people hear of his deed, God will make His creation hear of it, and will disgrace and belittle him.'",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.4",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "cited from Ahmad's collection without explicit grading by the source"
+          }
+        }
+      ],
+      "essay_html": "<p>The word 'woe' (wayl) here is read as a severe threat, a great punishment awaiting those with the traits about to be named.<sup class=\"ref\">3,9,13,14</sup> Isra Ahmad notes that pre-Islamic Arabs already had some notion of prayer, but its practice had become badly corrupted, pointing to the Qur'an's own description of their rites near the Ka'ba as whistling and clapping.<sup class=\"ref\">8</sup></p><p>The word translated 'heedless' (سَاهُونَ, sahun) carries several readings. Many hold it means delaying the prayer past its due time, a view attached to Masruq, Abu al-Duha, Ibn Abza and Ibrahim.<sup class=\"ref\">1,2,3</sup> A report even traces this directly to the Prophet ﷺ: Sa'd b. Abi Waqqas رضي الله عنه said he asked him about the phrase and was told it meant those who delay the prayer beyond its time.<sup class=\"ref\">1,2,3</sup> Others take sahun to mean abandoning the prayer altogether, a reading attached to Ibn Abbas and, in one report, to Mujahid.<sup class=\"ref\">1,3,4</sup> A third reading, which al-Ṭabarī (d. 923 CE) judges the soundest, takes sahun as plain indifference: not caring whether the prayer is kept or missed, a sense he says covers both of the other readings at once. Qatada, Ibn Zayd, al-Sa'di and Ṭanṭāwī describe it in similar terms of neglect and carelessness.<sup class=\"ref\">1,2,5,9,13,14</sup> Two further readings appear: falling short in the prayer's pillars and conditions, not completing its bowing and prostration properly,<sup class=\"ref\">2,3</sup> and Qutrub's view that it means failing to recite or remember God within it.<sup class=\"ref\">3</sup></p><p>A number of commentators single out one grammatical detail: the verse says heedless <em>of</em> their prayer ('an salatihim), not heedless <em>in</em> their prayer (fi salatihim). Had it said 'fi', it would describe the passing distraction that touches anyone at prayer, since even the Prophet ﷺ experienced such lapses, which is why the jurists keep a chapter on the prostration of forgetfulness. 'An' points instead to something worse: turning away from prayer itself, with no real attachment to it, the mark of the hypocrite or the negligent rather than a believer's ordinary slip. 'Aṭā' b. Dinar is remembered praising God for choosing this precise wording.<sup class=\"ref\">1,3,4,5,7,11</sup></p><p>Two hadiths are brought to bear on quality and timing. One, said to be confirmed in the Two Sahihs, describes 'the prayer of the hypocrite': he waits till the sun nears the horizon, then 'pecks' four units of prayer hastily, remembering God in it only a little.<sup class=\"ref\">4</sup> Another, through Abu Barza with a weaker chain, has the Prophet ﷺ saying on this verse's revelation that it is better for believers than if each were given the whole world, describing one who hopes for nothing from his prayer if he performs it, and fears nothing from his Lord if he abandons it.<sup class=\"ref\">1</sup></p><p>Wahiduddin Khan traces the root of all this to disbelief in the Hereafter's reckoning: a person who does not believe he will be held to account will inevitably be careless in prayer, alongside the other faults the surah names.<sup class=\"ref\">10</sup> Sayyid Qutb (d. 1966) reads the threat as falling on prayer kept in outward form only, without the heart's presence or the meanings of what is recited actually reaching the one praying. Such prayer, he says, bears no fruit in a life, and becomes not merely worthless but a calamity for the one performing it.<sup class=\"ref\">6</sup></p><p>'Those who are all show' is read as pointing again to the hypocrites, who prayed only when watched and left it when alone, echoing the Qur'an's own picture elsewhere of hypocrites standing for prayer lazily, only to be seen.<sup class=\"ref\">1,2,3,4</sup> More broadly, showing off (riya) is defined as doing good, including praying, purely to be seen and praised by people rather than for God's reward.<sup class=\"ref\">5,8,9,12,13,14</sup> A fuller treatment lists its forms: improving one's bearing for status, wearing ascetic-looking clothes, speech that performs false discontent with worldly people, and beautifying prayer or charity for onlookers. The same discussion draws a line: openly performing an obligatory duty like prayer is not itself riya, since obligations are meant to be visibly upheld, while riya properly belongs to seeking praise, especially in voluntary deeds better kept hidden.<sup class=\"ref\">3</sup> Ibn Kathir (d. 1373 CE) adds that if a deed is done sincerely for God and people simply come to know of it, that alone does not make it riya,<sup class=\"ref\">4</sup> though he also records a warning: 'Whoever tries to make the people hear of his deed, God will make His creation hear of it, and disgrace and belittle him.'<sup class=\"ref\">4</sup></p><p class=\"close\">Read together, the commentators take this threat to fall on prayer that is performed but never truly offered: delayed past its time, emptied of attention, or aimed at onlookers rather than at God.</p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:9ba5433d07e3f18a5e2b242045ef40fc51fb9d1e37fcb08e70cb4dc4cf0288a0",
+        "2": "sha256:afa02e62fd1d7f0e5117ea6dd9df8e26b8d5143e456e704e4b3e3bacae087353",
+        "3": "sha256:d43cd52d3400be54ade6c11c0426005d4d23a6b5d3280d0b332d6fa377fc4a01",
+        "4": "sha256:96242a63f4e580588a025a3f25c3931b9657b80587e554028a9fe33d9b027274",
+        "5": "sha256:57a614f4b3aa2a714a77388667d36694d909b8c61a618802330f41da49be593a",
+        "6": "sha256:63957127f92216ea06d83ea7d6b77a4307c82ecc738ee85933937fd2ab42fd33",
+        "7": "sha256:b892e3c02c9698f414484139242cc0d2d0e6372878f45ad01fb7513775b7096c",
+        "8": "sha256:e0f9417210965fdb4dc245eb68b2621d35920a899f3acbe00c098ec68f1de4e9",
+        "9": "sha256:f74f7bcadc991ba92e3b7945607bbf8dfb3780c71c14a6e5599a8b96f02d591f",
+        "10": "sha256:1cf9e2d16ce4be2b0320a18654535e2b4d0738c357425caefbe82bb5fb19143a",
+        "11": "sha256:f49d9c1a8153fd139c963523a882cc93bb86efa42fbc87244b1de6118659b1e8",
+        "12": "sha256:14a00d574ff26e7adea3630f5c997e764cfa0888186e3f0a39300d2369c0ca07",
+        "13": "sha256:e1bf60a1b969575c0cf3c04aed4afa5859e2081d0a3d892e1f01cbc753ee6041",
+        "14": "sha256:a1f13d6c6030b9aef6edc20cb91f72aa3f928caafdeb10e228d05fff9e0bc27e"
+      },
+      "flags": {
+        "creedal_stakes": true,
+        "legal_content": true,
+        "sensitive_content": true
+      },
+      "compiled_at": "2026-08-02"
+    }
+  }
+}

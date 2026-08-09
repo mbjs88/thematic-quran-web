@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Overview Reader</title>
+<style>
+  :root {
+    --bg:#faf8f4; --card:#fff; --ink:#2a2620; --muted:#7a7264; --line:#e8e2d6;
+    --accent:#7a6a4f; --ref:#9a8256; --arab:#1c1a15; --panel:#f3eee3; --side:#f4efe6;
+    --active:#e9e0cd;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#17150f; --card:#201d16; --ink:#ece6d8; --muted:#9c927e;
+           --line:#332e23; --accent:#c9b78f; --ref:#c9b78f; --arab:#f0ead8;
+           --panel:#26221a; --side:#1c1a13; --active:#2e2a1f; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font:17px/1.7 Georgia,"Times New Roman",serif}
+  .app{display:flex;min-height:100vh}
+
+  /* sidebar */
+  aside{width:250px;flex:none;background:var(--side);border-right:1px solid var(--line);
+    height:100vh;position:sticky;top:0;overflow-y:auto;font-family:-apple-system,system-ui,sans-serif}
+  .side-h{padding:16px 16px 8px;font-size:.78rem;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);font-weight:700}
+  .side-sub{padding:0 16px 12px;font-size:.75rem;color:var(--muted)}
+  .slist{list-style:none;margin:0;padding:0 6px 30px}
+  .slist li{display:flex;align-items:center;gap:8px;padding:6px 10px;border-radius:8px;cursor:pointer;font-size:.86rem;color:var(--muted)}
+  .slist li .n{width:26px;text-align:right;font-variant-numeric:tabular-nums;font-size:.78rem;opacity:.7}
+  .slist li .nm{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .slist li .badge{font-size:.68rem;background:var(--panel);border:1px solid var(--line);border-radius:99px;padding:0 7px;color:var(--accent);font-weight:600}
+  .slist li.has{color:var(--ink)}
+  .slist li.has .nm{font-weight:600}
+  .slist li.empty{opacity:.5}
+  .slist li:hover{background:var(--panel)}
+  .slist li.active{background:var(--active);color:var(--ink)}
+
+  /* main */
+  main{flex:1;min-width:0}
+  .wrap{max-width:760px;margin:0 auto;padding:26px 24px 80px}
+  .topbar{display:none;align-items:center;gap:10px;padding:10px 16px;border-bottom:1px solid var(--line);
+    position:sticky;top:0;background:var(--bg);z-index:5;font-family:system-ui}
+  .topbar button{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:8px;padding:6px 11px;cursor:pointer}
+  h1{font-size:1.5rem;margin:.2em 0}
+  .disc{font-family:-apple-system,system-ui,sans-serif;font-size:.82rem;color:var(--muted);
+    background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:14px 0 26px}
+  .cov{font-family:-apple-system,system-ui,sans-serif;font-size:.8rem;color:var(--muted);margin-top:6px}
+  section{margin:0 0 46px;padding-bottom:28px;border-bottom:1px solid var(--line)}
+  .stitle{font-size:1.25rem;margin:0 0 4px}
+  .short{font-style:italic;color:var(--muted);margin:0 0 18px}
+  .essay p{margin:0 0 15px}
+  .essay .close{font-style:italic;color:var(--muted)}
+  sup.ref{color:var(--ref);font-weight:700;font-size:.7em;padding-left:1px;cursor:help}
+  .lens{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:18px 0}
+  .lens .tag{font-family:-apple-system,system-ui,sans-serif;font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);font-weight:700}
+  .refs{margin-top:34px}
+  .refs h2{font-size:1rem;font-family:-apple-system,system-ui,sans-serif;color:var(--muted)}
+  .refs ol{font-family:-apple-system,system-ui,sans-serif;font-size:.9rem;color:var(--muted);padding-left:1.4em}
+  .refs li{margin:.3em 0}
+  .err{color:#b4453c;font-family:-apple-system,system-ui,sans-serif}
+  .flags{font-family:-apple-system,system-ui,sans-serif;font-size:.72rem;color:var(--muted);margin-top:8px}
+  .flag{display:inline-block;background:var(--panel);border:1px solid var(--line);border-radius:99px;padding:1px 9px;margin-right:5px}
+
+  @media (max-width: 720px){
+    aside{position:fixed;left:0;top:0;z-index:20;transform:translateX(-100%);transition:transform .22s;box-shadow:2px 0 18px rgba(0,0,0,.25)}
+    body.nav-open aside{transform:none}
+    .topbar{display:flex}
+    body.nav-open::after{content:"";position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:15}
+  }
+</style>
+</head>
+<body>
+<div class="app">
+  <aside id="side">
+    <div class="side-h">Overview · Surahs</div>
+    <div class="side-sub" id="sideSub">—</div>
+    <ul class="slist" id="slist"></ul>
+  </aside>
+  <main>
+    <div class="topbar"><button id="menuBtn">☰ Surahs</button><strong id="topTitle">Overview</strong></div>
+    <div class="wrap"><div id="out"></div></div>
+  </main>
+</div>
+<script>
+  const $ = s => document.querySelector(s);
+  const out = $("#out");
+  let PROG = null;              // _progress.json
+  let current = null;
+
+  async function loadProgress(){
+    try{
+      const r = await fetch("data/tafsir_overview/_progress.json", {cache:"no-store"});
+      if(r.ok) PROG = await r.json();
+    }catch(e){}
+    buildSidebar();
+  }
+
+  function buildSidebar(){
+    const surahs = (PROG && PROG.surahs) || Array.from({length:114},(_,i)=>({num:i+1,name:"",sections_done:0,sections_total:0}));
+    const withContent = surahs.filter(s=>s.sections_done>0).length;
+    $("#sideSub").textContent = `${(PROG&&PROG.totals&&PROG.totals.sections_done)||0} sections · ${withContent} surahs`;
+    $("#slist").innerHTML = surahs.map(s=>{
+      const has = s.sections_done>0;
+      const badge = has ? `<span class="badge">${s.sections_done}/${s.sections_total||"?"}</span>` : "";
+      return `<li data-n="${s.num}" class="${has?"has":"empty"}">
+        <span class="n">${s.num}</span><span class="nm">${s.name||("Surah "+s.num)}</span>${badge}</li>`;
+    }).join("");
+    $("#slist").querySelectorAll("li").forEach(li=>{
+      li.onclick = ()=>{ go(+li.dataset.n); document.body.classList.remove("nav-open"); };
+    });
+    markActive();
+  }
+
+  function markActive(){
+    $("#slist").querySelectorAll("li").forEach(li=>li.classList.toggle("active", +li.dataset.n===current));
+  }
+
+  function refList(doc){
+    const rs = (doc.references||[]).map(r =>
+      `<li value="${r.n}">${r.label||""}${r.author? " — "+r.author:""}${r.source_language? " ["+r.source_language+"]":""}</li>`).join("");
+    return rs ? `<div class="refs"><h2>Sources (chronological)</h2><ol>${rs}</ol></div>` : "";
+  }
+
+  function sectionHTML(key, s){
+    const flags = s.flags ? Object.entries(s.flags).filter(([,v])=>v)
+        .map(([k])=>`<span class="flag">${k.replace(/_/g," ")}</span>`).join("") : "";
+    let lens = "";
+    if (s.modern_lens && s.modern_lens.html)
+      lens = `<div class="lens"><div class="tag">A modern lens · ${s.modern_lens.strength||""}</div>${s.modern_lens.html}</div>`;
+    return `<section>
+      <div class="stitle">${s.title||key}</div>
+      <div class="short">${s.in_short||""}</div>
+      <div class="essay">${s.essay_html||""}</div>
+      ${lens}${flags?`<div class="flags">flagged for review: ${flags}</div>`:""}
+    </section>`;
+  }
+
+  async function go(n){
+    current = n; markActive();
+    history.replaceState(null,"", "?surah="+n);
+    out.innerHTML = `<p class="err">Loading surah ${n}…</p>`;
+    let doc;
+    try{
+      const res = await fetch(`data/tafsir_overview/${String(n).padStart(3,"0")}.json`, {cache:"no-store"});
+      if(!res.ok) throw new Error(res.status===404?"Not compiled yet.":"HTTP "+res.status);
+      doc = await res.json();
+    }catch(e){
+      const nm = (PROG&&PROG.surahs&&(PROG.surahs.find(s=>s.num===n)||{}).name)||"";
+      out.innerHTML = `<h1>Sūrah ${n}${nm?" · "+nm:""}</h1><p class="err">${e.message} — pick a marked surah in the sidebar.</p>`;
+      $("#topTitle").textContent = `Sūrah ${n}`;
+      return;
+    }
+    const keys = Object.keys(doc.sections||{}).sort((a,b)=>+a.split(":")[1]-+b.split(":")[1]);
+    const cov = doc.coverage||{};
+    const nm = doc.name || (PROG&&PROG.surahs&&(PROG.surahs.find(s=>s.num===doc.surah)||{}).name) || "";
+    $("#topTitle").textContent = `Sūrah ${doc.surah}${nm?" · "+nm:""}`;
+    out.innerHTML =
+      `<h1>Sūrah ${doc.surah}${nm?" · "+nm:""} — Overview</h1>
+       <div class="cov">${keys.length} section(s) · ${cov.independent_works||"?"} voices ·
+         ${(cov.languages_present||[]).join(", ")||"—"}</div>
+       <div class="disc">Compiled from multiple classical and modern commentaries across languages, gathered into one
+         English overview. It reflects only what those sources say — not independent opinion. Superscript numbers map to
+         the source list at the foot.</div>
+       ${keys.map(k=>sectionHTML(k, doc.sections[k])).join("")}
+       ${refList(doc)}`;
+    window.scrollTo(0,0);
+  }
+
+  $("#menuBtn").onclick = ()=>document.body.classList.toggle("nav-open");
+  document.body.addEventListener("click", e=>{ if(document.body.classList.contains("nav-open") && !e.target.closest("aside,#menuBtn")) document.body.classList.remove("nav-open"); });
+
+  const start = +(new URLSearchParams(location.search).get("surah")) || 103;
+  loadProgress().then(()=>go(start));
+</script>
+</body>
+</html>

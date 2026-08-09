@@ -1,0 +1,2209 @@
+{
+  "surah": 106,
+  "name": "",
+  "coverage": {
+    "editions_present": [
+      "ar-tafsir-al-tabari",
+      "ar-tafsir-al-baghawi",
+      "ar-tafseer-al-qurtubi",
+      "en-tafisr-ibn-kathir",
+      "ar-tafseer-al-saddi",
+      "tafsir-fe-zalul-quran-syed-qatab",
+      "en-tafsir-maarif-ul-quran",
+      "tafsir-bayan-ul-quran",
+      "ar-tafsir-al-wasit",
+      "tazkirul-quran-en",
+      "bn-tafsir-abu-bakr-zakaria",
+      "bn-tafsir-ahsanul-bayaan",
+      "ar-tafsir-muyassar",
+      "kurd-tafsir-rebar"
+    ],
+    "editions_absent": [],
+    "independent_works": 14,
+    "languages_present": [
+      "ar",
+      "bn",
+      "en",
+      "ku",
+      "ur"
+    ],
+    "languages_absent": []
+  },
+  "pipeline_provenance": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "overview-v2.3",
+    "theme_breaks_version": "sha256:99880ec7b10b53313690f91df9ee8d065519ee698df34b35a3336b5705218f90",
+    "compiled_at": "2026-08-02"
+  },
+  "modern_lens_framing": "The Qurʾan is taken here as fixed, revealed truth; science is our provisional, evolving account of the observable world. What follows notes where the two meet — a contemplation, not a proof. Where the science later shifts, that reflects the limits of our knowledge, not the text.",
+  "references": [
+    {
+      "n": 1,
+      "work_id": "al-tabari",
+      "label": "Jāmiʿ al-Bayān",
+      "author_id": "al-tabari",
+      "author": "Abū Jaʿfar Muḥammad ibn Jarīr al-Ṭabarī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 2,
+      "work_id": "al-baghawi",
+      "label": "Maʿālim al-Tanzīl",
+      "author_id": "al-baghawi",
+      "author": "Abū Muḥammad al-Ḥusayn ibn Masʿūd al-Baghawī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 3,
+      "work_id": "al-qurtubi",
+      "label": "al-Jāmiʿ li-Aḥkām al-Qurʾān",
+      "author_id": "al-qurtubi",
+      "author": "Abū ʿAbd Allāh Muḥammad ibn Aḥmad al-Qurṭubī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 4,
+      "work_id": "ibn-kathir",
+      "label": "Tafsīr Ibn Kathīr",
+      "author_id": "ibn-kathir",
+      "author": "Ismāʿīl ibn ʿUmar ibn Kathīr",
+      "source_language": "ar",
+      "note": "One independent voice. The ar/ur/bn editions are the SAME work — never count as separate corroboration."
+    },
+    {
+      "n": 5,
+      "work_id": "al-saadi",
+      "label": "Taysīr al-Karīm al-Raḥmān",
+      "author_id": "al-saadi",
+      "author": "ʿAbd al-Raḥmān ibn Nāṣir al-Saʿdī",
+      "source_language": "ar",
+      "note": "Russian edition (170) is the SAME work — translate from the Arabic original, and do not count Russian as an independent voice."
+    },
+    {
+      "n": 6,
+      "work_id": "fi-zilal",
+      "label": "Fī Ẓilāl al-Qurʾān",
+      "author_id": "sayyid-qutb",
+      "author": "Sayyid Quṭb Ibrāhīm Ḥusayn",
+      "source_language": "ar",
+      "note": "Original is Arabic, but the API here carries only an URDU edition — translating from Urdu is one step removed from the original. Prefer the Arabic original if the QF Content API offers it."
+    },
+    {
+      "n": 7,
+      "work_id": "maarif",
+      "label": "Maʿārif al-Qurʾān",
+      "author_id": "muhammad-shafi-usmani",
+      "author": "Muftī Muḥammad Shafīʿ ʿUthmānī",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 8,
+      "work_id": "bayan-ul-quran",
+      "label": "Bayān al-Qurʾān",
+      "author_id": "israr-ahmad",
+      "author": "Isrār Aḥmad",
+      "source_language": "ur",
+      "note": ""
+    },
+    {
+      "n": 9,
+      "work_id": "wasit",
+      "label": "al-Tafsīr al-Wasīṭ",
+      "author_id": "tantawi",
+      "author": "Muḥammad Sayyid Ṭanṭāwī",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 10,
+      "work_id": "tazkirul",
+      "label": "Tazkīr al-Qurʾān",
+      "author_id": "wahiduddin-khan",
+      "author": "Wahiduddin Khan",
+      "source_language": "ur",
+      "note": "en and ur editions are the same work."
+    },
+    {
+      "n": 11,
+      "work_id": "abu-bakr-zakaria",
+      "label": "Tafsir Abu Bakr Zakaria",
+      "author_id": "abu-bakr-zakaria",
+      "author": "Abū Bakr Muḥammad Zakariyyā",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 12,
+      "work_id": "ahsanul-bayaan",
+      "label": "Ahsanul Bayaan",
+      "author_id": "bayaan-foundation",
+      "author": "Ahsanul Bayaan (Bayaan Foundation)",
+      "source_language": "bn",
+      "note": ""
+    },
+    {
+      "n": 13,
+      "work_id": "muyassar",
+      "label": "al-Tafsīr al-Muyassar",
+      "author_id": "committee-muyassar",
+      "author": "al-Tafsīr al-Muyassar (committee)",
+      "source_language": "ar",
+      "note": ""
+    },
+    {
+      "n": 14,
+      "work_id": "rebar-kurdish",
+      "label": "Rebar Kurdish Tafsir",
+      "author_id": "rebar",
+      "author": "Rebar Kurdish Tafsir",
+      "source_language": "ku",
+      "note": ""
+    }
+  ],
+  "sections": {
+    "106:3": {
+      "verse_range": "3-3",
+      "title": "Worship the Lord of This House",
+      "in_short": "Because Allah gave Quraysh safety and provision through the Kaʿba, this verse tells them the House has one true Lord, and He alone deserves their worship.",
+      "claims": [
+        {
+          "id": "106:3#c1",
+          "section_ref": "106:3",
+          "attaches_to": "106:3",
+          "text": "\"This House\" refers to the Kaʿba in Mecca.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "يعني بالبيت: الكعبة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "أي الكعبة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "original_excerpt": "‘এ ঘর’ অর্থ কা‘বা শরীফ",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "رب هذا البيت الذي يعتزون به -وهو الكعبة",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "106:3#c2",
+          "section_ref": "106:3",
+          "attaches_to": "106:3",
+          "text": "The command means to single Allah out for worship, affirming His oneness (tawḥīd), rather than worshipping anything else beside Him.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "أمرهم الله تعالى بعبادته وتوحيده",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "ليوحدوه ويخلصوا له العبادة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "فليخلصوا العبادة لله",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "وليوحدوه ويخلصوا له العبادة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "original_excerpt": "با بەتاك و تەنها پەروەردگاری ئەم كەعبە پیرۆزە بپەرستن و شەریكى بۆ بڕیار نەدەن",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "106:3#c3",
+          "section_ref": "106:3",
+          "attaches_to": "106:3",
+          "text": "The connecting 'so' (fā') shows the worship commanded is owed as a grateful response to the favours already described. Even if the Quraysh did not thank Him for every one of His countless favours, they should at least worship Him for this one plain and visible favour.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "فإن لم يعبدوه لسائر نعمه، فليعبدوه لشأن هذه الواحدة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "Then Allah directs them to be grateful for this magnificent favor",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "106:3#c4",
+          "section_ref": "106:3",
+          "attaches_to": "106:3",
+          "text": "An alternative reading, traced to Ibn ʿAbbās (via ʿIkrima), takes the verse to mean: let them become as habituated to worshipping the Lord of this House, and to staying settled in Mecca, as they were habituated to their two seasonal trading journeys.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "أُمروا أن يألفوا عبادة ربّ هذا البيت, كإلفهم رحلة الشتاء والصيف",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "فليألفوا عبادة رب الكعبة، كما كانوا يألفون الرحلتين",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded by the cited sources"
+          }
+        },
+        {
+          "id": "106:3#c5",
+          "section_ref": "106:3",
+          "attaches_to": "106:3",
+          "text": "Of all Allah's attributes, 'Lord of this House' is the one singled out here, because the House was itself the very source and fountain of every blessing the Quraysh enjoyed.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "original_excerpt": "the House' is singled out, because it was this House that became the source and fountain of all blessings for them",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "106:3#c6",
+          "section_ref": "106:3",
+          "attaches_to": "106:3",
+          "text": "God identifying Himself as 'Lord of this House' rather than by another name serves two purposes: to distinguish Himself from the idols that were also housed there, and to remind the Quraysh that it was through this House that they gained honour over the rest of the Arabs.",
+          "claim_type": "rhetorical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "أحدهما لأنه كانت لهم أوثان فيميز نفسه عنها. الثاني: لأنهم بالبيت شرفوا على سائر العرب",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "106:3#c7",
+          "section_ref": "106:3",
+          "attaches_to": "106:3",
+          "text": "Ibrāhīm عليه السلام built this House as a centre of monotheism, charging his descendants to worship Allah there through prayer. Later, however, the Quraysh placed 360 idols inside it, turning it into the greatest idol-house in the world and forgetting its true Owner altogether. The command in this verse addresses that forgetting.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "انہوں نے اللہ کے اس گھر میں 360 بت نصب کرکے اسے دنیا کے سب سے بڑے بت کدے میں تبدیل کردیا اور اس کے اصل مالک کو بالکل ہی فراموش کردیا",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "106:3#c8",
+          "section_ref": "106:3",
+          "attaches_to": "106:3",
+          "text": "Even before Islam, in moments of real crisis, the House's true Owner was implicitly recognised: when ʿAbd al-Muṭṭalib faced Abraha's army, he did not appeal to any idol but said he was merely owner of his camels, while the House had an Owner who would defend it Himself. Yet this recognition did not stop the Quraysh from continuing their idolatry, since ignorance (jāhiliyya) does not yield to reason or evidence.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "original_excerpt": "میں تو اونٹوں کا مالک ہوں اور اس گھر کا ایک مالک ہے، وہ خود اس کی حفاظت کرے گا",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "106:3#c9",
+          "section_ref": "106:3",
+          "attaches_to": "106:3",
+          "text": "A report states that ʿUmar ibn al-Khaṭṭāb رضي الله عنه, while leading the Maghrib prayer in Mecca and reciting Sūrat Quraysh, pointed with his hand towards the House on reaching this verse.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "فلما انتهى إلى قوله: فليعبدوا رب هذا البيت أشار بيده إلى البيت",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded by al-Ṭabarī"
+          }
+        },
+        {
+          "id": "106:3#c10",
+          "section_ref": "106:3",
+          "attaches_to": "106:3",
+          "text": "The Quraysh's custodianship of the Kaʿba earned them protection and prosperity for their caravans across Arabia, since others respected them as servants of the sanctuary. The verse calls them to answer this favour with gratitude by worshipping God alone; by extension this is read as a call to accept the Prophet Muhammad ﷺ's message and to submit to one's Creator and Sustainer, a reminder extended to every believer.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "original_excerpt": "they are urged to give a positive response to the call of Truth brought to them by the Prophet Muhammad and surrender to their Creator and Sustainer",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "106:3#c11",
+          "section_ref": "106:3",
+          "attaches_to": "106:3",
+          "text": "Ibn Kathīr links this command to the parallel expression in another sūra, 'I have been commanded only to worship the Lord of this city,' and notes that whoever answers such a command is granted safety in this life and the next, while whoever disobeys loses both, as illustrated by the parable of the township that disbelieved Allah's favours and was struck with hunger and fear.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "whoever accepts this command, Allah will give him safety in both this life and the Hereafter. However, whoever disobeys Him, He will remove both of them from him",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        }
+      ],
+      "essay_html": "<p>This verse tells the Quraysh what follows from everything already said about their safe seasonal journeys: they should worship the Lord of this House, meaning the Kaʿba in Mecca.<sup class=\"ref\">1,2,11,13</sup> The command is to single Allah out in worship, affirming His oneness, rather than dividing worship between Him and anything else.<sup class=\"ref\">3,5,9,13,14</sup></p><p>The word \"so\" at the start of the verse carries weight. It ties the command to gratitude. Even if the Quraysh did not thank Allah for every one of His countless favours, they owed Him worship at least for this one plain favour, the safety of their journeys.<sup class=\"ref\">3,4</sup> A different reading of the same words, traced back to Ibn ʿAbbās رضي الله عنهما, takes it slightly differently: let them grow as accustomed to worshipping the Lord of this House, and to staying settled in Mecca, as they had grown accustomed to their two annual journeys.<sup class=\"ref\">1,3</sup></p><p>Why is Allah named here specifically as \"Lord of this House\", rather than by another name? Muftī Muḥammad Shafīʿ رحمه الله observes that of all His attributes, this one is chosen because the House itself was the very source of every blessing the Quraysh enjoyed.<sup class=\"ref\">7</sup> Al-Qurṭubī رحمه الله gives two further reasons: to set Himself apart from the idols also housed inside the Kaʿba, and to remind the Quraysh that it was through this House that they had gained honour over the rest of the Arabs.<sup class=\"ref\">3</sup></p><p>There is a history behind that reminder. Ibrāhīm عليه السلام built the House as a centre of monotheism, and charged his descendants to worship Allah there through prayer. The Quraysh, however, later filled it with 360 idols, turning it into the greatest idol-house in the world and forgetting its true Owner.<sup class=\"ref\">8</sup> Yet even in ignorance, that Owner was never entirely forgotten. When Abraha marched his army against Mecca, ʿAbd al-Muṭṭalib did not appeal to any idol. He said he was merely the owner of his camels, while the House had an Owner who would defend it Himself. Even so, this recognition did not stop the Quraysh's idolatry, since ignorance does not yield to reason.<sup class=\"ref\">6</sup></p><p>A report describes ʿUmar ibn al-Khaṭṭāb رضي الله عنه leading the Maghrib prayer in Mecca. On reciting this verse, he pointed with his hand toward the House itself.<sup class=\"ref\">1</sup></p><p>The wider point drawn out by commentators is one of gratitude and consequence. The Quraysh's custodianship of the Kaʿba had brought them protection and prosperity that others lacked, and this verse calls them to answer that favour with worship of Him alone, a call some extend to accepting the Prophet Muhammad ﷺ's message and, more broadly, to every believer's gratitude toward their Lord.<sup class=\"ref\">10</sup> Ibn Kathīr رحمه الله links the command to a similar phrase elsewhere in the Qur'an, and notes that whoever answers it is granted safety in this life and the next, while whoever turns away loses both, as in the parable of the township that disbelieved Allah's favours and was struck with hunger and fear.<sup class=\"ref\">4</sup></p><p class=\"close\">Every favour traced through this sūra, food, safety, and the routes of trade, comes back to one House and one Lord, and it is Him alone the Quraysh are told to worship.</p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:4f7ba063f6cb5ebcc395cf4b24da84c911c43130ffdeb07ecc575e4889e86f3e",
+        "2": "sha256:727c89d3031cb511e6e1cd0be908579aef54d6c9538914bd272234e2231baa38",
+        "3": "sha256:de64a4a0ab3eb13dd2b2ac4bfb6ad3476231695e735f67d0586360c5cb15eccd",
+        "4": "sha256:1ff5a9c937f01c14848a88af989466ac5bde53f0fc6df3b647941e47b2421dc3",
+        "5": "sha256:60616998461a2a8ce49751e977b5ca0441cf6ce622d7f223a4f2a4dd16596bda",
+        "6": "sha256:f8464b3630fb52b2fcb1d0c128b7d6878b09f7f0eccc6be7ea344ac65a29c25f",
+        "7": "sha256:7bb85a6182444dd3e5bb60c7d6f7be0247be228c2f41d9beb8eb023ee819505c",
+        "8": "sha256:1148c952ebccc573bf287e7c5e9fab3686a38d69c4298712ca11e76a8fd68e54",
+        "9": "sha256:6eb04a185671b062ee9f46ddbc77e46ba5423831d9597a7c39652d3de8768e63",
+        "10": "sha256:cd198c9fedb912f4e56f73fc0b3c1ed69efcb3beeb129cacc0bf10c6daa82e93",
+        "11": "sha256:1565029f447dfef3634c728ea11b008b1ac622c111be8427536aec82a08c4651",
+        "12": "sha256:7021151ac55fe7f66e62bcef0d15eca7258fa0163c9ff894a47007f060f19089",
+        "13": "sha256:ff8c7edf4b5624500e0f1f2d3ec4133a27095cbbb7967ca395ebc41bc50ebcfb",
+        "14": "sha256:5a1bee6b0617f689b6a77c1eb6ca1faea67a702ff1b8f2ab325971022aef9b0a"
+      },
+      "flags": {
+        "creedal_stakes": true,
+        "legal_content": false,
+        "sensitive_content": false
+      },
+      "compiled_at": "2026-08-02"
+    },
+    "106:4": {
+      "verse_range": "4-4",
+      "title": "Fed from Hunger, Secured from Fear",
+      "in_short": "The verse credits Allah alone with two blessings that made Quraysh's life possible: food that ended their hunger, and safety that ended their fear, both tied to the sanctity of the Sacred House.",
+      "claims": [
+        {
+          "id": "106:4#c1",
+          "section_ref": "106:4",
+          "attaches_to": "106:4",
+          "text": "The plain sense of the verse is that Allah fed the Quraysh, after a period of hunger, through their trading caravans that went to Syria in summer and Yemen in winter.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "من بعد جوع بحمل الميرة إلى مكة",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "الذى وسع لهم الرزق ومهد لهم سبيله",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "relay",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "الذي أطعمهم من جوع شديد",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "low"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "106:4#c2",
+          "section_ref": "106:4",
+          "attaches_to": "106:4",
+          "text": "This feeding is linked by some to Ibrahim's (عليه السلام) prayer for the town, when he asked God to make it secure and to provide its people from the fruits.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "يعني: قريشا أهل مكة بدعوة إبراهيم صلى الله عليه وسلم حيث قال: وَارْزُقْهُمْ مِنَ الثَّمَرَاتِ",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وذلك بدعوة إبراهيم عليه السلام حيث قال: رب اجعل هذا بلدا آمنا وارزق أهله من الثمرات",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "original_terms": [
+            {
+              "term": "duʿāʾ Ibrāhīm",
+              "gloss": "the supplication of Ibrahim"
+            }
+          ]
+        },
+        {
+          "id": "106:4#c3",
+          "section_ref": "106:4",
+          "attaches_to": "106:4",
+          "text": "A historical account holds that before this, Quraysh suffered hardship and famine, until Hashim organised the two seasonal trading journeys and instituted a practice of splitting profits between rich and poor so that the poor lived as well as the wealthy; old Arabic verses are cited praising Hashim for this.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "إنهم كانوا في ضر ومجاعة حتى جمعهم هاشم على الرحلتين، وكانوا يقسمون ربحهم بين الفقير والغني حتى كان فقيرهم كغنيهم",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Baghawi, relaying from ʿAṭāʾ/al-Kalbī"
+          }
+        },
+        {
+          "id": "106:4#c4",
+          "section_ref": "106:4",
+          "attaches_to": "106:4",
+          "text": "Another account holds that when travel became too hard, God moved the Abyssinians to ship food to Makkah; Quraysh, seeing ships arrive, at first feared an attack and went out armed, only to find they had brought relief supplies.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "فألقى الله في قلوب الحبشة أن يحملوا إليهم طعاما في السفن... فخافت قريش منهم",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Qurṭubī, unattributed report"
+          }
+        },
+        {
+          "id": "106:4#c5",
+          "section_ref": "106:4",
+          "attaches_to": "106:4",
+          "text": "A further account ties the feeding to a specific episode: when Quraysh rejected the Prophet ﷺ he prayed against them for years of famine like the years of Yusuf, and when they later professed belief and asked him to pray for relief, he did, and rain reached the lands of Tabala and Jurash, restoring food to Makkah.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "دعا عليهم فقال: اللهم اجعلها عليهم سنين كسني يوسف... فدعا فأخصبت تبالة وجرش",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "al-Qurṭubī, unattributed report"
+          }
+        },
+        {
+          "id": "106:4#c6",
+          "section_ref": "106:4",
+          "attaches_to": "106:4",
+          "text": "Grammatically, the indefinite forms of 'hunger' (jūʿ) and 'fear' (khawf), rather than the definite article, are read as intensifying: it was a severe hunger and a great fear that they were spared, magnifying the favour.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "وتنكير جوع وخوف للتعظيم، أى أطعمهم بدلا من جوع شديد وآمنهم بدلا من خوف عظيم",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar",
+          "original_terms": [
+            {
+              "term": "jūʿ",
+              "gloss": "hunger"
+            },
+            {
+              "term": "khawf",
+              "gloss": "fear"
+            }
+          ]
+        },
+        {
+          "id": "106:4#c7",
+          "section_ref": "106:4",
+          "attaches_to": "106:4",
+          "text": "The main reading of 'safety from fear' is safety from the raids and warfare that other Arab tribes constantly feared: because Quraysh were guardians of the sacred precinct (al-Ḥaram), a man known to be from it could be released along with his property even if seized in hostile territory, while lawlessness prevailed everywhere else in Arabia.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "آمنهم من كلّ عدو في حرمهم... حتى إن كان الرجل منهم ليصاب في حيّ من أحياء العرب، وإذا قيل حرمي خلي عنه وعن ماله",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "endorse",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "بالحرم وكونهم من أهل مكة حتى لم يتعرض لهم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "endorse",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "endorse",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "relay",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "endorse",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "low"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "original_terms": [
+            {
+              "term": "al-Ḥaram",
+              "gloss": "the sacred, protected precinct around the Kaʿbah"
+            }
+          ]
+        },
+        {
+          "id": "106:4#c8",
+          "section_ref": "106:4",
+          "attaches_to": "106:4",
+          "text": "A minority reading takes 'fear' to mean the fear of leprosy (al-judhām), understanding the verse as God protecting them from that disease in their land, a view attributed to al-Ḍaḥḥāk, al-Rabīʿ, Sufyān, and (through a chain) Ibn ʿAbbās.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "من خوفهم من الجذام",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "من خوف الجذام، فلا يصيبهم ببلدهم الجذام",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وآمنهم من خوف أي من خوف الجذام",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "original_terms": [
+            {
+              "term": "al-judhām",
+              "gloss": "leprosy"
+            }
+          ]
+        },
+        {
+          "id": "106:4#c9",
+          "section_ref": "106:4",
+          "attaches_to": "106:4",
+          "text": "Another minority reading, attributed to al-Aʿmash, takes the fear meant to be fear of the Abyssinians and their elephant army.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وآمنهم من خوف أي من خوف الحبشة مع الفيل",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "106:4#c10",
+          "section_ref": "106:4",
+          "attaches_to": "106:4",
+          "text": "A reading attributed to ʿAlī رضي الله عنه takes the security to mean that leadership (the caliphate) would not leave Quraysh.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وآمنهم من خوف أن تكون الخلافة إلا فيهم",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "106:4#c11",
+          "section_ref": "106:4",
+          "attaches_to": "106:4",
+          "text": "Another view given, without a named attribution, is that the security meant Quraysh being spared the burden of negotiating trade protection (ilāf) with kings.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وقيل: أي كفاهم أخذ الإيلاف من الملوك",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "original_terms": [
+            {
+              "term": "ilāf",
+              "gloss": "the covenant or arrangement securing safe passage for trade"
+            }
+          ]
+        },
+        {
+          "id": "106:4#c12",
+          "section_ref": "106:4",
+          "attaches_to": "106:4",
+          "text": "Two commentators state a preference for reading the wording as unrestricted: since God did not specify one meaning of 'fear' over another, the verse should be taken to cover every kind of fear Quraysh were spared, rather than being confined to a single reading.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "فالصواب أن يعمّ كما عمّ جلّ ثناؤه، فيقال: آمنهم من المعنيين كليهما",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "endorse",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "فالله أعلم، واللفظ يعم",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "106:4#c13",
+          "section_ref": "106:4",
+          "attaches_to": "106:4",
+          "text": "This favour carries a lesson: whoever answers the command to worship God alone that follows in this Surah is given security in this life and the next, while whoever turns away from it is stripped of both, as illustrated by the Qur'anic example of a town that was secure and provided for, then denied God's favours and was made to taste hunger and fear as a covering for what it did.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "106:4#c14",
+          "section_ref": "106:4",
+          "attaches_to": "106:4",
+          "text": "Provision in abundance and safety from fears are among the greatest of worldly blessings, and they oblige gratitude to God for both outward and inward favours.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "endorse",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "فرغد الرزق والأمن من المخاوف، من أكبر النعم الدنيوية، الموجبة لشكر الله تعالى",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "106:4#c15",
+          "section_ref": "106:4",
+          "attaches_to": "106:4",
+          "text": "Sayyid Quṭb reads the security as extending across both settled life in Makkah and the two seasonal caravan routes (north to Syria, south to Yemen), and notes that Quraysh knew exactly what safeguarded them: when ʿAbd al-Muṭṭalib faced Abraha's army, he did not appeal to any idol but said only that the House had its own Owner who would defend it, appealing to 'the Lord of this House' rather than to material strength; this security, resting purely on God's favour, was meant to produce shame and gratitude that should turn them to worship Him alone.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "Sayyid Quṭb, relaying the account of ʿAbd al-Muṭṭalib and Abraha"
+          }
+        },
+        {
+          "id": "106:4#c16",
+          "section_ref": "106:4",
+          "attaches_to": "106:4",
+          "text": "The security named in the verse is understood to include not only safety from human enemies and robbers but also safety from punishment in the Hereafter, for those who fulfil the necessary conditions of faith.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "106:4#c17",
+          "section_ref": "106:4",
+          "attaches_to": "106:4",
+          "text": "A reported benefit holds that reciting Surah Quraysh at a time of fear or danger has been described, by Abul Hasan Qazwini and cited by Imam al-Jazarī, as bringing security from fear and calamity, and this is said to have been tested by Qāḍī Thanāʾullāh Pānīpatī on the instruction of his teacher Mirzā Maẕhar Jān-i-Jānān.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "Muftī Muḥammad Shafīʿ, citing Abul Hasan Qazwini via Imam al-Jazarī, and Qāḍī Thanāʾullāh Pānīpatī"
+          }
+        },
+        {
+          "id": "106:4#c18",
+          "section_ref": "106:4",
+          "attaches_to": "106:4",
+          "text": "Since these worldly benefits came from God alone, it would be gross ingratitude to enjoy them while refusing the religious response owed to Him, namely responding to the call of the Prophet ﷺ and worshipping God alone; every believer is by extension reminded here to be thankful.",
+          "claim_type": "spiritual",
+          "sources": [
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "endorse",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        }
+      ],
+      "essay_html": "<p>The verse names two favours together: God fed Quraysh after hunger, and made them safe after fear. The commentators read both halves closely, in the wording and in Quraysh's own history.</p><p>Most take the feeding plainly. God gave them provision, above all through the trading caravans that went north to Syria in summer and south to Yemen in winter.<sup class=\"ref\">2,4,7,8,9,10,11,12,13,14</sup> Some tie it further back to Ibrahim's (عليه السلام) own prayer for the town, when he asked God to make it secure and to provide its people from the fruits.<sup class=\"ref\">1,3,11</sup></p><p>Beyond this, two fuller stories are preserved. One holds that before this arrangement Quraysh knew real hardship, until Hashim organised the two seasonal journeys and had the tribe share its profit so that the poor lived as well as the wealthy, a generosity old Arabic verses were composed to praise.<sup class=\"ref\">2</sup> Another, reported by al-Qurṭubī (d. 1273 CE) without settling on it, tells of the Abyssinians being moved to ship food to Makkah when travel grew too hard, of Quraysh at first fearing an attack and going out armed, only to find relief supplies; and of a separate famine tied to the Prophet's ﷺ own prayer against Quraysh's rejection, later lifted by his prayer for them once they believed, bringing rain to Tabala and Jurash.<sup class=\"ref\">3</sup> On the wording itself, one reading notices that 'hunger' and 'fear' appear without the definite article, which is taken to intensify the meaning: not ordinary hunger and fear, but a severe hunger and a great fear from which they were spared.<sup class=\"ref\">9</sup></p><p>On 'safety from fear', the dominant reading is safety from the raids and warfare that other Arab tribes lived with constantly. Because Quraysh were custodians of the sacred precinct (al-Ḥaram), a man known to be from it could be released along with his goods even if caught in hostile territory, while all around them Arabia knew no such peace.<sup class=\"ref\">1,2,3,4,7,8,9,10,11,12,13,14</sup></p><p>Other readings are recorded alongside this, each attributed but none declared final. Some took the fear to mean fear of leprosy (al-judhām), a view held by al-Ḍaḥḥāk, al-Rabīʿ, Sufyān and, through a chain, Ibn ʿAbbās رضي الله عنه.<sup class=\"ref\">1,2,3</sup> Al-Aʿmash is reported to have taken it as fear of the Abyssinians and their elephant army; a saying attributed to ʿAlī رضي الله عنه took it to mean that leadership would remain with Quraysh; and another, unattributed, view held it meant they were spared the burden of negotiating trade protection with kings.<sup class=\"ref\">3</sup> Facing this spread of readings, al-Ṭabarī (d. 923 CE) and al-Qurṭubī both conclude that since God did not restrict the wording to one meaning, it should be taken to cover every kind of fear Quraysh were spared, not narrowed to a single sense.<sup class=\"ref\">1,3</sup></p><p>Several commentators draw out what the favour is for. Ibn Kathīr (d. 1373 CE) ties it to the command to worship that follows: whoever answers it is given security in this life and the next, whoever turns from it loses both, just as the Qur'an elsewhere describes a secure and provided town that denied God's favour and was made to taste hunger and fear as its covering.<sup class=\"ref\">4,7</sup> Al-Saʿdī (d. 1957 CE) calls abundant provision and safety from fear among the greatest worldly blessings, ones that oblige gratitude for what is seen and unseen.<sup class=\"ref\">5</sup> Muḥammad Shafīʿ (d. 1976 CE) adds that the security spoken of reaches further still, covering safety from punishment in the Hereafter for those who meet the conditions of faith.<sup class=\"ref\">7</sup></p><p>Sayyid Quṭb (d. 1966 CE) draws on the memory of ʿAbd al-Muṭṭalib facing Abraha's army: he appealed to no idol, only saying the House had an Owner who would defend it. For Quṭb, this is the point of the whole favour, that the security Quraysh enjoyed rested purely on God through His House, meant to produce shame at their idolatry and turn them to worship Him alone.<sup class=\"ref\">6</sup> Wahiduddin Khan (d. 2021 CE) reads the same logic forward: having received such benefit from God alone, refusing the religious response owed to Him would be plain ingratitude, a reminder he extends to every believer.<sup class=\"ref\">10</sup> Separately, Muḥammad Shafīʿ records a reported practice, that reciting this Surah at a time of fear has been described as protective by some who taught and tried it.<sup class=\"ref\">7</sup></p><p class=\"close\">Across all these readings, the commentators return to one point: the food and the safety Quraysh took for granted had a single source, and were owed a single response.</p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:367d3f838c9781fe44315f8a3420056dd4247b974a10c2d30af7b06f5966755a",
+        "2": "sha256:656bb965c0fbb0fc8cf2b3206a148d1fb1747ede123161bbff6ec1507a161e85",
+        "3": "sha256:96b4e8e25221eed1fcdb0fd001336b12ee1ecb6e3d47fe0df6f187a77b92c0e3",
+        "4": "sha256:ae354db9190ac9eebf410f9c6ad822b2ae8326ae7620e57e9252cc34292be322",
+        "5": "sha256:ce81eb2050c99b97250dd43c0b782ea1c1473a06006fe1d236cdca885c9ac00e",
+        "6": "sha256:0726c7e76d1770ca0444c1041de275dc30a47ab3e1239a0cb944d87e6b5a323a",
+        "7": "sha256:a4fdee8596a678b2842d0cba6e14ddf653f25cd550bfb13161c031109916e29e",
+        "8": "sha256:a9af9c38a466fb0aba6e8ea9aa0222f088d2bf3113578d689ab7c602b5724a1b",
+        "9": "sha256:c74e12c4069158c05847b3bef4cd4fe83062260616e3b8f43d7737a9633acad9",
+        "10": "sha256:f88b885b8036ac1a3de3a537923f887ef8ffa38b31ffefb5288f692e71255abe",
+        "11": "sha256:8efb09b838de586af2753f8863708723e4c049f763b21f923c57c3cf067674f8",
+        "12": "sha256:81380f9919cdbbbb06cc1f0d92e2c7f174ce7d72c3a728cf3b5a272e2b0f73b3",
+        "13": "sha256:a3d7f573e5cd8c8e0a6c2e829007c5ec413536020bdcff75659bb35d5ce07956",
+        "14": "sha256:4fbf7d9a1f6203d8c8e3b194d55643df2a3eb7d90548fb82919654ada1050c99"
+      },
+      "flags": {
+        "creedal_stakes": false,
+        "legal_content": false,
+        "sensitive_content": false
+      },
+      "compiled_at": "2026-08-02"
+    },
+    "106:1": {
+      "verse_range": "1-2",
+      "title": "Quraysh's Settled, Safe Caravans",
+      "in_short": "The surah opens by naming the favour behind Quraysh's safe, settled trading life: their habitual (\"īlāf\") winter and summer caravan journeys, made possible because of their standing as guardians of the Kaʿbah.",
+      "claims": [
+        {
+          "id": "106:1#c1",
+          "section_ref": "106:1",
+          "attaches_to": "106:1",
+          "text": "One reading ties the opening \"li-\" (for/because of) back to the end of the previous surah, Al-Fīl: God destroyed the elephant army so that Quraysh could keep their settled life and their trade journeys undisturbed. Al-Ṭabarī reports this as a Basran grammarians' view but argues against it, since it would make Al-Fīl and Quraysh one unfinished sentence rather than two complete surahs.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "refute",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "الجالب لها قوله: فَجَعَلَهُمْ كَعَصْفٍ مَأْكُولٍ",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "قال الزجاج: المعنى: جعلهم كعصف مأكول لإيلاف قريش",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "هذه السورة متصلة بالتي قبلها في المعنى",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "relay",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "original_excerpt": "إن الجار والمجرور متعلق بالسورة التي قبلها",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "106:1#c2",
+          "section_ref": "106:1",
+          "attaches_to": "106:1",
+          "text": "A second reading takes the opening \"li-\" as a \"lām of amazement\": the sense is \"be amazed at Quraysh's being drawn into settled security and My favour on them\". Al-Ṭabarī states this is the correct view, arguing it fits the fact that Muslims agree Al-Fīl and Quraysh are two complete, separate surahs. Ibn Kathīr cites Ibn Jarīr's (al-Ṭabarī's) view approvingly as \"the correct opinion\".",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "endorse",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "إن هذه اللام بمعنى التعجب",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "قال الكسائي والأخفش: هي لام التعجب",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وقيل: اللام في قوله تعالى: لإيلاف قريش لام التعجب",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "endorse",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "Ibn Jarir said, \"The correct opinion is that the letter Lam is a prefix that shows amazement.\"",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "وقيل المعنى: اعجبوا لإيلاف قريش",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "endorse",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "original_excerpt": "اعْجَبوا لإلف قريش",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "106:1#c3",
+          "section_ref": "106:1",
+          "attaches_to": "106:1",
+          "text": "A third reading connects \"li-\" forward, to \"so let them worship\" in verse 3: because of their being drawn into settled security through these two journeys, Quraysh should worship the Lord of this House. Al-Zamakhshārī (as reported by al-Ṭanṭāwī) prefers this connection; al-Qurṭubī notes Abū Bakr ibn al-ʿArabī rejected it in favour of the first reading.",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "وقال الزجاج: هي مردودة إلى ما بعدها تقديره: فليعبدوا رب هذا البيت لإيلافهم",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وأن اللام متعلقة بقوله تعالى: فليعبدوا",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "endorse",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "قال صاحب الكشاف: لإيلاف قريش متعلق بقوله: فليعبدوا",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar"
+        },
+        {
+          "id": "106:1#c4",
+          "section_ref": "106:1",
+          "attaches_to": "106:1",
+          "text": "Some early copies of the Qurʾan (reportedly Ubayy ibn Kaʿb's) wrote Al-Fīl and Quraysh as a single surah without separating them, because their sense is so closely linked. When ʿUthmān ibn ʿAffān رضي الله عنه compiled the standard copy with the Companions' agreement, the two were fixed as separate, complete surahs with the basmala written between them.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وممن عد السورتين واحدة أبي بن كعب، ولا فصل بينهما في مصحفه",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "This Surah has been separated from the one that preceded it in the primary Mushaf",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "106:1#c5",
+          "section_ref": "106:1",
+          "attaches_to": "106:1",
+          "text": "\"Īlāf\" (from the root a-l-f) is explained in two related senses: being drawn together and united after being scattered, and becoming habituated or accustomed to something so it no longer feels like a hardship. Both senses are applied to Quraysh's settled life around the Kaʿbah and their regular caravan journeys; verse 2's \"īlāfihim\" restates and specifies the general \"īlāf\" of verse 1.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "إيلافهم ذلك فلا يشقّ عليهم رحلة شتاء ولا صيف",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "relay",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "original_excerpt": "اِیْلاف: اَلِفَ یَأْلَفُ اَلْفًا سے باب افعال کا مصدر ہے، یعنی مانوس کرنا اور خوگر بنانا",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "original_excerpt": "الإِيلاف: مصدر آلفت الشئ إيلافا ... إذا لزمته وتعودت عليه ... اجتماع الشمل مع الالتئام",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon",
+          "original_terms": [
+            {
+              "term": "الإيلاف (al-īlāf)",
+              "gloss": "being drawn into settled unity or into a habitual, familiar routine"
+            }
+          ]
+        },
+        {
+          "id": "106:1#c6",
+          "section_ref": "106:1",
+          "attaches_to": "106:1",
+          "text": "Quraysh are identified as descendants of al-Naḍr ibn Kinānah. The name is explained variously: from \"taqarrush\", meaning to earn a living by trade, or from their being gathered together in the sanctuary after having been scattered, or, in a report from Ibn ʿAbbās رضي الله عنه to Muʿāwiyah, after a dominant sea-creature called \"al-qirsh\" that eats but is not eaten.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "original_excerpt": "لدابة تكون في البحر من أعظم دوابه يقال لها القرش",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "التقريش: الاكتساب، وتقرشوا أي تجمعوا",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "lexicon"
+        },
+        {
+          "id": "106:1#c7",
+          "section_ref": "106:1",
+          "attaches_to": "106:1",
+          "text": "A hadith reports the Prophet ﷺ saying that Allah chose Kinānah from the descendants of Ismāʿīl عليه السلام, chose Quraysh from Kinānah, chose Banū Hāshim from Quraysh, and chose him from Banū Hāshim, narrated on the authority of Wāthilah ibn al-Asqaʿ رضي الله عنه.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "sahih",
+            "graded_by": "al-Qurṭubī, attributing it to al-Bukhārī and Muslim"
+          }
+        },
+        {
+          "id": "106:1#c8",
+          "section_ref": "106:1",
+          "attaches_to": "106:1",
+          "text": "Mujāhid and Ibn ʿAbbās رضي الله عنه (via Saʿīd ibn Jubayr) glossed the word simply as \"My favour upon Quraysh\", without dwelling on the grammatical question of what the opening lām attaches to.",
+          "claim_type": "lexical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "نعمتي على قريش",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "نعمتي على قريش",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "106:1#c9",
+          "section_ref": "106:1",
+          "attaches_to": "106:2",
+          "text": "The commentators are agreed that the journeys in question were Quraysh's two annual trading caravans: to Yemen in winter and to Syria (al-Shām) in summer, journeys that sustained their economy and, through them, their prosperity and standing.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-saddi",
+              "stance": "relay",
+              "author_id": "al-saadi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "relay",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "relay",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-al-wasit",
+              "stance": "relay",
+              "author_id": "tantawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "relay",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "relay",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "106:1#c10",
+          "section_ref": "106:1",
+          "attaches_to": "106:2",
+          "text": "An alternative report, traced to Ibn ʿAbbās رضي الله عنه through ʿIkrimah and Saʿīd ibn Jubayr, holds that the two seasons refer to Quraysh wintering in Mecca itself and summering in al-Ṭāʾif, rather than to journeys abroad.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "كانوا يشتون بمكة، ويَصِيفون بالطائف",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration"
+        },
+        {
+          "id": "106:1#c11",
+          "section_ref": "106:1",
+          "attaches_to": "106:2",
+          "text": "The choice of destinations is explained by climate: Yemen was a warm land, so Quraysh travelled there in winter, and Syria was a cold land, so they travelled there in summer.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-abu-bakr-zakaria",
+              "stance": "relay",
+              "author_id": "abu-bakr-zakaria",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "106:1#c12",
+          "section_ref": "106:1",
+          "attaches_to": "106:2",
+          "text": "Al-Qurṭubī records, on al-Zuhrī's account, that the \"Ilāf\" was a historical system in which four brothers, sons of ʿAbd Manāf, each secured a covenant of protection with a different region for Quraysh's traders: Hāshim with Syria, ʿAbd Shams with Abyssinia, al-Muṭṭalib with Yemen, and Nawfal with Persia, so that Quraysh's caravans travelled under guarantee wherever they went.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "فأما هاشم فإنه كان يؤلف ملك الشام ... ومعنى يؤلف يجير",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded in the cited source"
+          }
+        },
+        {
+          "id": "106:1#c13",
+          "section_ref": "106:1",
+          "attaches_to": "106:2",
+          "text": "A narrative traced to Ibn ʿAbbās رضي الله عنه tells how Hāshim, the Prophet's ﷺ great-grandfather, organised Quraysh's collective trading caravans after famine struck Mecca, then pooled the profits so that rich and poor shared alike, and was called Hāshim (\"the crumbler\") for crumbling bread to feed the destitute.",
+          "claim_type": "narrative",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "ثم هشم الثريد، وأطعم الناس؛ فسمي هاشما",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "narration",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded in the cited source"
+          }
+        },
+        {
+          "id": "106:1#c14",
+          "section_ref": "106:1",
+          "attaches_to": "106:1",
+          "text": "The commentators explain that Quraysh's caravans travelled safely through an otherwise dangerous Arabia, where raiding and robbery of traders were common, because respect for the Kaʿbah extended to respect for its custodians and servants, so no one dared molest them.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "en-tafisr-ibn-kathir",
+              "stance": "relay",
+              "author_id": "ibn-kathir",
+              "source_language": "en",
+              "original_excerpt": "the respect that the people had for them because they were the residents of Allah's sanctuary",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "relay",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "relay",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "relay",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "tazkirul-quran-en",
+              "stance": "relay",
+              "author_id": "wahiduddin-khan",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            },
+            {
+              "edition_id": "bn-tafsir-ahsanul-bayaan",
+              "stance": "relay",
+              "author_id": "bayaan-foundation",
+              "source_language": "bn",
+              "translation_confidence": "medium"
+            },
+            {
+              "edition_id": "ar-tafsir-muyassar",
+              "stance": "relay",
+              "author_id": "committee-muyassar",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "kurd-tafsir-rebar",
+              "stance": "relay",
+              "author_id": "rebar",
+              "source_language": "ku",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "106:1#c15",
+          "section_ref": "106:1",
+          "attaches_to": "106:1",
+          "text": "Sayyid Quṭb reads the surah as a continuation of the security theme running from Ibrāhīm's عليه السلام prayer that Mecca be made a city of peace (2:126) through 29:67's contrast of the secure sanctuary with the danger surrounding it, into the protection of the House from Abrahah's army in Sūrat al-Fīl. Quraysh, he says, became so accustomed to their two profitable and secure seasonal journeys that they could not settle without them, and the surah presents this habituation itself as a favour owed gratitude.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "tafsir-fe-zalul-quran-syed-qatab",
+              "stance": "endorse",
+              "author_id": "sayyid-qutb",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "106:1#c16",
+          "section_ref": "106:1",
+          "attaches_to": "106:2",
+          "text": "Isrār Aḥmad situates the caravan route historically as an international trade corridor: goods from India, Java, Malaya, Sumatra and China reached Yemen's coast by sea, while goods from Europe reached Syria and Palestine by sea, and Quraysh's overland route between Yemen and Syria linked the two, a role earlier held by the Sabaean kingdom until the bursting of the Maʾrib dam scattered that people and left the route to Quraysh, long before the Cape route (1498) or the Suez Canal (1869) existed.",
+          "claim_type": "historical",
+          "sources": [
+            {
+              "edition_id": "tafsir-bayan-ul-quran",
+              "stance": "endorse",
+              "author_id": "israr-ahmad",
+              "source_language": "ur",
+              "translation_confidence": "medium"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "106:1#c17",
+          "section_ref": "106:1",
+          "attaches_to": "106:2",
+          "text": "Muftī Muḥammad Shafīʿ links this surah to Ibrāhīm's عليه السلام prayer in 2:126 asking God to make Mecca a city of peace and to provide its people with fruit, since Mecca's valley grows nothing: the two seasonal journeys were how that provision reached the barren city, until Hāshim's provisioning system, and later the fertility of nearby Yemeni lands, made the journeys progressively less arduous.",
+          "claim_type": "theological",
+          "sources": [
+            {
+              "edition_id": "en-tafsir-maarif-ul-quran",
+              "stance": "endorse",
+              "author_id": "muhammad-shafi-usmani",
+              "source_language": "en",
+              "translation_confidence": "not_applicable"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning"
+        },
+        {
+          "id": "106:1#c18",
+          "section_ref": "106:1",
+          "attaches_to": "106:2",
+          "text": "On a legal point arising from this verse's division of the year, Mālik held that winter and summer each make up half the calendar year, reckoned from the rising of the star cluster al-Thurayyā (the Pleiades), a ruling invoked when someone swears an oath not to speak to another \"until winter\" or \"until summer\" comes.",
+          "claim_type": "legal",
+          "sources": [
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "قال مالك: الشتاء نصف السنة، والصيف نصفها",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "reasoning",
+          "madhhab": "Mālikī"
+        },
+        {
+          "id": "106:1#c19",
+          "section_ref": "106:1",
+          "attaches_to": "106:2",
+          "text": "The reciters differed over the exact form of both words. Most read \"li-īlāfi\" and \"īlāfihim\" with a full hamza followed by a yāʾ, while other transmissions (from Abū Jaʿfar, and from Ibn Kathīr through ʿAbd al-Wahhāb ibn Falīḥ) give \"ilfihim\" without the yāʾ. A report has Asmāʾ bint Yazīd رضي الله عنها saying she heard the Prophet ﷺ recite it as \"ilfahum rihlata al-shitāʾi wa-l-ṣayf\".",
+          "claim_type": "linguistic",
+          "sources": [
+            {
+              "edition_id": "ar-tafsir-al-tabari",
+              "stance": "relay",
+              "author_id": "al-tabari",
+              "source_language": "ar",
+              "original_excerpt": "سمعت النبي صلى الله عليه وسلم يقرأ: إلْفَهُمْ رِحْلَةَ الشِّتَاءِ وَالصَّيْفِ",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafsir-al-baghawi",
+              "stance": "relay",
+              "author_id": "al-baghawi",
+              "source_language": "ar",
+              "translation_confidence": "high"
+            },
+            {
+              "edition_id": "ar-tafseer-al-qurtubi",
+              "stance": "relay",
+              "author_id": "al-qurtubi",
+              "source_language": "ar",
+              "original_excerpt": "وكذلك روت أسماء أنها سمعت رسول الله صلى الله عليه وسلم يقرأ (إلفهم)",
+              "translation_confidence": "high"
+            }
+          ],
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "prompt_version": "overview-v2.3",
+            "extracted_at": "2026-08-02"
+          },
+          "basis": "grammar",
+          "report": {
+            "grade": "ungraded",
+            "graded_by": "not graded in the cited sources; al-Ṭabarī transmits the chain without comment"
+          }
+        }
+      ],
+      "essay_html": "<p>The surah names a single favour, \"Ilaf\" (إيلاف), the state of being drawn into a settled, familiar routine, and applies it to Quraysh's two seasonal trading journeys, to Yemen in winter and to Syria in summer.<sup class=\"ref\">1,2,3,4,5,6,7,8,9,10,11,12,13,14</sup> The commentators read the word in two related senses: coming together in unity after being scattered, and becoming so accustomed to something that it stops feeling like a burden.<sup class=\"ref\">1,2,3,8,9,11,12</sup></p>\n<p>Grammarians disagree about what the opening \"for\" (li-) attaches to. Some tie it back to the previous surah, Al-Fīl: God destroyed the elephant army so that Quraysh could keep this settled, secure life.<sup class=\"ref\">1,2,3,5,7,9</sup> Al-Ṭabarī (d. 923 CE) rejects this, arguing it would leave Al-Fīl unfinished, when Muslims agree the two are separate, complete surahs. He prefers reading the \"li-\" as a mark of amazement: \"be amazed at how Quraysh were drawn into this security.\" Ibn Kathīr (d. 1373 CE) cites this as \"the correct opinion\".<sup class=\"ref\">1,4</sup> A third view ties the phrase forward, to \"so let them worship\" in the next verse, a reading al-Zamakhshārī preferred.<sup class=\"ref\">2,3,9</sup> Some early copies, reportedly including Ubayy ibn Kaʿb's, wrote Al-Fīl and Quraysh as one surah without a break, before ʿUthmān's compiled copy fixed them as two, with the basmala placed between them.<sup class=\"ref\">1,2,3,4,7,11</sup></p>\n<p>Quraysh are traced to al-Naḍr ibn Kinānah, and their name is explained variously, from earning a trade (\"taqarrush\"), from being gathered after scattering, or from a dominant sea-creature by that name, in a report attributed to Ibn ʿAbbās رضي الله عنه.<sup class=\"ref\">2,3,11</sup> A hadith has the Prophet ﷺ say that Allah chose Kinānah from Ismāʿīl's عليه السلام line, Quraysh from Kinānah, Banū Hāshim from Quraysh, and himself from Banū Hāshim, a report al-Qurṭubī calls sound, tracing it to al-Bukhārī and Muslim.<sup class=\"ref\">2,3,7</sup> Mujāhid and Ibn ʿAbbās رضي الله عنه simply glossed \"Ilaf\" as \"My favour upon Quraysh\".<sup class=\"ref\">1,3</sup></p>\n<p>The journeys themselves are widely explained as trade caravans, wintering in Yemen because it was warm and summering in Syria because it was cold.<sup class=\"ref\">2,3,7,11,12,14</sup> A separate report from Ibn ʿAbbās رضي الله عنه, through ʿIkrimah and Saʿīd ibn Jubayr, instead reads the two seasons as wintering in Mecca and summering in al-Ṭāʾif.<sup class=\"ref\">1,2,3</sup> Al-Qurṭubī records a fuller history: four sons of ʿAbd Manāf, Hāshim, ʿAbd Shams, al-Muṭṭalib and Nawfal, each secured a covenant of protection with a different region, Syria, Abyssinia, Yemen and Persia, so Quraysh's traders moved under guarantee wherever they went.<sup class=\"ref\">3</sup> A related narrative credits Hāshim with organising the caravans after a famine and pooling the profits so rich and poor shared alike, earning him his name for crumbling bread to feed the hungry.<sup class=\"ref\">3,7</sup></p>\n<p>Behind all of this, the commentators find one explanation for why Quraysh travelled unmolested through an Arabia where robbing traders was common: their standing as custodians of the Kaʿbah earned them respect wherever they went.<sup class=\"ref\">1,2,3,4,6,7,8,10,12,13,14</sup> Sayyid Quṭb (d. 1966 CE) reads this as one link in a longer chain, from Ibrāhīm's عليه السلام prayer for Mecca's security (2:126) to the safety of the sanctuary contrasted with danger all around it (29:67) to the defeat of Abrahah's army, and takes Quraysh's dependence on these two safe, profitable journeys as itself the favour the surah calls them to be grateful for.<sup class=\"ref\">6</sup> Isrār Aḥmad (d. 2010 CE) places the route within an older international trade network linking the Far East to Europe through Yemen and Syria, a role that passed to Quraysh once the Sabaean kingdom collapsed with the bursting of the Maʾrib dam.<sup class=\"ref\">8</sup> Muftī Muḥammad Shafīʿ (d. 1976 CE) connects the journeys directly to Ibrāhīm's عليه السلام prayer that Mecca, though barren, be provided with fruit.<sup class=\"ref\">7</sup></p>\n<p>Two smaller points round out the verse. Imam Mālik held that winter and summer each make up half the year, a ruling drawn on when someone swears an oath tied to the coming of a season.<sup class=\"ref\">3</sup> And the reciters varied over the exact form of \"īlāf\", with a report that Asmāʾ bint Yazīd رضي الله عنها heard the Prophet ﷺ himself recite it as \"ilfahum\".<sup class=\"ref\">1,2,3</sup></p>\n<p class=\"close\">Whichever grammatical thread is pulled, the commentators converge on the same picture: Quraysh's safe, habitual winter and summer caravans were not their own doing but a favour traced back to the Kaʿbah they served, and it is this settled security the opening of the surah asks them to notice.</p>",
+      "sources_used": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "source_hashes": {
+        "1": "sha256:48cc70810acf80732782989e1352591d5bf9622c7f63e50f2a7a205ba8ea1c8b",
+        "2": "sha256:c2ff05fc445fff9993e42619cdaa3c7096b3825d4bc806f653ed65a66e1e4a24",
+        "3": "sha256:390ebab888f25cc646cbe0d45165784e8faaba97fbf0b62fe68f69c568258420",
+        "4": "sha256:333857030458d1f3d7cb9fe7c625c343d93be54c59c50c263b60d58597f53b62",
+        "5": "sha256:7cb3464350b7bb3aba42c9403d6f95a321acadc03253e6850843f34ecf55250d",
+        "6": "sha256:e3a709ed05d9ab125e81f8416bd4b58fe14737b822636178d7eb591103929168",
+        "7": "sha256:988e1dbfc62b3a0451f1504496f8924653d67b33b574ee2cb047598608c846db",
+        "8": "sha256:4e0fd76e5aa78a8839000de7e61eb35d4a2a339375c63efedd32c3329fc4da8e",
+        "9": "sha256:3b70ffc0e43ed85c6421540f9ccb2b939321fe69f40c256942adf9b3a0ac86cc",
+        "10": "sha256:e12584a24ac9e71c99f8c8d9dbdb1876a6844860aa543328c7ad9d8b098f0225",
+        "11": "sha256:a6826108a1e0bc8f0d8d84a4c40f8460e998a1a919bdad7bf7e4eaae7ff3a5b6",
+        "12": "sha256:11b4868ff23a6c5d9e3f3e21c6451b7874d6e3f825a140a5ab16698f09213da7",
+        "13": "sha256:e78ad4d76b94fc6a292b67e3cc2f5d0cdda0ad5c67ae02a1b4206624dde36c2d",
+        "14": "sha256:acb5ac3645f9a6391834a6d2ef0c27316183846ebee320011b4b7fdccc2e95db"
+      },
+      "flags": {
+        "creedal_stakes": false,
+        "legal_content": true,
+        "sensitive_content": false
+      },
+      "compiled_at": "2026-08-02"
+    }
+  }
+}
